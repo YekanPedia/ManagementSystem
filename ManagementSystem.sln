@@ -7,6 +7,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{061345
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YekanPedia.ManagementSystem.Domain", "YekanPedia.ManagementSystem.Domain\YekanPedia.ManagementSystem.Domain.csproj", "{8BCA1500-4045-46AA-9783-90F4B0DDB1F6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YekanPedia.ManagementSystem.InfraStructure", "YekanPedia.ManagementSystem.InfraStructure\YekanPedia.ManagementSystem.InfraStructure.csproj", "{D742B376-2BE2-47FF-B70F-4F5F63A67BAB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,11 +19,16 @@ Global
 		{8BCA1500-4045-46AA-9783-90F4B0DDB1F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8BCA1500-4045-46AA-9783-90F4B0DDB1F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8BCA1500-4045-46AA-9783-90F4B0DDB1F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D742B376-2BE2-47FF-B70F-4F5F63A67BAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D742B376-2BE2-47FF-B70F-4F5F63A67BAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D742B376-2BE2-47FF-B70F-4F5F63A67BAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D742B376-2BE2-47FF-B70F-4F5F63A67BAB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{8BCA1500-4045-46AA-9783-90F4B0DDB1F6} = {06134547-B904-4E8D-B8C5-97AD65120F13}
+		{D742B376-2BE2-47FF-B70F-4F5F63A67BAB} = {06134547-B904-4E8D-B8C5-97AD65120F13}
 	EndGlobalSection
 EndGlobal
