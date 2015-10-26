@@ -9,6 +9,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YekanPedia.ManagementSystem
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YekanPedia.ManagementSystem.InfraStructure", "YekanPedia.ManagementSystem.InfraStructure\YekanPedia.ManagementSystem.InfraStructure.csproj", "{D742B376-2BE2-47FF-B70F-4F5F63A67BAB}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "InfraStructure", "InfraStructure", "{21F8D6F0-6527-41A3-8F56-22B83F224575}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Console", "Console", "{3271E148-D194-4CEF-8FAB-700096B2748B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YekanPedia.ManagementSystem.Data", "YekanPedia.ManagementSystem.Data\YekanPedia.ManagementSystem.Data.csproj", "{49E38BA4-B84A-403E-89FF-74B88FBA0C4E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YekanPedia.ManagementSystem.DependencyResolver", "YekanPedia.ManagementSystem.DependencyResolver\YekanPedia.ManagementSystem.DependencyResolver.csproj", "{CD5F6D8C-FEC3-4411-83AB-6EA7580F9212}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,12 +31,22 @@ Global
 		{D742B376-2BE2-47FF-B70F-4F5F63A67BAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D742B376-2BE2-47FF-B70F-4F5F63A67BAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D742B376-2BE2-47FF-B70F-4F5F63A67BAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49E38BA4-B84A-403E-89FF-74B88FBA0C4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49E38BA4-B84A-403E-89FF-74B88FBA0C4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49E38BA4-B84A-403E-89FF-74B88FBA0C4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49E38BA4-B84A-403E-89FF-74B88FBA0C4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD5F6D8C-FEC3-4411-83AB-6EA7580F9212}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD5F6D8C-FEC3-4411-83AB-6EA7580F9212}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD5F6D8C-FEC3-4411-83AB-6EA7580F9212}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD5F6D8C-FEC3-4411-83AB-6EA7580F9212}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{8BCA1500-4045-46AA-9783-90F4B0DDB1F6} = {06134547-B904-4E8D-B8C5-97AD65120F13}
-		{D742B376-2BE2-47FF-B70F-4F5F63A67BAB} = {06134547-B904-4E8D-B8C5-97AD65120F13}
+		{D742B376-2BE2-47FF-B70F-4F5F63A67BAB} = {21F8D6F0-6527-41A3-8F56-22B83F224575}
+		{49E38BA4-B84A-403E-89FF-74B88FBA0C4E} = {06134547-B904-4E8D-B8C5-97AD65120F13}
+		{CD5F6D8C-FEC3-4411-83AB-6EA7580F9212} = {06134547-B904-4E8D-B8C5-97AD65120F13}
 	EndGlobalSection
 EndGlobal
