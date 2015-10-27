@@ -171,6 +171,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\OAuthController.cs" />
     <Compile Include="Extensions\ChallengeResult.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -198,8 +199,8 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Scripts\" />
+    <Folder Include="Views\OAuth\" />
     <Folder Include="Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
