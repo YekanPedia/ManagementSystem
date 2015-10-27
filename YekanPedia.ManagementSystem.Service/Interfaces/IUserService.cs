@@ -2,10 +2,11 @@
 {
     using System.Collections.Generic;
     using Domain.Entity;
+    using InfraStructure;
 
     public interface IUserService
     {
-        void AddUser(User model);
+        IServiceResult<int> AddUser(User model);
         void ChangeUserState(int userId, bool state = true);
         IEnumerable<User> GetUserList();
     }

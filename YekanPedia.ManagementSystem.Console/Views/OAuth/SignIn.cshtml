@@ -1,0 +1,37 @@
+﻿@{
+    Layout = null;
+}
+@using YekanPedia.ManagementSystem.Console.App_GlobalResources
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@LocalMessage.YekanPedia</title>
+    <!-- Public CSS -->
+    @Styles.Render(Links.Bundles.Styles.PublicCss)
+    <!-- CSS -->
+    @Styles.Render(Links.Bundles.Styles.ContentCss)
+    <!-- Rtl CSS -->
+    @Styles.Render(Links.Bundles.Styles.ContentRtlCss)
+</head>
+<body class="login-content">
+    <!-- Login -->
+    @{ Html.RenderPartial(MVC.OAuth.Views.Partial._Login);}
+    <!-- Register -->
+    @{ Html.RenderPartial(MVC.Account.Views.Partial._Register);}
+    <!-- Forgot Password -->
+    @{ Html.RenderPartial(MVC.OAuth.Views.Partial._RecovertyPassword);}
+
+    <footer id="footer">
+        Copyright © 2010-@DateTime.Now.Year YekanPedia.org
+    </footer>
+    <!-- Javascript Libraries -->
+    @Scripts.Render(Links.Bundles.Scripts.CoreScripts)
+
+    <!-- Function Libraries -->
+    <script src="@Url.Content(Links.Scripts.functions_js)"></script>
+    <script src="@Url.Content(Links.Scripts.JQuery.PasswordStrongly.PasswordStrongly_js)"></script>
+</body>
+</html>

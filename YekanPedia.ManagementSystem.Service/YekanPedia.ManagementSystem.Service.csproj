@@ -67,6 +67,10 @@
       <Project>{8bca1500-4045-46aa-9783-90f4b0ddb1f6}</Project>
       <Name>YekanPedia.ManagementSystem.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\YekanPedia.ManagementSystem.InfraStructure\YekanPedia.ManagementSystem.InfraStructure.csproj">
+      <Project>{d742b376-2be2-47ff-b70f-4f5f63a67bab}</Project>
+      <Name>YekanPedia.ManagementSystem.InfraStructure</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

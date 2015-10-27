@@ -6,6 +6,7 @@
     using Domain.Entity;
     using Data.Conext;
     using System.Data.Entity;
+    using InfraStructure;
 
     public class UserService : IUserService
     {
@@ -18,12 +19,13 @@
             _user = uow.Set<User>();
         }
         #endregion
-        public void AddUser(User model)
+        public IServiceResult<int> AddUser(User model)
         {
-            model.IsActive = true;
+            model.IsActive = false;
             model.LastLoginDate = DateTime.Now;
             _user.Add(model);
             _uow.SaveChanges();
+            return new ServiceResult<int>() { IsSuccessfull = true, Message = "", Result = model.UserId };
         }
 
         public void ChangeUserState(int userId, bool state = true)

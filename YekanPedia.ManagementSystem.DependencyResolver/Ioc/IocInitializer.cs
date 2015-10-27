@@ -4,6 +4,7 @@
     using StructureMap.Web.Pipeline;
     using System;
     using Data.Conext;
+    using InfraStructure;
 
     public class IocInitializer
     {
@@ -13,6 +14,7 @@
             Container = new Container(x =>
             {
                 x.For<IUnitOfWork>().Use(() => new ManagementSystemDbContext()).LifecycleIs<HttpContextLifecycle>();
+                x.For<IActionResult>().Use(() => new ActionResult());
             });
         }
         public static object GetInstance(Type pluginType)

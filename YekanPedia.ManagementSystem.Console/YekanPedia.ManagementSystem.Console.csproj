@@ -16,7 +16,7 @@
     <RootNamespace>YekanPedia.ManagementSystem.Console</RootNamespace>
     <AssemblyName>YekanPedia.ManagementSystem.Console</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
-    <MvcBuildViews>false</MvcBuildViews>
+    <MvcBuildViews>true</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -102,6 +102,10 @@
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="T4MVCExtensions, Version=3.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\T4MVCExtensions.3.16.0\lib\net40\T4MVCExtensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
@@ -162,6 +166,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_GlobalResources\LocalMessage.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LocalMessage.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleManager.cs" />
+    <Compile Include="T4\AccountController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="AppSetting.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -171,21 +184,85 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\OAuthController.cs" />
     <Compile Include="Extensions\ChallengeResult.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="T4\OAuthController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="T4\SharedController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="T4\T4MVC.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="AppSetting.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>AppSetting.cs</LastGenOutput>
     </Content>
+    <Content Include="Content\Images\Avatar\1.jpg" />
+    <Content Include="Content\Images\Avatar\2.jpg" />
+    <Content Include="Content\Images\Avatar\3.jpg" />
+    <Content Include="Content\Images\Avatar\4.jpg" />
+    <Content Include="Content\Images\Avatar\5.jpg" />
+    <Content Include="Content\Images\Avatar\6.jpg" />
+    <Content Include="Content\Images\Avatar\7.jpg" />
+    <Content Include="Content\Images\Avatar\8.jpg" />
+    <Content Include="Content\Images\Avatar\9.jpg" />
+    <Content Include="Content\Images\Background\profile-menu.png" />
+    <Content Include="Content\Images\Logo\Logo.png" />
+    <Content Include="Content\Images\Menu\ellipsis%402x.png" />
+    <Content Include="Content\Images\Menu\ellipsis.png" />
+    <Content Include="Content\Images\Menu\menu-2%402x-rtl.png" />
+    <Content Include="Content\Images\Menu\menu-2%402x.png" />
+    <Content Include="Content\Images\Menu\menu-2-rtl.png" />
+    <Content Include="Content\Images\Menu\menu-2.png" />
+    <Content Include="Content\Images\Menu\message%402x.png" />
+    <Content Include="Content\Images\Menu\message.png" />
+    <Content Include="Content\Images\Menu\notification%402x.png" />
+    <Content Include="Content\Images\Menu\notification.png" />
+    <Content Include="Content\Images\Menu\search%402x.png" />
+    <Content Include="Content\Images\Menu\search.png" />
+    <Content Include="Content\Images\Menu\task%402x.png" />
+    <Content Include="Content\Images\Menu\task.png" />
+    <Content Include="Content\Styles\Ltr\AppStyle1.css" />
+    <Content Include="Content\Styles\Ltr\AppStyle2.css" />
+    <Content Include="Content\Styles\Public\Animate.css" />
+    <Content Include="Content\Styles\Public\lightGallery.css" />
+    <Content Include="Content\Styles\Public\MaterialDesignIconicFont.css" />
+    <Content Include="Content\Styles\Rtl\AppStyle1.css" />
     <Content Include="Global.asax" />
+    <Content Include="Content\Fonts\BYekan\BYekan.ttf" />
+    <Content Include="Content\Fonts\MaterialDesignIconic\MaterialDesignIconicFont.ttf" />
+    <Content Include="Content\Fonts\MaterialDesignIconic\MaterialDesignIconicFont.woff" />
+    <Content Include="Content\Fonts\Roboto\Roboto-Medium-webfont.eot" />
+    <Content Include="Content\Fonts\Roboto\Roboto-Medium-webfont.ttf" />
+    <Content Include="Content\Fonts\Roboto\Roboto-Medium-webfont.woff" />
+    <Content Include="Content\Fonts\Roboto\Roboto-Regular-webfont.eot" />
+    <Content Include="Content\Fonts\Roboto\Roboto-Regular-webfont.ttf" />
+    <Content Include="Content\Fonts\Roboto\Roboto-Regular-webfont.woff" />
+    <None Include="T4\T4MVC.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>T4MVC.cs</LastGenOutput>
+    </None>
+    <None Include="T4\T4MVC.tt.settings.xml" />
+    <Content Include="Scripts\Bootstrap\bootstrap.min.js" />
+    <Content Include="Scripts\functions.js" />
+    <Content Include="Scripts\JQuery\jquery.min.js" />
+    <Content Include="Scripts\JQuery\LightGallery\lightGallery.min.js" />
+    <Content Include="Scripts\JQuery\NiceScroll\jquery.nicescroll.min.js" />
+    <Content Include="Scripts\JQuery\PasswordStrongly\PasswordStrongly.js" />
+    <Content Include="Scripts\JQuery\Wave\waves.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -195,19 +272,49 @@
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\OAuth\SignIn.cshtml" />
+    <Content Include="Views\OAuth\Partial\_Login.cshtml" />
+    <Content Include="Views\OAuth\Partial\_RecovertyPassword.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\" />
-    <Folder Include="Scripts\" />
-    <Folder Include="Views\OAuth\" />
-    <Folder Include="Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\YekanPedia.ManagementSystem.DependencyResolver\YekanPedia.ManagementSystem.DependencyResolver.csproj">
+      <Project>{cd5f6d8c-fec3-4411-83ab-6ea7580f9212}</Project>
+      <Name>YekanPedia.ManagementSystem.DependencyResolver</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YekanPedia.ManagementSystem.Domain\YekanPedia.ManagementSystem.Domain.csproj">
+      <Project>{8bca1500-4045-46aa-9783-90f4b0ddb1f6}</Project>
+      <Name>YekanPedia.ManagementSystem.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YekanPedia.ManagementSystem.InfraStructure\YekanPedia.ManagementSystem.InfraStructure.csproj">
+      <Project>{d742b376-2be2-47ff-b70f-4f5f63a67bab}</Project>
+      <Name>YekanPedia.ManagementSystem.InfraStructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YekanPedia.ManagementSystem.Service\YekanPedia.ManagementSystem.Service.csproj">
+      <Project>{3a35c3bf-238b-445c-a4cc-f334836b3253}</Project>
+      <Name>YekanPedia.ManagementSystem.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\Partial\_Register.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="T4\T4MVC.tt.hooks.t4" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="App_GlobalResources\LocalMessage.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>LocalMessage.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -7,11 +7,11 @@
     {
         public void ConfigureAuth(IAppBuilder app)
         {
-            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            {
-                ClientId = AppSettings.GoogleClientId,
-                ClientSecret = AppSettings.GoogleClientSecret
-            });
+            // app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            // {
+            //     ClientId = AppSettings.GoogleClientId,
+            //     ClientSecret = AppSettings.GoogleClientSecret
+            // });
         }
     }
 }
