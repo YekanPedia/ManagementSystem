@@ -10,7 +10,8 @@
                            "~" + Links.Scripts.JQuery.jquery_min_js,
                            "~" + Links.Scripts.Bootstrap.bootstrap_min_js,
                            "~" + Links.Scripts.JQuery.NiceScroll.jquery_nicescroll_min_js,
-                           "~" + Links.Scripts.JQuery.Wave.waves_min_js));
+                           "~" + Links.Scripts.JQuery.Wave.waves_min_js,
+                           "~" + Links.Scripts.JQuery.Type.jQuery_Type_js));
             #endregion
             #region Styles
             bundles.Add(new StyleBundle(Links.Bundles.Styles.ContentCss).Include(

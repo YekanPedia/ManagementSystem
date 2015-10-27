@@ -64,11 +64,11 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\DisplayError.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>DisplayError.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\DisplayNames.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>DisplayNames.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>

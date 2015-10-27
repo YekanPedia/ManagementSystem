@@ -13,18 +13,10 @@
         [Key]
         public int UserId { get; set; }
 
-        [Display(ResourceType = typeof(DisplayNames), Name = nameof(FirstName))]
-        [MaxLength(30, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
+        [Display(ResourceType = typeof(DisplayNames), Name = nameof(FullName))]
+        [MaxLength(45, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
         [Required(ErrorMessageResourceName = nameof(DisplayError.Required), ErrorMessageResourceType = typeof(DisplayError))]
-        public string FirstName { get; set; }
-
-        [Display(ResourceType = typeof(DisplayNames), Name = nameof(LastName))]
-        [MaxLength(30, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
-        [Required(ErrorMessageResourceName = nameof(DisplayError.Required), ErrorMessageResourceType = typeof(DisplayError))]
-        public string LastName { get; set; }
-
-        [NotMapped]
-        public string FullName => $"{LastName} {FirstName}";
+        public string FullName { get; set; }
 
         [Display(ResourceType = typeof(DisplayNames), Name = nameof(BirthDate))]
         [Column(TypeName = "char")]

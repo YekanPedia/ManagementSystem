@@ -122,6 +122,14 @@ namespace Links
             }
         
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class Type {
+                private const string URLPATH = "~/Scripts/JQuery/Type";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                public static readonly string jQuery_Type_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jQuery.Type.min.js") ? Url("jQuery.Type.min.js") : Url("jQuery.Type.js");
+            }
+        
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
             public static class Wave {
                 private const string URLPATH = "~/Scripts/JQuery/Wave";
                 public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
@@ -311,6 +319,13 @@ namespace Links
                     public static class Assets
                     {
                         public const string PasswordStrongly_js = "~/Scripts/JQuery/PasswordStrongly/PasswordStrongly.js"; 
+                    }
+                }
+                public static partial class Type 
+                {
+                    public static class Assets
+                    {
+                        public const string jQuery_Type_js = "~/Scripts/JQuery/Type/jQuery.Type.js"; 
                     }
                 }
                 public static partial class Wave 
