@@ -754,5 +754,13 @@ $(document).ready(function () {
         });
 
     }
-
 });
+/*
+* Validation add error add this method to validation.js
+*/
+var ShowError = function (el) {
+    $(el).parent().parent().addClass('has-error');
+}
+var HideError = function (el) {
+    $(el).parent().parent().removeClass('has-error');
+}

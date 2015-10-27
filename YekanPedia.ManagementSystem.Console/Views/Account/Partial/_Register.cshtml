@@ -3,67 +3,71 @@
     Layout = null;
 }
 
+
 <div class="lc-block" id="l-register">
-    <img class="lcb-user" src="@Url.Content(Links.Content.Images.Logo.Logo_png)"
-         alt="@LocalMessage.YekanPedia">
-    <div class="input-group m-b-20">
-    </div>
-
-    <div class="input-group m-b-20 has-feedback">
-        <span class="input-group-addon">
-            <i class="zmdi zmdi-account"></i>
-        </span>
-        <div class="fg-line">
-            @Html.TextBoxFor(X => X.FullName, new { @data_type = "fa", @class = "form-control", @placeholder = Html.DisplayNameFor(X => X.FullName) })
+    @using (Html.BeginForm())
+    {
+        <img class="lcb-user" src="@Url.Content(Links.Content.Images.Logo.Logo_png)"
+             alt="@LocalMessage.YekanPedia">
+        <div class="input-group m-b-20">
         </div>
-        <small class="help-block">
-            @Html.ValidationMessageFor(X => X.FullName)
-        </small>
-        <span class="zmdi form-control-feedback"></span>
-    </div>
 
-    <div class="input-group has-feedback m-b-20">
-        <span class="input-group-addon">
-            <i class="zmdi zmdi-phone"></i>
-        </span>
-        <div class="fg-line">
-            @Html.TextBoxFor(X => X.Mobile, new { @data_type = "nu", @class = "form-control", @placeholder = Html.DisplayNameFor(X => X.Mobile) })
+        <div class="input-group m-b-20 has-feedback">
+            <span class="input-group-addon">
+                <i class="zmdi zmdi-account"></i>
+            </span>
+            <div class="fg-line">
+                @Html.TextBoxFor(X => X.FullName, new { @data_type = "fa", @class = "form-control", @placeholder = Html.DisplayNameFor(X => X.FullName) })
+            </div>
+            <small class="help-block">
+                @Html.ValidationMessageFor(X => X.FullName)
+            </small>
+            <span class="zmdi form-control-feedback"></span>
         </div>
-        <small class="help-block">
-            @Html.ValidationMessageFor(X => X.Mobile)
-        </small>
-        <span class="zmdi form-control-feedback"></span>
-    </div>
 
-    <div class="input-group has-feedback m-b-20">
-        <span class="input-group-addon">
-            <i class="zmdi zmdi-email"></i>
-        </span>
-        <div class="fg-line">
-            @Html.TextBoxFor(X => X.Email, new { @data_type = "en", @class = "form-control", @placeholder = Html.DisplayNameFor(X => X.Email) })
+        <div class="input-group has-feedback m-b-20">
+            <span class="input-group-addon">
+                <i class="zmdi zmdi-phone"></i>
+            </span>
+            <div class="fg-line">
+                @Html.TextBoxFor(X => X.Mobile, new { @data_type = "nu", @class = "form-control", @placeholder = Html.DisplayNameFor(X => X.Mobile) })
+            </div>
+            <small class="help-block">
+                @Html.ValidationMessageFor(X => X.Mobile)
+            </small>
+            <span class="zmdi form-control-feedback"></span>
         </div>
-        <small class="help-block">
-            @Html.ValidationMessageFor(X => X.Email)
-        </small>
-        <span class="zmdi  form-control-feedback"></span>
-    </div>
 
-    <div class="input-group has-passwordStrongly has-feedback m-b-20">
-        <span class="input-group-addon">
-            <i class="zmdi zmdi-lock"></i>
-        </span>
-        <div class="fg-line">
-            @Html.PasswordFor(X => X.Password, new { @data_type = "en", @class = "form-control PasswordStrongly", @placeholder = Html.DisplayNameFor(X => X.Password) })
+        <div class="input-group has-feedback m-b-20">
+            <span class="input-group-addon">
+                <i class="zmdi zmdi-email"></i>
+            </span>
+            <div class="fg-line">
+                @Html.TextBoxFor(X => X.Email, new { @data_type = "en", @class = "form-control", @placeholder = string.Format("{0} ({1})", Html.DisplayNameFor(X => X.Email), LocalMessage.UserName) })
+            </div>
+            <small class="help-block">
+                @Html.ValidationMessageFor(X => X.Email)
+            </small>
+            <span class="zmdi  form-control-feedback"></span>
         </div>
-        <small class="help-block">
-            @Html.ValidationMessageFor(X => X.Password)
-        </small>
-        <span class="zmdi form-control-feedback"></span>
-    </div>
 
-    <a href="" class="btn btn-login btn-danger btn-float">
-        <i class="zmdi zmdi-arrow-left"></i>
-    </a>
+        <div class="input-group has-passwordStrongly has-feedback m-b-20">
+            <span class="input-group-addon">
+                <i class="zmdi zmdi-lock"></i>
+            </span>
+            <div class="fg-line">
+                @Html.PasswordFor(X => X.Password, new { @data_type = "en", @class = "form-control PasswordStrongly", @placeholder = Html.DisplayNameFor(X => X.Password) })
+            </div>
+            <small class="help-block">
+                @Html.ValidationMessageFor(X => X.Password)
+            </small>
+            <span class="zmdi form-control-feedback"></span>
+        </div>
+
+        <a href="" class="btn btn-login btn-danger btn-float">
+            <i class="zmdi zmdi-arrow-left"></i>
+        </a>
+    }
     <ul class="login-navigation">
         <li data-block="#l-login" class="bgm-nily">@LocalMessage.SignIn</li>
         <li data-block="#l-forget-password" class="bgm-red">@LocalMessage.RecoveryPassword</li>

@@ -6,12 +6,16 @@
         public static void RegisterBundles(BundleCollection bundles)
         {
             #region Scripts
-            bundles.Add(new ScriptBundle(Links.Bundles.Scripts.CoreScripts).Include(
-                           "~" + Links.Scripts.JQuery.jquery_min_js,
+            bundles.Add(new ScriptBundleOrderer(Links.Bundles.Scripts.CoreScripts).Include(
+                           "~" + Links.Scripts.JQuery.jquery_1_10_2_min_js,
                            "~" + Links.Scripts.Bootstrap.bootstrap_min_js,
                            "~" + Links.Scripts.JQuery.NiceScroll.jquery_nicescroll_min_js,
                            "~" + Links.Scripts.JQuery.Wave.waves_min_js,
-                           "~" + Links.Scripts.JQuery.Type.jQuery_Type_js));
+                           "~" + Links.Scripts.JQuery.Type.jQuery_Type_js,
+                           "~" + Links.Scripts.functions_js,
+                           "~" + Links.Scripts.JQuery.Validation.jquery_validate_js,
+                           "~" + Links.Scripts.JQuery.Validation.jquery_validate_unobtrusive_js
+                           ));
             #endregion
             #region Styles
             bundles.Add(new StyleBundle(Links.Bundles.Styles.ContentCss).Include(

@@ -6,12 +6,12 @@ $().ready(function () {
         //var enoughRegex = new RegExp("(?=.{6,}).*", "g");
         if (strongRegex.test($(this).val())) {
             $('.has-passwordStrongly').removeClass('has-warning');
-            $(".has-passwordStrongly .help-block").html('');
+            $(".has-passwordStrongly .help-block span").html('');
             $(".has-passwordStrongly .form-control-feedback").removeClass('zmdi-alert-triangle');
 
         } else {
             $('.has-passwordStrongly').addClass('has-warning');
-            $(".has-passwordStrongly .help-block").html('امنیت کلمه عبورانتخابی پایین است');
+            $(".has-passwordStrongly .help-block span").html('امنیت کلمه عبورانتخابی پایین است');
             $(".has-passwordStrongly .form-control-feedback").addClass('zmdi-alert-triangle');
         }
         return true;

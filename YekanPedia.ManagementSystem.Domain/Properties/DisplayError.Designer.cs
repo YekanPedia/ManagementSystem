@@ -79,7 +79,7 @@ namespace YekanPedia.ManagementSystem.Domain.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to sdf.
         /// </summary>
         public static string MaxLength {
             get {

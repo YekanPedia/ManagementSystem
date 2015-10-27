@@ -172,6 +172,9 @@
       <DependentUpon>LocalMessage.resx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleManager.cs" />
+    <Compile Include="Extensions\Optimization\AsIsBundleOrderer.cs" />
+    <Compile Include="Extensions\Optimization\ScriptBundleOrderer.cs" />
+    <Compile Include="Extensions\Optimization\StyleBundleOrderer.cs" />
     <Compile Include="T4\AccountController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
@@ -251,6 +254,7 @@
     <Content Include="Content\Fonts\Roboto\Roboto-Regular-webfont.eot" />
     <Content Include="Content\Fonts\Roboto\Roboto-Regular-webfont.ttf" />
     <Content Include="Content\Fonts\Roboto\Roboto-Regular-webfont.woff" />
+    <Content Include="Scripts\JQuery\jquery-1.10.2.min.js" />
     <Content Include="Scripts\JQuery\Type\jQuery.Type.js" />
     <None Include="T4\T4MVC.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -259,10 +263,12 @@
     <None Include="T4\T4MVC.tt.settings.xml" />
     <Content Include="Scripts\Bootstrap\bootstrap.min.js" />
     <Content Include="Scripts\functions.js" />
-    <Content Include="Scripts\JQuery\jquery.min.js" />
     <Content Include="Scripts\JQuery\LightGallery\lightGallery.min.js" />
     <Content Include="Scripts\JQuery\NiceScroll\jquery.nicescroll.min.js" />
     <Content Include="Scripts\JQuery\PasswordStrongly\PasswordStrongly.js" />
+    <Content Include="Scripts\JQuery\Validation\jquery.validate.js" />
+    <Content Include="Scripts\JQuery\Validation\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\JQuery\Validation\jquery.validation.messages.js" />
     <Content Include="Scripts\JQuery\Wave\waves.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

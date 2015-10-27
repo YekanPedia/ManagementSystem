@@ -96,7 +96,7 @@ namespace Links
             private const string URLPATH = "~/Scripts/JQuery";
             public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
             public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
-            public static readonly string jquery_min_js = Url("jquery.min.js");
+            public static readonly string jquery_1_10_2_min_js = Url("jquery-1.10.2.min.js");
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
             public static class LightGallery {
                 private const string URLPATH = "~/Scripts/JQuery/LightGallery";
@@ -127,6 +127,16 @@ namespace Links
                 public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
                 public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
                 public static readonly string jQuery_Type_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jQuery.Type.min.js") ? Url("jQuery.Type.min.js") : Url("jQuery.Type.js");
+            }
+        
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class Validation {
+                private const string URLPATH = "~/Scripts/JQuery/Validation";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                public static readonly string jquery_validate_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.validate.min.js") ? Url("jquery.validate.min.js") : Url("jquery.validate.js");
+                public static readonly string jquery_validate_unobtrusive_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.validate.unobtrusive.min.js") ? Url("jquery.validate.unobtrusive.min.js") : Url("jquery.validate.unobtrusive.js");
+                public static readonly string jquery_validation_messages_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.validation.messages.min.js") ? Url("jquery.validation.messages.min.js") : Url("jquery.validation.messages.js");
             }
         
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -328,6 +338,15 @@ namespace Links
                         public const string jQuery_Type_js = "~/Scripts/JQuery/Type/jQuery.Type.js"; 
                     }
                 }
+                public static partial class Validation 
+                {
+                    public static class Assets
+                    {
+                        public const string jquery_validate_js = "~/Scripts/JQuery/Validation/jquery.validate.js"; 
+                        public const string jquery_validate_unobtrusive_js = "~/Scripts/JQuery/Validation/jquery.validate.unobtrusive.js"; 
+                        public const string jquery_validation_messages_js = "~/Scripts/JQuery/Validation/jquery.validation.messages.js"; 
+                    }
+                }
                 public static partial class Wave 
                 {
                     public static class Assets
@@ -337,7 +356,7 @@ namespace Links
                 }
                 public static class Assets
                 {
-                    public const string jquery_min_js = "~/Scripts/JQuery/jquery.min.js"; 
+                    public const string jquery_1_10_2_min_js = "~/Scripts/JQuery/jquery-1.10.2.min.js"; 
                 }
             }
             public static class Assets

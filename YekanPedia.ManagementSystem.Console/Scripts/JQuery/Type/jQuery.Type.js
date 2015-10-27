@@ -112,7 +112,7 @@ $(document).ready(function () {
         codeArray[23][1] = 116;
         codeArray[24][0] = 1602;
         codeArray[24][1] = 114;
-        codeArray[25][0] = 1603; 
+        codeArray[25][0] = 1603;
         codeArray[25][1] = 59;
         codeArray[26][0] = 1604;
         codeArray[26][1] = 103;
@@ -169,7 +169,7 @@ $(document).ready(function () {
             }
         }
         if (!findChar) {
-            Message.alert('برای تایپ فارسی و عملکرد صحیح صفحه کلید، لطفا صفحه کلید خود را به حالت انگلیسی قرار دهید.\n\nهمچنین Caps Lock صفحه کلید خود را خاموش کنید... ');
+            alert('برای تایپ فارسی و عملکرد صحیح صفحه کلید، لطفا صفحه کلید خود را به حالت انگلیسی قرار دهید.\n\nهمچنین Caps Lock صفحه کلید خود را خاموش کنید... ');
             return false;
         }
     })
