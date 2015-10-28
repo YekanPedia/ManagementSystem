@@ -14,7 +14,8 @@
                            "~" + Links.Scripts.JQuery.Type.jQuery_Type_js,
                            "~" + Links.Scripts.functions_js,
                            "~" + Links.Scripts.JQuery.Validation.jquery_validate_js,
-                           "~" + Links.Scripts.JQuery.Validation.jquery_validate_unobtrusive_js
+                           "~" + Links.Scripts.JQuery.Validation.jquery_validate_unobtrusive_js,
+                           "~" + Links.Scripts.JQuery.Ajax.jquery_unobtrusive_ajax_js
                            ));
             #endregion
             #region Styles

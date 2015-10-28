@@ -117,16 +117,37 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AboutMe" xml:space="preserve">
+    <value>درباره من</value>
+  </data>
+  <data name="BirthDate" xml:space="preserve">
+    <value>تاریخ تولد</value>
+  </data>
   <data name="Email" xml:space="preserve">
     <value>پست الکترونیک</value>
   </data>
+  <data name="Facebook" xml:space="preserve">
+    <value>فیسبوک</value>
+  </data>
   <data name="FullName" xml:space="preserve">
     <value>نام و نام خانوادگی</value>
+  </data>
+  <data name="IsActive" xml:space="preserve">
+    <value>فعال</value>
   </data>
   <data name="Mobile" xml:space="preserve">
     <value>شماره همراه</value>
   </data>
   <data name="Password" xml:space="preserve">
     <value>کلمه عبور</value>
+  </data>
+  <data name="Sex" xml:space="preserve">
+    <value>جنسیت</value>
+  </data>
+  <data name="Telegram" xml:space="preserve">
+    <value>تلگرام</value>
+  </data>
+  <data name="Twitter" xml:space="preserve">
+    <value>تویئتر</value>
   </data>
 </root>

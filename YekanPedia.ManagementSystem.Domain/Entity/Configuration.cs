@@ -8,12 +8,8 @@
     {
         [Key]
         public int ConfigurationId { get; set; }
-
-        [MaxLength(150)]
-        public string AvatarUrl { get; set; }
-
-        public bool SendEmail { get; set; }
-
-        public bool SendSMS { get; set; }
+        public string Key { get; set; }
+        public string KeyFa { get; set; }
+        public bool IsActive { get; set; }
     }
 }

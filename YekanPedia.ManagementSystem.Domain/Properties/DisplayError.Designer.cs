@@ -61,7 +61,7 @@ namespace YekanPedia.ManagementSystem.Domain.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to لطفا پست الکترونیک را به طور صحیح وارد نمایید.
         /// </summary>
         public static string Email {
             get {
@@ -70,7 +70,7 @@ namespace YekanPedia.ManagementSystem.Domain.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to لطفا فقط عدد وارد نمایید.
         /// </summary>
         public static string Int {
             get {
@@ -79,7 +79,7 @@ namespace YekanPedia.ManagementSystem.Domain.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to sdf.
+        ///   Looks up a localized string similar to لطفا بیشتر از {1} کاراکتر وارد ننمایید.
         /// </summary>
         public static string MaxLength {
             get {
@@ -88,7 +88,7 @@ namespace YekanPedia.ManagementSystem.Domain.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to لطفا کمتر از {1} کاراکتر وارد ننمایید.
         /// </summary>
         public static string MinLength {
             get {
@@ -97,7 +97,7 @@ namespace YekanPedia.ManagementSystem.Domain.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to لطفا شماره همراه را صحیح وارد نمایید.
         /// </summary>
         public static string MobileError {
             get {
@@ -106,7 +106,7 @@ namespace YekanPedia.ManagementSystem.Domain.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to این فیلد اجباری می باشد.
         /// </summary>
         public static string Required {
             get {

@@ -22,10 +22,13 @@
         {
             if (ModelState.IsValid)
             {
-                return Json(_userService.AddUser(model));
+                var result = _userService.AddUser(model);
+                if (result.IsSuccessfull)
+                    result.Message = Url.Action(MVC.Dashboard.ActionNames.Index, controllerName: MVC.Dashboard.Name);
+                return Json(result);
             }
             _actionResult.IsSuccessfull = false;
-            _actionResult.Message = "";
+            _actionResult.Message = this.GetErrorsModelState();
             return Json(_actionResult);
         }
     }

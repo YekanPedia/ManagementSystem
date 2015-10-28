@@ -23,7 +23,6 @@
         [Column(TypeName = "char")]
         [MaxLength(10, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
         [StringLength(10, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
-
         [PersianDate]
         public string BirthDate { get; set; }
 
@@ -33,7 +32,7 @@
 
         [Display(ResourceType = typeof(DisplayNames), Name = nameof(Email))]
         [MaxLength(100, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
-        [StringLength(15, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
+        [StringLength(100, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
         [Required(ErrorMessageResourceName = nameof(DisplayError.Required), ErrorMessageResourceType = typeof(DisplayError))]
         [Column(TypeName = "varchar")]
         [RegularExpression(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*", ErrorMessageResourceName = "Email", ErrorMessageResourceType = typeof(DisplayError))]
@@ -49,7 +48,6 @@
 
         [Display(ResourceType = typeof(DisplayNames), Name = nameof(IsActive))]
         [Required(ErrorMessageResourceName = nameof(DisplayError.Required), ErrorMessageResourceType = typeof(DisplayError))]
-        [RegularExpression(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*", ErrorMessageResourceName = "Email", ErrorMessageResourceType = typeof(DisplayError))]
         public bool IsActive { get; set; }
 
         public DateTime RegisterDate { get; set; }
@@ -64,6 +62,7 @@
         [StringLength(11, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
         [RegularExpression(@"^09[1-4]\d{8}$", ErrorMessageResourceName = nameof(DisplayError.MobileError), ErrorMessageResourceType = typeof(DisplayError))]
         [MinLength(11, ErrorMessageResourceName = nameof(DisplayError.MinLength), ErrorMessageResourceType = typeof(DisplayError))]
+        [Required(ErrorMessageResourceName = nameof(DisplayError.Required), ErrorMessageResourceType = typeof(DisplayError))]
         [Column(TypeName = "char")]
         public string Mobile { get; set; }
 
@@ -83,16 +82,19 @@
         [Column(TypeName = "varchar")]
         public string Picture { get; set; }
 
+        [Display(ResourceType = typeof(DisplayNames), Name = nameof(Twitter))]
         [MaxLength(90, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
         [StringLength(90, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
         [Column(TypeName = "varchar")]
         public string Twitter { get; set; }
 
+        [Display(ResourceType = typeof(DisplayNames), Name = nameof(Facebook))]
         [MaxLength(90, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
         [StringLength(90, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
         [Column(TypeName = "varchar")]
         public string Facebook { get; set; }
 
+        [Display(ResourceType = typeof(DisplayNames), Name = nameof(Telegram))]
         [ScaffoldColumn(false)]
         [MaxLength(15, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
         [StringLength(15, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]

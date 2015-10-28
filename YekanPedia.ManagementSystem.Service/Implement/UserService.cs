@@ -21,7 +21,8 @@
         #endregion
         public IServiceResult<int> AddUser(User model)
         {
-            model.IsActive = false;
+            model.IsActive = true;
+            model.RegisterDate = DateTime.Now;
             model.LastLoginDate = DateTime.Now;
             _user.Add(model);
             _uow.SaveChanges();

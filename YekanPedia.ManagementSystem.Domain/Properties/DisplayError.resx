@@ -118,21 +118,21 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Email" xml:space="preserve">
-    <value />
+    <value>لطفا پست الکترونیک را به طور صحیح وارد نمایید</value>
   </data>
   <data name="Int" xml:space="preserve">
-    <value />
+    <value>لطفا فقط عدد وارد نمایید</value>
   </data>
   <data name="MaxLength" xml:space="preserve">
-    <value>sdf</value>
+    <value>لطفا بیشتر از {1} کاراکتر وارد ننمایید</value>
   </data>
   <data name="MinLength" xml:space="preserve">
-    <value />
+    <value>لطفا کمتر از {1} کاراکتر وارد ننمایید</value>
   </data>
   <data name="MobileError" xml:space="preserve">
-    <value />
+    <value>لطفا شماره همراه را صحیح وارد نمایید</value>
   </data>
   <data name="Required" xml:space="preserve">
-    <value />
+    <value>این فیلد اجباری می باشد</value>
   </data>
 </root>

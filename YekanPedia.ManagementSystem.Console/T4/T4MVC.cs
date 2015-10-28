@@ -28,6 +28,7 @@ using T4MVC;
 public static partial class MVC
 {
     public static YekanPedia.ManagementSystem.Console.Controllers.AccountController Account = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_AccountController();
+    public static YekanPedia.ManagementSystem.Console.Controllers.DashboardController Dashboard = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_DashboardController();
     public static YekanPedia.ManagementSystem.Console.Controllers.OAuthController OAuth = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_OAuthController();
     public static T4MVC.SharedController Shared = new T4MVC.SharedController();
 }
@@ -60,6 +61,21 @@ internal partial class T4MVC_System_Web_Mvc_JsonResult : System.Web.Mvc.JsonResu
     public RouteValueDictionary RouteValueDictionary { get; set; }
 }
 [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+internal partial class T4MVC_System_Web_Mvc_ActionResult : System.Web.Mvc.ActionResult, IT4MVCActionResult
+{
+    public T4MVC_System_Web_Mvc_ActionResult(string area, string controller, string action, string protocol = null): base()
+    {
+        this.InitMVCT4Result(area, controller, action, protocol);
+    }
+     
+    public override void ExecuteResult(System.Web.Mvc.ControllerContext context) { }
+    
+    public string Controller { get; set; }
+    public string Action { get; set; }
+    public string Protocol { get; set; }
+    public RouteValueDictionary RouteValueDictionary { get; set; }
+}
+[GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
 internal partial class T4MVC_System_Web_Mvc_ViewResult : System.Web.Mvc.ViewResult, IT4MVCActionResult
 {
     public T4MVC_System_Web_Mvc_ViewResult(string area, string controller, string action, string protocol = null): base()
@@ -83,6 +99,14 @@ namespace Links
         public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
         public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public static class Application {
+            private const string URLPATH = "~/Scripts/Application";
+            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+            public static readonly string OAuthController_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/OAuthController.min.js") ? Url("OAuthController.min.js") : Url("OAuthController.js");
+        }
+    
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public static class Bootstrap {
             private const string URLPATH = "~/Scripts/Bootstrap";
             public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
@@ -96,6 +120,14 @@ namespace Links
             private const string URLPATH = "~/Scripts/JQuery";
             public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
             public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class Ajax {
+                private const string URLPATH = "~/Scripts/JQuery/Ajax";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                public static readonly string jquery_unobtrusive_ajax_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.unobtrusive-ajax.min.js") ? Url("jquery.unobtrusive-ajax.min.js") : Url("jquery.unobtrusive-ajax.js");
+            }
+        
             public static readonly string jquery_1_10_2_min_js = Url("jquery-1.10.2.min.js");
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
             public static class LightGallery {
@@ -301,6 +333,13 @@ namespace Links
     {
         public static partial class Scripts 
         {
+            public static partial class Application 
+            {
+                public static class Assets
+                {
+                    public const string OAuthController_js = "~/Scripts/Application/OAuthController.js"; 
+                }
+            }
             public static partial class Bootstrap 
             {
                 public static class Assets
@@ -310,6 +349,13 @@ namespace Links
             }
             public static partial class JQuery 
             {
+                public static partial class Ajax 
+                {
+                    public static class Assets
+                    {
+                        public const string jquery_unobtrusive_ajax_js = "~/Scripts/JQuery/Ajax/jquery.unobtrusive-ajax.js"; 
+                    }
+                }
                 public static partial class LightGallery 
                 {
                     public static class Assets
