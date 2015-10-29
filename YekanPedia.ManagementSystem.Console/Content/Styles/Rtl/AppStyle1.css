@@ -473,3 +473,8 @@ html > body .top-menu > li > a.tm-chat {
         background-color: #F6F9FE;
         color: #484646;
     }
+
+.profile-menu > a {
+    background: url(/Content/Images/Background/profile-menu.png) no-repeat left top;
+        background-size: 100%;
+}

@@ -21,14 +21,15 @@
             _user = uow.Set<User>();
         }
         #endregion
-        public IServiceResult<int> AddUser(User model)
+        public IServiceResult<Guid> AddUser(User model)
         {
+            model.UserId = Guid.NewGuid();
             model.IsActive = true;
             model.RegisterDate = DateTime.Now;
             model.LastLoginDate = DateTime.Now;
             _user.Add(model);
             _uow.SaveChanges();
-            return new ServiceResult<int>() { IsSuccessfull = true, Message = "", Result = model.UserId };
+            return new ServiceResult<Guid>() { IsSuccessfull = true, Message = "", Result = model.UserId };
         }
 
         public IServiceResult<bool> CheckEmailExist(string email)

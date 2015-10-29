@@ -85,6 +85,7 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         public class ActionNamesClass
         {
             public readonly string Register = "Register";
+            public readonly string Profile = "Profile";
             public readonly string EmailChecker = "EmailChecker";
         }
 
@@ -92,6 +93,7 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         public class ActionNameConstants
         {
             public const string Register = "Register";
+            public const string Profile = "Profile";
             public const string EmailChecker = "EmailChecker";
         }
 
@@ -155,6 +157,17 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.Register);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
             RegisterOverride(callInfo, model);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void ProfileOverride(T4MVC_System_Web_Mvc_ViewResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ViewResult Profile()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ViewResult(Area, Name, ActionNames.Profile);
+            ProfileOverride(callInfo);
             return callInfo;
         }
 

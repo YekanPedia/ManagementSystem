@@ -61,6 +61,19 @@ internal partial class T4MVC_System_Web_Mvc_JsonResult : System.Web.Mvc.JsonResu
     public RouteValueDictionary RouteValueDictionary { get; set; }
 }
 [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+internal partial class T4MVC_System_Web_Mvc_ViewResult : System.Web.Mvc.ViewResult, IT4MVCActionResult
+{
+    public T4MVC_System_Web_Mvc_ViewResult(string area, string controller, string action, string protocol = null): base()
+    {
+        this.InitMVCT4Result(area, controller, action, protocol);
+    }
+    
+    public string Controller { get; set; }
+    public string Action { get; set; }
+    public string Protocol { get; set; }
+    public RouteValueDictionary RouteValueDictionary { get; set; }
+}
+[GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
 internal partial class T4MVC_System_Web_Mvc_ActionResult : System.Web.Mvc.ActionResult, IT4MVCActionResult
 {
     public T4MVC_System_Web_Mvc_ActionResult(string area, string controller, string action, string protocol = null): base()
@@ -76,9 +89,9 @@ internal partial class T4MVC_System_Web_Mvc_ActionResult : System.Web.Mvc.Action
     public RouteValueDictionary RouteValueDictionary { get; set; }
 }
 [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-internal partial class T4MVC_System_Web_Mvc_ViewResult : System.Web.Mvc.ViewResult, IT4MVCActionResult
+internal partial class T4MVC_System_Web_Mvc_PartialViewResult : System.Web.Mvc.PartialViewResult, IT4MVCActionResult
 {
-    public T4MVC_System_Web_Mvc_ViewResult(string area, string controller, string action, string protocol = null): base()
+    public T4MVC_System_Web_Mvc_PartialViewResult(string area, string controller, string action, string protocol = null): base()
     {
         this.InitMVCT4Result(area, controller, action, protocol);
     }
@@ -196,43 +209,6 @@ namespace Links
         private const string URLPATH = "~/Content";
         public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
         public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public static class Fonts {
-            private const string URLPATH = "~/Content/Fonts";
-            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
-            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
-            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-            public static class BYekan {
-                private const string URLPATH = "~/Content/Fonts/BYekan";
-                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
-                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
-                public static readonly string BYekan_ttf = Url("BYekan.ttf");
-            }
-        
-            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-            public static class MaterialDesignIconic {
-                private const string URLPATH = "~/Content/Fonts/MaterialDesignIconic";
-                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
-                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
-                public static readonly string MaterialDesignIconicFont_ttf = Url("MaterialDesignIconicFont.ttf");
-                public static readonly string MaterialDesignIconicFont_woff = Url("MaterialDesignIconicFont.woff");
-            }
-        
-            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-            public static class Roboto {
-                private const string URLPATH = "~/Content/Fonts/Roboto";
-                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
-                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
-                public static readonly string Roboto_Medium_webfont_eot = Url("Roboto-Medium-webfont.eot");
-                public static readonly string Roboto_Medium_webfont_ttf = Url("Roboto-Medium-webfont.ttf");
-                public static readonly string Roboto_Medium_webfont_woff = Url("Roboto-Medium-webfont.woff");
-                public static readonly string Roboto_Regular_webfont_eot = Url("Roboto-Regular-webfont.eot");
-                public static readonly string Roboto_Regular_webfont_ttf = Url("Roboto-Regular-webfont.ttf");
-                public static readonly string Roboto_Regular_webfont_woff = Url("Roboto-Regular-webfont.woff");
-            }
-        
-        }
-    
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public static class Images {
             private const string URLPATH = "~/Content/Images";
@@ -427,30 +403,6 @@ namespace Links
         }
         public static partial class Content 
         {
-            public static partial class Fonts 
-            {
-                public static partial class BYekan 
-                {
-                    public static class Assets
-                    {
-                    }
-                }
-                public static partial class MaterialDesignIconic 
-                {
-                    public static class Assets
-                    {
-                    }
-                }
-                public static partial class Roboto 
-                {
-                    public static class Assets
-                    {
-                    }
-                }
-                public static class Assets
-                {
-                }
-            }
             public static partial class Images 
             {
                 public static partial class Avatar 

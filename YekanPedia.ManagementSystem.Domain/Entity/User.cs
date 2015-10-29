@@ -7,17 +7,37 @@
     using Properties;
     using InfraStructure.Validation;
 
-    [Table("User", Schema = "dbo")]
-    public class User
+    public class BaseUser
     {
+
         [Key]
-        public int UserId { get; set; }
+        public Guid UserId { get; set; }
 
         [Display(ResourceType = typeof(DisplayNames), Name = nameof(FullName))]
         [MaxLength(45, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
         [StringLength(45, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
         [Required(ErrorMessageResourceName = nameof(DisplayError.Required), ErrorMessageResourceType = typeof(DisplayError))]
         public string FullName { get; set; }
+
+        [Display(ResourceType = typeof(DisplayNames), Name = nameof(Email))]
+        [MaxLength(100, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
+        [StringLength(100, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
+        [Required(ErrorMessageResourceName = nameof(DisplayError.Required), ErrorMessageResourceType = typeof(DisplayError))]
+        [Column(TypeName = "varchar")]
+        [RegularExpression(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*", ErrorMessageResourceName = "Email", ErrorMessageResourceType = typeof(DisplayError))]
+        public string Email { get; set; }
+
+        [Required(ErrorMessageResourceName = nameof(DisplayError.Required), ErrorMessageResourceType = typeof(DisplayError))]
+        [MaxLength(150, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
+        [StringLength(150, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
+        [Column(TypeName = "varchar")]
+        public string Picture { get; set; }
+
+    }
+
+    [Table("User", Schema = "dbo")]
+    public class User : BaseUser
+    {
 
         [Display(ResourceType = typeof(DisplayNames), Name = nameof(BirthDate))]
         [Column(TypeName = "char")]
@@ -29,14 +49,6 @@
         [Display(ResourceType = typeof(DisplayNames), Name = nameof(Sex))]
         [MaxLength(3, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
         public string Sex { get; set; }
-
-        [Display(ResourceType = typeof(DisplayNames), Name = nameof(Email))]
-        [MaxLength(100, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
-        [StringLength(100, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
-        [Required(ErrorMessageResourceName = nameof(DisplayError.Required), ErrorMessageResourceType = typeof(DisplayError))]
-        [Column(TypeName = "varchar")]
-        [RegularExpression(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*", ErrorMessageResourceName = "Email", ErrorMessageResourceType = typeof(DisplayError))]
-        public string Email { get; set; }
 
         [Display(ResourceType = typeof(DisplayNames), Name = nameof(Password))]
         [MaxLength(15, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
@@ -76,12 +88,6 @@
         [StringLength(20, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
         public string Longitude { get; set; }
 
-        [Required(ErrorMessageResourceName = nameof(DisplayError.Required), ErrorMessageResourceType = typeof(DisplayError))]
-        [MaxLength(150, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
-        [StringLength(150, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
-        [Column(TypeName = "varchar")]
-        public string Picture { get; set; }
-
         [Display(ResourceType = typeof(DisplayNames), Name = nameof(Twitter))]
         [MaxLength(90, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
         [StringLength(90, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
@@ -113,4 +119,6 @@
         public virtual ICollection<UserInClass> UserInClass { get; set; }
         public virtual ICollection<Class> Class { get; set; }
     }
+
+
 }

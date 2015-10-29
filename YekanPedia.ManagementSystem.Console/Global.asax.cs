@@ -6,8 +6,13 @@
     using DependencyResolver;
     using ControllerFactory;
     using System;
+    using System.Web;
+    using System.Web.Security;
+    using System.Web.Script.Serialization;
+    using Domain.Entity;
+    using Extensions.Authentication;
 
-    public class MvcApplication : System.Web.HttpApplication
+    public class MvcApplication : HttpApplication
     {
         protected void Application_Start()
         {
@@ -25,6 +30,26 @@
         protected void Application_EndRequest(object sender, EventArgs e)
         {
             IocInitializer.HttpContextDisposeAndClearAll();
+        }
+
+        protected void Application_PostAuthenticateRequest(Object sender, EventArgs e)
+        {
+            HttpCookie authCookie = Request.Cookies[FormsAuthentication.FormsCookieName];
+            if (authCookie != null)
+            {
+                FormsAuthenticationTicket authTicket = FormsAuthentication.Decrypt(authCookie.Value);
+                JavaScriptSerializer serializer = new JavaScriptSerializer();
+                if (authTicket.UserData == "OAuth") return;
+
+                var serializeModel = serializer.Deserialize<BaseUser>(authTicket.UserData);
+                var user = new CurrentUserPrincipal(authTicket.Name);
+                user.UserId = serializeModel.UserId;
+                user.FullName = serializeModel.FullName;
+                user.Email = serializeModel.Email;
+                user.Picture = serializeModel.Picture;
+
+                HttpContext.Current.User = user;
+            }
         }
     }
 }

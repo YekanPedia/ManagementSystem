@@ -28,9 +28,6 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
     public partial class OAuthController
     {
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public OAuthController() { }
-
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         protected OAuthController(Dummy d) { }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -85,6 +82,14 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         }
 
 
+        static readonly ActionParamsClass_SignIn s_params_SignIn = new ActionParamsClass_SignIn();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_SignIn SignInParams { get { return s_params_SignIn; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_SignIn
+        {
+            public readonly string model = "model";
+        }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ViewsClass Views { get { return s_views; } }
@@ -129,6 +134,18 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         {
             var callInfo = new T4MVC_System_Web_Mvc_ViewResult(Area, Name, ActionNames.SignIn);
             SignInOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void SignInOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, YekanPedia.ManagementSystem.Domain.Entity.User model);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult SignIn(YekanPedia.ManagementSystem.Domain.Entity.User model)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.SignIn);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
+            SignInOverride(callInfo, model);
             return callInfo;
         }
 

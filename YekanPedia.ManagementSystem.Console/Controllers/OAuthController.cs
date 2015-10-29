@@ -6,6 +6,7 @@
     using System.Web.Security;
     using System;
     using System.Web;
+    using System.Web.Script.Serialization;
 
     public partial class OAuthController : Controller
     {
@@ -17,13 +18,13 @@
         }
         #endregion
 
-        [HttpGet]
+        [HttpGet, AllowAnonymous]
         public virtual ViewResult SignIn()
         {
             return View();
         }
 
-        [HttpPost,ValidateAntiForgeryToken]
+        [HttpPost, ValidateAntiForgeryToken, AllowAnonymous]
         public virtual ActionResult SignIn(User model)
         {
             var login = _userServie.CheckUserExist(model.Email, model.Password);
@@ -35,12 +36,21 @@
                 ModelState.AddModelError(nameof(model.Password), login.Message);
                 return View(model);
             }
+            var serializeModel = new BaseUser();
 
-            FormsAuthenticationTicket authTicket = new FormsAuthenticationTicket(1, login.Result.Email, DateTime.Now, DateTime.Now.AddHours(8), false, login.Result.Email);
+            serializeModel.FullName = login.Result.FullName;
+            serializeModel.Email = login.Result.Email;
+            serializeModel.UserId = login.Result.UserId;
+            serializeModel.Picture = login.Result.Picture;
+
+            JavaScriptSerializer serializer = new JavaScriptSerializer();
+            string userData = serializer.Serialize(serializeModel);
+
+            FormsAuthenticationTicket authTicket = new FormsAuthenticationTicket(1, login.Result.Email, DateTime.Now, DateTime.Now.AddHours(8), false, userData);
             string encTicket = FormsAuthentication.Encrypt(authTicket);
             HttpCookie faCookie = new HttpCookie(FormsAuthentication.FormsCookieName, encTicket);
             Response.Cookies.Add(faCookie);
-            return RedirectToAction(MVC.Dashboard.ActionNames.Index, MVC.Dashboard.Name);
+            return RedirectToAction(MVC.Dashboard.ActionNames.User, MVC.Dashboard.Name);
         }
     }
 }

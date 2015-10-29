@@ -175,6 +175,8 @@
     <Compile Include="ControllerFactory\IocControllerFactory.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\Poco\ErrorModelStateController.cs" />
+    <Compile Include="Extensions\Authentication\CurrentUserPrincipal.cs" />
+    <Compile Include="Extensions\Authentication\ICurrentUserPrincipal.cs" />
     <Compile Include="Extensions\Optimization\AsIsBundleOrderer.cs" />
     <Compile Include="Extensions\Optimization\ScriptBundleOrderer.cs" />
     <Compile Include="Extensions\Optimization\StyleBundleOrderer.cs" />
@@ -293,10 +295,14 @@
     <Content Include="Views\OAuth\Partial\_RecovertyPassword.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Account\Partial\_RegisterationComplete.cshtml" />
+    <Content Include="Views\Dashboard\User.cshtml" />
+    <Content Include="Views\Dashboard\Partial\Message.cshtml" />
+    <Content Include="Views\Dashboard\Partial\Notification.cshtml" />
+    <Content Include="Views\Dashboard\Partial\Task.cshtml" />
+    <Content Include="Views\Dashboard\Admin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Dashboard\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

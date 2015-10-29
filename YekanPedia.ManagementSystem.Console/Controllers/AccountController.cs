@@ -18,7 +18,7 @@
         }
         #endregion
 
-        [HttpPost, ValidateAntiForgeryToken]
+        [HttpPost, ValidateAntiForgeryToken, AllowAnonymous]
         public virtual JsonResult Register(User model)
         {
             #region Check Email Exist
@@ -38,9 +38,17 @@
 
             var result = _userService.AddUser(model);
             if (result.IsSuccessfull)
-                result.Message = Url.Action(MVC.Dashboard.ActionNames.Index, controllerName: MVC.Dashboard.Name);
+                result.Message = Url.Action(MVC.Dashboard.ActionNames.User, controllerName: MVC.Dashboard.Name);
             return Json(result);
         }
+
+        #region Profile
+        public virtual ViewResult Profile()
+        {
+            return View();
+        }
+        #endregion
+
 
         [HttpPost, OutputCache(NoStore = true, Location = OutputCacheLocation.None), ValidateAntiForgeryToken]
         public virtual JsonResult EmailChecker(string email)

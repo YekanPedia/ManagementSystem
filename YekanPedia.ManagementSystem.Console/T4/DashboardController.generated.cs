@@ -75,13 +75,21 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNamesClass
         {
-            public readonly string Index = "Index";
+            public readonly string User = "User";
+            public readonly string Admin = "Admin";
+            public readonly string Messages = "Messages";
+            public readonly string Notification = "Notification";
+            public readonly string Tasks = "Tasks";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants
         {
-            public const string Index = "Index";
+            public const string User = "User";
+            public const string Admin = "Admin";
+            public const string Messages = "Messages";
+            public const string Notification = "Notification";
+            public const string Tasks = "Tasks";
         }
 
 
@@ -95,6 +103,27 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
+                public readonly string Admin = "Admin";
+                public readonly string User = "User";
+            }
+            public readonly string Admin = "~/Views/Dashboard/Admin.cshtml";
+            public readonly string User = "~/Views/Dashboard/User.cshtml";
+            static readonly _PartialClass s_Partial = new _PartialClass();
+            public _PartialClass Partial { get { return s_Partial; } }
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public partial class _PartialClass
+            {
+                static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                public class _ViewNamesClass
+                {
+                    public readonly string Message = "Message";
+                    public readonly string Notification = "Notification";
+                    public readonly string Task = "Task";
+                }
+                public readonly string Message = "~/Views/Dashboard/Partial/Message.cshtml";
+                public readonly string Notification = "~/Views/Dashboard/Partial/Notification.cshtml";
+                public readonly string Task = "~/Views/Dashboard/Partial/Task.cshtml";
             }
         }
     }
@@ -105,13 +134,57 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         public T4MVC_DashboardController() : base(Dummy.Instance) { }
 
         [NonAction]
-        partial void IndexOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+        partial void UserOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult Index()
+        public override System.Web.Mvc.ActionResult User()
         {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Index);
-            IndexOverride(callInfo);
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.User);
+            UserOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void AdminOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult Admin()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Admin);
+            AdminOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void MessagesOverride(T4MVC_System_Web_Mvc_PartialViewResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.PartialViewResult Messages()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_PartialViewResult(Area, Name, ActionNames.Messages);
+            MessagesOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void NotificationOverride(T4MVC_System_Web_Mvc_PartialViewResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.PartialViewResult Notification()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_PartialViewResult(Area, Name, ActionNames.Notification);
+            NotificationOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void TasksOverride(T4MVC_System_Web_Mvc_PartialViewResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.PartialViewResult Tasks()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_PartialViewResult(Area, Name, ActionNames.Tasks);
+            TasksOverride(callInfo);
             return callInfo;
         }
 
