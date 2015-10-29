@@ -18,6 +18,7 @@
         }
         #endregion
 
+        #region SignIn
         [HttpGet, AllowAnonymous]
         public virtual ViewResult SignIn()
         {
@@ -36,6 +37,7 @@
                 ModelState.AddModelError(nameof(model.Password), login.Message);
                 return View(model);
             }
+
             var serializeModel = new BaseUser();
 
             serializeModel.FullName = login.Result.FullName;
@@ -51,6 +53,16 @@
             HttpCookie faCookie = new HttpCookie(FormsAuthentication.FormsCookieName, encTicket);
             Response.Cookies.Add(faCookie);
             return RedirectToAction(MVC.Dashboard.ActionNames.User, MVC.Dashboard.Name);
+        }
+        #endregion
+
+        [HttpGet, AllowAnonymous]
+        public virtual RedirectToRouteResult SignOut()
+        {
+            Response.Cookies.Clear();
+            FormsAuthentication.SignOut();
+            Session.Clear();
+            return RedirectToAction(MVC.OAuth.ActionNames.SignIn, MVC.OAuth.Name);
         }
     }
 }

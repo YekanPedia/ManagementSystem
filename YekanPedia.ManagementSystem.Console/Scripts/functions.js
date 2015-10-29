@@ -770,3 +770,5 @@ function HideError(el) {
     parent.removeClass('has-error');
     parent.find('.help-block span').html('');
 }
+
+$(".form-control").keyup(function () { return false });

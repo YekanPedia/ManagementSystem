@@ -20,6 +20,8 @@
             _uow = uow;
             _user = uow.Set<User>();
         }
+
+
         #endregion
         public IServiceResult<Guid> AddUser(User model)
         {
@@ -64,6 +66,7 @@
                     Result = null
                 };
             }
+            AddLoginDate(result);
             return new ServiceResult<User>()
             {
                 IsSuccessfull = true,
@@ -71,6 +74,23 @@
                 Result = result
             };
 
+        }
+
+        public void AddLoginDate(Guid userId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void AddLoginDate(User model)
+        {
+            try
+            {
+                model.LastLoginDate = DateTime.Now;
+                _uow.SaveChanges();
+            }
+            catch (Exception)
+            {
+            }
         }
     }
 }

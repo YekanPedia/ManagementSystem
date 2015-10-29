@@ -9,5 +9,7 @@
         IServiceResult<Guid> AddUser(User model);
         IServiceResult<bool> CheckEmailExist(string email);
         IServiceResult<User> CheckUserExist(string email, string password);
+        void AddLoginDate(User model);
+        void AddLoginDate(Guid userId);
     }
 }

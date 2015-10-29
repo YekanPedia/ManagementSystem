@@ -73,12 +73,14 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         public class ActionNamesClass
         {
             public readonly string SignIn = "SignIn";
+            public readonly string SignOut = "SignOut";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants
         {
             public const string SignIn = "SignIn";
+            public const string SignOut = "SignOut";
         }
 
 
@@ -146,6 +148,17 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.SignIn);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
             SignInOverride(callInfo, model);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void SignOutOverride(T4MVC_System_Web_Mvc_RedirectToRouteResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.RedirectToRouteResult SignOut()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_RedirectToRouteResult(Area, Name, ActionNames.SignOut);
+            SignOutOverride(callInfo);
             return callInfo;
         }
 
