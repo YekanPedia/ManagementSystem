@@ -24,9 +24,9 @@
             /// <summary>
             /// باندل تمامیه استایل ها
             /// </summary>
-            public static readonly string ContentCss = "~/Content/Styles/Ltr";
-            public static readonly string ContentRtlCss = "~/Content/Styles/Rtl";
-            public static readonly string PublicCss = "~/Content/Styles/Public";
+            public static readonly string ContentCss = "~/Content/Ltr";
+            public static readonly string ContentRtlCss = "~/Content/Rtl";
+            public static readonly string PublicCss = "~/Content/Public";
         }
     }
 }

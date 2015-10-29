@@ -4,6 +4,7 @@
     using Domain.Entity;
     using Service.Interfaces;
     using InfraStructure;
+    using System.Web.UI;
 
     public partial class AccountController : Controller
     {
@@ -17,19 +18,34 @@
         }
         #endregion
 
-        [HttpPost]
+        [HttpPost, ValidateAntiForgeryToken]
         public virtual JsonResult Register(User model)
         {
-            if (ModelState.IsValid)
+            #region Check Email Exist
+            var emailChecker = _userService.CheckEmailExist(model.Email);
+            if (emailChecker.Result)
             {
-                var result = _userService.AddUser(model);
-                if (result.IsSuccessfull)
-                    result.Message = Url.Action(MVC.Dashboard.ActionNames.Index, controllerName: MVC.Dashboard.Name);
-                return Json(result);
+                ModelState.AddModelError(nameof(model.Email), emailChecker.Message);
             }
-            _actionResult.IsSuccessfull = false;
-            _actionResult.Message = this.GetErrorsModelState();
-            return Json(_actionResult);
+            #endregion
+
+            if (!ModelState.IsValid)
+            {
+                _actionResult.IsSuccessfull = false;
+                _actionResult.Message = this.GetErrorsModelState();
+                return Json(_actionResult);
+            }
+
+            var result = _userService.AddUser(model);
+            if (result.IsSuccessfull)
+                result.Message = Url.Action(MVC.Dashboard.ActionNames.Index, controllerName: MVC.Dashboard.Name);
+            return Json(result);
+        }
+
+        [HttpPost, OutputCache(NoStore = true, Location = OutputCacheLocation.None), ValidateAntiForgeryToken]
+        public virtual JsonResult EmailChecker(string email)
+        {
+            return Json(_userService.CheckEmailExist(email));
         }
     }
 }

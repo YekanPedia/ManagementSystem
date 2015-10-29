@@ -42,6 +42,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,6 +52,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Properties\BusinessMessage.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BusinessMessage.resx</DependentUpon>
+    </Compile>
     <Compile Include="Implement\UserService.cs" />
     <Compile Include="Interfaces\IConfigurationService.cs" />
     <Compile Include="Interfaces\IUserService.cs" />
@@ -73,7 +80,12 @@
       <Name>YekanPedia.ManagementSystem.InfraStructure</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\BusinessMessage.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>BusinessMessage.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

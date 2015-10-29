@@ -758,9 +758,15 @@ $(document).ready(function () {
 /*
 * Validation add error add this method to validation.js
 */
-var ShowError = function (el) {
-    $(el).parent().parent().addClass('has-error');
+function ShowError(el, txt) {
+    var parent = $(el).parent().parent();
+    parent.addClass('has-error');
+    if (txt != "") {
+        parent.find('.help-block span').html(txt);
+    }
 }
-var HideError = function (el) {
-    $(el).parent().parent().removeClass('has-error');
+function HideError(el) {
+    var parent = $(el).parent().parent();
+    parent.removeClass('has-error');
+    parent.find('.help-block span').html('');
 }

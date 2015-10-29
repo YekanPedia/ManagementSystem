@@ -12,5 +12,10 @@
         {
             base.Orderer = new AsIsBundleOrderer();
         }
+        public StyleBundleOrderer(string virtualPath, params IBundleTransform[] transforms)
+            : base(virtualPath, transforms)
+        {
+            base.Orderer = new AsIsBundleOrderer();
+        }
     }
 }

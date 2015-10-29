@@ -154,6 +154,14 @@ namespace Links
             }
         
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class Phoenix {
+                private const string URLPATH = "~/Scripts/JQuery/Phoenix";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                public static readonly string Phoenix_core_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Phoenix.core.min.js") ? Url("Phoenix.core.min.js") : Url("Phoenix.core.js");
+            }
+        
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
             public static class Type {
                 private const string URLPATH = "~/Scripts/JQuery/Type";
                 public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
@@ -375,6 +383,13 @@ namespace Links
                     public static class Assets
                     {
                         public const string PasswordStrongly_js = "~/Scripts/JQuery/PasswordStrongly/PasswordStrongly.js"; 
+                    }
+                }
+                public static partial class Phoenix 
+                {
+                    public static class Assets
+                    {
+                        public const string Phoenix_core_js = "~/Scripts/JQuery/Phoenix/Phoenix.core.js"; 
                     }
                 }
                 public static partial class Type 

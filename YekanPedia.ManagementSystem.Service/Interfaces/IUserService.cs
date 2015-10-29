@@ -7,7 +7,7 @@
     public interface IUserService
     {
         IServiceResult<int> AddUser(User model);
-        void ChangeUserState(int userId, bool state = true);
-        IEnumerable<User> GetUserList();
+        IServiceResult<bool> CheckEmailExist(string email);
+        IServiceResult<User> CheckUserExist(string email, string password);
     }
 }

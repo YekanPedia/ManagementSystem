@@ -12,6 +12,12 @@
         {
             base.Orderer = new AsIsBundleOrderer();
         }
+
+        public ScriptBundleOrderer(string virtualPath,params IBundleTransform[] transforms)
+           : base(virtualPath, transforms)
+        {
+            base.Orderer = new AsIsBundleOrderer();
+        }
     }
 
 }

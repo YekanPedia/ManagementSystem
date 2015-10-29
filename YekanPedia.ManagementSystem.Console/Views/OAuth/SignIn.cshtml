@@ -15,12 +15,14 @@
     @Styles.Render(Links.Bundles.Styles.ContentCss)
     <!-- Rtl CSS -->
     @Styles.Render(Links.Bundles.Styles.ContentRtlCss)
+  
 </head>
 <body class="login-content">
     <!-- Login -->
     @{ Html.RenderPartial(MVC.OAuth.Views.Partial._Login);}
     <!-- Register -->
     @{ Html.RenderPartial(MVC.Account.Views.Partial._Register);}
+    @{ Html.RenderPartial(MVC.Account.Views.Partial._RegisterationComplete);}
     <!-- Forgot Password -->
     @{ Html.RenderPartial(MVC.OAuth.Views.Partial._RecovertyPassword);}
 

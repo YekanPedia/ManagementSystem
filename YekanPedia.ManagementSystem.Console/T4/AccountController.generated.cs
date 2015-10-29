@@ -62,6 +62,12 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         {
             return new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.Register);
         }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.JsonResult EmailChecker()
+        {
+            return new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.EmailChecker);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public AccountController Actions { get { return MVC.Account; } }
@@ -79,12 +85,14 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         public class ActionNamesClass
         {
             public readonly string Register = "Register";
+            public readonly string EmailChecker = "EmailChecker";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants
         {
             public const string Register = "Register";
+            public const string EmailChecker = "EmailChecker";
         }
 
 
@@ -95,6 +103,14 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         public class ActionParamsClass_Register
         {
             public readonly string model = "model";
+        }
+        static readonly ActionParamsClass_EmailChecker s_params_EmailChecker = new ActionParamsClass_EmailChecker();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_EmailChecker EmailCheckerParams { get { return s_params_EmailChecker; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_EmailChecker
+        {
+            public readonly string email = "email";
         }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -117,8 +133,10 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
                 public class _ViewNamesClass
                 {
                     public readonly string _Register = "_Register";
+                    public readonly string _RegisterationComplete = "_RegisterationComplete";
                 }
                 public readonly string _Register = "~/Views/Account/Partial/_Register.cshtml";
+                public readonly string _RegisterationComplete = "~/Views/Account/Partial/_RegisterationComplete.cshtml";
             }
         }
     }
@@ -137,6 +155,18 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.Register);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
             RegisterOverride(callInfo, model);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void EmailCheckerOverride(T4MVC_System_Web_Mvc_JsonResult callInfo, string email);
+
+        [NonAction]
+        public override System.Web.Mvc.JsonResult EmailChecker(string email)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.EmailChecker);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "email", email);
+            EmailCheckerOverride(callInfo, email);
             return callInfo;
         }
 

@@ -7,6 +7,8 @@
     using Data.Conext;
     using System.Data.Entity;
     using InfraStructure;
+    using System.Linq;
+    using Properties;
 
     public class UserService : IUserService
     {
@@ -29,16 +31,45 @@
             return new ServiceResult<int>() { IsSuccessfull = true, Message = "", Result = model.UserId };
         }
 
-        public void ChangeUserState(int userId, bool state = true)
+        public IServiceResult<bool> CheckEmailExist(string email)
         {
-
+            var result = _user.Count(X => X.Email.Trim() == email);
+            if (result != 0)
+            {
+                return new ServiceResult<bool>()
+                {
+                    IsSuccessfull = true,
+                    Message = BusinessMessage.EmailExist,
+                    Result = true
+                };
+            }
+            return new ServiceResult<bool>()
+            {
+                IsSuccessfull = true,
+                Message = string.Empty,
+                Result = false
+            };
         }
 
-        public IEnumerable<User> GetUserList()
+        public IServiceResult<User> CheckUserExist(string email, string password)
         {
-            throw new NotImplementedException();
-        }
-        public User Find(int userId) => _user.Find(userId);
+            var result = _user.FirstOrDefault(X => X.Email.Trim() == email && X.Password == password);
+            if (result == null)
+            {
+                return new ServiceResult<User>()
+                {
+                    IsSuccessfull = true,
+                    Message = BusinessMessage.UserNotExist,
+                    Result = null
+                };
+            }
+            return new ServiceResult<User>()
+            {
+                IsSuccessfull = true,
+                Message = string.Empty,
+                Result = result
+            };
 
+        }
     }
 }

@@ -124,6 +124,15 @@ namespace YekanPedia.ManagementSystem.Console.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to با سپاس فراوان ، ثبت نام شما در سایت یکان پدیا با موفقیت انجام شد.
+        /// </summary>
+        public static string RegisterComplete {
+            get {
+                return ResourceManager.GetString("RegisterComplete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to مرا بخاطر بسپار.
         /// </summary>
         public static string RememberMe {

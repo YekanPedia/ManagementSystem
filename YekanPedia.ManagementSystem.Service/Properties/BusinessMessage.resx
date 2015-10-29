@@ -117,40 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="FirstName" xml:space="preserve">
-    <value>نام</value>
+  <data name="EmailExist" xml:space="preserve">
+    <value>نام کاربری انتخابی قبلا ثبت شده است</value>
   </data>
-  <data name="YekanPedia" xml:space="preserve">
-    <value>یکان پدیا</value>
-  </data>
-  <data name="Cancel" xml:space="preserve">
-    <value>انصراف</value>
-  </data>
-  <data name="Password" xml:space="preserve">
-    <value>کلمه عبور</value>
-  </data>
-  <data name="RecoveryPassword" xml:space="preserve">
-    <value>بازیابی کلمه عبور</value>
-  </data>
-  <data name="Register" xml:space="preserve">
-    <value>ثبت نام</value>
-  </data>
-  <data name="RememberMe" xml:space="preserve">
-    <value>مرا بخاطر بسپار</value>
-  </data>
-  <data name="SignIn" xml:space="preserve">
-    <value>ورود به سیستم</value>
-  </data>
-  <data name="UserName" xml:space="preserve">
-    <value>نام کاربری</value>
-  </data>
-  <data name="Email" xml:space="preserve">
-    <value>آدرس ایمیل</value>
-  </data>
-  <data name="RecoveryPasswordDescription" xml:space="preserve">
-    <value>برای بازیابی نام کاربری و کلمه عبور خود لطفا آدرس ایمیل خود را وارد نمایید. در صورت تائید آدرس ایمیل نام کاربری و کلمه عبور برای شما ارسال خواهد شد.</value>
-  </data>
-  <data name="RegisterComplete" xml:space="preserve">
-    <value>با سپاس فراوان ، ثبت نام شما در سایت یکان پدیا با موفقیت انجام شد</value>
+  <data name="UserNotExist" xml:space="preserve">
+    <value>نام کاربری و یا کلمه عبور ارسالی اشتباه می باشد </value>
   </data>
 </root>

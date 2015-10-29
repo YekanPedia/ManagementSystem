@@ -251,19 +251,20 @@
     <Content Include="Content\Styles\Public\MaterialDesignIconicFont.css" />
     <Content Include="Content\Styles\Rtl\AppStyle1.css" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Fonts\BYekan\BYekan.ttf" />
-    <Content Include="Content\Fonts\MaterialDesignIconic\MaterialDesignIconicFont.ttf" />
-    <Content Include="Content\Fonts\MaterialDesignIconic\MaterialDesignIconicFont.woff" />
-    <Content Include="Content\Fonts\Roboto\Roboto-Medium-webfont.eot" />
-    <Content Include="Content\Fonts\Roboto\Roboto-Medium-webfont.ttf" />
-    <Content Include="Content\Fonts\Roboto\Roboto-Medium-webfont.woff" />
-    <Content Include="Content\Fonts\Roboto\Roboto-Regular-webfont.eot" />
-    <Content Include="Content\Fonts\Roboto\Roboto-Regular-webfont.ttf" />
-    <Content Include="Content\Fonts\Roboto\Roboto-Regular-webfont.woff" />
     <Content Include="Scripts\Application\OAuthController.js" />
     <Content Include="Scripts\JQuery\Ajax\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\JQuery\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\JQuery\Phoenix\Phoenix.core.js" />
     <Content Include="Scripts\JQuery\Type\jQuery.Type.js" />
+    <Content Include="Fonts\BYekan\BYekan.ttf" />
+    <Content Include="Fonts\MaterialDesignIconic\MaterialDesignIconicFont.ttf" />
+    <Content Include="Fonts\MaterialDesignIconic\MaterialDesignIconicFont.woff" />
+    <Content Include="Fonts\Roboto\Roboto-Medium-webfont.eot" />
+    <Content Include="Fonts\Roboto\Roboto-Medium-webfont.ttf" />
+    <Content Include="Fonts\Roboto\Roboto-Medium-webfont.woff" />
+    <Content Include="Fonts\Roboto\Roboto-Regular-webfont.eot" />
+    <Content Include="Fonts\Roboto\Roboto-Regular-webfont.ttf" />
+    <Content Include="Fonts\Roboto\Roboto-Regular-webfont.woff" />
     <None Include="T4\T4MVC.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>T4MVC.cs</LastGenOutput>
@@ -291,6 +292,7 @@
     <Content Include="Views\OAuth\Partial\_Login.cshtml" />
     <Content Include="Views\OAuth\Partial\_RecovertyPassword.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Account\Partial\_RegisterationComplete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
