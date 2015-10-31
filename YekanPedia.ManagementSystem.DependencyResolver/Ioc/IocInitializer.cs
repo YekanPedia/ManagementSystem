@@ -16,7 +16,7 @@
             Container = new Container(x =>
             {
                 x.For<IUnitOfWork>().Use(() => new ManagementSystemDbContext()).LifecycleIs<HttpContextLifecycle>();
-                x.For<IActionResult>().Use<ActionResult>();
+                x.For<IActionResults>().Use<ActionResults>();
                 x.For<IUserService>().Use<UserService>();
             });
         }

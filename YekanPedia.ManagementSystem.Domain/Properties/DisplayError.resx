@@ -132,6 +132,9 @@
   <data name="MobileError" xml:space="preserve">
     <value>لطفا شماره همراه را صحیح وارد نمایید</value>
   </data>
+  <data name="PersianDate" xml:space="preserve">
+    <value>لطفا تاریخ با به صورت YYYY/MM/DD  وارد نمایید</value>
+  </data>
   <data name="Required" xml:space="preserve">
     <value>این فیلد اجباری می باشد</value>
   </data>

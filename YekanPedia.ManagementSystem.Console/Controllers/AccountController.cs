@@ -5,13 +5,16 @@
     using Service.Interfaces;
     using InfraStructure;
     using System.Web.UI;
+    using Extensions.Authentication;
+    using System;
 
     public partial class AccountController : Controller
     {
         #region Constructure
         private readonly IUserService _userService;
-        private readonly IActionResult _actionResult;
-        public AccountController(IUserService userService, IActionResult actionResult)
+        private readonly IActionResults _actionResult;
+
+        public AccountController(IUserService userService, IActionResults actionResult)
         {
             _userService = userService;
             _actionResult = actionResult;
@@ -43,12 +46,49 @@
         }
 
         #region Profile
-        public virtual ViewResult Profile()
+        [HttpGet, Route("Account/Profile/{userId}")]
+        public virtual new ActionResult Profile(Guid userId)
         {
-            return View();
+            var result = _userService.FindUser(userId).Result;
+            if (result == null)
+            {
+                return RedirectToAction(MVC.Dashboard.ActionNames.NotFound, MVC.Dashboard.Name);
+            }
+            return View(result);
+        }
+
+        [HttpPost]
+        public virtual JsonResult EditAboutMe(Guid UserId, string AboutMe)
+        {
+            return Json(_userService.EditAboutMe(UserId, AboutMe));
+        }
+
+        [HttpPost]
+        public virtual JsonResult EditBasicInfo(User model)
+        {
+            var result = _userService.EditBasicInfo(model);
+            if (!result.IsSuccessfull)
+            {
+                _actionResult.IsSuccessfull = false;
+                _actionResult.Message = this.GetErrorsModelState();
+                return Json(_actionResult);
+            }
+            return Json(result);
+        }
+
+        [HttpPost]
+        public virtual JsonResult EditCallInfo(User model)
+        {
+            var result = _userService.EditCallInfo(model);
+            if (!result.IsSuccessfull)
+            {
+                _actionResult.IsSuccessfull = false;
+                _actionResult.Message = this.GetErrorsModelState();
+                return Json(_actionResult);
+            }
+            return Json(result);
         }
         #endregion
-
 
         [HttpPost, OutputCache(NoStore = true, Location = OutputCacheLocation.None), ValidateAntiForgeryToken]
         public virtual JsonResult EmailChecker(string email)

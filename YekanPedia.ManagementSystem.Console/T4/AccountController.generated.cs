@@ -64,6 +64,30 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         }
         [NonAction]
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ActionResult Profile()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Profile);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.JsonResult EditAboutMe()
+        {
+            return new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.EditAboutMe);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.JsonResult EditBasicInfo()
+        {
+            return new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.EditBasicInfo);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.JsonResult EditCallInfo()
+        {
+            return new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.EditCallInfo);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public virtual System.Web.Mvc.JsonResult EmailChecker()
         {
             return new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.EmailChecker);
@@ -86,6 +110,9 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         {
             public readonly string Register = "Register";
             public readonly string Profile = "Profile";
+            public readonly string EditAboutMe = "EditAboutMe";
+            public readonly string EditBasicInfo = "EditBasicInfo";
+            public readonly string EditCallInfo = "EditCallInfo";
             public readonly string EmailChecker = "EmailChecker";
         }
 
@@ -94,6 +121,9 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         {
             public const string Register = "Register";
             public const string Profile = "Profile";
+            public const string EditAboutMe = "EditAboutMe";
+            public const string EditBasicInfo = "EditBasicInfo";
+            public const string EditCallInfo = "EditCallInfo";
             public const string EmailChecker = "EmailChecker";
         }
 
@@ -103,6 +133,39 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         public ActionParamsClass_Register RegisterParams { get { return s_params_Register; } }
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionParamsClass_Register
+        {
+            public readonly string model = "model";
+        }
+        static readonly ActionParamsClass_Profile s_params_Profile = new ActionParamsClass_Profile();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_Profile ProfileParams { get { return s_params_Profile; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_Profile
+        {
+            public readonly string userId = "userId";
+        }
+        static readonly ActionParamsClass_EditAboutMe s_params_EditAboutMe = new ActionParamsClass_EditAboutMe();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_EditAboutMe EditAboutMeParams { get { return s_params_EditAboutMe; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_EditAboutMe
+        {
+            public readonly string UserId = "UserId";
+            public readonly string AboutMe = "AboutMe";
+        }
+        static readonly ActionParamsClass_EditBasicInfo s_params_EditBasicInfo = new ActionParamsClass_EditBasicInfo();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_EditBasicInfo EditBasicInfoParams { get { return s_params_EditBasicInfo; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_EditBasicInfo
+        {
+            public readonly string model = "model";
+        }
+        static readonly ActionParamsClass_EditCallInfo s_params_EditCallInfo = new ActionParamsClass_EditCallInfo();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_EditCallInfo EditCallInfoParams { get { return s_params_EditCallInfo; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_EditCallInfo
         {
             public readonly string model = "model";
         }
@@ -124,7 +187,9 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
+                public readonly string Profile = "Profile";
             }
+            public readonly string Profile = "~/Views/Account/Profile.cshtml";
             static readonly _PartialClass s_Partial = new _PartialClass();
             public _PartialClass Partial { get { return s_Partial; } }
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -136,9 +201,11 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
                 {
                     public readonly string _Register = "_Register";
                     public readonly string _RegisterationComplete = "_RegisterationComplete";
+                    public readonly string _TimeLine = "_TimeLine";
                 }
                 public readonly string _Register = "~/Views/Account/Partial/_Register.cshtml";
                 public readonly string _RegisterationComplete = "~/Views/Account/Partial/_RegisterationComplete.cshtml";
+                public readonly string _TimeLine = "~/Views/Account/Partial/_TimeLine.cshtml";
             }
         }
     }
@@ -161,13 +228,51 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         }
 
         [NonAction]
-        partial void ProfileOverride(T4MVC_System_Web_Mvc_ViewResult callInfo);
+        partial void ProfileOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, System.Guid userId);
 
         [NonAction]
-        public override System.Web.Mvc.ViewResult Profile()
+        public override System.Web.Mvc.ActionResult Profile(System.Guid userId)
         {
-            var callInfo = new T4MVC_System_Web_Mvc_ViewResult(Area, Name, ActionNames.Profile);
-            ProfileOverride(callInfo);
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Profile);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "userId", userId);
+            ProfileOverride(callInfo, userId);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void EditAboutMeOverride(T4MVC_System_Web_Mvc_JsonResult callInfo, System.Guid UserId, string AboutMe);
+
+        [NonAction]
+        public override System.Web.Mvc.JsonResult EditAboutMe(System.Guid UserId, string AboutMe)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.EditAboutMe);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "UserId", UserId);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "AboutMe", AboutMe);
+            EditAboutMeOverride(callInfo, UserId, AboutMe);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void EditBasicInfoOverride(T4MVC_System_Web_Mvc_JsonResult callInfo, YekanPedia.ManagementSystem.Domain.Entity.User model);
+
+        [NonAction]
+        public override System.Web.Mvc.JsonResult EditBasicInfo(YekanPedia.ManagementSystem.Domain.Entity.User model)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.EditBasicInfo);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
+            EditBasicInfoOverride(callInfo, model);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void EditCallInfoOverride(T4MVC_System_Web_Mvc_JsonResult callInfo, YekanPedia.ManagementSystem.Domain.Entity.User model);
+
+        [NonAction]
+        public override System.Web.Mvc.JsonResult EditCallInfo(YekanPedia.ManagementSystem.Domain.Entity.User model)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.EditCallInfo);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
+            EditCallInfoOverride(callInfo, model);
             return callInfo;
         }
 

@@ -23,7 +23,7 @@
 
 
         #endregion
-        public IServiceResult<Guid> AddUser(User model)
+        public IServiceResults<Guid> AddUser(User model)
         {
             model.UserId = Guid.NewGuid();
             model.IsActive = true;
@@ -31,22 +31,22 @@
             model.LastLoginDate = DateTime.Now;
             _user.Add(model);
             _uow.SaveChanges();
-            return new ServiceResult<Guid>() { IsSuccessfull = true, Message = "", Result = model.UserId };
+            return new ServiceResults<Guid>() { IsSuccessfull = true, Message = "", Result = model.UserId };
         }
 
-        public IServiceResult<bool> CheckEmailExist(string email)
+        public IServiceResults<bool> CheckEmailExist(string email)
         {
-            var result = _user.Count(X => X.Email.Trim() == email);
+            var result = _user.Count(X => X.Email.Trim().ToLower() == email.Trim().ToLower());
             if (result != 0)
             {
-                return new ServiceResult<bool>()
+                return new ServiceResults<bool>()
                 {
                     IsSuccessfull = true,
                     Message = BusinessMessage.EmailExist,
                     Result = true
                 };
             }
-            return new ServiceResult<bool>()
+            return new ServiceResults<bool>()
             {
                 IsSuccessfull = true,
                 Message = string.Empty,
@@ -54,12 +54,12 @@
             };
         }
 
-        public IServiceResult<User> CheckUserExist(string email, string password)
+        public IServiceResults<User> CheckUserExist(string email, string password)
         {
-            var result = _user.FirstOrDefault(X => X.Email.Trim() == email && X.Password == password);
+            var result = _user.FirstOrDefault(X => X.Email.Trim().ToLower() == email.Trim().ToLower() && X.Password.Trim().ToLower() == password.Trim().ToLower());
             if (result == null)
             {
-                return new ServiceResult<User>()
+                return new ServiceResults<User>()
                 {
                     IsSuccessfull = true,
                     Message = BusinessMessage.UserNotExist,
@@ -67,13 +67,12 @@
                 };
             }
             AddLoginDate(result);
-            return new ServiceResult<User>()
+            return new ServiceResults<User>()
             {
                 IsSuccessfull = true,
                 Message = string.Empty,
                 Result = result
             };
-
         }
 
         public void AddLoginDate(Guid userId)
@@ -91,6 +90,98 @@
             catch (Exception)
             {
             }
+        }
+
+        public IServiceResults<User> FindUser(Guid userId)
+        {
+            var result = _user.FirstOrDefault(X => X.UserId == userId);
+            if (result == null)
+            {
+                return new ServiceResults<User>()
+                {
+                    IsSuccessfull = true,
+                    Message = BusinessMessage.UserNotExist,
+                    Result = null
+                };
+            }
+            return new ServiceResults<User>()
+            {
+                IsSuccessfull = true,
+                Message = string.Empty,
+                Result = result
+            };
+        }
+        public IServiceResults<bool> EditAboutMe(Guid userId, string aboutMe)
+        {
+            var result = _user.FirstOrDefault(X => X.UserId == userId);
+            if (result == null)
+            {
+                return new ServiceResults<bool>()
+                {
+                    IsSuccessfull = true,
+                    Message = BusinessMessage.UserNotExist,
+                    Result = false
+                };
+            }
+            result.AboutMe = aboutMe;
+            _uow.SaveChanges();
+            return new ServiceResults<bool>()
+            {
+                IsSuccessfull = true,
+                Message = string.Empty,
+                Result = true
+            };
+        }
+        public IServiceResults<bool> EditBasicInfo(User model)
+        {
+            var result = _user.FirstOrDefault(X => X.UserId == model.UserId);
+            if (result == null)
+            {
+                return new ServiceResults<bool>()
+                {
+                    IsSuccessfull = true,
+                    Message = BusinessMessage.UserNotExist,
+                    Result = false
+                };
+            }
+            result.FullName = model.FullName;
+            result.Sex = model.Sex;
+            result.BirthDate = model.BirthDate;
+            var resultSave = _uow.SaveChanges();
+            return new ServiceResults<bool>()
+            {
+                IsSuccessfull = (resultSave != 0 ? true : false),
+                Message = string.Empty,
+                Result = (resultSave != 0 ? true : false)
+            };
+        }
+        public IServiceResults<bool> EditCallInfo(User model)
+        {
+            var result = _user.FirstOrDefault(X => X.UserId == model.UserId);
+            if (result == null)
+            {
+                return new ServiceResults<bool>()
+                {
+                    IsSuccessfull = true,
+                    Message = BusinessMessage.UserNotExist,
+                    Result = false
+                };
+            }
+
+            result.Facebook = model.Facebook;
+            result.Twitter = model.Twitter;
+            result.Mobile = model.Mobile;
+            result.Email = model.Email;
+            result.Latitude = model.Latitude;
+            result.Longitude = model.Longitude;
+            var resultSave = _uow.SaveChanges();
+
+            return new ServiceResults<bool>()
+            {
+                IsSuccessfull = (resultSave != 0 ? true : false),
+                Message = string.Empty,
+                Result = (resultSave != 0 ? true : false)
+            };
         }
     }
 }

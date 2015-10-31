@@ -180,4 +180,40 @@
   <data name="FullScreen" xml:space="preserve">
     <value>تمام صفحه</value>
   </data>
+  <data name="Content" xml:space="preserve">
+    <value>متن ...</value>
+  </data>
+  <data name="AboutMe" xml:space="preserve">
+    <value>درباره من</value>
+  </data>
+  <data name="Activities" xml:space="preserve">
+    <value>فعالیت ها</value>
+  </data>
+  <data name="BasicInfo" xml:space="preserve">
+    <value>اطلاعات پایه</value>
+  </data>
+  <data name="CallInfo" xml:space="preserve">
+    <value>اطلاعات تماس</value>
+  </data>
+  <data name="ChangePicture" xml:space="preserve">
+    <value>تغییر عکس پروفایل</value>
+  </data>
+  <data name="CourseCompleted" xml:space="preserve">
+    <value>دوره های گذرانده</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>ویرایش</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>ثبت</value>
+  </data>
+  <data name="ShortAboutMe" xml:space="preserve">
+    <value>مختصری از من</value>
+  </data>
+  <data name="TimeLine" xml:space="preserve">
+    <value>جدول زمانی</value>
+  </data>
+  <data name="CourseCurrents" xml:space="preserve">
+    <value>دوره های جاری</value>
+  </data>
 </root>

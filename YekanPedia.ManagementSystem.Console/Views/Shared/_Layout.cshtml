@@ -1,6 +1,6 @@
 ﻿@{
     Layout = null;
-    var CurrentUser = User as CurrentUserPrincipal;
+    var CurrentUser = User as ICurrentUserPrincipal;
 }
 
 <html>
@@ -31,7 +31,7 @@
             </li>
             <li class="pull-right">
                 <ul class="top-menu">
-                    <li id="toggle-width">
+                    <li id="toggle-width" class="hidden-xs">
                         <div class="toggle-switch">
                             <input id="tw-switch" type="checkbox" hidden="hidden">
                             <label for="tw-switch" class="ts-helper"></label>
@@ -87,7 +87,7 @@
                     </a>
                     <ul class="main-menu" style="display: block;">
                         <li>
-                            <a href="@Url.Action(MVC.Account.ActionNames.Profile,MVC.Account.Name)">
+                            <a href="@Url.Action(MVC.Account.ActionNames.Profile, MVC.Account.Name, new { userId = CurrentUser.UserId })">
                                 <i class="zmdi zmdi-account"></i>
                                 @LocalMessage.Profile
                             </a>
@@ -249,6 +249,6 @@
     <!-- Javascript Libraries -->
     @Scripts.Render(Links.Bundles.Scripts.CoreScripts)
     <!-- Function Libraries -->
-    <script src="@Url.Content(Links.Scripts.Application.OAuthController_js)"></script>
+    @RenderSection("Scripts", false)
 </body>
 </html>

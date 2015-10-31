@@ -1,0 +1,34 @@
+﻿@{ Layout = null;}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@LocalMessage.YekanPedia</title>
+    <!-- Public CSS -->
+    @Styles.Render(Links.Bundles.Styles.PublicCss)
+    <!-- CSS -->
+    @Styles.Render(Links.Bundles.Styles.ContentCss)
+    <style>
+        .four-zero h2 {
+            font-size: 44px;
+            font-family: sans-serif;
+            margin-top: 45px;
+        }
+    </style>
+</head>
+
+<body class="four-zero-content">
+    <div class="four-zero">
+        <h2>Not Found!</h2>
+        <small>it's 404</small>
+
+        <footer>
+            <a href="@Url.Action(MVC.Dashboard.ActionNames.User,MVC.Dashboard.Name)"><i class="zmdi zmdi-home"></i></a>
+            <a href=""><i class="zmdi zmdi-arrow-forward"></i></a>
+        </footer>
+    </div>
+
+</body>
+</html>

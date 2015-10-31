@@ -1,6 +1,6 @@
 ﻿namespace YekanPedia.ManagementSystem.InfraStructure
 {
-    public interface IServiceResult<TResult> : IActionResult
+    public interface IServiceResults<TResult> : IActionResults
     {
         TResult Result { get; set; }
     }

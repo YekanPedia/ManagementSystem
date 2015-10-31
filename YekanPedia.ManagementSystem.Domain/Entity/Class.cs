@@ -32,7 +32,7 @@
         [Column(TypeName = "char")]
         [Required(ErrorMessageResourceName = nameof(DisplayError.Required), ErrorMessageResourceType = typeof(DisplayError))]
         [MaxLength(10, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
-        [PersianDate]
+        [PersianDate(ErrorMessageResourceName =nameof(DisplayError.PersianDate),ErrorMessageResourceType =typeof(DisplayError))]
         public string StartDateSh { get; set; }
 
         [ScaffoldColumn(false)]
@@ -42,13 +42,13 @@
         [Column(TypeName = "char")]
         [Required(ErrorMessageResourceName = nameof(DisplayError.Required), ErrorMessageResourceType = typeof(DisplayError))]
         [MaxLength(10, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
-        [PersianDate]
+        [PersianDate(ErrorMessageResourceName =nameof(DisplayError.PersianDate),ErrorMessageResourceType =typeof(DisplayError))]
         public string FinishDateSh { get; set; }
 
         [Display(ResourceType = typeof(DisplayNames), Name = nameof(JustificationDateSh))]
         [Column(TypeName = "char")]
         [MaxLength(10, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
-        [PersianDate]
+        [PersianDate(ErrorMessageResourceName =nameof(DisplayError.PersianDate),ErrorMessageResourceType =typeof(DisplayError))]
         [Required(ErrorMessageResourceName = nameof(DisplayError.Required), ErrorMessageResourceType = typeof(DisplayError))]
         public string JustificationDateSh { get; set; }
 

@@ -215,12 +215,10 @@ html > body .top-menu > li > a.tm-chat {
 
 .login-content .fg-line:not(.disabled):after, .fg-line:not(.readonly):after {
     left: inherit;
-    right: 10px;
 }
 
-.fg-line:not(.disabled):after, .fg-line:not(.readonly):after {
-    left: inherit;
-    right: 0;
+.input-group {
+    width: 100%;
 }
 
 .lc-block:not(.lcb-alt) .btn-login {
@@ -476,5 +474,14 @@ html > body .top-menu > li > a.tm-chat {
 
 .profile-menu > a {
     background: url(/Content/Images/Background/profile-menu.png) no-repeat left top;
-        background-size: 100%;
+    background-size: 100%;
+}
+
+.lv-header .actions {
+    right: inherit;
+    left: 6px;
+}
+
+.actions > li {
+    padding-top: 4px;
 }

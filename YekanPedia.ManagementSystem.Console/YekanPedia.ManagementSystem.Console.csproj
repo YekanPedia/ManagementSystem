@@ -253,6 +253,7 @@
     <Content Include="Content\Styles\Public\MaterialDesignIconicFont.css" />
     <Content Include="Content\Styles\Rtl\AppStyle1.css" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\Application\AccountController.js" />
     <Content Include="Scripts\Application\OAuthController.js" />
     <Content Include="Scripts\JQuery\Ajax\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\JQuery\jquery-1.10.2.min.js" />
@@ -300,6 +301,9 @@
     <Content Include="Views\Dashboard\Partial\Notification.cshtml" />
     <Content Include="Views\Dashboard\Partial\Task.cshtml" />
     <Content Include="Views\Dashboard\Admin.cshtml" />
+    <Content Include="Views\Account\Profile.cshtml" />
+    <Content Include="Views\Dashboard\NotFound.cshtml" />
+    <Content Include="Views\Account\Partial\_TimeLine.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

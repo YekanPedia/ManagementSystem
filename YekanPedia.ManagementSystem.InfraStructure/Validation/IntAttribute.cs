@@ -5,7 +5,16 @@
     {
         public override bool IsValid(object value)
         {
-            return base.IsValid(value);
+            if (value == null)
+                return false;
+
+            int result = 0;
+            int.TryParse(value.ToString(), out result);
+            if (result != 0)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

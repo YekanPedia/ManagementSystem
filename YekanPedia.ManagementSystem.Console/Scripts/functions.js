@@ -12,6 +12,7 @@
     }
 
     $('body').on('change', '#toggle-width input:checkbox', function () {
+        
         if ($(this).is(':checked')) {
             setTimeout(function () {
                 $('body').addClass('toggled sw-toggled');
@@ -231,7 +232,7 @@ $(document).ready(function () {
     //Scrollbar for HTML(not mobile) but not for login page
     if (!$('html').hasClass('ismobile')) {
         if (!$('.login-content')[0]) {
-            // scrollbar('html', 'rgba(0,0,0,0.3)', '5px');
+             // scrollbar('html', 'rgba(0,0,0,0.3)', '5px');
         }
 
         //Scrollbar Tables

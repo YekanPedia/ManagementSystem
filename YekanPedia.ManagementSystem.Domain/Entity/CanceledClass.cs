@@ -19,8 +19,8 @@
         [Display(ResourceType = typeof(DisplayNames), Name = nameof(CanceledDateSh))]
         [Column(TypeName = "char")]
         [Required(ErrorMessageResourceName = nameof(DisplayError.Required), ErrorMessageResourceType = typeof(DisplayError))]
-        [MaxLength(10, ErrorMessageResourceName = nameof(DisplayError.MaxLength) ,ErrorMessageResourceType = typeof(DisplayError))]
-        [PersianDate]
+        [MaxLength(10, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
+        [PersianDate(ErrorMessageResourceName = nameof(DisplayError.PersianDate), ErrorMessageResourceType = typeof(DisplayError))]
         public string CanceledDateSh { get; set; }
 
         [Display(ResourceType = typeof(DisplayNames), Name = nameof(CanceledDateSh))]

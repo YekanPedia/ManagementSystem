@@ -1,6 +1,6 @@
 ﻿namespace YekanPedia.ManagementSystem.InfraStructure
 {
-    public interface IActionResult
+    public interface IActionResults
     {
         bool IsSuccessfull { get; set; }
         string Message { get; set; }

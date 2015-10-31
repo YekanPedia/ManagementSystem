@@ -106,6 +106,15 @@ namespace YekanPedia.ManagementSystem.Domain.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to لطفا تاریخ با به صورت YYYY/MM/DD  وارد نمایید.
+        /// </summary>
+        public static string PersianDate {
+            get {
+                return ResourceManager.GetString("PersianDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to این فیلد اجباری می باشد.
         /// </summary>
         public static string Required {

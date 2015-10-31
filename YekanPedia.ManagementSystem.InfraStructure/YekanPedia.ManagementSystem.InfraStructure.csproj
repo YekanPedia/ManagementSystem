@@ -50,11 +50,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Date\PersianDateTime.cs" />
+    <Compile Include="Date\TimeSpanExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Results\ActionResult.cs" />
-    <Compile Include="Results\IActionResult.cs" />
-    <Compile Include="Results\ServiceResult.cs" />
-    <Compile Include="Results\IServiceResult.cs" />
+    <Compile Include="Results\ActionResults.cs" />
+    <Compile Include="Results\IActionResults.cs" />
+    <Compile Include="Results\ServiceResults.cs" />
+    <Compile Include="Results\IServiceResults.cs" />
     <Compile Include="Validation\IntAttribute.cs" />
     <Compile Include="Validation\PersianDateAttribute.cs" />
     <Compile Include="Validation\TimeAttribute.cs" />

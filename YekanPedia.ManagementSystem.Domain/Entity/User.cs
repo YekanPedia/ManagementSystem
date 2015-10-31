@@ -43,7 +43,7 @@
         [Column(TypeName = "char")]
         [MaxLength(10, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
         [StringLength(10, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
-        [PersianDate]
+        [PersianDate(ErrorMessageResourceName =nameof(DisplayError.PersianDate),ErrorMessageResourceType =typeof(DisplayError))]
         public string BirthDate { get; set; }
 
         [Display(ResourceType = typeof(DisplayNames), Name = nameof(Sex))]
@@ -107,8 +107,8 @@
         public string Telegram { get; set; }
 
         [Display(ResourceType = typeof(DisplayNames), Name = nameof(AboutMe))]
-        [MaxLength(400, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
-        [StringLength(15, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
+        [MaxLength(200, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
+        [StringLength(200, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
         public string AboutMe { get; set; }
 
         public bool IsRegisterCompleted()

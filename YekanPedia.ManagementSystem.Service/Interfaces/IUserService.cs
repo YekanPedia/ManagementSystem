@@ -6,10 +6,14 @@
 
     public interface IUserService
     {
-        IServiceResult<Guid> AddUser(User model);
-        IServiceResult<bool> CheckEmailExist(string email);
-        IServiceResult<User> CheckUserExist(string email, string password);
+        IServiceResults<Guid> AddUser(User model);
+        IServiceResults<bool> CheckEmailExist(string email);
+        IServiceResults<User> CheckUserExist(string email, string password);
+        IServiceResults<bool> EditAboutMe(Guid userId, string aboutMe);
+        IServiceResults<bool> EditBasicInfo(User model);
+        IServiceResults<bool> EditCallInfo(User model);
         void AddLoginDate(User model);
         void AddLoginDate(Guid userId);
+        IServiceResults<User> FindUser(Guid userId);
     }
 }

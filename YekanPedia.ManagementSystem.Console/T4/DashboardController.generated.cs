@@ -76,6 +76,7 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         public class ActionNamesClass
         {
             public readonly string User = "User";
+            public readonly string NotFound = "NotFound";
             public readonly string Admin = "Admin";
             public readonly string Messages = "Messages";
             public readonly string Notification = "Notification";
@@ -86,6 +87,7 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         public class ActionNameConstants
         {
             public const string User = "User";
+            public const string NotFound = "NotFound";
             public const string Admin = "Admin";
             public const string Messages = "Messages";
             public const string Notification = "Notification";
@@ -104,9 +106,11 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             public class _ViewNamesClass
             {
                 public readonly string Admin = "Admin";
+                public readonly string NotFound = "NotFound";
                 public readonly string User = "User";
             }
             public readonly string Admin = "~/Views/Dashboard/Admin.cshtml";
+            public readonly string NotFound = "~/Views/Dashboard/NotFound.cshtml";
             public readonly string User = "~/Views/Dashboard/User.cshtml";
             static readonly _PartialClass s_Partial = new _PartialClass();
             public _PartialClass Partial { get { return s_Partial; } }
@@ -141,6 +145,17 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.User);
             UserOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void NotFoundOverride(T4MVC_System_Web_Mvc_ViewResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ViewResult NotFound()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ViewResult(Area, Name, ActionNames.NotFound);
+            NotFoundOverride(callInfo);
             return callInfo;
         }
 
