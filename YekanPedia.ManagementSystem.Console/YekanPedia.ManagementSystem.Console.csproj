@@ -225,15 +225,17 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>AppSetting.cs</LastGenOutput>
     </Content>
-    <Content Include="Content\Images\Avatar\1.jpg" />
-    <Content Include="Content\Images\Avatar\2.jpg" />
-    <Content Include="Content\Images\Avatar\3.jpg" />
-    <Content Include="Content\Images\Avatar\4.jpg" />
-    <Content Include="Content\Images\Avatar\5.jpg" />
-    <Content Include="Content\Images\Avatar\6.jpg" />
-    <Content Include="Content\Images\Avatar\7.jpg" />
-    <Content Include="Content\Images\Avatar\8.jpg" />
-    <Content Include="Content\Images\Avatar\9.jpg" />
+    <Content Include="Content\Images\Avatar\1.png" />
+    <Content Include="Content\Images\Avatar\10.png" />
+    <Content Include="Content\Images\Avatar\11.png" />
+    <Content Include="Content\Images\Avatar\2.png" />
+    <Content Include="Content\Images\Avatar\3.png" />
+    <Content Include="Content\Images\Avatar\4.png" />
+    <Content Include="Content\Images\Avatar\5.png" />
+    <Content Include="Content\Images\Avatar\6.png" />
+    <Content Include="Content\Images\Avatar\7.png" />
+    <Content Include="Content\Images\Avatar\8.png" />
+    <Content Include="Content\Images\Avatar\9.png" />
     <Content Include="Content\Images\Background\profile-menu.png" />
     <Content Include="Content\Images\Icon\notifications.png" />
     <Content Include="Content\Images\Logo\Logo.png" />

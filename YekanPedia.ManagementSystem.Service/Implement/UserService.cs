@@ -183,5 +183,29 @@
                 Result = (resultSave != 0 ? true : false)
             };
         }
+
+        public IServiceResults<bool> ChangePicture(Guid userId, string picture)
+        {
+            var result = _user.FirstOrDefault(X => X.UserId == userId);
+            if (result == null)
+            {
+                return new ServiceResults<bool>()
+                {
+                    IsSuccessfull = true,
+                    Message = BusinessMessage.UserNotExist,
+                    Result = false
+                };
+            }
+
+            result.Picture = picture;
+            var resultSave = _uow.SaveChanges();
+
+            return new ServiceResults<bool>()
+            {
+                IsSuccessfull = (resultSave != 0 ? true : false),
+                Message = string.Empty,
+                Result = (resultSave != 0 ? true : false)
+            };
+        }
     }
 }

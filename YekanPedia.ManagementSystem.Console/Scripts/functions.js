@@ -1,4 +1,5 @@
-﻿
+﻿/// <reference path="JQuery/jquery-1.10.2.min.js" />
+
 /*
 * Layout
 */
@@ -773,4 +774,24 @@ function HideError(el) {
     parent.find('.help-block span').html('');
 }
 
-$(".form-control").keyup(function () { return false });
+$().ready(function () {
+
+
+    $(".form-control").keyup(function () { return false });
+
+    $('.thumbnail').click(function () {
+        $('.thumbnail').removeClass('SelectDefaultAvatar');
+        $(this).addClass('SelectDefaultAvatar');
+        var img = $(this).find('img');
+        $('.img-responsive').attr('src', img.attr('src'));
+        $.ajax({
+            type: "POST",
+            url: "/Account/ChangePicture",
+            data: "picture=" + img.attr('src') + "&userId=" + $("#UserId").val(),
+            dataType: "json",
+            success: function (response) {
+
+            }
+        });
+    });
+});

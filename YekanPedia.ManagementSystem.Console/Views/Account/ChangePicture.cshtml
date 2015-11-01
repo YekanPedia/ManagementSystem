@@ -1,5 +1,5 @@
 ﻿@model YekanPedia.ManagementSystem.Domain.Entity.User
-
+@Html.HiddenFor(X => X.UserId)
 <div class="card" id="profile-main">
     <div class="pm-overview c-overflow" tabindex="3">
         <div class="pmo-pic">
@@ -109,8 +109,73 @@
         <div class="tab-content">
             <div id="ChangePicture" class="tab-pane fade in active">
                 <div class="pmb-block" id="AboutMePanel">
-                    <div class="pmbb-body p-l-30">
+                    <div class="pmbb-body">
+                        <div class="row">
+                            <div class="col-xs-6 col-md-2">
+                                <a href="#" class="thumbnail">
+                                    <img src="@Url.Content(Links.Content.Images.Avatar._1_png)" alt="">
+                                </a>
+                            </div>
 
+                            <div class="col-xs-6 col-md-2">
+                                <a href="#" class="thumbnail">
+                                    <img src="@Url.Content(Links.Content.Images.Avatar._2_png)" alt="">
+                                </a>
+                            </div>
+
+                            <div class="col-xs-6 col-md-2">
+                                <a href="#" class="thumbnail">
+                                    <img src="@Url.Content(Links.Content.Images.Avatar._3_png)" alt="">
+                                </a>
+                            </div>
+
+                            <div class="col-xs-6 col-md-2">
+                                <a href="#" class="thumbnail">
+                                    <img src="@Url.Content(Links.Content.Images.Avatar._4_png)" alt="">
+                                </a>
+                            </div>
+                            <div class="col-xs-6 col-md-2">
+                                <a href="#" class="thumbnail">
+                                    <img src="@Url.Content(Links.Content.Images.Avatar._5_png)" alt="">
+                                </a>
+                            </div>
+                            <div class="col-xs-6 col-md-2">
+                                <a href="#" class="thumbnail">
+                                    <img src="@Url.Content(Links.Content.Images.Avatar._6_png)" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6 col-md-2">
+                                <a href="#" class="thumbnail">
+                                    <img src="@Url.Content(Links.Content.Images.Avatar._7_png)" alt="">
+                                </a>
+                            </div>
+
+                            <div class="col-xs-6 col-md-2">
+                                <a href="#" class="thumbnail">
+                                    <img src="@Url.Content(Links.Content.Images.Avatar._8_png)" alt="">
+                                </a>
+                            </div>
+
+                            <div class="col-xs-6 col-md-2">
+                                <a href="#" class="thumbnail">
+                                    <img src="@Url.Content(Links.Content.Images.Avatar._9_png)" alt="">
+                                </a>
+                            </div>
+
+                            <div class="col-xs-6 col-md-2">
+                                <a href="#" class="thumbnail">
+                                    <img src="@Url.Content(Links.Content.Images.Avatar._10_png)" alt="">
+                                </a>
+                            </div>
+                            <div class="col-xs-6 col-md-2">
+                                <a href="#" class="thumbnail">
+                                    <img src="@Url.Content(Links.Content.Images.Avatar._11_png)" alt="">
+                                </a>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </div>

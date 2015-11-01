@@ -12,6 +12,7 @@
         IServiceResults<bool> EditAboutMe(Guid userId, string aboutMe);
         IServiceResults<bool> EditBasicInfo(User model);
         IServiceResults<bool> EditCallInfo(User model);
+        IServiceResults<bool> ChangePicture(Guid userId, string picture);
         void AddLoginDate(User model);
         void AddLoginDate(Guid userId);
         IServiceResults<User> FindUser(Guid userId);

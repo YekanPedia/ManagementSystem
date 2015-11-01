@@ -250,15 +250,17 @@ namespace Links
                 private const string URLPATH = "~/Content/Images/Avatar";
                 public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
                 public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
-                public static readonly string _1_jpg = Url("1.jpg");
-                public static readonly string _2_jpg = Url("2.jpg");
-                public static readonly string _3_jpg = Url("3.jpg");
-                public static readonly string _4_jpg = Url("4.jpg");
-                public static readonly string _5_jpg = Url("5.jpg");
-                public static readonly string _6_jpg = Url("6.jpg");
-                public static readonly string _7_jpg = Url("7.jpg");
-                public static readonly string _8_jpg = Url("8.jpg");
-                public static readonly string _9_jpg = Url("9.jpg");
+                public static readonly string _1_png = Url("1.png");
+                public static readonly string _10_png = Url("10.png");
+                public static readonly string _11_png = Url("11.png");
+                public static readonly string _2_png = Url("2.png");
+                public static readonly string _3_png = Url("3.png");
+                public static readonly string _4_png = Url("4.png");
+                public static readonly string _5_png = Url("5.png");
+                public static readonly string _6_png = Url("6.png");
+                public static readonly string _7_png = Url("7.png");
+                public static readonly string _8_png = Url("8.png");
+                public static readonly string _9_png = Url("9.png");
             }
         
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -267,6 +269,14 @@ namespace Links
                 public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
                 public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
                 public static readonly string profile_menu_png = Url("profile-menu.png");
+            }
+        
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class Icon {
+                private const string URLPATH = "~/Content/Images/Icon";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                public static readonly string notifications_png = Url("notifications.png");
             }
         
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -462,6 +472,12 @@ namespace Links
                     }
                 }
                 public static partial class Background 
+                {
+                    public static class Assets
+                    {
+                    }
+                }
+                public static partial class Icon 
                 {
                     public static class Assets
                     {

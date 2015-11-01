@@ -24,6 +24,7 @@
         }
         #endregion
 
+        #region Register
         [HttpPost, ValidateAntiForgeryToken, AllowAnonymous]
         public virtual JsonResult Register(User model)
         {
@@ -56,6 +57,7 @@
             }
             return Json(result);
         }
+        #endregion
 
         #region Profile
         [HttpGet, Route("Account/Profile/{userId}")]
@@ -116,11 +118,21 @@
             }
             return View(result);
         }
+
+        [HttpPost]
+        public virtual JsonResult ChangePicture(Guid userId, string picture)
+        {
+            var result = _userService.ChangePicture(userId, picture).Result;
+            return Json(result);
+        }
         #endregion
+
+        #region Validation Email Cheker
         [HttpPost, OutputCache(NoStore = true, Location = OutputCacheLocation.None)]
         public virtual JsonResult EmailChecker(string email)
         {
             return Json(_userService.CheckEmailExist(email));
         }
+        #endregion
     }
 }
