@@ -223,6 +223,15 @@
     <value>اطلاعات پروفایل شما تکمیل نمی باشد. برای تکمیل کلیک نمایید</value>
   </data>
   <data name="Task" xml:space="preserve">
-    <value>تسک</value>
+    <value>تسک های شما</value>
+  </data>
+  <data name="Messages" xml:space="preserve">
+    <value>پیام ها</value>
+  </data>
+  <data name="Notification" xml:space="preserve">
+    <value>اعلانات</value>
+  </data>
+  <data name="ViewAll" xml:space="preserve">
+    <value>نمایش همه</value>
   </data>
 </root>

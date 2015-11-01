@@ -235,6 +235,7 @@
     <Content Include="Content\Images\Avatar\8.jpg" />
     <Content Include="Content\Images\Avatar\9.jpg" />
     <Content Include="Content\Images\Background\profile-menu.png" />
+    <Content Include="Content\Images\Icon\notifications.png" />
     <Content Include="Content\Images\Logo\Logo.png" />
     <Content Include="Content\Images\Menu\ellipsis%402x.png" />
     <Content Include="Content\Images\Menu\ellipsis.png" />

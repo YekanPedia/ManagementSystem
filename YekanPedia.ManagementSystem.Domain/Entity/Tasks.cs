@@ -17,19 +17,22 @@
         [ForeignKey(nameof(UserId))]
         public User User { get; set; }
 
-        [Display(ResourceType = typeof(DisplayNames), Name = nameof(Link))]
+        public int Progress { get; set; }
+
+        [Display(ResourceType = typeof(DisplayNames), Name = nameof(Subject))]
         [MaxLength(100, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
         [StringLength(100, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
         public string Subject { get; set; }
 
+        public TaskType Type { get; set; }
+
         [Display(ResourceType = typeof(DisplayNames), Name = nameof(Link))]
         [Column(TypeName = "varchar")]
-        [MaxLength(50, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
-        [StringLength(50, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
+        [MaxLength(200, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
+        [StringLength(200, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
         public string Link { get; set; }
 
         public ProgressbarType ProgressbarType { get; set; }
-        public int Progress { get; set; }
     }
 
     public enum ProgressbarType
@@ -48,5 +51,9 @@
 
         [Description("progress-bar")]
         Primary
+    }
+    public enum TaskType
+    {
+        Profile
     }
 }

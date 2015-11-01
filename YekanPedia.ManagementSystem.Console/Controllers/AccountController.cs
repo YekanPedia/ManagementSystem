@@ -47,7 +47,7 @@
             {
                 _taskService?.AddUserTask(new Tasks()
                 {
-                    Link = Url.Action(MVC.Account.ActionNames.Profile, MVC.Account.Name),
+                    Link = Url.Action(MVC.Account.ActionNames.Profile, MVC.Account.Name, new { userId = result.Result }),
                     ProgressbarType = ProgressbarType.Primary,
                     Subject = LocalMessage.CompleteProfile,
                     UserId = result.Result
@@ -72,6 +72,7 @@
         [HttpPost]
         public virtual JsonResult EditAboutMe(Guid UserId, string AboutMe)
         {
+            _taskService.EditUserTaskProgress(UserId, TaskType.Profile, 20);
             return Json(_userService.EditAboutMe(UserId, AboutMe));
         }
 
@@ -85,6 +86,7 @@
                 _actionResult.Message = this.GetErrorsModelState();
                 return Json(_actionResult);
             }
+            _taskService.EditUserTaskProgress(model.UserId, TaskType.Profile, 30);
             return Json(result);
         }
 
@@ -98,6 +100,7 @@
                 _actionResult.Message = this.GetErrorsModelState();
                 return Json(_actionResult);
             }
+            _taskService.EditUserTaskProgress(model.UserId, TaskType.Profile, 30);
             return Json(result);
         }
         #endregion

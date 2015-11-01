@@ -8,6 +8,6 @@
     {
         IEnumerable<Tasks> GetUserTask(Guid userId);
         void AddUserTask(Tasks model);
-        void EditUserTaskProgress(Tasks model);
+        void EditUserTaskProgress(Guid userId, TaskType type, int value);
     }
 }

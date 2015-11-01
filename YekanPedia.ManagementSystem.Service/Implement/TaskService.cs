@@ -27,15 +27,19 @@
             _uow.SaveChanges();
         }
 
-        public void EditUserTaskProgress(Tasks model)
+        public void EditUserTaskProgress(Guid userId, TaskType type, int value)
         {
-            _task.Attach(model);
-            _uow.SaveChanges();
+            Tasks task = _task.FirstOrDefault(X => X.UserId == userId && X.Type == type && X.Progress < 100);
+            if (task != null)
+            {
+                task.Progress += value;
+                _uow.SaveChanges();
+            }
         }
 
         public IEnumerable<Tasks> GetUserTask(Guid userId)
         {
-            return _task.Where(X => X.UserId == userId).ToList();
+            return _task.Where(X => X.UserId == userId && X.Progress < 100).ToList();
         }
     }
 }
