@@ -249,14 +249,17 @@
     <Content Include="Content\Styles\Ltr\AppStyle1.css" />
     <Content Include="Content\Styles\Ltr\AppStyle2.css" />
     <Content Include="Content\Styles\Public\Animate.css" />
-    <Content Include="Content\Styles\Public\lightGallery.css" />
+    <Content Include="Content\Styles\Public\LightGallery.css" />
+    <Content Include="Content\Styles\Public\LoadingBar.css" />
     <Content Include="Content\Styles\Public\MaterialDesignIconicFont.css" />
+    <Content Include="Content\Styles\Public\Sweet.css" />
     <Content Include="Content\Styles\Rtl\AppStyle1.css" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\Application\AccountController.js" />
     <Content Include="Scripts\Application\OAuthController.js" />
     <Content Include="Scripts\JQuery\Ajax\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\JQuery\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\JQuery\Loading-Bar.js" />
     <Content Include="Scripts\JQuery\Phoenix\Phoenix.core.js" />
     <Content Include="Scripts\JQuery\Type\jQuery.Type.js" />
     <Content Include="Fonts\BYekan\BYekan.ttf" />
@@ -282,6 +285,7 @@
     <Content Include="Scripts\JQuery\Validation\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\JQuery\Validation\jquery.validation.messages.js" />
     <Content Include="Scripts\JQuery\Wave\waves.min.js" />
+    <Content Include="Scripts\JQuery\Sweet\sweet-alert.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -304,6 +308,7 @@
     <Content Include="Views\Account\Profile.cshtml" />
     <Content Include="Views\Dashboard\NotFound.cshtml" />
     <Content Include="Views\Account\Partial\_TimeLine.cshtml" />
+    <Content Include="Views\Account\ChangePicture.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

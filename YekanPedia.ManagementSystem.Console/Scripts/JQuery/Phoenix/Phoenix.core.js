@@ -15,9 +15,24 @@
                     ShowError($('input[id="' + key + '"]'), value[0].ErrorMessage);
                 }
             });
-        },
-        reload: function () {
+        }, reload: function () {
             window.location.reload();
+        }, ajaxLoaderBegin: function () {
+            $(document).ajaxStart(function (event, request) {
+                //loading bar show
+            });
         },
+        ajaxLoaderComplete: function () {
+            $(document).ajaxComplete(function (event, request) {
+                //loading bar hide
+            }).ajaxError(function (event, request) {
+                //loading bar hide
+            });;
+        }
     };
 })(jQuery)
+
+$(document).ready(function () {
+    $phoenix.core.ajaxLoaderBegin();
+    $phoenix.core.ajaxLoaderComplete();
+});

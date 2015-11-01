@@ -164,6 +164,7 @@ namespace Links
                 public static readonly string lightGallery_min_js = Url("lightGallery.min.js");
             }
         
+            public static readonly string Loading_Bar_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Loading-Bar.min.js") ? Url("Loading-Bar.min.js") : Url("Loading-Bar.js");
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
             public static class NiceScroll {
                 private const string URLPATH = "~/Scripts/JQuery/NiceScroll";
@@ -186,6 +187,14 @@ namespace Links
                 public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
                 public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
                 public static readonly string Phoenix_core_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Phoenix.core.min.js") ? Url("Phoenix.core.min.js") : Url("Phoenix.core.js");
+            }
+        
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class Sweet {
+                private const string URLPATH = "~/Scripts/JQuery/Sweet";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                public static readonly string sweet_alert_min_js = Url("sweet-alert.min.js");
             }
         
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -306,9 +315,11 @@ namespace Links
                 public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
                 public static readonly string Animate_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Animate.min.css") ? Url("Animate.min.css") : Url("Animate.css");
                      
-                public static readonly string lightGallery_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/lightGallery.min.css") ? Url("lightGallery.min.css") : Url("lightGallery.css");
+                public static readonly string LightGallery_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/LightGallery.min.css") ? Url("LightGallery.min.css") : Url("LightGallery.css");
                      
                 public static readonly string MaterialDesignIconicFont_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/MaterialDesignIconicFont.min.css") ? Url("MaterialDesignIconicFont.min.css") : Url("MaterialDesignIconicFont.css");
+                     
+                public static readonly string Sweet_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Sweet.min.css") ? Url("Sweet.min.css") : Url("Sweet.css");
                      
             }
         
@@ -383,6 +394,13 @@ namespace Links
                         public const string Phoenix_core_js = "~/Scripts/JQuery/Phoenix/Phoenix.core.js"; 
                     }
                 }
+                public static partial class Sweet 
+                {
+                    public static class Assets
+                    {
+                        public const string sweet_alert_min_js = "~/Scripts/JQuery/Sweet/sweet-alert.min.js"; 
+                    }
+                }
                 public static partial class Type 
                 {
                     public static class Assets
@@ -409,6 +427,7 @@ namespace Links
                 public static class Assets
                 {
                     public const string jquery_1_10_2_min_js = "~/Scripts/JQuery/jquery-1.10.2.min.js"; 
+                    public const string Loading_Bar_js = "~/Scripts/JQuery/Loading-Bar.js"; 
                 }
             }
             public static class Assets
@@ -463,8 +482,9 @@ namespace Links
                     public static class Assets
                     {
                         public const string Animate_css = "~/Content/Styles/Public/Animate.css";
-                        public const string lightGallery_css = "~/Content/Styles/Public/lightGallery.css";
+                        public const string LightGallery_css = "~/Content/Styles/Public/LightGallery.css";
                         public const string MaterialDesignIconicFont_css = "~/Content/Styles/Public/MaterialDesignIconicFont.css";
+                        public const string Sweet_css = "~/Content/Styles/Public/Sweet.css";
                     }
                 }
                 public static partial class Rtl 

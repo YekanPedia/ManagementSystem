@@ -115,6 +115,15 @@ namespace YekanPedia.ManagementSystem.Console.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to بازگشت به تنظیمات اولیه.
+        /// </summary>
+        public static string ClearLocalStorage {
+            get {
+                return ResourceManager.GetString("ClearLocalStorage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to تماس با ما.
         /// </summary>
         public static string ContactUs {

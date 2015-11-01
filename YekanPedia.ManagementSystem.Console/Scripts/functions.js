@@ -1,4 +1,4 @@
-
+﻿
 /*
 * Layout
 */
@@ -12,7 +12,7 @@
     }
 
     $('body').on('change', '#toggle-width input:checkbox', function () {
-        
+
         if ($(this).is(':checked')) {
             setTimeout(function () {
                 $('body').addClass('toggled sw-toggled');
@@ -232,7 +232,7 @@ $(document).ready(function () {
     //Scrollbar for HTML(not mobile) but not for login page
     if (!$('html').hasClass('ismobile')) {
         if (!$('.login-content')[0]) {
-             // scrollbar('html', 'rgba(0,0,0,0.3)', '5px');
+            // scrollbar('html', 'rgba(0,0,0,0.3)', '5px');
         }
 
         //Scrollbar Tables
@@ -617,16 +617,17 @@ $(document).ready(function () {
             e.preventDefault();
 
             swal({
-                title: "Are you sure?",
-                text: "All your saved localStorage values will be removed",
+                title: "آیا مطئن هستید ؟",
+                text: ".تمام اطلاعات ذخیره شده بر روی سیستم شما حذف خواهد شد",
                 type: "warning",
                 showCancelButton: true,
-                confirmButtonColor: "#DD6B55",
-                confirmButtonText: "Yes, delete it!",
+                confirmButtonColor: "#4285F4",
+                confirmButtonText: "بلی",
+                cancelButtonText: "انصراف",
                 closeOnConfirm: false
             }, function () {
                 localStorage.clear();
-                swal("Done!", "localStorage is cleared", "success");
+                swal("اتمام حذف اطلاعات", "اطلاعات ذخیره شده در سمت کلاینت حذف شد", "success");
             });
         });
     }

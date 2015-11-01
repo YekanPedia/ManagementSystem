@@ -88,6 +88,12 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         }
         [NonAction]
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ActionResult ChangePicture()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.ChangePicture);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public virtual System.Web.Mvc.JsonResult EmailChecker()
         {
             return new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.EmailChecker);
@@ -113,6 +119,7 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             public readonly string EditAboutMe = "EditAboutMe";
             public readonly string EditBasicInfo = "EditBasicInfo";
             public readonly string EditCallInfo = "EditCallInfo";
+            public readonly string ChangePicture = "ChangePicture";
             public readonly string EmailChecker = "EmailChecker";
         }
 
@@ -124,6 +131,7 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             public const string EditAboutMe = "EditAboutMe";
             public const string EditBasicInfo = "EditBasicInfo";
             public const string EditCallInfo = "EditCallInfo";
+            public const string ChangePicture = "ChangePicture";
             public const string EmailChecker = "EmailChecker";
         }
 
@@ -169,6 +177,14 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         {
             public readonly string model = "model";
         }
+        static readonly ActionParamsClass_ChangePicture s_params_ChangePicture = new ActionParamsClass_ChangePicture();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_ChangePicture ChangePictureParams { get { return s_params_ChangePicture; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_ChangePicture
+        {
+            public readonly string userId = "userId";
+        }
         static readonly ActionParamsClass_EmailChecker s_params_EmailChecker = new ActionParamsClass_EmailChecker();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ActionParamsClass_EmailChecker EmailCheckerParams { get { return s_params_EmailChecker; } }
@@ -187,8 +203,10 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
+                public readonly string ChangePicture = "ChangePicture";
                 public readonly string Profile = "Profile";
             }
+            public readonly string ChangePicture = "~/Views/Account/ChangePicture.cshtml";
             public readonly string Profile = "~/Views/Account/Profile.cshtml";
             static readonly _PartialClass s_Partial = new _PartialClass();
             public _PartialClass Partial { get { return s_Partial; } }
@@ -273,6 +291,18 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.EditCallInfo);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
             EditCallInfoOverride(callInfo, model);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void ChangePictureOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, System.Guid userId);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult ChangePicture(System.Guid userId)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.ChangePicture);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "userId", userId);
+            ChangePictureOverride(callInfo, userId);
             return callInfo;
         }
 

@@ -216,4 +216,7 @@
   <data name="CourseCurrents" xml:space="preserve">
     <value>دوره های جاری</value>
   </data>
+  <data name="ClearLocalStorage" xml:space="preserve">
+    <value>بازگشت به تنظیمات اولیه</value>
+  </data>
 </root>

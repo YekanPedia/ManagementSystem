@@ -90,6 +90,18 @@
         }
         #endregion
 
+        #region Picture
+        [HttpGet, Route("Account/ChangePicture/{userId}")]
+        public virtual ActionResult ChangePicture(Guid userId)
+        {
+            var result = _userService.FindUser(userId).Result;
+            if (result == null)
+            {
+                return RedirectToAction(MVC.Dashboard.ActionNames.NotFound, MVC.Dashboard.Name);
+            }
+            return View(result);
+        }
+        #endregion
         [HttpPost, OutputCache(NoStore = true, Location = OutputCacheLocation.None), ValidateAntiForgeryToken]
         public virtual JsonResult EmailChecker(string email)
         {

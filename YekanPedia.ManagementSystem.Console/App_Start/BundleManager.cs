@@ -14,6 +14,7 @@
             /// باندل تمامیه اسکریپت ها
             /// </summary>
             public static readonly string CoreScripts = "~/Scripts/js";
+            public static readonly string LoginScripts = "~/LoginScripts/js";
         }
 
         /// <summary>
