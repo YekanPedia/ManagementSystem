@@ -18,6 +18,7 @@
                 x.For<IUnitOfWork>().Use(() => new ManagementSystemDbContext()).LifecycleIs<HttpContextLifecycle>();
                 x.For<IActionResults>().Use<ActionResults>();
                 x.For<IUserService>().Use<UserService>();
+                x.For<ITaskService>().Use<TaskService>();
             });
         }
         public static object GetInstance(Type pluginType)

@@ -175,6 +175,7 @@
     <Compile Include="ControllerFactory\IocControllerFactory.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\Poco\ErrorModelStateController.cs" />
+    <Compile Include="Controllers\TaskController.cs" />
     <Compile Include="Extensions\Authentication\CurrentUserPrincipal.cs" />
     <Compile Include="Extensions\Authentication\ICurrentUserPrincipal.cs" />
     <Compile Include="Extensions\Optimization\AsIsBundleOrderer.cs" />
@@ -213,6 +214,9 @@
     <Compile Include="T4\T4MVC.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\TaskController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -259,7 +263,7 @@
     <Content Include="Scripts\Application\OAuthController.js" />
     <Content Include="Scripts\JQuery\Ajax\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\JQuery\jquery-1.10.2.min.js" />
-    <Content Include="Scripts\JQuery\Loading-Bar.js" />
+    <Content Include="Scripts\JQuery\Loadingbar\Loadingbar.js" />
     <Content Include="Scripts\JQuery\Phoenix\Phoenix.core.js" />
     <Content Include="Scripts\JQuery\Type\jQuery.Type.js" />
     <Content Include="Fonts\BYekan\BYekan.ttf" />
@@ -303,12 +307,12 @@
     <Content Include="Views\Dashboard\User.cshtml" />
     <Content Include="Views\Dashboard\Partial\Message.cshtml" />
     <Content Include="Views\Dashboard\Partial\Notification.cshtml" />
-    <Content Include="Views\Dashboard\Partial\Task.cshtml" />
     <Content Include="Views\Dashboard\Admin.cshtml" />
     <Content Include="Views\Account\Profile.cshtml" />
     <Content Include="Views\Dashboard\NotFound.cshtml" />
     <Content Include="Views\Account\Partial\_TimeLine.cshtml" />
     <Content Include="Views\Account\ChangePicture.cshtml" />
+    <Content Include="Views\Task\Partial\_Task.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

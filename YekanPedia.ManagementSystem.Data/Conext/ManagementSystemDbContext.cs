@@ -11,6 +11,7 @@
     public class ManagementSystemDbContext : DbContext, IUnitOfWork
     {
         public DbSet<User> User { get; set; }
+        public DbSet<Tasks> Tasks { get; set; }
         public DbSet<Class> Class { get; set; }
         public DbSet<ClassType> ClassType { get; set; }
         public DbSet<ClassTime> ClassTime { get; set; }

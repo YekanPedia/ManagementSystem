@@ -124,6 +124,15 @@ namespace YekanPedia.ManagementSystem.Console.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to اطلاعات پروفایل شما تکمیل نمی باشد. برای تکمیل کلیک نمایید.
+        /// </summary>
+        public static string CompleteProfile {
+            get {
+                return ResourceManager.GetString("CompleteProfile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to تماس با ما.
         /// </summary>
         public static string ContactUs {
@@ -336,6 +345,15 @@ namespace YekanPedia.ManagementSystem.Console.App_GlobalResources {
         public static string SignIn {
             get {
                 return ResourceManager.GetString("SignIn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تسک.
+        /// </summary>
+        public static string Task {
+            get {
+                return ResourceManager.GetString("Task", resourceCulture);
             }
         }
         

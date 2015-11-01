@@ -118,6 +118,7 @@
 
         public virtual ICollection<UserInClass> UserInClass { get; set; }
         public virtual ICollection<Class> Class { get; set; }
+        public virtual ICollection<Tasks> Tasks { get; set; }
     }
 
 

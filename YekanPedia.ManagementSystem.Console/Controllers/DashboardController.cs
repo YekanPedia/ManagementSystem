@@ -5,7 +5,7 @@
     public partial class DashboardController : Controller
     {
         [HttpGet]
-        public virtual ActionResult User()
+        public virtual new ActionResult User()
         {
             return View();
         }
@@ -31,12 +31,6 @@
         public virtual PartialViewResult Notification()
         {
             return PartialView(MVC.Dashboard.Views.Partial.Notification);
-        }
-
-        [ChildActionOnly]
-        public virtual PartialViewResult Tasks()
-        {
-            return PartialView(MVC.Dashboard.Views.Partial.Task);
         }
     }
 }

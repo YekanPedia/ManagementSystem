@@ -7,17 +7,20 @@
     using System.Web.UI;
     using Extensions.Authentication;
     using System;
+    using App_GlobalResources;
 
     public partial class AccountController : Controller
     {
         #region Constructure
         private readonly IUserService _userService;
         private readonly IActionResults _actionResult;
+        private readonly ITaskService _taskService;
 
-        public AccountController(IUserService userService, IActionResults actionResult)
+        public AccountController(IUserService userService, IActionResults actionResult, ITaskService taskService)
         {
             _userService = userService;
             _actionResult = actionResult;
+            _taskService = taskService;
         }
         #endregion
 
@@ -41,7 +44,16 @@
 
             var result = _userService.AddUser(model);
             if (result.IsSuccessfull)
+            {
+                _taskService?.AddUserTask(new Tasks()
+                {
+                    Link = Url.Action(MVC.Account.ActionNames.Profile, MVC.Account.Name),
+                    ProgressbarType = ProgressbarType.Primary,
+                    Subject = LocalMessage.CompleteProfile,
+                    UserId = result.Result
+                });
                 result.Message = Url.Action(MVC.Dashboard.ActionNames.User, controllerName: MVC.Dashboard.Name);
+            }
             return Json(result);
         }
 
@@ -102,7 +114,7 @@
             return View(result);
         }
         #endregion
-        [HttpPost, OutputCache(NoStore = true, Location = OutputCacheLocation.None), ValidateAntiForgeryToken]
+        [HttpPost, OutputCache(NoStore = true, Location = OutputCacheLocation.None)]
         public virtual JsonResult EmailChecker(string email)
         {
             return Json(_userService.CheckEmailExist(email));

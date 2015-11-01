@@ -135,6 +135,9 @@
   <data name="IsActive" xml:space="preserve">
     <value>فعال</value>
   </data>
+  <data name="Link" xml:space="preserve">
+    <value>آدرس</value>
+  </data>
   <data name="Mobile" xml:space="preserve">
     <value>شماره همراه</value>
   </data>

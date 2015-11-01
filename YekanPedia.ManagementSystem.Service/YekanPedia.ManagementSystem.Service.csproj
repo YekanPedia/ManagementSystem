@@ -52,6 +52,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Implement\TaskService.cs" />
+    <Compile Include="Interfaces\ITaskService.cs" />
     <Compile Include="Properties\BusinessMessage.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

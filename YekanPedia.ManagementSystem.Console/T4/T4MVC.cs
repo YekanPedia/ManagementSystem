@@ -30,6 +30,7 @@ public static partial class MVC
     public static YekanPedia.ManagementSystem.Console.Controllers.AccountController Account = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_AccountController();
     public static YekanPedia.ManagementSystem.Console.Controllers.DashboardController Dashboard = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_DashboardController();
     public static YekanPedia.ManagementSystem.Console.Controllers.OAuthController OAuth = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_OAuthController();
+    public static YekanPedia.ManagementSystem.Console.Controllers.TaskController Task = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_TaskController();
     public static T4MVC.SharedController Shared = new T4MVC.SharedController();
 }
 
@@ -164,7 +165,14 @@ namespace Links
                 public static readonly string lightGallery_min_js = Url("lightGallery.min.js");
             }
         
-            public static readonly string Loading_Bar_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Loading-Bar.min.js") ? Url("Loading-Bar.min.js") : Url("Loading-Bar.js");
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class Loadingbar {
+                private const string URLPATH = "~/Scripts/JQuery/Loadingbar";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                public static readonly string Loadingbar_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Loadingbar.min.js") ? Url("Loadingbar.min.js") : Url("Loadingbar.js");
+            }
+        
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
             public static class NiceScroll {
                 private const string URLPATH = "~/Scripts/JQuery/NiceScroll";
@@ -317,6 +325,8 @@ namespace Links
                      
                 public static readonly string LightGallery_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/LightGallery.min.css") ? Url("LightGallery.min.css") : Url("LightGallery.css");
                      
+                public static readonly string LoadingBar_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/LoadingBar.min.css") ? Url("LoadingBar.min.css") : Url("LoadingBar.css");
+                     
                 public static readonly string MaterialDesignIconicFont_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/MaterialDesignIconicFont.min.css") ? Url("MaterialDesignIconicFont.min.css") : Url("MaterialDesignIconicFont.css");
                      
                 public static readonly string Sweet_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Sweet.min.css") ? Url("Sweet.min.css") : Url("Sweet.css");
@@ -373,6 +383,13 @@ namespace Links
                         public const string lightGallery_min_js = "~/Scripts/JQuery/LightGallery/lightGallery.min.js"; 
                     }
                 }
+                public static partial class Loadingbar 
+                {
+                    public static class Assets
+                    {
+                        public const string Loadingbar_js = "~/Scripts/JQuery/Loadingbar/Loadingbar.js"; 
+                    }
+                }
                 public static partial class NiceScroll 
                 {
                     public static class Assets
@@ -427,7 +444,6 @@ namespace Links
                 public static class Assets
                 {
                     public const string jquery_1_10_2_min_js = "~/Scripts/JQuery/jquery-1.10.2.min.js"; 
-                    public const string Loading_Bar_js = "~/Scripts/JQuery/Loading-Bar.js"; 
                 }
             }
             public static class Assets
@@ -483,6 +499,7 @@ namespace Links
                     {
                         public const string Animate_css = "~/Content/Styles/Public/Animate.css";
                         public const string LightGallery_css = "~/Content/Styles/Public/LightGallery.css";
+                        public const string LoadingBar_css = "~/Content/Styles/Public/LoadingBar.css";
                         public const string MaterialDesignIconicFont_css = "~/Content/Styles/Public/MaterialDesignIconicFont.css";
                         public const string Sweet_css = "~/Content/Styles/Public/Sweet.css";
                     }

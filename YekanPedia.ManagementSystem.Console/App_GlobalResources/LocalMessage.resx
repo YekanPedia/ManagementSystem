@@ -219,4 +219,10 @@
   <data name="ClearLocalStorage" xml:space="preserve">
     <value>بازگشت به تنظیمات اولیه</value>
   </data>
+  <data name="CompleteProfile" xml:space="preserve">
+    <value>اطلاعات پروفایل شما تکمیل نمی باشد. برای تکمیل کلیک نمایید</value>
+  </data>
+  <data name="Task" xml:space="preserve">
+    <value>تسک</value>
+  </data>
 </root>
