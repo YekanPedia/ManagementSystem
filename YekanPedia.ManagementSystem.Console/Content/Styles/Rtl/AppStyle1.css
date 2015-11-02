@@ -493,3 +493,8 @@ html > body .top-menu > li > a.tm-chat {
 .SelectDefaultAvatar {
     border-color: #2196f3 !important;
 }
+
+.profile-menu > a .profile-info > i {
+    right: inherit;
+    left: 15px;
+}

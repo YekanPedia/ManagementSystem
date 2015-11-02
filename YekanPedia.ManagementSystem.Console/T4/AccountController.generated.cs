@@ -184,6 +184,7 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         public class ActionParamsClass_ChangePicture
         {
             public readonly string userId = "userId";
+            public readonly string picture = "picture";
         }
         static readonly ActionParamsClass_EmailChecker s_params_EmailChecker = new ActionParamsClass_EmailChecker();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -303,6 +304,19 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.ChangePicture);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "userId", userId);
             ChangePictureOverride(callInfo, userId);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void ChangePictureOverride(T4MVC_System_Web_Mvc_JsonResult callInfo, System.Guid userId, string picture);
+
+        [NonAction]
+        public override System.Web.Mvc.JsonResult ChangePicture(System.Guid userId, string picture)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.ChangePicture);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "userId", userId);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "picture", picture);
+            ChangePictureOverride(callInfo, userId, picture);
             return callInfo;
         }
 

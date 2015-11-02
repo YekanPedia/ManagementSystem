@@ -27,6 +27,11 @@
             ControllerBuilder.Current.SetControllerFactory(new IocControllerFactory());
 
         }
+
+        protected void Application_BeginRequest(object sender, EventArgs e)
+        {
+            HttpContext.Current.Response.AddHeader("x-frame-option","DENY");
+        }
         protected void Application_EndRequest(object sender, EventArgs e)
         {
             IocInitializer.HttpContextDisposeAndClearAll();
@@ -51,5 +56,6 @@
                 HttpContext.Current.User = user;
             }
         }
+
     }
 }

@@ -3,6 +3,7 @@
     using System;
     using Domain.Entity;
     using InfraStructure;
+    using System.Collections.Generic;
 
     public interface IUserService
     {
@@ -14,7 +15,7 @@
         IServiceResults<bool> EditCallInfo(User model);
         IServiceResults<bool> ChangePicture(Guid userId, string picture);
         void AddLoginDate(User model);
-        void AddLoginDate(Guid userId);
         IServiceResults<User> FindUser(Guid userId);
+        IServiceResults<IEnumerable<User>> GetTeachers();
     }
 }

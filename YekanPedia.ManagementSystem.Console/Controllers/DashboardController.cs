@@ -9,11 +9,7 @@
         {
             return View();
         }
-
-        public virtual ViewResult NotFound()
-        {
-            return View(Request.UrlReferrer);
-        }
+      
 
         [HttpGet]
         public virtual ActionResult Admin()

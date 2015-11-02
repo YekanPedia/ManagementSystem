@@ -28,6 +28,7 @@
             public static readonly string ContentCss = "~/Content/Ltr";
             public static readonly string ContentRtlCss = "~/Content/Rtl";
             public static readonly string PublicCss = "~/Content/Public";
+            public static readonly string FullCalednar = "~/Content/FullCalednar";
         }
     }
 }

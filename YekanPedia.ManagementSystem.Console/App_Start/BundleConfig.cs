@@ -42,6 +42,7 @@
                            "~" + Links.Content.Styles.Ltr.AppStyle2_css));
 
             bundles.Add(new StyleBundle(Links.Bundles.Styles.ContentRtlCss).Include("~" + Links.Content.Styles.Rtl.AppStyle1_css));
+            bundles.Add(new StyleBundle(Links.Bundles.Styles.FullCalednar).Include("~" + Links.Content.Styles.Public.Fullcalendar_css));
 
             bundles.Add(new StyleBundle(Links.Bundles.Styles.PublicCss).Include(
                           "~" + Links.Content.Styles.Public.Animate_css,

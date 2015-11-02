@@ -43,7 +43,7 @@
         [Column(TypeName = "char")]
         [MaxLength(10, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
         [StringLength(10, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
-        [PersianDate(ErrorMessageResourceName =nameof(DisplayError.PersianDate),ErrorMessageResourceType =typeof(DisplayError))]
+        [PersianDate(ErrorMessageResourceName = nameof(DisplayError.PersianDate), ErrorMessageResourceType = typeof(DisplayError))]
         public string BirthDate { get; set; }
 
         [Display(ResourceType = typeof(DisplayNames), Name = nameof(Sex))]
@@ -111,15 +111,21 @@
         [StringLength(200, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
         public string AboutMe { get; set; }
 
-        public bool IsRegisterCompleted()
+        public bool IsTeacher { get; set; }
+        public int ProgressRegisterCompleted()
         {
-            return false;
+            int progress = 0;
+            if (!string.IsNullOrEmpty(AboutMe))
+                progress += 30;
+            if (!string.IsNullOrEmpty(FullName) && !string.IsNullOrEmpty(Sex) & !string.IsNullOrEmpty(BirthDate))
+                progress += 35;
+            if (!string.IsNullOrEmpty(Email) && !string.IsNullOrEmpty(Mobile) && !string.IsNullOrEmpty(Twitter) & !string.IsNullOrEmpty(Facebook))
+                progress += 35;
+            return progress;
         }
 
         public virtual ICollection<UserInClass> UserInClass { get; set; }
         public virtual ICollection<Class> Class { get; set; }
         public virtual ICollection<Tasks> Tasks { get; set; }
     }
-
-
 }

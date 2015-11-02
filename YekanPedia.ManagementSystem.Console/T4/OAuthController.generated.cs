@@ -91,6 +91,7 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         public class ActionParamsClass_SignIn
         {
             public readonly string model = "model";
+            public readonly string rememberMe = "rememberMe";
         }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -140,14 +141,15 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         }
 
         [NonAction]
-        partial void SignInOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, YekanPedia.ManagementSystem.Domain.Entity.User model);
+        partial void SignInOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, YekanPedia.ManagementSystem.Domain.Entity.User model, bool? rememberMe);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult SignIn(YekanPedia.ManagementSystem.Domain.Entity.User model)
+        public override System.Web.Mvc.ActionResult SignIn(YekanPedia.ManagementSystem.Domain.Entity.User model, bool? rememberMe)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.SignIn);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
-            SignInOverride(callInfo, model);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "rememberMe", rememberMe);
+            SignInOverride(callInfo, model, rememberMe);
             return callInfo;
         }
 

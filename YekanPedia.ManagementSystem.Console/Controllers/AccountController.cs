@@ -15,7 +15,6 @@
         private readonly IUserService _userService;
         private readonly IActionResults _actionResult;
         private readonly ITaskService _taskService;
-
         public AccountController(IUserService userService, IActionResults actionResult, ITaskService taskService)
         {
             _userService = userService;
@@ -23,7 +22,6 @@
             _taskService = taskService;
         }
         #endregion
-
         #region Register
         [HttpPost, ValidateAntiForgeryToken, AllowAnonymous]
         public virtual JsonResult Register(User model)
@@ -58,7 +56,6 @@
             return Json(result);
         }
         #endregion
-
         #region Profile
         [HttpGet, Route("Account/Profile/{userId}")]
         public virtual new ActionResult Profile(Guid userId)
@@ -66,7 +63,7 @@
             var result = _userService.FindUser(userId).Result;
             if (result == null)
             {
-                return RedirectToAction(MVC.Dashboard.ActionNames.NotFound, MVC.Dashboard.Name);
+                return RedirectToAction(MVC.Error.ActionNames.Er404, MVC.Error.Name);
             }
             return View(result);
         }
@@ -74,7 +71,6 @@
         [HttpPost]
         public virtual JsonResult EditAboutMe(Guid UserId, string AboutMe)
         {
-            _taskService.EditUserTaskProgress(UserId, TaskType.Profile, 20);
             return Json(_userService.EditAboutMe(UserId, AboutMe));
         }
 
@@ -88,7 +84,6 @@
                 _actionResult.Message = this.GetErrorsModelState();
                 return Json(_actionResult);
             }
-            _taskService.EditUserTaskProgress(model.UserId, TaskType.Profile, 30);
             return Json(result);
         }
 
@@ -102,11 +97,9 @@
                 _actionResult.Message = this.GetErrorsModelState();
                 return Json(_actionResult);
             }
-            _taskService.EditUserTaskProgress(model.UserId, TaskType.Profile, 30);
             return Json(result);
         }
         #endregion
-
         #region Picture
         [HttpGet, Route("Account/ChangePicture/{userId}")]
         public virtual ActionResult ChangePicture(Guid userId)
@@ -114,7 +107,7 @@
             var result = _userService.FindUser(userId).Result;
             if (result == null)
             {
-                return RedirectToAction(MVC.Dashboard.ActionNames.NotFound, MVC.Dashboard.Name);
+                return RedirectToAction(MVC.Error.ActionNames.Er404, MVC.Error.Name);
             }
             return View(result);
         }
@@ -126,7 +119,6 @@
             return Json(result);
         }
         #endregion
-
         #region Validation Email Cheker
         [HttpPost, OutputCache(NoStore = true, Location = OutputCacheLocation.None)]
         public virtual JsonResult EmailChecker(string email)

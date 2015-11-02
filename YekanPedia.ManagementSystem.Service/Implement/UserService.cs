@@ -15,13 +15,13 @@
         #region Constructur
         private readonly IUnitOfWork _uow;
         private readonly IDbSet<User> _user;
-        public UserService(IUnitOfWork uow)
+        private readonly ITaskService _taskService;
+        public UserService(IUnitOfWork uow, ITaskService taskService)
         {
             _uow = uow;
             _user = uow.Set<User>();
+            _taskService = taskService;
         }
-
-
         #endregion
         public IServiceResults<Guid> AddUser(User model)
         {
@@ -31,9 +31,10 @@
             model.LastLoginDate = DateTime.Now;
             _user.Add(model);
             _uow.SaveChanges();
+
             return new ServiceResults<Guid>() { IsSuccessfull = true, Message = "", Result = model.UserId };
         }
-
+        #region Validation check
         public IServiceResults<bool> CheckEmailExist(string email)
         {
             var result = _user.Count(X => X.Email.Trim().ToLower() == email.Trim().ToLower());
@@ -53,7 +54,6 @@
                 Result = false
             };
         }
-
         public IServiceResults<User> CheckUserExist(string email, string password)
         {
             var result = _user.FirstOrDefault(X => X.Email.Trim().ToLower() == email.Trim().ToLower() && X.Password.Trim().ToLower() == password.Trim().ToLower());
@@ -75,11 +75,8 @@
             };
         }
 
-        public void AddLoginDate(Guid userId)
-        {
-            throw new NotImplementedException();
-        }
-
+        #endregion
+        #region ChangeLoginState
         public void AddLoginDate(User model)
         {
             try
@@ -91,7 +88,7 @@
             {
             }
         }
-
+        #endregion
         public IServiceResults<User> FindUser(Guid userId)
         {
             var result = _user.FirstOrDefault(X => X.UserId == userId);
@@ -111,6 +108,7 @@
                 Result = result
             };
         }
+        #region Edit
         public IServiceResults<bool> EditAboutMe(Guid userId, string aboutMe)
         {
             var result = _user.FirstOrDefault(X => X.UserId == userId);
@@ -125,6 +123,7 @@
             }
             result.AboutMe = aboutMe;
             _uow.SaveChanges();
+            _taskService.EditUserTaskProgress(userId, TaskType.Profile, result.ProgressRegisterCompleted());
             return new ServiceResults<bool>()
             {
                 IsSuccessfull = true,
@@ -148,6 +147,7 @@
             result.Sex = model.Sex;
             result.BirthDate = model.BirthDate;
             var resultSave = _uow.SaveChanges();
+            _taskService.EditUserTaskProgress(result.UserId, TaskType.Profile, result.ProgressRegisterCompleted());
             return new ServiceResults<bool>()
             {
                 IsSuccessfull = (resultSave != 0 ? true : false),
@@ -175,7 +175,7 @@
             result.Latitude = model.Latitude;
             result.Longitude = model.Longitude;
             var resultSave = _uow.SaveChanges();
-
+            _taskService.EditUserTaskProgress(result.UserId, TaskType.Profile, result.ProgressRegisterCompleted());
             return new ServiceResults<bool>()
             {
                 IsSuccessfull = (resultSave != 0 ? true : false),
@@ -183,7 +183,6 @@
                 Result = (resultSave != 0 ? true : false)
             };
         }
-
         public IServiceResults<bool> ChangePicture(Guid userId, string picture)
         {
             var result = _user.FirstOrDefault(X => X.UserId == userId);
@@ -205,6 +204,16 @@
                 IsSuccessfull = (resultSave != 0 ? true : false),
                 Message = string.Empty,
                 Result = (resultSave != 0 ? true : false)
+            };
+        }
+        #endregion
+        public IServiceResults<IEnumerable<User>> GetTeachers()
+        {
+            return new ServiceResults<IEnumerable<User>>()
+            {
+                IsSuccessfull = true,
+                Message = string.Empty,
+                Result = _user.Where(X => X.IsTeacher).ToList()
             };
         }
     }

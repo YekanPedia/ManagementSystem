@@ -26,7 +26,7 @@
         }
 
         [HttpPost, ValidateAntiForgeryToken, AllowAnonymous]
-        public virtual ActionResult SignIn(User model)
+        public virtual ActionResult SignIn(User model, bool? rememberMe)
         {
             var login = _userServie.CheckUserExist(model.Email, model.Password);
             if (login.Result == null)
@@ -48,10 +48,12 @@
             JavaScriptSerializer serializer = new JavaScriptSerializer();
             string userData = serializer.Serialize(serializeModel);
 
-            FormsAuthenticationTicket authTicket = new FormsAuthenticationTicket(1, login.Result.Email, DateTime.Now, DateTime.Now.AddHours(8), false, userData);
+            int expire = 30;// rememberMe ? 43200 : 30;
+            FormsAuthenticationTicket authTicket = new FormsAuthenticationTicket(1, login.Result.Email, DateTime.Now, DateTime.Now.AddMinutes(expire), false, userData);
             string encTicket = FormsAuthentication.Encrypt(authTicket);
-            HttpCookie faCookie = new HttpCookie(FormsAuthentication.FormsCookieName, encTicket);
-            Response.Cookies.Add(faCookie);
+            HttpCookie cookie = new HttpCookie(FormsAuthentication.FormsCookieName, encTicket);
+            Response.Cookies.Add(cookie);
+            cookie.HttpOnly = true;
             return RedirectToAction(MVC.Dashboard.ActionNames.User, MVC.Dashboard.Name);
         }
         #endregion
