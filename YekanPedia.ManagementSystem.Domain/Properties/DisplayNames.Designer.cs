@@ -79,6 +79,42 @@ namespace YekanPedia.ManagementSystem.Domain.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ظرفیت.
+        /// </summary>
+        public static string Capacity {
+            get {
+                return ResourceManager.GetString("Capacity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to نوع کلاس.
+        /// </summary>
+        public static string ClassTypeId {
+            get {
+                return ResourceManager.GetString("ClassTypeId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to دوره.
+        /// </summary>
+        public static string CourseId {
+            get {
+                return ResourceManager.GetString("CourseId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to دوره.
+        /// </summary>
+        public static string CourseName {
+            get {
+                return ResourceManager.GetString("CourseName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to پست الکترونیک.
         /// </summary>
         public static string Email {
@@ -97,6 +133,15 @@ namespace YekanPedia.ManagementSystem.Domain.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to تاریخ اتمام کلاس.
+        /// </summary>
+        public static string FinishDateSh {
+            get {
+                return ResourceManager.GetString("FinishDateSh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to نام و نام خانوادگی.
         /// </summary>
         public static string FullName {
@@ -111,6 +156,24 @@ namespace YekanPedia.ManagementSystem.Domain.Properties {
         public static string IsActive {
             get {
                 return ResourceManager.GetString("IsActive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to استاد.
+        /// </summary>
+        public static string IsTeacher {
+            get {
+                return ResourceManager.GetString("IsTeacher", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تاریخ جلسه توجیهی.
+        /// </summary>
+        public static string JustificationDateSh {
+            get {
+                return ResourceManager.GetString("JustificationDateSh", resourceCulture);
             }
         }
         
@@ -142,11 +205,38 @@ namespace YekanPedia.ManagementSystem.Domain.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to مبلغ ( ریال ).
+        /// </summary>
+        public static string Price {
+            get {
+                return ResourceManager.GetString("Price", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تعداد جلسات.
+        /// </summary>
+        public static string SessionCount {
+            get {
+                return ResourceManager.GetString("SessionCount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to جنسیت.
         /// </summary>
         public static string Sex {
             get {
                 return ResourceManager.GetString("Sex", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تاریخ شروع کلاس.
+        /// </summary>
+        public static string StartDateSh {
+            get {
+                return ResourceManager.GetString("StartDateSh", resourceCulture);
             }
         }
         
@@ -174,6 +264,15 @@ namespace YekanPedia.ManagementSystem.Domain.Properties {
         public static string Twitter {
             get {
                 return ResourceManager.GetString("Twitter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to نوع کلاس.
+        /// </summary>
+        public static string Type {
+            get {
+                return ResourceManager.GetString("Type", resourceCulture);
             }
         }
     }

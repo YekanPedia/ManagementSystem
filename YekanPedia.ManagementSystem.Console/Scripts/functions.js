@@ -1,4 +1,5 @@
-﻿/// <reference path="JQuery/jquery-1.10.2.min.js" />
+﻿/// <reference path="JQuery/PersianCalendar/PersianCalendar.js" />
+/// <reference path="JQuery/jquery-1.10.2.min.js" />
 
 /*
 * Layout
@@ -775,10 +776,21 @@ function HideError(el) {
 }
 
 $().ready(function () {
-
-
+    $('.dataTableSelection').bootgrid({
+        css: {
+            icon: 'zmdi icon',
+            iconColumns: 'zmdi-view-module',
+            iconDown: 'zmdi-expand-more',
+            iconRefresh: 'zmdi-refresh',
+            iconUp: 'zmdi-expand-less'
+        },
+        
+        rowSelect: true,
+        keepSelection: true
+    });
+    $('.NoWaves').removeClass('waves-effect');
+    $('.PersianCalendar').Zebra_DatePicker();
     $(".form-control").keyup(function () { return false });
-
     $('.thumbnail').click(function () {
         $('.thumbnail').removeClass('SelectDefaultAvatar');
         $(this).addClass('SelectDefaultAvatar');

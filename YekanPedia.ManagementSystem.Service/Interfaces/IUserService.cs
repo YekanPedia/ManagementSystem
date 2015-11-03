@@ -7,7 +7,7 @@
 
     public interface IUserService
     {
-        IServiceResults<Guid> AddUser(User model);
+        IServiceResults<Guid> AddUser(User user, Tasks task);
         IServiceResults<bool> CheckEmailExist(string email);
         IServiceResults<User> CheckUserExist(string email, string password);
         IServiceResults<bool> EditAboutMe(Guid userId, string aboutMe);

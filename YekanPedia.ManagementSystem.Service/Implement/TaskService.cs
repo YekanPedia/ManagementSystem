@@ -18,8 +18,6 @@
             _uow = uow;
             _task = uow.Set<Tasks>();
         }
-
-
         #endregion
         public void AddUserTask(Tasks model)
         {
@@ -37,7 +35,7 @@
         }
         public IEnumerable<Tasks> GetUserTask(Guid userId)
         {
-            return _task.Where(X => X.UserId == userId && X.Progress < 100).ToList();
+            return _task.Where(X => X.UserId == userId && X.Progress < 100).AsNoTracking().ToList();
         }
     }
 }

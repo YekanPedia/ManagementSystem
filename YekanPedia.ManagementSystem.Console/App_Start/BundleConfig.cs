@@ -28,11 +28,16 @@
                           "~" + Links.Scripts.JQuery.Wave.waves_min_js,
                           "~" + Links.Scripts.JQuery.Type.jQuery_Type_js,
                            "~" + Links.Scripts.JQuery.Sweet.sweet_alert_min_js,
+                           "~" + Links.Scripts.JQuery.PersianCalendar.PersianCalendar_js,
+                           "~" + Links.Scripts.JQuery.InputMask.input_mask_min_js,
+                           "~" + Links.Scripts.JQuery.Select.BootstrapSelect_js,
+                           "~" + Links.Scripts.JQuery.BootGrid.jquery_bootgrid_min_js,
                           "~" + Links.Scripts.functions_js,
                           "~" + Links.Scripts.JQuery.Validation.jquery_validate_js,
                           "~" + Links.Scripts.JQuery.Validation.jquery_validate_unobtrusive_js,
                           "~" + Links.Scripts.JQuery.Ajax.jquery_unobtrusive_ajax_js,
                            "~" + Links.Scripts.JQuery.Phoenix.Phoenix_core_js
+
                           ));
 
             #endregion
@@ -48,7 +53,11 @@
                           "~" + Links.Content.Styles.Public.Animate_css,
                           "~" + Links.Content.Styles.Public.LightGallery_css,
                            "~" + Links.Content.Styles.Public.Sweet_css,
-                          "~" + Links.Content.Styles.Public.MaterialDesignIconicFont_css));
+                          "~" + Links.Content.Styles.Public.MaterialDesignIconicFont_css,
+                          "~" + Links.Content.Styles.Public.PersianCalendar_css,
+                          "~" + Links.Content.Styles.Public.Bootgrid_css,
+                          "~" + Links.Content.Styles.Public.BootstrapSelect_css
+                          ));
             #endregion
         }
     }

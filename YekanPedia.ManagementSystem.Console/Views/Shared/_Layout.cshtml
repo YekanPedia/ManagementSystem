@@ -104,21 +104,14 @@
                             </a>
                         </li>
                         <li>
-                            <a href="@Url.Action(MVC.OAuth.ActionNames.SignOut,MVC.OAuth.Name)">
-                                <i class="zmdi zmdi-time-restore"></i>
+                            <a href="@Url.Action(MVC.OAuth.ActionNames.SignOut, MVC.OAuth.Name)">
+                                <i class="zmdi zmdi-sign-in"></i>
                                 @LocalMessage.Exit
                             </a>
                         </li>
                     </ul>
                 </div>
-                <ul class="main-menu">
-                    <li class="active">
-                        <a href="@Url.Action(MVC.Dashboard.ActionNames.User,MVC.Dashboard.Name)">
-                            <i class="zmdi zmdi-home"></i>
-                            @LocalMessage.Dashboard
-                        </a>
-                    </li>
-                </ul>
+                @{ Html.RenderPartial(MVC.Dashboard.Views.Partial._Menu);}
             </div>
         </aside>
         <aside id="chat">

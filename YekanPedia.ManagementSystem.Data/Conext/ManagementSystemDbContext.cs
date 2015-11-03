@@ -10,16 +10,19 @@
 
     public class ManagementSystemDbContext : DbContext, IUnitOfWork
     {
-        public DbSet<User> User { get; set; }
-        public DbSet<Tasks> Tasks { get; set; }
-        public DbSet<Class> Class { get; set; }
-        public DbSet<ClassType> ClassType { get; set; }
-        public DbSet<ClassTime> ClassTime { get; set; }
-        public DbSet<Configuration> Configurations { get; set; }
-        public DbSet<UserInClass> UserInClass { get; set; }
-        public DbSet<Course> Course { get; set; }
-        public DbSet<CanceledClass> CanceledClass { get; set; }
-
+        public ManagementSystemDbContext()
+        {
+            Database.SetInitializer<ManagementSystemDbContext>(null);
+        }
+       public DbSet<User> User { get; set; }
+       public DbSet<Tasks> Tasks { get; set; }
+       public DbSet<Class> Class { get; set; }
+       public DbSet<ClassType> ClassType { get; set; }
+       public DbSet<ClassTime> ClassTime { get; set; }
+       public DbSet<Configuration> Configurations { get; set; }
+       public DbSet<UserInClass> UserInClass { get; set; }
+       public DbSet<Course> Course { get; set; }
+       public DbSet<CanceledClass> CanceledClass { get; set; }
         public new IDbSet<TEntity> Set<TEntity>() where TEntity : class
         {
             return base.Set<TEntity>();

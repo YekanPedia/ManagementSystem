@@ -38,12 +38,12 @@
     [Table("User", Schema = "dbo")]
     public class User : BaseUser
     {
-
         [Display(ResourceType = typeof(DisplayNames), Name = nameof(BirthDate))]
         [Column(TypeName = "char")]
         [MaxLength(10, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
         [StringLength(10, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
         [PersianDate(ErrorMessageResourceName = nameof(DisplayError.PersianDate), ErrorMessageResourceType = typeof(DisplayError))]
+        [RegularExpression(@"^1[34][0-9][0-9]\/((1[0-2])|(0[1-9]))\/(([12][0-9])|(3[01])|(0[1-9]))$", ErrorMessageResourceName = nameof(DisplayError.PersianDate), ErrorMessageResourceType = typeof(DisplayError))]
         public string BirthDate { get; set; }
 
         [Display(ResourceType = typeof(DisplayNames), Name = nameof(Sex))]

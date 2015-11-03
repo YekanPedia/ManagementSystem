@@ -40,6 +40,7 @@ html > body .top-menu > li > a.tm-chat {
 #header {
     padding-left: 10px;
     padding-right: 0;
+        z-index: 999999;
 }
 
     #header .header-inner li.pull-right {
@@ -203,7 +204,7 @@ html > body .top-menu > li > a.tm-chat {
 }
 
     #chat.toggled {
-        z-index: 9;
+        z-index: 100;
         left: 0;
         right: inherit;
     }
@@ -497,4 +498,109 @@ html > body .top-menu > li > a.tm-chat {
 .profile-menu > a .profile-info > i {
     right: inherit;
     left: 15px;
+}
+
+@media (min-width: 768px) {
+    .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
+        float: right;
+    }
+}
+
+.input-group .fg-line:after {
+    right: 10px;
+}
+
+label {
+    font-weight: normal;
+}
+
+.bootstrap-select .check-mark {
+    right: inherit;
+    left: 15px;
+}
+
+.bootstrap-select > .btn-default:after {
+    left: inherit;
+    right: 0;
+}
+
+.bootstrap-select > .btn-default:before {
+    left: -17px;
+    right: inherit;
+    background-repeat: no-repeat;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMBAMAAACkW0HUAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAPUExURf///5mZmby8vMXFxcDAwBcHHhwAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAuSURBVBjTY1BgAAMhCCUI4QpCuIIQrqCgCIQSdIBQIhBK0ABCCUMoIBdECgoDAG+CA3GkwX1kAAAAAElFTkSuQmCC') /*/Content//Images/Other/Select.png*/;
+}
+
+.bootstrap-select.btn-group .dropdown-toggle .filter-option {
+    text-align: right;
+}
+
+.c-black {
+    color: #767676 !important;
+}
+
+.bootstrap-select.btn-group .dropdown-toggle .caret {
+    display: none;
+}
+
+.input-group > label:nth-of-type(1) {
+    padding-right: 12px;
+}
+
+th {
+    text-align: right;
+}
+
+.table {
+    font-size: 13px;
+}
+
+.table-responsive .bootgrid-table td, .table-responsive .bootgrid-table th > .column-header-anchor > .text {
+    text-align: right;
+}
+
+.bootgrid-footer .col-sm-6 {
+    float: left;
+}
+
+.bootgrid-footer .pagination, .bootgrid-header .pagination {
+    float: left;
+}
+
+.bootgrid-footer .infoBar, .bootgrid-header .actionBar {
+    text-align: right;
+}
+
+.dropdown-item {
+    text-align: right;
+}
+
+.search-field {
+    padding-right: 10px !important;
+}
+
+.bootgrid-table th > .column-header-anchor > .text {
+    margin: 0;
+}
+
+.bootgrid-footer .infoBar .infos {
+    border: 1px solid #787878;
+}
+
+.no-results {
+    text-align: center !important;
+    background-color: #EDECEC !important;
+}
+
+@media (max-width: 480px) {
+    .bootgrid-header .actions {
+        right: inherit;
+        left: 15px;
+    }
+
+    .bootgrid-header .search {
+        width: 72%;
+        padding-left: 0;
+        padding-right: 0;
+    }
 }

@@ -1,0 +1,100 @@
+﻿@model YekanPedia.ManagementSystem.Domain.Entity.Class
+@{ Layout = null;}
+<div class="row">
+    <div class="col-sm-3 m-b-20">
+        <p class="f-500 m-b-10 c-black">
+            @Html.DisplayNameFor(X => X.UserId)
+        </p>
+        @Html.DropDownListFor(X => X.UserId, (IEnumerable<SelectListItem>)ViewBag.Teachers, new { @class = "selectpicker bs-select-hidden" })
+    </div>
+    <div class="col-sm-3 m-b-20">
+        <p class="f-500 m-b-10 c-black">
+            @Html.DisplayNameFor(X => X.ClassTypeId)
+        </p>
+        @Html.DropDownListFor(X => X.ClassTypeId, (IEnumerable<SelectListItem>)ViewBag.ClassTypes, new { @class = "selectpicker bs-select-hidden" })
+    </div>
+    <div class="col-sm-3 m-b-20">
+        <p class="f-500 m-b-10 c-black">
+            @Html.DisplayNameFor(X => X.CourseId)
+        </p>
+        @Html.DropDownListFor(X => X.CourseId, (IEnumerable<SelectListItem>)ViewBag.Courses, new { @class = "selectpicker bs-select-hidden " })
+    </div>
+    <div class="col-sm-3 m-b-20">
+        <div class="input-group has-feedback m-b-20">
+            <div class="fg-line">
+                <label>@Html.DisplayNameFor(X => X.Capacity)</label>
+                @Html.TextBoxFor(X => X.Capacity, new { @data_type = "nu", @class = "form-control" })
+            </div>
+            <small class="help-block">
+                @Html.ValidationMessageFor(X => X.Capacity)
+            </small>
+            <span class="zmdi form-control-feedback"></span>
+        </div>
+    </div>
+    <div class="col-sm-3 m-b-20">
+        <div class="input-group has-feedback m-b-20">
+            <div class="fg-line">
+                <label>@Html.DisplayNameFor(X => X.SessionCount)</label>
+                @Html.TextBoxFor(X => X.SessionCount, new { @data_type = "nu", @class = "form-control" })
+            </div>
+            <small class="help-block">
+                @Html.ValidationMessageFor(X => X.SessionCount)
+            </small>
+            <span class="zmdi form-control-feedback"></span>
+        </div>
+    </div>
+    <div class="col-sm-3 m-b-20">
+        <div class="input-group has-feedback m-b-20">
+            <div class="fg-line">
+                <label>@Html.DisplayNameFor(X => X.Price)</label>
+                @Html.TextBoxFor(X => X.Price, new { @data_type = "nu", @class = "form-control" })
+            </div>
+            <small class="help-block">
+                @Html.ValidationMessageFor(X => X.Price)
+            </small>
+            <span class="zmdi form-control-feedback"></span>
+        </div>
+    </div>
+    <div class="col-sm-3 m-b-20">
+        <div class="input-group has-feedback m-b-20">
+            <label>@Html.DisplayNameFor(X => X.StartDateSh)</label>
+            <div class="fg-line">
+                @Html.TextBoxFor(X => X.StartDateSh, new { @data_mask = "0000/00/00", @class = "form-control PersianCalendar" })
+            </div>
+            <small class="help-block">
+                @Html.ValidationMessageFor(X => X.StartDateSh)
+            </small>
+            <span class="zmdi form-control-feedback"></span>
+        </div>
+    </div>
+    <div class="col-sm-3 m-b-20">
+        <div class="input-group has-feedback m-b-20">
+            <label>@Html.DisplayNameFor(X => X.FinishDateSh)</label>
+            <div class="fg-line">
+                @Html.TextBoxFor(X => X.FinishDateSh, new { @data_mask = "0000/00/00", @class = "form-control PersianCalendar" })
+            </div>
+            <small class="help-block">
+                @Html.ValidationMessageFor(X => X.FinishDateSh)
+            </small>
+            <span class="zmdi form-control-feedback"></span>
+        </div>
+    </div>
+    <div class="col-sm-3 m-b-20">
+        <div class="input-group has-feedback m-b-20">
+            <label>@Html.DisplayNameFor(X => X.JustificationDateSh)</label>
+            <div class="fg-line">
+                @Html.TextBoxFor(X => X.JustificationDateSh, new { @data_mask = "0000/00/00", @class = "form-control PersianCalendar" })
+            </div>
+            <small class="help-block">
+                @Html.ValidationMessageFor(X => X.JustificationDateSh)
+            </small>
+            <span class="zmdi form-control-feedback"></span>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="m-l-20  m-t-30 text-left">
+        <button type="submit" id="saveAboutMeForm" class="btn btn-primary btn-sm waves-effect">@LocalMessage.Save</button>
+        <a href="@Url.Action(MVC.Dashboard.ActionNames.User,MVC.Dashboard.Name)" class="btn btn-danger btn-sm waves-effect">@LocalMessage.Cancel</a>
+    </div>
+</div>

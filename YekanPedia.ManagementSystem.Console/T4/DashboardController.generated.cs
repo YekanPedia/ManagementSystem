@@ -115,9 +115,11 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
                 public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
                 public class _ViewNamesClass
                 {
+                    public readonly string _Menu = "_Menu";
                     public readonly string Message = "Message";
                     public readonly string Notification = "Notification";
                 }
+                public readonly string _Menu = "~/Views/Dashboard/Partial/_Menu.cshtml";
                 public readonly string Message = "~/Views/Dashboard/Partial/Message.cshtml";
                 public readonly string Notification = "~/Views/Dashboard/Partial/Notification.cshtml";
             }

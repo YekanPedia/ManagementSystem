@@ -1,6 +1,5 @@
 ﻿@model YekanPedia.ManagementSystem.Domain.Entity.User
 
-
 <div class="card" id="profile-main">
     <div class="pm-overview c-overflow" tabindex="3" style="overflow: hidden; outline: none;">
         <div class="pmo-pic">
@@ -252,7 +251,7 @@
                                         <div class="input-group has-feedback m-b-20">
 
                                             <div class="fg-line">
-                                                @Html.TextBoxFor(X => X.BirthDate, new { @autocomplete = "off", @class = "form-control ZebraDatePicker" })
+                                                @Html.TextBoxFor(X => X.BirthDate, new { @data_mask = "0000/00/00", @autocomplete = "off", @class = "form-control PersianCalendar" })
                                             </div>
                                             <small class="help-block">
                                                 @Html.ValidationMessageFor(X => X.BirthDate)

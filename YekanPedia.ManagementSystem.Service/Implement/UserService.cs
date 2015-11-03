@@ -23,16 +23,20 @@
             _taskService = taskService;
         }
         #endregion
-        public IServiceResults<Guid> AddUser(User model)
+        public IServiceResults<Guid> AddUser(User user, Tasks task)
         {
-            model.UserId = Guid.NewGuid();
-            model.IsActive = true;
-            model.RegisterDate = DateTime.Now;
-            model.LastLoginDate = DateTime.Now;
-            _user.Add(model);
+            user.IsActive = true;
+            user.RegisterDate = DateTime.Now;
+            user.LastLoginDate = DateTime.Now;
+            _user.Add(user);
             _uow.SaveChanges();
-
-            return new ServiceResults<Guid>() { IsSuccessfull = true, Message = "", Result = model.UserId };
+            _taskService.AddUserTask(task);
+            return new ServiceResults<Guid>()
+            {
+                IsSuccessfull = true,
+                Message = string.Empty,
+                Result = user.UserId
+            };
         }
         #region Validation check
         public IServiceResults<bool> CheckEmailExist(string email)
@@ -79,14 +83,8 @@
         #region ChangeLoginState
         public void AddLoginDate(User model)
         {
-            try
-            {
-                model.LastLoginDate = DateTime.Now;
-                _uow.SaveChanges();
-            }
-            catch (Exception)
-            {
-            }
+            model.LastLoginDate = DateTime.Now;
+            _uow.SaveChanges();
         }
         #endregion
         public IServiceResults<User> FindUser(Guid userId)
@@ -150,9 +148,9 @@
             _taskService.EditUserTaskProgress(result.UserId, TaskType.Profile, result.ProgressRegisterCompleted());
             return new ServiceResults<bool>()
             {
-                IsSuccessfull = (resultSave != 0 ? true : false),
+                IsSuccessfull = (resultSave > 0 ? true : false),
                 Message = string.Empty,
-                Result = (resultSave != 0 ? true : false)
+                Result = (resultSave > 0 ? true : false)
             };
         }
         public IServiceResults<bool> EditCallInfo(User model)
@@ -178,9 +176,9 @@
             _taskService.EditUserTaskProgress(result.UserId, TaskType.Profile, result.ProgressRegisterCompleted());
             return new ServiceResults<bool>()
             {
-                IsSuccessfull = (resultSave != 0 ? true : false),
+                IsSuccessfull = (resultSave > 0 ? true : false),
                 Message = string.Empty,
-                Result = (resultSave != 0 ? true : false)
+                Result = (resultSave > 0 ? true : false)
             };
         }
         public IServiceResults<bool> ChangePicture(Guid userId, string picture)
@@ -213,7 +211,7 @@
             {
                 IsSuccessfull = true,
                 Message = string.Empty,
-                Result = _user.Where(X => X.IsTeacher).ToList()
+                Result = _user.Where(X => X.IsTeacher).AsNoTracking().ToList()
             };
         }
     }

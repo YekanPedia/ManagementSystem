@@ -56,6 +56,14 @@
     <Compile Include="Migrations\201511010919489_add task.Designer.cs">
       <DependentUpon>201511010919489_add task.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201511022151373_ignore.cs" />
+    <Compile Include="Migrations\201511022151373_ignore.Designer.cs">
+      <DependentUpon>201511022151373_ignore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511022159316_changeClassId.cs" />
+    <Compile Include="Migrations\201511022159316_changeClassId.Designer.cs">
+      <DependentUpon>201511022159316_changeClassId.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -72,6 +80,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201511010919489_add task.resx">
       <DependentUpon>201511010919489_add task.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511022151373_ignore.resx">
+      <DependentUpon>201511022151373_ignore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511022159316_changeClassId.resx">
+      <DependentUpon>201511022159316_changeClassId.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

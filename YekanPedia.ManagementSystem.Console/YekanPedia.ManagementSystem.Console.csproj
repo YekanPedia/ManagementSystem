@@ -270,13 +270,17 @@
     <Content Include="Content\Images\Menu\search.png" />
     <Content Include="Content\Images\Menu\task%402x.png" />
     <Content Include="Content\Images\Menu\task.png" />
+    <Content Include="Content\Images\Other\Select.png" />
     <Content Include="Content\Styles\Ltr\AppStyle1.css" />
     <Content Include="Content\Styles\Ltr\AppStyle2.css" />
     <Content Include="Content\Styles\Public\Animate.css" />
+    <Content Include="Content\Styles\Public\BootstrapSelect.css" />
     <Content Include="Content\Styles\Public\Fullcalendar.css" />
+    <Content Include="Content\Styles\Public\Bootgrid.css" />
     <Content Include="Content\Styles\Public\LightGallery.css" />
     <Content Include="Content\Styles\Public\LoadingBar.css" />
     <Content Include="Content\Styles\Public\MaterialDesignIconicFont.css" />
+    <Content Include="Content\Styles\Public\PersianCalendar.css" />
     <Content Include="Content\Styles\Public\Sweet.css" />
     <Content Include="Content\Styles\Rtl\AppStyle1.css" />
     <Content Include="Global.asax" />
@@ -285,9 +289,13 @@
     <Content Include="Scripts\jquery.signalR-2.1.2.js" />
     <Content Include="Scripts\jquery.signalR-2.1.2.min.js" />
     <Content Include="Scripts\JQuery\Ajax\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\JQuery\BootGrid\jquery.bootgrid.min.js" />
+    <Content Include="Scripts\JQuery\InputMask\input-mask.min.js" />
     <Content Include="Scripts\JQuery\jquery-1.10.2.min.js" />
     <Content Include="Scripts\JQuery\Loadingbar\Loadingbar.js" />
+    <Content Include="Scripts\JQuery\PersianCalendar\PersianCalendar.js" />
     <Content Include="Scripts\JQuery\Phoenix\Phoenix.core.js" />
+    <Content Include="Scripts\JQuery\Select\BootstrapSelect.js" />
     <Content Include="Scripts\JQuery\Type\jQuery.Type.js" />
     <Content Include="Fonts\BYekan\BYekan.ttf" />
     <Content Include="Fonts\MaterialDesignIconic\MaterialDesignIconicFont.ttf" />
@@ -337,6 +345,13 @@
     <Content Include="Views\Account\ChangePicture.cshtml" />
     <Content Include="Views\Task\Partial\_Task.cshtml" />
     <Content Include="Views\Class\Add.cshtml" />
+    <Content Include="Views\Dashboard\Partial\_Menu.cshtml" />
+    <Content Include="Views\Class\Partial\_CreateClass.cshtml" />
+    <Content Include="Views\Class\Partial\_ListClass.cshtml" />
+    <Content Include="Views\Class\Partial\_HeaderClassGrid.cshtml" />
+    <Content Include="Views\Class\AddTime.cshtml" />
+    <Content Include="Views\Class\Partial\_CreateClassTime.cshtml" />
+    <Content Include="Views\Class\Partial\_ListClassTime.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

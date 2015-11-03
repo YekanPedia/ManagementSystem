@@ -158,6 +158,22 @@ namespace Links
                 public static readonly string jquery_unobtrusive_ajax_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.unobtrusive-ajax.min.js") ? Url("jquery.unobtrusive-ajax.min.js") : Url("jquery.unobtrusive-ajax.js");
             }
         
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class BootGrid {
+                private const string URLPATH = "~/Scripts/JQuery/BootGrid";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                public static readonly string jquery_bootgrid_min_js = Url("jquery.bootgrid.min.js");
+            }
+        
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class InputMask {
+                private const string URLPATH = "~/Scripts/JQuery/InputMask";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                public static readonly string input_mask_min_js = Url("input-mask.min.js");
+            }
+        
             public static readonly string jquery_1_10_2_min_js = Url("jquery-1.10.2.min.js");
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
             public static class LightGallery {
@@ -192,11 +208,27 @@ namespace Links
             }
         
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class PersianCalendar {
+                private const string URLPATH = "~/Scripts/JQuery/PersianCalendar";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                public static readonly string PersianCalendar_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/PersianCalendar.min.js") ? Url("PersianCalendar.min.js") : Url("PersianCalendar.js");
+            }
+        
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
             public static class Phoenix {
                 private const string URLPATH = "~/Scripts/JQuery/Phoenix";
                 public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
                 public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
                 public static readonly string Phoenix_core_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Phoenix.core.min.js") ? Url("Phoenix.core.min.js") : Url("Phoenix.core.js");
+            }
+        
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class Select {
+                private const string URLPATH = "~/Scripts/JQuery/Select";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                public static readonly string BootstrapSelect_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/BootstrapSelect.min.js") ? Url("BootstrapSelect.min.js") : Url("BootstrapSelect.js");
             }
         
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -312,6 +344,14 @@ namespace Links
                 public static readonly string task_2x_png = Url("task@2x.png");
             }
         
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class Other {
+                private const string URLPATH = "~/Content/Images/Other";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                public static readonly string Select_png = Url("Select.png");
+            }
+        
         }
     
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -337,6 +377,10 @@ namespace Links
                 public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
                 public static readonly string Animate_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Animate.min.css") ? Url("Animate.min.css") : Url("Animate.css");
                      
+                public static readonly string Bootgrid_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Bootgrid.min.css") ? Url("Bootgrid.min.css") : Url("Bootgrid.css");
+                     
+                public static readonly string BootstrapSelect_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/BootstrapSelect.min.css") ? Url("BootstrapSelect.min.css") : Url("BootstrapSelect.css");
+                     
                 public static readonly string Fullcalendar_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Fullcalendar.min.css") ? Url("Fullcalendar.min.css") : Url("Fullcalendar.css");
                      
                 public static readonly string LightGallery_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/LightGallery.min.css") ? Url("LightGallery.min.css") : Url("LightGallery.css");
@@ -344,6 +388,8 @@ namespace Links
                 public static readonly string LoadingBar_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/LoadingBar.min.css") ? Url("LoadingBar.min.css") : Url("LoadingBar.css");
                      
                 public static readonly string MaterialDesignIconicFont_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/MaterialDesignIconicFont.min.css") ? Url("MaterialDesignIconicFont.min.css") : Url("MaterialDesignIconicFont.css");
+                     
+                public static readonly string PersianCalendar_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/PersianCalendar.min.css") ? Url("PersianCalendar.min.css") : Url("PersianCalendar.css");
                      
                 public static readonly string Sweet_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Sweet.min.css") ? Url("Sweet.min.css") : Url("Sweet.css");
                      
@@ -392,6 +438,20 @@ namespace Links
                         public const string jquery_unobtrusive_ajax_js = "~/Scripts/JQuery/Ajax/jquery.unobtrusive-ajax.js"; 
                     }
                 }
+                public static partial class BootGrid 
+                {
+                    public static class Assets
+                    {
+                        public const string jquery_bootgrid_min_js = "~/Scripts/JQuery/BootGrid/jquery.bootgrid.min.js"; 
+                    }
+                }
+                public static partial class InputMask 
+                {
+                    public static class Assets
+                    {
+                        public const string input_mask_min_js = "~/Scripts/JQuery/InputMask/input-mask.min.js"; 
+                    }
+                }
                 public static partial class LightGallery 
                 {
                     public static class Assets
@@ -420,11 +480,25 @@ namespace Links
                         public const string PasswordStrongly_js = "~/Scripts/JQuery/PasswordStrongly/PasswordStrongly.js"; 
                     }
                 }
+                public static partial class PersianCalendar 
+                {
+                    public static class Assets
+                    {
+                        public const string PersianCalendar_js = "~/Scripts/JQuery/PersianCalendar/PersianCalendar.js"; 
+                    }
+                }
                 public static partial class Phoenix 
                 {
                     public static class Assets
                     {
                         public const string Phoenix_core_js = "~/Scripts/JQuery/Phoenix/Phoenix.core.js"; 
+                    }
+                }
+                public static partial class Select 
+                {
+                    public static class Assets
+                    {
+                        public const string BootstrapSelect_js = "~/Scripts/JQuery/Select/BootstrapSelect.js"; 
                     }
                 }
                 public static partial class Sweet 
@@ -503,6 +577,12 @@ namespace Links
                     {
                     }
                 }
+                public static partial class Other 
+                {
+                    public static class Assets
+                    {
+                    }
+                }
                 public static class Assets
                 {
                 }
@@ -522,10 +602,13 @@ namespace Links
                     public static class Assets
                     {
                         public const string Animate_css = "~/Content/Styles/Public/Animate.css";
+                        public const string Bootgrid_css = "~/Content/Styles/Public/Bootgrid.css";
+                        public const string BootstrapSelect_css = "~/Content/Styles/Public/BootstrapSelect.css";
                         public const string Fullcalendar_css = "~/Content/Styles/Public/Fullcalendar.css";
                         public const string LightGallery_css = "~/Content/Styles/Public/LightGallery.css";
                         public const string LoadingBar_css = "~/Content/Styles/Public/LoadingBar.css";
                         public const string MaterialDesignIconicFont_css = "~/Content/Styles/Public/MaterialDesignIconicFont.css";
+                        public const string PersianCalendar_css = "~/Content/Styles/Public/PersianCalendar.css";
                         public const string Sweet_css = "~/Content/Styles/Public/Sweet.css";
                     }
                 }

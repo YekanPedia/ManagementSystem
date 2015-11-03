@@ -12,7 +12,7 @@
         [Key]
         public int CanceledClassId { get; set; }
 
-        public int ClassId { get; set; }
+        public Guid ClassId { get; set; }
         [ForeignKey(nameof(ClassId))]
         public Class Class { get; set; }
 

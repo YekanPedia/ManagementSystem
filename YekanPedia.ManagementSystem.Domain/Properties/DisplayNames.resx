@@ -123,17 +123,38 @@
   <data name="BirthDate" xml:space="preserve">
     <value>تاریخ تولد</value>
   </data>
+  <data name="Capacity" xml:space="preserve">
+    <value>ظرفیت</value>
+  </data>
+  <data name="ClassTypeId" xml:space="preserve">
+    <value>نوع کلاس</value>
+  </data>
+  <data name="CourseId" xml:space="preserve">
+    <value>دوره</value>
+  </data>
+  <data name="CourseName" xml:space="preserve">
+    <value>دوره</value>
+  </data>
   <data name="Email" xml:space="preserve">
     <value>پست الکترونیک</value>
   </data>
   <data name="Facebook" xml:space="preserve">
     <value>فیسبوک</value>
   </data>
+  <data name="FinishDateSh" xml:space="preserve">
+    <value>تاریخ اتمام کلاس</value>
+  </data>
   <data name="FullName" xml:space="preserve">
     <value>نام و نام خانوادگی</value>
   </data>
   <data name="IsActive" xml:space="preserve">
     <value>فعال</value>
+  </data>
+  <data name="IsTeacher" xml:space="preserve">
+    <value>استاد</value>
+  </data>
+  <data name="JustificationDateSh" xml:space="preserve">
+    <value>تاریخ جلسه توجیهی</value>
   </data>
   <data name="Link" xml:space="preserve">
     <value>آدرس</value>
@@ -144,8 +165,17 @@
   <data name="Password" xml:space="preserve">
     <value>کلمه عبور</value>
   </data>
+  <data name="Price" xml:space="preserve">
+    <value>مبلغ ( ریال )</value>
+  </data>
+  <data name="SessionCount" xml:space="preserve">
+    <value>تعداد جلسات</value>
+  </data>
   <data name="Sex" xml:space="preserve">
     <value>جنسیت</value>
+  </data>
+  <data name="StartDateSh" xml:space="preserve">
+    <value>تاریخ شروع کلاس</value>
   </data>
   <data name="Subject" xml:space="preserve">
     <value>موضوع</value>
@@ -155,5 +185,8 @@
   </data>
   <data name="Twitter" xml:space="preserve">
     <value>تویئتر</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>نوع کلاس</value>
   </data>
 </root>

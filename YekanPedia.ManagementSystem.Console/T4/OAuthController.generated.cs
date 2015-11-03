@@ -141,10 +141,10 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         }
 
         [NonAction]
-        partial void SignInOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, YekanPedia.ManagementSystem.Domain.Entity.User model, bool? rememberMe);
+        partial void SignInOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, YekanPedia.ManagementSystem.Domain.Entity.User model, bool rememberMe);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult SignIn(YekanPedia.ManagementSystem.Domain.Entity.User model, bool? rememberMe)
+        public override System.Web.Mvc.ActionResult SignIn(YekanPedia.ManagementSystem.Domain.Entity.User model, bool rememberMe)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.SignIn);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);

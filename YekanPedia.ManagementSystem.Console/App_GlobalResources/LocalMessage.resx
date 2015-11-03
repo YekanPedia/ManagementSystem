@@ -205,7 +205,7 @@
     <value>ویرایش</value>
   </data>
   <data name="Save" xml:space="preserve">
-    <value>ثبت</value>
+    <value>ثبت اطلاعات</value>
   </data>
   <data name="ShortAboutMe" xml:space="preserve">
     <value>مختصری از من</value>
@@ -220,7 +220,7 @@
     <value>بازگشت به تنظیمات اولیه</value>
   </data>
   <data name="CompleteProfile" xml:space="preserve">
-    <value>اطلاعات پروفایل شما تکمیل نمی باشد. برای تکمیل کلیک نمایید</value>
+    <value>اطلاعات پروفایل شما تکمیل نمی باشد. </value>
   </data>
   <data name="Task" xml:space="preserve">
     <value>تسک های شما</value>
@@ -233,5 +233,11 @@
   </data>
   <data name="ViewAll" xml:space="preserve">
     <value>نمایش همه</value>
+  </data>
+  <data name="ClassManagement" xml:space="preserve">
+    <value>مدیریت کلاس ها</value>
+  </data>
+  <data name="ClassTimeManagement" xml:space="preserve">
+    <value>مدیریت زمان های کلاس</value>
   </data>
 </root>

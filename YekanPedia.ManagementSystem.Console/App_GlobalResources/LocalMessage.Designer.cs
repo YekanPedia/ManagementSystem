@@ -115,6 +115,24 @@ namespace YekanPedia.ManagementSystem.Console.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to مدیریت کلاس ها.
+        /// </summary>
+        public static string ClassManagement {
+            get {
+                return ResourceManager.GetString("ClassManagement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to مدیریت زمان های کلاس.
+        /// </summary>
+        public static string ClassTimeManagement {
+            get {
+                return ResourceManager.GetString("ClassTimeManagement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to بازگشت به تنظیمات اولیه.
         /// </summary>
         public static string ClearLocalStorage {
@@ -124,7 +142,7 @@ namespace YekanPedia.ManagementSystem.Console.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to اطلاعات پروفایل شما تکمیل نمی باشد. برای تکمیل کلیک نمایید.
+        ///   Looks up a localized string similar to اطلاعات پروفایل شما تکمیل نمی باشد. .
         /// </summary>
         public static string CompleteProfile {
             get {
@@ -331,7 +349,7 @@ namespace YekanPedia.ManagementSystem.Console.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ثبت.
+        ///   Looks up a localized string similar to ثبت اطلاعات.
         /// </summary>
         public static string Save {
             get {

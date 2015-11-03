@@ -19,6 +19,9 @@
                 x.For<IActionResults>().Use<ActionResults>();
                 x.For<IUserService>().Use<UserService>();
                 x.For<ITaskService>().Use<TaskService>();
+                x.For<IClassTypeService>().Use<ClassTypeService>();
+                x.For<ICourseService>().Use<CourseService>();
+                x.For<IClassService>().Use<ClassService>();
             });
         }
         public static object GetInstance(Type pluginType)

@@ -14,12 +14,10 @@
         #region Constructure
         private readonly IUserService _userService;
         private readonly IActionResults _actionResult;
-        private readonly ITaskService _taskService;
-        public AccountController(IUserService userService, IActionResults actionResult, ITaskService taskService)
+        public AccountController(IUserService userService, IActionResults actionResult)
         {
             _userService = userService;
             _actionResult = actionResult;
-            _taskService = taskService;
         }
         #endregion
         #region Register
@@ -40,17 +38,17 @@
                 _actionResult.Message = this.GetErrorsModelState();
                 return Json(_actionResult);
             }
-
-            var result = _userService.AddUser(model);
+            model.UserId = Guid.NewGuid();
+            var result = _userService.AddUser(model, new Tasks()
+            {
+                Link = Url.Action(MVC.Account.ActionNames.Profile, MVC.Account.Name, new { userId = model.UserId }),
+                ProgressbarType = ProgressbarType.Primary,
+                Progress = 0,
+                Subject = LocalMessage.CompleteProfile,
+                UserId = model.UserId
+            });
             if (result.IsSuccessfull)
             {
-                _taskService?.AddUserTask(new Tasks()
-                {
-                    Link = Url.Action(MVC.Account.ActionNames.Profile, MVC.Account.Name, new { userId = result.Result }),
-                    ProgressbarType = ProgressbarType.Primary,
-                    Subject = LocalMessage.CompleteProfile,
-                    UserId = result.Result
-                });
                 result.Message = Url.Action(MVC.Dashboard.ActionNames.User, controllerName: MVC.Dashboard.Name);
             }
             return Json(result);

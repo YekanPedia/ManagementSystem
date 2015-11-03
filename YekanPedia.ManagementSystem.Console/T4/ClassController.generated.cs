@@ -56,6 +56,18 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             return RedirectToActionPermanent(taskResult.Result);
         }
 
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.PartialViewResult ClassTimeList()
+        {
+            return new T4MVC_System_Web_Mvc_PartialViewResult(Area, Name, ActionNames.ClassTimeList);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ViewResult AddTime()
+        {
+            return new T4MVC_System_Web_Mvc_ViewResult(Area, Name, ActionNames.AddTime);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ClassController Actions { get { return MVC.Class; } }
@@ -72,14 +84,47 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNamesClass
         {
+            public readonly string ClassList = "ClassList";
+            public readonly string ClassTimeList = "ClassTimeList";
+            public readonly string Add = "Add";
+            public readonly string AddTime = "AddTime";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants
         {
+            public const string ClassList = "ClassList";
+            public const string ClassTimeList = "ClassTimeList";
+            public const string Add = "Add";
+            public const string AddTime = "AddTime";
         }
 
 
+        static readonly ActionParamsClass_ClassTimeList s_params_ClassTimeList = new ActionParamsClass_ClassTimeList();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_ClassTimeList ClassTimeListParams { get { return s_params_ClassTimeList; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_ClassTimeList
+        {
+            public readonly string classId = "classId";
+        }
+        static readonly ActionParamsClass_Add s_params_Add = new ActionParamsClass_Add();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_Add AddParams { get { return s_params_Add; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_Add
+        {
+            public readonly string model = "model";
+        }
+        static readonly ActionParamsClass_AddTime s_params_AddTime = new ActionParamsClass_AddTime();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_AddTime AddTimeParams { get { return s_params_AddTime; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_AddTime
+        {
+            public readonly string classId = "classId";
+            public readonly string model = "model";
+        }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ViewsClass Views { get { return s_views; } }
@@ -90,6 +135,31 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
+                public readonly string Add = "Add";
+                public readonly string AddTime = "AddTime";
+            }
+            public readonly string Add = "~/Views/Class/Add.cshtml";
+            public readonly string AddTime = "~/Views/Class/AddTime.cshtml";
+            static readonly _PartialClass s_Partial = new _PartialClass();
+            public _PartialClass Partial { get { return s_Partial; } }
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public partial class _PartialClass
+            {
+                static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                public class _ViewNamesClass
+                {
+                    public readonly string _CreateClass = "_CreateClass";
+                    public readonly string _CreateClassTime = "_CreateClassTime";
+                    public readonly string _HeaderClassGrid = "_HeaderClassGrid";
+                    public readonly string _ListClass = "_ListClass";
+                    public readonly string _ListClassTime = "_ListClassTime";
+                }
+                public readonly string _CreateClass = "~/Views/Class/Partial/_CreateClass.cshtml";
+                public readonly string _CreateClassTime = "~/Views/Class/Partial/_CreateClassTime.cshtml";
+                public readonly string _HeaderClassGrid = "~/Views/Class/Partial/_HeaderClassGrid.cshtml";
+                public readonly string _ListClass = "~/Views/Class/Partial/_ListClass.cshtml";
+                public readonly string _ListClassTime = "~/Views/Class/Partial/_ListClassTime.cshtml";
             }
         }
     }
@@ -98,6 +168,76 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
     public partial class T4MVC_ClassController : YekanPedia.ManagementSystem.Console.Controllers.ClassController
     {
         public T4MVC_ClassController() : base(Dummy.Instance) { }
+
+        [NonAction]
+        partial void ClassListOverride(T4MVC_System_Web_Mvc_PartialViewResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.PartialViewResult ClassList()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_PartialViewResult(Area, Name, ActionNames.ClassList);
+            ClassListOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void ClassTimeListOverride(T4MVC_System_Web_Mvc_PartialViewResult callInfo, System.Guid classId);
+
+        [NonAction]
+        public override System.Web.Mvc.PartialViewResult ClassTimeList(System.Guid classId)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_PartialViewResult(Area, Name, ActionNames.ClassTimeList);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "classId", classId);
+            ClassTimeListOverride(callInfo, classId);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void AddOverride(T4MVC_System_Web_Mvc_ViewResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ViewResult Add()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ViewResult(Area, Name, ActionNames.Add);
+            AddOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void AddOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, YekanPedia.ManagementSystem.Domain.Entity.Class model);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult Add(YekanPedia.ManagementSystem.Domain.Entity.Class model)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Add);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
+            AddOverride(callInfo, model);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void AddTimeOverride(T4MVC_System_Web_Mvc_ViewResult callInfo, System.Guid classId);
+
+        [NonAction]
+        public override System.Web.Mvc.ViewResult AddTime(System.Guid classId)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ViewResult(Area, Name, ActionNames.AddTime);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "classId", classId);
+            AddTimeOverride(callInfo, classId);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void AddTimeOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, YekanPedia.ManagementSystem.Domain.Entity.ClassTime model);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult AddTime(YekanPedia.ManagementSystem.Domain.Entity.ClassTime model)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.AddTime);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
+            AddTimeOverride(callInfo, model);
+            return callInfo;
+        }
 
     }
 }

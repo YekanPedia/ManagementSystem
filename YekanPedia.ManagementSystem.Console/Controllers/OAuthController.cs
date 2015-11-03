@@ -17,7 +17,6 @@
             _userServie = userService;
         }
         #endregion
-
         #region SignIn
         [HttpGet, AllowAnonymous]
         public virtual ViewResult SignIn()
@@ -26,7 +25,7 @@
         }
 
         [HttpPost, ValidateAntiForgeryToken, AllowAnonymous]
-        public virtual ActionResult SignIn(User model, bool? rememberMe)
+        public virtual ActionResult SignIn(User model, bool rememberMe)
         {
             var login = _userServie.CheckUserExist(model.Email, model.Password);
             if (login.Result == null)
@@ -39,7 +38,6 @@
             }
 
             var serializeModel = new BaseUser();
-
             serializeModel.FullName = login.Result.FullName;
             serializeModel.Email = login.Result.Email;
             serializeModel.UserId = login.Result.UserId;
@@ -48,16 +46,16 @@
             JavaScriptSerializer serializer = new JavaScriptSerializer();
             string userData = serializer.Serialize(serializeModel);
 
-            int expire = 30;// rememberMe ? 43200 : 30;
-            FormsAuthenticationTicket authTicket = new FormsAuthenticationTicket(1, login.Result.Email, DateTime.Now, DateTime.Now.AddMinutes(expire), false, userData);
+            int expire = rememberMe ? 43200 : 30;
+            FormsAuthenticationTicket authTicket = new FormsAuthenticationTicket(1, login.Result.Email, DateTime.Now, DateTime.Now.AddMinutes(expire), rememberMe, userData);
             string encTicket = FormsAuthentication.Encrypt(authTicket);
             HttpCookie cookie = new HttpCookie(FormsAuthentication.FormsCookieName, encTicket);
-            Response.Cookies.Add(cookie);
             cookie.HttpOnly = true;
+            Response.Cookies.Add(cookie);
+
             return RedirectToAction(MVC.Dashboard.ActionNames.User, MVC.Dashboard.Name);
         }
         #endregion
-
         [HttpGet, AllowAnonymous]
         public virtual RedirectToRouteResult SignOut()
         {

@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Class>
+@using YekanPedia.ManagementSystem.Domain.Entity
+
+<div class="card">
+    <div class="card-header">
+    </div>
+    <div class="card-body">
+        <div class="table-responsive table-hover">
+            <table id="data-table-selection" class="table table-striped dataTableSelection">
+                @{ Html.RenderPartial(MVC.Class.Views.Partial._HeaderClassGrid, new Class());}
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr class="@(item.FinishDateMi.AddDays(14) > DateTime.Now ? "classNearFinish" : "")">
+                            <td>@item.ClassType.Type</td>
+                            <td>@item.Course.CourseName</td>
+                            <td>@item.User.FullName</td>
+
+                            <td>@item.SessionCount</td>
+                            <td>@item.StartDateSh</td>
+                            <td>@item.FinishDateSh</td>
+                            <td>@item.Capacity</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+</div>

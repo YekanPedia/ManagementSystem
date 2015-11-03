@@ -11,7 +11,7 @@ namespace YekanPedia.ManagementSystem.Data.Migrations
            AutomaticMigrationDataLossAllowed = true;
        }
    
-       protected override void Seed(Conext.ManagementSystemDbContext context)
+       protected override void Seed(ManagementSystemDbContext context)
        {
        }
    }

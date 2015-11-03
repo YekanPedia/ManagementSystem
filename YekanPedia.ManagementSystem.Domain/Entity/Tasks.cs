@@ -38,19 +38,19 @@
     public enum ProgressbarType
     {
         [Description("progress-bar progress-bar-warning")]
-        Warning,
+        Warning = 5,
 
         [Description("progress-bar progress-bar-success")]
-        Success,
+        Success = 4,
 
         [Description("progress-bar progress-bar-info")]
-        Info,
+        Info = 3,
 
         [Description("progress-bar progress-bar-danger")]
-        Danger,
+        Danger = 2,
 
         [Description("progress-bar")]
-        Primary
+        Primary = 1
     }
     public enum TaskType
     {
