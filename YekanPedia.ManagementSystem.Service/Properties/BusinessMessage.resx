@@ -120,6 +120,9 @@
   <data name="EmailExist" xml:space="preserve">
     <value>نام کاربری انتخابی قبلا ثبت شده است</value>
   </data>
+  <data name="RecordExist" xml:space="preserve">
+    <value>اطلاعات ارسالی قبلا ثبت شده است</value>
+  </data>
   <data name="UserNotExist" xml:space="preserve">
     <value>نام کاربری و یا کلمه عبور ارسالی اشتباه می باشد </value>
   </data>

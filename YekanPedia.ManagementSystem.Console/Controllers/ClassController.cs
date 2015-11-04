@@ -13,12 +13,14 @@
         private readonly IClassTypeService _classTypeService;
         private readonly ICourseService _courseService;
         private readonly IClassService _classService;
-        public ClassController(IClassService classService, IUserService userService, ICourseService courseService, IClassTypeService classTypeService)
+        private readonly IClassTimeService _classTimeService;
+        public ClassController(IClassTimeService classTimeService, IClassService classService, IUserService userService, ICourseService courseService, IClassTypeService classTypeService)
         {
             _userService = userService;
             _classTypeService = classTypeService;
             _courseService = courseService;
             _classService = classService;
+            _classTimeService = classTimeService;
         }
         #endregion
 
@@ -96,12 +98,14 @@
         }
 
         [HttpPost]
-        public virtual ActionResult AddTime(ClassTime model)
+        public virtual ActionResult AddClassTime(ClassTime model)
         {
-            if (!ModelState.IsValid)
-                View(model);
-
-            _classTimeService.AddTime(model);
+            if (ModelState.IsValid)
+            {
+                var result = _classTimeService.AddClassTime(model);
+                if (!result.IsSuccessfull)
+                    this.NotificationController().Notify(result.Message, NotificationStatus.Error);
+            }
             return RedirectToAction(MVC.Class.ActionNames.AddTime, MVC.Class.Name, new { classId = model.ClassId });
         }
         #endregion

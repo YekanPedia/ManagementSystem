@@ -138,4 +138,7 @@
   <data name="Required" xml:space="preserve">
     <value>این فیلد اجباری می باشد</value>
   </data>
+  <data name="Time" xml:space="preserve">
+    <value>لطفا زمان با به صورت HH:MM  وارد نمایید</value>
+  </data>
 </root>

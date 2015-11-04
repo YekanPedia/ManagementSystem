@@ -17,31 +17,24 @@
         public Class Class { get; set; }
 
         [Display(ResourceType = typeof(DisplayNames), Name = nameof(Day))]
-        [Required(ErrorMessageResourceName = nameof(DisplayError.Required), ErrorMessageResourceType = typeof(DisplayError))]
         [MaxLength(10, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
         public string DayFa { get; set; }
 
         [Display(ResourceType = typeof(DisplayNames), Name = nameof(Day))]
         [Required(ErrorMessageResourceName = nameof(DisplayError.Required), ErrorMessageResourceType = typeof(DisplayError))]
-        [MaxLength(10, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
-        [Column(TypeName = "varchar")]
         [ScaffoldColumn(false)]
-        public string DayEn { get; set; }
-
-        [Required(ErrorMessageResourceName = nameof(DisplayError.Required), ErrorMessageResourceType = typeof(DisplayError))]
-        [ScaffoldColumn(false)]
-        public int Day { get; set; }
+        public Day DayEn { get; set; }
 
         [Required(ErrorMessageResourceName = nameof(DisplayError.Required), ErrorMessageResourceType = typeof(DisplayError))]
         [Display(ResourceType = typeof(DisplayNames), Name = nameof(TimeFrom))]
         [MaxLength(6, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
-        [Time]
+        [RegularExpression("^(0[0-9]|1[0-9]|2[0-3]):([0-5][0-9])", ErrorMessageResourceName = nameof(DisplayError.Time), ErrorMessageResourceType = typeof(DisplayError))]
         public string TimeFrom { get; set; }
 
         [Required(ErrorMessageResourceName = nameof(DisplayError.Required), ErrorMessageResourceType = typeof(DisplayError))]
         [Display(ResourceType = typeof(DisplayNames), Name = nameof(TimeTo))]
         [MaxLength(6, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
-        [Time]
+        [RegularExpression("^(0[0-9]|1[0-9]|2[0-3]):([0-5][0-9])", ErrorMessageResourceName = nameof(DisplayError.Time), ErrorMessageResourceType = typeof(DisplayError))]
         public string TimeTo { get; set; }
     }
 

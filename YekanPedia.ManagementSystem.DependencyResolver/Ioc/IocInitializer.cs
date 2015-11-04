@@ -22,6 +22,7 @@
                 x.For<IClassTypeService>().Use<ClassTypeService>();
                 x.For<ICourseService>().Use<CourseService>();
                 x.For<IClassService>().Use<ClassService>();
+                x.For<IClassTimeService>().Use<ClassTimeService>();
             });
         }
         public static object GetInstance(Type pluginType)

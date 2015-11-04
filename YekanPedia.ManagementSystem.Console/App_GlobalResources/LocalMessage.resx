@@ -240,4 +240,7 @@
   <data name="ClassTimeManagement" xml:space="preserve">
     <value>مدیریت زمان های کلاس</value>
   </data>
+  <data name="Error" xml:space="preserve">
+    <value>اخطار</value>
+  </data>
 </root>

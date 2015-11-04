@@ -7,7 +7,8 @@
 
     public interface IClassTimeService
     {
-        IServiceResults<Guid> AddClassTime(ClassTime model);
+        IServiceResults<int> AddClassTime(ClassTime model);
         IEnumerable<ClassTime> GetClassTime(Guid classId);
+        bool IsExist(ClassTime model);
     }
 }

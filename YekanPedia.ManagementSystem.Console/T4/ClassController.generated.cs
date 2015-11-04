@@ -68,6 +68,12 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         {
             return new T4MVC_System_Web_Mvc_ViewResult(Area, Name, ActionNames.AddTime);
         }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ActionResult AddClassTime()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.AddClassTime);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ClassController Actions { get { return MVC.Class; } }
@@ -88,6 +94,7 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             public readonly string ClassTimeList = "ClassTimeList";
             public readonly string Add = "Add";
             public readonly string AddTime = "AddTime";
+            public readonly string AddClassTime = "AddClassTime";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -97,6 +104,7 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             public const string ClassTimeList = "ClassTimeList";
             public const string Add = "Add";
             public const string AddTime = "AddTime";
+            public const string AddClassTime = "AddClassTime";
         }
 
 
@@ -123,6 +131,13 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         public class ActionParamsClass_AddTime
         {
             public readonly string classId = "classId";
+        }
+        static readonly ActionParamsClass_AddClassTime s_params_AddClassTime = new ActionParamsClass_AddClassTime();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_AddClassTime AddClassTimeParams { get { return s_params_AddClassTime; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_AddClassTime
+        {
             public readonly string model = "model";
         }
         static readonly ViewsClass s_views = new ViewsClass();
@@ -152,12 +167,14 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
                     public readonly string _CreateClass = "_CreateClass";
                     public readonly string _CreateClassTime = "_CreateClassTime";
                     public readonly string _HeaderClassGrid = "_HeaderClassGrid";
+                    public readonly string _HeaderClassTimeGrid = "_HeaderClassTimeGrid";
                     public readonly string _ListClass = "_ListClass";
                     public readonly string _ListClassTime = "_ListClassTime";
                 }
                 public readonly string _CreateClass = "~/Views/Class/Partial/_CreateClass.cshtml";
                 public readonly string _CreateClassTime = "~/Views/Class/Partial/_CreateClassTime.cshtml";
                 public readonly string _HeaderClassGrid = "~/Views/Class/Partial/_HeaderClassGrid.cshtml";
+                public readonly string _HeaderClassTimeGrid = "~/Views/Class/Partial/_HeaderClassTimeGrid.cshtml";
                 public readonly string _ListClass = "~/Views/Class/Partial/_ListClass.cshtml";
                 public readonly string _ListClassTime = "~/Views/Class/Partial/_ListClassTime.cshtml";
             }
@@ -228,14 +245,14 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         }
 
         [NonAction]
-        partial void AddTimeOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, YekanPedia.ManagementSystem.Domain.Entity.ClassTime model);
+        partial void AddClassTimeOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, YekanPedia.ManagementSystem.Domain.Entity.ClassTime model);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult AddTime(YekanPedia.ManagementSystem.Domain.Entity.ClassTime model)
+        public override System.Web.Mvc.ActionResult AddClassTime(YekanPedia.ManagementSystem.Domain.Entity.ClassTime model)
         {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.AddTime);
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.AddClassTime);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
-            AddTimeOverride(callInfo, model);
+            AddClassTimeOverride(callInfo, model);
             return callInfo;
         }
 

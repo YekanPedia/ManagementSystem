@@ -1,0 +1,20 @@
+[
+  {
+    "outputFileName": "Scripts/Application/OAuthController.js",
+    "inputFiles": [
+      "Scripts/Application/OAuthController.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Application/AccountController.js",
+    "inputFiles": [
+      "Scripts/Application/AccountController.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Application/ClassController.js",
+    "inputFiles": [
+      "Scripts/Application/ClassController.js"
+    ]
+  }
+]

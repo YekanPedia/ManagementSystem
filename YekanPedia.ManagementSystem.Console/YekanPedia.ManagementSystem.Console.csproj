@@ -188,6 +188,11 @@
     <Compile Include="Controllers\TaskController.cs" />
     <Compile Include="Extensions\Authentication\CurrentUserPrincipal.cs" />
     <Compile Include="Extensions\Authentication\ICurrentUserPrincipal.cs" />
+    <Compile Include="Extensions\EnumSelectList.cs" />
+    <Compile Include="Extensions\Notification\AjaxPNotifyFilter.cs" />
+    <Compile Include="Extensions\Notification\Notification.cs" />
+    <Compile Include="Extensions\Notification\NotificationController.cs" />
+    <Compile Include="Extensions\Notification\NotificationExtensions.cs" />
     <Compile Include="Extensions\Optimization\AsIsBundleOrderer.cs" />
     <Compile Include="Extensions\Optimization\ScriptBundleOrderer.cs" />
     <Compile Include="Extensions\Optimization\StyleBundleOrderer.cs" />
@@ -285,7 +290,17 @@
     <Content Include="Content\Styles\Rtl\AppStyle1.css" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\Application\AccountController.js" />
+    <Content Include="Scripts\Application\AccountController.min.js">
+      <DependentUpon>AccountController.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Application\ClassController.js" />
+    <Content Include="Scripts\Application\ClassController.min.js">
+      <DependentUpon>ClassController.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\Application\OAuthController.js" />
+    <Content Include="Scripts\Application\OAuthController.min.js">
+      <DependentUpon>OAuthController.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\jquery.signalR-2.1.2.js" />
     <Content Include="Scripts\jquery.signalR-2.1.2.min.js" />
     <Content Include="Scripts\JQuery\Ajax\jquery.unobtrusive-ajax.js" />
@@ -306,6 +321,7 @@
     <Content Include="Fonts\Roboto\Roboto-Regular-webfont.eot" />
     <Content Include="Fonts\Roboto\Roboto-Regular-webfont.ttf" />
     <Content Include="Fonts\Roboto\Roboto-Regular-webfont.woff" />
+    <None Include="bundleconfig.json" />
     <None Include="T4\T4MVC.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>T4MVC.cs</LastGenOutput>
@@ -352,6 +368,8 @@
     <Content Include="Views\Class\AddTime.cshtml" />
     <Content Include="Views\Class\Partial\_CreateClassTime.cshtml" />
     <Content Include="Views\Class\Partial\_ListClassTime.cshtml" />
+    <Content Include="Views\Class\Partial\_HeaderClassTimeGrid.cshtml" />
+    <Content Include="Views\Shared\_Notification.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -16,3 +16,6 @@
 </div>
 @{ Html.RenderAction(MVC.Class.ActionNames.ClassList, MVC.Class.Name);}
 
+@section Scripts{
+    <script src="@Url.Content(Links.Scripts.Application.ClassController_js)"></script>
+}

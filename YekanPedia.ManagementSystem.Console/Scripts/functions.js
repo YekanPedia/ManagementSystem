@@ -699,65 +699,7 @@ $(document).ready(function () {
         })
     }
 
-    /*
-     * Typeahead Auto Complete
-     */
-    if ($('.typeahead')[0]) {
-
-        var statesArray = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
-          'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii',
-          'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana',
-          'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota',
-          'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire',
-          'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota',
-          'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island',
-          'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont',
-          'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
-        ];
-        var states = new Bloodhound({
-            datumTokenizer: Bloodhound.tokenizers.whitespace,
-            queryTokenizer: Bloodhound.tokenizers.whitespace,
-            local: statesArray
-        });
-
-        $('.typeahead').typeahead({
-            hint: true,
-            highlight: true,
-            minLength: 1
-        },
-        {
-            name: 'states',
-            source: states
-        });
-    }
-
-
-    /*
-     * Wall
-     */
-    if ($('.wcc-toggle')[0]) {
-        var z = '<div class="wcc-inner">' +
-                    '<textarea class="wcci-text auto-size" placeholder="Write Something..."></textarea>' +
-                '</div>' +
-                '<div class="m-t-15">' +
-                    '<button class="btn btn-sm btn-primary">Post</button>' +
-                    '<button class="btn btn-sm btn-link wcc-cencel">Cancel</button>' +
-                '</div>'
-
-
-        $('body').on('click', '.wcc-toggle', function () {
-            $(this).parent().html(z);
-            autosize($('.auto-size')); //Reload Auto size textarea
-        });
-
-        //Cancel
-        $('body').on('click', '.wcc-cencel', function (e) {
-            e.preventDefault();
-
-            $(this).closest('.wc-comment').find('.wcc-inner').addClass('wcc-toggle').html('Write Something...')
-        });
-
-    }
+ 
 });
 /*
 * Validation add error add this method to validation.js
@@ -775,6 +717,47 @@ function HideError(el) {
     parent.find('.help-block span').html('');
 }
 
+function notify(title, message, from, align, icon, type, animIn, animOut) {
+    $.growl({
+        icon: icon,
+        title: title,
+        message: message,
+        url: ''
+    }, {
+        element: 'body',
+        type: type,
+        allow_dismiss: true,
+        placement: {
+            from: from,
+            align: align
+        },
+        offset: {
+            x: 20,
+            y: 85
+        },
+        spacing: 10,
+        z_index: 1031,
+        delay: 2500,
+        timer: 1000,
+        url_target: '_blank',
+        mouse_over: false,
+        animate: {
+            enter: animIn,
+            exit: animOut
+        },
+        icon_type: 'class',
+        template: '<div data-growl="container" class="alert" role="alert">    ' +
+'<button type="button" class="close" data-growl="dismiss">        ' +
+'<span aria-hidden="true">&times;</span>' +
+'<span class="sr-only">Close</span>' +
+'    </button>' +
+'<span data-growl="icon"></span>' +
+'<span data-growl="title"></span>' +
+'<span data-growl="message"></span>' +
+'<a href="#" data-growl="url"></a>' +
+'</div>'
+    });
+};
 $().ready(function () {
     $('.dataTableSelection').bootgrid({
         css: {

@@ -122,5 +122,14 @@ namespace YekanPedia.ManagementSystem.Domain.Properties {
                 return ResourceManager.GetString("Required", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to لطفا زمان با به صورت HH:MM  وارد نمایید.
+        /// </summary>
+        public static string Time {
+            get {
+                return ResourceManager.GetString("Time", resourceCulture);
+            }
+        }
     }
 }

@@ -1,1 +1,45 @@
-﻿
+﻿@model ClassTime
+@using YekanPedia.ManagementSystem.Domain.Entity
+@{
+    Layout = null;
+}
+@Html.HiddenFor(X => X.ClassId)
+<div class="row">
+    <div class="col-sm-3 m-b-20">
+        <p class="f-500 m-b-10 c-black">
+            @Html.DisplayNameFor(X => X.DayFa)
+        </p>
+        @Html.DropDownListFor(X => X.DayEn, EnumSelectList.Of<Day>(), new { @class = "selectpicker bs-select-hidden" })
+    </div>
+    <div class="col-sm-3 m-b-20">
+        <div class="input-group has-feedback m-b-20">
+            <div class="fg-line">
+                <label>@Html.DisplayNameFor(X => X.TimeFrom)</label>
+                @Html.TextBoxFor(X => X.TimeFrom, new { @data_mask = "00:00", @placeholder = "00:00", @data_type = "nu", @class = "form-control" })
+            </div>
+            <small class="help-block">
+                @Html.ValidationMessageFor(X => X.TimeFrom)
+            </small>
+            <span class="zmdi form-control-feedback"></span>
+        </div>
+    </div>
+    <div class="col-sm-3 m-b-20">
+        <div class="input-group has-feedback m-b-20">
+            <div class="fg-line">
+                <label>@Html.DisplayNameFor(X => X.TimeTo)</label>
+                @Html.TextBoxFor(X => X.TimeTo, new { @data_mask = "00:00", @placeholder = "00:00", @data_type = "nu", @class = "form-control" })
+            </div>
+            <small class="help-block">
+                @Html.ValidationMessageFor(X => X.TimeTo)
+            </small>
+            <span class="zmdi form-control-feedback"></span>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="m-l-20  m-t-30 text-left">
+        <button type="submit" id="saveAboutMeForm" class="btn btn-primary btn-sm waves-effect">@LocalMessage.Save</button>
+        <a href="@Url.Action(MVC.Class.ActionNames.Add,MVC.Class.Name)" class="btn btn-danger btn-sm waves-effect">@LocalMessage.Cancel</a>
+    </div>
+</div>
+

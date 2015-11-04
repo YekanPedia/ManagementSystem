@@ -135,6 +135,9 @@
   <data name="CourseName" xml:space="preserve">
     <value>دوره</value>
   </data>
+  <data name="Day" xml:space="preserve">
+    <value>روز</value>
+  </data>
   <data name="Email" xml:space="preserve">
     <value>پست الکترونیک</value>
   </data>
@@ -182,6 +185,12 @@
   </data>
   <data name="Telegram" xml:space="preserve">
     <value>تلگرام</value>
+  </data>
+  <data name="TimeFrom" xml:space="preserve">
+    <value>از ساعت</value>
+  </data>
+  <data name="TimeTo" xml:space="preserve">
+    <value>تا ساعت</value>
   </data>
   <data name="Twitter" xml:space="preserve">
     <value>تویئتر</value>

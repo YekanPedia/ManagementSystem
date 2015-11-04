@@ -1,1 +1,24 @@
-﻿
+﻿@model IEnumerable<ClassTime>
+@using YekanPedia.ManagementSystem.Domain.Entity
+
+<div class="card">
+    <div class="card-header">
+    </div>
+    <div class="card-body">
+        <div class="table-responsive table-hover">
+            <table id="data-table-selection" class="table table-striped dataTableSelection">
+                @{ Html.RenderPartial(MVC.Class.Views.Partial._HeaderClassTimeGrid, new ClassTime());}
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+                        <td>@item.DayFa</td>
+                        <td>@item.TimeFrom</td>
+                        <td>@item.TimeTo</td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

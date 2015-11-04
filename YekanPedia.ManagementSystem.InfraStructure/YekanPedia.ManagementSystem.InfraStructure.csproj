@@ -60,7 +60,6 @@
     <Compile Include="Results\IServiceResults.cs" />
     <Compile Include="Validation\IntAttribute.cs" />
     <Compile Include="Validation\PersianDateAttribute.cs" />
-    <Compile Include="Validation\TimeAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

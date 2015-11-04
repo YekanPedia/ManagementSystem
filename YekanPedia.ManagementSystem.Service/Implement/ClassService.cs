@@ -30,7 +30,7 @@
             {
                 IsSuccessfull = saveResult != -1 ? true : false,
                 Message = string.Empty,
-                Result = model.UserId
+                Result = model.ClassId
             };
         }
 
