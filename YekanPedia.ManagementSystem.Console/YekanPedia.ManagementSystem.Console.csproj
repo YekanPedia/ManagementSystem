@@ -181,6 +181,7 @@
     </Compile>
     <Compile Include="App_Start\BundleManager.cs" />
     <Compile Include="ControllerFactory\IocControllerFactory.cs" />
+    <Compile Include="Controllers\BaseInformationController.cs" />
     <Compile Include="Controllers\ClassController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
@@ -216,6 +217,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="T4\BaseInformationController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="T4\ClassController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
@@ -360,7 +364,7 @@
     <Content Include="Views\Account\Partial\_TimeLine.cshtml" />
     <Content Include="Views\Account\ChangePicture.cshtml" />
     <Content Include="Views\Task\Partial\_Task.cshtml" />
-    <Content Include="Views\Class\Add.cshtml" />
+    <Content Include="Views\Class\AddClass.cshtml" />
     <Content Include="Views\Dashboard\Partial\_Menu.cshtml" />
     <Content Include="Views\Class\Partial\_CreateClass.cshtml" />
     <Content Include="Views\Class\Partial\_ListClass.cshtml" />
@@ -370,9 +374,11 @@
     <Content Include="Views\Class\Partial\_ListClassTime.cshtml" />
     <Content Include="Views\Class\Partial\_HeaderClassTimeGrid.cshtml" />
     <Content Include="Views\Shared\_Notification.cshtml" />
+    <Content Include="Views\Class\EditClass.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\BaseInformation\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

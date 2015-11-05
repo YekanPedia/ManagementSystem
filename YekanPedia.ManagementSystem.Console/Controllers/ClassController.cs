@@ -63,16 +63,17 @@
         {
             return PartialView(MVC.Class.Views.Partial._ListClassTime, _classTimeService.GetClassTime(classId));
         }
+
         #region Add Class
         [HttpGet]
-        public virtual ViewResult Add()
+        public virtual ViewResult AddClass()
         {
             SetDropDownlist();
             return View();
         }
 
         [HttpPost]
-        public virtual ActionResult Add(Class model)
+        public virtual ActionResult AddClass(Class model)
         {
             if (!ModelState.IsValid)
             {
@@ -83,11 +84,38 @@
             var result = _classService.AddClass(model);
             if (!result.IsSuccessfull)
             {
-                //show error
+                this.NotificationController().Notify(result.Message, NotificationStatus.Error);
                 SetDropDownlist();
                 return View(model);
             }
             return RedirectToAction(MVC.Class.ActionNames.AddTime, MVC.Class.Name, new { classId = result.Result.ToString() });
+        }
+        #endregion
+        #region Edit Class
+        [HttpGet, Route("Class/EditClass/{classId}")]
+        public virtual ViewResult EditClass(Guid classId)
+        {
+            SetDropDownlist();
+            return View(_classService.FindClass(classId));
+        }
+
+        [HttpPost]
+        public virtual ActionResult EditClass(Class model)
+        {
+            if (!ModelState.IsValid)
+            {
+                SetDropDownlist();
+                return View(model);
+            }
+            model.ReBind();
+            var result = _classService.EditClass(model);
+            if (!result.IsSuccessfull)
+            {
+                this.NotificationController().Notify(result.Message, NotificationStatus.Error);
+                SetDropDownlist();
+                return View(model);
+            }
+            return RedirectToAction(MVC.Class.ActionNames.AddClass, MVC.Class.Name, new { classId = result.Result.ToString() });
         }
         #endregion
         #region Add Time

@@ -699,7 +699,7 @@ $(document).ready(function () {
         })
     }
 
- 
+
 });
 /*
 * Validation add error add this method to validation.js
@@ -767,10 +767,9 @@ $().ready(function () {
             iconRefresh: 'zmdi-refresh',
             iconUp: 'zmdi-expand-less'
         },
-        
         rowSelect: true,
         keepSelection: true
-    });
+    });
     $('.NoWaves').removeClass('waves-effect');
     $('.PersianCalendar').Zebra_DatePicker();
     $(".form-control").keyup(function () { return false });

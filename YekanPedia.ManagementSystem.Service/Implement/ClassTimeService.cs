@@ -33,11 +33,11 @@
                 };
             model.DayFa = model.DayEn.GetDescription();
             _classTime.Add(model);
-            var saveResult = _uow.SaveChanges();
+            var result = _uow.SaveChanges();
             return new ServiceResults<int>()
             {
-                IsSuccessfull = saveResult != -1 ? true : false,
-                Message = string.Empty,
+                IsSuccessfull = result.ToBool(),
+                Message = result.ToMessage(BusinessMessage.Error),
                 Result = model.ClassTimeId
             };
         }
@@ -56,6 +56,18 @@
              X.ClassId == model.ClassId &&
              X.TimeFrom == model.TimeFrom &&
              X.TimeTo == model.TimeTo) != 0 ? true : false;
+        }
+
+        public IServiceResults<bool> EditClassTime(ClassTime model)
+        {
+            _classTime.Attach(model);
+            var result = _uow.SaveChanges();
+            return new ServiceResults<bool>()
+            {
+                IsSuccessfull = result.ToBool(),
+                Message = result.ToMessage(BusinessMessage.Error),
+                Result = result.ToBool()
+            };
         }
     }
 }

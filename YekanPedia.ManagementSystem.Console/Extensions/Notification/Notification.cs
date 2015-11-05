@@ -4,13 +4,13 @@
     using System.ComponentModel.DataAnnotations;
     public enum NotificationStatus
     {
-        [Description("zmdi zmdi-alert-circle")]
+        [Description("error")]
         Error,
-        [Description("zmdi zmdi-alert-circle")]
+        [Description("warning")]
         Warning,
-        [Description("zmdi zmdi-alert-circle")]
+        [Description("success")]
         Success,
-        [Description("zmdi zmdi-alert-circle")]
+        [Description("info")]
         Information
     }
 

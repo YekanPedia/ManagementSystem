@@ -8,6 +8,7 @@
     public interface IClassTimeService
     {
         IServiceResults<int> AddClassTime(ClassTime model);
+        IServiceResults<bool> EditClassTime(ClassTime model);
         IEnumerable<ClassTime> GetClassTime(Guid classId);
         bool IsExist(ClassTime model);
     }

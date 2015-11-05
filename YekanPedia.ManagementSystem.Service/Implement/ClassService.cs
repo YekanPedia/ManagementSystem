@@ -8,6 +8,7 @@
     using Data.Conext;
     using System.Collections.Generic;
     using System.Linq;
+    using Properties;
 
     public class ClassService : IClassService
     {
@@ -28,8 +29,8 @@
 
             return new ServiceResults<Guid>()
             {
-                IsSuccessfull = saveResult != -1 ? true : false,
-                Message = string.Empty,
+                IsSuccessfull = saveResult.ToBool(),
+                Message = saveResult.ToMessage(BusinessMessage.Error),
                 Result = model.ClassId
             };
         }
@@ -43,6 +44,23 @@
                                  .AsNoTracking()
                                  .OrderByDescending(X => X.StartDateMi)
                                  .ToList();
+        }
+
+        public IServiceResults<bool> EditClass(Class model)
+        {
+            _class.Attach(model);
+            var result = _uow.SaveChanges();
+            return new ServiceResults<bool>()
+            {
+                IsSuccessfull = result.ToBool(),
+                Message = result.ToMessage(BusinessMessage.Error),
+                Result = result.ToBool()
+            };
+        }
+
+        public Class FindClass(Guid classId)
+        {
+            return _class.Find(classId);
         }
     }
 }

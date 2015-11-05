@@ -70,6 +70,15 @@ namespace YekanPedia.ManagementSystem.Service.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ثبت اطلاعات با خطا مواجه شد.
+        /// </summary>
+        internal static string Error {
+            get {
+                return ResourceManager.GetString("Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to اطلاعات ارسالی قبلا ثبت شده است.
         /// </summary>
         internal static string RecordExist {

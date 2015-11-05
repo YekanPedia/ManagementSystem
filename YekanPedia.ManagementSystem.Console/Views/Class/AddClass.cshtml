@@ -1,0 +1,27 @@
+﻿@model Class
+
+@using YekanPedia.ManagementSystem.Domain.Entity
+<div class="block-header">
+    <h2>@LocalMessage.ClassManagement</h2>
+</div>
+<div class="card">
+    <div class="card-header">
+    </div>
+    <div class="card-body card-padding">
+        @using (Html.BeginForm(MVC.Class.ActionNames.AddClass, MVC.Class.Name, FormMethod.Post, new { @id = "AddClassFrm" }))
+            {
+                Html.RenderPartial(MVC.Class.Views.Partial._CreateClass, Model);
+            <div class="row">
+                <div class="m-l-20  m-t-30 text-left">
+                    <button type="submit" id="saveAboutMeForm" class="btn btn-primary btn-sm waves-effect">@LocalMessage.Save</button>
+                    <a href="@Url.Action(MVC.Dashboard.ActionNames.User,MVC.Dashboard.Name)" class="btn btn-danger btn-sm waves-effect">@LocalMessage.Cancel</a>
+                </div>
+            </div>
+        }                                   
+    </div>
+</div>
+@{ Html.RenderAction(MVC.Class.ActionNames.ClassList, MVC.Class.Name);}
+
+@section Scripts{
+    <script src="@Url.Content(Links.Scripts.Application.ClassController_js)"></script>
+}

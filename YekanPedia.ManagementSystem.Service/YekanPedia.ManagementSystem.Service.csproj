@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extension\IntExtension.cs" />
     <Compile Include="Implement\ClassTimeService.cs" />
     <Compile Include="Implement\ClassService.cs" />
     <Compile Include="Implement\ClassTypeService.cs" />

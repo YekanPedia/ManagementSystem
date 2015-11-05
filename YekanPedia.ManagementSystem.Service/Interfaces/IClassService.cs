@@ -8,6 +8,8 @@
     public interface IClassService
     {
         IServiceResults<Guid> AddClass(Class model);
+        IServiceResults<bool> EditClass(Class model);
+        Class FindClass(Guid classId);
         IEnumerable<Class> GetClass();
     }
 }
