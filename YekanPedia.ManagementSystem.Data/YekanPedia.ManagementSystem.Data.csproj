@@ -52,10 +52,6 @@
   <ItemGroup>
     <Compile Include="Conext\IUnitOfWork.cs" />
     <Compile Include="Conext\ManagementSystemDbContext.cs" />
-    <Compile Include="Migrations\201511010919489_add task.cs" />
-    <Compile Include="Migrations\201511010919489_add task.Designer.cs">
-      <DependentUpon>201511010919489_add task.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\201511022151373_ignore.cs" />
     <Compile Include="Migrations\201511022151373_ignore.Designer.cs">
       <DependentUpon>201511022151373_ignore.cs</DependentUpon>
@@ -78,9 +74,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201511010919489_add task.resx">
-      <DependentUpon>201511010919489_add task.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201511022151373_ignore.resx">
       <DependentUpon>201511022151373_ignore.cs</DependentUpon>
     </EmbeddedResource>
