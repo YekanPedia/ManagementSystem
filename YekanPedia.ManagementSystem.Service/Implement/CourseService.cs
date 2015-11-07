@@ -8,6 +8,7 @@
     using System.Linq;
     using InfraStructure;
     using Properties;
+    using System;
 
     public class CourseService : ICourseService
     {
@@ -52,6 +53,22 @@
         public Course FindCourse(int id)
         {
             return _course.Find(id);
+        }
+
+        public IServiceResults<int> AddCourse(string type)
+        {
+            _course.Add(new Course()
+            {
+                CourseName = type,
+                IsActive = true
+            });
+            var result = _uow.SaveChanges();
+            return new ServiceResults<int>()
+            {
+                IsSuccessfull = result.ToBool(),
+                Message = result.ToMessage(BusinessMessage.Error),
+                Result = result
+            };
         }
     }
 }

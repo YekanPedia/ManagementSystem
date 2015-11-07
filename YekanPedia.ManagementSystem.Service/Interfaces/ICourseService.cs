@@ -10,5 +10,6 @@
         IEnumerable<Course> GetAllCourses();
         IServiceResults<bool> ChangeCourseStatus(int id, bool status);
         Course FindCourse(int id);
+        IServiceResults<int> AddCourse(string type);
     }
 }

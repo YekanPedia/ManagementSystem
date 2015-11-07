@@ -293,7 +293,7 @@
         },         icon_type: 'class',         template: '<div data-growl="container" class="alert" role="alert">    ' + '<button type="button" class="close" data-growl="dismiss">        ' + '<span aria-hidden="true">&times;</span>' + '<span class="sr-only">Close</span>' + '    </button>' + '<span data-growl="icon"></span>' + '<span data-growl="title"></span>' + '<span data-growl="message"></span>' + '<a href="#" data-growl="url"></a>' + '</div>'
     });
 }; $().ready(function () {
-     $(".EnableCheckbox").click(function () {
+     $(".EnableCheckbox").on("click", function () {
         var $el = $(this);
         $.ajax({
             type: "POST",             url: $el.attr('data-url'),             data: "id=" + $el.attr('data-Id') + "&status=" + $el[0].checked,             dataType: "json",             success: function (response) {
