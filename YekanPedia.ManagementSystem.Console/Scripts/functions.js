@@ -759,17 +759,7 @@ function notify(title, message, from, align, icon, type, animIn, animOut) {
     });
 };
 $().ready(function () {
-    $('.dataTableSelection').bootgrid({
-        css: {
-            icon: 'zmdi icon',
-            iconColumns: 'zmdi-view-module',
-            iconDown: 'zmdi-expand-more',
-            iconRefresh: 'zmdi-refresh',
-            iconUp: 'zmdi-expand-less'
-        },
-        rowSelect: true,
-        keepSelection: true
-    });
+    
     $('.NoWaves').removeClass('waves-effect');
     $('.PersianCalendar').Zebra_DatePicker();
     $(".form-control").keyup(function () { return false });

@@ -14,6 +14,7 @@
                            "~" + Links.Scripts.JQuery.NiceScroll.jquery_nicescroll_min_js,
                            "~" + Links.Scripts.JQuery.Wave.waves_min_js,
                            "~" + Links.Scripts.JQuery.Type.jQuery_Type_js,
+                           "~" + Links.Scripts.JQuery.PersianCalendar.PersianCalendar_js,
                            "~" + Links.Scripts.functions_js,
                            "~" + Links.Scripts.JQuery.Validation.jquery_validate_js,
                            "~" + Links.Scripts.JQuery.Validation.jquery_validate_unobtrusive_js,

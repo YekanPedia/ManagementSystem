@@ -52,14 +52,6 @@
   <ItemGroup>
     <Compile Include="Conext\IUnitOfWork.cs" />
     <Compile Include="Conext\ManagementSystemDbContext.cs" />
-    <Compile Include="Migrations\201511022151373_ignore.cs" />
-    <Compile Include="Migrations\201511022151373_ignore.Designer.cs">
-      <DependentUpon>201511022151373_ignore.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201511022159316_changeClassId.cs" />
-    <Compile Include="Migrations\201511022159316_changeClassId.Designer.cs">
-      <DependentUpon>201511022159316_changeClassId.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -72,14 +64,6 @@
       <Project>{8bca1500-4045-46aa-9783-90f4b0ddb1f6}</Project>
       <Name>YekanPedia.ManagementSystem.Domain</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201511022151373_ignore.resx">
-      <DependentUpon>201511022151373_ignore.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201511022159316_changeClassId.resx">
-      <DependentUpon>201511022159316_changeClassId.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

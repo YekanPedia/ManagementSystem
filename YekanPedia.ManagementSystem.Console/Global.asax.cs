@@ -25,18 +25,15 @@
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             ControllerBuilder.Current.SetControllerFactory(new IocControllerFactory());
-
         }
-
         protected void Application_BeginRequest(object sender, EventArgs e)
         {
-            HttpContext.Current.Response.AddHeader("x-frame-option","DENY");
+            HttpContext.Current.Response.AddHeader("x-frame-option", "DENY");
         }
         protected void Application_EndRequest(object sender, EventArgs e)
         {
             IocInitializer.HttpContextDisposeAndClearAll();
         }
-
         protected void Application_PostAuthenticateRequest(Object sender, EventArgs e)
         {
             HttpCookie authCookie = Request.Cookies[FormsAuthentication.FormsCookieName];
@@ -52,10 +49,8 @@
                 user.FullName = serializeModel.FullName;
                 user.Email = serializeModel.Email;
                 user.Picture = serializeModel.Picture;
-
                 HttpContext.Current.User = user;
             }
         }
-
     }
 }

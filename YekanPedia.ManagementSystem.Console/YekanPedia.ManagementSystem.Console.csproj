@@ -188,6 +188,7 @@
     <Compile Include="Controllers\Poco\ErrorModelStateController.cs" />
     <Compile Include="Controllers\TaskController.cs" />
     <Compile Include="Extensions\Authentication\CurrentUserPrincipal.cs" />
+    <Compile Include="Extensions\Authentication\ICurrentUserPrincipal.cs" />
     <Compile Include="Extensions\EnumSelectList.cs" />
     <Compile Include="Extensions\Notification\AjaxPNotifyFilter.cs" />
     <Compile Include="Extensions\Notification\Notification.cs" />
