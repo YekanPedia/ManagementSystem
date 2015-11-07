@@ -40,7 +40,7 @@ html > body .top-menu > li > a.tm-chat {
 #header {
     padding-left: 10px;
     padding-right: 0;
-        z-index: 999999;
+    z-index: 999999;
 }
 
     #header .header-inner li.pull-right {
@@ -603,4 +603,125 @@ th {
         padding-left: 0;
         padding-right: 0;
     }
+}
+
+.card .card-header .actions {
+    right: inherit;
+    left: 10px;
+}
+
+.main-menu > li.active > a {
+    color: #4285F4;
+}
+
+.tl-header .actions {
+    right: inherit;
+    left: 10px;
+}
+
+#add-tl-item.toggled .add-tl-body .add-tl-actions [data-tl-action="dismiss"] > i {
+    margin-top: 8px;
+}
+
+#add-tl-item.toggled .add-tl-body .add-tl-actions [data-tl-action="save"] > i {
+    margin-top: 5px;
+}
+
+#add-tl-item.toggled .add-tl-body .add-tl-actions {
+    text-align: left;
+}
+
+#add-tl-item {
+    box-shadow: 0 2px 5px rgba(0,0,0,.16),0 2px 10px rgba(0,0,0,.12);
+}
+
+#todo-lists {
+    color: #5E5E5E;
+    font-family: 'B Yekan';
+    margin-bottom: 30px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.15);
+}
+
+.tl-body {
+    background: #fff;
+}
+
+.checkbox label, .radio label {
+    padding-right: 30px;
+}
+
+.checkbox .input-helper:before, .radio .input-helper:before {
+    left: inherit;
+    right: 0;
+}
+
+.checkbox .input-helper:after {
+    left: inherit;
+    right: 0;
+}
+
+.tl-body .media-body {
+    padding-top: 10px;
+    padding-right: 30px;
+}
+
+.checkbox input, .radio input {
+    left: inherit;
+    right: 0;
+}
+
+.tl-header {
+    position: relative;
+    padding: 25px;
+    padding-bottom: 40px;
+}
+
+    .tl-header > h4 {
+        margin: 0;
+        line-height: 100%;
+    }
+
+    .tl-header > small {
+        font-size: 13px;
+    }
+
+#add-tl-item .add-tl-body textarea {
+    font-size: 13px;
+    color: #555555;
+}
+
+.checkbox .input-helper:before, .radio .input-helper:before {
+    right: 0;
+}
+
+.tl-body .checkbox .input-helper:after {
+    border-color: #009688;
+}
+
+.tl-body .checkbox .input-helper:before {
+    border-color: #ccc;
+    border-width: 1px;
+}
+
+#todo-lists {
+    background: #F7F7F7;
+}
+
+.tl-body .checkbox input:checked + i + span {
+    text-decoration: none;
+    font-size: 13px;
+    padding-top: 5px;
+}
+
+.tl-body .checkbox span {
+    display: inline-block;
+    margin-top: -3px;
+    text-decoration: line-through;
+    font-size: 13px;
+    padding-top: 5px;
+}
+
+#add-tl-item{
+    right:inherit;
+    left:23px;
 }

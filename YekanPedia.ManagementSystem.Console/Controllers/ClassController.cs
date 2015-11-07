@@ -36,7 +36,7 @@
             });
             #endregion
             #region classType
-            var classType = _classTypeService.GetClassType();
+            var classType = _classTypeService.GetValidClassType();
             ViewBag.ClassTypes = classType.Select(x => new SelectListItem()
             {
                 Text = x.Type.ToString(),
@@ -44,7 +44,7 @@
             });
             #endregion
             #region course
-            var course = _courseService.GetCourses();
+            var course = _courseService.GetValidCourses();
             ViewBag.Courses = course.Select(x => new SelectListItem()
             {
                 Text = x.CourseName.ToString(),
@@ -88,11 +88,11 @@
                 SetDropDownlist();
                 return View(model);
             }
-            return RedirectToAction(MVC.Class.ActionNames.AddTime, MVC.Class.Name, new { classId = result.Result.ToString() });
+            return RedirectToAction(MVC.Class.ActionNames.AddClassTime, MVC.Class.Name, new { classId = result.Result.ToString() });
         }
         #endregion
         #region Edit Class
-        [HttpGet, Route("Class/EditClass/{classId}")]
+        [HttpGet]
         public virtual ViewResult EditClass(Guid classId)
         {
             SetDropDownlist();
@@ -100,7 +100,7 @@
         }
 
         [HttpPost]
-        public virtual ActionResult EditClassPost(Class model)
+        public virtual ActionResult EditClass(Class model)
         {
             if (!ModelState.IsValid)
             {
@@ -118,9 +118,10 @@
             return RedirectToAction(MVC.Class.ActionNames.AddClass, MVC.Class.Name);
         }
         #endregion
-        #region Add Time
-        [HttpGet, Route("Class/AddTime/{classId}")]
-        public virtual ViewResult AddTime(Guid classId)
+
+        #region Add Class Time
+        [HttpGet]
+        public virtual ViewResult AddClassTime(Guid classId)
         {
             return View(new ClassTime() { ClassId = classId });
         }
@@ -134,7 +135,30 @@
                 if (!result.IsSuccessfull)
                     this.NotificationController().Notify(result.Message, NotificationStatus.Error);
             }
-            return RedirectToAction(MVC.Class.ActionNames.AddTime, MVC.Class.Name, new { classId = model.ClassId });
+            return RedirectToAction(MVC.Class.ActionNames.AddClassTime, MVC.Class.Name, new { classId = model.ClassId });
+        }
+        #endregion
+        #region Edit ClassTime
+        [HttpGet]
+        public virtual ViewResult EditClassTime(int classTimeId)
+        {
+            return View(_classTimeService.FindClassTime(classTimeId));
+        }
+
+        [HttpPost]
+        public virtual ActionResult EditClassTime(ClassTime model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+            var result = _classTimeService.EditClassTime(model);
+            if (!result.IsSuccessfull)
+            {
+                this.NotificationController().Notify(result.Message, NotificationStatus.Error);
+                return View(model);
+            }
+            return RedirectToAction(MVC.Class.ActionNames.AddClass, MVC.Class.Name);
         }
         #endregion
     }

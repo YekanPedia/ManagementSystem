@@ -61,6 +61,8 @@
         public IServiceResults<bool> EditClassTime(ClassTime model)
         {
             _classTime.Attach(model);
+            model.DayFa = model.DayEn.GetDescription();
+            _uow.Entry(model).State = EntityState.Modified;
             var result = _uow.SaveChanges();
             return new ServiceResults<bool>()
             {
@@ -68,6 +70,11 @@
                 Message = result.ToMessage(BusinessMessage.Error),
                 Result = result.ToBool()
             };
+        }
+
+        public ClassTime FindClassTime(int classTimeId)
+        {
+            return _classTime.Find(classTimeId);
         }
     }
 }

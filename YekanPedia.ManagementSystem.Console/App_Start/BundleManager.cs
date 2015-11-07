@@ -15,6 +15,7 @@
             /// </summary>
             public static readonly string CoreScripts = "~/Scripts/js";
             public static readonly string LoginScripts = "~/LoginScripts/js";
+            public static readonly string BasicInfoScripts = "~/BasicInfoScripts/js";
         }
 
         /// <summary>

@@ -10,6 +10,7 @@
         IServiceResults<int> AddClassTime(ClassTime model);
         IServiceResults<bool> EditClassTime(ClassTime model);
         IEnumerable<ClassTime> GetClassTime(Guid classId);
+        ClassTime FindClassTime(int classTimeId);
         bool IsExist(ClassTime model);
     }
 }

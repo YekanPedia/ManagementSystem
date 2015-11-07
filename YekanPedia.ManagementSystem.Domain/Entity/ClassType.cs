@@ -11,7 +11,7 @@
         [Key]
         public int ClassTypeId { get; set; }
 
-        [Display(ResourceType = typeof(DisplayNames), Name = nameof(ClassType))]
+        [Display(ResourceType = typeof(DisplayNames), Name = nameof(Type))]
         [Required(ErrorMessageResourceName = nameof(DisplayError.Required), ErrorMessageResourceType = typeof(DisplayError))]
         [MaxLength(400, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
         public string Type { get; set; }

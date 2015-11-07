@@ -88,6 +88,15 @@ namespace YekanPedia.ManagementSystem.Service.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to رکورد مورد نظر یافت نشد.
+        /// </summary>
+        internal static string RecordNotExist {
+            get {
+                return ResourceManager.GetString("RecordNotExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to حساب کاربری شما موقتا غیر فعال می باشد، برای فعال شدن حساب کاربری خود با مدیر وب سایت تماس حاصل فرمائید.
         /// </summary>
         internal static string UserNotActive {

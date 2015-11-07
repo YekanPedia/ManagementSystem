@@ -37,10 +37,9 @@
                           "~" + Links.Scripts.JQuery.Validation.jquery_validate_js,
                           "~" + Links.Scripts.JQuery.Validation.jquery_validate_unobtrusive_js,
                           "~" + Links.Scripts.JQuery.Ajax.jquery_unobtrusive_ajax_js,
-                           "~" + Links.Scripts.JQuery.Phoenix.Phoenix_core_js
-
-                          ));
-
+                           "~" + Links.Scripts.JQuery.Phoenix.Phoenix_core_js));
+            bundles.Add(new ScriptBundleOrderer(Links.Bundles.Scripts.BasicInfoScripts, new JsMinify()).Include(
+                        "~" + Links.Scripts.Application.BasicInfoController_js));
             #endregion
             #region Styles
             bundles.Add(new StyleBundleOrderer(Links.Bundles.Styles.ContentCss, new CssMinify()).Include(

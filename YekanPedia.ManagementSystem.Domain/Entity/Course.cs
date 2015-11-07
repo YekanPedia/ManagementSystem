@@ -16,12 +16,6 @@
         [Required(ErrorMessageResourceName = nameof(DisplayError.Required), ErrorMessageResourceType = typeof(DisplayError))]
         public string CourseName { get; set; }
 
-        [Display(ResourceType = typeof(DisplayNames), Name = nameof(CodeName))]
-        [MaxLength(10, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
-        [Required(ErrorMessageResourceName = nameof(DisplayError.Required), ErrorMessageResourceType = typeof(DisplayError))]
-        [Column(TypeName = "varchar")]
-        public string CodeName { get; set; }
-
         [Display(ResourceType = typeof(DisplayNames), Name = nameof(IsActive))]
         public bool IsActive { get; set; }
 

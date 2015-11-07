@@ -1,0 +1,38 @@
+﻿@model IEnumerable<YekanPedia.ManagementSystem.Domain.Entity.Course>
+<div class="col-sm-6">
+    <div id="todo-lists">
+        <div class="tl-header">
+            <h4>@LocalMessage.AddCourse</h4>
+            <small>@LocalMessage.AddCourseDescription</small>
+        </div>
+        <div class="clearfix"></div>
+        <div class="tl-body" id="courseBody">
+            <div id="add-tl-item" class="">
+                <i class="add-new-item zmdi zmdi-plus"></i>
+                <div class="add-tl-body">
+                    <textarea placeholder="@LocalMessage.Content" id="courseName"></textarea>
+                    <div class="add-tl-actions">
+                        <a href="" data-tl-action="dismiss"><i class="zmdi zmdi-close"></i></a>
+                        <a href="" id="courseSaveBtn" data-tl-action="save"><i class="zmdi zmdi-check"></i></a>
+                    </div>
+                </div>
+            </div>
+            @foreach (var item in Model)
+            {
+                <div class="checkbox media">
+                    <div class="media-body">
+                        <label>
+                            <input type="checkbox" checked="@item.IsActive" data-url="@Url.Action(MVC.Course.ActionNames.ChangeCourseStatus,MVC.Course.Name)" class="EnableCheckbox" data-id="@item.CourseId">
+                            <i class="input-helper"></i>
+                            <span>@item.CourseName</span>
+                        </label>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+
+
+

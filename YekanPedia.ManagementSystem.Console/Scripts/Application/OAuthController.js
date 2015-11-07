@@ -11,6 +11,9 @@ function onRegisterComplete(result) {
 }
 
 $().ready(function () {
+    $('.rememberMe').click(function () {
+        $("#rememberMe").val($(this)[0].checked);
+    });
     $('.Unique').blur(function () {
         var $el = $(this);
         if ($el.hasClass('valid')) {

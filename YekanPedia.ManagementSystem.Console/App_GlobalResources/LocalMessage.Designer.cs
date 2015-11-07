@@ -79,11 +79,56 @@ namespace YekanPedia.ManagementSystem.Console.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ایجاد نوع کلاس.
+        /// </summary>
+        public static string AddClassType {
+            get {
+                return ResourceManager.GetString("AddClassType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to در این قسمت کلیه انواع کلاس های مربوطه مانند خصوصی ، حضوری و غیره را وارد نمایید.
+        /// </summary>
+        public static string AddClassTypeDescription {
+            get {
+                return ResourceManager.GetString("AddClassTypeDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ایجاد انواع دوره های آموزشی.
+        /// </summary>
+        public static string AddCourse {
+            get {
+                return ResourceManager.GetString("AddCourse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to در این قسمت کلیه انواع کلاس های مربوطه مانند UniLevel ، PreUniLevel را وارد نمایید.
+        /// </summary>
+        public static string AddCourseDescription {
+            get {
+                return ResourceManager.GetString("AddCourseDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to اطلاعات پایه.
         /// </summary>
         public static string BasicInfo {
             get {
                 return ResourceManager.GetString("BasicInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to مدیریت اطلاعات پایه.
+        /// </summary>
+        public static string BasicInfoManagement {
+            get {
+                return ResourceManager.GetString("BasicInfoManagement", resourceCulture);
             }
         }
         

@@ -1,0 +1,8 @@
+﻿<div class="row">
+    @{ Html.RenderAction(MVC.ClassType.ActionNames.GetClassType, MVC.ClassType.Name);}
+    @{ Html.RenderAction(MVC.Course.ActionNames.GetCourse, MVC.Course.Name);}
+</div>
+
+@section Scripts{
+    @Scripts.Render(Links.Bundles.Scripts.BasicInfoScripts)
+}

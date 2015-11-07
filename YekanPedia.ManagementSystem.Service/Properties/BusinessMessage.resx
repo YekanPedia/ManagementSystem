@@ -126,6 +126,9 @@
   <data name="RecordExist" xml:space="preserve">
     <value>اطلاعات ارسالی قبلا ثبت شده است</value>
   </data>
+  <data name="RecordNotExist" xml:space="preserve">
+    <value>رکورد مورد نظر یافت نشد</value>
+  </data>
   <data name="UserNotActive" xml:space="preserve">
     <value>حساب کاربری شما موقتا غیر فعال می باشد، برای فعال شدن حساب کاربری خود با مدیر وب سایت تماس حاصل فرمائید</value>
   </data>

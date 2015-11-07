@@ -8,8 +8,8 @@
     <div class="card-header">
     </div>
     <div class="card-body card-padding">
-        @using (Html.BeginForm(MVC.Class.ActionNames.EditClassPost, MVC.Class.Name, FormMethod.Post, new { @id = "AddClassFrm" }))
-            {
+        @using (Html.BeginForm(  MVC.Class.ActionNames.EditClass,  MVC.Class.Name, FormMethod.Post))
+        {
             @Html.HiddenFor(X => X.ClassId)
             Html.RenderPartial(MVC.Class.Views.Partial._CreateClass, Model);
             <div class="row">

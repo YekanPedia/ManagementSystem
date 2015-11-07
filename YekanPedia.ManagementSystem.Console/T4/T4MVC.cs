@@ -28,8 +28,9 @@ using T4MVC;
 public static partial class MVC
 {
     public static YekanPedia.ManagementSystem.Console.Controllers.AccountController Account = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_AccountController();
-    public static YekanPedia.ManagementSystem.Console.Controllers.BaseInformationController BaseInformation = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_BaseInformationController();
     public static YekanPedia.ManagementSystem.Console.Controllers.ClassController Class = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_ClassController();
+    public static YekanPedia.ManagementSystem.Console.Controllers.ClassTypeController ClassType = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_ClassTypeController();
+    public static YekanPedia.ManagementSystem.Console.Controllers.CourseController Course = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_CourseController();
     public static YekanPedia.ManagementSystem.Console.Controllers.DashboardController Dashboard = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_DashboardController();
     public static YekanPedia.ManagementSystem.Console.Controllers.ErrorController Error = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_ErrorController();
     public static YekanPedia.ManagementSystem.Console.Controllers.OAuthController OAuth = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_OAuthController();
@@ -80,9 +81,9 @@ internal partial class T4MVC_System_Web_Mvc_ActionResult : System.Web.Mvc.Action
     public RouteValueDictionary RouteValueDictionary { get; set; }
 }
 [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-internal partial class T4MVC_System_Web_Mvc_ViewResult : System.Web.Mvc.ViewResult, IT4MVCActionResult
+internal partial class T4MVC_System_Web_Mvc_PartialViewResult : System.Web.Mvc.PartialViewResult, IT4MVCActionResult
 {
-    public T4MVC_System_Web_Mvc_ViewResult(string area, string controller, string action, string protocol = null): base()
+    public T4MVC_System_Web_Mvc_PartialViewResult(string area, string controller, string action, string protocol = null): base()
     {
         this.InitMVCT4Result(area, controller, action, protocol);
     }
@@ -93,9 +94,9 @@ internal partial class T4MVC_System_Web_Mvc_ViewResult : System.Web.Mvc.ViewResu
     public RouteValueDictionary RouteValueDictionary { get; set; }
 }
 [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-internal partial class T4MVC_System_Web_Mvc_PartialViewResult : System.Web.Mvc.PartialViewResult, IT4MVCActionResult
+internal partial class T4MVC_System_Web_Mvc_ViewResult : System.Web.Mvc.ViewResult, IT4MVCActionResult
 {
-    public T4MVC_System_Web_Mvc_PartialViewResult(string area, string controller, string action, string protocol = null): base()
+    public T4MVC_System_Web_Mvc_ViewResult(string area, string controller, string action, string protocol = null): base()
     {
         this.InitMVCT4Result(area, controller, action, protocol);
     }
@@ -135,6 +136,7 @@ namespace Links
             public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
             public static readonly string AccountController_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/AccountController.min.js") ? Url("AccountController.min.js") : Url("AccountController.js");
             public static readonly string AccountController_min_js = Url("AccountController.min.js");
+            public static readonly string BasicInfoController_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/BasicInfoController.min.js") ? Url("BasicInfoController.min.js") : Url("BasicInfoController.js");
             public static readonly string ClassController_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ClassController.min.js") ? Url("ClassController.min.js") : Url("ClassController.js");
             public static readonly string ClassController_min_js = Url("ClassController.min.js");
             public static readonly string OAuthController_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/OAuthController.min.js") ? Url("OAuthController.min.js") : Url("OAuthController.js");
@@ -424,6 +426,7 @@ namespace Links
                 public static class Assets
                 {
                     public const string AccountController_js = "~/Scripts/Application/AccountController.js"; 
+                    public const string BasicInfoController_js = "~/Scripts/Application/BasicInfoController.js"; 
                     public const string ClassController_js = "~/Scripts/Application/ClassController.js"; 
                     public const string OAuthController_js = "~/Scripts/Application/OAuthController.js"; 
                 }

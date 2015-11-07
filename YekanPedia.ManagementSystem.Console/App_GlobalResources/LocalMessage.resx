@@ -243,4 +243,19 @@
   <data name="Error" xml:space="preserve">
     <value>اخطار</value>
   </data>
+  <data name="BasicInfoManagement" xml:space="preserve">
+    <value>مدیریت اطلاعات پایه</value>
+  </data>
+  <data name="AddClassType" xml:space="preserve">
+    <value>ایجاد نوع کلاس</value>
+  </data>
+  <data name="AddClassTypeDescription" xml:space="preserve">
+    <value>در این قسمت کلیه انواع کلاس های مربوطه مانند خصوصی ، حضوری و غیره را وارد نمایید</value>
+  </data>
+  <data name="AddCourse" xml:space="preserve">
+    <value>ایجاد انواع دوره های آموزشی</value>
+  </data>
+  <data name="AddCourseDescription" xml:space="preserve">
+    <value>در این قسمت کلیه انواع کلاس های مربوطه مانند UniLevel ، PreUniLevel را وارد نمایید</value>
+  </data>
 </root>

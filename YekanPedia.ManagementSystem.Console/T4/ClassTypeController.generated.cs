@@ -25,10 +25,10 @@ using System.Web.Routing;
 using T4MVC;
 namespace YekanPedia.ManagementSystem.Console.Controllers
 {
-    public partial class BaseInformationController
+    public partial class ClassTypeController
     {
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        protected BaseInformationController(Dummy d) { }
+        protected ClassTypeController(Dummy d) { }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         protected RedirectToRouteResult RedirectToAction(ActionResult result)
@@ -56,15 +56,21 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             return RedirectToActionPermanent(taskResult.Result);
         }
 
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.JsonResult ChangeClassTypeStatus()
+        {
+            return new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.ChangeClassTypeStatus);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public BaseInformationController Actions { get { return MVC.BaseInformation; } }
+        public ClassTypeController Actions { get { return MVC.ClassType; } }
         [GeneratedCode("T4MVC", "2.0")]
         public readonly string Area = "";
         [GeneratedCode("T4MVC", "2.0")]
-        public readonly string Name = "BaseInformation";
+        public readonly string Name = "ClassType";
         [GeneratedCode("T4MVC", "2.0")]
-        public const string NameConst = "BaseInformation";
+        public const string NameConst = "ClassType";
 
         static readonly ActionNamesClass s_actions = new ActionNamesClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -72,16 +78,27 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNamesClass
         {
-            public readonly string Manage = "Manage";
+            public readonly string GetClassType = "GetClassType";
+            public readonly string ChangeClassTypeStatus = "ChangeClassTypeStatus";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants
         {
-            public const string Manage = "Manage";
+            public const string GetClassType = "GetClassType";
+            public const string ChangeClassTypeStatus = "ChangeClassTypeStatus";
         }
 
 
+        static readonly ActionParamsClass_ChangeClassTypeStatus s_params_ChangeClassTypeStatus = new ActionParamsClass_ChangeClassTypeStatus();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_ChangeClassTypeStatus ChangeClassTypeStatusParams { get { return s_params_ChangeClassTypeStatus; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_ChangeClassTypeStatus
+        {
+            public readonly string id = "id";
+            public readonly string status = "status";
+        }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ViewsClass Views { get { return s_views; } }
@@ -93,22 +110,48 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             public class _ViewNamesClass
             {
             }
+            static readonly _PartialClass s_Partial = new _PartialClass();
+            public _PartialClass Partial { get { return s_Partial; } }
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public partial class _PartialClass
+            {
+                static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                public class _ViewNamesClass
+                {
+                    public readonly string _ClassType = "_ClassType";
+                }
+                public readonly string _ClassType = "~/Views/ClassType/Partial/_ClassType.cshtml";
+            }
         }
     }
 
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-    public partial class T4MVC_BaseInformationController : YekanPedia.ManagementSystem.Console.Controllers.BaseInformationController
+    public partial class T4MVC_ClassTypeController : YekanPedia.ManagementSystem.Console.Controllers.ClassTypeController
     {
-        public T4MVC_BaseInformationController() : base(Dummy.Instance) { }
+        public T4MVC_ClassTypeController() : base(Dummy.Instance) { }
 
         [NonAction]
-        partial void ManageOverride(T4MVC_System_Web_Mvc_ViewResult callInfo);
+        partial void GetClassTypeOverride(T4MVC_System_Web_Mvc_PartialViewResult callInfo);
 
         [NonAction]
-        public override System.Web.Mvc.ViewResult Manage()
+        public override System.Web.Mvc.PartialViewResult GetClassType()
         {
-            var callInfo = new T4MVC_System_Web_Mvc_ViewResult(Area, Name, ActionNames.Manage);
-            ManageOverride(callInfo);
+            var callInfo = new T4MVC_System_Web_Mvc_PartialViewResult(Area, Name, ActionNames.GetClassType);
+            GetClassTypeOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void ChangeClassTypeStatusOverride(T4MVC_System_Web_Mvc_JsonResult callInfo, int id, bool status);
+
+        [NonAction]
+        public override System.Web.Mvc.JsonResult ChangeClassTypeStatus(int id, bool status)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.ChangeClassTypeStatus);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "status", status);
+            ChangeClassTypeStatusOverride(callInfo, id, status);
             return callInfo;
         }
 

@@ -28,5 +28,11 @@
         {
             return PartialView(MVC.Dashboard.Views.Partial.Notification);
         }
+
+        [HttpGet]
+        public virtual ViewResult ManageBaseInformation()
+        {
+            return View();
+        }
     }
 }
