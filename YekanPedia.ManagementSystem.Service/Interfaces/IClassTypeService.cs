@@ -10,5 +10,6 @@
         IEnumerable<ClassType> GetAllClassType();
         IServiceResults<bool> ChangeClassTypeStatus(int id, bool status);
         ClassType FindClassType(int id);
+        IServiceResults<int> AddClassType(string type);
     }
 }

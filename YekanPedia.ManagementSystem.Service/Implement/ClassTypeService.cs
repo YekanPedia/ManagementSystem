@@ -48,11 +48,24 @@
                 Result = false
             };
         }
-
         public ClassType FindClassType(int id)
         {
             return _classType.Find(id);
         }
-
+        public IServiceResults<int> AddClassType(string type)
+        {
+            _classType.Add(new ClassType()
+            {
+                Type = type,
+                IsActive = true
+            });
+            var result = _uow.SaveChanges();
+            return new ServiceResults<int>()
+            {
+                IsSuccessfull = result.ToBool(),
+                Message = result.ToMessage(BusinessMessage.Error),
+                Result = result
+            };
+        }
     }
 }

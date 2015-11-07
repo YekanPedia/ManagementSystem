@@ -24,5 +24,10 @@
         {
             return Json(_classTypeService.ChangeClassTypeStatus(id, status));
         }
+        [HttpPost]
+        public virtual JsonResult AddClassType(string text)
+        {
+            return Json(_classTypeService.AddClassType(text));
+        }
     }
 }

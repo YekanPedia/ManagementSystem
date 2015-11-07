@@ -293,20 +293,7 @@
         },         icon_type: 'class',         template: '<div data-growl="container" class="alert" role="alert">    ' + '<button type="button" class="close" data-growl="dismiss">        ' + '<span aria-hidden="true">&times;</span>' + '<span class="sr-only">Close</span>' + '    </button>' + '<span data-growl="icon"></span>' + '<span data-growl="title"></span>' + '<span data-growl="message"></span>' + '<a href="#" data-growl="url"></a>' + '</div>'
     });
 }; $().ready(function () {
-     $(".EnableCheckbox").on("click", function () {
-        var $el = $(this);
-        $.ajax({
-            type: "POST",             url: $el.attr('data-url'),             data: "id=" + $el.attr('data-Id') + "&status=" + $el[0].checked,             dataType: "json",             success: function (response) {
-                if (!response.IsSuccessfull) {
-                    $el[0].checked = !$el[0].checked;
-                    swal("", response.Message, "error");
-                }
-            },
-            error: function () {
-                $el[0].checked = !$el[0].checked;
-            }
-        });
-    });      $('.NoWaves').removeClass('waves-effect');     $('.PersianCalendar').Zebra_DatePicker();     $(".form-control").keyup(function () { return false });     $('.thumbnail').click(function () {
+         $('.NoWaves').removeClass('waves-effect');     $('.PersianCalendar').Zebra_DatePicker();     $(".form-control").keyup(function () { return false });     $('.thumbnail').click(function () {
         $('.thumbnail').removeClass('SelectDefaultAvatar');         $(this).addClass('SelectDefaultAvatar');         var img = $(this).find('img');         $('.img-responsive').attr('src', img.attr('src'));         $.ajax({
             type: "POST",             url: "/Account/ChangePicture",             data: "picture=" + img.attr('src') + "&userId=" + $("#UserId").val(),             dataType: "json",             success: function (response) {
              }

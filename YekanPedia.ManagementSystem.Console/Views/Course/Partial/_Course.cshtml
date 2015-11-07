@@ -13,7 +13,7 @@
                     <textarea placeholder="@LocalMessage.Content" id="courseName"></textarea>
                     <div class="add-tl-actions">
                         <a href="" data-tl-action="dismiss"><i class="zmdi zmdi-close"></i></a>
-                        <a href="" data-url="@Url.Action(MVC.Course.ActionNames.AddCourse,MVC.Course.Name)" id="courseSaveBtn" data-tl-action="save"><i class="zmdi zmdi-check"></i></a>
+                        <a href="" data-updateUrl="@Url.Action(MVC.Course.ActionNames.ChangeCourseStatus,MVC.Course.Name)" data-url="@Url.Action(MVC.Course.ActionNames.AddCourse,MVC.Course.Name)" id="courseSaveBtn" data-tl-action="save"><i class="zmdi zmdi-check"></i></a>
                     </div>
                 </div>
             </div>

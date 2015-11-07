@@ -62,6 +62,12 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         {
             return new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.ChangeClassTypeStatus);
         }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.JsonResult AddClassType()
+        {
+            return new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.AddClassType);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ClassTypeController Actions { get { return MVC.ClassType; } }
@@ -80,6 +86,7 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         {
             public readonly string GetClassType = "GetClassType";
             public readonly string ChangeClassTypeStatus = "ChangeClassTypeStatus";
+            public readonly string AddClassType = "AddClassType";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -87,6 +94,7 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         {
             public const string GetClassType = "GetClassType";
             public const string ChangeClassTypeStatus = "ChangeClassTypeStatus";
+            public const string AddClassType = "AddClassType";
         }
 
 
@@ -98,6 +106,14 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         {
             public readonly string id = "id";
             public readonly string status = "status";
+        }
+        static readonly ActionParamsClass_AddClassType s_params_AddClassType = new ActionParamsClass_AddClassType();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_AddClassType AddClassTypeParams { get { return s_params_AddClassType; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_AddClassType
+        {
+            public readonly string text = "text";
         }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -152,6 +168,18 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "status", status);
             ChangeClassTypeStatusOverride(callInfo, id, status);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void AddClassTypeOverride(T4MVC_System_Web_Mvc_JsonResult callInfo, string text);
+
+        [NonAction]
+        public override System.Web.Mvc.JsonResult AddClassType(string text)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.AddClassType);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "text", text);
+            AddClassTypeOverride(callInfo, text);
             return callInfo;
         }
 
