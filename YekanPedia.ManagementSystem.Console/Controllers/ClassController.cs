@@ -100,7 +100,7 @@
         }
 
         [HttpPost]
-        public virtual ActionResult EditClass(Class model)
+        public virtual ActionResult EditClassPost(Class model)
         {
             if (!ModelState.IsValid)
             {
@@ -115,7 +115,7 @@
                 SetDropDownlist();
                 return View(model);
             }
-            return RedirectToAction(MVC.Class.ActionNames.AddClass, MVC.Class.Name, new { classId = result.Result.ToString() });
+            return RedirectToAction(MVC.Class.ActionNames.AddClass, MVC.Class.Name);
         }
         #endregion
         #region Add Time

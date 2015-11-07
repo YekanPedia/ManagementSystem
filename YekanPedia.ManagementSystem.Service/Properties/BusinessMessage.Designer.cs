@@ -88,6 +88,15 @@ namespace YekanPedia.ManagementSystem.Service.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to حساب کاربری شما موقتا غیر فعال می باشد، برای فعال شدن حساب کاربری خود با مدیر وب سایت تماس حاصل فرمائید.
+        /// </summary>
+        internal static string UserNotActive {
+            get {
+                return ResourceManager.GetString("UserNotActive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to نام کاربری و یا کلمه عبور ارسالی اشتباه می باشد .
         /// </summary>
         internal static string UserNotExist {

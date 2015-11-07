@@ -70,6 +70,15 @@
                     Result = null
                 };
             }
+            if (!result.IsActive)
+            {
+                return new ServiceResults<User>()
+                {
+                    IsSuccessfull = false,
+                    Message = BusinessMessage.UserNotActive ,
+                    Result = null
+                };
+            }
             AddLoginDate(result);
             return new ServiceResults<User>()
             {

@@ -1,0 +1,16 @@
+﻿@model YekanPedia.ManagementSystem.Domain.Entity.ClassTime
+
+<div class="block-header">
+    <h2>@LocalMessage.ClassTimeManagement</h2>
+</div>
+<div class="card">
+    <div class="card-header">
+    </div>
+    <div class="card-body card-padding">
+        @using (Html.BeginForm(MVC.Class.ActionNames.AddClassTime, MVC.Class.Name, FormMethod.Post, new { @id = "AddClassTimeFrm" }))
+        {
+            Html.RenderPartial(MVC.Class.Views.Partial._CreateClassTime, Model);
+        }
+    </div>
+</div>
+@{ Html.RenderAction(MVC.Class.ActionNames.ClassTimeList, MVC.Class.Name, new { classId = Model.ClassId });}

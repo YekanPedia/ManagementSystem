@@ -49,6 +49,7 @@
         public IServiceResults<bool> EditClass(Class model)
         {
             _class.Attach(model);
+            _uow.Entry<Class>(model).State = EntityState.Modified;
             var result = _uow.SaveChanges();
             return new ServiceResults<bool>()
             {

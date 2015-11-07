@@ -70,6 +70,12 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         }
         [NonAction]
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ActionResult EditClassPost()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.EditClassPost);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public virtual System.Web.Mvc.ViewResult AddTime()
         {
             return new T4MVC_System_Web_Mvc_ViewResult(Area, Name, ActionNames.AddTime);
@@ -100,6 +106,7 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             public readonly string ClassTimeList = "ClassTimeList";
             public readonly string AddClass = "AddClass";
             public readonly string EditClass = "EditClass";
+            public readonly string EditClassPost = "EditClassPost";
             public readonly string AddTime = "AddTime";
             public readonly string AddClassTime = "AddClassTime";
         }
@@ -111,6 +118,7 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             public const string ClassTimeList = "ClassTimeList";
             public const string AddClass = "AddClass";
             public const string EditClass = "EditClass";
+            public const string EditClassPost = "EditClassPost";
             public const string AddTime = "AddTime";
             public const string AddClassTime = "AddClassTime";
         }
@@ -139,6 +147,13 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         public class ActionParamsClass_EditClass
         {
             public readonly string classId = "classId";
+        }
+        static readonly ActionParamsClass_EditClassPost s_params_EditClassPost = new ActionParamsClass_EditClassPost();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_EditClassPost EditClassPostParams { get { return s_params_EditClassPost; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_EditClassPost
+        {
             public readonly string model = "model";
         }
         static readonly ActionParamsClass_AddTime s_params_AddTime = new ActionParamsClass_AddTime();
@@ -264,14 +279,14 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         }
 
         [NonAction]
-        partial void EditClassOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, YekanPedia.ManagementSystem.Domain.Entity.Class model);
+        partial void EditClassPostOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, YekanPedia.ManagementSystem.Domain.Entity.Class model);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult EditClass(YekanPedia.ManagementSystem.Domain.Entity.Class model)
+        public override System.Web.Mvc.ActionResult EditClassPost(YekanPedia.ManagementSystem.Domain.Entity.Class model)
         {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.EditClass);
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.EditClassPost);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
-            EditClassOverride(callInfo, model);
+            EditClassPostOverride(callInfo, model);
             return callInfo;
         }
 

@@ -33,7 +33,6 @@
                 ModelState.Clear();
                 model.AboutMe = "has-error";
                 ModelState.AddModelError(nameof(model.Email), login.Message);
-                ModelState.AddModelError(nameof(model.Password), login.Message);
                 return View(model);
             }
 
