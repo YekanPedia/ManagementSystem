@@ -35,6 +35,7 @@ public static partial class MVC
     public static YekanPedia.ManagementSystem.Console.Controllers.ErrorController Error = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_ErrorController();
     public static YekanPedia.ManagementSystem.Console.Controllers.OAuthController OAuth = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_OAuthController();
     public static YekanPedia.ManagementSystem.Console.Controllers.TaskController Task = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_TaskController();
+    public static YekanPedia.ManagementSystem.Console.Controllers.UserController User = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_UserController();
     public static T4MVC.SharedController Shared = new T4MVC.SharedController();
 }
 

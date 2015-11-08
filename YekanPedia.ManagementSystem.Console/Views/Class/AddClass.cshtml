@@ -13,11 +13,17 @@
                 Html.RenderPartial(MVC.Class.Views.Partial._CreateClass, Model);
             <div class="row">
                 <div class="m-l-20  m-t-30 text-left">
-                    <button type="submit" id="saveAboutMeForm" class="btn btn-primary btn-sm waves-effect">@LocalMessage.Save</button>
-                    <a href="@Url.Action(MVC.Dashboard.ActionNames.User,MVC.Dashboard.Name)" class="btn btn-danger btn-sm waves-effect">@LocalMessage.Cancel</a>
+                    <button type="submit" id="saveAboutMeForm" class="btn btn-primary btn-sm waves-effect">
+                        <i class="zmdi zmdi-check"></i>
+                        @LocalMessage.Save
+                    </button>
+                    <a href="@Url.Action(MVC.Dashboard.ActionNames.User,MVC.Dashboard.Name)" class="btn btn-danger btn-sm waves-effect">
+                        <i class="zmdi zmdi-arrow-forward"></i>
+                        @LocalMessage.Cancel
+                    </a>
                 </div>
             </div>
-        }                                   
+        }
     </div>
 </div>
 @{ Html.RenderAction(MVC.Class.ActionNames.ClassList, MVC.Class.Name);}

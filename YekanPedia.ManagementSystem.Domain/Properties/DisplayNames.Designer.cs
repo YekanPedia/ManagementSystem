@@ -88,6 +88,15 @@ namespace YekanPedia.ManagementSystem.Domain.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to کلاسهای فعال.
+        /// </summary>
+        public static string Class {
+            get {
+                return ResourceManager.GetString("Class", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to نوع کلاس.
         /// </summary>
         public static string ClassTypeId {
@@ -187,6 +196,15 @@ namespace YekanPedia.ManagementSystem.Domain.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to زمان آخرین ورود به سیستم.
+        /// </summary>
+        public static string LastLoginDate {
+            get {
+                return ResourceManager.GetString("LastLoginDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to آدرس.
         /// </summary>
         public static string Link {
@@ -219,6 +237,15 @@ namespace YekanPedia.ManagementSystem.Domain.Properties {
         public static string Price {
             get {
                 return ResourceManager.GetString("Price", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تاریخ ثبت نام.
+        /// </summary>
+        public static string RegisterDate {
+            get {
+                return ResourceManager.GetString("RegisterDate", resourceCulture);
             }
         }
         

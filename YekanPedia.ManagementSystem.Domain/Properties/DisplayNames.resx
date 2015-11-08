@@ -126,6 +126,9 @@
   <data name="Capacity" xml:space="preserve">
     <value>ظرفیت</value>
   </data>
+  <data name="Class" xml:space="preserve">
+    <value>کلاسهای فعال</value>
+  </data>
   <data name="ClassTypeId" xml:space="preserve">
     <value>نوع کلاس</value>
   </data>
@@ -159,6 +162,9 @@
   <data name="JustificationDateSh" xml:space="preserve">
     <value>تاریخ جلسه توجیهی</value>
   </data>
+  <data name="LastLoginDate" xml:space="preserve">
+    <value>زمان آخرین ورود به سیستم</value>
+  </data>
   <data name="Link" xml:space="preserve">
     <value>آدرس</value>
   </data>
@@ -170,6 +176,9 @@
   </data>
   <data name="Price" xml:space="preserve">
     <value>مبلغ ( ریال )</value>
+  </data>
+  <data name="RegisterDate" xml:space="preserve">
+    <value>تاریخ ثبت نام</value>
   </data>
   <data name="SessionCount" xml:space="preserve">
     <value>تعداد جلسات</value>

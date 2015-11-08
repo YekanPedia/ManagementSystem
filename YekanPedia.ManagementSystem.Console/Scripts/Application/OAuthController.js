@@ -11,9 +11,7 @@ function onRegisterComplete(result) {
 }
 
 $().ready(function () {
-    $('.rememberMe').click(function () {
-        $("#rememberMe").val($(this)[0].checked);
-    });
+    localStorage.setItem('ma-menu-Id', 1);
     $('.Unique').blur(function () {
         var $el = $(this);
         if ($el.hasClass('valid')) {

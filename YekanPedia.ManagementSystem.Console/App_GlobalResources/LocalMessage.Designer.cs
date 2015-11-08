@@ -70,6 +70,15 @@ namespace YekanPedia.ManagementSystem.Console.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to فعال نمودن کاربر.
+        /// </summary>
+        public static string Active {
+            get {
+                return ResourceManager.GetString("Active", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to فعالیت ها.
         /// </summary>
         public static string Activities {
@@ -111,6 +120,15 @@ namespace YekanPedia.ManagementSystem.Console.App_GlobalResources {
         public static string AddCourseDescription {
             get {
                 return ResourceManager.GetString("AddCourseDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ثبت نام کاربر در کلاس.
+        /// </summary>
+        public static string AddUserInClass {
+            get {
+                return ResourceManager.GetString("AddUserInClass", resourceCulture);
             }
         }
         
@@ -241,6 +259,15 @@ namespace YekanPedia.ManagementSystem.Console.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to غیر فعال نمودن کاربر.
+        /// </summary>
+        public static string DeActive {
+            get {
+                return ResourceManager.GetString("DeActive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to دانلود.
         /// </summary>
         public static string Download {
@@ -264,6 +291,15 @@ namespace YekanPedia.ManagementSystem.Console.App_GlobalResources {
         public static string Email {
             get {
                 return ResourceManager.GetString("Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to بدون انتخاب.
+        /// </summary>
+        public static string EmptySelect {
+            get {
+                return ResourceManager.GetString("EmptySelect", resourceCulture);
             }
         }
         
@@ -412,6 +448,24 @@ namespace YekanPedia.ManagementSystem.Console.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to جستجو.
+        /// </summary>
+        public static string Search {
+            get {
+                return ResourceManager.GetString("Search", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ارسال پیام.
+        /// </summary>
+        public static string SendMessage {
+            get {
+                return ResourceManager.GetString("SendMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to تنظیمات.
         /// </summary>
         public static string Setting {
@@ -453,6 +507,15 @@ namespace YekanPedia.ManagementSystem.Console.App_GlobalResources {
         public static string TimeLine {
             get {
                 return ResourceManager.GetString("TimeLine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to مدیریت کاربران.
+        /// </summary>
+        public static string UserManagement {
+            get {
+                return ResourceManager.GetString("UserManagement", resourceCulture);
             }
         }
         

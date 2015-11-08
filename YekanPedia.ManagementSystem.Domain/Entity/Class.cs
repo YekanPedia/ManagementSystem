@@ -7,6 +7,8 @@
     using InfraStructure.Validation;
     using System.Collections.Generic;
     using InfraStructure.Date;
+    using System.Linq;
+
 
     [Table("Class", Schema = "dbo")]
     public class Class
@@ -72,6 +74,16 @@
         public int Capacity { get; set; }
 
         public bool IsFinished { get; set; }
+
+        [NotMapped]
+        public string ClassInformaion
+        {
+            get
+            {
+                var time = ClassTime?.FirstOrDefault();
+                return $"{User?.FullName} : {Course?.CourseName} , {time.DayFa} , ({time?.TimeFrom} تا {time?.TimeTo})";
+            }
+        }
 
         public void ReBind()
         {

@@ -474,7 +474,7 @@ html > body .top-menu > li > a.tm-chat {
     }
 
 .profile-menu > a {
-    background: url(/Content/Images/Background/profile-menu.png) no-repeat left top;
+    background: url(/Content/Images/Background/profile-menu.jpg) no-repeat left top;
     background-size: 100%;
 }
 
@@ -721,7 +721,23 @@ th {
     padding-top: 5px;
 }
 
-#add-tl-item{
-    right:inherit;
-    left:23px;
+#add-tl-item {
+    right: inherit;
+    left: 23px;
+}
+
+.classNearFinish {
+    background-color: #f9fbc7;
+}
+
+.bootgrid-header .actions .btn-group .dropdown-menu .dropdown-item {
+    padding: 0 30px 0 0 !important;
+}
+
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+    vertical-align: middle;
+}
+
+.table-responsive {
+    overflow: inherit !important;
 }

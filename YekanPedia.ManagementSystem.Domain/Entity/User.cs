@@ -6,6 +6,7 @@
     using System.ComponentModel.DataAnnotations.Schema;
     using Properties;
     using InfraStructure.Validation;
+    using InfraStructure.Date;
 
     public class BaseUser
     {
@@ -62,12 +63,18 @@
         [Required(ErrorMessageResourceName = nameof(DisplayError.Required), ErrorMessageResourceType = typeof(DisplayError))]
         public bool IsActive { get; set; }
 
+        [Display(ResourceType = typeof(DisplayNames), Name = nameof(RegisterDate))]
         public DateTime RegisterDate { get; set; }
 
+        [NotMapped]
+        public string RegisterPersianDate => PersianDateTime.GetRelativeTime(RegisterDate);
+
+        [Display(ResourceType = typeof(DisplayNames), Name = nameof(LastLoginDate))]
         public DateTime LastLoginDate { get; set; }
 
         [NotMapped]
-        public string LastLoginPersianDate => "";
+        public string LastLoginPersianDate => PersianDateTime.GetRelativeTime(LastLoginDate);
+
 
         [Display(ResourceType = typeof(DisplayNames), Name = nameof(Mobile))]
         [MaxLength(11, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
@@ -111,6 +118,7 @@
         [StringLength(200, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
         public string AboutMe { get; set; }
 
+        [Display(ResourceType = typeof(DisplayNames), Name = nameof(IsTeacher))]
         public bool IsTeacher { get; set; }
         public int ProgressRegisterCompleted()
         {
@@ -125,6 +133,8 @@
         }
 
         public virtual ICollection<UserInClass> UserInClass { get; set; }
+        [Display(ResourceType = typeof(DisplayNames), Name = nameof(Class))]
+
         public virtual ICollection<Class> Class { get; set; }
         public virtual ICollection<Tasks> Tasks { get; set; }
     }

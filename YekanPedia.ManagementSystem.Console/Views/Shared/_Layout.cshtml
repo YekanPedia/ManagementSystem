@@ -91,19 +91,19 @@
                         </div>
                     </a>
                     <ul class="main-menu" style="display: block;">
-                        <li>
+                        <li id="4">
                             <a href="@Url.Action(MVC.Account.ActionNames.Profile, MVC.Account.Name, new { userId = CurrentUser.UserId })">
                                 <i class="zmdi zmdi-account"></i>
                                 @LocalMessage.Profile
                             </a>
                         </li>
-                        <li>
+                        <li id="5">
                             <a href="">
                                 <i class="zmdi zmdi-settings"></i>
                                 @LocalMessage.Setting
                             </a>
                         </li>
-                        <li>
+                        <li id="6">
                             <a href="@Url.Action(MVC.OAuth.ActionNames.SignOut, MVC.OAuth.Name)">
                                 <i class="zmdi zmdi-sign-in"></i>
                                 @LocalMessage.Exit

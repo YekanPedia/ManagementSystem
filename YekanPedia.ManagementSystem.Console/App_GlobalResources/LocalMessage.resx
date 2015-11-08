@@ -258,4 +258,25 @@
   <data name="AddCourseDescription" xml:space="preserve">
     <value>در این قسمت کلیه انواع کلاس های مربوطه مانند UniLevel ، PreUniLevel را وارد نمایید</value>
   </data>
+  <data name="UserManagement" xml:space="preserve">
+    <value>مدیریت کاربران</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>جستجو</value>
+  </data>
+  <data name="Active" xml:space="preserve">
+    <value>فعال نمودن کاربر</value>
+  </data>
+  <data name="DeActive" xml:space="preserve">
+    <value>غیر فعال نمودن کاربر</value>
+  </data>
+  <data name="AddUserInClass" xml:space="preserve">
+    <value>ثبت نام کاربر در کلاس</value>
+  </data>
+  <data name="SendMessage" xml:space="preserve">
+    <value>ارسال پیام</value>
+  </data>
+  <data name="EmptySelect" xml:space="preserve">
+    <value>بدون انتخاب</value>
+  </data>
 </root>

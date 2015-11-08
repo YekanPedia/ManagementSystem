@@ -188,6 +188,7 @@
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\Poco\ErrorModelStateController.cs" />
     <Compile Include="Controllers\TaskController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Extensions\Authentication\CurrentUserPrincipal.cs" />
     <Compile Include="Extensions\Authentication\ICurrentUserPrincipal.cs" />
     <Compile Include="Extensions\EnumSelectList.cs" />
@@ -247,6 +248,9 @@
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="T4\TaskController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\UserController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -349,6 +353,7 @@
     <Content Include="Views\Dashboard\Partial\_Menu.cshtml" />
     <Content Include="Views\OAuth\Partial\_Login.cshtml" />
     <Content Include="Views\Task\Partial\_Task.cshtml" />
+    <Content Include="Views\User\Partial\_List.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -384,6 +389,9 @@
     <Content Include="Views\Dashboard\ManageBaseInformation.cshtml" />
     <Content Include="Views\ClassType\Partial\_ClassType.cshtml" />
     <Content Include="Views\Course\Partial\_Course.cshtml" />
+    <Content Include="Views\User\Partial\_HeaderUserGrid.cshtml" />
+    <Content Include="Views\User\Manage.cshtml" />
+    <Content Include="Views\User\Partial\_SearchBox.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

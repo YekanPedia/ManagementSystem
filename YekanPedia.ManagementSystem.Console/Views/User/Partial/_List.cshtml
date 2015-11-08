@@ -1,0 +1,78 @@
+﻿@model  IEnumerable<User>
+@using YekanPedia.ManagementSystem.Domain.Entity
+<div class="card">
+    <div class="card-header">
+    </div>
+    <div class="card-body ">
+        <div class="table-responsive table-hover">
+            <table id="classDataGrid" class="table table-striped ">
+                @{ Html.RenderPartial(MVC.User.Views.Partial._HeaderUserGrid, new User());}
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.FullName</td>
+                            <td>@item.Mobile</td>
+                            <td>@item.BirthDate</td>
+                            <td>@item.RegisterPersianDate</td>
+                            <td>@item.LastLoginPersianDate</td>
+                            <td>
+                                <div class="checkbox">
+                                    <label>
+                                        <input disabled type="checkbox" checked="@item.IsTeacher" class="checkbox">
+                                        <i class="input-helper"></i>
+                                    </label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="checkbox">
+                                    <label>
+                                        <input disabled type="checkbox" checked="@item.IsActive" class="checkbox">
+                                        <i class="input-helper"></i>
+                                    </label>
+                                </div>
+                            </td>
+                            <td>
+                                <ul class="actions">
+                                    <li class="dropdown action-show dropup">
+                                        <a href="" data-toggle="dropdown">
+                                            <i class="zmdi zmdi-more-vert"></i>
+                                        </a>
+                                        <ul class="dropdown-menu  dm-icon">
+                                            <li>
+                                                <a href="">
+                                                    <i class="zmdi @(item.IsActive ?  "zmdi-square-o":"zmdi-check")"></i>
+                                                    @(item.IsActive ? LocalMessage.DeActive : LocalMessage.Active)
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="@Url.Action(MVC.Account.ActionNames.Profile, MVC.Account.Name, new { userId = item.UserId })">
+                                                    <i class="zmdi zmdi-account"></i>
+                                                    @LocalMessage.Profile
+                                                </a>
+                                            </li>
+                                            <li class="divider"></li>
+                                            <li>
+                                                <a href="@Url.Action(MVC.User.ActionNames.AddToClass, MVC.User.Name, new { userId = item.UserId })">
+                                                    <i class="zmdi zmdi-delete"></i>
+                                                    @LocalMessage.AddUserInClass
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <i class="zmdi zmdi-delete"></i>
+                                                    @LocalMessage.SendMessage
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <div class="m-t-10"></div>
+        </div>
+    </div>
+</div>

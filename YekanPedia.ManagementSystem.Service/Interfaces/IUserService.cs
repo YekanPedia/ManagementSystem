@@ -4,6 +4,7 @@
     using Domain.Entity;
     using InfraStructure;
     using System.Collections.Generic;
+    using System.Linq.Expressions;
 
     public interface IUserService
     {
@@ -17,5 +18,6 @@
         void AddLoginDate(User model);
         IServiceResults<User> FindUser(Guid userId);
         IServiceResults<IEnumerable<User>> GetTeachers();
+        IServiceResults<IEnumerable<User>> GetUsers(User predicate, Guid? classId);
     }
 }

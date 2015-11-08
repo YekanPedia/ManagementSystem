@@ -15,7 +15,7 @@
     display: none;
     font-family: 'B Yekan', Tahoma;
     font-size: 13px;
-    z-index: 99999;
+    z-index: 99999999;
 }
 
     .Zebra_DatePicker * {

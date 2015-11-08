@@ -1,4 +1,4 @@
-﻿/// <reference path="JQuery/PersianCalendar/PersianCalendar.js" /> /// <reference path="JQuery/jquery-1.10.2.min.js" />  /* * Layout */  (function () {     //Get saved layout type from LocalStorage     var layoutStatus = localStorage.getItem('ma-layout-status');     if (layoutStatus == 1) {
+﻿/// <reference path="JQuery/PersianCalendar/PersianCalendar.js" /> /// <reference path="JQuery/jquery-1.10.2.min.js" />  /* * Layout */  (function () {     //Get saved layout type from LocalStorage     var layoutStatus = localStorage.getItem('ma-layout-status');         var menuStatus = localStorage.getItem('ma-menu-Id');     $('.main-menu > li#' + menuStatus).addClass('active');     if (layoutStatus == 1) {
         $('body').addClass('sw-toggled');         $('#tw-switch').prop('checked', true);
     }      $('body').on('change', '#toggle-width input:checkbox', function () {
          if ($(this).is(':checked')) {
@@ -10,6 +10,10 @@
                 $('body').removeClass('toggled sw-toggled');                 localStorage.setItem('ma-layout-status', 0);                 $('.main-menu > li').removeClass('animated');
             }, 250);
         }
+    });
+
+    $('.main-menu > li').click(function () {
+        localStorage.setItem('ma-menu-Id', $(this).attr('id'));
     });
 })();   /*  * Detact Mobile Browser  */ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
     $('html').addClass('ismobile');
@@ -293,7 +297,9 @@
         },         icon_type: 'class',         template: '<div data-growl="container" class="alert" role="alert">    ' + '<button type="button" class="close" data-growl="dismiss">        ' + '<span aria-hidden="true">&times;</span>' + '<span class="sr-only">Close</span>' + '    </button>' + '<span data-growl="icon"></span>' + '<span data-growl="title"></span>' + '<span data-growl="message"></span>' + '<a href="#" data-growl="url"></a>' + '</div>'
     });
 }; $().ready(function () {
-         $('.NoWaves').removeClass('waves-effect');     $('.PersianCalendar').Zebra_DatePicker();     $(".form-control").keyup(function () { return false });     $('.thumbnail').click(function () {
+     $('input[type=checkbox].checkbox').click(function () {
+        $("#"+$(this).attr('data-join')).val($(this)[0].checked);
+    });     $('.NoWaves').removeClass('waves-effect');     $('.PersianCalendar').Zebra_DatePicker();     $(".form-control").keyup(function () { return false });     $('.thumbnail').click(function () {
         $('.thumbnail').removeClass('SelectDefaultAvatar');         $(this).addClass('SelectDefaultAvatar');         var img = $(this).find('img');         $('.img-responsive').attr('src', img.attr('src'));         $.ajax({
             type: "POST",             url: "/Account/ChangePicture",             data: "picture=" + img.attr('src') + "&userId=" + $("#UserId").val(),             dataType: "json",             success: function (response) {
              }
