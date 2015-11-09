@@ -12,6 +12,7 @@
         IServiceResults<bool> CheckEmailExist(string email);
         IServiceResults<User> CheckUserExist(string email, string password);
         IServiceResults<bool> EditAboutMe(Guid userId, string aboutMe);
+        IServiceResults<bool> ChangeStatus(Guid userId, bool status);
         IServiceResults<bool> EditBasicInfo(User model);
         IServiceResults<bool> EditCallInfo(User model);
         IServiceResults<bool> ChangePicture(Guid userId, string picture);

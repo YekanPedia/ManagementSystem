@@ -68,6 +68,12 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         {
             return new T4MVC_System_Web_Mvc_ViewResult(Area, Name, ActionNames.AddToClass);
         }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.JsonResult ChangeState()
+        {
+            return new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.ChangeState);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public UserController Actions { get { return MVC.User; } }
@@ -87,6 +93,7 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             public readonly string Search = "Search";
             public readonly string Manage = "Manage";
             public readonly string AddToClass = "AddToClass";
+            public readonly string ChangeState = "ChangeState";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -95,6 +102,7 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             public const string Search = "Search";
             public const string Manage = "Manage";
             public const string AddToClass = "AddToClass";
+            public const string ChangeState = "ChangeState";
         }
 
 
@@ -114,6 +122,15 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         public class ActionParamsClass_AddToClass
         {
             public readonly string userId = "userId";
+        }
+        static readonly ActionParamsClass_ChangeState s_params_ChangeState = new ActionParamsClass_ChangeState();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_ChangeState ChangeStateParams { get { return s_params_ChangeState; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_ChangeState
+        {
+            public readonly string userId = "userId";
+            public readonly string status = "status";
         }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -186,6 +203,19 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_ViewResult(Area, Name, ActionNames.AddToClass);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "userId", userId);
             AddToClassOverride(callInfo, userId);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void ChangeStateOverride(T4MVC_System_Web_Mvc_JsonResult callInfo, System.Guid userId, bool status);
+
+        [NonAction]
+        public override System.Web.Mvc.JsonResult ChangeState(System.Guid userId, bool status)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.ChangeState);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "userId", userId);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "status", status);
+            ChangeStateOverride(callInfo, userId, status);
             return callInfo;
         }
 

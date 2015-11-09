@@ -132,6 +132,9 @@
   <data name="ClassTypeId" xml:space="preserve">
     <value>نوع کلاس</value>
   </data>
+  <data name="Color" xml:space="preserve">
+    <value>رنگ</value>
+  </data>
   <data name="CourseId" xml:space="preserve">
     <value>دوره</value>
   </data>

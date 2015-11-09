@@ -11,8 +11,8 @@
 
     public class ClassTypeService : IClassTypeService
     {
-        private readonly IUnitOfWork _uow;
-        private readonly IDbSet<ClassType> _classType;
+        readonly IUnitOfWork _uow;
+        readonly IDbSet<ClassType> _classType;
         public ClassTypeService(IUnitOfWork uow)
         {
             _uow = uow;

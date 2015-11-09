@@ -15,5 +15,13 @@
             }
         }
     });
+
+    (function () {
+        $('.event-tag > span').click(function () {
+            $('.event-tag > span').removeClass('selected');
+            $(this).addClass('selected');
+            $("#Color").val($(this).attr('data-color'));
+        });
+    })();
 });
 

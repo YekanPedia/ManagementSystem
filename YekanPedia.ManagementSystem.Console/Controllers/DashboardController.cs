@@ -1,15 +1,22 @@
 ﻿namespace YekanPedia.ManagementSystem.Console.Controllers
 {
     using System.Web.Mvc;
+    using Service.Interfaces;
 
     public partial class DashboardController : Controller
     {
+        #region Constructure
+        readonly IClassService _classService;
+        public DashboardController(IClassService classService)
+        {
+            _classService = classService;
+        }
+        #endregion
         [HttpGet]
         public virtual new ActionResult User()
         {
-            return View();
+            return View(_classService.GetClass());
         }
-      
 
         [HttpGet]
         public virtual ActionResult Admin()

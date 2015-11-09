@@ -1,5 +1,8 @@
 ﻿@model  IEnumerable<User>
 @using YekanPedia.ManagementSystem.Domain.Entity
+@{
+    var ChangeStatusUrl = Url.Action(MVC.User.ActionNames.ChangeState, MVC.User.Name);
+}
 <div class="card">
     <div class="card-header">
     </div>
@@ -10,7 +13,7 @@
                 <tbody>
                     @foreach (var item in Model)
                     {
-                        <tr>
+                        <tr id="@item.UserId">
                             <td>@item.FullName</td>
                             <td>@item.Mobile</td>
                             <td>@item.BirthDate</td>
@@ -27,7 +30,7 @@
                             <td>
                                 <div class="checkbox">
                                     <label>
-                                        <input disabled type="checkbox" checked="@item.IsActive" class="checkbox">
+                                        <input disabled type="checkbox" checked="@item.IsActive" class="checkbox activeUserChecked">
                                         <i class="input-helper"></i>
                                     </label>
                                 </div>
@@ -40,9 +43,15 @@
                                         </a>
                                         <ul class="dropdown-menu  dm-icon">
                                             <li>
-                                                <a href="">
-                                                    <i class="zmdi @(item.IsActive ?  "zmdi-square-o":"zmdi-check")"></i>
-                                                    @(item.IsActive ? LocalMessage.DeActive : LocalMessage.Active)
+                                                <a data-url="@ChangeStatusUrl" data-userId="@item.UserId" class="cursorPointer deactiveUser " style="@(item.IsActive ? "" : "display:none")">
+                                                    <i class="zmdi zmdi-square-o">
+                                                    </i>
+                                                    @LocalMessage.DeActive
+                                                </a>
+                                                <a data-url="@ChangeStatusUrl" data-userId="@item.UserId" class="cursorPointer activeUser " style="@(item.IsActive ? "display:none" : "" )">
+                                                    <i class=" zmdi zmdi-check">
+                                                    </i>
+                                                    @LocalMessage.Active
                                                 </a>
                                             </li>
                                             <li>
@@ -54,13 +63,13 @@
                                             <li class="divider"></li>
                                             <li>
                                                 <a href="@Url.Action(MVC.User.ActionNames.AddToClass, MVC.User.Name, new { userId = item.UserId })">
-                                                    <i class="zmdi zmdi-delete"></i>
+                                                    <i class="zmdi zmdi-accounts-add"></i>
                                                     @LocalMessage.AddUserInClass
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="#">
-                                                    <i class="zmdi zmdi-delete"></i>
+                                                    <i class="zmdi zmdi-comment-more"></i>
                                                     @LocalMessage.SendMessage
                                                 </a>
                                             </li>

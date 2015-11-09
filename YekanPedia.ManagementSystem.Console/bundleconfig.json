@@ -16,5 +16,17 @@
     "inputFiles": [
       "Scripts/Application/ClassController.js"
     ]
+  },
+  {
+    "outputFileName": "Scripts/Application/BasicInfoController.js",
+    "inputFiles": [
+      "Scripts/Application/BasicInfoController.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Application/UserController.js",
+    "inputFiles": [
+      "Scripts/Application/UserController.js"
+    ]
   }
 ]

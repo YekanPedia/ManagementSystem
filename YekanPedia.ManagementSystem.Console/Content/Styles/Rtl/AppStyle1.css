@@ -741,3 +741,18 @@ th {
 .table-responsive {
     overflow: inherit !important;
 }
+
+.cursorPointer {
+    cursor: pointer;
+}
+
+/*#region FullCalendar */
+.fc-toolbar {
+    display: none;
+}
+.fc-event .fc-title{
+    text-align:right;
+    float: left;
+}
+
+/*#endregion */

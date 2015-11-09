@@ -306,6 +306,9 @@
       <DependentUpon>AccountController.js</DependentUpon>
     </Content>
     <Content Include="Scripts\Application\BasicInfoController.js" />
+    <Content Include="Scripts\Application\BasicInfoController.min.js">
+      <DependentUpon>BasicInfoController.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\Application\ClassController.js" />
     <Content Include="Scripts\Application\ClassController.min.js">
       <DependentUpon>ClassController.js</DependentUpon>
@@ -314,10 +317,18 @@
     <Content Include="Scripts\Application\OAuthController.min.js">
       <DependentUpon>OAuthController.js</DependentUpon>
     </Content>
+    <Content Include="Scripts\Application\UserController.js" />
+    <Content Include="Scripts\Application\UserController.min.js">
+      <DependentUpon>UserController.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\jquery.signalR-2.1.2.js" />
     <Content Include="Scripts\jquery.signalR-2.1.2.min.js" />
     <Content Include="Scripts\JQuery\Ajax\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\JQuery\BootGrid\jquery.bootgrid.min.js" />
+    <Content Include="Scripts\JQuery\FullCalendar\fa.js" />
+    <Content Include="Scripts\JQuery\FullCalendar\fullcalendar.js" />
+    <Content Include="Scripts\JQuery\FullCalendar\fullcalendar.min.js" />
+    <Content Include="Scripts\JQuery\FullCalendar\moment.min.js" />
     <Content Include="Scripts\JQuery\InputMask\input-mask.min.js" />
     <Content Include="Scripts\JQuery\jquery-1.10.2.min.js" />
     <Content Include="Scripts\JQuery\Loadingbar\Loadingbar.js" />
@@ -340,7 +351,7 @@
       <LastGenOutput>T4MVC.cs</LastGenOutput>
     </None>
     <None Include="T4\T4MVC.tt.settings.xml" />
-    <Content Include="Scripts\Bootstrap\bootstrap.min.js" />
+    <Content Include="Scripts\JQuery\Bootstrap\bootstrap.min.js" />
     <Content Include="Scripts\functions.js" />
     <Content Include="Scripts\JQuery\LightGallery\lightGallery.min.js" />
     <Content Include="Scripts\JQuery\NiceScroll\jquery.nicescroll.min.js" />

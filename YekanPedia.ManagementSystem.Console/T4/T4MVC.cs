@@ -138,18 +138,13 @@ namespace Links
             public static readonly string AccountController_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/AccountController.min.js") ? Url("AccountController.min.js") : Url("AccountController.js");
             public static readonly string AccountController_min_js = Url("AccountController.min.js");
             public static readonly string BasicInfoController_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/BasicInfoController.min.js") ? Url("BasicInfoController.min.js") : Url("BasicInfoController.js");
+            public static readonly string BasicInfoController_min_js = Url("BasicInfoController.min.js");
             public static readonly string ClassController_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ClassController.min.js") ? Url("ClassController.min.js") : Url("ClassController.js");
             public static readonly string ClassController_min_js = Url("ClassController.min.js");
             public static readonly string OAuthController_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/OAuthController.min.js") ? Url("OAuthController.min.js") : Url("OAuthController.js");
             public static readonly string OAuthController_min_js = Url("OAuthController.min.js");
-        }
-    
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public static class Bootstrap {
-            private const string URLPATH = "~/Scripts/Bootstrap";
-            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
-            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
-            public static readonly string bootstrap_min_js = Url("bootstrap.min.js");
+            public static readonly string UserController_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/UserController.min.js") ? Url("UserController.min.js") : Url("UserController.js");
+            public static readonly string UserController_min_js = Url("UserController.min.js");
         }
     
         public static readonly string functions_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/functions.min.js") ? Url("functions.min.js") : Url("functions.js");
@@ -172,6 +167,25 @@ namespace Links
                 public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
                 public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
                 public static readonly string jquery_bootgrid_min_js = Url("jquery.bootgrid.min.js");
+            }
+        
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class Bootstrap {
+                private const string URLPATH = "~/Scripts/JQuery/Bootstrap";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                public static readonly string bootstrap_min_js = Url("bootstrap.min.js");
+            }
+        
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class FullCalendar {
+                private const string URLPATH = "~/Scripts/JQuery/FullCalendar";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                public static readonly string fa_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fa.min.js") ? Url("fa.min.js") : Url("fa.js");
+                public static readonly string fullcalendar_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fullcalendar.min.js") ? Url("fullcalendar.min.js") : Url("fullcalendar.js");
+                public static readonly string fullcalendar_min_js = Url("fullcalendar.min.js");
+                public static readonly string moment_min_js = Url("moment.min.js");
             }
         
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -430,13 +444,7 @@ namespace Links
                     public const string BasicInfoController_js = "~/Scripts/Application/BasicInfoController.js"; 
                     public const string ClassController_js = "~/Scripts/Application/ClassController.js"; 
                     public const string OAuthController_js = "~/Scripts/Application/OAuthController.js"; 
-                }
-            }
-            public static partial class Bootstrap 
-            {
-                public static class Assets
-                {
-                    public const string bootstrap_min_js = "~/Scripts/Bootstrap/bootstrap.min.js"; 
+                    public const string UserController_js = "~/Scripts/Application/UserController.js"; 
                 }
             }
             public static partial class JQuery 
@@ -453,6 +461,23 @@ namespace Links
                     public static class Assets
                     {
                         public const string jquery_bootgrid_min_js = "~/Scripts/JQuery/BootGrid/jquery.bootgrid.min.js"; 
+                    }
+                }
+                public static partial class Bootstrap 
+                {
+                    public static class Assets
+                    {
+                        public const string bootstrap_min_js = "~/Scripts/JQuery/Bootstrap/bootstrap.min.js"; 
+                    }
+                }
+                public static partial class FullCalendar 
+                {
+                    public static class Assets
+                    {
+                        public const string fa_js = "~/Scripts/JQuery/FullCalendar/fa.js"; 
+                        public const string fullcalendar_js = "~/Scripts/JQuery/FullCalendar/fullcalendar.js"; 
+                        public const string fullcalendar_min_js = "~/Scripts/JQuery/FullCalendar/fullcalendar.min.js"; 
+                        public const string moment_min_js = "~/Scripts/JQuery/FullCalendar/moment.min.js"; 
                     }
                 }
                 public static partial class InputMask 

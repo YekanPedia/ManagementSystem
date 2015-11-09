@@ -10,7 +10,7 @@
 
             bundles.Add(new ScriptBundleOrderer(Links.Bundles.Scripts.LoginScripts, new JsMinify()).Include(
                            "~" + Links.Scripts.JQuery.jquery_1_10_2_min_js,
-                           "~" + Links.Scripts.Bootstrap.bootstrap_min_js,
+                           "~" + Links.Scripts.JQuery.Bootstrap.bootstrap_min_js,
                            "~" + Links.Scripts.JQuery.NiceScroll.jquery_nicescroll_min_js,
                            "~" + Links.Scripts.JQuery.Wave.waves_min_js,
                            "~" + Links.Scripts.JQuery.Type.jQuery_Type_js,
@@ -24,7 +24,7 @@
 
             bundles.Add(new ScriptBundleOrderer(Links.Bundles.Scripts.CoreScripts, new JsMinify()).Include(
                           "~" + Links.Scripts.JQuery.jquery_1_10_2_min_js,
-                          "~" + Links.Scripts.Bootstrap.bootstrap_min_js,
+                          "~" + Links.Scripts.JQuery.Bootstrap.bootstrap_min_js,
                           "~" + Links.Scripts.JQuery.NiceScroll.jquery_nicescroll_min_js,
                           "~" + Links.Scripts.JQuery.Wave.waves_min_js,
                           "~" + Links.Scripts.JQuery.Type.jQuery_Type_js,
@@ -38,6 +38,13 @@
                           "~" + Links.Scripts.JQuery.Validation.jquery_validate_unobtrusive_js,
                           "~" + Links.Scripts.JQuery.Ajax.jquery_unobtrusive_ajax_js,
                            "~" + Links.Scripts.JQuery.Phoenix.Phoenix_core_js));
+
+            bundles.Add(new ScriptBundleOrderer(Links.Bundles.Scripts.FullCalendarScripts, new JsMinify()).Include(
+                       "~" + Links.Scripts.JQuery.FullCalendar.moment_min_js,
+                       "~" + Links.Scripts.JQuery.FullCalendar.fullcalendar_min_js,
+                       "~" + Links.Scripts.JQuery.FullCalendar.fa_js
+                       ));
+
             bundles.Add(new ScriptBundleOrderer(Links.Bundles.Scripts.BasicInfoScripts, new JsMinify()).Include(
                         "~" + Links.Scripts.Application.BasicInfoController_js));
             #endregion
@@ -55,6 +62,7 @@
                            "~" + Links.Content.Styles.Public.Sweet_css,
                           "~" + Links.Content.Styles.Public.MaterialDesignIconicFont_css,
                           "~" + Links.Content.Styles.Public.PersianCalendar_css,
+                           "~" + Links.Content.Styles.Public.Fullcalendar_css,
                           "~" + Links.Content.Styles.Public.Bootgrid_css,
                           "~" + Links.Content.Styles.Public.BootstrapSelect_css
                           ));

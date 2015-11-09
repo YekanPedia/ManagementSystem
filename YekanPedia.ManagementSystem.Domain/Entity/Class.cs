@@ -75,13 +75,19 @@
 
         public bool IsFinished { get; set; }
 
+        [Column(TypeName = "varchar")]
+        [MaxLength(7, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
+        [Display(ResourceType = typeof(DisplayNames), Name = nameof(Color))]
+        [Required(ErrorMessageResourceName = nameof(DisplayError.Required), ErrorMessageResourceType = typeof(DisplayError))]
+        public string Color { get; set; }
+
         [NotMapped]
         public string ClassInformaion
         {
             get
             {
                 var time = ClassTime?.FirstOrDefault();
-                return $"{User?.FullName} : {Course?.CourseName} , {time.DayFa} , ({time?.TimeFrom} تا {time?.TimeTo})";
+                return $"{User?.FullName} : {Course?.CourseName} : {time?.DayFa} : ({time?.TimeFrom} تا {time?.TimeTo})";
             }
         }
 

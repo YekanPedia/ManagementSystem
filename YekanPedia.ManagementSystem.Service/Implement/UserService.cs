@@ -99,7 +99,7 @@
         #endregion
         public IServiceResults<User> FindUser(Guid userId)
         {
-            var result = _user.FirstOrDefault(X => X.UserId == userId);
+            var result = _user.Find(userId);
             if (result == null)
             {
                 return new ServiceResults<User>
@@ -119,8 +119,8 @@
         #region Edit
         public IServiceResults<bool> EditAboutMe(Guid userId, string aboutMe)
         {
-            var result = _user.FirstOrDefault(X => X.UserId == userId);
-            if (result == null)
+            var result = FindUser(userId);
+            if (result.Result == null)
             {
                 return new ServiceResults<bool>
                 {
@@ -129,9 +129,9 @@
                     Result = false
                 };
             }
-            result.AboutMe = aboutMe;
+            result.Result.AboutMe = aboutMe;
             _uow.SaveChanges();
-            _taskService.EditUserTaskProgress(userId, TaskType.Profile, result.ProgressRegisterCompleted());
+            _taskService.EditUserTaskProgress(userId, TaskType.Profile, result.Result.ProgressRegisterCompleted());
             return new ServiceResults<bool>
             {
                 IsSuccessfull = true,
@@ -141,8 +141,8 @@
         }
         public IServiceResults<bool> EditBasicInfo(User model)
         {
-            var result = _user.FirstOrDefault(X => X.UserId == model.UserId);
-            if (result == null)
+            var result = FindUser(model.UserId);
+            if (result.Result == null)
             {
                 return new ServiceResults<bool>
                 {
@@ -151,22 +151,22 @@
                     Result = false
                 };
             }
-            result.FullName = model.FullName;
-            result.Sex = model.Sex;
-            result.BirthDate = model.BirthDate;
+            result.Result.FullName = model.FullName;
+            result.Result.Sex = model.Sex;
+            result.Result.BirthDate = model.BirthDate;
             var resultSave = _uow.SaveChanges();
-            _taskService.EditUserTaskProgress(result.UserId, TaskType.Profile, result.ProgressRegisterCompleted());
+            _taskService.EditUserTaskProgress(result.Result.UserId, TaskType.Profile, result.Result.ProgressRegisterCompleted());
             return new ServiceResults<bool>
             {
-                IsSuccessfull = (resultSave.ToBool()),
+                IsSuccessfull = resultSave.ToBool(),
                 Message = string.Empty,
-                Result = (resultSave.ToBool())
+                Result = resultSave.ToBool()
             };
         }
         public IServiceResults<bool> EditCallInfo(User model)
         {
-            var result = _user.FirstOrDefault(X => X.UserId == model.UserId);
-            if (result == null)
+            var result = FindUser(model.UserId);
+            if (result.Result == null)
             {
                 return new ServiceResults<bool>
                 {
@@ -176,25 +176,25 @@
                 };
             }
 
-            result.Facebook = model.Facebook;
-            result.Twitter = model.Twitter;
-            result.Mobile = model.Mobile;
-            result.Email = model.Email;
-            result.Latitude = model.Latitude;
-            result.Longitude = model.Longitude;
+            result.Result.Facebook = model.Facebook;
+            result.Result.Twitter = model.Twitter;
+            result.Result.Mobile = model.Mobile;
+            result.Result.Email = model.Email;
+            result.Result.Latitude = model.Latitude;
+            result.Result.Longitude = model.Longitude;
             var resultSave = _uow.SaveChanges();
-            _taskService.EditUserTaskProgress(result.UserId, TaskType.Profile, result.ProgressRegisterCompleted());
+            _taskService.EditUserTaskProgress(result.Result.UserId, TaskType.Profile, result.Result.ProgressRegisterCompleted());
             return new ServiceResults<bool>
             {
-                IsSuccessfull = (resultSave.ToBool()),
-                Message = string.Empty,
-                Result = (resultSave.ToBool())
+                IsSuccessfull = resultSave.ToBool(),
+                Message = resultSave.ToMessage(BusinessMessage.Error),
+                Result = resultSave.ToBool()
             };
         }
         public IServiceResults<bool> ChangePicture(Guid userId, string picture)
         {
-            var result = _user.FirstOrDefault(X => X.UserId == userId);
-            if (result == null)
+            var result = FindUser(userId);
+            if (result.Result == null)
             {
                 return new ServiceResults<bool>
                 {
@@ -204,7 +204,7 @@
                 };
             }
 
-            result.Picture = picture;
+            result.Result.Picture = picture;
             var resultSave = _uow.SaveChanges();
 
             return new ServiceResults<bool>()
@@ -243,6 +243,28 @@
                 IsSuccessfull = true,
                 Message = string.Empty,
                 Result = model.ToList()
+            };
+        }
+
+        public IServiceResults<bool> ChangeStatus(Guid userId, bool status)
+        {
+            var result = FindUser(userId);
+            if (result.Result == null)
+            {
+                return new ServiceResults<bool>
+                {
+                    IsSuccessfull = false,
+                    Message = BusinessMessage.UserNotExist,
+                    Result = false
+                };
+            }
+            result.Result.IsActive = status;
+            var resultSave = _uow.SaveChanges();
+            return new ServiceResults<bool>
+            {
+                IsSuccessfull = resultSave.ToBool(),
+                Message = resultSave.ToMessage(BusinessMessage.Error),
+                Result = resultSave.ToBool()
             };
         }
     }

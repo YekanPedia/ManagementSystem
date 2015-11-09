@@ -43,5 +43,10 @@
         {
             return View();
         }
+
+        public virtual JsonResult ChangeState(Guid userId,bool status)
+        {
+            return Json(_userService.ChangeStatus(userId,status));
+        }
     }
 }

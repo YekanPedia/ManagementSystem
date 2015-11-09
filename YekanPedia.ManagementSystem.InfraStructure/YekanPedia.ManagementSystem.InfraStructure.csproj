@@ -53,6 +53,7 @@
     <Compile Include="Date\PersianDateTime.cs" />
     <Compile Include="Date\TimeSpanExtension.cs" />
     <Compile Include="Extension\EnumHelper.cs" />
+    <Compile Include="Extension\FullTimeFormat.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Results\ActionResults.cs" />
     <Compile Include="Results\IActionResults.cs" />

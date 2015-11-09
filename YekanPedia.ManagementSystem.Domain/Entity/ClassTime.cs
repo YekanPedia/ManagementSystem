@@ -41,18 +41,18 @@
     public enum Day
     {
         [Description("شنبه")]
-        Sat = 1,
+        Sat = 6,
         [Description("یک شنبه")]
-        Sun = 2,
+        Sun = 5,
         [Description("دو شنبه")]
-        Mon = 3,
+        Mon = 4,
         [Description("سه شنبه")]
-        Tue = 4,
+        Tue = 3,
         [Description("چهار شنبه")]
-        Wed = 5,
+        Wed = 2,
         [Description("پنجشنبه")]
-        Thu = 6,
+        Thu = 1,
         [Description("جمعه")]
-        Fri = 7
+        Fri = 0
     }
 }
