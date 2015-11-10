@@ -9,11 +9,11 @@
     public partial class ClassController : Controller
     {
         #region Constructure
-        private readonly IUserService _userService;
-        private readonly IClassTypeService _classTypeService;
-        private readonly ICourseService _courseService;
-        private readonly IClassService _classService;
-        private readonly IClassTimeService _classTimeService;
+        readonly IUserService _userService;
+        readonly IClassTypeService _classTypeService;
+        readonly ICourseService _courseService;
+        readonly IClassService _classService;
+        readonly IClassTimeService _classTimeService;
         public ClassController(IClassTimeService classTimeService, IClassService classService, IUserService userService, ICourseService courseService, IClassTypeService classTypeService)
         {
             _userService = userService;
@@ -161,5 +161,7 @@
             return RedirectToAction(MVC.Class.ActionNames.AddClass, MVC.Class.Name);
         }
         #endregion
+
+
     }
 }

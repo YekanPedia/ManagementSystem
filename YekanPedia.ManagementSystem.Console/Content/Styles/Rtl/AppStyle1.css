@@ -750,9 +750,32 @@ th {
 .fc-toolbar {
     display: none;
 }
-.fc-event .fc-title{
-    text-align:right;
-    float: left;
+
+.fc-event .fc-title {
+    text-align: right;
+    float: right;
+    direction: rtl;
 }
 
 /*#endregion */
+
+.card .card-header .btn-float {
+    right: inherit;
+    left: 15px;
+}
+
+.profile-view .pv-header {
+    background-image: url(/Content/Images/Background/profile-widget.jpg);
+}
+
+    .profile-view .pv-header > .pv-main {
+        width: 100px;
+        height: 100px;
+        margin-left: -45px;
+        background-color: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 10px rgba(0, 0, 0, 0.12);
+    }
+
+.profile-view .pv-body {
+    margin-top: 65px;
+}

@@ -9,7 +9,6 @@
     using InfraStructure;
     using System.Linq;
     using Properties;
-    using System.Linq.Expressions;
 
     public class UserService : IUserService
     {

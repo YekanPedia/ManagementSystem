@@ -55,6 +55,14 @@
         }
         #endregion
         #region Profile
+
+        [ChildActionOnly]
+        public virtual PartialViewResult ProfileWidget(Guid userId)
+        {
+            var result = _userService.FindUser(userId).Result;
+            return PartialView(MVC.Account.Views.Partial._ProfileWidget,result);
+        }
+
         [HttpGet, Route("Account/Profile/{userId}")]
         public virtual new ActionResult Profile(Guid userId)
         {

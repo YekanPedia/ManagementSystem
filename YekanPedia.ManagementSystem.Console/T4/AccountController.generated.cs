@@ -64,6 +64,12 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         }
         [NonAction]
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.PartialViewResult ProfileWidget()
+        {
+            return new T4MVC_System_Web_Mvc_PartialViewResult(Area, Name, ActionNames.ProfileWidget);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public virtual System.Web.Mvc.ActionResult Profile()
         {
             return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Profile);
@@ -115,6 +121,7 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         public class ActionNamesClass
         {
             public readonly string Register = "Register";
+            public readonly string ProfileWidget = "ProfileWidget";
             public readonly string Profile = "Profile";
             public readonly string EditAboutMe = "EditAboutMe";
             public readonly string EditBasicInfo = "EditBasicInfo";
@@ -127,6 +134,7 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         public class ActionNameConstants
         {
             public const string Register = "Register";
+            public const string ProfileWidget = "ProfileWidget";
             public const string Profile = "Profile";
             public const string EditAboutMe = "EditAboutMe";
             public const string EditBasicInfo = "EditBasicInfo";
@@ -143,6 +151,14 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         public class ActionParamsClass_Register
         {
             public readonly string model = "model";
+        }
+        static readonly ActionParamsClass_ProfileWidget s_params_ProfileWidget = new ActionParamsClass_ProfileWidget();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_ProfileWidget ProfileWidgetParams { get { return s_params_ProfileWidget; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_ProfileWidget
+        {
+            public readonly string userId = "userId";
         }
         static readonly ActionParamsClass_Profile s_params_Profile = new ActionParamsClass_Profile();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -218,10 +234,12 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
                 public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
                 public class _ViewNamesClass
                 {
+                    public readonly string _ProfileWidget = "_ProfileWidget";
                     public readonly string _Register = "_Register";
                     public readonly string _RegisterationComplete = "_RegisterationComplete";
                     public readonly string _TimeLine = "_TimeLine";
                 }
+                public readonly string _ProfileWidget = "~/Views/Account/Partial/_ProfileWidget.cshtml";
                 public readonly string _Register = "~/Views/Account/Partial/_Register.cshtml";
                 public readonly string _RegisterationComplete = "~/Views/Account/Partial/_RegisterationComplete.cshtml";
                 public readonly string _TimeLine = "~/Views/Account/Partial/_TimeLine.cshtml";
@@ -243,6 +261,18 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.Register);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
             RegisterOverride(callInfo, model);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void ProfileWidgetOverride(T4MVC_System_Web_Mvc_PartialViewResult callInfo, System.Guid userId);
+
+        [NonAction]
+        public override System.Web.Mvc.PartialViewResult ProfileWidget(System.Guid userId)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_PartialViewResult(Area, Name, ActionNames.ProfileWidget);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "userId", userId);
+            ProfileWidgetOverride(callInfo, userId);
             return callInfo;
         }
 

@@ -53,7 +53,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DisplayNames.resx</DependentUpon>
     </Compile>
-    <Compile Include="Entity\CanceledClass.cs" />
+    <Compile Include="Entity\ClassSession.cs" />
     <Compile Include="Entity\Class.cs" />
     <Compile Include="Entity\ClassTime.cs" />
     <Compile Include="Entity\ClassType.cs" />

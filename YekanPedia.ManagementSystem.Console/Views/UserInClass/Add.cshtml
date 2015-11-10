@@ -1,0 +1,32 @@
+﻿@model UserInClass
+
+<div class="col-sm-3">
+    @{ Html.RenderAction(MVC.Account.ActionNames.ProfileWidget, MVC.Account.Name, new { Model.UserId });}
+</div>
+<div class="col-sm-9">
+    <div class="card">
+        <div class="card-header">
+        </div>
+        <div class="card-body card-padding p-b-10">
+            @using (Html.BeginForm(MVC.UserInClass.ActionNames.Add, MVC.UserInClass.Name, FormMethod.Post, new { @id = "userInClassFrm" }))
+            {
+                Html.RenderPartial(MVC.UserInClass.Views.Partial._Create, Model);
+                <div class="row">
+                    <div class="m-l-20  m-t-30 text-left">
+                        <button type="submit" id="saveAboutMeForm" class="btn btn-primary btn-sm waves-effect">
+                            <i class="zmdi zmdi-check"></i>
+                            @LocalMessage.Save
+                        </button>
+                        <a href="@Url.Action(MVC.User.ActionNames.Manage,MVC.User.Name)" class="btn btn-danger btn-sm waves-effect">
+                            <i class="zmdi zmdi-arrow-forward"></i>
+                            @LocalMessage.Cancel
+                        </a>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<div class="col-sm-12">
+    @{ Html.RenderAction(MVC.UserInClass.ActionNames.List, MVC.UserInClass.Name);}
+</div>

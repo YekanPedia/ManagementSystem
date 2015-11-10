@@ -25,10 +25,10 @@ using System.Web.Routing;
 using T4MVC;
 namespace YekanPedia.ManagementSystem.Console.Controllers
 {
-    public partial class UserController
+    public partial class UserInClassController
     {
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        protected UserController(Dummy d) { }
+        protected UserInClassController(Dummy d) { }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         protected RedirectToRouteResult RedirectToAction(ActionResult result)
@@ -58,25 +58,25 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
 
         [NonAction]
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public virtual System.Web.Mvc.PartialViewResult Search()
+        public virtual System.Web.Mvc.PartialViewResult List()
         {
-            return new T4MVC_System_Web_Mvc_PartialViewResult(Area, Name, ActionNames.Search);
+            return new T4MVC_System_Web_Mvc_PartialViewResult(Area, Name, ActionNames.List);
         }
         [NonAction]
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public virtual System.Web.Mvc.JsonResult ChangeState()
+        public virtual System.Web.Mvc.ViewResult Add()
         {
-            return new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.ChangeState);
+            return new T4MVC_System_Web_Mvc_ViewResult(Area, Name, ActionNames.Add);
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public UserController Actions { get { return MVC.User; } }
+        public UserInClassController Actions { get { return MVC.UserInClass; } }
         [GeneratedCode("T4MVC", "2.0")]
         public readonly string Area = "";
         [GeneratedCode("T4MVC", "2.0")]
-        public readonly string Name = "User";
+        public readonly string Name = "UserInClass";
         [GeneratedCode("T4MVC", "2.0")]
-        public const string NameConst = "User";
+        public const string NameConst = "UserInClass";
 
         static readonly ActionNamesClass s_actions = new ActionNamesClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -84,37 +84,33 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNamesClass
         {
-            public readonly string Search = "Search";
-            public readonly string Manage = "Manage";
-            public readonly string ChangeState = "ChangeState";
+            public readonly string List = "List";
+            public readonly string Add = "Add";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants
         {
-            public const string Search = "Search";
-            public const string Manage = "Manage";
-            public const string ChangeState = "ChangeState";
+            public const string List = "List";
+            public const string Add = "Add";
         }
 
 
-        static readonly ActionParamsClass_Search s_params_Search = new ActionParamsClass_Search();
+        static readonly ActionParamsClass_List s_params_List = new ActionParamsClass_List();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public ActionParamsClass_Search SearchParams { get { return s_params_Search; } }
+        public ActionParamsClass_List ListParams { get { return s_params_List; } }
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public class ActionParamsClass_Search
-        {
-            public readonly string model = "model";
-            public readonly string classId = "classId";
-        }
-        static readonly ActionParamsClass_ChangeState s_params_ChangeState = new ActionParamsClass_ChangeState();
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public ActionParamsClass_ChangeState ChangeStateParams { get { return s_params_ChangeState; } }
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public class ActionParamsClass_ChangeState
+        public class ActionParamsClass_List
         {
             public readonly string userId = "userId";
-            public readonly string status = "status";
+        }
+        static readonly ActionParamsClass_Add s_params_Add = new ActionParamsClass_Add();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_Add AddParams { get { return s_params_Add; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_Add
+        {
+            public readonly string userId = "userId";
         }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -126,9 +122,9 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
-                public readonly string Manage = "Manage";
+                public readonly string Add = "Add";
             }
-            public readonly string Manage = "~/Views/User/Manage.cshtml";
+            public readonly string Add = "~/Views/UserInClass/Add.cshtml";
             static readonly _PartialClass s_Partial = new _PartialClass();
             public _PartialClass Partial { get { return s_Partial; } }
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -138,56 +134,41 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
                 public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
                 public class _ViewNamesClass
                 {
-                    public readonly string _HeaderUserGrid = "_HeaderUserGrid";
+                    public readonly string _Create = "_Create";
                     public readonly string _List = "_List";
-                    public readonly string _SearchBox = "_SearchBox";
                 }
-                public readonly string _HeaderUserGrid = "~/Views/User/Partial/_HeaderUserGrid.cshtml";
-                public readonly string _List = "~/Views/User/Partial/_List.cshtml";
-                public readonly string _SearchBox = "~/Views/User/Partial/_SearchBox.cshtml";
+                public readonly string _Create = "~/Views/UserInClass/Partial/_Create.cshtml";
+                public readonly string _List = "~/Views/UserInClass/Partial/_List.cshtml";
             }
         }
     }
 
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-    public partial class T4MVC_UserController : YekanPedia.ManagementSystem.Console.Controllers.UserController
+    public partial class T4MVC_UserInClassController : YekanPedia.ManagementSystem.Console.Controllers.UserInClassController
     {
-        public T4MVC_UserController() : base(Dummy.Instance) { }
+        public T4MVC_UserInClassController() : base(Dummy.Instance) { }
 
         [NonAction]
-        partial void SearchOverride(T4MVC_System_Web_Mvc_PartialViewResult callInfo, YekanPedia.ManagementSystem.Domain.Entity.User model, System.Guid? classId);
+        partial void ListOverride(T4MVC_System_Web_Mvc_PartialViewResult callInfo, System.Guid userId);
 
         [NonAction]
-        public override System.Web.Mvc.PartialViewResult Search(YekanPedia.ManagementSystem.Domain.Entity.User model, System.Guid? classId)
+        public override System.Web.Mvc.PartialViewResult List(System.Guid userId)
         {
-            var callInfo = new T4MVC_System_Web_Mvc_PartialViewResult(Area, Name, ActionNames.Search);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "classId", classId);
-            SearchOverride(callInfo, model, classId);
-            return callInfo;
-        }
-
-        [NonAction]
-        partial void ManageOverride(T4MVC_System_Web_Mvc_ViewResult callInfo);
-
-        [NonAction]
-        public override System.Web.Mvc.ViewResult Manage()
-        {
-            var callInfo = new T4MVC_System_Web_Mvc_ViewResult(Area, Name, ActionNames.Manage);
-            ManageOverride(callInfo);
-            return callInfo;
-        }
-
-        [NonAction]
-        partial void ChangeStateOverride(T4MVC_System_Web_Mvc_JsonResult callInfo, System.Guid userId, bool status);
-
-        [NonAction]
-        public override System.Web.Mvc.JsonResult ChangeState(System.Guid userId, bool status)
-        {
-            var callInfo = new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.ChangeState);
+            var callInfo = new T4MVC_System_Web_Mvc_PartialViewResult(Area, Name, ActionNames.List);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "userId", userId);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "status", status);
-            ChangeStateOverride(callInfo, userId, status);
+            ListOverride(callInfo, userId);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void AddOverride(T4MVC_System_Web_Mvc_ViewResult callInfo, System.Guid userId);
+
+        [NonAction]
+        public override System.Web.Mvc.ViewResult Add(System.Guid userId)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ViewResult(Area, Name, ActionNames.Add);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "userId", userId);
+            AddOverride(callInfo, userId);
             return callInfo;
         }
 

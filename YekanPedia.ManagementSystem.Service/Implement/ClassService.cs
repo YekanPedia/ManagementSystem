@@ -13,8 +13,8 @@
     public class ClassService : IClassService
     {
         #region Constructure
-        private readonly IUnitOfWork _uow;
-        private readonly IDbSet<Class> _class;
+         readonly IUnitOfWork _uow;
+         readonly IDbSet<Class> _class;
         public ClassService(IUnitOfWork uow)
         {
             _uow = uow;
@@ -64,5 +64,7 @@
         {
             return _class.Find(classId);
         }
+
+        
     }
 }

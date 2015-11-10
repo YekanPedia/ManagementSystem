@@ -129,11 +129,17 @@
   <data name="Class" xml:space="preserve">
     <value>کلاسهای فعال</value>
   </data>
+  <data name="ClassSessionDateSh" xml:space="preserve">
+    <value>تاریخ  برگذاری جلسه</value>
+  </data>
   <data name="ClassTypeId" xml:space="preserve">
     <value>نوع کلاس</value>
   </data>
   <data name="Color" xml:space="preserve">
     <value>رنگ</value>
+  </data>
+  <data name="ContributeStartDateSh" xml:space="preserve">
+    <value>تاریخ پیوستن به کلاس</value>
   </data>
   <data name="CourseId" xml:space="preserve">
     <value>دوره</value>
@@ -143,6 +149,9 @@
   </data>
   <data name="Day" xml:space="preserve">
     <value>روز</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>توضیحات</value>
   </data>
   <data name="Email" xml:space="preserve">
     <value>پست الکترونیک</value>
@@ -158,6 +167,9 @@
   </data>
   <data name="IsActive" xml:space="preserve">
     <value>فعال</value>
+  </data>
+  <data name="IsCanceled" xml:space="preserve">
+    <value>کنسلی جلسه</value>
   </data>
   <data name="IsTeacher" xml:space="preserve">
     <value>استاد</value>
@@ -176,6 +188,9 @@
   </data>
   <data name="Password" xml:space="preserve">
     <value>کلمه عبور</value>
+  </data>
+  <data name="PaymentDate" xml:space="preserve">
+    <value>تاریخ پرداخت هزینه</value>
   </data>
   <data name="Price" xml:space="preserve">
     <value>مبلغ ( ریال )</value>
@@ -203,6 +218,9 @@
   </data>
   <data name="TimeTo" xml:space="preserve">
     <value>تا ساعت</value>
+  </data>
+  <data name="TransactionCode" xml:space="preserve">
+    <value>کد رهگیری بانک</value>
   </data>
   <data name="Twitter" xml:space="preserve">
     <value>تویئتر</value>

@@ -187,8 +187,10 @@
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\Poco\ErrorModelStateController.cs" />
+    <Compile Include="Controllers\SessionController.cs" />
     <Compile Include="Controllers\TaskController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\UserInClassController.cs" />
     <Compile Include="Extensions\Authentication\CurrentUserPrincipal.cs" />
     <Compile Include="Extensions\Authentication\ICurrentUserPrincipal.cs" />
     <Compile Include="Extensions\EnumSelectList.cs" />
@@ -238,6 +240,9 @@
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="T4\SessionController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="T4\SharedController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
@@ -251,6 +256,9 @@
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="T4\UserController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\UserInClassController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -270,7 +278,8 @@
     <Content Include="Content\Images\Avatar\7.png" />
     <Content Include="Content\Images\Avatar\8.png" />
     <Content Include="Content\Images\Avatar\9.png" />
-    <Content Include="Content\Images\Background\profile-menu.png" />
+    <Content Include="Content\Images\Background\profile-menu.jpg" />
+    <Content Include="Content\Images\Background\profile-widget.jpg" />
     <Content Include="Content\Images\Icon\notifications.png" />
     <Content Include="Content\Images\Logo\Logo.png" />
     <Content Include="Content\Images\Menu\ellipsis%402x.png" />
@@ -403,6 +412,12 @@
     <Content Include="Views\User\Partial\_HeaderUserGrid.cshtml" />
     <Content Include="Views\User\Manage.cshtml" />
     <Content Include="Views\User\Partial\_SearchBox.cshtml" />
+    <Content Include="Views\Session\List.cshtml" />
+    <Content Include="Views\Session\Partial\_SessionList.cshtml" />
+    <Content Include="Views\UserInClass\Add.cshtml" />
+    <Content Include="Views\Account\Partial\_ProfileWidget.cshtml" />
+    <Content Include="Views\UserInClass\Partial\_Create.cshtml" />
+    <Content Include="Views\UserInClass\Partial\_List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -24,7 +24,7 @@
         [Column(TypeName = "char")]
         [Required(ErrorMessageResourceName = nameof(DisplayError.Required), ErrorMessageResourceType = typeof(DisplayError))]
         [MaxLength(10, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
-        [PersianDate(ErrorMessageResourceName =nameof(DisplayError.PersianDate),ErrorMessageResourceType =typeof(DisplayError))]
+        [PersianDate(ErrorMessageResourceName = nameof(DisplayError.PersianDate), ErrorMessageResourceType = typeof(DisplayError))]
         public string ContributeStartDateSh { get; set; }
 
         [Display(ResourceType = typeof(DisplayNames), Name = nameof(ContributeStartDateSh))]
@@ -39,15 +39,13 @@
         [Required(ErrorMessageResourceName = nameof(DisplayError.Required), ErrorMessageResourceType = typeof(DisplayError))]
         public int Price { get; set; }
 
-        [Required(ErrorMessageResourceName = nameof(DisplayError.Required), ErrorMessageResourceType = typeof(DisplayError))]
         [Display(ResourceType = typeof(DisplayNames), Name = nameof(TransactionCode))]
         public long TransactionCode { get; set; }
 
         [Display(ResourceType = typeof(DisplayNames), Name = nameof(PaymentDate))]
         [Column(TypeName = "char")]
-        [Required(ErrorMessageResourceName = nameof(DisplayError.Required), ErrorMessageResourceType = typeof(DisplayError))]
         [MaxLength(10, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
-        [PersianDate(ErrorMessageResourceName =nameof(DisplayError.PersianDate),ErrorMessageResourceType =typeof(DisplayError))]
+        [PersianDate(ErrorMessageResourceName = nameof(DisplayError.PersianDate), ErrorMessageResourceType = typeof(DisplayError))]
         public string PaymentDate { get; set; }
         public bool IsFinished { get; set; }
     }

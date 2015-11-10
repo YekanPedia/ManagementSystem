@@ -21,7 +21,7 @@
         #endregion
         public virtual PartialViewResult Search(User model, Guid? classId)
         {
-            var resultModel = _userService.GetUsers(model,classId).Result;
+            var resultModel = _userService.GetUsers(model, classId).Result;
             return PartialView(MVC.User.Views.Partial._List, resultModel);
         }
 
@@ -38,15 +38,11 @@
             return View();
         }
 
-        [HttpGet]
-        public virtual ViewResult AddToClass(Guid userId)
-        {
-            return View();
-        }
+       
 
-        public virtual JsonResult ChangeState(Guid userId,bool status)
+        public virtual JsonResult ChangeState(Guid userId, bool status)
         {
-            return Json(_userService.ChangeStatus(userId,status));
+            return Json(_userService.ChangeStatus(userId, status));
         }
     }
 }

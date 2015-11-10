@@ -97,6 +97,15 @@ namespace YekanPedia.ManagementSystem.Domain.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to تاریخ  برگذاری جلسه.
+        /// </summary>
+        public static string ClassSessionDateSh {
+            get {
+                return ResourceManager.GetString("ClassSessionDateSh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to نوع کلاس.
         /// </summary>
         public static string ClassTypeId {
@@ -111,6 +120,15 @@ namespace YekanPedia.ManagementSystem.Domain.Properties {
         public static string Color {
             get {
                 return ResourceManager.GetString("Color", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تاریخ پیوستن به کلاس.
+        /// </summary>
+        public static string ContributeStartDateSh {
+            get {
+                return ResourceManager.GetString("ContributeStartDateSh", resourceCulture);
             }
         }
         
@@ -138,6 +156,15 @@ namespace YekanPedia.ManagementSystem.Domain.Properties {
         public static string Day {
             get {
                 return ResourceManager.GetString("Day", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to توضیحات.
+        /// </summary>
+        public static string Description {
+            get {
+                return ResourceManager.GetString("Description", resourceCulture);
             }
         }
         
@@ -183,6 +210,15 @@ namespace YekanPedia.ManagementSystem.Domain.Properties {
         public static string IsActive {
             get {
                 return ResourceManager.GetString("IsActive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to کنسلی جلسه.
+        /// </summary>
+        public static string IsCanceled {
+            get {
+                return ResourceManager.GetString("IsCanceled", resourceCulture);
             }
         }
         
@@ -237,6 +273,15 @@ namespace YekanPedia.ManagementSystem.Domain.Properties {
         public static string Password {
             get {
                 return ResourceManager.GetString("Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تاریخ پرداخت هزینه.
+        /// </summary>
+        public static string PaymentDate {
+            get {
+                return ResourceManager.GetString("PaymentDate", resourceCulture);
             }
         }
         
@@ -318,6 +363,15 @@ namespace YekanPedia.ManagementSystem.Domain.Properties {
         public static string TimeTo {
             get {
                 return ResourceManager.GetString("TimeTo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to کد رهگیری بانک.
+        /// </summary>
+        public static string TransactionCode {
+            get {
+                return ResourceManager.GetString("TransactionCode", resourceCulture);
             }
         }
         

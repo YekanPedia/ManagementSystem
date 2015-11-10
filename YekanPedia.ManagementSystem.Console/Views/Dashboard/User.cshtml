@@ -1,4 +1,4 @@
-﻿@model IEnumerable<YekanPedia.ManagementSystem.Domain.Entity.Class>
+﻿@model IEnumerable<Class>
 
 <div id="classCalendar"></div>
 
@@ -24,7 +24,7 @@
                     <text>
             var events_@time.ClassTimeId = {
                 title: "@item.ClassInformaion",
-                url: "http://google.com/",
+                url: "@Url.Action(MVC.Session.ActionNames.List,MVC.Session.Name,new {classId=item.ClassId })",
                 start: "2015-06-@((12- (int)time.DayEn).ToFullTimeFormat())T@(time.TimeFrom):00",
                 end: "2015-06-@((12 - (int)time.DayEn).ToFullTimeFormat())T@(time.TimeTo):00",
                 color: "@item.Color"

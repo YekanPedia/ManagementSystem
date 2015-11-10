@@ -57,12 +57,16 @@
     <Compile Include="Implement\ClassService.cs" />
     <Compile Include="Implement\ClassTypeService.cs" />
     <Compile Include="Implement\CourseService.cs" />
+    <Compile Include="Implement\SessionService.cs" />
     <Compile Include="Implement\TaskService.cs" />
+    <Compile Include="Implement\UserClassService.cs" />
     <Compile Include="Interfaces\IClassTimeService.cs" />
     <Compile Include="Interfaces\IClassService.cs" />
     <Compile Include="Interfaces\IClassTypeService.cs" />
     <Compile Include="Interfaces\ICourseService.cs" />
+    <Compile Include="Interfaces\ISessionService.cs" />
     <Compile Include="Interfaces\ITaskService.cs" />
+    <Compile Include="Interfaces\IUserInClassService.cs" />
     <Compile Include="Properties\BusinessMessage.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

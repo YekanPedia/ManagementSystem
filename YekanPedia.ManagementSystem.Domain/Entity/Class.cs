@@ -98,7 +98,7 @@
         }
 
         public virtual ICollection<ClassTime> ClassTime { get; set; }
-        public virtual ICollection<CanceledClass> CanceledClass { get; set; }
+        public virtual ICollection<ClassSession> ClassSession { get; set; }
         public virtual ICollection<UserInClass> UserInClass { get; set; }
     }
 }

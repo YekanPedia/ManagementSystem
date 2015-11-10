@@ -28,9 +28,6 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
     public partial class DashboardController
     {
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public DashboardController() { }
-
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         protected DashboardController(Dummy d) { }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]

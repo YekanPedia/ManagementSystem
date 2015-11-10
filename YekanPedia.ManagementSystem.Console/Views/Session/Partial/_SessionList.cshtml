@@ -1,0 +1,55 @@
+﻿@model IEnumerable<ClassSession>
+@{
+    Layout = null;
+    var count = 1;
+}
+
+@foreach (var item in Model)
+{
+    <div class="col-sm-4">
+        <div class="card">
+            <div class="card-header p-t-30 p-b-30 p-r-20 p-l-20 ch-alt ">
+                <h4>@item.Subject</h4>
+                @if (!item.IsCanceled)
+                {
+                    <ul class="actions">
+                        <li class="dropdown action-show">
+                            <a href="" data-toggle="dropdown" aria-expanded="false">
+                                <i class="zmdi zmdi-more-vert"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-left">
+                                <li>
+                                    <a href="">دانلود فایل ها</a>
+                                </li>
+                                <li>
+                                    <a href="">درخواست بارگذاری فایل</a>
+                                </li>
+                                <li>
+                                    <a href="">ارسال بازخورد</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                }
+                <button class="btn @(item.IsCanceled?"bgm-pink":"btn-success")  btn-float waves-effect waves-circle waves-float p-0">
+                    @count - @(count + 1)
+                </button>
+            </div>
+            <div class="card-body card-padding">
+                <div class="pmo-contact">
+                    <ul>
+                        <li></li>
+                        <li class="ng-binding"><i class="zmdi zmdi-format-align-right"></i>@item.Description</li>
+                        <li class="ng-binding"><i class="zmdi zmdi-calendar-alt"></i> @item.ClassSessionDateSh</li>
+                        <li class="ng-binding"><i class="zmdi zmdi-download"></i>تعداد فایل ها : @count</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    if (!item.IsCanceled)
+    {
+        count += 2;
+    }
+}
+
