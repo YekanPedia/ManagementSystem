@@ -5,6 +5,7 @@
     using System.ComponentModel.DataAnnotations.Schema;
     using Properties;
     using InfraStructure.Validation;
+    using InfraStructure.Date;
 
     [Table("UserInClass", Schema = "dbo")]
     public class UserInClass
@@ -12,6 +13,7 @@
         [Key]
         public int UserInClassId { get; set; }
 
+        [Display(ResourceType = typeof(DisplayNames), Name = nameof(ClassId))]
         public Guid ClassId { get; set; }
         [ForeignKey(nameof(ClassId))]
         public Class Class { get; set; }
@@ -48,5 +50,9 @@
         [PersianDate(ErrorMessageResourceName = nameof(DisplayError.PersianDate), ErrorMessageResourceType = typeof(DisplayError))]
         public string PaymentDate { get; set; }
         public bool IsFinished { get; set; }
+        public void Rebind()
+        {
+            ContributeStartDateMi = PersianDateTime.Parse(ContributeStartDateSh).ToDateTime();
+        }
     }
 }

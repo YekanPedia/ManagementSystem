@@ -13,8 +13,8 @@
     public class ClassService : IClassService
     {
         #region Constructure
-         readonly IUnitOfWork _uow;
-         readonly IDbSet<Class> _class;
+        readonly IUnitOfWork _uow;
+        readonly IDbSet<Class> _class;
         public ClassService(IUnitOfWork uow)
         {
             _uow = uow;
@@ -37,7 +37,7 @@
 
         public IEnumerable<Class> GetClass()
         {
-            return _class.Where(X => X.FinishDateMi >= DateTime.Now)
+            return _class.Where(X => X.IsFinished != true || X.FinishDateMi >= DateTime.Now)
                                  .Include(X => X.ClassType)
                                  .Include(X => X.Course)
                                  .Include(X => X.User)
@@ -65,6 +65,15 @@
             return _class.Find(classId);
         }
 
-        
+        public void FinishedClass(Guid classId)
+        {
+            var result = _class.Find(classId);
+            if (result != null)
+            {
+                result.IsFinished = true;
+                result.FinishDateMi = DateTime.Now.AddDays(7);
+                _uow.SaveChanges();
+            }
+        }
     }
 }

@@ -70,6 +70,15 @@ namespace YekanPedia.ManagementSystem.Domain.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to تاریخ اتمام بایستی از تاریخ شروع بیشتر باشد.
+        /// </summary>
+        public static string FinishDateMustBeHigher {
+            get {
+                return ResourceManager.GetString("FinishDateMustBeHigher", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to لطفا فقط عدد وارد نمایید.
         /// </summary>
         public static string Int {

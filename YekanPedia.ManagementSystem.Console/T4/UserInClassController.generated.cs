@@ -111,6 +111,7 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         public class ActionParamsClass_Add
         {
             public readonly string userId = "userId";
+            public readonly string model = "model";
         }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -135,9 +136,11 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
                 public class _ViewNamesClass
                 {
                     public readonly string _Create = "_Create";
+                    public readonly string _HeaderUserInClassGrid = "_HeaderUserInClassGrid";
                     public readonly string _List = "_List";
                 }
                 public readonly string _Create = "~/Views/UserInClass/Partial/_Create.cshtml";
+                public readonly string _HeaderUserInClassGrid = "~/Views/UserInClass/Partial/_HeaderUserInClassGrid.cshtml";
                 public readonly string _List = "~/Views/UserInClass/Partial/_List.cshtml";
             }
         }
@@ -169,6 +172,18 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_ViewResult(Area, Name, ActionNames.Add);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "userId", userId);
             AddOverride(callInfo, userId);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void AddOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, YekanPedia.ManagementSystem.Domain.Entity.UserInClass model);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult Add(YekanPedia.ManagementSystem.Domain.Entity.UserInClass model)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Add);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
+            AddOverride(callInfo, model);
             return callInfo;
         }
 

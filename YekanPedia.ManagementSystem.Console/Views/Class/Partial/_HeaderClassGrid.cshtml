@@ -1,6 +1,9 @@
-﻿@model YekanPedia.ManagementSystem.Domain.Entity.Class
+﻿@model Class
 <thead>
     <tr>
+        <th data-column-id="@nameof(Model.ClassId)" data-visible="false">
+            @Html.DisplayNameFor(X => X.ClassId)
+        </th>
         <th data-column-id="@nameof(Model.ClassTypeId)">
             @Html.DisplayNameFor(X => X.ClassTypeId)
         </th>
@@ -21,6 +24,9 @@
         </th>
         <th data-column-id="@nameof(Model.Capacity)">
             @Html.DisplayNameFor(X => X.Capacity)
+        </th>
+        <th data-column-id="commands" data-formatter="commands" data-sortable="false">
+            @LocalMessage.Action
         </th>
     </tr>
 </thead>

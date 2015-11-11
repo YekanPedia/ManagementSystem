@@ -3,7 +3,32 @@
 <div class="card">
     <div class="card-header">
     </div>
-    <div class="card-body card-padding ">
-
+    <div class="card-body">
+        <div class="table-responsive table-hover">
+            <table id="classDataGrid" class="table table-striped ">
+                @{ Html.RenderPartial(MVC.UserInClass.Views.Partial._HeaderUserInClassGrid, new UserInClass());}
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr id="@item.UserId">
+                            <td>@item.Class.ClassInformaion</td>
+                            <td>@item.PaymentDate</td>
+                            <td>@item.Price</td>
+                            <td>@item.SessionCount</td>
+                            <td>@item.TransactionCode</td>
+                            <td>
+                                <div class="checkbox">
+                                    <label>
+                                        <input disabled type="checkbox" checked="@item.Class.IsFinished" class="checkbox">
+                                        <i class="input-helper"></i>
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <div class="m-t-10"></div>
+        </div>
     </div>
 </div>

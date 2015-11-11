@@ -11,7 +11,7 @@
 
 
     [Table("Class", Schema = "dbo")]
-    public class Class
+    public class Class : IValidatableObject
     {
         [Key]
         public Guid ClassId { get; set; }
@@ -73,6 +73,7 @@
         [Int(ErrorMessageResourceName = nameof(DisplayError.Int), ErrorMessageResourceType = typeof(DisplayError))]
         public int Capacity { get; set; }
 
+        [Display(ResourceType = typeof(DisplayNames), Name = nameof(IsFinished))]
         public bool IsFinished { get; set; }
 
         [Column(TypeName = "varchar")]
@@ -81,6 +82,7 @@
         [Required(ErrorMessageResourceName = nameof(DisplayError.Required), ErrorMessageResourceType = typeof(DisplayError))]
         public string Color { get; set; }
 
+        [Display(ResourceType = typeof(DisplayNames), Name = nameof(ClassInformaion))]
         [NotMapped]
         public string ClassInformaion
         {
@@ -95,6 +97,15 @@
         {
             FinishDateMi = PersianDateTime.Parse(FinishDateSh).ToDateTime();
             StartDateMi = PersianDateTime.Parse(StartDateSh).ToDateTime();
+        }
+
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            var fields = new[] { nameof(FinishDateSh) };
+            if (PersianDateTime.Parse(FinishDateSh).ToDateTime() <= PersianDateTime.Parse(StartDateSh).ToDateTime())
+            {
+                yield return new ValidationResult(DisplayError.FinishDateMustBeHigher, fields);
+            }
         }
 
         public virtual ICollection<ClassTime> ClassTime { get; set; }

@@ -18,7 +18,7 @@ body {
     -ms-transform: translate3d(268px, 0, 0);
     -o-transform: translate3d(268px, 0, 0);
     transform: translate3d(268px, 0, 0);
-    z-index: 999999;
+    z-index: 999;
 }
 
 .block-header .actions {

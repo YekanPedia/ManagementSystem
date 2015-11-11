@@ -328,7 +328,8 @@ namespace Links
                 private const string URLPATH = "~/Content/Images/Background";
                 public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
                 public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
-                public static readonly string profile_menu_png = Url("profile-menu.png");
+                public static readonly string profile_menu_jpg = Url("profile-menu.jpg");
+                public static readonly string profile_widget_jpg = Url("profile-widget.jpg");
             }
         
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]

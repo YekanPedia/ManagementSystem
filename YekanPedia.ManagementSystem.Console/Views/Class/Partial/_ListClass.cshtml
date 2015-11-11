@@ -12,6 +12,7 @@
                     @foreach (var item in Model)
                     {
                         <tr class="@(item.FinishDateMi.AddDays(14) > DateTime.Now ? "classNearFinish" : "")">
+                            <td data-visible="false">@item.ClassId</td>
                             <td>@item.ClassType.Type</td>
                             <td>@item.Course.CourseName</td>
                             <td>@item.User.FullName</td>

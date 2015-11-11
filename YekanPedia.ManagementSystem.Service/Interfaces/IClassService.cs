@@ -11,5 +11,6 @@
         IServiceResults<bool> EditClass(Class model);
         Class FindClass(Guid classId);
         IEnumerable<Class> GetClass();
+        void FinishedClass(Guid classId);
     }
 }

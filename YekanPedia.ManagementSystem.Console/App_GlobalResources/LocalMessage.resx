@@ -279,4 +279,7 @@
   <data name="EmptySelect" xml:space="preserve">
     <value>بدون انتخاب</value>
   </data>
+  <data name="Action" xml:space="preserve">
+    <value>عملیات</value>
+  </data>
 </root>

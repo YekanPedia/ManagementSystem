@@ -18,7 +18,7 @@
                         <i class="zmdi zmdi-check"></i>
                         @LocalMessage.Edit
                     </button>
-                    <a href="@Url.Action(MVC.Dashboard.ActionNames.User,MVC.Dashboard.Name)" class="btn btn-danger btn-sm waves-effect">
+                    <a href="@Url.Action(MVC.Class.ActionNames.AddClass,MVC.Class.Name)" class="btn btn-danger btn-sm waves-effect">
                         <i class="zmdi zmdi-arrow-forward"></i>
                         @LocalMessage.Cancel
                     </a>
@@ -28,3 +28,6 @@
     </div>
 </div>
 @{ Html.RenderAction(MVC.Class.ActionNames.ClassList, MVC.Class.Name);}
+@section Scripts{
+    <script src="@Url.Content(Links.Scripts.Application.ClassController_min_js)"></script>
+}

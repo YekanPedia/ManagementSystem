@@ -61,6 +61,15 @@ namespace YekanPedia.ManagementSystem.Service.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ظرفیت برای این کلاس تکمیل است.
+        /// </summary>
+        internal static string CapacityIsFull {
+            get {
+                return ResourceManager.GetString("CapacityIsFull", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to نام کاربری انتخابی قبلا ثبت شده است.
         /// </summary>
         internal static string EmailExist {

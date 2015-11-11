@@ -59,7 +59,7 @@
     <Compile Include="Implement\CourseService.cs" />
     <Compile Include="Implement\SessionService.cs" />
     <Compile Include="Implement\TaskService.cs" />
-    <Compile Include="Implement\UserClassService.cs" />
+    <Compile Include="Implement\UserInClassService.cs" />
     <Compile Include="Interfaces\IClassTimeService.cs" />
     <Compile Include="Interfaces\IClassService.cs" />
     <Compile Include="Interfaces\IClassTypeService.cs" />

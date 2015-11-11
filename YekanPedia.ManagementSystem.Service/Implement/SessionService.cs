@@ -15,9 +15,11 @@
         #region Constructure
         readonly IUnitOfWork _uow;
         readonly IDbSet<ClassSession> _classSession;
-        public SessionService(IUnitOfWork uow)
+        readonly IClassService _classService;
+        public SessionService(IUnitOfWork uow, IClassService classService)
         {
             _uow = uow;
+            _classService = classService;
             _classSession = uow.Set<ClassSession>();
         }
         #endregion
@@ -27,6 +29,11 @@
             model.ClassSessionId = Guid.NewGuid();
             _classSession.Add(model);
             var saveResult = _uow.SaveChanges();
+            if (saveResult.ToBool() && GetSessionsCount(model.ClassId) == _classService.FindClass(model.ClassId)?.SessionCount)
+            {
+                _classService.FinishedClass(model.ClassId);
+            }
+
             return new ServiceResults<Guid>
             {
                 IsSuccessfull = saveResult.ToBool(),
@@ -41,6 +48,10 @@
                 .OrderBy(X => X.ClassSessionDateSh)
                 .AsNoTracking()
                 .ToList();
+        }
+        public int GetSessionsCount(Guid classId)
+        {
+            return _classSession.Count(X => X.ClassId == classId && X.IsCanceled != false) * 2;
         }
     }
 }

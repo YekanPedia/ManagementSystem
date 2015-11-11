@@ -9,5 +9,6 @@
     {
         IServiceResults<Guid> AddClassSession(ClassSession model);
         IEnumerable<ClassSession> GetSessions(Guid classId);
+        int GetSessionsCount(Guid classId);
     }
 }

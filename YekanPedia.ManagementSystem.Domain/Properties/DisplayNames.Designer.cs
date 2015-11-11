@@ -97,6 +97,24 @@ namespace YekanPedia.ManagementSystem.Domain.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to کلاس.
+        /// </summary>
+        public static string ClassId {
+            get {
+                return ResourceManager.GetString("ClassId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to اطلاعات کلاس.
+        /// </summary>
+        public static string ClassInformaion {
+            get {
+                return ResourceManager.GetString("ClassInformaion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to تاریخ  برگذاری جلسه.
         /// </summary>
         public static string ClassSessionDateSh {
@@ -219,6 +237,15 @@ namespace YekanPedia.ManagementSystem.Domain.Properties {
         public static string IsCanceled {
             get {
                 return ResourceManager.GetString("IsCanceled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to اتمام.
+        /// </summary>
+        public static string IsFinished {
+            get {
+                return ResourceManager.GetString("IsFinished", resourceCulture);
             }
         }
         

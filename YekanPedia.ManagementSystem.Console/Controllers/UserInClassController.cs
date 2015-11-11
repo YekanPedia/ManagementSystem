@@ -27,19 +27,32 @@
         [HttpGet]
         public virtual ViewResult Add(Guid userId)
         {
+            ClassDropDownList();
+            return View(new UserInClass { UserId = userId });
+        }
+
+        void ClassDropDownList()
+        {
             ViewBag.Class = _classService.GetClass().Select(x => new SelectListItem
             {
                 Text = x.ClassInformaion,
                 Value = x.ClassId.ToString()
             });
-            return View(new UserInClass { UserId = userId });
         }
 
         [HttpPost]
-        public virtual ViewResult Add(UserInClass model)
+        public virtual ActionResult Add(UserInClass model)
         {
-
-            return View(model);
+            ClassDropDownList();
+            if (!ModelState.IsValid)
+                return View(model);
+            var result = _userInClassService.Add(model);
+            if (!result.IsSuccessfull)
+            {
+                this.NotificationController().Notify(result.Message, NotificationStatus.Error);
+                return View(model);
+            }
+            return RedirectToAction(MVC.UserInClass.ActionNames.Add, MVC.UserInClass.Name, new { userId = (Guid)model.UserId });
         }
     }
 }

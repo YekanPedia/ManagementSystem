@@ -129,6 +129,12 @@
   <data name="Class" xml:space="preserve">
     <value>کلاسهای فعال</value>
   </data>
+  <data name="ClassId" xml:space="preserve">
+    <value>کلاس</value>
+  </data>
+  <data name="ClassInformaion" xml:space="preserve">
+    <value>اطلاعات کلاس</value>
+  </data>
   <data name="ClassSessionDateSh" xml:space="preserve">
     <value>تاریخ  برگذاری جلسه</value>
   </data>
@@ -170,6 +176,9 @@
   </data>
   <data name="IsCanceled" xml:space="preserve">
     <value>کنسلی جلسه</value>
+  </data>
+  <data name="IsFinished" xml:space="preserve">
+    <value>اتمام</value>
   </data>
   <data name="IsTeacher" xml:space="preserve">
     <value>استاد</value>
