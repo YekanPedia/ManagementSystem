@@ -9,5 +9,8 @@
     {
         IEnumerable<UserInClass> GetAllUserClass(Guid userId);
         IServiceResults<int> Add(UserInClass model);
+        IServiceResults<bool> Edit(UserInClass model);
+        UserInClass Find(int userInClasssId);
+        IServiceResults<bool> Delete(int userInClassId);
     }
 }

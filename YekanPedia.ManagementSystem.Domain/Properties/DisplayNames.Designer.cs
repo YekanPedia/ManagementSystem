@@ -241,7 +241,7 @@ namespace YekanPedia.ManagementSystem.Domain.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to اتمام.
+        ///   Looks up a localized string similar to اتمام کلاس.
         /// </summary>
         public static string IsFinished {
             get {
@@ -417,6 +417,15 @@ namespace YekanPedia.ManagementSystem.Domain.Properties {
         public static string Type {
             get {
                 return ResourceManager.GetString("Type", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to اتمام مجوز حضور.
+        /// </summary>
+        public static string UserInClassIsFinished {
+            get {
+                return ResourceManager.GetString("UserInClassIsFinished", resourceCulture);
             }
         }
     }

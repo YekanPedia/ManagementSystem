@@ -178,7 +178,7 @@
     <value>کنسلی جلسه</value>
   </data>
   <data name="IsFinished" xml:space="preserve">
-    <value>اتمام</value>
+    <value>اتمام کلاس</value>
   </data>
   <data name="IsTeacher" xml:space="preserve">
     <value>استاد</value>
@@ -236,5 +236,8 @@
   </data>
   <data name="Type" xml:space="preserve">
     <value>نوع کلاس</value>
+  </data>
+  <data name="UserInClassIsFinished" xml:space="preserve">
+    <value>اتمام مجوز حضور</value>
   </data>
 </root>

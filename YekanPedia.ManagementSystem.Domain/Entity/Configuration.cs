@@ -8,8 +8,8 @@
     {
         [Key]
         public int ConfigurationId { get; set; }
-        public string Key { get; set; }
-        public string KeyFa { get; set; }
-        public bool IsActive { get; set; }
+        public bool Sms { get; set; }
+        public bool Telegram { get; set; }
+        public bool Email { get; set; }
     }
 }

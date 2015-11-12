@@ -67,9 +67,37 @@
                 Result = model.UserInClassId
             };
         }
+        public IServiceResults<bool> Edit(UserInClass model)
+        {
+            model.Rebind();
+            _userInClass.Attach(model);
+            _uow.Entry<UserInClass>(model).State = EntityState.Modified;
+            var result = _uow.SaveChanges();
+            return new ServiceResults<bool>()
+            {
+                IsSuccessfull = result.ToBool(),
+                Message = result.ToMessage(BusinessMessage.Error),
+                Result = result.ToBool()
+            };
+        }
         public bool IsUniqueUserInClass(Guid userId, Guid classId)
         {
             return _userInClass.Count(X => X.UserId == userId && X.ClassId == classId) != 0;
+        }
+        public UserInClass Find(int userInClasssId)
+        {
+            return _userInClass.Find(userInClasssId);
+        }
+        public IServiceResults<bool> Delete(int userInClassId)
+        {
+            _userInClass.Remove(_userInClass.Find(userInClassId));
+            var result = _uow.SaveChanges();
+            return new ServiceResults<bool>
+            {
+                IsSuccessfull = result.ToBool(),
+                Message = result.ToMessage(BusinessMessage.Error),
+                Result = result.ToBool()
+            };
         }
     }
 }

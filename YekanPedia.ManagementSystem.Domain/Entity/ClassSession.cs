@@ -5,6 +5,7 @@
     using System.ComponentModel.DataAnnotations.Schema;
     using Properties;
     using InfraStructure.Validation;
+    using InfraStructure.Date;
 
     [Table("ClassSession", Schema = "dbo")]
     public class ClassSession
@@ -39,5 +40,9 @@
         [Display(ResourceType = typeof(DisplayNames), Name = nameof(IsCanceled))]
         public bool IsCanceled { get; set; }
 
+        public void Rebind()
+        {
+            ClassSessionDateMi = PersianDateTime.Parse(ClassSessionDateSh).ToDateTime();
+        }
     }
 }

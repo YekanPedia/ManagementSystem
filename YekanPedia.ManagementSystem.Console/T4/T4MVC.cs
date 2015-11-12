@@ -147,6 +147,7 @@ namespace Links
             public static readonly string OAuthController_min_js = Url("OAuthController.min.js");
             public static readonly string UserController_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/UserController.min.js") ? Url("UserController.min.js") : Url("UserController.js");
             public static readonly string UserController_min_js = Url("UserController.min.js");
+            public static readonly string UserInClassController_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/UserInClassController.min.js") ? Url("UserInClassController.min.js") : Url("UserInClassController.js");
         }
     
         public static readonly string functions_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/functions.min.js") ? Url("functions.min.js") : Url("functions.js");
@@ -180,6 +181,22 @@ namespace Links
             }
         
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class Feedback {
+                private const string URLPATH = "~/Scripts/JQuery/Feedback";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                public static readonly string feedback_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/feedback.min.js") ? Url("feedback.min.js") : Url("feedback.js");
+                public static readonly string html2canvas_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/html2canvas.min.js") ? Url("html2canvas.min.js") : Url("html2canvas.js");
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class templates {
+                    private const string URLPATH = "~/Scripts/JQuery/Feedback/templates";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                }
+            
+            }
+        
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
             public static class FullCalendar {
                 private const string URLPATH = "~/Scripts/JQuery/FullCalendar";
                 public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
@@ -199,6 +216,7 @@ namespace Links
             }
         
             public static readonly string jquery_1_10_2_min_js = Url("jquery-1.10.2.min.js");
+            public static readonly string jquery_d_ts = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.d.min.js") ? Url("jquery.d.min.js") : Url("jquery.d.js");
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
             public static class LightGallery {
                 private const string URLPATH = "~/Scripts/JQuery/LightGallery";
@@ -406,6 +424,9 @@ namespace Links
                      
                 public static readonly string BootstrapSelect_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/BootstrapSelect.min.css") ? Url("BootstrapSelect.min.css") : Url("BootstrapSelect.css");
                      
+                public static readonly string Feedback_rtl_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Feedback.rtl.min.css") ? Url("Feedback.rtl.min.css") : Url("Feedback.rtl.css");
+                     
+                public static readonly string Feedback_rtl_min_css = Url("Feedback.rtl.min.css");
                 public static readonly string Fullcalendar_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Fullcalendar.min.css") ? Url("Fullcalendar.min.css") : Url("Fullcalendar.css");
                      
                 public static readonly string LightGallery_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/LightGallery.min.css") ? Url("LightGallery.min.css") : Url("LightGallery.css");
@@ -448,6 +469,7 @@ namespace Links
                     public const string ClassController_js = "~/Scripts/Application/ClassController.js"; 
                     public const string OAuthController_js = "~/Scripts/Application/OAuthController.js"; 
                     public const string UserController_js = "~/Scripts/Application/UserController.js"; 
+                    public const string UserInClassController_js = "~/Scripts/Application/UserInClassController.js"; 
                 }
             }
             public static partial class JQuery 
@@ -471,6 +493,20 @@ namespace Links
                     public static class Assets
                     {
                         public const string bootstrap_min_js = "~/Scripts/JQuery/Bootstrap/bootstrap.min.js"; 
+                    }
+                }
+                public static partial class Feedback 
+                {
+                    public static partial class templates 
+                    {
+                        public static class Assets
+                        {
+                        }
+                    }
+                    public static class Assets
+                    {
+                        public const string feedback_js = "~/Scripts/JQuery/Feedback/feedback.js"; 
+                        public const string html2canvas_js = "~/Scripts/JQuery/Feedback/html2canvas.js"; 
                     }
                 }
                 public static partial class FullCalendar 
@@ -642,6 +678,7 @@ namespace Links
                         public const string Animate_css = "~/Content/Styles/Public/Animate.css";
                         public const string Bootgrid_css = "~/Content/Styles/Public/Bootgrid.css";
                         public const string BootstrapSelect_css = "~/Content/Styles/Public/BootstrapSelect.css";
+                        public const string Feedback_rtl_css = "~/Content/Styles/Public/Feedback.rtl.css";
                         public const string Fullcalendar_css = "~/Content/Styles/Public/Fullcalendar.css";
                         public const string LightGallery_css = "~/Content/Styles/Public/LightGallery.css";
                         public const string LoadingBar_css = "~/Content/Styles/Public/LoadingBar.css";

@@ -28,5 +28,11 @@
     "inputFiles": [
       "Scripts/Application/UserController.js"
     ]
+  },
+  {
+    "outputFileName": "Content/Styles/Public/Feedback.rtl.css",
+    "inputFiles": [
+      "Content/Styles/Public/Feedback.rtl.css"
+    ]
   }
 ]

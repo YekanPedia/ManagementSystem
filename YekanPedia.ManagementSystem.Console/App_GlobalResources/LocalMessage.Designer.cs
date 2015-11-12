@@ -277,6 +277,24 @@ namespace YekanPedia.ManagementSystem.Console.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to حذف.
+        /// </summary>
+        public static string Delete {
+            get {
+                return ResourceManager.GetString("Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to آیا با حذف رکورد موافق هستید.
+        /// </summary>
+        public static string DeleteConfirm {
+            get {
+                return ResourceManager.GetString("DeleteConfirm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to دانلود.
         /// </summary>
         public static string Download {

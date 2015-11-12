@@ -1,4 +1,4 @@
-﻿/// <reference path="JQuery/PersianCalendar/PersianCalendar.js" /> /// <reference path="JQuery/jquery-1.10.2.min.js" />  /* * Layout */  (function () {     //Get saved layout type from LocalStorage     var layoutStatus = localStorage.getItem('ma-layout-status');         var menuStatus = localStorage.getItem('ma-menu-Id');     $('.main-menu > li#' + menuStatus).addClass('active');     if (layoutStatus == 1) {
+﻿/// <reference path="JQuery/PersianCalendar/PersianCalendar.js" /> /// <reference path="JQuery/jquery-1.10.2.min.js" />  /* * Layout */  (function () {        //Get saved layout type from LocalStorage     var layoutStatus = localStorage.getItem('ma-layout-status');      var menuStatus = localStorage.getItem('ma-menu-Id');     $('.main-menu > li#' + menuStatus).addClass('active');     if (layoutStatus == 1) {
         $('body').addClass('sw-toggled');         $('#tw-switch').prop('checked', true);
     }      $('body').on('change', '#toggle-width input:checkbox', function () {
          if ($(this).is(':checked')) {
@@ -298,11 +298,18 @@
     });
 }; $().ready(function () {
      $('input[type=checkbox].checkbox').click(function () {
-        $("#"+$(this).attr('data-join')).val($(this)[0].checked);
+        $("#" + $(this).attr('data-join')).val($(this)[0].checked);
     });     $('.NoWaves').removeClass('waves-effect');     $('.PersianCalendar').Zebra_DatePicker();     $(".form-control").keyup(function () { return false });     $('.thumbnail').click(function () {
         $('.thumbnail').removeClass('SelectDefaultAvatar');         $(this).addClass('SelectDefaultAvatar');         var img = $(this).find('img');         $('.img-responsive').attr('src', img.attr('src'));         $.ajax({
             type: "POST",             url: "/Account/ChangePicture",             data: "picture=" + img.attr('src') + "&userId=" + $("#UserId").val(),             dataType: "json",             success: function (response) {
              }
         });
     });
+    try {
+        setTimeout(function () {
+            var options = new phoenix.feedbackOptions(function () { }, function () { }, "/feedback/add");
+            new phoenix.feedback("feedback", options);
+        }, 5000);
+    } catch (e) {
+     }
 });

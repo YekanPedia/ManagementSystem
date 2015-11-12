@@ -57,6 +57,7 @@
     <Compile Include="Implement\ClassService.cs" />
     <Compile Include="Implement\ClassTypeService.cs" />
     <Compile Include="Implement\CourseService.cs" />
+    <Compile Include="Implement\FeedbackService.cs" />
     <Compile Include="Implement\SessionService.cs" />
     <Compile Include="Implement\TaskService.cs" />
     <Compile Include="Implement\UserInClassService.cs" />
@@ -64,6 +65,7 @@
     <Compile Include="Interfaces\IClassService.cs" />
     <Compile Include="Interfaces\IClassTypeService.cs" />
     <Compile Include="Interfaces\ICourseService.cs" />
+    <Compile Include="Interfaces\IFeedbackService.cs" />
     <Compile Include="Interfaces\ISessionService.cs" />
     <Compile Include="Interfaces\ITaskService.cs" />
     <Compile Include="Interfaces\IUserInClassService.cs" />

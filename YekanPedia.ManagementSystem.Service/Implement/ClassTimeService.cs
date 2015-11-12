@@ -14,8 +14,8 @@
     public class ClassTimeService : IClassTimeService
     {
         #region Constructure
-        private readonly IUnitOfWork _uow;
-        private readonly IDbSet<ClassTime> _classTime;
+        readonly IUnitOfWork _uow;
+        readonly IDbSet<ClassTime> _classTime;
         public ClassTimeService(IUnitOfWork uow)
         {
             _uow = uow;
@@ -25,7 +25,7 @@
         public IServiceResults<int> AddClassTime(ClassTime model)
         {
             if (IsExist(model))
-                return new ServiceResults<int>()
+                return new ServiceResults<int>
                 {
                     IsSuccessfull = false,
                     Message = BusinessMessage.RecordExist,
@@ -55,7 +55,7 @@
             return _classTime.Count(X => X.DayEn == model.DayEn &&
              X.ClassId == model.ClassId &&
              X.TimeFrom == model.TimeFrom &&
-             X.TimeTo == model.TimeTo) != 0 ? true : false;
+             X.TimeTo == model.TimeTo) != 0;
         }
 
         public IServiceResults<bool> EditClassTime(ClassTime model)
@@ -64,7 +64,7 @@
             model.DayFa = model.DayEn.GetDescription();
             _uow.Entry(model).State = EntityState.Modified;
             var result = _uow.SaveChanges();
-            return new ServiceResults<bool>()
+            return new ServiceResults<bool>
             {
                 IsSuccessfull = result.ToBool(),
                 Message = result.ToMessage(BusinessMessage.Error),

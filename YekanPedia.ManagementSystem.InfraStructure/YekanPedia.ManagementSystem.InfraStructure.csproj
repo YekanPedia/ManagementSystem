@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="Date\PersianDateTime.cs" />
     <Compile Include="Date\TimeSpanExtension.cs" />
+    <Compile Include="Extension\ApplyCorrectPersianCharacters.cs" />
     <Compile Include="Extension\EnumHelper.cs" />
     <Compile Include="Extension\FullTimeFormat.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

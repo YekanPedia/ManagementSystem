@@ -27,7 +27,7 @@
             _class.Add(model);
             var saveResult = _uow.SaveChanges();
 
-            return new ServiceResults<Guid>()
+            return new ServiceResults<Guid>
             {
                 IsSuccessfull = saveResult.ToBool(),
                 Message = saveResult.ToMessage(BusinessMessage.Error),

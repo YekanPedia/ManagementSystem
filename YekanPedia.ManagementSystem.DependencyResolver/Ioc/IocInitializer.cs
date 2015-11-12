@@ -25,6 +25,7 @@
                 x.For<IClassTimeService>().Use<ClassTimeService>();
                 x.For<ISessionService>().Use<SessionService>();
                 x.For<IUserInClassService>().Use<UserInClassService>();
+                x.For<IFeedbackService>().Use<FeedbackService>();
             });
         }
         public static object GetInstance(Type pluginType)

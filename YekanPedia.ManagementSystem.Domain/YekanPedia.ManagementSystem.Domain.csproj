@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entity\Feedback.cs" />
     <Compile Include="Entity\Tasks.cs" />
     <Compile Include="Properties\DisplayError.Designer.cs">
       <AutoGen>True</AutoGen>

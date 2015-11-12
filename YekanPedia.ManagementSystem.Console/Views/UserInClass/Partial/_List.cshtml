@@ -10,7 +10,7 @@
                 <tbody>
                     @foreach (var item in Model)
                     {
-                        <tr id="@item.UserId">
+                        <tr id="userInClassId_@item.UserInClassId">
                             <td>@item.Class.ClassInformaion</td>
                             <td>@item.PaymentDate</td>
                             <td>@item.Price</td>
@@ -23,6 +23,38 @@
                                         <i class="input-helper"></i>
                                     </label>
                                 </div>
+                            </td>
+                            <td>
+                                <div class="checkbox">
+                                    <label>
+                                        <input disabled type="checkbox" checked="@item.IsFinished" class="checkbox">
+                                        <i class="input-helper"></i>
+                                    </label>
+                                </div>
+                            </td>
+                            <td>
+                                <ul class="actions @(item.Class.IsFinished ? "hide" : "")">
+                                    <li class="dropdown action-show dropup">
+                                        <a href="" data-toggle="dropdown">
+                                            <i class="zmdi zmdi-more-vert"></i>
+                                        </a>
+                                        <ul class="dropdown-menu dm-icon">
+                                            <li>
+                                                <a href="@Url.Action(MVC.UserInClass.ActionNames.Edit, MVC.UserInClass.Name, new { userInClassId = item.UserInClassId })">
+                                                    <i class="zmdi zmdi-edit"></i>
+                                                    @LocalMessage.Edit
+                                                </a>
+                                            </li>
+                                            <li class="divider"></li>
+                                            <li>
+                                                <a href="#" class="deleteUserInClass" data-url="@Url.Action(MVC.UserInClass.ActionNames.Delete,MVC.UserInClass.Name)" data-message="@LocalMessage.DeleteConfirm" data-id="@item.UserInClassId">
+                                                    <i class="zmdi zmdi-delete"></i>
+                                                    @LocalMessage.Delete
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
                             </td>
                         </tr>
                     }

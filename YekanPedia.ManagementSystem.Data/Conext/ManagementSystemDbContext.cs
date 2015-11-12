@@ -21,6 +21,7 @@
         public DbSet<UserInClass> UserInClass { get; set; }
         public DbSet<Course> Course { get; set; }
         public DbSet<ClassSession> ClassSession { get; set; }
+        public DbSet<Feedback> Feedback { get; set; }
         public new IDbSet<TEntity> Set<TEntity>() where TEntity : class
         {
             return base.Set<TEntity>();

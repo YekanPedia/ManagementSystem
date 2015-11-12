@@ -49,6 +49,8 @@
         [MaxLength(10, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
         [PersianDate(ErrorMessageResourceName = nameof(DisplayError.PersianDate), ErrorMessageResourceType = typeof(DisplayError))]
         public string PaymentDate { get; set; }
+
+        [Display(ResourceType = typeof(DisplayNames), Name = "UserInClassIsFinished")]
         public bool IsFinished { get; set; }
         public void Rebind()
         {

@@ -37,7 +37,10 @@
                           "~" + Links.Scripts.JQuery.Validation.jquery_validate_js,
                           "~" + Links.Scripts.JQuery.Validation.jquery_validate_unobtrusive_js,
                           "~" + Links.Scripts.JQuery.Ajax.jquery_unobtrusive_ajax_js,
-                           "~" + Links.Scripts.JQuery.Phoenix.Phoenix_core_js));
+                           "~" + Links.Scripts.JQuery.Phoenix.Phoenix_core_js,
+                           "~" + Links.Scripts.JQuery.Feedback.html2canvas_js,
+                           "~" + Links.Scripts.JQuery.Feedback.feedback_js
+                           ));
 
             bundles.Add(new ScriptBundleOrderer(Links.Bundles.Scripts.FullCalendarScripts, new JsMinify()).Include(
                        "~" + Links.Scripts.JQuery.FullCalendar.moment_min_js,
@@ -64,7 +67,8 @@
                           "~" + Links.Content.Styles.Public.PersianCalendar_css,
                            "~" + Links.Content.Styles.Public.Fullcalendar_css,
                           "~" + Links.Content.Styles.Public.Bootgrid_css,
-                          "~" + Links.Content.Styles.Public.BootstrapSelect_css
+                          "~" + Links.Content.Styles.Public.BootstrapSelect_css,
+                          "~" + Links.Content.Styles.Public.Feedback_rtl_css
                           ));
             #endregion
         }

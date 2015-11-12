@@ -282,4 +282,10 @@
   <data name="Action" xml:space="preserve">
     <value>عملیات</value>
   </data>
+  <data name="Delete" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="DeleteConfirm" xml:space="preserve">
+    <value>آیا با حذف رکورد موافق هستید</value>
+  </data>
 </root>

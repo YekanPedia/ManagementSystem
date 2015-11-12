@@ -22,7 +22,7 @@
         /// <summary>
         ///Styles در  StronglyType کلاسی برای استفاده 
         /// </summary>
-        public static partial class Styles
+        public static class Styles
         {
             /// <summary>
             /// باندل تمامیه استایل ها

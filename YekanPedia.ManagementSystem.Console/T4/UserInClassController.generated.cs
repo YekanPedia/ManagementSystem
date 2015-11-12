@@ -68,6 +68,18 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         {
             return new T4MVC_System_Web_Mvc_ViewResult(Area, Name, ActionNames.Add);
         }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ViewResult Edit()
+        {
+            return new T4MVC_System_Web_Mvc_ViewResult(Area, Name, ActionNames.Edit);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.JsonResult Delete()
+        {
+            return new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.Delete);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public UserInClassController Actions { get { return MVC.UserInClass; } }
@@ -86,6 +98,8 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         {
             public readonly string List = "List";
             public readonly string Add = "Add";
+            public readonly string Edit = "Edit";
+            public readonly string Delete = "Delete";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -93,6 +107,8 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         {
             public const string List = "List";
             public const string Add = "Add";
+            public const string Edit = "Edit";
+            public const string Delete = "Delete";
         }
 
 
@@ -113,6 +129,23 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             public readonly string userId = "userId";
             public readonly string model = "model";
         }
+        static readonly ActionParamsClass_Edit s_params_Edit = new ActionParamsClass_Edit();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_Edit EditParams { get { return s_params_Edit; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_Edit
+        {
+            public readonly string userInClassId = "userInClassId";
+            public readonly string model = "model";
+        }
+        static readonly ActionParamsClass_Delete s_params_Delete = new ActionParamsClass_Delete();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_Delete DeleteParams { get { return s_params_Delete; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_Delete
+        {
+            public readonly string userInClassId = "userInClassId";
+        }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ViewsClass Views { get { return s_views; } }
@@ -124,8 +157,10 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             public class _ViewNamesClass
             {
                 public readonly string Add = "Add";
+                public readonly string Edit = "Edit";
             }
             public readonly string Add = "~/Views/UserInClass/Add.cshtml";
+            public readonly string Edit = "~/Views/UserInClass/Edit.cshtml";
             static readonly _PartialClass s_Partial = new _PartialClass();
             public _PartialClass Partial { get { return s_Partial; } }
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -184,6 +219,42 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Add);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
             AddOverride(callInfo, model);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void EditOverride(T4MVC_System_Web_Mvc_ViewResult callInfo, int userInClassId);
+
+        [NonAction]
+        public override System.Web.Mvc.ViewResult Edit(int userInClassId)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ViewResult(Area, Name, ActionNames.Edit);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "userInClassId", userInClassId);
+            EditOverride(callInfo, userInClassId);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void EditOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, YekanPedia.ManagementSystem.Domain.Entity.UserInClass model);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult Edit(YekanPedia.ManagementSystem.Domain.Entity.UserInClass model)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Edit);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
+            EditOverride(callInfo, model);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void DeleteOverride(T4MVC_System_Web_Mvc_JsonResult callInfo, int userInClassId);
+
+        [NonAction]
+        public override System.Web.Mvc.JsonResult Delete(int userInClassId)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.Delete);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "userInClassId", userInClassId);
+            DeleteOverride(callInfo, userInClassId);
             return callInfo;
         }
 
