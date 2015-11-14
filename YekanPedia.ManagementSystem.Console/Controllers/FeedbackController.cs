@@ -4,7 +4,7 @@
     using Service.Interfaces;
     using Domain.Entity;
 
-    public class FeedbackController : Controller
+    public partial class FeedbackController : Controller
     {
         #region Constructure
         readonly IFeedbackService _feedbackService;
@@ -14,7 +14,7 @@
         }
         #endregion
         [HttpPost]
-        public JsonResult Add(Feedback model, string note)
+        public virtual JsonResult Add(Feedback model, string note)
         {
             return Json(_feedbackService.Add(model));
         }

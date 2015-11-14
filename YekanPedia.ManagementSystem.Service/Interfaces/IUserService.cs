@@ -18,7 +18,9 @@
         IServiceResults<bool> ChangePicture(Guid userId, string picture);
         void AddLoginDate(User model);
         IServiceResults<User> FindUser(Guid userId);
+        IServiceResults<User> FindUser(string userName);
         IServiceResults<IEnumerable<User>> GetTeachers();
         IServiceResults<IEnumerable<User>> GetUsers(User predicate, Guid? classId);
+        IServiceResults<bool> RecoveryPassword(string userName);
     }
 }

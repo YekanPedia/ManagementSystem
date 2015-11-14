@@ -25,10 +25,10 @@ using System.Web.Routing;
 using T4MVC;
 namespace YekanPedia.ManagementSystem.Console.Controllers
 {
-    public partial class OAuthController
+    public partial class FeedbackController
     {
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        protected OAuthController(Dummy d) { }
+        protected FeedbackController(Dummy d) { }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         protected RedirectToRouteResult RedirectToAction(ActionResult result)
@@ -56,15 +56,21 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             return RedirectToActionPermanent(taskResult.Result);
         }
 
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.JsonResult Add()
+        {
+            return new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.Add);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public OAuthController Actions { get { return MVC.OAuth; } }
+        public FeedbackController Actions { get { return MVC.Feedback; } }
         [GeneratedCode("T4MVC", "2.0")]
         public readonly string Area = "";
         [GeneratedCode("T4MVC", "2.0")]
-        public readonly string Name = "OAuth";
+        public readonly string Name = "Feedback";
         [GeneratedCode("T4MVC", "2.0")]
-        public const string NameConst = "OAuth";
+        public const string NameConst = "Feedback";
 
         static readonly ActionNamesClass s_actions = new ActionNamesClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -72,26 +78,24 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNamesClass
         {
-            public readonly string SignIn = "SignIn";
-            public readonly string SignOut = "SignOut";
+            public readonly string Add = "Add";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants
         {
-            public const string SignIn = "SignIn";
-            public const string SignOut = "SignOut";
+            public const string Add = "Add";
         }
 
 
-        static readonly ActionParamsClass_SignIn s_params_SignIn = new ActionParamsClass_SignIn();
+        static readonly ActionParamsClass_Add s_params_Add = new ActionParamsClass_Add();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public ActionParamsClass_SignIn SignInParams { get { return s_params_SignIn; } }
+        public ActionParamsClass_Add AddParams { get { return s_params_Add; } }
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public class ActionParamsClass_SignIn
+        public class ActionParamsClass_Add
         {
             public readonly string model = "model";
-            public readonly string rememberMe = "rememberMe";
+            public readonly string note = "note";
         }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -103,66 +107,25 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
-                public readonly string SignIn = "SignIn";
-            }
-            public readonly string SignIn = "~/Views/OAuth/SignIn.cshtml";
-            static readonly _PartialClass s_Partial = new _PartialClass();
-            public _PartialClass Partial { get { return s_Partial; } }
-            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-            public partial class _PartialClass
-            {
-                static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
-                public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
-                public class _ViewNamesClass
-                {
-                    public readonly string _Login = "_Login";
-                    public readonly string _RecovertyPassword = "_RecovertyPassword";
-                    public readonly string _RecoveryComplete = "_RecoveryComplete";
-                }
-                public readonly string _Login = "~/Views/OAuth/Partial/_Login.cshtml";
-                public readonly string _RecovertyPassword = "~/Views/OAuth/Partial/_RecovertyPassword.cshtml";
-                public readonly string _RecoveryComplete = "~/Views/OAuth/Partial/_RecoveryComplete.cshtml";
             }
         }
     }
 
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-    public partial class T4MVC_OAuthController : YekanPedia.ManagementSystem.Console.Controllers.OAuthController
+    public partial class T4MVC_FeedbackController : YekanPedia.ManagementSystem.Console.Controllers.FeedbackController
     {
-        public T4MVC_OAuthController() : base(Dummy.Instance) { }
+        public T4MVC_FeedbackController() : base(Dummy.Instance) { }
 
         [NonAction]
-        partial void SignInOverride(T4MVC_System_Web_Mvc_ViewResult callInfo);
+        partial void AddOverride(T4MVC_System_Web_Mvc_JsonResult callInfo, YekanPedia.ManagementSystem.Domain.Entity.Feedback model, string note);
 
         [NonAction]
-        public override System.Web.Mvc.ViewResult SignIn()
+        public override System.Web.Mvc.JsonResult Add(YekanPedia.ManagementSystem.Domain.Entity.Feedback model, string note)
         {
-            var callInfo = new T4MVC_System_Web_Mvc_ViewResult(Area, Name, ActionNames.SignIn);
-            SignInOverride(callInfo);
-            return callInfo;
-        }
-
-        [NonAction]
-        partial void SignInOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, YekanPedia.ManagementSystem.Domain.Entity.User model, bool rememberMe);
-
-        [NonAction]
-        public override System.Web.Mvc.ActionResult SignIn(YekanPedia.ManagementSystem.Domain.Entity.User model, bool rememberMe)
-        {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.SignIn);
+            var callInfo = new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.Add);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "rememberMe", rememberMe);
-            SignInOverride(callInfo, model, rememberMe);
-            return callInfo;
-        }
-
-        [NonAction]
-        partial void SignOutOverride(T4MVC_System_Web_Mvc_RedirectToRouteResult callInfo);
-
-        [NonAction]
-        public override System.Web.Mvc.RedirectToRouteResult SignOut()
-        {
-            var callInfo = new T4MVC_System_Web_Mvc_RedirectToRouteResult(Area, Name, ActionNames.SignOut);
-            SignOutOverride(callInfo);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "note", note);
+            AddOverride(callInfo, model, note);
             return callInfo;
         }
 

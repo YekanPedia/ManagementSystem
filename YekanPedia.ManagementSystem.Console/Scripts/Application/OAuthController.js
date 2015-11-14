@@ -9,6 +9,21 @@ function onRegisterComplete(result) {
     }
     $phoenix.core.displayValidatioError(result);
 }
+function onRecoveryPasswordComplete(result) {
+    result = JSON.parse(result.responseText);
+    if (result.IsSuccessfull === true) {
+        $("#recoveryPassword").removeClass('has-error');
+        $("#recoveryPasswordError").html('');
+
+        $('#l-forget-password').removeClass('toggled');
+        $('#l-recoveryPasswordComplete').addClass('toggled');
+
+        return;
+    }
+    $("#recoveryPasswordError").html(result.Message);
+    $("#recoveryPassword").addClass('has-error');
+
+}
 
 $().ready(function () {
     localStorage.setItem('ma-menu-Id', 1);

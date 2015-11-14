@@ -239,6 +239,9 @@
     <Compile Include="T4\ErrorController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
+    <Compile Include="T4\FeedbackController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="T4\OAuthController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
@@ -431,6 +434,7 @@
     <Content Include="Views\UserInClass\Partial\_List.cshtml" />
     <Content Include="Views\UserInClass\Partial\_HeaderUserInClassGrid.cshtml" />
     <Content Include="Views\UserInClass\Edit.cshtml" />
+    <Content Include="Views\OAuth\Partial\_RecoveryComplete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

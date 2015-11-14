@@ -295,6 +295,15 @@ namespace YekanPedia.ManagementSystem.Domain.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to نوع ارسال اعلانات.
+        /// </summary>
+        public static string NotificationType {
+            get {
+                return ResourceManager.GetString("NotificationType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to کلمه عبور.
         /// </summary>
         public static string Password {

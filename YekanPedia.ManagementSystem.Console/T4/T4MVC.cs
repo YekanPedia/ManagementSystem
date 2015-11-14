@@ -33,6 +33,7 @@ public static partial class MVC
     public static YekanPedia.ManagementSystem.Console.Controllers.CourseController Course = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_CourseController();
     public static YekanPedia.ManagementSystem.Console.Controllers.DashboardController Dashboard = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_DashboardController();
     public static YekanPedia.ManagementSystem.Console.Controllers.ErrorController Error = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_ErrorController();
+    public static YekanPedia.ManagementSystem.Console.Controllers.FeedbackController Feedback = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_FeedbackController();
     public static YekanPedia.ManagementSystem.Console.Controllers.OAuthController OAuth = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_OAuthController();
     public static YekanPedia.ManagementSystem.Console.Controllers.SessionController Session = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_SessionController();
     public static YekanPedia.ManagementSystem.Console.Controllers.TaskController Task = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_TaskController();
@@ -186,12 +187,22 @@ namespace Links
                 public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
                 public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
                 public static readonly string feedback_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/feedback.min.js") ? Url("feedback.min.js") : Url("feedback.js");
+                public static readonly string feedback_ts = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/feedback.min.js") ? Url("feedback.min.js") : Url("feedback.js");
                 public static readonly string html2canvas_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/html2canvas.min.js") ? Url("html2canvas.min.js") : Url("html2canvas.js");
+                public static readonly string Html2Convas_ts = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Html2Convas.min.js") ? Url("Html2Convas.min.js") : Url("Html2Convas.js");
                 [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
                 public static class templates {
                     private const string URLPATH = "~/Scripts/JQuery/Feedback/templates";
                     public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
                     public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class fa_Ir {
+                        private const string URLPATH = "~/Scripts/JQuery/Feedback/templates/fa-Ir";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string template_html = Url("template.html");
+                    }
+                
                 }
             
             }
@@ -499,6 +510,12 @@ namespace Links
                 {
                     public static partial class templates 
                     {
+                        public static partial class fa_Ir 
+                        {
+                            public static class Assets
+                            {
+                            }
+                        }
                         public static class Assets
                         {
                         }

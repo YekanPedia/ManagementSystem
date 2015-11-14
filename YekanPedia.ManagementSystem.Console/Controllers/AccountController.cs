@@ -60,7 +60,7 @@
         public virtual PartialViewResult ProfileWidget(Guid userId)
         {
             var result = _userService.FindUser(userId).Result;
-            return PartialView(MVC.Account.Views.Partial._ProfileWidget,result);
+            return PartialView(MVC.Account.Views.Partial._ProfileWidget, result);
         }
 
         [HttpGet, Route("Account/Profile/{userId}")]
@@ -130,6 +130,13 @@
         public virtual JsonResult EmailChecker(string email)
         {
             return Json(_userService.CheckEmailExist(email));
+        }
+        #endregion
+        #region RecoveryPassword
+        [HttpPost]
+        public virtual JsonResult RecoveryPassword(string email)
+        {
+            return Json(_userService.RecoveryPassword(email));
         }
         #endregion
     }

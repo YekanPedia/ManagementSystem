@@ -3,8 +3,8 @@
     using Domain.Entity;
     using System.Collections.Generic;
 
-    public interface IConfigurationService
+    public interface INotificationService
     {
-        IEnumerable<Configuration> GetAllConfiguraion();
+        IEnumerable<Notification> GetAllNotification();
     }
 }

@@ -96,6 +96,25 @@
             _uow.SaveChanges();
         }
         #endregion
+        public IServiceResults<User> FindUser(string userName)
+        {
+            var result = _user.FirstOrDefault(X => X.Email == userName);
+            if (result == null)
+            {
+                return new ServiceResults<User>
+                {
+                    IsSuccessfull = true,
+                    Message = BusinessMessage.UserNotExist,
+                    Result = null
+                };
+            }
+            return new ServiceResults<User>
+            {
+                IsSuccessfull = true,
+                Message = string.Empty,
+                Result = result
+            };
+        }
         public IServiceResults<User> FindUser(Guid userId)
         {
             var result = _user.Find(userId);
@@ -244,7 +263,6 @@
                 Result = model.ToList()
             };
         }
-
         public IServiceResults<bool> ChangeStatus(Guid userId, bool status)
         {
             var result = FindUser(userId);
@@ -263,6 +281,30 @@
             {
                 IsSuccessfull = resultSave.ToBool(),
                 Message = resultSave.ToMessage(BusinessMessage.Error),
+                Result = resultSave.ToBool()
+            };
+        }
+        public IServiceResults<bool> RecoveryPassword(string userName)
+        {
+            Random rnd = new Random();
+            var result = FindUser(userName);
+            if (result.Result == null)
+            {
+                return new ServiceResults<bool>
+                {
+                    IsSuccessfull = false,
+                    Message = BusinessMessage.EmailNotExist,
+                    Result = false
+                };
+            }
+            result.Result.Password = rnd.Next(100000, 999999).ToString();
+            result.Result.IsResetPassword = true;
+            var resultSave = _uow.SaveChanges();
+            //send Notification to User
+            return new ServiceResults<bool>
+            {
+                IsSuccessfull = resultSave.ToBool(),
+                Message = resultSave.ToBool() ? BusinessMessage.RecoveryPassword : BusinessMessage.Error,
                 Result = resultSave.ToBool()
             };
         }

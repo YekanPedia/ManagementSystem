@@ -288,4 +288,7 @@
   <data name="DeleteConfirm" xml:space="preserve">
     <value>آیا با حذف رکورد موافق هستید</value>
   </data>
+  <data name="RecoveryPasswordComplete" xml:space="preserve">
+    <value>کلمه عبور موقت برای شما ارسال شد. لطفا پس از ورود به سیستم کلمه عبور خود را تغییر نمایید</value>
+  </data>
 </root>

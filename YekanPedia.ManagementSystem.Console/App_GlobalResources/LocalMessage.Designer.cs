@@ -430,6 +430,15 @@ namespace YekanPedia.ManagementSystem.Console.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to کلمه عبور موقت برای شما ارسال شد. لطفا پس از ورود به سیستم کلمه عبور خود را تغییر نمایید.
+        /// </summary>
+        public static string RecoveryPasswordComplete {
+            get {
+                return ResourceManager.GetString("RecoveryPasswordComplete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to برای بازیابی نام کاربری و کلمه عبور خود لطفا آدرس ایمیل خود را وارد نمایید. در صورت تائید آدرس ایمیل نام کاربری و کلمه عبور برای شما ارسال خواهد شد..
         /// </summary>
         public static string RecoveryPasswordDescription {

@@ -120,6 +120,7 @@
 
         [Display(ResourceType = typeof(DisplayNames), Name = nameof(IsTeacher))]
         public bool IsTeacher { get; set; }
+        public bool IsResetPassword { get; set; }
         public int ProgressRegisterCompleted()
         {
             int progress = 0;
@@ -133,8 +134,8 @@
         }
 
         public virtual ICollection<UserInClass> UserInClass { get; set; }
-        [Display(ResourceType = typeof(DisplayNames), Name = nameof(Class))]
 
+        [Display(ResourceType = typeof(DisplayNames), Name = nameof(Class))]
         public virtual ICollection<Class> Class { get; set; }
         public virtual ICollection<Tasks> Tasks { get; set; }
     }

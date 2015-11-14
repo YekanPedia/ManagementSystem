@@ -79,6 +79,15 @@ namespace YekanPedia.ManagementSystem.Service.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to نام کاربری ارسالی در سیستم موجود نمی باشد.
+        /// </summary>
+        internal static string EmailNotExist {
+            get {
+                return ResourceManager.GetString("EmailNotExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ثبت اطلاعات با خطا مواجه شد.
         /// </summary>
         internal static string Error {
@@ -102,6 +111,15 @@ namespace YekanPedia.ManagementSystem.Service.Properties {
         internal static string RecordNotExist {
             get {
                 return ResourceManager.GetString("RecordNotExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to کلمه عبور موقتی برای شما ارسال خواهد شد. لطفا بعد از اولین ورود به سیستم کلمه عبور خود را تغییر دهید.
+        /// </summary>
+        internal static string RecoveryPassword {
+            get {
+                return ResourceManager.GetString("RecoveryPassword", resourceCulture);
             }
         }
         

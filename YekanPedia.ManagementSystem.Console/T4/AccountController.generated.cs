@@ -104,6 +104,12 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         {
             return new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.EmailChecker);
         }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.JsonResult RecoveryPassword()
+        {
+            return new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.RecoveryPassword);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public AccountController Actions { get { return MVC.Account; } }
@@ -128,6 +134,7 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             public readonly string EditCallInfo = "EditCallInfo";
             public readonly string ChangePicture = "ChangePicture";
             public readonly string EmailChecker = "EmailChecker";
+            public readonly string RecoveryPassword = "RecoveryPassword";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -141,6 +148,7 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             public const string EditCallInfo = "EditCallInfo";
             public const string ChangePicture = "ChangePicture";
             public const string EmailChecker = "EmailChecker";
+            public const string RecoveryPassword = "RecoveryPassword";
         }
 
 
@@ -207,6 +215,14 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         public ActionParamsClass_EmailChecker EmailCheckerParams { get { return s_params_EmailChecker; } }
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionParamsClass_EmailChecker
+        {
+            public readonly string email = "email";
+        }
+        static readonly ActionParamsClass_RecoveryPassword s_params_RecoveryPassword = new ActionParamsClass_RecoveryPassword();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_RecoveryPassword RecoveryPasswordParams { get { return s_params_RecoveryPassword; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_RecoveryPassword
         {
             public readonly string email = "email";
         }
@@ -359,6 +375,18 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.EmailChecker);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "email", email);
             EmailCheckerOverride(callInfo, email);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void RecoveryPasswordOverride(T4MVC_System_Web_Mvc_JsonResult callInfo, string email);
+
+        [NonAction]
+        public override System.Web.Mvc.JsonResult RecoveryPassword(string email)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.RecoveryPassword);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "email", email);
+            RecoveryPasswordOverride(callInfo, email);
             return callInfo;
         }
 

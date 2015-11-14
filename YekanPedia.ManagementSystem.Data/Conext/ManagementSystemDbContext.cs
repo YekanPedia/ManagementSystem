@@ -17,7 +17,7 @@
         public DbSet<Class> Class { get; set; }
         public DbSet<ClassType> ClassType { get; set; }
         public DbSet<ClassTime> ClassTime { get; set; }
-        public DbSet<Configuration> Configurations { get; set; }
+        public DbSet<Notification> Notification { get; set; }
         public DbSet<UserInClass> UserInClass { get; set; }
         public DbSet<Course> Course { get; set; }
         public DbSet<ClassSession> ClassSession { get; set; }

@@ -195,6 +195,9 @@
   <data name="Mobile" xml:space="preserve">
     <value>شماره همراه</value>
   </data>
+  <data name="NotificationType" xml:space="preserve">
+    <value>نوع ارسال اعلانات</value>
+  </data>
   <data name="Password" xml:space="preserve">
     <value>کلمه عبور</value>
   </data>
