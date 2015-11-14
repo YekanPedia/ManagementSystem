@@ -75,6 +75,10 @@
       <Project>{49e38ba4-b84a-403e-89ff-74b88fba0c4e}</Project>
       <Name>YekanPedia.ManagementSystem.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\YekanPedia.ManagementSystem.ExternalService\YekanPedia.ManagementSystem.ExternalService.csproj">
+      <Project>{39001c55-e397-4617-8ac8-c9ac79e9cc47}</Project>
+      <Name>YekanPedia.ManagementSystem.ExternalService</Name>
+    </ProjectReference>
     <ProjectReference Include="..\YekanPedia.ManagementSystem.InfraStructure\YekanPedia.ManagementSystem.InfraStructure.csproj">
       <Project>{d742b376-2be2-47ff-b70f-4f5f63a67bab}</Project>
       <Name>YekanPedia.ManagementSystem.InfraStructure</Name>

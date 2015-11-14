@@ -22,18 +22,18 @@
     public enum NotificationType
     {
         [Display(ResourceType = typeof(DisplayNames), Name = nameof(ResetPassword))]
-        ResetPassword,
+        ResetPassword = 1,
 
         [Display(ResourceType = typeof(DisplayNames), Name = nameof(PrivateMessage))]
-        PrivateMessage,
+        PrivateMessage = 2,
 
         [Display(ResourceType = typeof(DisplayNames), Name = nameof(CanceledClass))]
-        CanceledClass,
+        CanceledClass = 3,
 
         [Display(ResourceType = typeof(DisplayNames), Name = nameof(AddSession))]
-        AddSession,
+        AddSession = 4,
 
         [Display(ResourceType = typeof(DisplayNames), Name = nameof(BirthDate))]
-        BirthDate
+        BirthDate = 5
     }
 }

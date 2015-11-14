@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/YekanPedia.MessagingGateway.Domain" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/YekanPedia.MessagingGateway.Domain" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:25272/Services/MessagingGateway.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="NotificationPackage">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Email" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Message" nillable="true" type="q2:ArrayOfstring" />
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Sms" nillable="true" type="q3:ArrayOfstring" />
+      <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Telegram" nillable="true" type="q4:ArrayOfstring" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="tns:ArrayOfNotificationKey" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NotificationPackage" nillable="true" type="tns:NotificationPackage" />
+  <xs:complexType name="ArrayOfNotificationKey">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NotificationKey" nillable="true" type="tns:NotificationKey" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNotificationKey" nillable="true" type="tns:ArrayOfNotificationKey" />
+  <xs:complexType name="NotificationKey">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Email" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Sms" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Telegram" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NotificationKey" nillable="true" type="tns:NotificationKey" />
+</xs:schema>

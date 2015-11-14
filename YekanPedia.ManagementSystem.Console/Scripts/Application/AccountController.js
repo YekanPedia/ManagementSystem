@@ -23,9 +23,8 @@ function EditBasicInfoComplete(result) {
 
 function EditCallInfoComplete(result) {
     response = JSON.parse(result.responseText);
-    console.log(response);
     if (response.IsSuccessfull == true) {
-      
+
         $('#CallInfoPanel').removeClass('toggled');
         $('#CallInfoPanel').find('#DetailMobile').html($('#Mobile').val());
         $('#CallInfoPanel').find('#DetailEmail').html($('#Email').val());
@@ -34,4 +33,12 @@ function EditCallInfoComplete(result) {
         return;
     }
     $phoenix.core.displayValidatioError(response);
+}
+function onSendPrivateNotificationComplete(result) {
+    response = JSON.parse(result.responseText);
+    if (response.IsSuccessfull == true) {
+        $("#message").val('');
+        return;
+    }
+    //show Error
 }

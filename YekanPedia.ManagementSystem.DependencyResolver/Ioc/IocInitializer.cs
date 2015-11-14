@@ -7,6 +7,8 @@
     using InfraStructure;
     using Service.Implement;
     using Service.Interfaces;
+    using ExternalService.implement;
+    using ExternalService.Interfaces;
 
     public class IocInitializer
     {
@@ -26,6 +28,9 @@
                 x.For<ISessionService>().Use<SessionService>();
                 x.For<IUserInClassService>().Use<UserInClassService>();
                 x.For<IFeedbackService>().Use<FeedbackService>();
+                x.For<IMessagingGatewayAdapter>().Use<MessagingGatewayAdapter>();
+                x.For<INotificationService>().Use<NotificationService>();
+                x.For<Lazy<INotificationService>>().Use(c => new Lazy<INotificationService>(c.GetInstance<NotificationService>));
             });
         }
         public static object GetInstance(Type pluginType)

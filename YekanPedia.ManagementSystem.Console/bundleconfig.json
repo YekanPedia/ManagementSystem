@@ -34,5 +34,11 @@
     "inputFiles": [
       "Content/Styles/Public/Feedback.rtl.css"
     ]
+  },
+  {
+    "outputFileName": "Scripts/JQuery/Bootstrap/bootstrap.js",
+    "inputFiles": [
+      "Scripts/JQuery/Bootstrap/bootstrap.js"
+    ]
   }
 ]

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a340b5b0-f125-41a1-828f-d002d814cf58" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:25272/Services/MessagingGateway.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="MessagingGateway.xsd" MetadataType="Schema" ID="4787fc63-ea06-4a66-9126-127593b2e642" SourceId="1" SourceUrl="http://localhost:25272/Services/MessagingGateway.svc?xsd=xsd1" />
+    <MetadataFile FileName="MessagingGateway1.xsd" MetadataType="Schema" ID="4348a2ef-6477-4824-b47c-71741bd9fb6d" SourceId="1" SourceUrl="http://localhost:25272/Services/MessagingGateway.svc?xsd=xsd0" />
+    <MetadataFile FileName="MessagingGateway.disco" MetadataType="Disco" ID="4305c662-6f54-4926-9b6f-e7b8cc69e780" SourceId="1" SourceUrl="http://localhost:25272/Services/MessagingGateway.svc?disco" />
+    <MetadataFile FileName="MessagingGateway.wsdl" MetadataType="Wsdl" ID="4897e5cb-66a9-4ff4-a037-f3cbdffa0a21" SourceId="1" SourceUrl="http://localhost:25272/Services/MessagingGateway.svc?wsdl" />
+    <MetadataFile FileName="MessagingGateway2.xsd" MetadataType="Schema" ID="c950d005-f207-49d1-83ce-4be30f5fe8b8" SourceId="1" SourceUrl="http://localhost:25272/Services/MessagingGateway.svc?xsd=xsd3" />
+    <MetadataFile FileName="MessagingGateway3.xsd" MetadataType="Schema" ID="e72d395f-23d7-4bc6-a784-41c23c923054" SourceId="1" SourceUrl="http://localhost:25272/Services/MessagingGateway.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

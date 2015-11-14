@@ -1,8 +1,8 @@
 ﻿namespace YekanPedia.ManagementSystem.Service.Implement
 {
+    using Interfaces;
     using System;
     using System.Collections.Generic;
-    using Interfaces;
     using Domain.Entity;
     using Data.Conext;
     using System.Data.Entity;
@@ -16,11 +16,13 @@
         readonly IUnitOfWork _uow;
         readonly IDbSet<User> _user;
         readonly ITaskService _taskService;
-        public UserService(IUnitOfWork uow, ITaskService taskService)
+        readonly Lazy<INotificationService> _notificationService;
+        public UserService(IUnitOfWork uow, ITaskService taskService, Lazy<INotificationService> notificationService)
         {
             _uow = uow;
             _user = uow.Set<User>();
             _taskService = taskService;
+            _notificationService = notificationService;
         }
         #endregion
         public IServiceResults<Guid> AddUser(User user, Tasks task)
@@ -300,7 +302,7 @@
             result.Result.Password = rnd.Next(100000, 999999).ToString();
             result.Result.IsResetPassword = true;
             var resultSave = _uow.SaveChanges();
-            //send Notification to User
+            _notificationService.Value.SendNotificationToUser(result.Result.UserId, NotificationType.ResetPassword, $"");
             return new ServiceResults<bool>
             {
                 IsSuccessfull = resultSave.ToBool(),

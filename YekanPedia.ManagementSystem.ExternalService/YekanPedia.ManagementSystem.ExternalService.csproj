@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8BCA1500-4045-46AA-9783-90F4B0DDB1F6}</ProjectGuid>
+    <ProjectGuid>{39001C55-E397-4617-8AC8-C9AC79E9CC47}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>YekanPedia.ManagementSystem.Domain</RootNamespace>
-    <AssemblyName>YekanPedia.ManagementSystem.Domain</AssemblyName>
+    <RootNamespace>YekanPedia.ManagementSystem.ExternalService</RootNamespace>
+    <AssemblyName>YekanPedia.ManagementSystem.ExternalService</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -32,8 +31,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -42,43 +42,51 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entity\Feedback.cs" />
-    <Compile Include="Entity\Tasks.cs" />
-    <Compile Include="Properties\DisplayError.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DisplayError.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\DisplayNames.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DisplayNames.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Entity\ClassSession.cs" />
-    <Compile Include="Entity\Class.cs" />
-    <Compile Include="Entity\ClassTime.cs" />
-    <Compile Include="Entity\ClassType.cs" />
-    <Compile Include="Entity\Notification.cs" />
-    <Compile Include="Entity\Course.cs" />
-    <Compile Include="Entity\User.cs" />
-    <Compile Include="Entity\UserInClass.cs" />
+    <Compile Include="implement\MessagingGatewayAdapter.cs" />
+    <Compile Include="Interfaces\IMessagingGatewayAdapter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\MessagingGateway\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Properties\DisplayError.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>DisplayError.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\DisplayNames.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>DisplayNames.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\YekanPedia.ManagementSystem.InfraStructure\YekanPedia.ManagementSystem.InfraStructure.csproj">
-      <Project>{d742b376-2be2-47ff-b70f-4f5f63a67bab}</Project>
-      <Name>YekanPedia.ManagementSystem.InfraStructure</Name>
-    </ProjectReference>
+    <None Include="app.config" />
+    <None Include="Service References\MessagingGateway\MessagingGateway.wsdl" />
+    <None Include="Service References\MessagingGateway\MessagingGateway.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MessagingGateway\MessagingGateway1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MessagingGateway\MessagingGateway2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MessagingGateway\MessagingGateway3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\MessagingGateway\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MessagingGateway\MessagingGateway.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MessagingGateway\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MessagingGateway\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MessagingGateway\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
