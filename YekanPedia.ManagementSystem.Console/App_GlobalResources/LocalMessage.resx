@@ -291,4 +291,7 @@
   <data name="RecoveryPasswordComplete" xml:space="preserve">
     <value>کلمه عبور موقت برای شما ارسال شد. لطفا پس از ورود به سیستم کلمه عبور خود را تغییر نمایید</value>
   </data>
+  <data name="SendMessageDescription" xml:space="preserve">
+    <value>پیام شما به چند طریق پیام کوتاه ، ایمیل ، و تلگرام برای کاربر انتخابی ارسال می گردد</value>
+  </data>
 </root>

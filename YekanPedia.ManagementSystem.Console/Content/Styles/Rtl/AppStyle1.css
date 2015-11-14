@@ -779,3 +779,22 @@ th {
 .profile-view .pv-body {
     margin-top: 65px;
 }
+
+@media (min-width: 768px) {
+    .modal-dialog {
+        width: 600px;
+        margin: 100px auto;
+    }
+}
+
+.modal {
+    z-index: 99999;
+}
+
+.modal-backdrop {
+    z-index: 9999;
+}
+
+.modal-footer {
+    text-align: left;
+}

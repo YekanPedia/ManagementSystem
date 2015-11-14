@@ -286,6 +286,51 @@ namespace YekanPedia.ManagementSystem.Domain.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ارسال پیام در زمان ارسال فایل های کلاس.
+        /// </summary>
+        public static string MessageOnAddSession {
+            get {
+                return ResourceManager.GetString("MessageOnAddSession", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ارسال پیام تبریک در زمان تاریخ تولد.
+        /// </summary>
+        public static string MessageOnBirthDate {
+            get {
+                return ResourceManager.GetString("MessageOnBirthDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ارسال پیام در زمان ثبت کنسلی کلاس.
+        /// </summary>
+        public static string MessageOnCanceledClass {
+            get {
+                return ResourceManager.GetString("MessageOnCanceledClass", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ارسال پیام خصوصی.
+        /// </summary>
+        public static string MessageOnPrivateMessage {
+            get {
+                return ResourceManager.GetString("MessageOnPrivateMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ارسال پیام در زمان بازیابی کلمه عبور.
+        /// </summary>
+        public static string MessageOnResetPassword {
+            get {
+                return ResourceManager.GetString("MessageOnResetPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to شماره همراه.
         /// </summary>
         public static string Mobile {

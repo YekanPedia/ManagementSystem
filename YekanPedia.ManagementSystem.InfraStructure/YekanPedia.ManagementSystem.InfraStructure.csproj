@@ -55,6 +55,7 @@
     <Compile Include="Extension\ApplyCorrectPersianCharacters.cs" />
     <Compile Include="Extension\EnumHelper.cs" />
     <Compile Include="Extension\FullTimeFormat.cs" />
+    <Compile Include="Extension\LocalizeDescriptionEnum.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Results\ActionResults.cs" />
     <Compile Include="Results\IActionResults.cs" />

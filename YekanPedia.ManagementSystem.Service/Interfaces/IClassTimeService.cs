@@ -12,5 +12,6 @@
         IEnumerable<ClassTime> GetClassTime(Guid classId);
         ClassTime FindClassTime(int classTimeId);
         bool IsExist(ClassTime model);
+        IServiceResults<bool> Delete(int classTimeId);
     }
 }

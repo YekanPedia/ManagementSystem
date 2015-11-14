@@ -25,10 +25,13 @@ using System.Web.Routing;
 using T4MVC;
 namespace YekanPedia.ManagementSystem.Console.Controllers
 {
-    public partial class NotificationController
+    public partial class SettingController
     {
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        protected NotificationController(Dummy d) { }
+        public SettingController() { }
+
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        protected SettingController(Dummy d) { }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         protected RedirectToRouteResult RedirectToAction(ActionResult result)
@@ -56,21 +59,15 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             return RedirectToActionPermanent(taskResult.Result);
         }
 
-        [NonAction]
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public virtual System.Web.Mvc.JsonResult SendToUser()
-        {
-            return new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.SendToUser);
-        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public NotificationController Actions { get { return MVC.Notification; } }
+        public SettingController Actions { get { return MVC.Setting; } }
         [GeneratedCode("T4MVC", "2.0")]
         public readonly string Area = "";
         [GeneratedCode("T4MVC", "2.0")]
-        public readonly string Name = "Notification";
+        public readonly string Name = "Setting";
         [GeneratedCode("T4MVC", "2.0")]
-        public const string NameConst = "Notification";
+        public const string NameConst = "Setting";
 
         static readonly ActionNamesClass s_actions = new ActionNamesClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -78,27 +75,16 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNamesClass
         {
-            public readonly string SendToUser = "SendToUser";
-            public readonly string GetNotificationSetting = "GetNotificationSetting";
+            public readonly string Manage = "Manage";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants
         {
-            public const string SendToUser = "SendToUser";
-            public const string GetNotificationSetting = "GetNotificationSetting";
+            public const string Manage = "Manage";
         }
 
 
-        static readonly ActionParamsClass_SendToUser s_params_SendToUser = new ActionParamsClass_SendToUser();
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public ActionParamsClass_SendToUser SendToUserParams { get { return s_params_SendToUser; } }
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public class ActionParamsClass_SendToUser
-        {
-            public readonly string userId = "userId";
-            public readonly string message = "message";
-        }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ViewsClass Views { get { return s_views; } }
@@ -109,49 +95,25 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
+                public readonly string Manage = "Manage";
             }
-            static readonly _PartialClass s_Partial = new _PartialClass();
-            public _PartialClass Partial { get { return s_Partial; } }
-            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-            public partial class _PartialClass
-            {
-                static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
-                public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
-                public class _ViewNamesClass
-                {
-                    public readonly string _GetNotificationSetting = "_GetNotificationSetting";
-                }
-                public readonly string _GetNotificationSetting = "~/Views/Notification/Partial/_GetNotificationSetting.cshtml";
-            }
+            public readonly string Manage = "~/Views/Setting/Manage.cshtml";
         }
     }
 
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-    public partial class T4MVC_NotificationController : YekanPedia.ManagementSystem.Console.Controllers.NotificationController
+    public partial class T4MVC_SettingController : YekanPedia.ManagementSystem.Console.Controllers.SettingController
     {
-        public T4MVC_NotificationController() : base(Dummy.Instance) { }
+        public T4MVC_SettingController() : base(Dummy.Instance) { }
 
         [NonAction]
-        partial void SendToUserOverride(T4MVC_System_Web_Mvc_JsonResult callInfo, System.Guid userId, string message);
+        partial void ManageOverride(T4MVC_System_Web_Mvc_ViewResult callInfo);
 
         [NonAction]
-        public override System.Web.Mvc.JsonResult SendToUser(System.Guid userId, string message)
+        public override System.Web.Mvc.ViewResult Manage()
         {
-            var callInfo = new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.SendToUser);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "userId", userId);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "message", message);
-            SendToUserOverride(callInfo, userId, message);
-            return callInfo;
-        }
-
-        [NonAction]
-        partial void GetNotificationSettingOverride(T4MVC_System_Web_Mvc_PartialViewResult callInfo);
-
-        [NonAction]
-        public override System.Web.Mvc.PartialViewResult GetNotificationSetting()
-        {
-            var callInfo = new T4MVC_System_Web_Mvc_PartialViewResult(Area, Name, ActionNames.GetNotificationSetting);
-            GetNotificationSettingOverride(callInfo);
+            var callInfo = new T4MVC_System_Web_Mvc_ViewResult(Area, Name, ActionNames.Manage);
+            ManageOverride(callInfo);
             return callInfo;
         }
 

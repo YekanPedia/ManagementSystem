@@ -19,8 +19,12 @@
         public virtual JsonResult SendToUser(Guid userId, string message)
         {
             return Json(_notificationService.SendNotificationToUser(userId, NotificationType.PrivateMessage, message));
-
         }
 
+        [ChildActionOnly]
+        public virtual PartialViewResult GetNotificationSetting()
+        {
+            return PartialView(MVC.Notification.Views.Partial._GetNotificationSetting,_notificationService.GetAllNotification());
+        }
     }
 }

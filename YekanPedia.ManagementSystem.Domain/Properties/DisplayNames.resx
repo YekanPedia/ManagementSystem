@@ -192,6 +192,21 @@
   <data name="Link" xml:space="preserve">
     <value>آدرس</value>
   </data>
+  <data name="MessageOnAddSession" xml:space="preserve">
+    <value>ارسال پیام در زمان ارسال فایل های کلاس</value>
+  </data>
+  <data name="MessageOnBirthDate" xml:space="preserve">
+    <value>ارسال پیام تبریک در زمان تاریخ تولد</value>
+  </data>
+  <data name="MessageOnCanceledClass" xml:space="preserve">
+    <value>ارسال پیام در زمان ثبت کنسلی کلاس</value>
+  </data>
+  <data name="MessageOnPrivateMessage" xml:space="preserve">
+    <value>ارسال پیام خصوصی</value>
+  </data>
+  <data name="MessageOnResetPassword" xml:space="preserve">
+    <value>ارسال پیام در زمان بازیابی کلمه عبور</value>
+  </data>
   <data name="Mobile" xml:space="preserve">
     <value>شماره همراه</value>
   </data>

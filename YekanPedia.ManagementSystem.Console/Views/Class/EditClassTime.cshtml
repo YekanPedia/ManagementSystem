@@ -28,3 +28,7 @@
     </div>
 </div>
 @{ Html.RenderAction(MVC.Class.ActionNames.ClassTimeList, MVC.Class.Name, new { classId = Model.ClassId });}
+
+@section Scripts{
+    <script src="@Url.Content(Links.Scripts.Application.ClassController_min_js)"></script>
+}

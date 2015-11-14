@@ -162,6 +162,12 @@
         }
         #endregion
 
-
+        #region DeleteClassTime
+        [HttpPost]
+        public virtual JsonResult DeleteClassTime(int classTimeId)
+        {
+            return Json(_classTimeService.Delete(classTimeId));
+        }
+        #endregion
     }
 }

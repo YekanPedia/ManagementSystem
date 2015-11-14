@@ -502,6 +502,15 @@ namespace YekanPedia.ManagementSystem.Console.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to پیام شما به چند طریق پیام کوتاه ، ایمیل ، و تلگرام برای کاربر انتخابی ارسال می گردد.
+        /// </summary>
+        public static string SendMessageDescription {
+            get {
+                return ResourceManager.GetString("SendMessageDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to تنظیمات.
         /// </summary>
         public static string Setting {

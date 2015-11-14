@@ -28,10 +28,25 @@ $().ready(function () {
             success: function (response) {
                 if (response.IsSuccessfull) {
                     $el.fadeOut();
-                    setTimeout(function () { $el.prev().fadeIn() },400);
+                    setTimeout(function () { $el.prev().fadeIn() }, 400);
                     $("#" + $el.attr('data-userId')).find($(".activeUserChecked"))[0].checked = true;
                 }
             }
         });
     });
+
+    $(".sendPrivateMessageModal").click(function () {
+        $("#UserId_PrivateMessage").val($(this).attr('data-userId'));
+    });
+
+    
 });
+function onSendPrivateNotificationComplete(result) {
+        response = JSON.parse(result.responseText);
+        if (response.IsSuccessfull == true) {
+            $("#message_PrivateMessage").val('');
+            $('#sendPrivateMessageModal').modal('toggle');
+            return;
+        }
+        //show Error
+    }

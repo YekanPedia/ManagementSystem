@@ -37,6 +37,7 @@ public static partial class MVC
     public static YekanPedia.ManagementSystem.Console.Controllers.NotificationController Notification = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_NotificationController();
     public static YekanPedia.ManagementSystem.Console.Controllers.OAuthController OAuth = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_OAuthController();
     public static YekanPedia.ManagementSystem.Console.Controllers.SessionController Session = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_SessionController();
+    public static YekanPedia.ManagementSystem.Console.Controllers.SettingController Setting = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_SettingController();
     public static YekanPedia.ManagementSystem.Console.Controllers.TaskController Task = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_TaskController();
     public static YekanPedia.ManagementSystem.Console.Controllers.UserController User = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_UserController();
     public static YekanPedia.ManagementSystem.Console.Controllers.UserInClassController UserInClass = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_UserInClassController();
@@ -179,6 +180,7 @@ namespace Links
                 private const string URLPATH = "~/Scripts/JQuery/Bootstrap";
                 public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
                 public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                public static readonly string bootstrap_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bootstrap.min.js") ? Url("bootstrap.min.js") : Url("bootstrap.js");
                 public static readonly string bootstrap_min_js = Url("bootstrap.min.js");
             }
         
@@ -504,7 +506,7 @@ namespace Links
                 {
                     public static class Assets
                     {
-                        public const string bootstrap_min_js = "~/Scripts/JQuery/Bootstrap/bootstrap.min.js"; 
+                        public const string bootstrap_js = "~/Scripts/JQuery/Bootstrap/bootstrap.js"; 
                     }
                 }
                 public static partial class Feedback 

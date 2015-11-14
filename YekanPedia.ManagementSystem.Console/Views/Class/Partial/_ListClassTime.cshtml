@@ -11,11 +11,35 @@
                 <tbody>
                     @foreach (var item in Model)
                     {
-                    <tr>
-                        <td>@item.DayFa</td>
-                        <td>@item.TimeFrom</td>
-                        <td>@item.TimeTo</td>
-                    </tr>
+                        <tr id="ClassTime_@item.ClassTimeId">
+                            <td>@item.DayFa</td>
+                            <td>@item.TimeFrom</td>
+                            <td>@item.TimeTo</td>
+                            <td>
+                                <ul class="actions">
+                                    <li class="dropdown action-show dropup">
+                                        <a href="" data-toggle="dropdown">
+                                            <i class="zmdi zmdi-more-vert"></i>
+                                        </a>
+                                        <ul class="dropdown-menu dm-icon">
+                                            <li>
+                                                <a href="@Url.Action(MVC.Class.ActionNames.EditClassTime, MVC.Class.Name, new { classTimeId = item.ClassTimeId })">
+                                                    <i class="zmdi zmdi-edit"></i>
+                                                    @LocalMessage.Edit
+                                                </a>
+                                            </li>
+                                            <li class="divider"></li>
+                                            <li>
+                                                <a href="#" class="deleteClassTime" data-url="@Url.Action(MVC.Class.ActionNames.DeleteClassTime,MVC.Class.Name)" da data-message="@LocalMessage.DeleteConfirm" data-id="@item.ClassTimeId">
+                                                    <i class="zmdi zmdi-delete"></i>
+                                                    @LocalMessage.Delete
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
                     }
                 </tbody>
             </table>

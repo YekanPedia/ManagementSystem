@@ -4,6 +4,7 @@
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using Properties;
+    using InfraStructure.Extension;
 
     [Table("Notification", Schema = "Base")]
     public class Notification
@@ -21,19 +22,19 @@
     }
     public enum NotificationType
     {
-        [Display(ResourceType = typeof(DisplayNames), Name = nameof(ResetPassword))]
+        [LocalizeDescriptionEnum("MessageOnResetPassword", typeof(DisplayNames))]
         ResetPassword = 1,
 
-        [Display(ResourceType = typeof(DisplayNames), Name = nameof(PrivateMessage))]
+        [LocalizeDescriptionEnum("MessageOnPrivateMessage", typeof(DisplayNames))]
         PrivateMessage = 2,
 
-        [Display(ResourceType = typeof(DisplayNames), Name = nameof(CanceledClass))]
+        [LocalizeDescriptionEnum("MessageOnCanceledClass", typeof(DisplayNames))]
         CanceledClass = 3,
 
-        [Display(ResourceType = typeof(DisplayNames), Name = nameof(AddSession))]
+        [LocalizeDescriptionEnum("MessageOnAddSession", typeof(DisplayNames))]
         AddSession = 4,
 
-        [Display(ResourceType = typeof(DisplayNames), Name = nameof(BirthDate))]
+        [LocalizeDescriptionEnum("MessageOnBirthDate", typeof(DisplayNames))]
         BirthDate = 5
     }
 }

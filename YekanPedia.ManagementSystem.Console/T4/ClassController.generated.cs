@@ -80,6 +80,12 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         {
             return new T4MVC_System_Web_Mvc_ViewResult(Area, Name, ActionNames.EditClassTime);
         }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.JsonResult DeleteClassTime()
+        {
+            return new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.DeleteClassTime);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ClassController Actions { get { return MVC.Class; } }
@@ -102,6 +108,7 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             public readonly string EditClass = "EditClass";
             public readonly string AddClassTime = "AddClassTime";
             public readonly string EditClassTime = "EditClassTime";
+            public readonly string DeleteClassTime = "DeleteClassTime";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -113,6 +120,7 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             public const string EditClass = "EditClass";
             public const string AddClassTime = "AddClassTime";
             public const string EditClassTime = "EditClassTime";
+            public const string DeleteClassTime = "DeleteClassTime";
         }
 
 
@@ -158,6 +166,14 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         {
             public readonly string classTimeId = "classTimeId";
             public readonly string model = "model";
+        }
+        static readonly ActionParamsClass_DeleteClassTime s_params_DeleteClassTime = new ActionParamsClass_DeleteClassTime();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_DeleteClassTime DeleteClassTimeParams { get { return s_params_DeleteClassTime; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_DeleteClassTime
+        {
+            public readonly string classTimeId = "classTimeId";
         }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -324,6 +340,18 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.EditClassTime);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
             EditClassTimeOverride(callInfo, model);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void DeleteClassTimeOverride(T4MVC_System_Web_Mvc_JsonResult callInfo, int classTimeId);
+
+        [NonAction]
+        public override System.Web.Mvc.JsonResult DeleteClassTime(int classTimeId)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.DeleteClassTime);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "classTimeId", classTimeId);
+            DeleteClassTimeOverride(callInfo, classTimeId);
             return callInfo;
         }
 

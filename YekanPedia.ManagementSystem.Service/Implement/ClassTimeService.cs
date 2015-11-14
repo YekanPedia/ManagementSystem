@@ -76,5 +76,16 @@
         {
             return _classTime.Find(classTimeId);
         }
+        public IServiceResults<bool> Delete(int classTimeId)
+        {
+            _classTime.Remove(_classTime.Find(classTimeId));
+            var result = _uow.SaveChanges();
+            return new ServiceResults<bool>
+            {
+                IsSuccessfull = result.ToBool(),
+                Message = result.ToMessage(BusinessMessage.Error),
+                Result = result.ToBool()
+            };
+        }
     }
 }

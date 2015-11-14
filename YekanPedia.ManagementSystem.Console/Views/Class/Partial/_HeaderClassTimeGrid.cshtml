@@ -1,14 +1,17 @@
 ﻿@model YekanPedia.ManagementSystem.Domain.Entity.ClassTime
-    <thead>
-        <tr>
-            <th data-column-id="@nameof(Model.DayFa)">
-                @Html.DisplayNameFor(X => X.DayFa)
-            </th>
-            <th data-column-id="@nameof(Model.TimeFrom)">
-                @Html.DisplayNameFor(X => X.TimeFrom)
-            </th>
-            <th data-column-id="@nameof(Model.TimeTo)">
-                @Html.DisplayNameFor(X => X.TimeTo)
-            </th>
-        </tr>
-    </thead>
+<thead>
+    <tr>
+        <th data-column-id="@nameof(Model.DayFa)">
+            @Html.DisplayNameFor(X => X.DayFa)
+        </th>
+        <th data-column-id="@nameof(Model.TimeFrom)">
+            @Html.DisplayNameFor(X => X.TimeFrom)
+        </th>
+        <th data-column-id="@nameof(Model.TimeTo)">
+            @Html.DisplayNameFor(X => X.TimeTo)
+        </th>
+        <th>
+            @LocalMessage.Action
+        </th>
+    </tr>
+</thead>

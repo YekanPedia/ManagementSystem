@@ -42,3 +42,4 @@ function onSendPrivateNotificationComplete(result) {
     }
     //show Error
 }
+
