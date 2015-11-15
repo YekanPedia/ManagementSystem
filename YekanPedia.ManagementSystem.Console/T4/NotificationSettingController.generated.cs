@@ -25,10 +25,10 @@ using System.Web.Routing;
 using T4MVC;
 namespace YekanPedia.ManagementSystem.Console.Controllers
 {
-    public partial class NotificationController
+    public partial class NotificationSettingController
     {
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        protected NotificationController(Dummy d) { }
+        protected NotificationSettingController(Dummy d) { }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         protected RedirectToRouteResult RedirectToAction(ActionResult result)
@@ -58,19 +58,19 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
 
         [NonAction]
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public virtual System.Web.Mvc.JsonResult SendToUser()
+        public virtual System.Web.Mvc.JsonResult Edit()
         {
-            return new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.SendToUser);
+            return new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.Edit);
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public NotificationController Actions { get { return MVC.Notification; } }
+        public NotificationSettingController Actions { get { return MVC.NotificationSetting; } }
         [GeneratedCode("T4MVC", "2.0")]
         public readonly string Area = "";
         [GeneratedCode("T4MVC", "2.0")]
-        public readonly string Name = "Notification";
+        public readonly string Name = "NotificationSetting";
         [GeneratedCode("T4MVC", "2.0")]
-        public const string NameConst = "Notification";
+        public const string NameConst = "NotificationSetting";
 
         static readonly ActionNamesClass s_actions = new ActionNamesClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -78,24 +78,25 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNamesClass
         {
-            public readonly string SendToUser = "SendToUser";
+            public readonly string AllNotificationSetting = "AllNotificationSetting";
+            public readonly string Edit = "Edit";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants
         {
-            public const string SendToUser = "SendToUser";
+            public const string AllNotificationSetting = "AllNotificationSetting";
+            public const string Edit = "Edit";
         }
 
 
-        static readonly ActionParamsClass_SendToUser s_params_SendToUser = new ActionParamsClass_SendToUser();
+        static readonly ActionParamsClass_Edit s_params_Edit = new ActionParamsClass_Edit();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public ActionParamsClass_SendToUser SendToUserParams { get { return s_params_SendToUser; } }
+        public ActionParamsClass_Edit EditParams { get { return s_params_Edit; } }
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public class ActionParamsClass_SendToUser
+        public class ActionParamsClass_Edit
         {
-            public readonly string userId = "userId";
-            public readonly string message = "message";
+            public readonly string model = "model";
         }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -108,24 +109,49 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             public class _ViewNamesClass
             {
             }
+            static readonly _PartialClass s_Partial = new _PartialClass();
+            public _PartialClass Partial { get { return s_Partial; } }
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public partial class _PartialClass
+            {
+                static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                public class _ViewNamesClass
+                {
+                    public readonly string _AllNotificationSetting = "_AllNotificationSetting";
+                    public readonly string _NotificationSettingBox = "_NotificationSettingBox";
+                }
+                public readonly string _AllNotificationSetting = "~/Views/NotificationSetting/Partial/_AllNotificationSetting.cshtml";
+                public readonly string _NotificationSettingBox = "~/Views/NotificationSetting/Partial/_NotificationSettingBox.cshtml";
+            }
         }
     }
 
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-    public partial class T4MVC_NotificationController : YekanPedia.ManagementSystem.Console.Controllers.NotificationController
+    public partial class T4MVC_NotificationSettingController : YekanPedia.ManagementSystem.Console.Controllers.NotificationSettingController
     {
-        public T4MVC_NotificationController() : base(Dummy.Instance) { }
+        public T4MVC_NotificationSettingController() : base(Dummy.Instance) { }
 
         [NonAction]
-        partial void SendToUserOverride(T4MVC_System_Web_Mvc_JsonResult callInfo, System.Guid userId, string message);
+        partial void AllNotificationSettingOverride(T4MVC_System_Web_Mvc_PartialViewResult callInfo);
 
         [NonAction]
-        public override System.Web.Mvc.JsonResult SendToUser(System.Guid userId, string message)
+        public override System.Web.Mvc.PartialViewResult AllNotificationSetting()
         {
-            var callInfo = new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.SendToUser);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "userId", userId);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "message", message);
-            SendToUserOverride(callInfo, userId, message);
+            var callInfo = new T4MVC_System_Web_Mvc_PartialViewResult(Area, Name, ActionNames.AllNotificationSetting);
+            AllNotificationSettingOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void EditOverride(T4MVC_System_Web_Mvc_JsonResult callInfo, YekanPedia.ManagementSystem.Domain.Entity.NotificationSetting model);
+
+        [NonAction]
+        public override System.Web.Mvc.JsonResult Edit(YekanPedia.ManagementSystem.Domain.Entity.NotificationSetting model)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.Edit);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
+            EditOverride(callInfo, model);
             return callInfo;
         }
 

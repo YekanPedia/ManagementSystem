@@ -59,6 +59,7 @@
     <Compile Include="Implement\CourseService.cs" />
     <Compile Include="Implement\FeedbackService.cs" />
     <Compile Include="Implement\NotificationService.cs" />
+    <Compile Include="Implement\NotificationSettingService.cs" />
     <Compile Include="Implement\SessionService.cs" />
     <Compile Include="Implement\TaskService.cs" />
     <Compile Include="Implement\UserInClassService.cs" />
@@ -67,6 +68,7 @@
     <Compile Include="Interfaces\IClassTypeService.cs" />
     <Compile Include="Interfaces\ICourseService.cs" />
     <Compile Include="Interfaces\IFeedbackService.cs" />
+    <Compile Include="Interfaces\INotificationService.cs" />
     <Compile Include="Interfaces\ISessionService.cs" />
     <Compile Include="Interfaces\ITaskService.cs" />
     <Compile Include="Interfaces\IUserInClassService.cs" />
@@ -76,7 +78,7 @@
       <DependentUpon>BusinessMessage.resx</DependentUpon>
     </Compile>
     <Compile Include="Implement\UserService.cs" />
-    <Compile Include="Interfaces\INotificationService.cs" />
+    <Compile Include="Interfaces\INotificationSettingService.cs" />
     <Compile Include="Interfaces\IUserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

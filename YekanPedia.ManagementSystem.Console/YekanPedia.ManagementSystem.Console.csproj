@@ -190,6 +190,7 @@
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\FeedbackController.cs" />
     <Compile Include="Controllers\NotificationController.cs" />
+    <Compile Include="Controllers\NotificationSettingController.cs" />
     <Compile Include="Controllers\Poco\ErrorModelStateController.cs" />
     <Compile Include="Controllers\SessionController.cs" />
     <Compile Include="Controllers\SettingController.cs" />
@@ -207,9 +208,6 @@
     <Compile Include="Extensions\Optimization\ScriptBundleOrderer.cs" />
     <Compile Include="Extensions\Optimization\StyleBundleOrderer.cs" />
     <Compile Include="SignalRSystem\OnlineUserHub.cs" />
-    <Compile Include="T4\AccountController.generated.cs">
-      <DependentUpon>T4MVC.tt</DependentUpon>
-    </Compile>
     <Compile Include="AppSetting.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -226,6 +224,11 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="T4\AccountController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="T4\ClassController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
@@ -247,10 +250,12 @@
     <Compile Include="T4\NotificationController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
+    <Compile Include="T4\NotificationSettingController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="T4\OAuthController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="T4\SessionController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
@@ -260,7 +265,6 @@
     <Compile Include="T4\SharedController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
-    <Compile Include="Startup.cs" />
     <Compile Include="T4\T4MVC.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -340,6 +344,10 @@
     <Content Include="Scripts\Application\ClassController.min.js">
       <DependentUpon>ClassController.js</DependentUpon>
     </Content>
+    <Content Include="Scripts\Application\NotificationSettingController.js" />
+    <Content Include="Scripts\Application\NotificationSettingController.min.js">
+      <DependentUpon>NotificationSettingController.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\Application\OAuthController.js" />
     <Content Include="Scripts\Application\OAuthController.min.js">
       <DependentUpon>OAuthController.js</DependentUpon>
@@ -349,6 +357,9 @@
       <DependentUpon>UserController.js</DependentUpon>
     </Content>
     <Content Include="Scripts\Application\UserInClassController.js" />
+    <Content Include="Scripts\Application\UserInClassController.min.js">
+      <DependentUpon>UserInClassController.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\jquery.signalR-2.1.2.js" />
     <Content Include="Scripts\jquery.signalR-2.1.2.min.js" />
     <Content Include="Scripts\JQuery\Ajax\jquery.unobtrusive-ajax.js" />
@@ -396,7 +407,7 @@
     <Content Include="Scripts\JQuery\Wave\waves.min.js" />
     <Content Include="Scripts\JQuery\Sweet\sweet-alert.min.js" />
     <Content Include="Views\Dashboard\Partial\_Menu.cshtml" />
-    <Content Include="Views\Notification\Partial\_GetNotificationSetting.cshtml" />
+    <Content Include="Views\NotificationSetting\Partial\_AllNotificationSetting.cshtml" />
     <Content Include="Views\OAuth\Partial\_Login.cshtml" />
     <Content Include="Views\Session\List.cshtml" />
     <Content Include="Views\Task\Partial\_Task.cshtml" />
@@ -448,6 +459,7 @@
     <Content Include="Views\UserInClass\Edit.cshtml" />
     <Content Include="Views\OAuth\Partial\_RecoveryComplete.cshtml" />
     <Content Include="Views\Setting\Manage.cshtml" />
+    <Content Include="Views\NotificationSetting\Partial\_NotificationSettingBox.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -175,7 +175,7 @@
     <value>پروفایل کاربری</value>
   </data>
   <data name="Setting" xml:space="preserve">
-    <value>تنظیمات</value>
+    <value>تنظیمات کاربری</value>
   </data>
   <data name="FullScreen" xml:space="preserve">
     <value>تمام صفحه</value>
@@ -293,5 +293,8 @@
   </data>
   <data name="SendMessageDescription" xml:space="preserve">
     <value>پیام شما به چند طریق پیام کوتاه ، ایمیل ، و تلگرام برای کاربر انتخابی ارسال می گردد</value>
+  </data>
+  <data name="SiteSetting" xml:space="preserve">
+    <value>تنظیمات وب سایت</value>
   </data>
 </root>

@@ -29,6 +29,7 @@
                 x.For<IUserInClassService>().Use<UserInClassService>();
                 x.For<IFeedbackService>().Use<FeedbackService>();
                 x.For<IMessagingGatewayAdapter>().Use<MessagingGatewayAdapter>();
+                x.For<INotificationSettingService>().Use<NotificationSettingService>();
                 x.For<INotificationService>().Use<NotificationService>();
                 x.For<Lazy<INotificationService>>().Use(c => new Lazy<INotificationService>(c.GetInstance<NotificationService>));
             });

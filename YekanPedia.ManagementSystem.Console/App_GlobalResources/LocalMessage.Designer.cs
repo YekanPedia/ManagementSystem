@@ -511,7 +511,7 @@ namespace YekanPedia.ManagementSystem.Console.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to تنظیمات.
+        ///   Looks up a localized string similar to تنظیمات کاربری.
         /// </summary>
         public static string Setting {
             get {
@@ -534,6 +534,15 @@ namespace YekanPedia.ManagementSystem.Console.App_GlobalResources {
         public static string SignIn {
             get {
                 return ResourceManager.GetString("SignIn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تنظیمات وب سایت.
+        /// </summary>
+        public static string SiteSetting {
+            get {
+                return ResourceManager.GetString("SiteSetting", resourceCulture);
             }
         }
         

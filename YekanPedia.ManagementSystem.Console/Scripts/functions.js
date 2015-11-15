@@ -298,7 +298,7 @@
     });
 }; $().ready(function () {
      $('input[type=checkbox].checkbox').click(function () {
-        $("#" + $(this).attr('data-join')).val($(this)[0].checked);
+        $(this).parent().find("#" + $(this).attr('data-join')).val($(this)[0].checked);
     });     $('.NoWaves').removeClass('waves-effect');     $('.PersianCalendar').Zebra_DatePicker();     $(".form-control").keyup(function () { return false });     $('.thumbnail').click(function () {
         $('.thumbnail').removeClass('SelectDefaultAvatar');         $(this).addClass('SelectDefaultAvatar');         var img = $(this).find('img');         $('.img-responsive').attr('src', img.attr('src'));         $.ajax({
             type: "POST",             url: "/Account/ChangePicture",             data: "picture=" + img.attr('src') + "&userId=" + $("#UserId").val(),             dataType: "json",             success: function (response) {

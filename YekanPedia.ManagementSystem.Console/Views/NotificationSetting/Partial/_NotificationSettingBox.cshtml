@@ -1,0 +1,147 @@
+﻿@model NotificationSetting
+
+<div class="col-sm-6">
+    <div class="card ">
+        <div class="card-body">
+            <div class="row">
+                <div class="pmb-block m-b-10" id="notification_@Model.NotificationSettingId">
+                    <div class="pmbb-header m-b-20">
+                        <h5 class="p-r-10"><i class="zmdi zmdi-account m-l-5"></i>@Model.NotificationType.GetLocalizeDescription()</h5>
+                        <ul class="actions">
+                            <li class="dropdown">
+                                <a href="" data-toggle="dropdown" aria-expanded="false">
+                                    <i class="zmdi zmdi-more-vert"></i>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-left">
+                                    <li>
+                                        <a data-pmb-action="edit" href="">@LocalMessage.Edit</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pmbb-body p-l-30">
+                        <div class="pmbb-view">
+
+                            <dl class="dl-horizontal">
+                                <dt>@Html.DisplayNameFor(X => X.Sms)</dt>
+                                <dd id="Sms">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input disabled type="checkbox" class="view_@nameof(Model.Sms) checkbox" checked="@Model.Sms">
+                                            <i class="input-helper"></i>
+                                        </label>
+                                    </div>
+                                </dd>
+                            </dl>
+                            <dl class="dl-horizontal">
+                                <dt>@Html.DisplayNameFor(X => X.Email)</dt>
+                                <dd id="Email">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input disabled type="checkbox" class="view_@nameof(Model.Email) checkbox" checked="@Model.Email">
+                                            <i class="input-helper"></i>
+                                        </label>
+                                    </div>
+                                </dd>
+                            </dl>
+                            <dl class="dl-horizontal">
+                                <dt>@Html.DisplayNameFor(X => X.Telegram)</dt>
+                                <dd id="Telegram">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input disabled type="checkbox" class="view_@nameof(Model.Telegram) checkbox" checked="@Model.Telegram">
+                                            <i class="input-helper"></i>
+                                        </label>
+                                    </div>
+                                </dd>
+                            </dl>
+                            <dl class="dl-horizontal">
+                                <dt>@Html.DisplayNameFor(X => X.Website)</dt>
+                                <dd id="Website">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input disabled type="checkbox" class="view_@nameof(Model.Website) checkbox" checked="@Model.Website">
+                                            <i class="input-helper"></i>
+                                        </label>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="pmbb-edit">
+                            @using (Ajax.BeginForm(MVC.NotificationSetting.ActionNames.Edit, MVC.NotificationSetting.Name, null, new AjaxOptions()
+                            {
+                                HttpMethod = "POST",
+                                OnComplete =  $"onEditNotificationSettingComplete_{Model.NotificationSettingId}"
+                            }, new {  }))
+                            {
+                                @Html.HiddenFor(X => X.NotificationSettingId, new { @Value = Model.NotificationSettingId })
+                                @Html.HiddenFor(X => X.NotificationType, new { @Value = Model.NotificationType })
+                                <dl class="dl-horizontal m-b-10">
+                                    <dt class="p-t-10">@Html.DisplayNameFor(X => X.Sms)</dt>
+                                    <dd>
+                                        <div class="checkbox">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="hidden" value="@Model.Sms.ToString()" class="checkbox" id="@nameof(Model.Sms)" name="@nameof(Model.Sms)">
+                                                    <input type="checkbox" class="checkbox" checked="@Model.Sms" id="Edit_@nameof(Model.Sms)" data-join="@nameof(Model.Sms)">
+                                                    <i class="input-helper"></i>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </dd>
+                                </dl>
+                                <dl class="dl-horizontal m-b-5">
+                                    <dt class="p-t-10">@Html.DisplayNameFor(X => X.Email)</dt>
+                                    <dd>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="hidden" value="@Model.Email.ToString()" class="checkbox" id="@nameof(Model.Email)" name="@nameof(Model.Email)">
+                                                <input type="checkbox" class="checkbox" checked="@Model.Email" id="Edit_@nameof(Model.Email)" data-join="@nameof(Model.Email)">
+                                                <i class="input-helper"></i>
+                                            </label>
+                                        </div>
+                                    </dd>
+                                </dl>
+                                <dl class="dl-horizontal m-b-5">
+                                    <dt class="p-t-10">@Html.DisplayNameFor(X => X.Telegram)</dt>
+                                    <dd>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="hidden" value="@Model.Telegram.ToString()" class="checkbox" id="@nameof(Model.Telegram)" name="@nameof(Model.Telegram)">
+                                                <input type="checkbox" class="checkbox" checked="@Model.Telegram" id="Edit_@nameof(Model.Telegram)" data-join="@nameof(Model.Telegram)">
+                                                <i class="input-helper"></i>
+                                            </label>
+                                        </div>
+                                    </dd>
+                                </dl>
+                                <dl class="dl-horizontal m-b-10">
+                                    <dt class="p-t-10">@Html.DisplayNameFor(X => X.Website)</dt>
+                                    <dd>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="hidden" value="@Model.Website.ToString()" class="checkbox" id="@nameof(Model.Website)" name="@nameof(Model.Website)">
+                                                <input type="checkbox" class="checkbox" checked="@Model.Website" id="Edit_@nameof(Model.Website)" data-join="@nameof(Model.Website)">
+                                                <i class="input-helper"></i>
+                                            </label>
+                                        </div>
+                                    </dd>
+                                </dl>
+                                <div class=" text-left">
+                                    <button id="saveBasicInfoForm" class="btn btn-primary btn-sm waves-effect">
+                                        <i class="zmdi zmdi-check"></i>
+                                        @LocalMessage.Save
+                                    </button>
+                                    <button data-pmb-action="reset" class="btn btn-danger btn-sm waves-effect">
+                                        <i class="zmdi zmdi-arrow-forward"></i>
+                                        @LocalMessage.Cancel
+                                    </button>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

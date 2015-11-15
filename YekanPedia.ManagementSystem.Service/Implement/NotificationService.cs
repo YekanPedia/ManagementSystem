@@ -1,43 +1,33 @@
 ﻿namespace YekanPedia.ManagementSystem.Service.Implement
 {
+    using System;
     using System.Collections.Generic;
+    using InfraStructure;
     using Interfaces;
     using Domain.Entity;
-    using Data.Conext;
-    using System.Data.Entity;
-    using System.Linq;
-    using System;
-    using ExternalService.Interfaces;
-    using ExternalService.MessagingGateway;
-    using InfraStructure;
     using Properties;
+    using ExternalService.Interfaces;
+    using System.Data.Entity;
+    using Data.Conext;
+    using ExternalService.MessagingGateway;
 
     public class NotificationService : INotificationService
     {
         #region Constructur
         readonly IUnitOfWork _uow;
-        readonly IDbSet<Notification> _notification;
+        readonly IDbSet<WebSiteNotification> _websiteNotification;
         readonly IUserService _userService;
         readonly IMessagingGatewayAdapter _messagingGateway;
-        public NotificationService(IUnitOfWork uow, IUserService userService, IMessagingGatewayAdapter messagingGateway)
+        readonly INotificationSettingService _notificationSettingService;
+        public NotificationService(IUnitOfWork uow, IUserService userService, IMessagingGatewayAdapter messagingGateway, INotificationSettingService notificationSettingService)
         {
             _uow = uow;
-            _notification = uow.Set<Notification>();
+            _websiteNotification = uow.Set<WebSiteNotification>();
             _userService = userService;
             _messagingGateway = messagingGateway;
+            _notificationSettingService = notificationSettingService;
         }
         #endregion
-
-        public IEnumerable<Notification> GetAllNotification()
-        {
-            return _notification.AsNoTracking().ToList();
-        }
-
-        public Notification GetNotificationType(NotificationType type)
-        {
-            return _notification.Where(X => X.NotificationType == type).AsNoTracking().FirstOrDefault();
-        }
-
         public IServiceResults<bool> SendNotificationToUser(Guid userId, NotificationType notificationType, string message)
         {
             var user = _userService.FindUser(userId);
@@ -49,7 +39,7 @@
                     Result = false
                 };
 
-            var notification = GetNotificationType(notificationType);
+            var notification = _notificationSettingService.GetNotificationType(notificationType);
             var sms = new List<string>();
             var telegram = new List<string>();
             var email = new List<string>();
@@ -87,15 +77,14 @@
                 Result = true
             };
         }
-
         public IServiceResults<bool> SendNotificationToClass(Guid classId, NotificationType notificationType, string message)
         {
             throw new NotImplementedException();
         }
-
         public IServiceResults<bool> SendNotificationToBirthDateUser()
         {
             throw new NotImplementedException();
         }
+
     }
 }

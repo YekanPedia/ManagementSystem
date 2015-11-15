@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Entity\Feedback.cs" />
     <Compile Include="Entity\Tasks.cs" />
+    <Compile Include="Entity\WebSiteNotification.cs" />
     <Compile Include="Properties\DisplayError.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -58,7 +59,7 @@
     <Compile Include="Entity\Class.cs" />
     <Compile Include="Entity\ClassTime.cs" />
     <Compile Include="Entity\ClassType.cs" />
-    <Compile Include="Entity\Notification.cs" />
+    <Compile Include="Entity\NotificationSetting.cs" />
     <Compile Include="Entity\Course.cs" />
     <Compile Include="Entity\User.cs" />
     <Compile Include="Entity\UserInClass.cs" />

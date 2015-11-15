@@ -35,6 +35,7 @@ public static partial class MVC
     public static YekanPedia.ManagementSystem.Console.Controllers.ErrorController Error = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_ErrorController();
     public static YekanPedia.ManagementSystem.Console.Controllers.FeedbackController Feedback = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_FeedbackController();
     public static YekanPedia.ManagementSystem.Console.Controllers.NotificationController Notification = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_NotificationController();
+    public static YekanPedia.ManagementSystem.Console.Controllers.NotificationSettingController NotificationSetting = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_NotificationSettingController();
     public static YekanPedia.ManagementSystem.Console.Controllers.OAuthController OAuth = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_OAuthController();
     public static YekanPedia.ManagementSystem.Console.Controllers.SessionController Session = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_SessionController();
     public static YekanPedia.ManagementSystem.Console.Controllers.SettingController Setting = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_SettingController();
@@ -146,11 +147,14 @@ namespace Links
             public static readonly string BasicInfoController_min_js = Url("BasicInfoController.min.js");
             public static readonly string ClassController_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ClassController.min.js") ? Url("ClassController.min.js") : Url("ClassController.js");
             public static readonly string ClassController_min_js = Url("ClassController.min.js");
+            public static readonly string NotificationSettingController_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/NotificationSettingController.min.js") ? Url("NotificationSettingController.min.js") : Url("NotificationSettingController.js");
+            public static readonly string NotificationSettingController_min_js = Url("NotificationSettingController.min.js");
             public static readonly string OAuthController_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/OAuthController.min.js") ? Url("OAuthController.min.js") : Url("OAuthController.js");
             public static readonly string OAuthController_min_js = Url("OAuthController.min.js");
             public static readonly string UserController_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/UserController.min.js") ? Url("UserController.min.js") : Url("UserController.js");
             public static readonly string UserController_min_js = Url("UserController.min.js");
             public static readonly string UserInClassController_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/UserInClassController.min.js") ? Url("UserInClassController.min.js") : Url("UserInClassController.js");
+            public static readonly string UserInClassController_min_js = Url("UserInClassController.min.js");
         }
     
         public static readonly string functions_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/functions.min.js") ? Url("functions.min.js") : Url("functions.js");
@@ -481,6 +485,7 @@ namespace Links
                     public const string AccountController_js = "~/Scripts/Application/AccountController.js"; 
                     public const string BasicInfoController_js = "~/Scripts/Application/BasicInfoController.js"; 
                     public const string ClassController_js = "~/Scripts/Application/ClassController.js"; 
+                    public const string NotificationSettingController_js = "~/Scripts/Application/NotificationSettingController.js"; 
                     public const string OAuthController_js = "~/Scripts/Application/OAuthController.js"; 
                     public const string UserController_js = "~/Scripts/Application/UserController.js"; 
                     public const string UserInClassController_js = "~/Scripts/Application/UserInClassController.js"; 

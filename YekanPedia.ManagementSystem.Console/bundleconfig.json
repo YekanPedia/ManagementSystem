@@ -40,5 +40,23 @@
     "inputFiles": [
       "Scripts/JQuery/Bootstrap/bootstrap.js"
     ]
+  },
+  {
+    "outputFileName": "Scripts/Application/UserInClassController.js",
+    "inputFiles": [
+      "Scripts/Application/UserInClassController.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Application/NotificationController.js",
+    "inputFiles": [
+      "Scripts/Application/NotificationController.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Application/NotificationSettingController.js",
+    "inputFiles": [
+      "Scripts/Application/NotificationSettingController.js"
+    ]
   }
 ]

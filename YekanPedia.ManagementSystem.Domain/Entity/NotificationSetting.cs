@@ -6,11 +6,11 @@
     using Properties;
     using InfraStructure.Extension;
 
-    [Table("Notification", Schema = "Base")]
-    public class Notification
+    [Table("NotificationSetting", Schema = "Base")]
+    public class NotificationSetting
     {
         [Key]
-        public int NotificationId { get; set; }
+        public int NotificationSettingId { get; set; }
 
         [Display(ResourceType = typeof(DisplayNames), Name = nameof(NotificationType))]
         public NotificationType NotificationType { get; set; }
