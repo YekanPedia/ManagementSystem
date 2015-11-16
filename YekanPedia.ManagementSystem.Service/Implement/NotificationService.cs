@@ -41,7 +41,7 @@
 
             var notification = _notificationSettingService.GetNotificationType(notificationType);
             var sms = new List<string>();
-            var telegram = new List<string>();
+            var telegram = new List<int>();
             var email = new List<string>();
             var type = new NotificationKey();
             if (notification.Email)

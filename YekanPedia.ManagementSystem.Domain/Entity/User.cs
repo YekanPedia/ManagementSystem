@@ -109,9 +109,7 @@
 
         [Display(ResourceType = typeof(DisplayNames), Name = nameof(Telegram))]
         [ScaffoldColumn(false)]
-        [MaxLength(15, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
-        [StringLength(15, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
-        public string Telegram { get; set; }
+        public int Telegram { get; set; }
 
         [Display(ResourceType = typeof(DisplayNames), Name = nameof(AboutMe))]
         [MaxLength(200, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]

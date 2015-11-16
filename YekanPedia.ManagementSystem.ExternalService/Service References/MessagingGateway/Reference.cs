@@ -32,7 +32,7 @@ namespace YekanPedia.ManagementSystem.ExternalService.MessagingGateway {
         private System.Collections.Generic.List<string> SmsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<string> TelegramField;
+        private System.Collections.Generic.List<int> TelegramField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Collections.Generic.List<YekanPedia.ManagementSystem.ExternalService.MessagingGateway.NotificationKey> TypeField;
@@ -87,7 +87,7 @@ namespace YekanPedia.ManagementSystem.ExternalService.MessagingGateway {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<string> Telegram {
+        public System.Collections.Generic.List<int> Telegram {
             get {
                 return this.TelegramField;
             }
