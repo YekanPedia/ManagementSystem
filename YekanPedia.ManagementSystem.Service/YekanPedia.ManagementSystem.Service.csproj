@@ -69,6 +69,7 @@
     <Compile Include="Interfaces\ICourseService.cs" />
     <Compile Include="Interfaces\IFeedbackService.cs" />
     <Compile Include="Interfaces\INotificationService.cs" />
+    <Compile Include="Interfaces\INotificationSettingService.cs" />
     <Compile Include="Interfaces\ISessionService.cs" />
     <Compile Include="Interfaces\ITaskService.cs" />
     <Compile Include="Interfaces\IUserInClassService.cs" />
@@ -78,7 +79,6 @@
       <DependentUpon>BusinessMessage.resx</DependentUpon>
     </Compile>
     <Compile Include="Implement\UserService.cs" />
-    <Compile Include="Interfaces\INotificationSettingService.cs" />
     <Compile Include="Interfaces\IUserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
