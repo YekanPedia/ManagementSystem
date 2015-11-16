@@ -36,7 +36,7 @@ $().ready(function () {
     });
 
     $(document.body).on('click', ".sendPrivateMessageModal", function () {
-        alert();
+  
         $("#UserId_PrivateMessage").val($(this).attr('data-userId'));
     });
 
