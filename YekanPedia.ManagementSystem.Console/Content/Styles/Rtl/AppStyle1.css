@@ -804,15 +804,20 @@ th {
 }
 
 .removeTasks {
-    font-size: 17px;
+    font-size: 23px;
     color: #695F5F;
 }
 
     .removeTasks:hover {
-        font-size: 19px;
-        color: rgb(244, 67, 54);
+        font-size: 25px;
+        color: #009688;
+        cursor: pointer;
     }
 
 .dropdown-menu.dropdown-menu-lg {
     width: 450px;
+}
+
+.listview:not(.lv-lg):not(.lv-message) .lv-item {
+    padding: 20px 20px;
 }
