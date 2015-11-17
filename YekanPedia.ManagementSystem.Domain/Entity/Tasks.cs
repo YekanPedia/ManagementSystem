@@ -33,6 +33,8 @@
         public string Link { get; set; }
 
         public ProgressbarType ProgressbarType { get; set; }
+
+        public bool IsFinishable { get; set; }
     }
 
     public enum ProgressbarType

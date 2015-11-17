@@ -6,8 +6,9 @@
     using Properties;
     using InfraStructure.Validation;
     using InfraStructure.Date;
+    using System.Collections.Generic;
 
-    [Table("ClassSession", Schema = "dbo")]
+    [Table(nameof(ClassSession), Schema = "dbo")]
     public class ClassSession
     {
         [Key]
@@ -40,9 +41,8 @@
         [Display(ResourceType = typeof(DisplayNames), Name = nameof(IsCanceled))]
         public bool IsCanceled { get; set; }
 
-        public void Rebind()
-        {
-            ClassSessionDateMi = PersianDateTime.Parse(ClassSessionDateSh).ToDateTime();
-        }
+        public void Rebind() => ClassSessionDateMi = PersianDateTime.Parse(ClassSessionDateSh).ToDateTime();
+
+        public virtual ICollection<SessionRequest> SessionRequest { get; set; }
     }
 }

@@ -385,6 +385,15 @@ namespace YekanPedia.ManagementSystem.Domain.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to تاریخ درخواست.
+        /// </summary>
+        public static string RquestDateSh {
+            get {
+                return ResourceManager.GetString("RquestDateSh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to تعداد جلسات.
         /// </summary>
         public static string SessionCount {

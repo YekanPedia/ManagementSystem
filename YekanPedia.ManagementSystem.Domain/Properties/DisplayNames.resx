@@ -225,6 +225,9 @@
   <data name="RegisterDate" xml:space="preserve">
     <value>تاریخ ثبت نام</value>
   </data>
+  <data name="RquestDateSh" xml:space="preserve">
+    <value>تاریخ درخواست</value>
+  </data>
   <data name="SessionCount" xml:space="preserve">
     <value>تعداد جلسات</value>
   </data>

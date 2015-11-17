@@ -136,5 +136,6 @@
         [Display(ResourceType = typeof(DisplayNames), Name = nameof(Class))]
         public virtual ICollection<Class> Class { get; set; }
         public virtual ICollection<Tasks> Tasks { get; set; }
+        public virtual ICollection<SessionRequest> SessionRequest { get; set; }
     }
 }

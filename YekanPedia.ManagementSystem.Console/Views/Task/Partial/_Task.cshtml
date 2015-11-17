@@ -1,6 +1,5 @@
 ﻿@model IEnumerable<Tasks>
 @using YekanPedia.ManagementSystem.Domain.Entity
-@using YekanPedia.ManagementSystem.InfraStructure.Extension
 <li class="dropdown hidden-xs">
     <a data-toggle="dropdown" class="tm-task" href="">
         <i class="tmn-counts">@Model.Count()</i>
@@ -17,8 +16,18 @@
                     <a href="@item.Link" class="lv-item">
                         <div class="lv-title m-b-5">
                             @item.Subject
+                            @if (item.IsFinishable)
+                            {
+
+
+                                <div class="pull-left">
+
+                                    <i class="zmdi zmdi-delete  removeTasks"></i>
+
+                                </div>
+                            }
                         </div>
-                        <div class="progress" >
+                        <div class="progress">
                             <div class="@item.ProgressbarType.GetDescription()"
                                  role="progressbar" aria-valuenow="@item.Progress"
                                  aria-valuemin="0" aria-valuemax="100"
