@@ -42,6 +42,7 @@
                                  .Include(X => X.Course)
                                  .Include(X => X.User)
                                  .Include(X => X.ClassTime)
+                                 .Include(X=>X.ClassSession)
                                  .AsNoTracking()
                                  .OrderByDescending(X => X.StartDateMi)
                                  .ToList();
@@ -74,6 +75,15 @@
                 result.FinishDateMi = DateTime.Now.AddDays(7);
                 _uow.SaveChanges();
             }
+        }
+
+        public Class FindFullClassData(Guid classId)
+        {
+            return _class.Where(X => X.ClassId == classId)
+                                 .Include(X => X.Course)
+                                 .Include(X => X.User)
+                                 .AsNoTracking()
+                                 .FirstOrDefault();
         }
     }
 }

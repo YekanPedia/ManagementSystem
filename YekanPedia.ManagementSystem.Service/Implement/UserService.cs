@@ -246,10 +246,13 @@
         }
         public IServiceResults<IEnumerable<User>> GetUsers(User predicate, Guid? classId)
         {
-            var model = _user.Where(X => (predicate.FullName == null || X.FullName.Contains(predicate.FullName)) &&
-                 (predicate.Mobile == null || X.Mobile.Contains(predicate.Mobile)) && X.IsActive == predicate.IsActive)
-                .OrderByDescending(X => X.RegisterDate).AsQueryable();
-
+            var model = _user.AsQueryable();
+            if (predicate != null)
+            {
+                  model = _user.Where(X => (predicate.FullName == null || X.FullName.Contains(predicate.FullName)) &&
+                                (predicate.Mobile == null || X.Mobile.Contains(predicate.Mobile)) && X.IsActive == predicate.IsActive)
+                               .OrderByDescending(X => X.RegisterDate).AsQueryable();
+            }
             if (classId != null)
             {
                 model = (from o in model

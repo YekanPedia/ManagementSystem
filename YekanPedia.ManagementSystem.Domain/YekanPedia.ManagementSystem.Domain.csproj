@@ -43,7 +43,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entity\Feedback.cs" />
+    <Compile Include="Entity\SessionMaterial.cs" />
     <Compile Include="Entity\SessionRequest.cs" />
+    <Compile Include="Entity\Setting.cs" />
     <Compile Include="Entity\Tasks.cs" />
     <Compile Include="Entity\WebSiteNotification.cs" />
     <Compile Include="Properties\DisplayError.Designer.cs">

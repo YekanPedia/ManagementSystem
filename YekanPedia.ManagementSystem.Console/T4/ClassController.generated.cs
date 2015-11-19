@@ -209,6 +209,7 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
                     public readonly string _HeaderClassTimeGrid = "_HeaderClassTimeGrid";
                     public readonly string _ListClass = "_ListClass";
                     public readonly string _ListClassTime = "_ListClassTime";
+                    public readonly string _NotificationModal = "_NotificationModal";
                 }
                 public readonly string _CreateClass = "~/Views/Class/Partial/_CreateClass.cshtml";
                 public readonly string _CreateClassTime = "~/Views/Class/Partial/_CreateClassTime.cshtml";
@@ -216,6 +217,7 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
                 public readonly string _HeaderClassTimeGrid = "~/Views/Class/Partial/_HeaderClassTimeGrid.cshtml";
                 public readonly string _ListClass = "~/Views/Class/Partial/_ListClass.cshtml";
                 public readonly string _ListClassTime = "~/Views/Class/Partial/_ListClassTime.cshtml";
+                public readonly string _NotificationModal = "~/Views/Class/Partial/_NotificationModal.cshtml";
             }
         }
     }

@@ -58,15 +58,51 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
 
         [NonAction]
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.PartialViewResult SessionBlock()
+        {
+            return new T4MVC_System_Web_Mvc_PartialViewResult(Area, Name, ActionNames.SessionBlock);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ViewResult Block()
+        {
+            return new T4MVC_System_Web_Mvc_ViewResult(Area, Name, ActionNames.Block);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public virtual System.Web.Mvc.PartialViewResult SessionList()
         {
             return new T4MVC_System_Web_Mvc_PartialViewResult(Area, Name, ActionNames.SessionList);
         }
         [NonAction]
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public virtual System.Web.Mvc.ViewResult List()
+        public virtual System.Web.Mvc.ViewResult Add()
         {
-            return new T4MVC_System_Web_Mvc_ViewResult(Area, Name, ActionNames.List);
+            return new T4MVC_System_Web_Mvc_ViewResult(Area, Name, ActionNames.Add);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ViewResult Edit()
+        {
+            return new T4MVC_System_Web_Mvc_ViewResult(Area, Name, ActionNames.Edit);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.JsonResult Delete()
+        {
+            return new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.Delete);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.JsonResult SendNotification()
+        {
+            return new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.SendNotification);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.JsonResult RebindFiles()
+        {
+            return new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.RebindFiles);
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -84,18 +120,46 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNamesClass
         {
+            public readonly string SessionBlock = "SessionBlock";
+            public readonly string Block = "Block";
             public readonly string SessionList = "SessionList";
-            public readonly string List = "List";
+            public readonly string Add = "Add";
+            public readonly string Edit = "Edit";
+            public readonly string Delete = "Delete";
+            public readonly string SendNotification = "SendNotification";
+            public readonly string RebindFiles = "RebindFiles";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants
         {
+            public const string SessionBlock = "SessionBlock";
+            public const string Block = "Block";
             public const string SessionList = "SessionList";
-            public const string List = "List";
+            public const string Add = "Add";
+            public const string Edit = "Edit";
+            public const string Delete = "Delete";
+            public const string SendNotification = "SendNotification";
+            public const string RebindFiles = "RebindFiles";
         }
 
 
+        static readonly ActionParamsClass_SessionBlock s_params_SessionBlock = new ActionParamsClass_SessionBlock();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_SessionBlock SessionBlockParams { get { return s_params_SessionBlock; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_SessionBlock
+        {
+            public readonly string classId = "classId";
+        }
+        static readonly ActionParamsClass_Block s_params_Block = new ActionParamsClass_Block();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_Block BlockParams { get { return s_params_Block; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_Block
+        {
+            public readonly string classId = "classId";
+        }
         static readonly ActionParamsClass_SessionList s_params_SessionList = new ActionParamsClass_SessionList();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ActionParamsClass_SessionList SessionListParams { get { return s_params_SessionList; } }
@@ -104,13 +168,47 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         {
             public readonly string classId = "classId";
         }
-        static readonly ActionParamsClass_List s_params_List = new ActionParamsClass_List();
+        static readonly ActionParamsClass_Add s_params_Add = new ActionParamsClass_Add();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public ActionParamsClass_List ListParams { get { return s_params_List; } }
+        public ActionParamsClass_Add AddParams { get { return s_params_Add; } }
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public class ActionParamsClass_List
+        public class ActionParamsClass_Add
         {
             public readonly string classId = "classId";
+            public readonly string model = "model";
+        }
+        static readonly ActionParamsClass_Edit s_params_Edit = new ActionParamsClass_Edit();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_Edit EditParams { get { return s_params_Edit; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_Edit
+        {
+            public readonly string sessionId = "sessionId";
+            public readonly string model = "model";
+        }
+        static readonly ActionParamsClass_Delete s_params_Delete = new ActionParamsClass_Delete();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_Delete DeleteParams { get { return s_params_Delete; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_Delete
+        {
+            public readonly string sessionId = "sessionId";
+        }
+        static readonly ActionParamsClass_SendNotification s_params_SendNotification = new ActionParamsClass_SendNotification();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_SendNotification SendNotificationParams { get { return s_params_SendNotification; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_SendNotification
+        {
+            public readonly string sessionId = "sessionId";
+        }
+        static readonly ActionParamsClass_RebindFiles s_params_RebindFiles = new ActionParamsClass_RebindFiles();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_RebindFiles RebindFilesParams { get { return s_params_RebindFiles; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_RebindFiles
+        {
+            public readonly string sessionId = "sessionId";
         }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -122,9 +220,13 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
-                public readonly string List = "List";
+                public readonly string Add = "Add";
+                public readonly string Block = "Block";
+                public readonly string Edit = "Edit";
             }
-            public readonly string List = "~/Views/Session/List.cshtml";
+            public readonly string Add = "~/Views/Session/Add.cshtml";
+            public readonly string Block = "~/Views/Session/Block.cshtml";
+            public readonly string Edit = "~/Views/Session/Edit.cshtml";
             static readonly _PartialClass s_Partial = new _PartialClass();
             public _PartialClass Partial { get { return s_Partial; } }
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -134,8 +236,14 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
                 public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
                 public class _ViewNamesClass
                 {
+                    public readonly string _CreateSession = "_CreateSession";
+                    public readonly string _HeaderSessionGrid = "_HeaderSessionGrid";
+                    public readonly string _SessionBlock = "_SessionBlock";
                     public readonly string _SessionList = "_SessionList";
                 }
+                public readonly string _CreateSession = "~/Views/Session/Partial/_CreateSession.cshtml";
+                public readonly string _HeaderSessionGrid = "~/Views/Session/Partial/_HeaderSessionGrid.cshtml";
+                public readonly string _SessionBlock = "~/Views/Session/Partial/_SessionBlock.cshtml";
                 public readonly string _SessionList = "~/Views/Session/Partial/_SessionList.cshtml";
             }
         }
@@ -145,6 +253,30 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
     public partial class T4MVC_SessionController : YekanPedia.ManagementSystem.Console.Controllers.SessionController
     {
         public T4MVC_SessionController() : base(Dummy.Instance) { }
+
+        [NonAction]
+        partial void SessionBlockOverride(T4MVC_System_Web_Mvc_PartialViewResult callInfo, System.Guid classId);
+
+        [NonAction]
+        public override System.Web.Mvc.PartialViewResult SessionBlock(System.Guid classId)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_PartialViewResult(Area, Name, ActionNames.SessionBlock);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "classId", classId);
+            SessionBlockOverride(callInfo, classId);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void BlockOverride(T4MVC_System_Web_Mvc_ViewResult callInfo, System.Guid classId);
+
+        [NonAction]
+        public override System.Web.Mvc.ViewResult Block(System.Guid classId)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ViewResult(Area, Name, ActionNames.Block);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "classId", classId);
+            BlockOverride(callInfo, classId);
+            return callInfo;
+        }
 
         [NonAction]
         partial void SessionListOverride(T4MVC_System_Web_Mvc_PartialViewResult callInfo, System.Guid classId);
@@ -159,14 +291,86 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         }
 
         [NonAction]
-        partial void ListOverride(T4MVC_System_Web_Mvc_ViewResult callInfo, System.Guid classId);
+        partial void AddOverride(T4MVC_System_Web_Mvc_ViewResult callInfo, System.Guid classId);
 
         [NonAction]
-        public override System.Web.Mvc.ViewResult List(System.Guid classId)
+        public override System.Web.Mvc.ViewResult Add(System.Guid classId)
         {
-            var callInfo = new T4MVC_System_Web_Mvc_ViewResult(Area, Name, ActionNames.List);
+            var callInfo = new T4MVC_System_Web_Mvc_ViewResult(Area, Name, ActionNames.Add);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "classId", classId);
-            ListOverride(callInfo, classId);
+            AddOverride(callInfo, classId);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void AddOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, YekanPedia.ManagementSystem.Domain.Entity.ClassSession model);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult Add(YekanPedia.ManagementSystem.Domain.Entity.ClassSession model)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Add);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
+            AddOverride(callInfo, model);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void EditOverride(T4MVC_System_Web_Mvc_ViewResult callInfo, System.Guid sessionId);
+
+        [NonAction]
+        public override System.Web.Mvc.ViewResult Edit(System.Guid sessionId)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ViewResult(Area, Name, ActionNames.Edit);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "sessionId", sessionId);
+            EditOverride(callInfo, sessionId);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void EditOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, YekanPedia.ManagementSystem.Domain.Entity.ClassSession model);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult Edit(YekanPedia.ManagementSystem.Domain.Entity.ClassSession model)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Edit);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
+            EditOverride(callInfo, model);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void DeleteOverride(T4MVC_System_Web_Mvc_JsonResult callInfo, System.Guid sessionId);
+
+        [NonAction]
+        public override System.Web.Mvc.JsonResult Delete(System.Guid sessionId)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.Delete);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "sessionId", sessionId);
+            DeleteOverride(callInfo, sessionId);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void SendNotificationOverride(T4MVC_System_Web_Mvc_JsonResult callInfo, System.Guid sessionId);
+
+        [NonAction]
+        public override System.Web.Mvc.JsonResult SendNotification(System.Guid sessionId)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.SendNotification);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "sessionId", sessionId);
+            SendNotificationOverride(callInfo, sessionId);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void RebindFilesOverride(T4MVC_System_Web_Mvc_JsonResult callInfo, System.Guid sessionId);
+
+        [NonAction]
+        public override System.Web.Mvc.JsonResult RebindFiles(System.Guid sessionId)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.RebindFiles);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "sessionId", sessionId);
+            RebindFilesOverride(callInfo, sessionId);
             return callInfo;
         }
 

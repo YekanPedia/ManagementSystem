@@ -42,9 +42,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="implement\FilesProxyAdapter.cs" />
     <Compile Include="implement\MessagingGatewayAdapter.cs" />
+    <Compile Include="Interfaces\IFilesProxyAdapter.cs" />
     <Compile Include="Interfaces\IMessagingGatewayAdapter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\FilesProxy\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\MessagingGateway\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -56,6 +63,19 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Service References\FilesProxy\FilesProxy.wsdl" />
+    <None Include="Service References\FilesProxy\FilesProxy.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FilesProxy\FilesProxy1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FilesProxy\FilesProxy2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FilesProxy\YekanPedia.ManagementSystem.ExternalService.FilesProxy.FileInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\MessagingGateway\MessagingGateway.wsdl" />
     <None Include="Service References\MessagingGateway\MessagingGateway.xsd">
       <SubType>Designer</SubType>
@@ -71,6 +91,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Service References\FilesProxy\" />
     <WCFMetadataStorage Include="Service References\MessagingGateway\" />
   </ItemGroup>
   <ItemGroup>
@@ -88,7 +109,21 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Service References\FilesProxy\FilesProxy.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FilesProxy\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FilesProxy\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FilesProxy\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -10,6 +10,7 @@
         IServiceResults<Guid> AddClass(Class model);
         IServiceResults<bool> EditClass(Class model);
         Class FindClass(Guid classId);
+        Class FindFullClassData(Guid classId);
         IEnumerable<Class> GetClass();
         void FinishedClass(Guid classId);
     }

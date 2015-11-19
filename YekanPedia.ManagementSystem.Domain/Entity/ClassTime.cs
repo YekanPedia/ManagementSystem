@@ -36,6 +36,7 @@
         [MaxLength(6, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
         [RegularExpression("^(0[0-9]|1[0-9]|2[0-3]):([0-5][0-9])", ErrorMessageResourceName = nameof(DisplayError.Time), ErrorMessageResourceType = typeof(DisplayError))]
         public string TimeTo { get; set; }
+        public override string ToString() => $"{DayFa} : {TimeTo}-{TimeFrom}";
     }
 
     public enum Day

@@ -97,6 +97,15 @@ namespace YekanPedia.ManagementSystem.Service.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ارسال اعلانات با خطا مواجه شد.
+        /// </summary>
+        internal static string NotificationNotSend {
+            get {
+                return ResourceManager.GetString("NotificationNotSend", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to اطلاعات ارسالی قبلا ثبت شده است.
         /// </summary>
         internal static string RecordExist {

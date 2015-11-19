@@ -41,8 +41,9 @@
         [Display(ResourceType = typeof(DisplayNames), Name = nameof(IsCanceled))]
         public bool IsCanceled { get; set; }
 
-        public void Rebind() => ClassSessionDateMi = PersianDateTime.Parse(ClassSessionDateSh).ToDateTime();
+        public void ReBind() => ClassSessionDateMi = PersianDateTime.Parse(ClassSessionDateSh).ToDateTime();
 
         public virtual ICollection<SessionRequest> SessionRequest { get; set; }
+        public virtual ICollection<SessionMaterial> SessionMaterial { get; set; }
     }
 }

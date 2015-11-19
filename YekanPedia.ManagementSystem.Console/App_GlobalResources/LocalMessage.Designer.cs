@@ -358,6 +358,15 @@ namespace YekanPedia.ManagementSystem.Console.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to تعداد فایل ها.
+        /// </summary>
+        public static string FilesCount {
+            get {
+                return ResourceManager.GetString("FilesCount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to نام.
         /// </summary>
         public static string FirstName {
@@ -417,6 +426,15 @@ namespace YekanPedia.ManagementSystem.Console.App_GlobalResources {
         public static string Profile {
             get {
                 return ResourceManager.GetString("Profile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to بروز رسانی فایل ها.
+        /// </summary>
+        public static string RebindFile {
+            get {
+                return ResourceManager.GetString("RebindFile", resourceCulture);
             }
         }
         
@@ -507,6 +525,51 @@ namespace YekanPedia.ManagementSystem.Console.App_GlobalResources {
         public static string SendMessageDescription {
             get {
                 return ResourceManager.GetString("SendMessageDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ارسال ناتیفیکیشن به کاربران.
+        /// </summary>
+        public static string SendNotification {
+            get {
+                return ResourceManager.GetString("SendNotification", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to آیا با ارسال ناتیفیکیشن برای کلاس مربوطه موافق هستید ؟.
+        /// </summary>
+        public static string SendNotificationConfirm {
+            get {
+                return ResourceManager.GetString("SendNotificationConfirm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to جلسه.
+        /// </summary>
+        public static string Session {
+            get {
+                return ResourceManager.GetString("Session", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to مدیریت جلسات.
+        /// </summary>
+        public static string SessionManagement {
+            get {
+                return ResourceManager.GetString("SessionManagement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to درخواست بارگذاری فایل.
+        /// </summary>
+        public static string SessionMaterialRequest {
+            get {
+                return ResourceManager.GetString("SessionMaterialRequest", resourceCulture);
             }
         }
         

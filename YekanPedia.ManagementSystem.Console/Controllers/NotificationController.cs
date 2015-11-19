@@ -20,5 +20,11 @@
         {
             return Json(_notificationService.SendNotificationToUser(userId, NotificationType.PrivateMessage, message));
         }
+
+        [HttpPost]
+        public virtual JsonResult SendToClass(Guid classId, string message)
+        {
+            return Json(_notificationService.SendPrivateNotificationToClass(classId, NotificationType.PrivateMessage, message));
+        }
     }
 }

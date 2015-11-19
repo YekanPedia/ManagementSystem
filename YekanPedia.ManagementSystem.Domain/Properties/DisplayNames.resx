@@ -135,8 +135,14 @@
   <data name="ClassInformaion" xml:space="preserve">
     <value>اطلاعات کلاس</value>
   </data>
+  <data name="ClassSession" xml:space="preserve">
+    <value>جلسات برگزار شده</value>
+  </data>
   <data name="ClassSessionDateSh" xml:space="preserve">
     <value>تاریخ  برگذاری جلسه</value>
+  </data>
+  <data name="ClassTime" xml:space="preserve">
+    <value>زمان کلاس</value>
   </data>
   <data name="ClassTypeId" xml:space="preserve">
     <value>نوع کلاس</value>

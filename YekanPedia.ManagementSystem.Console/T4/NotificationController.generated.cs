@@ -62,6 +62,12 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         {
             return new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.SendToUser);
         }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.JsonResult SendToClass()
+        {
+            return new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.SendToClass);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public NotificationController Actions { get { return MVC.Notification; } }
@@ -79,12 +85,14 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         public class ActionNamesClass
         {
             public readonly string SendToUser = "SendToUser";
+            public readonly string SendToClass = "SendToClass";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants
         {
             public const string SendToUser = "SendToUser";
+            public const string SendToClass = "SendToClass";
         }
 
 
@@ -95,6 +103,15 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         public class ActionParamsClass_SendToUser
         {
             public readonly string userId = "userId";
+            public readonly string message = "message";
+        }
+        static readonly ActionParamsClass_SendToClass s_params_SendToClass = new ActionParamsClass_SendToClass();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_SendToClass SendToClassParams { get { return s_params_SendToClass; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_SendToClass
+        {
+            public readonly string classId = "classId";
             public readonly string message = "message";
         }
         static readonly ViewsClass s_views = new ViewsClass();
@@ -126,6 +143,19 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "userId", userId);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "message", message);
             SendToUserOverride(callInfo, userId, message);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void SendToClassOverride(T4MVC_System_Web_Mvc_JsonResult callInfo, System.Guid classId, string message);
+
+        [NonAction]
+        public override System.Web.Mvc.JsonResult SendToClass(System.Guid classId, string message)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.SendToClass);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "classId", classId);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "message", message);
+            SendToClassOverride(callInfo, classId, message);
             return callInfo;
         }
 

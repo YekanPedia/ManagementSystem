@@ -13,7 +13,7 @@
             /// <summary>
             /// باندل تمامیه اسکریپت ها
             /// </summary>
-            public static readonly string CoreScripts = "~/Scripts/js/test";
+            public static readonly string CoreScripts = "~/Scripts/js";
             public static readonly string LoginScripts = "~/LoginScripts/js";
             public static readonly string BasicInfoScripts = "~/BasicInfoScripts/js";
             public static readonly string FullCalendarScripts = "~/FullCalendarScripts/js";

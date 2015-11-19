@@ -7,18 +7,18 @@
     /// </summary>
     public class PersianDateTime
     {
-        private readonly static PersianCalendar _persianCalendar = new PersianCalendar();
-        private readonly static string[] _dayNames = new string[] { "شنبه", "یکشنبه", "دوشنبه", "سه شنبه", "چهارشنبه", "پنج شنبه", "جمعه" };
-        private readonly static string[] _monthNames = new string[] { "فروردین", "اردیبهشت", "خرداد", "تیر", "مرداد", "شهریور", "مهر", "آبان", "آذر", "دی", "بهمن", "اسفند" };
+        readonly static PersianCalendar _persianCalendar = new PersianCalendar();
+        readonly static string[] _dayNames = { "شنبه", "یکشنبه", "دوشنبه", "سه شنبه", "چهارشنبه", "پنج شنبه", "جمعه" };
+        readonly static string[] _monthNames = { "فروردین", "اردیبهشت", "خرداد", "تیر", "مرداد", "شهریور", "مهر", "آبان", "آذر", "دی", "بهمن", "اسفند" };
 
-        private static string AM = "ق.ظ";
-        private static string PM = "ب.ظ";
+        static string AM = "ق.ظ";
+        static string PM = "ب.ظ";
 
-        private static PersianDateTimeMode Mode = PersianDateTimeMode.UtcOffset;
-        private static TimeSpan DaylightSavingTimeStart = TimeSpan.FromDays(1);
-        private static TimeSpan DaylightSavingTimeEnd = TimeSpan.FromDays(185);
-        private static TimeSpan DaylightSavingTime = TimeSpan.FromHours(1);
-        private static TimeSpan OffsetFromUtc = new TimeSpan(3, 30, 0);
+        static PersianDateTimeMode Mode = PersianDateTimeMode.UtcOffset;
+        static TimeSpan DaylightSavingTimeStart = TimeSpan.FromDays(1);
+        static TimeSpan DaylightSavingTimeEnd = TimeSpan.FromDays(185);
+        static TimeSpan DaylightSavingTime = TimeSpan.FromHours(1);
+        static TimeSpan OffsetFromUtc = new TimeSpan(3, 30, 0);
 
         /// <summary>
         /// System.TimeZoneInfo دریافت تایم زون ایران و قرار دادن آن در آبجکت

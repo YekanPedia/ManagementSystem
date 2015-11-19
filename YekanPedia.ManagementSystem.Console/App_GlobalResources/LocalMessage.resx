@@ -297,4 +297,25 @@
   <data name="SiteSetting" xml:space="preserve">
     <value>تنظیمات وب سایت</value>
   </data>
+  <data name="SessionManagement" xml:space="preserve">
+    <value>مدیریت جلسات</value>
+  </data>
+  <data name="FilesCount" xml:space="preserve">
+    <value>تعداد فایل ها</value>
+  </data>
+  <data name="SessionMaterialRequest" xml:space="preserve">
+    <value>درخواست بارگذاری فایل</value>
+  </data>
+  <data name="SendNotification" xml:space="preserve">
+    <value>ارسال ناتیفیکیشن به کاربران</value>
+  </data>
+  <data name="RebindFile" xml:space="preserve">
+    <value>بروز رسانی فایل ها</value>
+  </data>
+  <data name="SendNotificationConfirm" xml:space="preserve">
+    <value>آیا با ارسال ناتیفیکیشن برای کلاس مربوطه موافق هستید ؟</value>
+  </data>
+  <data name="Session" xml:space="preserve">
+    <value>جلسه</value>
+  </data>
 </root>

@@ -115,11 +115,29 @@ namespace YekanPedia.ManagementSystem.Domain.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to جلسات برگزار شده.
+        /// </summary>
+        public static string ClassSession {
+            get {
+                return ResourceManager.GetString("ClassSession", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to تاریخ  برگذاری جلسه.
         /// </summary>
         public static string ClassSessionDateSh {
             get {
                 return ResourceManager.GetString("ClassSessionDateSh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to زمان کلاس.
+        /// </summary>
+        public static string ClassTime {
+            get {
+                return ResourceManager.GetString("ClassTime", resourceCulture);
             }
         }
         

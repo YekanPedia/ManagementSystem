@@ -821,3 +821,10 @@ th {
 .listview:not(.lv-lg):not(.lv-message) .lv-item {
     padding: 20px 20px;
 }
+
+.sweet-alert .icon.info::after {
+    margin-right: -4px;
+}
+.sweet-alert h2 {
+    font-size: 13px;
+}

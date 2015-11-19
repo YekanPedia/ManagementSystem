@@ -299,7 +299,13 @@
     <Content Include="Content\Images\Background\profile-menu.jpg" />
     <Content Include="Content\Images\Background\profile-widget.jpg" />
     <Content Include="Content\Images\Icon\notifications.png" />
-    <Content Include="Content\Images\Logo\Logo.png" />
+    <Content Include="Content\Images\Logo\log100.png" />
+    <Content Include="Content\Images\Logo\log128.png" />
+    <Content Include="Content\Images\Logo\log256.png" />
+    <Content Include="Content\Images\Logo\log32.png" />
+    <Content Include="Content\Images\Logo\log48.png" />
+    <Content Include="Content\Images\Logo\log512.png" />
+    <Content Include="Content\Images\Logo\log64.png" />
     <Content Include="Content\Images\Menu\ellipsis%402x.png" />
     <Content Include="Content\Images\Menu\ellipsis.png" />
     <Content Include="Content\Images\Menu\menu-2%402x-rtl.png" />
@@ -351,6 +357,10 @@
     <Content Include="Scripts\Application\OAuthController.js" />
     <Content Include="Scripts\Application\OAuthController.min.js">
       <DependentUpon>OAuthController.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Application\SessionController.js" />
+    <Content Include="Scripts\Application\SessionController.min.js">
+      <DependentUpon>SessionController.js</DependentUpon>
     </Content>
     <Content Include="Scripts\Application\UserController.js" />
     <Content Include="Scripts\Application\UserController.min.js">
@@ -409,7 +419,7 @@
     <Content Include="Views\Dashboard\Partial\_Menu.cshtml" />
     <Content Include="Views\NotificationSetting\Partial\_AllNotificationSetting.cshtml" />
     <Content Include="Views\OAuth\Partial\_Login.cshtml" />
-    <Content Include="Views\Session\List.cshtml" />
+    <Content Include="Views\Session\Block.cshtml" />
     <Content Include="Views\Task\Partial\_Task.cshtml" />
     <Content Include="Views\User\Partial\_List.cshtml" />
     <Content Include="Web.config" />
@@ -450,7 +460,7 @@
     <Content Include="Views\User\Partial\_HeaderUserGrid.cshtml" />
     <Content Include="Views\User\Manage.cshtml" />
     <Content Include="Views\User\Partial\_SearchBox.cshtml" />
-    <Content Include="Views\Session\Partial\_SessionList.cshtml" />
+    <Content Include="Views\Session\Partial\_SessionBlock.cshtml" />
     <Content Include="Views\UserInClass\Add.cshtml" />
     <Content Include="Views\Account\Partial\_ProfileWidget.cshtml" />
     <Content Include="Views\UserInClass\Partial\_Create.cshtml" />
@@ -460,6 +470,12 @@
     <Content Include="Views\OAuth\Partial\_RecoveryComplete.cshtml" />
     <Content Include="Views\Setting\Manage.cshtml" />
     <Content Include="Views\NotificationSetting\Partial\_NotificationSettingBox.cshtml" />
+    <Content Include="Views\Session\Partial\_CreateSession.cshtml" />
+    <Content Include="Views\Session\Add.cshtml" />
+    <Content Include="Views\Session\Partial\_HeaderSessionGrid.cshtml" />
+    <Content Include="Views\Session\Partial\_SessionList.cshtml" />
+    <Content Include="Views\Session\Edit.cshtml" />
+    <Content Include="Views\Class\Partial\_NotificationModal.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="7baeb095-fcd6-45a5-9f12-9047693513dd" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:10702/Services/FilesProxy.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="FilesProxy.wsdl" MetadataType="Wsdl" ID="ec62220a-c8c6-4cfc-84e5-e5021733f3c7" SourceId="1" SourceUrl="http://localhost:10702/Services/FilesProxy.svc?wsdl" />
+    <MetadataFile FileName="FilesProxy.xsd" MetadataType="Schema" ID="0adb3bdb-7ad3-42e3-9946-f561a65d6e4f" SourceId="1" SourceUrl="http://localhost:10702/Services/FilesProxy.svc?xsd=xsd1" />
+    <MetadataFile FileName="FilesProxy1.xsd" MetadataType="Schema" ID="cdc67bf2-d2eb-4d28-a221-8c3e859b7575" SourceId="1" SourceUrl="http://localhost:10702/Services/FilesProxy.svc?xsd=xsd2" />
+    <MetadataFile FileName="FilesProxy2.xsd" MetadataType="Schema" ID="9fac3aaf-ae8e-4bf7-aacc-b1b263fd4a8a" SourceId="1" SourceUrl="http://localhost:10702/Services/FilesProxy.svc?xsd=xsd0" />
+    <MetadataFile FileName="FilesProxy.disco" MetadataType="Disco" ID="6e050ab7-eb01-46dd-9447-3225ff78b4ca" SourceId="1" SourceUrl="http://localhost:10702/Services/FilesProxy.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

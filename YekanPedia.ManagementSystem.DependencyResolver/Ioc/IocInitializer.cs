@@ -24,6 +24,8 @@
                 x.For<IClassTypeService>().Use<ClassTypeService>();
                 x.For<ICourseService>().Use<CourseService>();
                 x.For<IClassService>().Use<ClassService>();
+                x.For<Lazy<IClassService>>().Use(c => new Lazy<IClassService>(c.GetInstance<ClassService>));
+
                 x.For<IClassTimeService>().Use<ClassTimeService>();
                 x.For<ISessionService>().Use<SessionService>();
                 x.For<IUserInClassService>().Use<UserInClassService>();

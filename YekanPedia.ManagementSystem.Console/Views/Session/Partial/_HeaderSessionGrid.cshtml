@@ -1,0 +1,27 @@
+﻿@model ClassSession
+@{ Layout = null;}
+<thead>
+    <tr>
+        <th data-column-id="@nameof(Model.Subject)">
+            @Html.DisplayNameFor(X => X.Subject)
+        </th>
+        <th data-column-id="@nameof(Model.Description)">
+            @Html.DisplayNameFor(X => X.Description)
+        </th>
+        <th data-column-id="@nameof(Model.ClassSessionDateSh)">
+            @Html.DisplayNameFor(X => X.ClassSessionDateSh)
+        </th>
+        <th data-column-id="@nameof(Model.IsCanceled)">
+            @Html.DisplayNameFor(X => X.IsCanceled)
+        </th>
+        <th>
+            @LocalMessage.Session
+        </th>
+        <th>
+            @LocalMessage.FilesCount
+        </th>
+        <th>
+            @LocalMessage.Action
+        </th>
+    </tr>
+</thead>

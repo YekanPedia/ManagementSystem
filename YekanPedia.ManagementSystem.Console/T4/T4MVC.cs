@@ -151,6 +151,8 @@ namespace Links
             public static readonly string NotificationSettingController_min_js = Url("NotificationSettingController.min.js");
             public static readonly string OAuthController_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/OAuthController.min.js") ? Url("OAuthController.min.js") : Url("OAuthController.js");
             public static readonly string OAuthController_min_js = Url("OAuthController.min.js");
+            public static readonly string SessionController_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/SessionController.min.js") ? Url("SessionController.min.js") : Url("SessionController.js");
+            public static readonly string SessionController_min_js = Url("SessionController.min.js");
             public static readonly string UserController_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/UserController.min.js") ? Url("UserController.min.js") : Url("UserController.js");
             public static readonly string UserController_min_js = Url("UserController.min.js");
             public static readonly string UserInClassController_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/UserInClassController.min.js") ? Url("UserInClassController.min.js") : Url("UserInClassController.js");
@@ -381,7 +383,13 @@ namespace Links
                 private const string URLPATH = "~/Content/Images/Logo";
                 public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
                 public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
-                public static readonly string Logo_png = Url("Logo.png");
+                public static readonly string log100_png = Url("log100.png");
+                public static readonly string log128_png = Url("log128.png");
+                public static readonly string log256_png = Url("log256.png");
+                public static readonly string log32_png = Url("log32.png");
+                public static readonly string log48_png = Url("log48.png");
+                public static readonly string log512_png = Url("log512.png");
+                public static readonly string log64_png = Url("log64.png");
             }
         
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -487,6 +495,7 @@ namespace Links
                     public const string ClassController_js = "~/Scripts/Application/ClassController.js"; 
                     public const string NotificationSettingController_js = "~/Scripts/Application/NotificationSettingController.js"; 
                     public const string OAuthController_js = "~/Scripts/Application/OAuthController.js"; 
+                    public const string SessionController_js = "~/Scripts/Application/SessionController.js"; 
                     public const string UserController_js = "~/Scripts/Application/UserController.js"; 
                     public const string UserInClassController_js = "~/Scripts/Application/UserInClassController.js"; 
                 }

@@ -1,29 +1,5 @@
 [
   {
-    "outputFileName": "Scripts/Application/OAuthController.js",
-    "inputFiles": [
-      "Scripts/Application/OAuthController.js"
-    ]
-  },
-  {
-    "outputFileName": "Scripts/Application/AccountController.js",
-    "inputFiles": [
-      "Scripts/Application/AccountController.js"
-    ]
-  },
-  {
-    "outputFileName": "Scripts/Application/ClassController.js",
-    "inputFiles": [
-      "Scripts/Application/ClassController.js"
-    ]
-  },
-  {
-    "outputFileName": "Scripts/Application/BasicInfoController.js",
-    "inputFiles": [
-      "Scripts/Application/BasicInfoController.js"
-    ]
-  },
-  {
     "outputFileName": "Scripts/Application/UserController.js",
     "inputFiles": [
       "Scripts/Application/UserController.js"
@@ -54,9 +30,39 @@
     ]
   },
   {
+    "outputFileName": "Scripts/Application/SessionController.js",
+    "inputFiles": [
+      "Scripts/Application/SessionController.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Application/OAuthController.js",
+    "inputFiles": [
+      "Scripts/Application/OAuthController.js"
+    ]
+  },
+  {
     "outputFileName": "Scripts/Application/NotificationSettingController.js",
     "inputFiles": [
       "Scripts/Application/NotificationSettingController.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Application/AccountController.js",
+    "inputFiles": [
+      "Scripts/Application/AccountController.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Application/BasicInfoController.js",
+    "inputFiles": [
+      "Scripts/Application/BasicInfoController.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Application/ClassController.js",
+    "inputFiles": [
+      "Scripts/Application/ClassController.js"
     ]
   }
 ]

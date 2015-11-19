@@ -129,6 +129,9 @@
   <data name="Error" xml:space="preserve">
     <value>ثبت اطلاعات با خطا مواجه شد</value>
   </data>
+  <data name="NotificationNotSend" xml:space="preserve">
+    <value>ارسال اعلانات با خطا مواجه شد</value>
+  </data>
   <data name="RecordExist" xml:space="preserve">
     <value>اطلاعات ارسالی قبلا ثبت شده است</value>
   </data>

@@ -17,10 +17,16 @@
         readonly IUnitOfWork _uow;
         readonly IDbSet<WebSiteNotification> _websiteNotification;
         readonly IUserService _userService;
+        readonly Lazy<IClassService> _classService;
         readonly IMessagingGatewayAdapter _messagingGateway;
         readonly INotificationSettingService _notificationSettingService;
-        public NotificationService(IUnitOfWork uow, IUserService userService, IMessagingGatewayAdapter messagingGateway, INotificationSettingService notificationSettingService)
+        public NotificationService(IUnitOfWork uow,
+            IUserService userService,
+            IMessagingGatewayAdapter messagingGateway,
+            INotificationSettingService notificationSettingService,
+            Lazy<IClassService> classService)
         {
+            _classService = classService;
             _uow = uow;
             _websiteNotification = uow.Set<WebSiteNotification>();
             _userService = userService;
@@ -30,61 +36,172 @@
         #endregion
         public IServiceResults<bool> SendNotificationToUser(Guid userId, NotificationType notificationType, string message)
         {
-            var user = _userService.FindUser(userId);
-            if (user.Result == null)
+            try
+            {
+                var user = _userService.FindUser(userId);
+                if (user.Result == null)
+                    return new ServiceResults<bool>
+                    {
+                        IsSuccessfull = false,
+                        Message = BusinessMessage.Error,
+                        Result = false
+                    };
+
+                var notification = _notificationSettingService.GetNotificationType(notificationType);
+                var sms = new List<string>();
+                var telegram = new List<int>();
+                var email = new List<string>();
+                var type = new NotificationKey();
+                if (notification.Email)
+                {
+                    type.Email = true;
+                    email.Add(user.Result.Email);
+                }
+
+                if (notification.Sms)
+                {
+                    type.Sms = true;
+                    sms.Add(user.Result.Mobile);
+                }
+
+                if (notification.Telegram && user.Result.Telegram != 0)
+                {
+                    type.Telegram = true;
+                    telegram.Add(user.Result.Telegram);
+                }
+                _messagingGateway.GivenMessages(new NotificationPackage
+                {
+                    Message = new List<string> { message },
+                    Type = new List<NotificationKey> { type },
+                    Sms = sms,
+                    Telegram = telegram,
+                    Email = email
+                });
+
+                return new ServiceResults<bool>
+                {
+                    IsSuccessfull = true,
+                    Message = string.Empty,
+                    Result = true
+                };
+            }
+            catch (Exception)
+            {
                 return new ServiceResults<bool>
                 {
                     IsSuccessfull = false,
-                    Message = BusinessMessage.Error,
+                    Message = BusinessMessage.NotificationNotSend,
                     Result = false
                 };
-
-            var notification = _notificationSettingService.GetNotificationType(notificationType);
-            var sms = new List<string>();
-            var telegram = new List<int>();
-            var email = new List<string>();
-            var type = new NotificationKey();
-            if (notification.Email)
-            {
-                type.Email = true;
-                email.Add(user.Result.Email);
             }
-
-            if (notification.Sms)
-            {
-                type.Sms = true;
-                sms.Add(user.Result.Mobile);
-            }
-
-            if (notification.Telegram && user.Result.Telegram != null)
-            {
-                type.Telegram = true;
-                telegram.Add(user.Result.Telegram);
-            }
-            _messagingGateway.GivenMessages(new NotificationPackage
-            {
-                Message = new List<string> { message },
-                Type = new List<NotificationKey> { type },
-                Sms = sms,
-                Telegram = telegram,
-                Email = email
-            });
-
-            return new ServiceResults<bool>
-            {
-                IsSuccessfull = true,
-                Message = "",
-                Result = true
-            };
         }
-        public IServiceResults<bool> SendNotificationToClass(Guid classId, NotificationType notificationType, string message)
+        public IServiceResults<bool> SendNotificationToClass(Guid classId, NotificationType notificationType, string date)
+        {
+            try
+            {
+                var classData = _classService.Value.FindFullClassData(classId);
+                var users = _userService.GetUsers(null, classId);
+                if (classData != null)
+                {
+                    var notification = _notificationSettingService.GetNotificationType(notificationType);
+                    var sms = new List<string>();
+                    var telegram = new List<int>();
+                    var email = new List<string>();
+
+                    var types = new List<NotificationKey>();
+                    foreach (var item in users.Result)
+                    {
+                        sms.Add(notification.Sms ? item.Mobile : string.Empty);
+                        telegram.Add(notification.Telegram ? item.Telegram : 0);
+                        email.Add(notification.Email ? item.Email : string.Empty);
+                        types.Add(new NotificationKey
+                        {
+                            Email = notification.Email,
+                            Sms = notification.Sms,
+                            Telegram = notification.Telegram
+                        });
+                    }
+                    _messagingGateway.GivenMessages(new NotificationPackage
+                    {
+                        Message = new List<string> { notificationType == NotificationType.CanceledClass ? classData.CanceledSessionNotification(date) : classData.AddSessionNotification(date) },
+                        Type = types,
+                        Sms = sms,
+                        Telegram = telegram,
+                        Email = email
+                    });
+                }
+                return new ServiceResults<bool>
+                {
+                    IsSuccessfull = true,
+                    Message = string.Empty,
+                    Result = true
+                };
+            }
+            catch (Exception)
+            {
+                return new ServiceResults<bool>
+                {
+                    IsSuccessfull = false,
+                    Message = BusinessMessage.NotificationNotSend,
+                    Result = false
+                };
+            }
+        }
+        public IServiceResults<bool> SendNotificationToBirthDateUser(Guid userId, string message)
         {
             throw new NotImplementedException();
         }
-        public IServiceResults<bool> SendNotificationToBirthDateUser()
+        public IServiceResults<bool> SendPrivateNotificationToClass(Guid classId, NotificationType notificationType, string message)
         {
-            throw new NotImplementedException();
-        }
+            try
+            {
+                var classData = _classService.Value.FindFullClassData(classId);
+                var users = _userService.GetUsers(null, classId);
+                if (classData != null)
+                {
+                    var notification = _notificationSettingService.GetNotificationType(notificationType);
+                    var sms = new List<string>();
+                    var telegram = new List<int>();
+                    var email = new List<string>();
 
+                    var types = new List<NotificationKey>();
+                    foreach (var item in users.Result)
+                    {
+                        sms.Add(notification.Sms ? item.Mobile : string.Empty);
+                        telegram.Add(notification.Telegram ? item.Telegram : 0);
+                        email.Add(notification.Email ? item.Email : string.Empty);
+                        types.Add(new NotificationKey
+                        {
+                            Email = notification.Email,
+                            Sms = notification.Sms,
+                            Telegram = notification.Telegram
+                        });
+                    }
+                    _messagingGateway.GivenMessages(new NotificationPackage
+                    {
+                        Message = new List<string> { message },
+                        Type = types,
+                        Sms = sms,
+                        Telegram = telegram,
+                        Email = email
+                    });
+                }
+                return new ServiceResults<bool>
+                {
+                    IsSuccessfull = true,
+                    Message = string.Empty,
+                    Result = true
+                };
+            }
+            catch (Exception)
+            {
+                return new ServiceResults<bool>
+                {
+                    IsSuccessfull = false,
+                    Message = BusinessMessage.NotificationNotSend,
+                    Result = false
+                };
+            }
+        }
     }
 }

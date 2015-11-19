@@ -204,10 +204,10 @@ namespace YekanPedia.ManagementSystem.ExternalService.MessagingGateway {
     public interface IMessagingGateway {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IMessagingGateway/GivenMessages")]
-        void GivenMessages(YekanPedia.ManagementSystem.ExternalService.MessagingGateway.NotificationPackage message);
+        void GivenMessages(YekanPedia.ManagementSystem.ExternalService.MessagingGateway.NotificationPackage package);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IMessagingGateway/GivenMessages")]
-        System.Threading.Tasks.Task GivenMessagesAsync(YekanPedia.ManagementSystem.ExternalService.MessagingGateway.NotificationPackage message);
+        System.Threading.Tasks.Task GivenMessagesAsync(YekanPedia.ManagementSystem.ExternalService.MessagingGateway.NotificationPackage package);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -237,12 +237,12 @@ namespace YekanPedia.ManagementSystem.ExternalService.MessagingGateway {
                 base(binding, remoteAddress) {
         }
         
-        public void GivenMessages(YekanPedia.ManagementSystem.ExternalService.MessagingGateway.NotificationPackage message) {
-            base.Channel.GivenMessages(message);
+        public void GivenMessages(YekanPedia.ManagementSystem.ExternalService.MessagingGateway.NotificationPackage package) {
+            base.Channel.GivenMessages(package);
         }
         
-        public System.Threading.Tasks.Task GivenMessagesAsync(YekanPedia.ManagementSystem.ExternalService.MessagingGateway.NotificationPackage message) {
-            return base.Channel.GivenMessagesAsync(message);
+        public System.Threading.Tasks.Task GivenMessagesAsync(YekanPedia.ManagementSystem.ExternalService.MessagingGateway.NotificationPackage package) {
+            return base.Channel.GivenMessagesAsync(package);
         }
     }
 }

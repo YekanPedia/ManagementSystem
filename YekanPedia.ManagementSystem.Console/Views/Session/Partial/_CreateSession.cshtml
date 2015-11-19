@@ -1,0 +1,57 @@
+﻿@model ClassSession
+
+@{ Layout = null;}
+@Html.HiddenFor(X => X.ClassId)
+<div class="row">
+    <div class="col-sm-12 m-b-20">
+        <div class="input-group has-feedback m-b-20">
+            <div class="fg-line">
+                <label>@Html.DisplayNameFor(X => X.Subject)</label>
+                @Html.TextBoxFor(X => X.Subject, new { @class = "form-control" })
+            </div>
+            <small class="help-block">
+                @Html.ValidationMessageFor(X => X.Subject)
+            </small>
+            <span class="zmdi form-control-feedback"></span>
+        </div>
+    </div>
+    <div class="col-sm-12 m-b-20">
+        <div class="input-group has-feedback m-b-20">
+            <div class="fg-line">
+                <label>@Html.DisplayNameFor(X => X.Description)</label>
+                @Html.TextAreaFor(X => X.Description, new { @class = "form-control", @rows = "3" })
+            </div>
+            <small class="help-block">
+                @Html.ValidationMessageFor(X => X.Description)
+            </small>
+            <span class="zmdi form-control-feedback"></span>
+        </div>
+    </div>
+    <div class="col-sm-3 m-b-20">
+        <div class="input-group has-feedback m-b-20">
+            <label>@Html.DisplayNameFor(X => X.ClassSessionDateSh)</label>
+            <div class="fg-line">
+                @Html.TextBoxFor(X => X.ClassSessionDateSh, new { @data_mask = "0000/00/00", @class = "form-control PersianCalendar" })
+            </div>
+            <small class="help-block">
+                @Html.ValidationMessageFor(X => X.ClassSessionDateSh)
+            </small>
+            <span class="zmdi form-control-feedback"></span>
+        </div>
+    </div>
+    <div class="col-sm-3 m-b-20"></div>
+    <div class="col-sm-6 m-b-20">
+        <div class="input-group has-feedback m-b-20">
+            <div>
+                <label>@Html.DisplayNameFor(X => X.IsCanceled)</label>
+                <div class="checkbox">
+                    <label>
+                        <input type="hidden" value="false" class="checkbox" id="IsCanceled" name="IsCanceled">
+                        <input type="checkbox" checked="@Model.IsCanceled" class="checkbox" data-join="IsCanceled">
+                        <i class="input-helper"></i>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 

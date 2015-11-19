@@ -13,8 +13,14 @@
         <th data-column-id="@nameof(Model.UserId)">
             @Html.DisplayNameFor(X => X.UserId)
         </th>
+        <th data-column-id="@nameof(Model.ClassTime)">
+            @Html.DisplayNameFor(X => X.ClassTime)
+        </th>
         <th data-column-id="@nameof(Model.SessionCount)">
             @Html.DisplayNameFor(X => X.SessionCount)
+        </th>
+        <th data-column-id="@nameof(Model.ClassSession)">
+            @Html.DisplayNameFor(X => X.ClassSession)
         </th>
         <th data-column-id="@nameof(Model.StartDateSh)">
             @Html.DisplayNameFor(X => X.StartDateSh)
@@ -22,9 +28,7 @@
         <th data-column-id="@nameof(Model.FinishDateSh)">
             @Html.DisplayNameFor(X => X.FinishDateSh)
         </th>
-        <th data-column-id="@nameof(Model.Capacity)">
-            @Html.DisplayNameFor(X => X.Capacity)
-        </th>
+   
         <th data-column-id="commands" data-formatter="commands" data-sortable="false">
             @LocalMessage.Action
         </th>
