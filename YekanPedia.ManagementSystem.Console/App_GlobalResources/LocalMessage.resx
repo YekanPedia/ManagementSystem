@@ -318,4 +318,7 @@
   <data name="Session" xml:space="preserve">
     <value>جلسه</value>
   </data>
+  <data name="NoFileUploaded" xml:space="preserve">
+    <value>هیچ فایلی آپلود نشده است</value>
+  </data>
 </root>

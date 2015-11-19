@@ -403,6 +403,15 @@ namespace YekanPedia.ManagementSystem.Console.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to هیچ فایلی آپلود نشده است.
+        /// </summary>
+        public static string NoFileUploaded {
+            get {
+                return ResourceManager.GetString("NoFileUploaded", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to اعلانات.
         /// </summary>
         public static string Notification {

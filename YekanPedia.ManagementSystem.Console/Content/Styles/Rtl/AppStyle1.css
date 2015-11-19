@@ -57,6 +57,7 @@ html > body .top-menu > li > a.tm-chat {
 
 .dropdown-menu.dm-icon > li > a > .zmdi {
     text-align: right;
+    width: 20px;
 }
 
 .dropdown-menu > li > a {
@@ -825,6 +826,65 @@ th {
 .sweet-alert .icon.info::after {
     margin-right: -4px;
 }
+
 .sweet-alert h2 {
     font-size: 13px;
 }
+
+.f-s-17 {
+    font-size: 17px !important;
+}
+
+.lv-footer {
+    font-size: 13px;
+}
+
+/*#region Files Icon */
+
+.file {
+    background-size: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+    width: 30px;
+}
+ .pdf {
+    background-image: url('/Content/Images/FileType/pdf.png');
+}
+
+ .mp3 {
+    background-image: url('/Content/Images/FileType/music.png');
+}
+
+.rar {
+    background-image: url('/Content/Images/FileType/archive.png');
+}
+
+.zip {
+    background-image: url('/Content/Images/FileType/archive.png');
+}
+
+.wma {
+    background-image: url('/Content/Images/FileType/wav.png');
+}
+
+.doc {
+    background-image: url('/Content/Images/FileType/word.png');
+}
+.docx {
+    background-image: url('/Content/Images/FileType/word.png');
+}
+.png {
+    background-image: url('/Content/Images/FileType/png.png');
+}
+.jpg {
+    background-image: url('/Content/Images/FileType/png.png');
+}
+.txt {
+    background-image: url('/Content/Images/FileType/txt.png');
+}
+.noFileUploaded{
+    padding-top:10px;
+    padding-bottom:7px;
+    text-align:center;
+}
+/*#endregion */

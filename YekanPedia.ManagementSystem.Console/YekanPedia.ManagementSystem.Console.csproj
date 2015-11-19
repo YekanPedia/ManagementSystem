@@ -298,6 +298,15 @@
     <Content Include="Content\Images\Avatar\9.png" />
     <Content Include="Content\Images\Background\profile-menu.jpg" />
     <Content Include="Content\Images\Background\profile-widget.jpg" />
+    <Content Include="Content\Images\FileType\archive.png" />
+    <Content Include="Content\Images\FileType\gif.png" />
+    <Content Include="Content\Images\FileType\music.png" />
+    <Content Include="Content\Images\FileType\pdf.png" />
+    <Content Include="Content\Images\FileType\png.png" />
+    <Content Include="Content\Images\FileType\txt.png" />
+    <Content Include="Content\Images\FileType\video.png" />
+    <Content Include="Content\Images\FileType\wav.png" />
+    <Content Include="Content\Images\FileType\word.png" />
     <Content Include="Content\Images\Icon\notifications.png" />
     <Content Include="Content\Images\Logo\log100.png" />
     <Content Include="Content\Images\Logo\log128.png" />

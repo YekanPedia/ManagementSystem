@@ -46,7 +46,7 @@
                 <label>@Html.DisplayNameFor(X => X.IsCanceled)</label>
                 <div class="checkbox">
                     <label>
-                        <input type="hidden" value="false" class="checkbox" id="IsCanceled" name="IsCanceled">
+                        <input type="hidden" value="@(Model.IsCanceled?"true":"false")" class="checkbox" id="IsCanceled" name="IsCanceled">
                         <input type="checkbox" checked="@Model.IsCanceled" class="checkbox" data-join="IsCanceled">
                         <i class="input-helper"></i>
                     </label>

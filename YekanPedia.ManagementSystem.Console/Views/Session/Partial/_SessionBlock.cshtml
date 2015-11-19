@@ -13,16 +13,22 @@
                 @if (!item.IsCanceled)
                 {
                     <ul class="actions">
-                        <li class="dropdown action-show">
+                        <li class="dropdown action-show  ">
                             <a href="" data-toggle="dropdown" aria-expanded="false">
                                 <i class="zmdi zmdi-more-vert"></i>
                             </a>
-                            <ul class="dropdown-menu dropdown-menu-left">
+                            <ul class="dropdown-menu dropdown-menu-left dm-icon">
                                 <li>
-                                    <a href="#">@LocalMessage.Download</a>
+                                    <a href="#">
+                                        <i class="zmdi zmdi-download"></i>
+                                        @LocalMessage.Download
+                                    </a>
                                 </li>
                                 <li>
-                                    <a href="#">@LocalMessage.SessionMaterialRequest</a>
+                                    <a href="#">
+                                        <i class="zmdi zmdi-file-plus"></i>
+                                        @LocalMessage.SessionMaterialRequest
+                                    </a>
                                 </li>
                             </ul>
                         </li>
@@ -32,21 +38,39 @@
                     @count - @(count + 1)
                 </button>
             </div>
-            <div class="card-body card-padding">
+            <div class="card-body card-padding p-b-10">
                 <div class="pmo-contact">
                     <ul>
                         <li></li>
                         <li class="ng-binding"><i class="zmdi zmdi-format-align-right"></i>@(string.IsNullOrEmpty(item.Description) ? "---" : item.Description)</li>
                         <li class="ng-binding"><i class="zmdi zmdi-calendar-alt"></i> @item.ClassSessionDateSh</li>
-                        <li class="ng-binding"><i class="zmdi zmdi-download"></i>@LocalMessage.FilesCount : @count</li>
+                        <li class="ng-binding"><i class="zmdi zmdi-download"></i>@LocalMessage.FilesCount : @item.SessionMaterial.Count</li>
                     </ul>
+                </div>
+                <div class="lv-footer">
+                    <div class="text-left row p-t-5 p-l-20">
+                        @foreach (var material in item.SessionMaterial)
+                        {
+                            <div class="col-sm-1 pull-left">
+                                @{
+                                    bool expire = material.ExpireDate < DateTime.Now;
+                                }
+                                <a @(expire ? Html.Raw("") : Html.Raw("target='_blank'")) href="@(expire? "#" : material.DirectLink)">
+                                    <div class="file @material.Extension"></div>
+                                </a>
+                            </div>
+                                    }
+                        @if (item.SessionMaterial.Count == 0)
+                        {
+                            <div class="noFileUploaded">@LocalMessage.NoFileUploaded</div>
+                        }
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    if (!item.IsCanceled)
-    {
-        count += 2;
-    }
-}
-
+                                        if (!item.IsCanceled)
+                                        {
+                                            count += 2;
+                                        }
+                                    }
