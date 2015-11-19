@@ -5,5 +5,6 @@
     public interface IFilesProxyAdapter
     {
         List<FileInfo> GetFilesAddress(string address);
+        string CreateDirectory(string address);
     }
 }

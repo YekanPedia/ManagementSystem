@@ -26,14 +26,19 @@
                 x.For<IClassService>().Use<ClassService>();
                 x.For<Lazy<IClassService>>().Use(c => new Lazy<IClassService>(c.GetInstance<ClassService>));
 
+
                 x.For<IClassTimeService>().Use<ClassTimeService>();
                 x.For<ISessionService>().Use<SessionService>();
+                x.For<ISessionMaterialService>().Use<SessionMaterialService>();
                 x.For<IUserInClassService>().Use<UserInClassService>();
                 x.For<IFeedbackService>().Use<FeedbackService>();
-                x.For<IMessagingGatewayAdapter>().Use<MessagingGatewayAdapter>();
                 x.For<INotificationSettingService>().Use<NotificationSettingService>();
                 x.For<INotificationService>().Use<NotificationService>();
                 x.For<Lazy<INotificationService>>().Use(c => new Lazy<INotificationService>(c.GetInstance<NotificationService>));
+
+
+                x.For<IMessagingGatewayAdapter>().Use<MessagingGatewayAdapter>();
+                x.For<IFilesProxyAdapter>().Use<FilesProxyAdapter>();
             });
         }
         public static object GetInstance(Type pluginType)

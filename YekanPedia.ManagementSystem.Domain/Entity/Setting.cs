@@ -7,7 +7,5 @@
     {
         [Key]
         public Guid SettingId { get; set; }
-
-        public int FilesPersist { get; set; }
     }
 }

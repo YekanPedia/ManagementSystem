@@ -574,6 +574,15 @@ namespace YekanPedia.ManagementSystem.Console.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to لطفا فایل های مربوط به جلسه جاری را در مسیر {0} بارگذاری نموده و بر روی بروز رسانی فایل ها کلیک نمایید.
+        /// </summary>
+        public static string SessionMaterialAddress {
+            get {
+                return ResourceManager.GetString("SessionMaterialAddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to درخواست بارگذاری فایل.
         /// </summary>
         public static string SessionMaterialRequest {

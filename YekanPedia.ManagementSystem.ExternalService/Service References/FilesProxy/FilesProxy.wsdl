@@ -13,16 +13,35 @@
   <wsdl:message name="IFilesProxy_GetListFiles_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetListFilesResponse" />
   </wsdl:message>
+  <wsdl:message name="IFilesProxy_CreateDirectory_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateDirectory" />
+  </wsdl:message>
+  <wsdl:message name="IFilesProxy_CreateDirectory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateDirectoryResponse" />
+  </wsdl:message>
   <wsdl:portType name="IFilesProxy">
     <wsdl:operation name="GetListFiles">
       <wsdl:input wsaw:Action="http://tempuri.org/IFilesProxy/GetListFiles" message="tns:IFilesProxy_GetListFiles_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IFilesProxy/GetListFilesResponse" message="tns:IFilesProxy_GetListFiles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateDirectory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFilesProxy/CreateDirectory" message="tns:IFilesProxy_CreateDirectory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFilesProxy/CreateDirectoryResponse" message="tns:IFilesProxy_CreateDirectory_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IFilesProxy" type="tns:IFilesProxy">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="GetListFiles">
       <soap:operation soapAction="http://tempuri.org/IFilesProxy/GetListFiles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateDirectory">
+      <soap:operation soapAction="http://tempuri.org/IFilesProxy/CreateDirectory" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

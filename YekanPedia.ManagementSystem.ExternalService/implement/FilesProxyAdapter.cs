@@ -12,6 +12,12 @@
         {
             _fileProxyClient = new FilesProxyClient();
         }
+
+        public string CreateDirectory(string address)
+        {
+            return _fileProxyClient.CreateDirectory(address);
+        }
+
         public List<FileInfo> GetFilesAddress(string address)
         {
             return _fileProxyClient.GetListFiles(address);

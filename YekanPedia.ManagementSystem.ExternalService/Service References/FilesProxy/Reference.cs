@@ -83,6 +83,12 @@ namespace YekanPedia.ManagementSystem.ExternalService.FilesProxy {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFilesProxy/GetListFiles", ReplyAction="http://tempuri.org/IFilesProxy/GetListFilesResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<YekanPedia.ManagementSystem.ExternalService.FilesProxy.FileInfo>> GetListFilesAsync(string address);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFilesProxy/CreateDirectory", ReplyAction="http://tempuri.org/IFilesProxy/CreateDirectoryResponse")]
+        string CreateDirectory(string address);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFilesProxy/CreateDirectory", ReplyAction="http://tempuri.org/IFilesProxy/CreateDirectoryResponse")]
+        System.Threading.Tasks.Task<string> CreateDirectoryAsync(string address);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -118,6 +124,14 @@ namespace YekanPedia.ManagementSystem.ExternalService.FilesProxy {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<YekanPedia.ManagementSystem.ExternalService.FilesProxy.FileInfo>> GetListFilesAsync(string address) {
             return base.Channel.GetListFilesAsync(address);
+        }
+        
+        public string CreateDirectory(string address) {
+            return base.Channel.CreateDirectory(address);
+        }
+        
+        public System.Threading.Tasks.Task<string> CreateDirectoryAsync(string address) {
+            return base.Channel.CreateDirectoryAsync(address);
         }
     }
 }

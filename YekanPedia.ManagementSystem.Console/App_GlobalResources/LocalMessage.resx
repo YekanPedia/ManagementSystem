@@ -321,4 +321,7 @@
   <data name="NoFileUploaded" xml:space="preserve">
     <value>هیچ فایلی آپلود نشده است</value>
   </data>
+  <data name="SessionMaterialAddress" xml:space="preserve">
+    <value>لطفا فایل های مربوط به جلسه جاری را در مسیر {0} بارگذاری نموده و بر روی بروز رسانی فایل ها کلیک نمایید</value>
+  </data>
 </root>

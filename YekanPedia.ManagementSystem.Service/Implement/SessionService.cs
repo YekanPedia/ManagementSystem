@@ -10,6 +10,7 @@
     using Properties;
     using System.Linq;
     using InfraStructure.Date;
+    using ExternalService.Interfaces;
 
     public class SessionService : ISessionService
     {
@@ -17,13 +18,21 @@
         readonly IUnitOfWork _uow;
         readonly IDbSet<ClassSession> _classSession;
         readonly IClassService _classService;
+        readonly ISessionMaterialService _sessionMaterial;
+        readonly IFilesProxyAdapter _filesProxyAdapter;
         readonly Lazy<INotificationService> _notificationService;
-        public SessionService(IUnitOfWork uow, IClassService classService, Lazy<INotificationService> notificationService)
+        public SessionService(IUnitOfWork uow,
+            IClassService classService,
+            ISessionMaterialService sessionMaterial,
+            Lazy<INotificationService> notificationService,
+            IFilesProxyAdapter filesProxyAdapter)
         {
             _uow = uow;
             _classService = classService;
             _classSession = uow.Set<ClassSession>();
             _notificationService = notificationService;
+            _filesProxyAdapter = filesProxyAdapter;
+            _sessionMaterial = sessionMaterial;
         }
         #endregion
 
@@ -37,11 +46,19 @@
 
             if (saveResult.ToBool())
                 SendNotification(model.ClassId, model.ClassSessionDateSh, model.IsCanceled);
+            string resultFileProxy = string.Empty;
+            if (saveResult.ToBool())
+            {
+                var _class = _classService.FindFullClassData(model.ClassId);
+                var time = PersianDateTime.Parse(model.ClassSessionDateSh);
+                var address = $"{time.Year}/{time.Month}/{time.Day}/{_class.ClassTimeInformation}";
+                resultFileProxy = _filesProxyAdapter.CreateDirectory(address);
+            }
 
             return new ServiceResults<Guid>
             {
                 IsSuccessfull = saveResult.ToBool(),
-                Message = saveResult.ToMessage(BusinessMessage.Error),
+                Message = resultFileProxy,
                 Result = model.ClassSessionId
             };
         }
@@ -69,14 +86,12 @@
         {
             return _classSession.Count(X => X.ClassId == classId && X.IsCanceled != false) * 2;
         }
-
         public IServiceResults<bool> SendNotification(Guid classId, string classSessionDateSh, bool isCanceled)
         {
             return _notificationService.Value.SendNotificationToClass(classId,
                   (isCanceled ? NotificationType.CanceledClass : NotificationType.AddSession),
                   PersianDateTime.Parse(classSessionDateSh).ToString(PersianDateTimeFormat.LongDate));
         }
-
         public IServiceResults<ClassSession> Find(Guid classSessionId)
         {
             var session = _classSession.Find(classSessionId);
@@ -87,9 +102,18 @@
                 Result = session
             };
         }
-
         public IServiceResults<bool> DeleteClassSession(Guid classSessionId)
         {
+            var resultPaterial = _sessionMaterial.DeleteMaterial(classSessionId);
+            if (!resultPaterial.IsSuccessfull)
+            {
+                return new ServiceResults<bool>
+                {
+                    IsSuccessfull = false,
+                    Message = BusinessMessage.Error,
+                    Result = false
+                };
+            }
             _classSession.Remove(_classSession.Find(classSessionId));
             var result = _uow.SaveChanges();
             return new ServiceResults<bool>
@@ -98,6 +122,14 @@
                 Message = result.ToMessage(BusinessMessage.Error),
                 Result = result.ToBool()
             };
+        }
+
+        public void SyncMaterial(Guid classId, Guid classSessionId, string classSessionDateSh)
+        {
+            var _class = _classService.FindFullClassData(classId);
+            var time = PersianDateTime.Parse(classSessionDateSh);
+            var address = $"{time.Year}/{time.Month}/{time.Day}/{_class.ClassTimeInformation}";
+            _sessionMaterial.AddOrUpdateRange(classSessionId, address);
         }
     }
 }

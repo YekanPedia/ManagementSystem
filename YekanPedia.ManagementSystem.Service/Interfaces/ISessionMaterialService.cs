@@ -8,7 +8,8 @@
     public interface ISessionMaterialService
     {
         IEnumerable<SessionMaterial> GetAllSessionMaterial(Guid sessionId);
-        IServiceResults<bool> AddOrUpdateRange(List<SessionMaterial> model);
+        IServiceResults<bool> AddOrUpdateRange(Guid sessionId, string address);
         SessionMaterial Find(Guid sessionMaterialId);
+        IServiceResults<bool> DeleteMaterial(Guid sessionId);
     }
 }

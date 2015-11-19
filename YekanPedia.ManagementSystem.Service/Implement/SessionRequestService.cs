@@ -34,14 +34,12 @@
                 Result = model.SessionRequestId
             };
         }
-
         public IEnumerable<SessionRequest> GetAllSessionRequest(Guid sessionId)
         {
             return _sessionRequest.Where(X => X.ClassSessionId == sessionId)
                                   .OrderByDescending(X => X.RquestDateMi)
                                   .ToList();
         }
-
         public IServiceResults<bool> Remove(Guid sessionRequestId)
         {
             _sessionRequest.Remove(Find(sessionRequestId));
@@ -53,7 +51,6 @@
                 Result = result.ToBool()
             };
         }
-
         public SessionRequest Find(Guid sessionRequestId)
         {
             return _sessionRequest.Find(sessionRequestId);

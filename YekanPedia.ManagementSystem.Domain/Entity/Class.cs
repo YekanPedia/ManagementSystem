@@ -98,6 +98,19 @@
             FinishDateMi = PersianDateTime.Parse(FinishDateSh).ToDateTime();
             StartDateMi = PersianDateTime.Parse(StartDateSh).ToDateTime();
         }
+        [NotMapped]
+        public string ClassTimeInformation
+        {
+            get
+            {
+                var address = string.Empty;
+                foreach (var item in ClassTime.OrderByDescending(X => X.DayEn))
+                {
+                    address += $"{(((int)item.DayEn - 6) * -1)}{item.TimeFrom.Replace(":", "")}{item.TimeTo.Replace(":", "")}";
+                }
+                return address;
+            }
+        }
 
         public string CanceledSessionNotification(string date) => $"کلاس {Course.CourseName} استاد {User.FullName} در تاریخ {date} کنسل می باشد . باتشکر یکان پدیا";
         public string AddSessionNotification(string date) => $"فایل های کلاس {Course.CourseName} استاد {User.FullName} در تاریخ {date} بر روی سایت بارگذاری شد . باتشکر یکان پدیا";
@@ -113,7 +126,6 @@
         public virtual ICollection<ClassTime> ClassTime { get; set; }
 
         [Display(ResourceType = typeof(DisplayNames), Name = nameof(ClassSession))]
-
         public virtual ICollection<ClassSession> ClassSession { get; set; }
         public virtual ICollection<UserInClass> UserInClass { get; set; }
     }
