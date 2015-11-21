@@ -1,0 +1,60 @@
+﻿@model YekanPedia.ManagementSystem.Domain.Entity.User
+@{
+    Layout = null;
+}
+
+<div class="lc-block toggled" id="l-login">
+
+    @using (Html.BeginForm(MVC.OAuth.ActionNames.SignIn, MVC.OAuth.Name, FormMethod.Post, new { @id = "LoginFrm" }))
+    {
+        @Html.AntiForgeryToken()
+        <img class="lcb-user" width="100" height="100" src="@Url.Content(Links.Content.Images.Logo.log100_png)"
+             alt="@LocalMessage.YekanPedia">
+        <div class="input-group m-b-30">
+        </div>
+        <div class="input-group @(Model==null?string.Empty:Model.AboutMe) has-feedback m-b-20">
+            <span class="input-group-addon">
+                <i class="zmdi zmdi-email"></i>
+            </span>
+            <div class="fg-line">
+                @Html.TextBoxFor(X => X.Email, new { @autocomplete = "off", @data_type = "en", @class = "form-control", @placeholder = string.Format("{0} ({1})", Html.DisplayNameFor(X => X.Email), LocalMessage.UserName) })
+            </div>
+            <small class="help-block">
+                @Html.ValidationMessageFor(X => X.Email)
+            </small>
+            <span class="zmdi  form-control-feedback"></span>
+        </div>
+
+        <div class="input-group @(Model==null?string.Empty:Model.AboutMe) has-feedback m-b-20">
+            <span class="input-group-addon">
+                <i class="zmdi zmdi-lock"></i>
+            </span>
+            <div class="fg-line">
+                @Html.PasswordFor(X => X.Password, new { @autocomplete = "off", @data_type = "en", @class = "form-control PasswordStrongly", @placeholder = Html.DisplayNameFor(X => X.Password) })
+            </div>
+            <small class="help-block">
+                @Html.ValidationMessageFor(X => X.Password)
+            </small>
+            <span class="zmdi form-control-feedback"></span>
+        </div>
+
+        <div class="checkbox">
+            <label>
+                <input type="hidden" value="false" class="checkbox" id="rememberMe" name="rememberMe" />
+                <input type="checkbox" class="checkbox" data-join="rememberMe">
+                <i class="input-helper"></i>
+            </label>
+            <span>
+                @LocalMessage.RememberMe
+            </span>
+        </div>
+
+        <button type="submit" class="btn btn-login btn-danger btn-float">
+            <i class="zmdi zmdi-arrow-left"></i>
+        </button>
+    }
+    <ul class="login-navigation">
+        <li data-block="#l-register" class="bgm-nily">@LocalMessage.Register</li>
+        <li data-block="#l-forget-password" class="bgm-red">@LocalMessage.RecoveryPassword</li>
+    </ul>
+</div>

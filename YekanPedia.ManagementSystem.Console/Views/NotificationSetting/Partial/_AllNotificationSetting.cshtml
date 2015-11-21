@@ -1,0 +1,7 @@
+﻿@model  IEnumerable<NotificationSetting>
+<div class="row">
+    @foreach (var item in Model)
+    {
+        Html.RenderPartial(MVC.NotificationSetting.Views.Partial._NotificationSettingBox, item);
+    }
+</div>

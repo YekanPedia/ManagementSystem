@@ -1,0 +1,595 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2DE93137-52D0-413F-A659-8EA813BE7ACC}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YekanPedia.ManagementSystem.Console</RootNamespace>
+    <AssemblyName>YekanPedia.ManagementSystem.Console</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>1.6</TypeScriptToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.2.0\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.2.0\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="T4MVCExtensions, Version=3.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\T4MVCExtensions.3.16.4\lib\net40\T4MVCExtensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="T4\AccountController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AppSetting.cs">
+      <DependentUpon>AppSetting.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="App_GlobalResources\LocalMessage.Designer.cs">
+      <DependentUpon>LocalMessage.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\BundleManager.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="T4\ClassController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ClassTypeController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ControllerFactory\IocControllerFactory.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ClassController.cs" />
+    <Compile Include="Controllers\ClassTypeController.cs" />
+    <Compile Include="Controllers\CourseController.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\FeedbackController.cs" />
+    <Compile Include="Controllers\NotificationController.cs" />
+    <Compile Include="Controllers\NotificationSettingController.cs" />
+    <Compile Include="Controllers\OAuthController.cs" />
+    <Compile Include="Controllers\Poco\ErrorModelStateController.cs" />
+    <Compile Include="Controllers\SessionController.cs" />
+    <Compile Include="Controllers\SettingController.cs" />
+    <Compile Include="Controllers\TaskController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\UserInClassController.cs" />
+    <Compile Include="T4\CourseController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\DashboardController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ErrorController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Extensions\Authentication\CurrentUserPrincipal.cs" />
+    <Compile Include="Extensions\Authentication\ICurrentUserPrincipal.cs" />
+    <Compile Include="Extensions\ChallengeResult.cs" />
+    <Compile Include="Extensions\EnumSelectList.cs" />
+    <Compile Include="Extensions\Notification\AjaxPNotifyFilter.cs" />
+    <Compile Include="Extensions\Notification\Notification.cs" />
+    <Compile Include="Extensions\Notification\NotificationController.cs" />
+    <Compile Include="Extensions\Notification\NotificationExtensions.cs" />
+    <Compile Include="Extensions\Optimization\AsIsBundleOrderer.cs" />
+    <Compile Include="Extensions\Optimization\ScriptBundleOrderer.cs" />
+    <Compile Include="Extensions\Optimization\StyleBundleOrderer.cs" />
+    <Compile Include="T4\FeedbackController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="T4\NotificationController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\NotificationSettingController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\OAuthController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="T4\SessionController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\SettingController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SignalRSystem\OnlineUserHub.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="T4\SharedController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\T4MVC.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\TaskController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\UserController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\UserInClassController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AppSetting.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>AppSetting.cs</LastGenOutput>
+    </Content>
+    <Content Include="Content\Images\Avatar\1.png" />
+    <Content Include="Content\Images\Avatar\10.png" />
+    <Content Include="Content\Images\Avatar\11.png" />
+    <Content Include="Content\Images\Avatar\2.png" />
+    <Content Include="Content\Images\Avatar\3.png" />
+    <Content Include="Content\Images\Avatar\4.png" />
+    <Content Include="Content\Images\Avatar\5.png" />
+    <Content Include="Content\Images\Avatar\6.png" />
+    <Content Include="Content\Images\Avatar\7.png" />
+    <Content Include="Content\Images\Avatar\8.png" />
+    <Content Include="Content\Images\Avatar\9.png" />
+    <Content Include="Content\Images\Background\profile-menu.jpg" />
+    <Content Include="Content\Images\Background\profile-widget.jpg" />
+    <Content Include="Content\Images\FileType\archive.png" />
+    <Content Include="Content\Images\FileType\music.png" />
+    <Content Include="Content\Images\FileType\pdf.png" />
+    <Content Include="Content\Images\FileType\png.png" />
+    <Content Include="Content\Images\FileType\ppt.png" />
+    <Content Include="Content\Images\FileType\txt.png" />
+    <Content Include="Content\Images\FileType\video.png" />
+    <Content Include="Content\Images\FileType\word.png" />
+    <Content Include="Content\Images\Icon\notifications.png" />
+    <Content Include="Content\Images\Logo\log100.png" />
+    <Content Include="Content\Images\Logo\log128.png" />
+    <Content Include="Content\Images\Logo\log256.png" />
+    <Content Include="Content\Images\Logo\log32.png" />
+    <Content Include="Content\Images\Logo\log48.png" />
+    <Content Include="Content\Images\Logo\log512.png" />
+    <Content Include="Content\Images\Logo\log64.png" />
+    <Content Include="Content\Images\Menu\ellipsis%402x.png" />
+    <Content Include="Content\Images\Menu\ellipsis.png" />
+    <Content Include="Content\Images\Menu\menu-2%402x-rtl.png" />
+    <Content Include="Content\Images\Menu\menu-2%402x.png" />
+    <Content Include="Content\Images\Menu\menu-2-rtl.png" />
+    <Content Include="Content\Images\Menu\menu-2.png" />
+    <Content Include="Content\Images\Menu\message%402x.png" />
+    <Content Include="Content\Images\Menu\message.png" />
+    <Content Include="Content\Images\Menu\notification%402x.png" />
+    <Content Include="Content\Images\Menu\notification.png" />
+    <Content Include="Content\Images\Menu\search%402x.png" />
+    <Content Include="Content\Images\Menu\search.png" />
+    <Content Include="Content\Images\Menu\task%402x.png" />
+    <Content Include="Content\Images\Menu\task.png" />
+    <Content Include="Content\Images\Other\Select.png" />
+    <Content Include="Content\Styles\Ltr\AppStyle1.css" />
+    <Content Include="Content\Styles\Ltr\AppStyle2.css" />
+    <Content Include="Content\Styles\Public\Animate.css" />
+    <Content Include="Content\Styles\Public\Bootgrid.css" />
+    <Content Include="Content\Styles\Public\BootstrapSelect.css" />
+    <Content Include="Content\Styles\Public\Feedback.rtl.css" />
+    <Content Include="Content\Styles\Public\Feedback.rtl.min.css">
+      <DependentUpon>Feedback.rtl.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Styles\Public\Fullcalendar.css" />
+    <Content Include="Content\Styles\Public\LightGallery.css" />
+    <Content Include="Content\Styles\Public\LoadingBar.css" />
+    <Content Include="Content\Styles\Public\MaterialDesignIconicFont.css" />
+    <Content Include="Content\Styles\Public\PersianCalendar.css" />
+    <Content Include="Content\Styles\Public\Sweet.css" />
+    <Content Include="Content\Styles\Rtl\AppStyle1.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\Application\AccountController.js" />
+    <Content Include="Scripts\Application\AccountController.min.js">
+      <DependentUpon>AccountController.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Application\BasicInfoController.js" />
+    <Content Include="Scripts\Application\BasicInfoController.min.js">
+      <DependentUpon>BasicInfoController.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Application\ClassController.js" />
+    <Content Include="Scripts\Application\ClassController.min.js">
+      <DependentUpon>ClassController.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Application\NotificationSettingController.js" />
+    <Content Include="Scripts\Application\NotificationSettingController.min.js">
+      <DependentUpon>NotificationSettingController.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Application\OAuthController.js" />
+    <Content Include="Scripts\Application\OAuthController.min.js">
+      <DependentUpon>OAuthController.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Application\SessionController.js" />
+    <Content Include="Scripts\Application\SessionController.min.js">
+      <DependentUpon>SessionController.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Application\UserController.js" />
+    <Content Include="Scripts\Application\UserController.min.js">
+      <DependentUpon>UserController.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Application\UserInClassController.js" />
+    <Content Include="Scripts\Application\UserInClassController.min.js">
+      <DependentUpon>UserInClassController.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\functions.js" />
+    <Content Include="Scripts\jquery.signalR-2.1.2.js" />
+    <Content Include="Scripts\jquery.signalR-2.1.2.min.js" />
+    <Content Include="Scripts\jquery.signalR-2.2.0.js" />
+    <Content Include="Scripts\jquery.signalR-2.2.0.min.js" />
+    <Content Include="Scripts\JQuery\Ajax\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\JQuery\BootGrid\jquery.bootgrid.min.js" />
+    <Content Include="Scripts\JQuery\Bootstrap\bootstrap.js" />
+    <Content Include="Scripts\JQuery\Bootstrap\bootstrap.min.js">
+      <DependentUpon>bootstrap.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\JQuery\Feedback\feedback.js" />
+    <Content Include="Scripts\JQuery\Feedback\html2canvas.js" />
+    <Content Include="Scripts\JQuery\Feedback\templates\fa-Ir\template.html" />
+    <Content Include="Scripts\JQuery\FullCalendar\fa.js" />
+    <Content Include="Scripts\JQuery\FullCalendar\fullcalendar.js" />
+    <Content Include="Scripts\JQuery\FullCalendar\fullcalendar.min.js" />
+    <Content Include="Scripts\JQuery\FullCalendar\moment.min.js" />
+    <Content Include="Scripts\JQuery\InputMask\input-mask.min.js" />
+    <Content Include="Scripts\JQuery\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\JQuery\LightGallery\lightGallery.min.js" />
+    <Content Include="Scripts\JQuery\Loadingbar\Loadingbar.js" />
+    <Content Include="Scripts\JQuery\NiceScroll\jquery.nicescroll.min.js" />
+    <Content Include="Scripts\JQuery\PasswordStrongly\PasswordStrongly.js" />
+    <Content Include="Scripts\JQuery\PersianCalendar\PersianCalendar.js" />
+    <Content Include="Scripts\JQuery\Phoenix\Phoenix.core.js" />
+    <Content Include="Scripts\JQuery\Select\BootstrapSelect.js" />
+    <Content Include="Scripts\JQuery\Sweet\sweet-alert.min.js" />
+    <Content Include="Scripts\JQuery\Type\jQuery.Type.js" />
+    <Content Include="Scripts\JQuery\Validation\jquery.validate.js" />
+    <Content Include="Scripts\JQuery\Validation\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\JQuery\Validation\jquery.validation.messages.js" />
+    <Content Include="Scripts\JQuery\Wave\waves.min.js" />
+    <None Include="T4\T4MVC.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>T4MVC.cs</LastGenOutput>
+    </None>
+    <None Include="T4\T4MVC.tt.settings.xml" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Account\ChangePicture.cshtml" />
+    <Content Include="Views\Account\Partial\_ProfileWidget.cshtml" />
+    <Content Include="Views\Account\Partial\_Register.cshtml" />
+    <Content Include="Views\Account\Partial\_RegisterationComplete.cshtml" />
+    <Content Include="Views\Account\Partial\_TimeLine.cshtml" />
+    <Content Include="Views\Account\Profile.cshtml" />
+    <Content Include="Views\Class\AddClass.cshtml" />
+    <Content Include="Views\Class\AddClassTime.cshtml" />
+    <Content Include="Views\Class\EditClass.cshtml" />
+    <Content Include="Views\Class\EditClassTime.cshtml" />
+    <Content Include="Views\Class\Partial\_CreateClass.cshtml" />
+    <Content Include="Views\Class\Partial\_CreateClassTime.cshtml" />
+    <Content Include="Views\Class\Partial\_HeaderClassGrid.cshtml" />
+    <Content Include="Views\Class\Partial\_HeaderClassTimeGrid.cshtml" />
+    <Content Include="Views\Class\Partial\_ListClass.cshtml" />
+    <Content Include="Views\Class\Partial\_ListClassTime.cshtml" />
+    <Content Include="Views\Class\Partial\_NotificationModal.cshtml" />
+    <Content Include="Views\ClassType\Partial\_ClassType.cshtml" />
+    <Content Include="Views\Course\Partial\_Course.cshtml" />
+    <Content Include="Views\Dashboard\Admin.cshtml" />
+    <Content Include="Views\Dashboard\ManageBaseInformation.cshtml" />
+    <Content Include="Views\Dashboard\Partial\_Menu.cshtml" />
+    <Content Include="Views\Dashboard\Partial\Message.cshtml" />
+    <Content Include="Views\Dashboard\Partial\Notification.cshtml" />
+    <Content Include="Views\Dashboard\User.cshtml" />
+    <Content Include="Views\Error\Er404.cshtml" />
+    <Content Include="Views\NotificationSetting\Partial\_AllNotificationSetting.cshtml" />
+    <Content Include="Views\NotificationSetting\Partial\_NotificationSettingBox.cshtml" />
+    <Content Include="Views\OAuth\Partial\_Login.cshtml" />
+    <Content Include="Views\OAuth\Partial\_RecovertyPassword.cshtml" />
+    <Content Include="Views\OAuth\Partial\_RecoveryComplete.cshtml" />
+    <Content Include="Views\OAuth\SignIn.cshtml" />
+    <Content Include="Views\Session\Add.cshtml" />
+    <Content Include="Views\Session\Block.cshtml" />
+    <Content Include="Views\Session\Edit.cshtml" />
+    <Content Include="Views\Session\Partial\_CreateSession.cshtml" />
+    <Content Include="Views\Session\Partial\_HeaderSessionGrid.cshtml" />
+    <Content Include="Views\Session\Partial\_SessionBlock.cshtml" />
+    <Content Include="Views\Session\Partial\_SessionList.cshtml" />
+    <Content Include="Views\Setting\Manage.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_Notification.cshtml" />
+    <Content Include="Views\Task\Partial\_Task.cshtml" />
+    <Content Include="Views\User\Manage.cshtml" />
+    <Content Include="Views\User\Partial\_HeaderUserGrid.cshtml" />
+    <Content Include="Views\User\Partial\_List.cshtml" />
+    <Content Include="Views\User\Partial\_SearchBox.cshtml" />
+    <Content Include="Views\UserInClass\Add.cshtml" />
+    <Content Include="Views\UserInClass\Edit.cshtml" />
+    <Content Include="Views\UserInClass\Partial\_Create.cshtml" />
+    <Content Include="Views\UserInClass\Partial\_HeaderUserInClassGrid.cshtml" />
+    <Content Include="Views\UserInClass\Partial\_List.cshtml" />
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Views\Feedback\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\LocalMessage.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>LocalMessage.Designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\YekanPedia.ManagementSystem.DependencyResolver\YekanPedia.ManagementSystem.DependencyResolver.csproj">
+      <Project>{cd5f6d8c-fec3-4411-83ab-6ea7580f9212}</Project>
+      <Name>YekanPedia.ManagementSystem.DependencyResolver</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YekanPedia.ManagementSystem.Domain\YekanPedia.ManagementSystem.Domain.csproj">
+      <Project>{8bca1500-4045-46aa-9783-90f4b0ddb1f6}</Project>
+      <Name>YekanPedia.ManagementSystem.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YekanPedia.ManagementSystem.InfraStructure\YekanPedia.ManagementSystem.InfraStructure.csproj">
+      <Project>{d742b376-2be2-47ff-b70f-4f5f63a67bab}</Project>
+      <Name>YekanPedia.ManagementSystem.InfraStructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YekanPedia.ManagementSystem.Service\YekanPedia.ManagementSystem.Service.csproj">
+      <Project>{3a35c3bf-238b-445c-a4cc-f334836b3253}</Project>
+      <Name>YekanPedia.ManagementSystem.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Fonts\BYekan\BYekan.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Fonts\MaterialDesignIconic\MaterialDesignIconicFont.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Fonts\MaterialDesignIconic\MaterialDesignIconicFont.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Fonts\Roboto\Roboto-Medium-webfont.eot" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Fonts\Roboto\Roboto-Medium-webfont.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Fonts\Roboto\Roboto-Medium-webfont.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Fonts\Roboto\Roboto-Regular-webfont.eot" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Fonts\Roboto\Roboto-Regular-webfont.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Fonts\Roboto\Roboto-Regular-webfont.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\JQuery\Feedback\feedback.ts" />
+    <TypeScriptCompile Include="Scripts\JQuery\Feedback\Html2Convas.ts" />
+    <TypeScriptCompile Include="Scripts\JQuery\jquery.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="T4\T4MVC.tt.hooks.t4" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1359</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:2063/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

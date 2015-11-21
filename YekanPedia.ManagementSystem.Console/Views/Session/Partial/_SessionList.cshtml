@@ -1,0 +1,109 @@
+﻿@model IEnumerable<ClassSession>
+@{
+    Layout = null;
+    var count = 1;
+}
+<div class="card">
+    <div class="card-header">
+    </div>
+    <div class="card-body">
+        <div class="table-responsive table-hover">
+            <table id="classDataGrid" class="table table-striped ">
+                @{ Html.RenderPartial(MVC.Session.Views.Partial._HeaderSessionGrid, new ClassSession());}
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr id="session_@(item.ClassSessionId)">
+                            <td>@item.Subject</td>
+                            <td>@item.Description</td>
+                            <td>@item.ClassSessionDateSh</td>
+                            <td>
+                                <div class="checkbox">
+                                    <label>
+                                        <input disabled type="checkbox" checked="@item.IsCanceled" class="checkbox">
+                                        <i class="input-helper"></i>
+                                    </label>
+                                </div>
+                            </td>
+                            <td>
+                                @count - @(count + 1)
+                            </td>
+                            <td>
+                                @item.SessionMaterial.Count
+                            </td>
+                            <td>
+                                <ul class="actions">
+                                    <li class="dropdown action-show dropup">
+                                        <a href="" data-toggle="dropdown">
+                                            <i class="zmdi zmdi-more-vert"></i>
+                                        </a>
+                                        <ul class="dropdown-menu dm-icon">
+                                            <li>
+                                                <a href="@Url.Action(MVC.Session.ActionNames.Edit, MVC.Session.Name, new { @sessionId = item.ClassSessionId })">
+                                                    <i class="zmdi zmdi-edit"></i>
+                                                    @LocalMessage.Edit
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="deleteSession" data-url="@Url.Action(MVC.Session.ActionNames.Delete,MVC.Session.Name)" data-message="@LocalMessage.DeleteConfirm" data-id="@item.ClassSessionId">
+                                                    <i class="zmdi zmdi-delete"></i>
+                                                    @LocalMessage.Delete
+                                                </a>
+                                            </li>
+                                            <li class="divider"></li>
+                                            <li>
+                                                <a href="#" class="sendNotification" data-url="@Url.Action(MVC.Session.ActionNames.SendNotification,MVC.Session.Name)" data-message="@LocalMessage.SendNotificationConfirm" data-id="@item.ClassSessionId">
+                                                    <i class="zmdi zmdi-notifications"></i>
+                                                    @LocalMessage.SendNotification
+                                                </a>
+                                            </li>
+                                            @if (!item.IsCanceled)
+                                            {
+                                                <li>
+                                                    <a href="#" class="fileAddress" data-url="@Url.Action(MVC.Session.ActionNames.DirectoryAddress,MVC.Session.Name)" data-id="@item.ClassSessionId">
+                                                        <i class="zmdi zmdi-refresh-sync"></i>
+                                                        @LocalMessage.DisplayAddress
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="syncMaterial" data-url="@Url.Action(MVC.Session.ActionNames.SyncMaterial,MVC.Session.Name)" data-id="@item.ClassSessionId">
+                                                        <i class="zmdi zmdi-refresh-sync"></i>
+                                                        @LocalMessage.SyncMaterial
+                                                    </a>
+                                                </li>
+                                            }
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        if (!item.IsCanceled)
+                        {
+                            count += 2;
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="modal fade " id="directoryAddressModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">@LocalMessage.DisplayAddress</h4>
+            </div>
+            <div class="modal-body">
+                <div id="directoryAddress">
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-danger btn-sm waves-effect" data-dismiss="modal">
+                    <i class="zmdi zmdi-arrow-forward"></i>
+                    @LocalMessage.Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

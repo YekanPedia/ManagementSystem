@@ -1,0 +1,66 @@
+﻿@model YekanPedia.ManagementSystem.Domain.Entity.User
+<div class="card">
+    <div class="card-body card-padding">
+        @using (Ajax.BeginForm(MVC.User.ActionNames.Search, MVC.User.Name, new AjaxOptions
+        {
+            HttpMethod = "GET",
+            InsertionMode = InsertionMode.Replace,
+            UpdateTargetId = "listUser",
+            Url = Url.Action(MVC.User.ActionNames.Search, MVC.User.Name),
+        }, new { @id = "searchBoxFrm" }))
+        {
+            <div class="row">
+                <div class="col-sm-6 m-b-20">
+                    <div class="input-group has-feedback m-b-20">
+                        <div class="fg-line">
+                            <label>@Html.DisplayNameFor(X => X.FullName)</label>
+                            <input type="text" name="FullName" id="FullName" autocomplete="off" data-type="fa" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 m-b-20">
+                    <div class="input-group has-feedback m-b-20">
+                        <div class="fg-line">
+                            <label>@Html.DisplayNameFor(X => X.Mobile)</label>
+                            <input type="text" name="Mobile" id="Mobile" autocomplete="off" data-type="fa" class="form-control" />
+                        </div>
+                    </div>
+                </div><div class="col-sm-6 m-b-20 ">
+                    <div class="input-group has-feedback m-b-20">
+                        <div class="fg-line">
+                            <label>@Html.DisplayNameFor(X => X.Class)</label>
+                            @Html.DropDownList("classId", (IEnumerable<SelectListItem>)ViewBag.Class, new { @class = "selectpicker bs-select-hidden" })
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 m-b-20">
+                    <div class="input-group has-feedback m-b-20">
+                        <div>
+                            <label>@Html.DisplayNameFor(X => X.IsActive)</label>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="hidden" value="false" class="checkbox" id="IsActive" name="IsActive">
+                                    <input type="checkbox" class="checkbox" data-join="IsActive">
+                                    <i class="input-helper"></i>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="m-l-20  m-t-30 text-left">
+                    <button type="submit" id="saveAboutMeForm" class="btn btn-primary btn-sm waves-effect">
+                        <i class="zmdi zmdi-search"></i>
+                        @LocalMessage.Search
+                    </button>
+                    <a href="@Url.Action(MVC.Dashboard.ActionNames.User,MVC.Dashboard.Name)" class="btn btn-danger btn-sm waves-effect">
+                        <i class="zmdi zmdi-arrow-forward"></i>
+                        @LocalMessage.Cancel
+                    </a>
+                </div>
+            </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,256 @@
+﻿@{
+    Layout = null;
+    var CurrentUser = User as ICurrentUserPrincipal;
+}
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="@Url.Content(Links.Content.Images.Logo.log32_png)" type="image/x-icon" />
+    <noscript>
+        <meta http-equiv="refresh" content="0;url=/Content/NoScript.html" />
+    </noscript>
+
+    <title>@LocalMessage.YekanPedia</title>
+    <!-- Public CSS -->
+    @Styles.Render(Links.Bundles.Styles.PublicCss)
+    <!-- CSS -->
+    @Styles.Render(Links.Bundles.Styles.ContentCss)
+    <!-- Rtl CSS -->
+    @Styles.Render(Links.Bundles.Styles.ContentRtlCss)
+
+</head>
+<body class="">
+    <header id="header" class="">
+        <ul class="header-inner">
+            <li id="menu-trigger" data-trigger="#sidebar" class="">
+                <div class="line-wrap">
+                    <div class="line top"></div>
+                    <div class="line center"></div>
+                    <div class="line bottom"></div>
+                </div>
+            </li>
+            <li class="logo hidden-xs">
+                <a href="#">@LocalMessage.YekanPedia</a>
+            </li>
+            <li class="pull-right">
+                <ul class="top-menu">
+                    <li id="toggle-width" class="hidden-xs">
+                        <div class="toggle-switch">
+                            <input id="tw-switch" type="checkbox" hidden="hidden">
+                            <label for="tw-switch" class="ts-helper"></label>
+                        </div>
+                    </li>
+                    <li id="top-search">
+                        <a class="tm-search" href=""></a>
+                    </li>
+                    @{ Html.RenderAction(MVC.Dashboard.ActionNames.Messages, controllerName: MVC.Dashboard.Name);}
+                    @{ Html.RenderAction(MVC.Dashboard.ActionNames.Notification, controllerName: MVC.Dashboard.Name);}
+                    @{ Html.RenderAction(MVC.Task.ActionNames.GetAllTasks, controllerName: MVC.Task.Name);}
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="tm-settings" href=""></a>
+                        <ul class="dropdown-menu dm-icon pull-right">
+                            <li class="hidden-xs">
+                                <a data-action="fullscreen" href="">
+                                    <i class="zmdi zmdi-fullscreen"></i>
+                                    @LocalMessage.FullScreen
+                                </a>
+                            </li>
+                            <li>
+                                <a data-action="clear-localstorage" href="">
+                                    <i class="zmdi zmdi-delete"></i> @LocalMessage.ClearLocalStorage
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <i class="zmdi zmdi-settings"></i>
+                                    @LocalMessage.Setting
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="hidden-xs" id="chat-trigger" data-trigger="#chat">
+                        <a class="tm-chat" href=""></a>
+                    </li>
+                </ul>
+                <!-- Top Search Content -->
+                <div id="top-search-wrap">
+                    <input type="text">
+                    <i id="top-search-close">×</i>
+                </div>
+            </li>
+        </ul>
+    </header>
+    <section id="main">
+        <aside id="sidebar" class="">
+            <div class="sidebar-inner c-overflow" tabindex="1">
+                <div class="profile-menu toggled">
+                    <a href="">
+                        <div class="profile-pic">
+                            <img src="@(CurrentUser.Picture)" alt="">
+                        </div>
+                        <div class="profile-info">
+                            @(CurrentUser.FullName)
+                            <i class="zmdi zmdi-caret-down"></i>
+                        </div>
+                    </a>
+                    <ul class="main-menu" style="display: block;">
+                        <li id="4">
+                            <a href="@Url.Action(MVC.Account.ActionNames.Profile, MVC.Account.Name, new { userId = CurrentUser.UserId })">
+                                <i class="zmdi zmdi-account"></i>
+                                @LocalMessage.Profile
+                            </a>
+                        </li>
+                        <li id="5">
+                            <a href="">
+                                <i class="zmdi zmdi-settings"></i>
+                                @LocalMessage.Setting
+                            </a>
+                        </li>
+                        <li id="6">
+                            <a href="@Url.Action(MVC.OAuth.ActionNames.SignOut, MVC.OAuth.Name)">
+                                <i class="zmdi zmdi-sign-in"></i>
+                                @LocalMessage.Exit
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                @{ Html.RenderPartial(MVC.Dashboard.Views.Partial._Menu);}
+            </div>
+        </aside>
+        <aside id="chat">
+            <ul class="tab-nav tn-justified" role="tablist" tabindex="0" style="overflow: hidden; outline: none;">
+                <li role="presentation" class="active">
+                    <a href="#friends" aria-controls="friends" role="tab" data-toggle="tab">دوستان</a>
+                </li>
+                <li role="presentation">
+                    <a href="#online" aria-controls="online" role="tab" data-toggle="tab">افراد آنلاین</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane fade in active" id="friends">
+                    <div class="listview">
+                        <a class="lv-item" href="">
+                            <div class="media">
+                                <div class="pull-left">
+                                    <img class="lv-img-sm" src="../src/Content/Images/Avatar/1.jpg" alt="">
+                                </div>
+                                <div class="media-body">
+                                    <div class="lv-title">ساینا قاسمی</div>
+                                    <small class="lv-small">آخرین بازدید 50 ثانیه قبل</small>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="lv-item" href="">
+                            <div class="media">
+                                <div class="pull-left p-relative">
+                                    <img class="lv-img-sm" src="../src/Content/Images/Avatar/3.jpg" alt="">
+                                    <i class="chat-status-online"></i>
+                                </div>
+                                <div class="media-body">
+                                    <div class="lv-title">احسان</div>
+                                    <small class="lv-small">آنلاین</small>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="lv-item" href="">
+                            <div class="media">
+                                <div class="pull-left p-relative">
+                                    <img class="lv-img-sm" src="../src/Content/Images/Avatar/6.jpg" alt="">
+                                    <i class="chat-status-online"></i>
+                                </div>
+                                <div class="media-body">
+                                    <div class="lv-title">امیر محمد</div>
+                                    <small class="lv-small">آنلاین</small>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="lv-item" href="">
+                            <div class="media">
+                                <div class="pull-left">
+                                    <img class="lv-img-sm" src="../src/Content/Images/Avatar/9.jpg" alt="">
+                                </div>
+                                <div class="media-body">
+                                    <div class="lv-title">سپیده</div>
+                                    <small class="lv-small">آخرین بازدید 3 روز قبل</small>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="online">
+                    <div class="listview">
+                        <a class="lv-item" href="">
+                            <div class="media">
+                                <div class="pull-left">
+                                    <img class="lv-img-sm" src="../src/Content/Images/Avatar/9.jpg" alt="">
+                                </div>
+                                <div class="media-body">
+                                    <div class="lv-title">سپیده</div>
+                                    <small class="lv-small">آخرین بازدید 3 روز قبل</small>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="lv-item" href="">
+                            <div class="media">
+                                <div class="pull-left">
+                                    <img class="lv-img-sm" src="../src/Content/Images/Avatar/1.jpg" alt="">
+                                </div>
+                                <div class="media-body">
+                                    <div class="lv-title">ساینا قاسمی</div>
+                                    <small class="lv-small">آخرین بازدید 50 ثانیه قبل</small>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="lv-item" href="">
+                            <div class="media">
+                                <div class="pull-left p-relative">
+                                    <img class="lv-img-sm" src="../src/Content/Images/Avatar/3.jpg" alt="">
+                                    <i class="chat-status-online"></i>
+                                </div>
+                                <div class="media-body">
+                                    <div class="lv-title">احسان</div>
+                                    <small class="lv-small">آنلاین</small>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="lv-item" href="">
+                            <div class="media">
+                                <div class="pull-left p-relative">
+                                    <img class="lv-img-sm" src="../src/Content/Images/Avatar/6.jpg" alt="">
+                                    <i class="chat-status-online"></i>
+                                </div>
+                                <div class="media-body">
+                                    <div class="lv-title">امیر محمد</div>
+                                    <small class="lv-small">آنلاین</small>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <section id="content">
+            <div class="container">
+                @RenderBody()
+            </div>
+        </section>
+    </section>
+    <footer id="footer">
+        Copyright © 2010-@DateTime.Now.Year YekanPedia.Org
+        <ul class="f-menu">
+            <li><a href="#">@LocalMessage.Home</a></li>
+            <li><a href="@Url.Action(MVC.Dashboard.ActionNames.User,MVC.Dashboard.Name)">@LocalMessage.Dashboard</a></li>
+            <li><a href="#" id="feedback">@LocalMessage.Feedback</a></li>
+            <li><a href="#">@LocalMessage.ContactUs</a></li>
+        </ul>
+    </footer>
+    <!-- Javascript Libraries -->
+    @Scripts.Render(Links.Bundles.Scripts.CoreScripts)
+    <!-- Function Libraries -->
+    @RenderSection("Scripts", false)
+    @{ Html.RenderPartial(MVC.Shared.Views._Notification);}
+</body>
+</html>
+

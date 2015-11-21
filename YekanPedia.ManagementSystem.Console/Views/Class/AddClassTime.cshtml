@@ -1,0 +1,31 @@
+﻿@model YekanPedia.ManagementSystem.Domain.Entity.ClassTime
+
+<div class="block-header">
+    <h2>@LocalMessage.ClassTimeManagement</h2>
+</div>
+<div class="card">
+    <div class="card-header">
+    </div>
+    <div class="card-body card-padding">
+        @using (Html.BeginForm(MVC.Class.ActionNames.AddClassTime, MVC.Class.Name, FormMethod.Post, new { @id = "AddClassTimeFrm" }))
+        {
+            Html.RenderPartial(MVC.Class.Views.Partial._CreateClassTime, Model);
+            <div class="row">
+                <div class="m-l-20  m-t-30 text-left">
+                    <button type="submit" id="saveAboutMeForm" class="btn btn-primary btn-sm waves-effect">
+                        <i class="zmdi zmdi-check"></i>
+                        @LocalMessage.Save
+                    </button>
+                    <a href="@Url.Action(MVC.Class.ActionNames.AddClass,MVC.Class.Name)" class="btn btn-danger btn-sm waves-effect">
+                        <i class="zmdi zmdi-arrow-forward"></i>
+                        @LocalMessage.Cancel
+                    </a>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+@{ Html.RenderAction(MVC.Class.ActionNames.ClassTimeList, MVC.Class.Name, new { classId = Model.ClassId });}
+@section Scripts{
+    <script src="@Url.Content(Links.Scripts.Application.ClassController_min_js)"></script>
+}

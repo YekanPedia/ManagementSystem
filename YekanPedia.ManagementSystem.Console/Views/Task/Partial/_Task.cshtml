@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Tasks>
+@using YekanPedia.ManagementSystem.Domain.Entity
+<li class="dropdown hidden-xs">
+    <a data-toggle="dropdown" class="tm-task" href="">
+        <i class="tmn-counts">@Model.Count()</i>
+    </a>
+    <div class="dropdown-menu pull-right dropdown-menu-lg">
+        <div class="listview">
+            <div class="lv-header">
+                @LocalMessage.Task
+            </div>
+            <div class="lv-body">
+                @foreach (Tasks item in Model)
+                {
+
+                    <a href="@item.Link" class="lv-item">
+                        <div class="lv-title m-b-5">
+                            @item.Subject
+                            @if (item.IsFinishable)
+                            {
+                                <div class="pull-left">
+                                    <i class="zmdi zmdi-check  removeTasks"></i>
+                                </div>
+                            }
+                        </div>
+                        <div class="progress">
+                            <div class="@item.ProgressbarType.GetDescription()"
+                                 role="progressbar" aria-valuenow="@item.Progress"
+                                 aria-valuemin="0" aria-valuemax="100"
+                                 style="width: @item.Progress%">
+                                <span class="sr-only"></span>
+                            </div>
+                        </div>
+                    </a>
+                }
+            </div>
+        </div>
+    </div>
+</li>

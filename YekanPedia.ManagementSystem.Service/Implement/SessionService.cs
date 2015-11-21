@@ -90,7 +90,7 @@
         {
             return _notificationService.Value.SendNotificationToClass(classId,
                   (isCanceled ? NotificationType.CanceledClass : NotificationType.AddSession),
-                  PersianDateTime.Parse(classSessionDateSh).ToString(PersianDateTimeFormat.LongDate));
+                  PersianDateTime.Parse(classSessionDateSh).ToString(PersianDateTimeFormat.FullDate));
         }
         public IServiceResults<ClassSession> Find(Guid classSessionId)
         {

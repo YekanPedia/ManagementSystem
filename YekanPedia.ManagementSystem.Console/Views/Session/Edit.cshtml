@@ -1,0 +1,33 @@
+﻿@model ClassSession
+
+<div class="block-header">
+    <h2>@LocalMessage.SessionManagement</h2>
+</div>
+<div class="card">
+    <div class="card-header">
+    </div>
+    <div class="card-body card-padding">
+        @using (Html.BeginForm(MVC.Session.ActionNames.Edit, MVC.Session.Name, FormMethod.Post, new { @id = "EditSessionFrm" }))
+        {
+            <input type="hidden" name="ClassSessionId" value="@Model.ClassSessionId" />
+            Html.RenderPartial(MVC.Session.Views.Partial._CreateSession, Model);
+            <div class="row">
+                <div class="m-l-20  m-t-30 text-left">
+                    <button type="submit" id="saveAboutMeForm" class="btn btn-primary btn-sm waves-effect">
+                        <i class="zmdi zmdi-check"></i>
+                        @LocalMessage.Save
+                    </button>
+                    <a href="@Url.Action(MVC.Session.ActionNames.Add,MVC.Session.Name, new { @classId=Model.ClassId})" class="btn btn-danger btn-sm waves-effect">
+                        <i class="zmdi zmdi-arrow-forward"></i>
+                        @LocalMessage.Cancel
+                    </a>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+@{ Html.RenderAction(MVC.Session.ActionNames.SessionList, MVC.Session.Name, new { @classId = Model.ClassId });}
+
+@section Scripts{
+    <script src="@Url.Content(Links.Scripts.Application.SessionController_min_js)"></script>
+}

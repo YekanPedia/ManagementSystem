@@ -329,8 +329,8 @@ namespace Links
         
         }
     
-        public static readonly string jquery_signalR_2_1_2_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.signalR-2.1.2.min.js") ? Url("jquery.signalR-2.1.2.min.js") : Url("jquery.signalR-2.1.2.js");
-        public static readonly string jquery_signalR_2_1_2_min_js = Url("jquery.signalR-2.1.2.min.js");
+        public static readonly string jquery_signalR_2_2_0_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.signalR-2.2.0.min.js") ? Url("jquery.signalR-2.2.0.min.js") : Url("jquery.signalR-2.2.0.js");
+        public static readonly string jquery_signalR_2_2_0_min_js = Url("jquery.signalR-2.2.0.min.js");
     }
 
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -662,8 +662,8 @@ namespace Links
             public static class Assets
             {
                 public const string functions_js = "~/Scripts/functions.js"; 
-                public const string jquery_signalR_2_1_2_js = "~/Scripts/jquery.signalR-2.1.2.js"; 
-                public const string jquery_signalR_2_1_2_min_js = "~/Scripts/jquery.signalR-2.1.2.min.js"; 
+                public const string jquery_signalR_2_2_0_js = "~/Scripts/jquery.signalR-2.2.0.js"; 
+                public const string jquery_signalR_2_2_0_min_js = "~/Scripts/jquery.signalR-2.2.0.min.js"; 
             }
         }
         public static partial class Content 
