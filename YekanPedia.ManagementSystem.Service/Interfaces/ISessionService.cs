@@ -13,6 +13,8 @@
         IEnumerable<ClassSession> GetSessions(Guid classId);
         IServiceResults<ClassSession> Find(Guid classSessionId);
         int GetSessionsCount(Guid classId);
-        IServiceResults<bool> SendNotification(Guid classId, string  classSessionDateSh, bool isCanceled);
+        IServiceResults<bool> SendNotification(Guid classId, string classSessionDateSh, bool isCanceled);
+        string GetDirectoryAddress(Guid sessionId);
+        IServiceResults<bool> SyncMaterial(Guid sessionId);
     }
 }

@@ -1,6 +1,5 @@
 ﻿namespace YekanPedia.ManagementSystem.Domain.Entity
 {
-    using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using Properties;

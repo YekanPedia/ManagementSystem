@@ -124,12 +124,25 @@
             };
         }
 
-        public void SyncMaterial(Guid classId, Guid classSessionId, string classSessionDateSh)
+        public IServiceResults<bool> SyncMaterial(Guid sessionId)
+        {
+            var session = Find(sessionId).Result;
+            return SyncMaterial(session.ClassId, sessionId, session.ClassSessionDateSh);
+        }
+        public IServiceResults<bool> SyncMaterial(Guid classId, Guid classSessionId, string classSessionDateSh)
         {
             var _class = _classService.FindFullClassData(classId);
             var time = PersianDateTime.Parse(classSessionDateSh);
             var address = $"{time.Year}/{time.Month}/{time.Day}/{_class.ClassTimeInformation}";
-            _sessionMaterial.AddOrUpdateRange(classSessionId, address);
+            return _sessionMaterial.AddOrUpdateRange(classSessionId, address);
+        }
+
+        public string GetDirectoryAddress(Guid sessionId)
+        {
+            var session = Find(sessionId);
+            var _class = _classService.FindFullClassData(session.Result.ClassId);
+            var time = PersianDateTime.Parse(session.Result.ClassSessionDateSh);
+            return $"{time.Year}/{time.Month}/{time.Day}/{_class.ClassTimeInformation}";
         }
     }
 }

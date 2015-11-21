@@ -4,8 +4,7 @@
     using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using YekanPedia.ManagementSystem.Domain.Properties;
-    using YekanPedia.ManagementSystem.InfraStructure.Validation;
+    using Properties;
     [Table("ClassTime", Schema = "dbo")]
     public class ClassTime
     {
