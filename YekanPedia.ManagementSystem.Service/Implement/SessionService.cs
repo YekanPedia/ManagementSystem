@@ -38,6 +38,15 @@
 
         public IServiceResults<Guid> AddClassSession(ClassSession model)
         {
+            if (IsUnique(model.ClassId, model.ClassSessionDateSh))
+            {
+                return new ServiceResults<Guid>
+                {
+                    IsSuccessfull = false,
+                    Message = BusinessMessage.RecordExist,
+                    Result = model.ClassId
+                };
+            }
             model.ClassSessionId = Guid.NewGuid();
             _classSession.Add(model);
             var saveResult = _uow.SaveChanges();
@@ -47,7 +56,7 @@
             if (saveResult.ToBool())
                 SendNotification(model.ClassId, model.ClassSessionDateSh, model.IsCanceled);
             string resultFileProxy = string.Empty;
-            if (saveResult.ToBool())
+            if (!model.IsCanceled && saveResult.ToBool())
             {
                 var _class = _classService.FindFullClassData(model.ClassId);
                 var time = PersianDateTime.Parse(model.ClassSessionDateSh);
@@ -63,7 +72,7 @@
             };
         }
         public IServiceResults<Guid> EditClassSession(ClassSession model)
-        {
+        { 
             _classSession.Attach(model);
             _uow.Entry(model).State = EntityState.Modified;
             var saveResult = _uow.SaveChanges();
@@ -84,7 +93,7 @@
         }
         public int GetSessionsCount(Guid classId)
         {
-            return _classSession.Count(X => X.ClassId == classId && X.IsCanceled != false) * 2;
+            return _classSession.Count(X => X.ClassId == classId && X.IsCanceled == false) * 2;
         }
         public IServiceResults<bool> SendNotification(Guid classId, string classSessionDateSh, bool isCanceled)
         {
@@ -123,7 +132,6 @@
                 Result = result.ToBool()
             };
         }
-
         public IServiceResults<bool> SyncMaterial(Guid sessionId)
         {
             var session = Find(sessionId).Result;
@@ -136,13 +144,16 @@
             var address = $"{time.Year}/{time.Month}/{time.Day}/{_class.ClassTimeInformation}";
             return _sessionMaterial.AddOrUpdateRange(classSessionId, address);
         }
-
         public string GetDirectoryAddress(Guid sessionId)
         {
             var session = Find(sessionId);
             var _class = _classService.FindFullClassData(session.Result.ClassId);
             var time = PersianDateTime.Parse(session.Result.ClassSessionDateSh);
             return $"{time.Year}/{time.Month}/{time.Day}/{_class.ClassTimeInformation}";
+        }
+        public bool IsUnique(Guid classId, string dateSessionSh)
+        {
+            return _classSession.Count(X => X.ClassId == classId && X.ClassSessionDateSh == dateSessionSh) != 0;
         }
     }
 }

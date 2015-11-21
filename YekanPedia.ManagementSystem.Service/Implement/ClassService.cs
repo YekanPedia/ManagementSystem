@@ -42,7 +42,7 @@
                                  .Include(X => X.Course)
                                  .Include(X => X.User)
                                  .Include(X => X.ClassTime)
-                                 .Include(X=>X.ClassSession)
+                                 .Include(X => X.ClassSession)
                                  .AsNoTracking()
                                  .OrderByDescending(X => X.StartDateMi)
                                  .ToList();

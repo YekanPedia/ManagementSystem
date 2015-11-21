@@ -55,7 +55,8 @@
                 this.NotificationController().Notify(result.Message, NotificationStatus.Error);
                 return View(model);
             }
-            this.NotificationController().Notify(string.Format(LocalMessage.SessionMaterialAddress, result.Message), NotificationStatus.Success);
+            if (!model.IsCanceled)
+                this.NotificationController().Notify(string.Format(LocalMessage.SessionMaterialAddress, result.Message), NotificationStatus.Success);
             return RedirectToAction(MVC.Session.ActionNames.Add, MVC.Session.Name, new
             {
                 classId = model.ClassId

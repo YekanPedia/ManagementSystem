@@ -22,7 +22,7 @@
                                 }
                             </td>
                             <td>@item.SessionCount</td>
-                            <td>@(item.ClassSession.Count * 2)</td>
+                            <td>@(item.ClassSession.Where(X => X.IsCanceled == false).Count() * 2)</td>
                             <td>@item.StartDateSh</td>
                             <td>@item.FinishDateSh</td>
                         </tr>
