@@ -23,6 +23,14 @@
         #endregion
         public IServiceResults<Guid> Add(SessionRequest model)
         {
+            if (IsUnique(model.ClassSessionId, (Guid)model.UserId))
+                return new ServiceResults<Guid>
+                {
+                    IsSuccessfull = false,
+                    Message = BusinessMessage.RecordExist,
+                    Result = model.SessionRequestId
+                };
+
             model.SessionRequestId = Guid.NewGuid();
             _sessionRequest.Add(model);
             var saveResult = _uow.SaveChanges();
@@ -30,7 +38,7 @@
             return new ServiceResults<Guid>
             {
                 IsSuccessfull = saveResult.ToBool(),
-                Message = saveResult.ToMessage(BusinessMessage.Error),
+                Message = saveResult.ToBool() ? BusinessMessage.Ok : BusinessMessage.Error,
                 Result = model.SessionRequestId
             };
         }
@@ -54,6 +62,11 @@
         public SessionRequest Find(Guid sessionRequestId)
         {
             return _sessionRequest.Find(sessionRequestId);
+        }
+
+        public bool IsUnique(Guid classSessionId, Guid userId)
+        {
+            return _sessionRequest.Count(X => X.UserId == userId && X.ClassSessionId == classSessionId) != 0;
         }
     }
 }

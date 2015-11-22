@@ -106,6 +106,15 @@ namespace YekanPedia.ManagementSystem.Service.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to درخواست مورد نظر با موفقیت ثبت شد.
+        /// </summary>
+        internal static string Ok {
+            get {
+                return ResourceManager.GetString("Ok", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to اطلاعات ارسالی قبلا ثبت شده است.
         /// </summary>
         internal static string RecordExist {
@@ -129,6 +138,15 @@ namespace YekanPedia.ManagementSystem.Service.Properties {
         internal static string RecoveryPassword {
             get {
                 return ResourceManager.GetString("RecoveryPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تعداد جلسات ثبت شده برای این کلاس بیش از حد مجاز است.
+        /// </summary>
+        internal static string SessionCountIsFull {
+            get {
+                return ResourceManager.GetString("SessionCountIsFull", resourceCulture);
             }
         }
         

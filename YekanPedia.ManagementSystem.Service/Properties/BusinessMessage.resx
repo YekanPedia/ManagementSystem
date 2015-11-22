@@ -132,6 +132,9 @@
   <data name="NotificationNotSend" xml:space="preserve">
     <value>ارسال اعلانات با خطا مواجه شد</value>
   </data>
+  <data name="Ok" xml:space="preserve">
+    <value>درخواست مورد نظر با موفقیت ثبت شد</value>
+  </data>
   <data name="RecordExist" xml:space="preserve">
     <value>اطلاعات ارسالی قبلا ثبت شده است</value>
   </data>
@@ -140,6 +143,9 @@
   </data>
   <data name="RecoveryPassword" xml:space="preserve">
     <value>کلمه عبور موقتی برای شما ارسال خواهد شد. لطفا بعد از اولین ورود به سیستم کلمه عبور خود را تغییر دهید</value>
+  </data>
+  <data name="SessionCountIsFull" xml:space="preserve">
+    <value>تعداد جلسات ثبت شده برای این کلاس بیش از حد مجاز است</value>
   </data>
   <data name="UserNotActive" xml:space="preserve">
     <value>حساب کاربری شما موقتا غیر فعال می باشد، برای فعال شدن حساب کاربری خود با مدیر وب سایت تماس حاصل فرمائید</value>

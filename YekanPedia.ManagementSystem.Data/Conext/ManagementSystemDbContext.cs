@@ -23,6 +23,10 @@
         public DbSet<ClassSession> ClassSession { get; set; }
         public DbSet<Feedback> Feedback { get; set; }
         public DbSet<SessionRequest> SessionRequest { get; set; }
+        public DbSet<UserInRole> UserInRole { get; set; }
+        public DbSet<Role> Role { get; set; }
+        public DbSet<Action> Action { get; set; }
+
         public new IDbSet<TEntity> Set<TEntity>() where TEntity : class
         {
             return base.Set<TEntity>();

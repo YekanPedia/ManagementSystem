@@ -38,6 +38,7 @@ public static partial class MVC
     public static YekanPedia.ManagementSystem.Console.Controllers.NotificationSettingController NotificationSetting = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_NotificationSettingController();
     public static YekanPedia.ManagementSystem.Console.Controllers.OAuthController OAuth = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_OAuthController();
     public static YekanPedia.ManagementSystem.Console.Controllers.SessionController Session = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_SessionController();
+    public static YekanPedia.ManagementSystem.Console.Controllers.SessionRequestController SessionRequest = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_SessionRequestController();
     public static YekanPedia.ManagementSystem.Console.Controllers.SettingController Setting = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_SettingController();
     public static YekanPedia.ManagementSystem.Console.Controllers.TaskController Task = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_TaskController();
     public static YekanPedia.ManagementSystem.Console.Controllers.UserController User = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_UserController();
@@ -382,7 +383,6 @@ namespace Links
                 public static readonly string pdf_png = Url("pdf.png");
                 public static readonly string png_png = Url("png.png");
                 public static readonly string ppt_png = Url("ppt.png");
-                public static readonly string txt_png = Url("txt.png");
                 public static readonly string video_png = Url("video.png");
                 public static readonly string word_png = Url("word.png");
             }

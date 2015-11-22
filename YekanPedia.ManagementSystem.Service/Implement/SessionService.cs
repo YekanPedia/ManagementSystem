@@ -39,14 +39,19 @@
         public IServiceResults<Guid> AddClassSession(ClassSession model)
         {
             if (IsUnique(model.ClassId, model.ClassSessionDateSh))
-            {
                 return new ServiceResults<Guid>
                 {
                     IsSuccessfull = false,
                     Message = BusinessMessage.RecordExist,
                     Result = model.ClassId
                 };
-            }
+            if (GetSessionsCount(model.ClassId) == _classService.FindClass(model.ClassId).SessionCount)
+                return new ServiceResults<Guid>
+                {
+                    IsSuccessfull = false,
+                    Message = BusinessMessage.SessionCountIsFull,
+                    Result = model.ClassId
+                };
             model.ClassSessionId = Guid.NewGuid();
             _classSession.Add(model);
             var saveResult = _uow.SaveChanges();
@@ -72,7 +77,7 @@
             };
         }
         public IServiceResults<Guid> EditClassSession(ClassSession model)
-        { 
+        {
             _classSession.Attach(model);
             _uow.Entry(model).State = EntityState.Modified;
             var saveResult = _uow.SaveChanges();

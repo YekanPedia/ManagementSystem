@@ -29,6 +29,7 @@
 
                 x.For<IClassTimeService>().Use<ClassTimeService>();
                 x.For<ISessionService>().Use<SessionService>();
+                x.For<ISessionRequestService>().Use<SessionRequestService>();
                 x.For<ISessionMaterialService>().Use<SessionMaterialService>();
                 x.For<IUserInClassService>().Use<UserInClassService>();
                 x.For<IFeedbackService>().Use<FeedbackService>();

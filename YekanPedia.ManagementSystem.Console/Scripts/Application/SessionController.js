@@ -16,38 +16,49 @@
             });
         });
     });     $(".deleteSession").click(function () {
-
-        var $el = $(this);
-        swal({
+         var $el = $(this);         swal({
             title: $el.attr('data-message'),             text: '',             type: "warning",             showCancelButton: true,             confirmButtonColor: "#4285F4",             confirmButtonText: "بلی",             cancelButtonText: "انصراف",             closeOnConfirm: false
         }, function () {
             $.ajax({
                 type: "POST",                 url: $el.attr('data-url'),                 data: "sessionId=" + $el.attr('data-Id'),                 dataType: "json",                 success: function (response) {
                     if (response.IsSuccessfull) {
-                        swal("اتمام حذف اطلاعات", "اطلاعات ذخیره شده حذف شد", "success");
-                        $("#session_" + $el.attr('data-id')).remove();
+                        swal("اتمام حذف اطلاعات", "اطلاعات ذخیره شده حذف شد", "success");                         $("#session_" + $el.attr('data-id')).remove();
                     } else {
                         swal("لغو حذف اطلاعات", response.Message, "error");
                     }
                 }
             });
-
         });
     });     $(".fileAddress").click(function () {
         $.ajax({
             type: "POST",             url: $(this).attr('data-url'),             data: "sessionId=" + $(this).attr('data-Id'),             dataType: "json",             success: function (response) {
-                console.log(response);
-                $("#directoryAddress").html(response);
-                $("#directoryAddressModal").modal('toggle');
+                console.log(response);                 $("#directoryAddress").html(response);                 $("#directoryAddressModal").modal('toggle');
             }
         });
-    });
-    $(".syncMaterial").click(function () {
+    });     $(".syncMaterial").click(function () {
         $.ajax({
             type: "POST",             url: $(this).attr('data-url'),             data: "sessionId=" + $(this).attr('data-Id'),             dataType: "json",             success: function (response) {
-                console.log(response);
-                swal("بروز رسانی فایل ها", "بروز رسانی فایل ها با موفقیت انجام شد", "success");             }, error: function () {
+                if (response.IsSuccessfull) {
+                    swal("بروز رسانی فایل ها", "بروز رسانی فایل ها با موفقیت انجام شد", "success");
+                } else {
+                    swal("بروز رسانی فایل ها", "بروز رسانی فایل ها با خطا مواجه شد", "error");
+                }
+            },
+            error: function () {
                 swal("بروز رسانی فایل ها", "بروز رسانی فایل ها با خطا مواجه شد", "error");
+            }
+        });
+    });     $(".sessionMaterialRequest").click(function (e) {
+        e.preventDefault();
+        $.ajax({
+            type: "POST",             url: $(this).attr('data-url'),             data: "ClassSessionId=" + $(this).attr('data-Id'),             dataType: "json",             success: function (response) {
+                 if (response.IsSuccessfull) {
+                    swal("درخواست بارگذاری فایل", response.Message, "success");
+                } else {
+                    swal("درخواست بارگذاری فایل", response.Message, "error");
+                }
+            }, error: function () {
+                swal("درخواست بارگذاری فایل", "درخواست با خطا مواجه شد", "error");
             }
         });
     });

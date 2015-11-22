@@ -176,6 +176,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\SessionRequestController.cs" />
     <Compile Include="T4\AccountController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
@@ -257,6 +258,9 @@
     <Compile Include="T4\SessionController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
+    <Compile Include="T4\SessionRequestController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="T4\SettingController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
@@ -303,7 +307,6 @@
     <Content Include="Content\Images\FileType\pdf.png" />
     <Content Include="Content\Images\FileType\png.png" />
     <Content Include="Content\Images\FileType\ppt.png" />
-    <Content Include="Content\Images\FileType\txt.png" />
     <Content Include="Content\Images\FileType\video.png" />
     <Content Include="Content\Images\FileType\word.png" />
     <Content Include="Content\Images\Icon\notifications.png" />
@@ -411,6 +414,8 @@
     <Content Include="Scripts\JQuery\Validation\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\JQuery\Validation\jquery.validation.messages.js" />
     <Content Include="Scripts\JQuery\Wave\waves.min.js" />
+    <None Include="bundleconfig.json" />
+    <None Include="Properties\PublishProfiles\ManagementSystem.pubxml" />
     <None Include="T4\T4MVC.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>T4MVC.cs</LastGenOutput>
@@ -483,6 +488,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Feedback\" />
+    <Folder Include="Views\SessionRequest\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
