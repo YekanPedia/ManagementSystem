@@ -134,7 +134,7 @@
         }
         #endregion
         #region RecoveryPassword
-        [HttpPost]
+        [HttpPost,AllowAnonymous]
         public virtual JsonResult RecoveryPassword(string email)
         {
             return Json(_userService.RecoveryPassword(email));

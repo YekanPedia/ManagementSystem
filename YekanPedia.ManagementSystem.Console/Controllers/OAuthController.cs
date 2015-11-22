@@ -7,14 +7,16 @@
     using System;
     using System.Web;
     using System.Web.Script.Serialization;
-
+    using System.Linq;
     public partial class OAuthController : Controller
     {
         #region Constructur
-        private readonly IUserService _userServie;
-        public OAuthController(IUserService userService)
+        readonly IUserService _userServie;
+        readonly IRoleManagementService _roleManagementService;
+        public OAuthController(IUserService userService, IRoleManagementService roleManagementService)
         {
             _userServie = userService;
+            _roleManagementService = roleManagementService;
         }
         #endregion
         #region SignIn
@@ -52,7 +54,10 @@
             cookie.HttpOnly = true;
             Response.Cookies.Add(cookie);
 
-            return RedirectToAction(MVC.Dashboard.ActionNames.User, MVC.Dashboard.Name);
+            var availableMenu = _roleManagementService.GetAvailableMenu(login.Result.UserId);
+            //cache 
+            var defaultPage = availableMenu.Where(X => X.IsFirstAction).FirstOrDefault();
+            return RedirectToAction(defaultPage.ActionName, defaultPage.Controller);
         }
         #endregion
         [HttpGet, AllowAnonymous]

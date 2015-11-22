@@ -17,12 +17,14 @@
         readonly IDbSet<User> _user;
         readonly ITaskService _taskService;
         readonly Lazy<INotificationService> _notificationService;
-        public UserService(IUnitOfWork uow, ITaskService taskService, Lazy<INotificationService> notificationService)
+        readonly Lazy<IRoleManagementService> _roleManagementService;
+        public UserService(IUnitOfWork uow, ITaskService taskService, Lazy<INotificationService> notificationService, Lazy<IRoleManagementService> roleManagementService)
         {
             _uow = uow;
             _user = uow.Set<User>();
             _taskService = taskService;
             _notificationService = notificationService;
+            _roleManagementService = roleManagementService;
         }
         #endregion
         public IServiceResults<Guid> AddUser(User user, Tasks task)
@@ -32,6 +34,9 @@
             user.LastLoginDate = DateTime.Now;
             _user.Add(user);
             _uow.SaveChanges();
+            #region Add Default Role
+            _roleManagementService.Value.AddRole(new UserInRole { RoleId = _roleManagementService.Value.GetDefaultRole(), UserId = user.UserId });
+            #endregion
             _taskService.AddUserTask(task);
             return new ServiceResults<Guid>
             {
@@ -249,9 +254,9 @@
             var model = _user.AsQueryable();
             if (predicate != null)
             {
-                  model = _user.Where(X => (predicate.FullName == null || X.FullName.Contains(predicate.FullName)) &&
-                                (predicate.Mobile == null || X.Mobile.Contains(predicate.Mobile)) && X.IsActive == predicate.IsActive)
-                               .OrderByDescending(X => X.RegisterDate).AsQueryable();
+                model = _user.Where(X => (predicate.FullName == null || X.FullName.Contains(predicate.FullName)) &&
+                              (predicate.Mobile == null || X.Mobile.Contains(predicate.Mobile)) && X.IsActive == predicate.IsActive)
+                             .OrderByDescending(X => X.RegisterDate).AsQueryable();
             }
             if (classId != null)
             {

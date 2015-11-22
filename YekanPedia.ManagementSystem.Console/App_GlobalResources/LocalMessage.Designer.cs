@@ -214,6 +214,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to بزودی.
+        /// </summary>
+        internal static string CommingSoon {
+            get {
+                return ResourceManager.GetString("CommingSoon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to اطلاعات پروفایل شما تکمیل نمی باشد. .
         /// </summary>
         internal static string CompleteProfile {

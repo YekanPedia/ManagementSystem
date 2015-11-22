@@ -25,7 +25,7 @@
         public DbSet<SessionRequest> SessionRequest { get; set; }
         public DbSet<UserInRole> UserInRole { get; set; }
         public DbSet<Role> Role { get; set; }
-        public DbSet<Action> Action { get; set; }
+        public DbSet<ActionRole> ActionRole { get; set; }
 
         public new IDbSet<TEntity> Set<TEntity>() where TEntity : class
         {

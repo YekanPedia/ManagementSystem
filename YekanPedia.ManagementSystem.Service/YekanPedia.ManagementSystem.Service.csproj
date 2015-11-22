@@ -60,6 +60,7 @@
     <Compile Include="Implement\FeedbackService.cs" />
     <Compile Include="Implement\NotificationService.cs" />
     <Compile Include="Implement\NotificationSettingService.cs" />
+    <Compile Include="Implement\RoleManagementService.cs" />
     <Compile Include="Implement\SessionMaterialService.cs" />
     <Compile Include="Implement\SessionRequestService.cs" />
     <Compile Include="Implement\SessionService.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="Interfaces\IFeedbackService.cs" />
     <Compile Include="Interfaces\INotificationService.cs" />
     <Compile Include="Interfaces\INotificationSettingService.cs" />
+    <Compile Include="Interfaces\IRoleManagementService.cs" />
     <Compile Include="Interfaces\ISessionMaterialService.cs" />
     <Compile Include="Interfaces\ISessionRequestService.cs" />
     <Compile Include="Interfaces\ISessionService.cs" />

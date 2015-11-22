@@ -42,7 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entity\Action.cs" />
+    <Compile Include="Entity\ActionRole.cs" />
     <Compile Include="Entity\Feedback.cs" />
     <Compile Include="Entity\Role.cs" />
     <Compile Include="Entity\SessionMaterial.cs" />

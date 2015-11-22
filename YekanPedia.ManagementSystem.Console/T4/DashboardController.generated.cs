@@ -76,6 +76,7 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             public readonly string Admin = "Admin";
             public readonly string Messages = "Messages";
             public readonly string Notification = "Notification";
+            public readonly string Menu = "Menu";
             public readonly string ManageBaseInformation = "ManageBaseInformation";
         }
 
@@ -86,6 +87,7 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             public const string Admin = "Admin";
             public const string Messages = "Messages";
             public const string Notification = "Notification";
+            public const string Menu = "Menu";
             public const string ManageBaseInformation = "ManageBaseInformation";
         }
 
@@ -173,6 +175,17 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         {
             var callInfo = new T4MVC_System_Web_Mvc_PartialViewResult(Area, Name, ActionNames.Notification);
             NotificationOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void MenuOverride(T4MVC_System_Web_Mvc_PartialViewResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.PartialViewResult Menu()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_PartialViewResult(Area, Name, ActionNames.Menu);
+            MenuOverride(callInfo);
             return callInfo;
         }
 

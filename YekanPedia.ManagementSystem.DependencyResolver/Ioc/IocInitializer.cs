@@ -26,6 +26,8 @@
                 x.For<IClassService>().Use<ClassService>();
                 x.For<Lazy<IClassService>>().Use(c => new Lazy<IClassService>(c.GetInstance<ClassService>));
 
+                x.For<Lazy<IRoleManagementService>>().Use(c => new Lazy<IRoleManagementService>(c.GetInstance<RoleManagementService>));
+                x.For<IRoleManagementService>().Use<RoleManagementService>();
 
                 x.For<IClassTimeService>().Use<ClassTimeService>();
                 x.For<ISessionService>().Use<SessionService>();

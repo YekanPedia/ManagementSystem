@@ -327,4 +327,7 @@
   <data name="DisplayAddress" xml:space="preserve">
     <value>نمایش آدرس بارگذاری فایل ها</value>
   </data>
+  <data name="CommingSoon" xml:space="preserve">
+    <value>بزودی</value>
+  </data>
 </root>

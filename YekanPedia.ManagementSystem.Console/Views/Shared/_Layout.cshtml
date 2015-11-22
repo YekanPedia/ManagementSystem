@@ -96,19 +96,20 @@
                         </div>
                     </a>
                     <ul class="main-menu" style="display: block;">
-                        <li id="4">
+                        <li id="-3">
                             <a href="@Url.Action(MVC.Account.ActionNames.Profile, MVC.Account.Name, new { userId = CurrentUser.UserId })">
                                 <i class="zmdi zmdi-account"></i>
                                 @LocalMessage.Profile
                             </a>
                         </li>
-                        <li id="5">
+                        <li id="-2">
                             <a href="">
                                 <i class="zmdi zmdi-settings"></i>
                                 @LocalMessage.Setting
+                                <div class="pull-left c-red">@LocalMessage.CommingSoon</div>
                             </a>
                         </li>
-                        <li id="6">
+                        <li id="-1">
                             <a href="@Url.Action(MVC.OAuth.ActionNames.SignOut, MVC.OAuth.Name)">
                                 <i class="zmdi zmdi-sign-in"></i>
                                 @LocalMessage.Exit
@@ -116,7 +117,7 @@
                         </li>
                     </ul>
                 </div>
-                @{ Html.RenderPartial(MVC.Dashboard.Views.Partial._Menu);}
+                @{ Html.RenderAction(MVC.Dashboard.ActionNames.Menu,MVC.Dashboard.Name);}
             </div>
         </aside>
         <aside id="chat">
