@@ -35,6 +35,8 @@
         public ProgressbarType ProgressbarType { get; set; }
 
         public bool IsFinishable { get; set; }
+
+        public DateTime FinishDateMi { get; set; }
     }
 
     public enum ProgressbarType
@@ -56,6 +58,7 @@
     }
     public enum TaskType
     {
-        Profile
+        Profile,
+        Practice
     }
 }

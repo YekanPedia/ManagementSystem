@@ -15,10 +15,10 @@
         #region Constructur
         readonly IUnitOfWork _uow;
         readonly IDbSet<User> _user;
-        readonly ITaskService _taskService;
+        readonly Lazy<ITaskService> _taskService;
         readonly Lazy<INotificationService> _notificationService;
         readonly Lazy<IRoleManagementService> _roleManagementService;
-        public UserService(IUnitOfWork uow, ITaskService taskService, Lazy<INotificationService> notificationService, Lazy<IRoleManagementService> roleManagementService)
+        public UserService(IUnitOfWork uow, Lazy<ITaskService> taskService, Lazy<INotificationService> notificationService, Lazy<IRoleManagementService> roleManagementService)
         {
             _uow = uow;
             _user = uow.Set<User>();
@@ -37,7 +37,7 @@
             #region Add Default Role
             _roleManagementService.Value.AddRole(new UserInRole { RoleId = _roleManagementService.Value.GetDefaultRole(), UserId = user.UserId });
             #endregion
-            _taskService.AddUserTask(task);
+            _taskService.Value.AddUserTask(task);
             return new ServiceResults<Guid>
             {
                 IsSuccessfull = true,
@@ -156,7 +156,7 @@
             }
             result.Result.AboutMe = aboutMe;
             _uow.SaveChanges();
-            _taskService.EditUserTaskProgress(userId, TaskType.Profile, result.Result.ProgressRegisterCompleted());
+            _taskService.Value.EditUserTaskProgress(userId, TaskType.Profile, result.Result.ProgressRegisterCompleted());
             return new ServiceResults<bool>
             {
                 IsSuccessfull = true,
@@ -180,7 +180,7 @@
             result.Result.Sex = model.Sex;
             result.Result.BirthDate = model.BirthDate;
             var resultSave = _uow.SaveChanges();
-            _taskService.EditUserTaskProgress(result.Result.UserId, TaskType.Profile, result.Result.ProgressRegisterCompleted());
+            _taskService.Value.EditUserTaskProgress(result.Result.UserId, TaskType.Profile, result.Result.ProgressRegisterCompleted());
             return new ServiceResults<bool>
             {
                 IsSuccessfull = resultSave.ToBool(),
@@ -208,7 +208,7 @@
             result.Result.Latitude = model.Latitude;
             result.Result.Longitude = model.Longitude;
             var resultSave = _uow.SaveChanges();
-            _taskService.EditUserTaskProgress(result.Result.UserId, TaskType.Profile, result.Result.ProgressRegisterCompleted());
+            _taskService.Value.EditUserTaskProgress(result.Result.UserId, TaskType.Profile, result.Result.ProgressRegisterCompleted());
             return new ServiceResults<bool>
             {
                 IsSuccessfull = resultSave.ToBool(),

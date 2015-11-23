@@ -1,0 +1,31 @@
+﻿@model List<Course>
+@{
+    Layout = null;
+}
+
+<div class="pmo-block pmo-items hidden-xs">
+    <h2>@LocalMessage.CourseCurrents</h2>
+    <div class="pmob-body">
+        <div class="row">
+            @foreach (var item in Model.Where(X => X.IsActive))
+            {
+                <a href="" class="col-xs-2">
+                    <img class="" src="@item.LogoType" alt="@item.CourseName">
+                </a>
+            }
+        </div>
+    </div>
+</div>
+<div class="pmo-block pmo-items hidden-xs">
+    <h2>@LocalMessage.CourseCompleted</h2>
+    <div class="pmob-body">
+        <div class="row">
+            @foreach (var item in Model.Where(X => !X.IsActive))
+            {
+                <a href="" class="col-xs-2">
+                    <img class="" src="@item.LogoType" alt="@item.CourseName">
+                </a>
+            }
+        </div>
+    </div>
+</div>

@@ -42,6 +42,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,6 +51,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Caching\HttpRuntimeCache.cs" />
+    <Compile Include="Caching\ICacheProvider.cs" />
     <Compile Include="Date\PersianDateTime.cs" />
     <Compile Include="Date\TimeSpanExtension.cs" />
     <Compile Include="Extension\ApplyCorrectPersianCharacters.cs" />

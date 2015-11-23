@@ -2,6 +2,7 @@
 {
     using System.Web.Mvc;
     using Service.Interfaces;
+    using System;
 
     public partial class CourseController : Controller
     {
@@ -28,6 +29,12 @@
         public virtual JsonResult AddCourse(string text)
         {
             return Json(_courseService.AddCourse(text));
+        }
+
+        [ChildActionOnly]
+        public virtual PartialViewResult UserCourses(Guid userId)
+        {
+            return PartialView(MVC.Course.Views.Partial._UserCurrents,_courseService.GetUserCourses(userId));
         }
     }
 }

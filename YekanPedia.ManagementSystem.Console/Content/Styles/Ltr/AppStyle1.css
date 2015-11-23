@@ -10036,67 +10036,67 @@ body #content {
     }
 
     .top-menu > li > a.tm-chat {
-        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOAQMAAAAVCq6zAAAABlBMVEUAAAD///+l2Z/dAAAAAXRSTlMAQObYZgAAAB9JREFUCNdjYPj/AYxh4D+Q/R+JzwxkMyPx+YFsIAYA9LERm7GAr6MAAAAASUVORK5CYII=') /*../../Images/Menu/menu-2.png*/;
+        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOAQMAAAAVCq6zAAAABlBMVEUAAAD///+l2Z/dAAAAAXRSTlMAQObYZgAAAB9JREFUCNdjYPj/AYxh4D+Q/R+JzwxkMyPx+YFsIAYA9LERm7GAr6MAAAAASUVORK5CYII=') /*/Content/Images/Menu/menu-2.png*/;
     }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
     .top-menu > li > a.tm-chat {
-        background-image: url("../../Images/Menu/menu-2@2x.png");
+        background-image: url("/Content/Images/Menu/menu-2@2x.png");
         background-size: 18px 12px;
     }
 }
 
 .top-menu > li > a.tm-settings {
-    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYAgMAAACdGdVrAAAADFBMVEUAAAD///////////84wDuoAAAAA3RSTlMA6k+4hIO5AAAAGElEQVQI12PADzgTwBT7BSgFFaS1SkwAAHNmB4GbvnxOAAAAAElFTkSuQmCC') /*../../Images/Menu/ellipsis.png*/;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYAgMAAACdGdVrAAAADFBMVEUAAAD///////////84wDuoAAAAA3RSTlMA6k+4hIO5AAAAGElEQVQI12PADzgTwBT7BSgFFaS1SkwAAHNmB4GbvnxOAAAAAElFTkSuQmCC') /*/Content/Images/Menu/ellipsis.png*/;
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
     .top-menu > li > a.tm-settings {
-        background-image: url("../../Images/Menu/ellipsis@2x.png");
+        background-image: url("/Content/Images/Menu/ellipsis@2x.png");
         background-size: 24px 24px;
     }
 }
 
 .top-menu > li > a.tm-notification {
-    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYBAMAAAASWSDLAAAAJFBMVEUAAAD///////////////////////////////////////////+0CY3pAAAAC3RSTlMArvucgAbpkGlCP7/h3ZQAAABZSURBVBjTYyAAigqQONoKCPbE3RsXwNjBu3fv3hwA5VjvBgIDCJtzNwjsgnAYwZyNEA4bmLMNwuHeDQZU4nhDOA4gNstuCNgCVQVThwk4du9AcFiFRAmECwATD0Sp49ut7AAAAABJRU5ErkJggg==') /*../../Images/Menu/notification.png*/;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYBAMAAAASWSDLAAAAJFBMVEUAAAD///////////////////////////////////////////+0CY3pAAAAC3RSTlMArvucgAbpkGlCP7/h3ZQAAABZSURBVBjTYyAAigqQONoKCPbE3RsXwNjBu3fv3hwA5VjvBgIDCJtzNwjsgnAYwZyNEA4bmLMNwuHeDQZU4nhDOA4gNstuCNgCVQVThwk4du9AcFiFRAmECwATD0Sp49ut7AAAAABJRU5ErkJggg==') /*/Content/Images/Menu/notification.png*/;
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
     .top-menu > li > a.tm-notification {
-        background-image: url("../../Images/Menu/notification@2x.png");
+        background-image: url("/Content/Images/Menu/notification@2x.png");
         background-size: 24px 24px;
     }
 }
 
 .top-menu > li > a.tm-message {
-    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAMAAADXqc3KAAAAPFBMVEUAAAD////////////////////////////////////////////////////////////////////////////YSWgTAAAAE3RSTlMA5/zzcE4cDAOwkFAzzcyvj1Eyjmy7VAAAAGVJREFUKM+90EkKwCAMBdDEeeqY+9+1RUNCS+nSvxHyviiBOTmQXkHfQecqHYgqPvtEDBCLIY7ZIwjkAG0Z8/WEkAXIupSclZNhNNvd3OSmApkSgd8S4GDl3yloZsL/Ev3X2qfkAh1BFEPr0OMeAAAAAElFTkSuQmCC') /*../../Images/Menu/message.png*/;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAMAAADXqc3KAAAAPFBMVEUAAAD////////////////////////////////////////////////////////////////////////////YSWgTAAAAE3RSTlMA5/zzcE4cDAOwkFAzzcyvj1Eyjmy7VAAAAGVJREFUKM+90EkKwCAMBdDEeeqY+9+1RUNCS+nSvxHyviiBOTmQXkHfQecqHYgqPvtEDBCLIY7ZIwjkAG0Z8/WEkAXIupSclZNhNNvd3OSmApkSgd8S4GDl3yloZsL/Ev3X2qfkAh1BFEPr0OMeAAAAAElFTkSuQmCC') /*/Content/Images/Menu/message.png*/;
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
     .top-menu > li > a.tm-message {
-        background-image: url("../../Images/Menu/message@2x.png");
+        background-image: url("/Content/Images/Menu/message@2x.png");
         background-size: 24px 24px;
     }
 }
 
 .top-menu > li > a.tm-search {
-    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAMAAADXqc3KAAAANlBMVEUAAAD////////////////////////////////////////////////////////////////////xY8b8AAAAEXRSTlMAH9+r9T/q6Zl9ejQEnQMCN+X/LXMAAABxSURBVCjPrZDJCsMwDAWtSF6zdf7/ZwuNDrEDzcVzejBoDdOJmkgaw8C2c1G2XuxYk1OaUfo+2PoLq9F1U5qnit5FQjwJ+S7g9HTAn4qXGd1Wn2GrULAqh1RDh8sLF8oi468yWWNY3DyQycbF00iYyxc8ngSTBTMPzQAAAABJRU5ErkJggg==') /*../../Images/Menu/search.png*/;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAMAAADXqc3KAAAANlBMVEUAAAD////////////////////////////////////////////////////////////////////xY8b8AAAAEXRSTlMAH9+r9T/q6Zl9ejQEnQMCN+X/LXMAAABxSURBVCjPrZDJCsMwDAWtSF6zdf7/ZwuNDrEDzcVzejBoDdOJmkgaw8C2c1G2XuxYk1OaUfo+2PoLq9F1U5qnit5FQjwJ+S7g9HTAn4qXGd1Wn2GrULAqh1RDh8sLF8oi468yWWNY3DyQycbF00iYyxc8ngSTBTMPzQAAAABJRU5ErkJggg==') /*/Content/Images/Menu/search.png*/;
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
     .top-menu > li > a.tm-search {
-        background-image: url("../../Images/Menu/search@2x.png");
+        background-image: url("/Content/Images/Menu/search@2x.png");
         background-size: 24px 24px;
     }
 }
 
 .top-menu > li > a.tm-task {
-    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYAQMAAADaua+7AAAABlBMVEUAAAD///+l2Z/dAAAAAXRSTlMAQObYZgAAABNJREFUCNdjwAck//8AYYJ8PAAATUQMYST4coIAAAAASUVORK5CYII=') /*../../Images/Menu/task.png*/;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYAQMAAADaua+7AAAABlBMVEUAAAD///+l2Z/dAAAAAXRSTlMAQObYZgAAABNJREFUCNdjwAck//8AYYJ8PAAATUQMYST4coIAAAAASUVORK5CYII=') /*/Content/Images/Menu/task.png*/;
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
     .top-menu > li > a.tm-task {
-        background-image: url("../../Images/Menu/task@2x.png");
+        background-image: url("/Content/Images/Menu/task@2x.png");
         background-size: 24px 24px;
     }
 }
@@ -10161,7 +10161,7 @@ body #content {
         position: absolute;
         width: 100%;
         height: calc(100% - 70px);
-        background: url(../img/notifications.png) no-repeat center;
+        background: url(/Content/Images/Menu/notification.png) no-repeat center;
         -webkit-transition: all;
         -o-transition: all;
         -moz-transition: all;
@@ -10229,14 +10229,14 @@ body #content {
     border-radius: 2px;
     color: rgba(51, 51, 51, 0.69);
     background-color: rgba(255, 255, 255, 0.26);
-    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAMAAADXqc3KAAAANlBMVEUAAAD////////////////////////////////////////////////////////////////////xY8b8AAAAEXRSTlMAH9+r9T/q6Zl9ejQEnQMCN+X/LXMAAABxSURBVCjPrZDJCsMwDAWtSF6zdf7/ZwuNDrEDzcVzejBoDdOJmkgaw8C2c1G2XuxYk1OaUfo+2PoLq9F1U5qnit5FQjwJ+S7g9HTAn4qXGd1Wn2GrULAqh1RDh8sLF8oi468yWWNY3DyQycbF00iYyxc8ngSTBTMPzQAAAABJRU5ErkJggg==') /*../../Images/Menu/search.png*/;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAMAAADXqc3KAAAANlBMVEUAAAD////////////////////////////////////////////////////////////////////xY8b8AAAAEXRSTlMAH9+r9T/q6Zl9ejQEnQMCN+X/LXMAAABxSURBVCjPrZDJCsMwDAWtSF6zdf7/ZwuNDrEDzcVzejBoDdOJmkgaw8C2c1G2XuxYk1OaUfo+2PoLq9F1U5qnit5FQjwJ+S7g9HTAn4qXGd1Wn2GrULAqh1RDh8sLF8oi468yWWNY3DyQycbF00iYyxc8ngSTBTMPzQAAAABJRU5ErkJggg==') /*/Content/Images/Menu/search.png*/;
     background-repeat: no-repeat;
     background-position: 10px center;
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
     #top-search-wrap input[type="text"] {
-        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAASFBMVEUAAAD////////////////////////////////////////////////////////////////////////////////////////////neHiwAAAAF3RSTlMAvw2BB314+efXuJkvIsjEPzpeWzb7HF9sB0QAAADmSURBVEjH7VRJEoQgDGRTcEHc+f9Ph+BojVRFzGGqPNg3m7SkQxL2go5WcqO14bK9Fd47f8D12XDR+BMalYnvfIJO3IivJ6uUnepNcXVHzKea98+5illd+IVzLn5u5MDgzh38X5xyhDscWn8fMJ+5ATjsPST4TUlwLhEBJDyl5Ai2EIEJZzYlbSANItDhTKWkCqSmChZySmTT5LKSH47YGpzafEOuvY+AIdfeTH0HaIQBGrcB0ittRHWsEg6VLoHVg+LumuHBjo+K/CJb9kVWIAoEh6J4mKJ8rqJkJAXEkxQle/FXfABSXB02AJG4jwAAAABJRU5ErkJggg==') /*../../Images/Menu/search@2x.png*/;
+        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAASFBMVEUAAAD////////////////////////////////////////////////////////////////////////////////////////////neHiwAAAAF3RSTlMAvw2BB314+efXuJkvIsjEPzpeWzb7HF9sB0QAAADmSURBVEjH7VRJEoQgDGRTcEHc+f9Ph+BojVRFzGGqPNg3m7SkQxL2go5WcqO14bK9Fd47f8D12XDR+BMalYnvfIJO3IivJ6uUnepNcXVHzKea98+5illd+IVzLn5u5MDgzh38X5xyhDscWn8fMJ+5ATjsPST4TUlwLhEBJDyl5Ai2EIEJZzYlbSANItDhTKWkCqSmChZySmTT5LKSH47YGpzafEOuvY+AIdfeTH0HaIQBGrcB0ittRHWsEg6VLoHVg+LumuHBjo+K/CJb9kVWIAoEh6J4mKJ8rqJkJAXEkxQle/FXfABSXB02AJG4jwAAAABJRU5ErkJggg==') /*/Content/Images/Menu/search@2x.png*/;
         background-size: 24px 24px;
     }
 }
@@ -10370,7 +10370,7 @@ body #content {
     height: 129px;
     margin-bottom: 5px;
     width: 100%;
-    background: url(../../Images/Background/profile-menu.png) no-repeat left top;
+    background: url(/Content/Images/Background/profile-menu.png) no-repeat left top;
     background-size: 100%;
 }
 
@@ -11089,7 +11089,7 @@ a.lv-footer:hover {
     }
 
         #chat .chat-search .form-control {
-            background-image: url("../img/icons/search-2.png");
+            background-image: url("/Content/Images/Menu/search-2.png");
             background-repeat: no-repeat;
             background-position: left center;
             padding-left: 30px;
@@ -11105,7 +11105,7 @@ a.lv-footer:hover {
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
     #chat .chat-search .form-control {
-        background-image: url("../img/icons/search-2@2x.png");
+        background-image: url("/Content/Images/search-2@2x.png");
         background-size: 24px 24px;
     }
 }
@@ -11779,23 +11779,23 @@ a.lv-footer:hover {
     }
 
         #weather-widget .weather-icon.wi-0 {
-            background-image: url("../img/icons/weather/0.png");
+            background-image: url("/Content/Images/icons/weather/0.png");
         }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
     #weather-widget .weather-icon.wi-0 {
-        background-image: url("../img/icons/weather/0@2x.png");
+        background-image: url("/Content/Images/weather/0@2x.png");
         background-size: 125px 125px;
     }
 }
 
 #weather-widget .weather-icon.wi-1 {
-    background-image: url("../img/icons/weather/1.png");
+    background-image: url("/Content/Images/weather/1.png");
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
     #weather-widget .weather-icon.wi-1 {
-        background-image: url("../img/icons/weather/1@2x.png");
+        background-image: url("/Content/Images/weather/1@2x.png");
         background-size: 125px 125px;
     }
 }

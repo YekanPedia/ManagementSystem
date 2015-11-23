@@ -592,7 +592,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to درخواست بارگذاری فایل.
+        ///   Looks up a localized string similar to درخواست فایل.
         /// </summary>
         internal static string SessionMaterialRequest {
             get {

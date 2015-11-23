@@ -9,6 +9,7 @@
     using Service.Interfaces;
     using ExternalService.implement;
     using ExternalService.Interfaces;
+    using InfraStructure.Caching;
 
     public class IocInitializer
     {
@@ -17,10 +18,15 @@
         {
             Container = new Container(x =>
             {
+                x.For<ICacheProvider>().Use<HttpRuntimeCache>();
+
                 x.For<IUnitOfWork>().Use(() => new ManagementSystemDbContext()).LifecycleIs<HttpContextLifecycle>();
                 x.For<IActionResults>().Use<ActionResults>();
                 x.For<IUserService>().Use<UserService>();
+
+                x.For<Lazy<ITaskService>>().Use(c => new Lazy<ITaskService>(c.GetInstance<TaskService>));
                 x.For<ITaskService>().Use<TaskService>();
+
                 x.For<IClassTypeService>().Use<ClassTypeService>();
                 x.For<ICourseService>().Use<CourseService>();
                 x.For<IClassService>().Use<ClassService>();

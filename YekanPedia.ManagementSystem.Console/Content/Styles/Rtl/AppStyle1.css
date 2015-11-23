@@ -847,11 +847,12 @@ th {
     background-repeat: no-repeat;
     width: 30px;
 }
- .pdf {
+
+.pdf {
     background-image: url('/Content/Images/FileType/pdf.png');
 }
 
- .mp3 {
+.mp3 {
     background-image: url('/Content/Images/FileType/music.png');
 }
 
@@ -870,21 +871,34 @@ th {
 .doc {
     background-image: url('/Content/Images/FileType/word.png');
 }
+
 .docx {
     background-image: url('/Content/Images/FileType/word.png');
 }
+
 .png {
     background-image: url('/Content/Images/FileType/png.png');
 }
+
 .jpg {
     background-image: url('/Content/Images/FileType/png.png');
 }
+
 .txt {
     background-image: url('/Content/Images/FileType/word.png');
 }
-.noFileUploaded{
-    padding-top:10px;
-    padding-bottom:7px;
-    text-align:center;
+
+.noFileUploaded {
+    padding-top: 10px;
+    padding-bottom: 7px;
+    text-align: center;
 }
 /*#endregion */
+
+.ismobile .mobileHide {
+    display: none !important;
+}
+
+.x-overflow {
+    overflow-x: auto;
+}

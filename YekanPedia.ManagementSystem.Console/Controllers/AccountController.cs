@@ -7,7 +7,7 @@
     using System.Web.UI;
     using Extensions.Authentication;
     using System;
-   
+
     using Resources;
 
     public partial class AccountController : Controller
@@ -46,7 +46,8 @@
                 ProgressbarType = ProgressbarType.Primary,
                 Progress = 0,
                 Subject = LocalMessage.CompleteProfile,
-                UserId = model.UserId
+                UserId = model.UserId,
+                FinishDateMi = DateTime.Now.AddHours(3)
             });
             if (result.IsSuccessfull)
             {
@@ -134,7 +135,7 @@
         }
         #endregion
         #region RecoveryPassword
-        [HttpPost,AllowAnonymous]
+        [HttpPost, AllowAnonymous]
         public virtual JsonResult RecoveryPassword(string email)
         {
             return Json(_userService.RecoveryPassword(email));

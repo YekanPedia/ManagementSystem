@@ -68,6 +68,12 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         {
             return new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.AddCourse);
         }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.PartialViewResult UserCourses()
+        {
+            return new T4MVC_System_Web_Mvc_PartialViewResult(Area, Name, ActionNames.UserCourses);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public CourseController Actions { get { return MVC.Course; } }
@@ -87,6 +93,7 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             public readonly string GetCourse = "GetCourse";
             public readonly string ChangeCourseStatus = "ChangeCourseStatus";
             public readonly string AddCourse = "AddCourse";
+            public readonly string UserCourses = "UserCourses";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -95,6 +102,7 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             public const string GetCourse = "GetCourse";
             public const string ChangeCourseStatus = "ChangeCourseStatus";
             public const string AddCourse = "AddCourse";
+            public const string UserCourses = "UserCourses";
         }
 
 
@@ -114,6 +122,14 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         public class ActionParamsClass_AddCourse
         {
             public readonly string text = "text";
+        }
+        static readonly ActionParamsClass_UserCourses s_params_UserCourses = new ActionParamsClass_UserCourses();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_UserCourses UserCoursesParams { get { return s_params_UserCourses; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_UserCourses
+        {
+            public readonly string userId = "userId";
         }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -136,8 +152,10 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
                 public class _ViewNamesClass
                 {
                     public readonly string _Course = "_Course";
+                    public readonly string _UserCurrents = "_UserCurrents";
                 }
                 public readonly string _Course = "~/Views/Course/Partial/_Course.cshtml";
+                public readonly string _UserCurrents = "~/Views/Course/Partial/_UserCurrents.cshtml";
             }
         }
     }
@@ -180,6 +198,18 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.AddCourse);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "text", text);
             AddCourseOverride(callInfo, text);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void UserCoursesOverride(T4MVC_System_Web_Mvc_PartialViewResult callInfo, System.Guid userId);
+
+        [NonAction]
+        public override System.Web.Mvc.PartialViewResult UserCourses(System.Guid userId)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_PartialViewResult(Area, Name, ActionNames.UserCourses);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "userId", userId);
+            UserCoursesOverride(callInfo, userId);
             return callInfo;
         }
 

@@ -19,6 +19,10 @@
         [Display(ResourceType = typeof(DisplayNames), Name = nameof(IsActive))]
         public bool IsActive { get; set; }
 
+        [Display(ResourceType = typeof(DisplayNames), Name = nameof(CourseName))]
+        [MaxLength(100, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
+        [Column(TypeName ="varchar")]
+        public string LogoType { get; set; }
         public virtual ICollection<Class> Classes { get; set; }
     }
 }

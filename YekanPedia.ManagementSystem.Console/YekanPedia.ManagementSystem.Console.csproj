@@ -302,6 +302,17 @@
     <Content Include="Content\Images\Avatar\9.png" />
     <Content Include="Content\Images\Background\profile-menu.jpg" />
     <Content Include="Content\Images\Background\profile-widget.jpg" />
+    <Content Include="Content\Images\Course\LogoTypes\Gre.png" />
+    <Content Include="Content\Images\Course\LogoTypes\IELTS.jpg" />
+    <Content Include="Content\Images\Course\LogoTypes\Movie.jpg" />
+    <Content Include="Content\Images\Course\LogoTypes\Movie.png" />
+    <Content Include="Content\Images\Course\LogoTypes\Music.png" />
+    <Content Include="Content\Images\Course\LogoTypes\PreUniLevel.jpg" />
+    <Content Include="Content\Images\Course\LogoTypes\PreUniLevel.png" />
+    <Content Include="Content\Images\Course\LogoTypes\toefl.jpg" />
+    <Content Include="Content\Images\Course\LogoTypes\TTC.png" />
+    <Content Include="Content\Images\Course\LogoTypes\UniLevel.jpg" />
+    <Content Include="Content\Images\Course\LogoTypes\UniLevel.png" />
     <Content Include="Content\Images\FileType\archive.png" />
     <Content Include="Content\Images\FileType\music.png" />
     <Content Include="Content\Images\FileType\pdf.png" />
@@ -484,6 +495,7 @@
     <Content Include="Views\UserInClass\Partial\_HeaderUserInClassGrid.cshtml" />
     <Content Include="Views\UserInClass\Partial\_List.cshtml" />
     <Content Include="Views\Web.config" />
+    <Content Include="Views\Course\Partial\_UserCurrents.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

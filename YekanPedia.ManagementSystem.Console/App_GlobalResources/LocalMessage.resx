@@ -304,7 +304,7 @@
     <value>تعداد فایل ها</value>
   </data>
   <data name="SessionMaterialRequest" xml:space="preserve">
-    <value>درخواست بارگذاری فایل</value>
+    <value>درخواست فایل</value>
   </data>
   <data name="SendNotification" xml:space="preserve">
     <value>ارسال ناتیفیکیشن به کاربران</value>

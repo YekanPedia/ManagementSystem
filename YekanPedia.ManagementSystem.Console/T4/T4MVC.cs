@@ -374,6 +374,22 @@ namespace Links
             }
         
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class Course {
+                private const string URLPATH = "~/Content/Images/Course";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class LogoTypes {
+                    private const string URLPATH = "~/Content/Images/Course/LogoTypes";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                    public static readonly string Movie_png = Url("Movie.png");
+                    public static readonly string Music_png = Url("Music.png");
+                }
+            
+            }
+        
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
             public static class FileType {
                 private const string URLPATH = "~/Content/Images/FileType";
                 public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
@@ -669,6 +685,18 @@ namespace Links
                 }
                 public static partial class Background 
                 {
+                    public static class Assets
+                    {
+                    }
+                }
+                public static partial class Course 
+                {
+                    public static partial class LogoTypes 
+                    {
+                        public static class Assets
+                        {
+                        }
+                    }
                     public static class Assets
                     {
                     }

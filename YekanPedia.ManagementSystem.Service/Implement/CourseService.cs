@@ -13,8 +13,8 @@
     public class CourseService : ICourseService
     {
         #region Constructur
-        private readonly IUnitOfWork _uow;
-        private readonly IDbSet<Course> _course;
+        readonly IUnitOfWork _uow;
+        readonly IDbSet<Course> _course;
         public CourseService(IUnitOfWork uow)
         {
             _uow = uow;
@@ -69,6 +69,23 @@
                 Message = result.ToMessage(BusinessMessage.Error),
                 Result = result
             };
+        }
+
+        public IEnumerable<Course> GetUserCourses(Guid userId)
+        {
+            var result = (from course in _course
+                          join cls in _uow.Set<Class>() on course.CourseId equals cls.CourseId
+                          join ucls in _uow.Set<UserInClass>() on cls.ClassId equals ucls.ClassId
+                          join user in _uow.Set<User>() on ucls.UserId equals user.UserId
+                          where user.UserId == userId
+                          select new { course, cls }).ToList();
+            return result.Select(X => new Course
+            {
+                CourseId = X.course.CourseId,
+                CourseName = X.course.CourseName,
+                LogoType = X.course.LogoType,
+                IsActive = !X.cls.IsFinished
+            }).ToList();
         }
     }
 }
