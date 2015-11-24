@@ -7,6 +7,7 @@
     using System;
     using System.Collections.Generic;
     using Resources;
+    using Extensions.Authentication;
 
     public partial class UserController : Controller
     {
@@ -24,7 +25,6 @@
             var resultModel = _userService.GetUsers(model, classId).Result;
             return PartialView(MVC.User.Views.Partial._List, resultModel);
         }
-
         [HttpGet]
         public virtual ViewResult Manage()
         {
@@ -37,12 +37,15 @@
             }).ToList());
             return View();
         }
-
-       
-
         public virtual JsonResult ChangeState(Guid userId, bool status)
         {
             return Json(_userService.ChangeStatus(userId, status));
+        }
+
+        [ChildActionOnly]
+        public virtual PartialViewResult Friends()
+        {
+            return PartialView(MVC.User.Views.Partial._Friends, _userService.GetFriends((User as ICurrentUserPrincipal).UserId));
         }
     }
 }

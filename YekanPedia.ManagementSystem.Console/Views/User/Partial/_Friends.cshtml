@@ -1,0 +1,35 @@
+﻿@model IEnumerable<User>
+@using YekanPedia.ManagementSystem.InfraStructure.Date
+<aside id="chat">
+    <ul class="tab-nav tn-justified" role="tablist" tabindex="0" style="overflow: hidden; outline: none;">
+        <li role="presentation" class="active">
+            <a href="#friends" aria-controls="friends" role="tab" data-toggle="tab">@LocalMessage.Friends</a>
+        </li>
+        <li role="presentation"><a href="#online" aria-controls="online" role="tab" data-toggle="tab">@LocalMessage.OnLine</a></li>
+    </ul>
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane fade in active" id="friends">
+            <div class="listview">
+                @foreach (var item in Model)
+                {
+                    <a class="lv-item" href="#">
+                        <div class="media">
+                            <div class="pull-right">
+                                <img class="lv-img-sm friendsIcon" src="@item.Picture" alt="">
+                                <i class="chat-status-offline"></i>
+                            </div>
+                            <div class="media-body">
+                                <div class="lv-title">@item.FullName</div>
+                                <small class="lv-small">@LocalMessage.LastLogin @PersianDateTime.GetRelativeTime(item.LastLoginDate)</small>
+                            </div>
+                        </div>
+                    </a>
+                }
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="online">
+            <div class="listview">
+            </div>
+        </div>
+    </div>
+</aside>

@@ -21,7 +21,7 @@
         IServiceResults<User> FindUser(string userName);
         IServiceResults<IEnumerable<User>> GetTeachers();
         IServiceResults<IEnumerable<User>> GetUsers(User predicate, Guid? classId);
-        IServiceResults<IEnumerable<User>> GetFriends(Guid userId);
+        IEnumerable<User> GetFriends(Guid userId);
         IServiceResults<bool> RecoveryPassword(string userName);
     }
 }

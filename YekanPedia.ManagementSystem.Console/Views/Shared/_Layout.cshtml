@@ -117,121 +117,10 @@
                         </li>
                     </ul>
                 </div>
-                @{ Html.RenderAction(MVC.Dashboard.ActionNames.Menu,MVC.Dashboard.Name);}
+                @{ Html.RenderAction(MVC.Dashboard.ActionNames.Menu, MVC.Dashboard.Name);}
             </div>
         </aside>
-        <aside id="chat">
-            <ul class="tab-nav tn-justified" role="tablist" tabindex="0" style="overflow: hidden; outline: none;">
-                <li role="presentation" class="active">
-                    <a href="#friends" aria-controls="friends" role="tab" data-toggle="tab">دوستان</a>
-                </li>
-                <li role="presentation">
-                    <a href="#online" aria-controls="online" role="tab" data-toggle="tab">افراد آنلاین</a>
-                </li>
-            </ul>
-            <div class="tab-content">
-                <div role="tabpanel" class="tab-pane fade in active" id="friends">
-                    <div class="listview">
-                        <a class="lv-item" href="">
-                            <div class="media">
-                                <div class="pull-left">
-                                    <img class="lv-img-sm" src="../src/Content/Images/Avatar/1.jpg" alt="">
-                                </div>
-                                <div class="media-body">
-                                    <div class="lv-title">ساینا قاسمی</div>
-                                    <small class="lv-small">آخرین بازدید 50 ثانیه قبل</small>
-                                </div>
-                            </div>
-                        </a>
-                        <a class="lv-item" href="">
-                            <div class="media">
-                                <div class="pull-left p-relative">
-                                    <img class="lv-img-sm" src="../src/Content/Images/Avatar/3.jpg" alt="">
-                                    <i class="chat-status-online"></i>
-                                </div>
-                                <div class="media-body">
-                                    <div class="lv-title">احسان</div>
-                                    <small class="lv-small">آنلاین</small>
-                                </div>
-                            </div>
-                        </a>
-                        <a class="lv-item" href="">
-                            <div class="media">
-                                <div class="pull-left p-relative">
-                                    <img class="lv-img-sm" src="../src/Content/Images/Avatar/6.jpg" alt="">
-                                    <i class="chat-status-online"></i>
-                                </div>
-                                <div class="media-body">
-                                    <div class="lv-title">امیر محمد</div>
-                                    <small class="lv-small">آنلاین</small>
-                                </div>
-                            </div>
-                        </a>
-                        <a class="lv-item" href="">
-                            <div class="media">
-                                <div class="pull-left">
-                                    <img class="lv-img-sm" src="../src/Content/Images/Avatar/9.jpg" alt="">
-                                </div>
-                                <div class="media-body">
-                                    <div class="lv-title">سپیده</div>
-                                    <small class="lv-small">آخرین بازدید 3 روز قبل</small>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div role="tabpanel" class="tab-pane fade" id="online">
-                    <div class="listview">
-                        <a class="lv-item" href="">
-                            <div class="media">
-                                <div class="pull-left">
-                                    <img class="lv-img-sm" src="../src/Content/Images/Avatar/9.jpg" alt="">
-                                </div>
-                                <div class="media-body">
-                                    <div class="lv-title">سپیده</div>
-                                    <small class="lv-small">آخرین بازدید 3 روز قبل</small>
-                                </div>
-                            </div>
-                        </a>
-                        <a class="lv-item" href="">
-                            <div class="media">
-                                <div class="pull-left">
-                                    <img class="lv-img-sm" src="../src/Content/Images/Avatar/1.jpg" alt="">
-                                </div>
-                                <div class="media-body">
-                                    <div class="lv-title">ساینا قاسمی</div>
-                                    <small class="lv-small">آخرین بازدید 50 ثانیه قبل</small>
-                                </div>
-                            </div>
-                        </a>
-                        <a class="lv-item" href="">
-                            <div class="media">
-                                <div class="pull-left p-relative">
-                                    <img class="lv-img-sm" src="../src/Content/Images/Avatar/3.jpg" alt="">
-                                    <i class="chat-status-online"></i>
-                                </div>
-                                <div class="media-body">
-                                    <div class="lv-title">احسان</div>
-                                    <small class="lv-small">آنلاین</small>
-                                </div>
-                            </div>
-                        </a>
-                        <a class="lv-item" href="">
-                            <div class="media">
-                                <div class="pull-left p-relative">
-                                    <img class="lv-img-sm" src="../src/Content/Images/Avatar/6.jpg" alt="">
-                                    <i class="chat-status-online"></i>
-                                </div>
-                                <div class="media-body">
-                                    <div class="lv-title">امیر محمد</div>
-                                    <small class="lv-small">آنلاین</small>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </aside>
+        @{ Html.RenderAction(MVC.User.ActionNames.Friends, MVC.User.Name);}
         <section id="content">
             <div class="container">
                 @RenderBody()
@@ -243,7 +132,7 @@
         <ul class="f-menu">
             <li><a href="#">@LocalMessage.Home</a></li>
             <li><a href="@Url.Action(MVC.Dashboard.ActionNames.User,MVC.Dashboard.Name)">@LocalMessage.Dashboard</a></li>
-            <li class="mobileHide"><a href="#" id="feedback" >@LocalMessage.Feedback</a></li>
+            <li class="mobileHide"><a href="#" id="feedback">@LocalMessage.Feedback</a></li>
             <li><a href="#">@LocalMessage.ContactUs</a></li>
         </ul>
     </footer>
@@ -254,4 +143,3 @@
     @{ Html.RenderPartial(MVC.Shared.Views._Notification);}
 </body>
 </html>
-

@@ -18,6 +18,7 @@
         {
             Container = new Container(x =>
             {
+                x.For<Lazy<ICacheProvider>>().Use(c => new Lazy<ICacheProvider>(c.GetInstance<HttpRuntimeCache>));
                 x.For<ICacheProvider>().Use<HttpRuntimeCache>();
 
                 x.For<IUnitOfWork>().Use(() => new ManagementSystemDbContext()).LifecycleIs<HttpContextLifecycle>();

@@ -87,6 +87,7 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             public readonly string Search = "Search";
             public readonly string Manage = "Manage";
             public readonly string ChangeState = "ChangeState";
+            public readonly string Friends = "Friends";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -95,6 +96,7 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             public const string Search = "Search";
             public const string Manage = "Manage";
             public const string ChangeState = "ChangeState";
+            public const string Friends = "Friends";
         }
 
 
@@ -138,10 +140,12 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
                 public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
                 public class _ViewNamesClass
                 {
+                    public readonly string _Friends = "_Friends";
                     public readonly string _HeaderUserGrid = "_HeaderUserGrid";
                     public readonly string _List = "_List";
                     public readonly string _SearchBox = "_SearchBox";
                 }
+                public readonly string _Friends = "~/Views/User/Partial/_Friends.cshtml";
                 public readonly string _HeaderUserGrid = "~/Views/User/Partial/_HeaderUserGrid.cshtml";
                 public readonly string _List = "~/Views/User/Partial/_List.cshtml";
                 public readonly string _SearchBox = "~/Views/User/Partial/_SearchBox.cshtml";
@@ -188,6 +192,17 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "userId", userId);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "status", status);
             ChangeStateOverride(callInfo, userId, status);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void FriendsOverride(T4MVC_System_Web_Mvc_PartialViewResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.PartialViewResult Friends()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_PartialViewResult(Area, Name, ActionNames.Friends);
+            FriendsOverride(callInfo);
             return callInfo;
         }
 

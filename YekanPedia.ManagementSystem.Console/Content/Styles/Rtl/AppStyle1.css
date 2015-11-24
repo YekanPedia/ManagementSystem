@@ -907,3 +907,12 @@ th {
 .x-overflow {
     overflow-x: auto;
 }
+
+.friensIcon{
+        border: solid 1px #949494;
+    padding: 2px;
+}
+[class*="chat-status"] {
+    top: 20px;
+    right: 10px;
+}

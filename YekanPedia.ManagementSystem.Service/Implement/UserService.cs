@@ -9,6 +9,7 @@
     using InfraStructure;
     using System.Linq;
     using Properties;
+    using InfraStructure.Caching;
 
     public class UserService : IUserService
     {
@@ -18,13 +19,18 @@
         readonly Lazy<ITaskService> _taskService;
         readonly Lazy<INotificationService> _notificationService;
         readonly Lazy<IRoleManagementService> _roleManagementService;
-        public UserService(IUnitOfWork uow, Lazy<ITaskService> taskService, Lazy<INotificationService> notificationService, Lazy<IRoleManagementService> roleManagementService)
+        readonly Lazy<ICacheProvider> _cache;
+        public UserService(IUnitOfWork uow, Lazy<ITaskService> taskService,
+            Lazy<INotificationService> notificationService,
+            Lazy<IRoleManagementService> roleManagementService,
+             Lazy<ICacheProvider> cache)
         {
             _uow = uow;
             _user = uow.Set<User>();
             _taskService = taskService;
             _notificationService = notificationService;
             _roleManagementService = roleManagementService;
+            _cache = cache;
         }
         #endregion
         public IServiceResults<Guid> AddUser(User user, Tasks task)
@@ -319,9 +325,25 @@
             };
         }
 
-        public IServiceResults<IEnumerable<User>> GetFriends(Guid userId)
+        public IEnumerable<User> GetFriends(Guid userId)
         {
-            return null;
+            var fromCache = _cache.Value.GetItem("GetFriends");
+            if (fromCache != null)
+            {
+                return (IEnumerable<User>)(fromCache);
+            }
+            var classes = (from user in _user
+                           where user.UserId == userId
+                           join userClass in _uow.Set<UserInClass>() on user.UserId equals userClass.UserId
+                           join cls in _uow.Set<UserInClass>() on userClass.ClassId equals cls.ClassId
+                           where cls.IsFinished == false
+                           select cls.ClassId).ToList();
+            var result = (from user in _user
+                          join userClass in _uow.Set<UserInClass>() on user.UserId equals userClass.UserId
+                          where classes.Contains(userClass.ClassId) && user.UserId != userId
+                          select user).Distinct().ToList();
+            _cache.Value.PutItem("GetFriends", result, null, DateTime.Now.AddHours(1));
+            return result;
         }
     }
 }

@@ -498,6 +498,7 @@
     <Content Include="Views\UserInClass\Partial\_List.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Course\Partial\_UserCurrents.cshtml" />
+    <Content Include="Views\User\Partial\_Friends.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

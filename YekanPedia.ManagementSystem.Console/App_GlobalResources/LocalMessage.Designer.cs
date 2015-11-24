@@ -394,6 +394,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to دوستان.
+        /// </summary>
+        internal static string Friends {
+            get {
+                return ResourceManager.GetString("Friends", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to تمام صفحه.
         /// </summary>
         internal static string FullScreen {
@@ -408,6 +417,15 @@ namespace Resources {
         internal static string Home {
             get {
                 return ResourceManager.GetString("Home", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to آخرین بازدید.
+        /// </summary>
+        internal static string LastLogin {
+            get {
+                return ResourceManager.GetString("LastLogin", resourceCulture);
             }
         }
         
@@ -435,6 +453,15 @@ namespace Resources {
         internal static string Notification {
             get {
                 return ResourceManager.GetString("Notification", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to آنلاین.
+        /// </summary>
+        internal static string OnLine {
+            get {
+                return ResourceManager.GetString("OnLine", resourceCulture);
             }
         }
         

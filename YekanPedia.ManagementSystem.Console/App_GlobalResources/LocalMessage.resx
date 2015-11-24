@@ -330,4 +330,13 @@
   <data name="CommingSoon" xml:space="preserve">
     <value>بزودی</value>
   </data>
+  <data name="Friends" xml:space="preserve">
+    <value>دوستان</value>
+  </data>
+  <data name="LastLogin" xml:space="preserve">
+    <value>آخرین بازدید</value>
+  </data>
+  <data name="OnLine" xml:space="preserve">
+    <value>آنلاین</value>
+  </data>
 </root>
