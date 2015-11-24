@@ -19,15 +19,19 @@
             window.location.reload();
         }, ajaxLoaderBegin: function () {
             $(document).ajaxStart(function (event, request) {
-                //loading bar show
+                if (loadingbarShow==false) {
+                    return;                 }
+                NProgress.inc();
+                NProgress.inc();
             });
         },
         ajaxLoaderComplete: function () {
-            $(document).ajaxComplete(function (event, request) {
-                //loading bar hide
+            $(document).ajaxComplete(function (event, request, settings) {
+                loadingbarShow = true;
+                NProgress.done();
             }).ajaxError(function (event, request) {
-                //loading bar hide
-            });;
+                NProgress.done();
+            });
         }
     };
 })(jQuery)

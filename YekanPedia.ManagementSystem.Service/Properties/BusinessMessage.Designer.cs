@@ -115,6 +115,15 @@ namespace YekanPedia.ManagementSystem.Service.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to کلمه عبور جدید شما : {0}.
+        /// </summary>
+        internal static string OTP {
+            get {
+                return ResourceManager.GetString("OTP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to اطلاعات ارسالی قبلا ثبت شده است.
         /// </summary>
         internal static string RecordExist {

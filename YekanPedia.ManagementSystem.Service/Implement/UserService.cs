@@ -310,13 +310,18 @@
             result.Result.Password = rnd.Next(100000, 999999).ToString();
             result.Result.IsResetPassword = true;
             var resultSave = _uow.SaveChanges();
-            _notificationService.Value.SendNotificationToUser(result.Result.UserId, NotificationType.ResetPassword, $"");
+            _notificationService.Value.SendNotificationToUser(result.Result.UserId, NotificationType.ResetPassword, string.Format(BusinessMessage.OTP, result.Result.Password));
             return new ServiceResults<bool>
             {
                 IsSuccessfull = resultSave.ToBool(),
                 Message = resultSave.ToBool() ? BusinessMessage.RecoveryPassword : BusinessMessage.Error,
                 Result = resultSave.ToBool()
             };
+        }
+
+        public IServiceResults<IEnumerable<User>> GetFriends(Guid userId)
+        {
+            return null;
         }
     }
 }

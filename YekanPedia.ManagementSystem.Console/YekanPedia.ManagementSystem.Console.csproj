@@ -356,6 +356,7 @@
     <Content Include="Content\Styles\Public\LightGallery.css" />
     <Content Include="Content\Styles\Public\LoadingBar.css" />
     <Content Include="Content\Styles\Public\MaterialDesignIconicFont.css" />
+    <Content Include="Content\Styles\Public\NProgress.css" />
     <Content Include="Content\Styles\Public\PersianCalendar.css" />
     <Content Include="Content\Styles\Public\Sweet.css" />
     <Content Include="Content\Styles\Rtl\AppStyle1.css" />
@@ -415,6 +416,7 @@
     <Content Include="Scripts\JQuery\LightGallery\lightGallery.min.js" />
     <Content Include="Scripts\JQuery\Loadingbar\Loadingbar.js" />
     <Content Include="Scripts\JQuery\NiceScroll\jquery.nicescroll.min.js" />
+    <Content Include="Scripts\JQuery\NProgressbar\nprogress.js" />
     <Content Include="Scripts\JQuery\PasswordStrongly\PasswordStrongly.js" />
     <Content Include="Scripts\JQuery\PersianCalendar\PersianCalendar.js" />
     <Content Include="Scripts\JQuery\Phoenix\Phoenix.core.js" />

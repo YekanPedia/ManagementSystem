@@ -263,6 +263,14 @@ namespace Links
             }
         
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class NProgressbar {
+                private const string URLPATH = "~/Scripts/JQuery/NProgressbar";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                public static readonly string nprogress_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nprogress.min.js") ? Url("nprogress.min.js") : Url("nprogress.js");
+            }
+        
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
             public static class PasswordStrongly {
                 private const string URLPATH = "~/Scripts/JQuery/PasswordStrongly";
                 public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
@@ -383,8 +391,17 @@ namespace Links
                     private const string URLPATH = "~/Content/Images/Course/LogoTypes";
                     public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
                     public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                    public static readonly string Gre_png = Url("Gre.png");
+                    public static readonly string IELTS_jpg = Url("IELTS.jpg");
+                    public static readonly string Movie_jpg = Url("Movie.jpg");
                     public static readonly string Movie_png = Url("Movie.png");
                     public static readonly string Music_png = Url("Music.png");
+                    public static readonly string PreUniLevel_jpg = Url("PreUniLevel.jpg");
+                    public static readonly string PreUniLevel_png = Url("PreUniLevel.png");
+                    public static readonly string toefl_jpg = Url("toefl.jpg");
+                    public static readonly string TTC_png = Url("TTC.png");
+                    public static readonly string UniLevel_jpg = Url("UniLevel.jpg");
+                    public static readonly string UniLevel_png = Url("UniLevel.png");
                 }
             
             }
@@ -484,6 +501,7 @@ namespace Links
                 public static readonly string LightGallery_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/LightGallery.min.css") ? Url("LightGallery.min.css") : Url("LightGallery.css");
                 public static readonly string LoadingBar_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/LoadingBar.min.css") ? Url("LoadingBar.min.css") : Url("LoadingBar.css");
                 public static readonly string MaterialDesignIconicFont_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/MaterialDesignIconicFont.min.css") ? Url("MaterialDesignIconicFont.min.css") : Url("MaterialDesignIconicFont.css");
+                public static readonly string NProgress_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/NProgress.min.css") ? Url("NProgress.min.css") : Url("NProgress.css");
                 public static readonly string PersianCalendar_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/PersianCalendar.min.css") ? Url("PersianCalendar.min.css") : Url("PersianCalendar.css");
                 public static readonly string Sweet_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Sweet.min.css") ? Url("Sweet.min.css") : Url("Sweet.css");
             }
@@ -599,6 +617,13 @@ namespace Links
                     public static class Assets
                     {
                         public const string jquery_nicescroll_min_js = "~/Scripts/JQuery/NiceScroll/jquery.nicescroll.min.js"; 
+                    }
+                }
+                public static partial class NProgressbar 
+                {
+                    public static class Assets
+                    {
+                        public const string nprogress_js = "~/Scripts/JQuery/NProgressbar/nprogress.js"; 
                     }
                 }
                 public static partial class PasswordStrongly 
@@ -757,6 +782,7 @@ namespace Links
                         public const string LightGallery_css = "~/Content/Styles/Public/LightGallery.css";
                         public const string LoadingBar_css = "~/Content/Styles/Public/LoadingBar.css";
                         public const string MaterialDesignIconicFont_css = "~/Content/Styles/Public/MaterialDesignIconicFont.css";
+                        public const string NProgress_css = "~/Content/Styles/Public/NProgress.css";
                         public const string PersianCalendar_css = "~/Content/Styles/Public/PersianCalendar.css";
                         public const string Sweet_css = "~/Content/Styles/Public/Sweet.css";
                     }

@@ -822,7 +822,12 @@ th {
 .listview:not(.lv-lg):not(.lv-message) .lv-item {
     padding: 20px 20px;
 }
-
+.sweet-overlay {
+    z-index: 9999;
+}
+.sweet-alert{
+        z-index: 9999999;
+}
 .sweet-alert .icon.info::after {
     margin-right: -4px;
 }
