@@ -12,6 +12,7 @@ namespace YekanPedia.ManagementSystem.Console.ScheduledTasks
         {
             var observer = IocInitializer.GetInstance<ISchedulerObserver>();
             observer.AddScheduledTask(new RoboTeleScheduler());
+            observer.AddScheduledTask(new FileRemoverScheduler());
             observer.Start();
         }
         public static void Dispose()

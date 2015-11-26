@@ -475,6 +475,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to هر {0} ثانیه.
+        /// </summary>
+        internal static string PerSecond {
+            get {
+                return ResourceManager.GetString("PerSecond", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to پروفایل کاربری.
         /// </summary>
         internal static string Profile {

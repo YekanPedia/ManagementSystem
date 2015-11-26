@@ -339,4 +339,7 @@
   <data name="OnLine" xml:space="preserve">
     <value>آنلاین</value>
   </data>
+  <data name="PerSecond" xml:space="preserve">
+    <value>هر {0} ثانیه</value>
+  </data>
 </root>

@@ -8,6 +8,7 @@ namespace YekanPedia.ManagementSystem.Scheduler
     {
         public abstract string Name { get; }
         public abstract int Order { get; }
+        public abstract string ExecuteTime { get; }
         public abstract bool RunAt(DateTime utcNow);
         public abstract void Run();
         public bool IsRunning { set; get; }

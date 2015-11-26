@@ -7,6 +7,7 @@
         public static string DefaultAvatarUrl => ConfigurationManager.AppSettings["DefaultAvatarUrl"];
         public static string RoboTeleUpdatesUrl => ConfigurationManager.AppSettings["RoboTeleUpdatesUrl"];
         public static string WakeUpUrl => ConfigurationManager.AppSettings["WakeUpUrl"];
+        public static string FileRemoverUrl => ConfigurationManager.AppSettings["FileRemoverUrl"];
         public static bool ClientValidationEnabled => bool.Parse(ConfigurationManager.AppSettings["ClientValidationEnabled"]);
         public static bool UnobtrusiveJavaScriptEnabled => bool.Parse(ConfigurationManager.AppSettings["UnobtrusiveJavaScriptEnabled"]);
     }

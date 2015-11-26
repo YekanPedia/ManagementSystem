@@ -178,6 +178,7 @@
   <ItemGroup>
     <Compile Include="Controllers\SchedulerController.cs" />
     <Compile Include="Controllers\SessionRequestController.cs" />
+    <Compile Include="ScheduledTasks\FileRemoverScheduler.cs" />
     <Compile Include="ScheduledTasks\RoboTeleScheduler.cs" />
     <Compile Include="ScheduledTasks\ScheduledTasksRepository.cs" />
     <Compile Include="T4\AccountController.generated.cs">
