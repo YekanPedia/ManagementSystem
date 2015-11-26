@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YekanPedia.ManagementSystem
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YekanPedia.ManagementSystem.Console", "YekanPedia.ManagementSystem.Console\YekanPedia.ManagementSystem.Console.csproj", "{2DE93137-52D0-413F-A659-8EA813BE7ACC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YekanPedia.ManagementSystem.Scheduler", "YekanPedia.ManagementSystem.Scheduler\YekanPedia.ManagementSystem.Scheduler.csproj", "{815DA986-F761-47B0-B8A7-364BF8D856D4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{2DE93137-52D0-413F-A659-8EA813BE7ACC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2DE93137-52D0-413F-A659-8EA813BE7ACC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2DE93137-52D0-413F-A659-8EA813BE7ACC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{815DA986-F761-47B0-B8A7-364BF8D856D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{815DA986-F761-47B0-B8A7-364BF8D856D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{815DA986-F761-47B0-B8A7-364BF8D856D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{815DA986-F761-47B0-B8A7-364BF8D856D4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -69,5 +75,6 @@ Global
 		{3A35C3BF-238B-445C-A4CC-F334836B3253} = {06134547-B904-4E8D-B8C5-97AD65120F13}
 		{39001C55-E397-4617-8AC8-C9AC79E9CC47} = {06134547-B904-4E8D-B8C5-97AD65120F13}
 		{2DE93137-52D0-413F-A659-8EA813BE7ACC} = {BE0BCC5F-3CD8-4D61-AB08-1225BB1825EB}
+		{815DA986-F761-47B0-B8A7-364BF8D856D4} = {21F8D6F0-6527-41A3-8F56-22B83F224575}
 	EndGlobalSection
 EndGlobal

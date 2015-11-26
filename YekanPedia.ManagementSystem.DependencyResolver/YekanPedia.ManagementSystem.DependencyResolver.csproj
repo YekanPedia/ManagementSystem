@@ -54,6 +54,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -82,6 +83,10 @@
     <ProjectReference Include="..\YekanPedia.ManagementSystem.InfraStructure\YekanPedia.ManagementSystem.InfraStructure.csproj">
       <Project>{d742b376-2be2-47ff-b70f-4f5f63a67bab}</Project>
       <Name>YekanPedia.ManagementSystem.InfraStructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YekanPedia.ManagementSystem.Scheduler\YekanPedia.ManagementSystem.Scheduler.csproj">
+      <Project>{815da986-f761-47b0-b8a7-364bf8d856d4}</Project>
+      <Name>YekanPedia.ManagementSystem.Scheduler</Name>
     </ProjectReference>
     <ProjectReference Include="..\YekanPedia.ManagementSystem.Service\YekanPedia.ManagementSystem.Service.csproj">
       <Project>{3a35c3bf-238b-445c-a4cc-f334836b3253}</Project>

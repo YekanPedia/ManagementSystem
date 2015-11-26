@@ -8,10 +8,6 @@
 
     public class ManagementSystemDbContext : DbContext, IUnitOfWork
     {
-        public ManagementSystemDbContext()
-        {
-            Database.SetInitializer<ManagementSystemDbContext>(null);
-        }
         public DbSet<User> User { get; set; }
         public DbSet<Tasks> Tasks { get; set; }
         public DbSet<Class> Class { get; set; }

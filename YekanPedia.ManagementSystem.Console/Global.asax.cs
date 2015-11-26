@@ -11,7 +11,9 @@
     using System.Web.Script.Serialization;
     using Domain.Entity;
     using Extensions.Authentication;
-    public class MvcApplication : System.Web.HttpApplication
+    using ScheduledTasks;
+
+    public class MvcApplication : HttpApplication
     {
         protected void Application_Start()
         {
@@ -24,6 +26,7 @@
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             ControllerBuilder.Current.SetControllerFactory(new IocControllerFactory());
+            ScheduledTasksRepository.Init();
         }
         protected void Application_BeginRequest(object sender, EventArgs e)
         {
@@ -50,6 +53,11 @@
                 user.Picture = serializeModel.Picture;
                 HttpContext.Current.User = user;
             }
+        }
+        protected void Application_End()
+        {
+            ScheduledTasksRepository.Dispose();
+            ScheduledTasksRepository.WakeUp(AppSettings.WakeUpUrl);
         }
     }
 }

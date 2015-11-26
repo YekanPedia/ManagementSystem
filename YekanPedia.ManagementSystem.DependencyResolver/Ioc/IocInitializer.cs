@@ -10,7 +10,7 @@
     using ExternalService.implement;
     using ExternalService.Interfaces;
     using InfraStructure.Caching;
-
+    using YekanPedia.ManagementSystem.Scheduler;
     public class IocInitializer
     {
         public static IContainer Container;
@@ -18,6 +18,8 @@
         {
             Container = new Container(x =>
             {
+                x.For<ISchedulerObserver>().Use<SchedulerObserver>().Singleton();
+
                 x.For<Lazy<ICacheProvider>>().Use(c => new Lazy<ICacheProvider>(c.GetInstance<HttpRuntimeCache>));
                 x.For<ICacheProvider>().Use<HttpRuntimeCache>();
 
