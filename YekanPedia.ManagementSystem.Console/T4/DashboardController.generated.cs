@@ -75,6 +75,7 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             public readonly string User = "User";
             public readonly string Admin = "Admin";
             public readonly string DirectorySize = "DirectorySize";
+            public readonly string SmsSize = "SmsSize";
             public readonly string Messages = "Messages";
             public readonly string Notification = "Notification";
             public readonly string Menu = "Menu";
@@ -87,6 +88,7 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             public const string User = "User";
             public const string Admin = "Admin";
             public const string DirectorySize = "DirectorySize";
+            public const string SmsSize = "SmsSize";
             public const string Messages = "Messages";
             public const string Notification = "Notification";
             public const string Menu = "Menu";
@@ -122,11 +124,13 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
                 {
                     public readonly string _DirectorySize = "_DirectorySize";
                     public readonly string _Menu = "_Menu";
+                    public readonly string _SmsSize = "_SmsSize";
                     public readonly string Message = "Message";
                     public readonly string Notification = "Notification";
                 }
                 public readonly string _DirectorySize = "~/Views/Dashboard/Partial/_DirectorySize.cshtml";
                 public readonly string _Menu = "~/Views/Dashboard/Partial/_Menu.cshtml";
+                public readonly string _SmsSize = "~/Views/Dashboard/Partial/_SmsSize.cshtml";
                 public readonly string Message = "~/Views/Dashboard/Partial/Message.cshtml";
                 public readonly string Notification = "~/Views/Dashboard/Partial/Notification.cshtml";
             }
@@ -168,6 +172,17 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         {
             var callInfo = new T4MVC_System_Web_Mvc_PartialViewResult(Area, Name, ActionNames.DirectorySize);
             DirectorySizeOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void SmsSizeOverride(T4MVC_System_Web_Mvc_PartialViewResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.PartialViewResult SmsSize()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_PartialViewResult(Area, Name, ActionNames.SmsSize);
+            SmsSizeOverride(callInfo);
             return callInfo;
         }
 

@@ -7,7 +7,7 @@
 
     public interface ISessionRequestService
     {
-        IEnumerable<SessionRequest> GetAllSessionRequest(Guid sessionId);
+        IEnumerable<SessionRequest> GetAllSessionRequest();
         IServiceResults<Guid> Add(SessionRequest model);
         IServiceResults<bool> Remove(Guid sessionRequestId);
         SessionRequest Find(Guid sessionRequestId);

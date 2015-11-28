@@ -313,6 +313,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to آیا اتمام عملیات و ارسال ناتیفیکیشن برای کاربر موافق هستید ؟.
+        /// </summary>
+        internal static string DoneConfirm {
+            get {
+                return ResourceManager.GetString("DoneConfirm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to اتمام رایت فایل درخواستی.
+        /// </summary>
+        internal static string DoneWrite {
+            get {
+                return ResourceManager.GetString("DoneWrite", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to دانلود.
         /// </summary>
         internal static string Download {
@@ -381,6 +399,15 @@ namespace Resources {
         internal static string FilesCount {
             get {
                 return ResourceManager.GetString("FilesCount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to آمار حجمی سرور فایل ها.
+        /// </summary>
+        internal static string FilesStatistics {
+            get {
+                return ResourceManager.GetString("FilesStatistics", resourceCulture);
             }
         }
         
@@ -700,7 +727,16 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to آمار حجمی وب سایت و پیامک.
+        ///   Looks up a localized string similar to آمار حجمی پنل پیامک.
+        /// </summary>
+        internal static string SmsStatistics {
+            get {
+                return ResourceManager.GetString("SmsStatistics", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to آمار.
         /// </summary>
         internal static string Statistics {
             get {

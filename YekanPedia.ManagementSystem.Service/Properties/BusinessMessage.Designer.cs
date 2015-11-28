@@ -151,6 +151,15 @@ namespace YekanPedia.ManagementSystem.Service.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to فایل های کلاس به تاریخ {0} با موضوع {1} آماده  تحویل می باشد . با تشکر یکان پدیا.
+        /// </summary>
+        internal static string RequestDone {
+            get {
+                return ResourceManager.GetString("RequestDone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to تعداد جلسات ثبت شده برای این کلاس بیش از حد مجاز است.
         /// </summary>
         internal static string SessionCountIsFull {

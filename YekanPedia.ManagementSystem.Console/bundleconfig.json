@@ -46,5 +46,11 @@
     "inputFiles": [
       "Scripts/Application/UserInClassController.js"
     ]
+  },
+  {
+    "outputFileName": "Scripts/Application/SessionRequestController.js",
+    "inputFiles": [
+      "Scripts/Application/SessionRequestController.js"
+    ]
   }
 ]

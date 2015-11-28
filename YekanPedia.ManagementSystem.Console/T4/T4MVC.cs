@@ -156,6 +156,8 @@ namespace Links
             public static readonly string SchedulerController_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/SchedulerController.min.js") ? Url("SchedulerController.min.js") : Url("SchedulerController.js");
             public static readonly string SessionController_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/SessionController.min.js") ? Url("SessionController.min.js") : Url("SessionController.js");
             public static readonly string SessionController_min_js = Url("SessionController.min.js");
+            public static readonly string SessionRequestController_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/SessionRequestController.min.js") ? Url("SessionRequestController.min.js") : Url("SessionRequestController.js");
+            public static readonly string SessionRequestController_min_js = Url("SessionRequestController.min.js");
             public static readonly string UserController_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/UserController.min.js") ? Url("UserController.min.js") : Url("UserController.js");
             public static readonly string UserController_min_js = Url("UserController.min.js");
             public static readonly string UserInClassController_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/UserInClassController.min.js") ? Url("UserInClassController.min.js") : Url("UserInClassController.js");
@@ -537,6 +539,7 @@ namespace Links
                     public const string OAuthController_js = "~/Scripts/Application/OAuthController.js"; 
                     public const string SchedulerController_js = "~/Scripts/Application/SchedulerController.js"; 
                     public const string SessionController_js = "~/Scripts/Application/SessionController.js"; 
+                    public const string SessionRequestController_js = "~/Scripts/Application/SessionRequestController.js"; 
                     public const string UserController_js = "~/Scripts/Application/UserController.js"; 
                     public const string UserInClassController_js = "~/Scripts/Application/UserInClassController.js"; 
                 }

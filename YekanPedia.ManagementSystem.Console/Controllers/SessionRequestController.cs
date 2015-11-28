@@ -25,5 +25,22 @@
             model.UserId = (User as ICurrentUserPrincipal).UserId;
             return Json(_sessionRequestService.Add(model));
         }
+
+        [ChildActionOnly]
+        public virtual PartialViewResult List()
+        {
+            return PartialView(MVC.SessionRequest.Views.Partial._List, _sessionRequestService.GetAllSessionRequest());
+        }
+
+        [HttpPost]
+        public virtual JsonResult Done(Guid sessionRequestId)
+        {
+            return Json(_sessionRequestService.Remove(sessionRequestId));
+        }
+        [HttpGet]
+        public virtual ViewResult Manage()
+        {
+            return View();
+        }
     }
 }

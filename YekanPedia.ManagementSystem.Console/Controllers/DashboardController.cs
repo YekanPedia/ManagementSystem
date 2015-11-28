@@ -38,6 +38,11 @@
         {
             return PartialView(MVC.Dashboard.Views.Partial._DirectorySize,_fileProxyAdapter.DirectorySize());
         }
+        [ChildActionOnly]
+        public virtual PartialViewResult SmsSize()
+        {
+            return PartialView(MVC.Dashboard.Views.Partial._SmsSize, 150241);
+        }
         #endregion
         #region Public
         [ChildActionOnly]

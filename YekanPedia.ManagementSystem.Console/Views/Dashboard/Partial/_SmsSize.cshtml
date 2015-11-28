@@ -1,0 +1,19 @@
+﻿@model int
+@{
+    Layout = null;
+    var Percent = Math.Round(Convert.ToDouble(Model * 100 / 200000));
+}
+<div class="lv-item">
+    <div class="media">
+        <div class="lv-title m-b-5">
+            @LocalMessage.SmsStatistics 
+            <div class="pull-left">@Model.ToString() </div>
+        </div>
+        <div class="media-body">
+            <div class="progress">
+                <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="@Model" aria-valuemin="0" aria-valuemax="200000" style="width:@Percent%">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

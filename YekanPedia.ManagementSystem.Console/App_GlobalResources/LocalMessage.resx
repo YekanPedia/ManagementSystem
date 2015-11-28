@@ -351,7 +351,19 @@
   <data name="Play" xml:space="preserve">
     <value>اجرا کردن زمانیندی</value>
   </data>
+  <data name="FilesStatistics" xml:space="preserve">
+    <value>آمار حجمی سرور فایل ها</value>
+  </data>
+  <data name="SmsStatistics" xml:space="preserve">
+    <value>آمار حجمی پنل پیامک</value>
+  </data>
   <data name="Statistics" xml:space="preserve">
-    <value>آمار حجمی وب سایت و پیامک</value>
+    <value>آمار</value>
+  </data>
+  <data name="DoneConfirm" xml:space="preserve">
+    <value>آیا اتمام عملیات و ارسال ناتیفیکیشن برای کاربر موافق هستید ؟</value>
+  </data>
+  <data name="DoneWrite" xml:space="preserve">
+    <value>اتمام رایت فایل درخواستی</value>
   </data>
 </root>

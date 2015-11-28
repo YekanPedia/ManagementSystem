@@ -1,0 +1,7 @@
+﻿<div id="listUser">
+    @{ Html.RenderAction(MVC.SessionRequest.ActionNames.List, MVC.SessionRequest.Name);}
+</div>
+
+@section Scripts{
+    <script src="@Url.Content(Links.Scripts.Application.SessionRequestController_min_js)"></script>
+}

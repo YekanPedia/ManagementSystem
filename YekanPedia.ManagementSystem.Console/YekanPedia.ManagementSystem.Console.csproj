@@ -393,10 +393,14 @@
     <Content Include="Scripts\Application\SessionController.min.js">
       <DependentUpon>SessionController.js</DependentUpon>
     </Content>
+    <Content Include="Scripts\Application\SessionRequestController.min.js">
+      <DependentUpon>SessionRequestController.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\Application\UserController.js" />
     <Content Include="Scripts\Application\UserController.min.js">
       <DependentUpon>UserController.js</DependentUpon>
     </Content>
+    <Content Include="Scripts\Application\SessionRequestController.js" />
     <Content Include="Scripts\Application\UserInClassController.js" />
     <Content Include="Scripts\Application\UserInClassController.min.js">
       <DependentUpon>UserInClassController.js</DependentUpon>
@@ -509,11 +513,14 @@
     <Content Include="Views\User\Partial\_Friends.cshtml" />
     <Content Include="Views\Scheduler\Partial\_List.cshtml" />
     <Content Include="Views\Dashboard\Partial\_DirectorySize.cshtml" />
+    <Content Include="Views\SessionRequest\Manage.cshtml" />
+    <Content Include="Views\SessionRequest\Partial\_List.cshtml" />
+    <Content Include="Views\SessionRequest\Partial\_HeaderSessionRequestGrid.cshtml" />
+    <Content Include="Views\Dashboard\Partial\_SmsSize.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Feedback\" />
-    <Folder Include="Views\SessionRequest\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

@@ -1,0 +1,49 @@
+﻿@model IEnumerable<SessionRequest>
+
+<div class="card">
+    <div class="card-header">
+    </div>
+    <div class="card-body x-overflow">
+        <div class="table-responsive table-hover ClassGrid">
+            <table id="classDataGrid" class="table table-striped ">
+                @{ Html.RenderPartial(MVC.SessionRequest.Views.Partial._HeaderSessionRequestGrid, new SessionRequest());}
+                <tbody>
+                    @foreach (var item in Model)
+                    {  
+                        <tr id="sessionRequest_@(item.SessionRequestId)"> 
+                            <td>@item.ClassSession.Class.Course.CourseName</td>
+                            <td>
+                                @foreach (var time in item.ClassSession.Class.ClassTime)
+                                {
+                                    Write(time.ToString());
+                                }
+                            </td>
+                            <td>@item.ClassSession.Subject</td>
+                            <td>@item.ClassSession.ClassSessionDateSh</td>
+                            <td>@item.User.FullName</td>
+                            <td>@item.RquestDateSh</td>
+                            <td>
+                                <ul class="actions">
+                                    <li class="dropdown action-show dropup">
+                                        <a href="" data-toggle="dropdown">
+                                            <i class="zmdi zmdi-more-vert"></i>
+                                        </a>
+                                        <ul class="dropdown-menu dm-icon">
+                                            <li>
+                                                <a href="#" class="completeSessionRequestWrite" data-url="@Url.Action(MVC.SessionRequest.ActionNames.Done,MVC.SessionRequest.Name)" data-message="@LocalMessage.DoneConfirm" data-id="@item.SessionRequestId">
+                                                    <i class="zmdi zmdi-check"></i>
+                                                    @LocalMessage.DoneWrite
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
