@@ -342,4 +342,16 @@
   <data name="PerSecond" xml:space="preserve">
     <value>هر {0} ثانیه</value>
   </data>
+  <data name="ScheduleSystem" xml:space="preserve">
+    <value>مدیریت زمانبندی سیستم</value>
+  </data>
+  <data name="Pause" xml:space="preserve">
+    <value>متوقف کردن زمانیندی</value>
+  </data>
+  <data name="Play" xml:space="preserve">
+    <value>اجرا کردن زمانیندی</value>
+  </data>
+  <data name="Statistics" xml:space="preserve">
+    <value>آمار حجمی وب سایت و پیامک</value>
+  </data>
 </root>

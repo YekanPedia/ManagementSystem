@@ -37,6 +37,7 @@ public static partial class MVC
     public static YekanPedia.ManagementSystem.Console.Controllers.NotificationController Notification = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_NotificationController();
     public static YekanPedia.ManagementSystem.Console.Controllers.NotificationSettingController NotificationSetting = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_NotificationSettingController();
     public static YekanPedia.ManagementSystem.Console.Controllers.OAuthController OAuth = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_OAuthController();
+    public static YekanPedia.ManagementSystem.Console.Controllers.SchedulerController Scheduler = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_SchedulerController();
     public static YekanPedia.ManagementSystem.Console.Controllers.SessionController Session = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_SessionController();
     public static YekanPedia.ManagementSystem.Console.Controllers.SessionRequestController SessionRequest = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_SessionRequestController();
     public static YekanPedia.ManagementSystem.Console.Controllers.SettingController Setting = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_SettingController();
@@ -152,6 +153,7 @@ namespace Links
             public static readonly string NotificationSettingController_min_js = Url("NotificationSettingController.min.js");
             public static readonly string OAuthController_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/OAuthController.min.js") ? Url("OAuthController.min.js") : Url("OAuthController.js");
             public static readonly string OAuthController_min_js = Url("OAuthController.min.js");
+            public static readonly string SchedulerController_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/SchedulerController.min.js") ? Url("SchedulerController.min.js") : Url("SchedulerController.js");
             public static readonly string SessionController_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/SessionController.min.js") ? Url("SessionController.min.js") : Url("SessionController.js");
             public static readonly string SessionController_min_js = Url("SessionController.min.js");
             public static readonly string UserController_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/UserController.min.js") ? Url("UserController.min.js") : Url("UserController.js");
@@ -533,6 +535,7 @@ namespace Links
                     public const string ClassController_js = "~/Scripts/Application/ClassController.js"; 
                     public const string NotificationSettingController_js = "~/Scripts/Application/NotificationSettingController.js"; 
                     public const string OAuthController_js = "~/Scripts/Application/OAuthController.js"; 
+                    public const string SchedulerController_js = "~/Scripts/Application/SchedulerController.js"; 
                     public const string SessionController_js = "~/Scripts/Application/SessionController.js"; 
                     public const string UserController_js = "~/Scripts/Application/UserController.js"; 
                     public const string UserInClassController_js = "~/Scripts/Application/UserInClassController.js"; 

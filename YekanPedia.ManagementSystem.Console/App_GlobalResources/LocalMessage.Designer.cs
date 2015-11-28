@@ -475,11 +475,29 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to متوقف کردن زمانیندی.
+        /// </summary>
+        internal static string Pause {
+            get {
+                return ResourceManager.GetString("Pause", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to هر {0} ثانیه.
         /// </summary>
         internal static string PerSecond {
             get {
                 return ResourceManager.GetString("PerSecond", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to اجرا کردن زمانیندی.
+        /// </summary>
+        internal static string Play {
+            get {
+                return ResourceManager.GetString("Play", resourceCulture);
             }
         }
         
@@ -552,6 +570,15 @@ namespace Resources {
         internal static string Save {
             get {
                 return ResourceManager.GetString("Save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to مدیریت زمانبندی سیستم.
+        /// </summary>
+        internal static string ScheduleSystem {
+            get {
+                return ResourceManager.GetString("ScheduleSystem", resourceCulture);
             }
         }
         
@@ -669,6 +696,15 @@ namespace Resources {
         internal static string SiteSetting {
             get {
                 return ResourceManager.GetString("SiteSetting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to آمار حجمی وب سایت و پیامک.
+        /// </summary>
+        internal static string Statistics {
+            get {
+                return ResourceManager.GetString("Statistics", resourceCulture);
             }
         }
         

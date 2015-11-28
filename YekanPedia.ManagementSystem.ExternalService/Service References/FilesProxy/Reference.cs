@@ -89,6 +89,12 @@ namespace YekanPedia.ManagementSystem.ExternalService.FilesProxy {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFilesProxy/CreateDirectory", ReplyAction="http://tempuri.org/IFilesProxy/CreateDirectoryResponse")]
         System.Threading.Tasks.Task<string> CreateDirectoryAsync(string address);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFilesProxy/GetDirectorySize", ReplyAction="http://tempuri.org/IFilesProxy/GetDirectorySizeResponse")]
+        long GetDirectorySize();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFilesProxy/GetDirectorySize", ReplyAction="http://tempuri.org/IFilesProxy/GetDirectorySizeResponse")]
+        System.Threading.Tasks.Task<long> GetDirectorySizeAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -132,6 +138,14 @@ namespace YekanPedia.ManagementSystem.ExternalService.FilesProxy {
         
         public System.Threading.Tasks.Task<string> CreateDirectoryAsync(string address) {
             return base.Channel.CreateDirectoryAsync(address);
+        }
+        
+        public long GetDirectorySize() {
+            return base.Channel.GetDirectorySize();
+        }
+        
+        public System.Threading.Tasks.Task<long> GetDirectorySizeAsync() {
+            return base.Channel.GetDirectorySizeAsync();
         }
     }
 }

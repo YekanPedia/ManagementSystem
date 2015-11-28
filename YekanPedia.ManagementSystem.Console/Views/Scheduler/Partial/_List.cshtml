@@ -1,0 +1,108 @@
+﻿@model IEnumerable<ScheduledTask>
+@using YekanPedia.ManagementSystem.Scheduler
+@using YekanPedia.ManagementSystem.InfraStructure.Date
+<div class="card">
+    <div class="card-header">
+        <h5>
+            <i class="zmdi zmdi-time-countdown m-l-5 f-s-17"></i>
+            @LocalMessage.ScheduleSystem
+        </h5>
+        @*<div class="pull-left">
+                @DateTime.UtcNow.AddHours(3.5)
+            </div>*@
+    </div>
+    <div class="card-body m-t-0">
+        <table class="table table-inner table-vmiddle">
+            <thead>
+                <tr>
+                    <th>@Html.DisplayNameFor(X => X.Name)</th>
+                    <th>@Html.DisplayNameFor(X => X.Order)</th>
+                    <th>@Html.DisplayNameFor(X => X.ExecuteTime)</th>
+                    <th>@Html.DisplayNameFor(X => X.IsLastRunSuccessful)</th>
+                    <th>@Html.DisplayNameFor(X => X.IsRunning)</th>
+                    <th>@Html.DisplayNameFor(X => X.LastRun)</th>
+                    <th>@Html.DisplayNameFor(X => X.Pause)</th>
+                    <th>@Html.DisplayNameFor(X => X.IsShuttingDown)</th>
+                    <th>
+                        @LocalMessage.Action
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr id="@item.Name">
+                        <td>@item.Name</td>
+                        <td>@item.Order</td>
+                        <td>@item.ExecuteTime</td>
+                        <td>
+                            <div class="checkbox">
+                                <label>
+                                    <input disabled type="checkbox" checked="@item.IsLastRunSuccessful" class="checkbox">
+                                    <i class="input-helper"></i>
+                                </label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="checkbox">
+                                <label>
+                                    <input disabled type="checkbox" checked="@item.IsRunning" class="checkbox">
+                                    <i class="input-helper"></i>
+                                </label>
+                            </div>
+                        </td>
+                        <td>
+                            @if (item.LastRun != null)
+                            {
+                                @PersianDateTime.GetRelativeTimeUtc((DateTime)item.LastRun)
+                            }
+                            else
+                            {
+                                <text>
+                                    ---
+                                </text>
+                            }
+                        </td>
+                        <td>
+                            <div class="checkbox">
+                                <label>
+                                    <input disabled type="checkbox" checked="@item.Pause" class="checkbox schedulerPausable">
+                                    <i class="input-helper"></i>
+                                </label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="checkbox">
+                                <label>
+                                    <input disabled type="checkbox" checked="@item.IsShuttingDown" class="checkbox">
+                                    <i class="input-helper"></i>
+                                </label>
+                            </div>
+                        </td>
+                        <td>
+                            <ul class="actions">
+                                <li class="dropdown action-show dropup">
+                                    <a href="" data-toggle="dropdown">
+                                        <i class="zmdi zmdi-more-vert"></i>
+                                    </a>
+                                    <ul class="dropdown-menu dm-icon">
+                                        <li>
+                                            <a href="#" style="@(item.Pause ? "display:none" : "")" data-name="@item.Name" data-Id="1" class="changeSchedulerState" data-url="@Url.Action(MVC.Scheduler.ActionNames.Pause, MVC.Scheduler.Name, new { @name = item.Name , @state=true })">
+                                                <i class="zmdi zmdi-pause"></i>
+                                                @LocalMessage.Pause
+                                            </a>
+                                            <a href="#" style="@(item.Pause ? "" : "display:none")" data-Id="2" data-name="@item.Name" class="changeSchedulerState" data-url="@Url.Action(MVC.Scheduler.ActionNames.Pause,MVC.Scheduler.Name, new { @name = item.Name , @state=false })">
+                                                <i class="zmdi zmdi-play"></i>
+                                                @LocalMessage.Play
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

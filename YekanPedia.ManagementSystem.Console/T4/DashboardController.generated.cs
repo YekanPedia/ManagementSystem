@@ -74,6 +74,7 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         {
             public readonly string User = "User";
             public readonly string Admin = "Admin";
+            public readonly string DirectorySize = "DirectorySize";
             public readonly string Messages = "Messages";
             public readonly string Notification = "Notification";
             public readonly string Menu = "Menu";
@@ -85,6 +86,7 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         {
             public const string User = "User";
             public const string Admin = "Admin";
+            public const string DirectorySize = "DirectorySize";
             public const string Messages = "Messages";
             public const string Notification = "Notification";
             public const string Menu = "Menu";
@@ -118,10 +120,12 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
                 public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
                 public class _ViewNamesClass
                 {
+                    public readonly string _DirectorySize = "_DirectorySize";
                     public readonly string _Menu = "_Menu";
                     public readonly string Message = "Message";
                     public readonly string Notification = "Notification";
                 }
+                public readonly string _DirectorySize = "~/Views/Dashboard/Partial/_DirectorySize.cshtml";
                 public readonly string _Menu = "~/Views/Dashboard/Partial/_Menu.cshtml";
                 public readonly string Message = "~/Views/Dashboard/Partial/Message.cshtml";
                 public readonly string Notification = "~/Views/Dashboard/Partial/Notification.cshtml";
@@ -153,6 +157,17 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Admin);
             AdminOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void DirectorySizeOverride(T4MVC_System_Web_Mvc_PartialViewResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.PartialViewResult DirectorySize()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_PartialViewResult(Area, Name, ActionNames.DirectorySize);
+            DirectorySizeOverride(callInfo);
             return callInfo;
         }
 

@@ -18,6 +18,11 @@
             return _fileProxyClient.CreateDirectory(address);
         }
 
+        public long DirectorySize()
+        {
+            return _fileProxyClient.GetDirectorySize();
+        }
+
         public List<FileInfo> GetFilesAddress(string address)
         {
             return _fileProxyClient.GetListFiles(address);

@@ -1,1 +1,26 @@
 ﻿
+<div class="row">
+    <div class="col-sm-6">
+        <div class="card rating-list">
+            <div class="listview">
+                <div class="lv-header">
+                    <div class="m-t-5">
+                        @LocalMessage.Statistics
+                    </div>
+                </div>
+                <div class="lv-body">
+                    <div class="p-15">
+                        @{ Html.RenderAction(MVC.Dashboard.ActionNames.DirectorySize, MVC.Dashboard.Name);}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12">
+        @{ Html.RenderAction(MVC.Scheduler.ActionNames.GetList, MVC.Scheduler.Name);}
+    </div>
+</div>
+
+@section Scripts{
+    @Scripts.Render(Links.Bundles.Scripts.AdminPanelScripts)
+}

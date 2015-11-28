@@ -259,6 +259,9 @@
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="T4\SchedulerController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="T4\SessionController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
@@ -385,6 +388,7 @@
     <Content Include="Scripts\Application\OAuthController.min.js">
       <DependentUpon>OAuthController.js</DependentUpon>
     </Content>
+    <Content Include="Scripts\Application\SchedulerController.js" />
     <Content Include="Scripts\Application\SessionController.js" />
     <Content Include="Scripts\Application\SessionController.min.js">
       <DependentUpon>SessionController.js</DependentUpon>
@@ -503,11 +507,12 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\Course\Partial\_UserCurrents.cshtml" />
     <Content Include="Views\User\Partial\_Friends.cshtml" />
+    <Content Include="Views\Scheduler\Partial\_List.cshtml" />
+    <Content Include="Views\Dashboard\Partial\_DirectorySize.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Feedback\" />
-    <Folder Include="Views\Scheduler\" />
     <Folder Include="Views\SessionRequest\" />
   </ItemGroup>
   <ItemGroup>
@@ -527,6 +532,10 @@
     <ProjectReference Include="..\YekanPedia.ManagementSystem.Domain\YekanPedia.ManagementSystem.Domain.csproj">
       <Project>{8bca1500-4045-46aa-9783-90f4b0ddb1f6}</Project>
       <Name>YekanPedia.ManagementSystem.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YekanPedia.ManagementSystem.ExternalService\YekanPedia.ManagementSystem.ExternalService.csproj">
+      <Project>{39001c55-e397-4617-8ac8-c9ac79e9cc47}</Project>
+      <Name>YekanPedia.ManagementSystem.ExternalService</Name>
     </ProjectReference>
     <ProjectReference Include="..\YekanPedia.ManagementSystem.InfraStructure\YekanPedia.ManagementSystem.InfraStructure.csproj">
       <Project>{d742b376-2be2-47ff-b70f-4f5f63a67bab}</Project>
