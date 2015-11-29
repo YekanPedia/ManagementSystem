@@ -17,6 +17,7 @@
             </div>
         </div>
     </div>
+    @{ Html.RenderAction(MVC.Task.ActionNames.GetAllTasksWidget, MVC.Task.Name);}
     <div class="col-sm-12">
         @{ Html.RenderAction(MVC.Scheduler.ActionNames.GetList, MVC.Scheduler.Name);}
     </div>

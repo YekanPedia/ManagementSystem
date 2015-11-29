@@ -1,4 +1,5 @@
 ﻿@model YekanPedia.ManagementSystem.Domain.Entity.User
+@{ Layout = null;}
 <div class="card">
     <div class="card-body card-padding">
         @using (Ajax.BeginForm(MVC.User.ActionNames.Search, MVC.User.Name, new AjaxOptions
@@ -25,7 +26,8 @@
                             <input type="text" name="Mobile" id="Mobile" autocomplete="off" data-type="fa" class="form-control" />
                         </div>
                     </div>
-                </div><div class="col-sm-6 m-b-20 ">
+                </div>
+                <div class="col-sm-6 m-b-20 ">
                     <div class="input-group has-feedback m-b-20">
                         <div class="fg-line">
                             <label>@Html.DisplayNameFor(X => X.Class)</label>

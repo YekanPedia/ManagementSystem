@@ -58,7 +58,6 @@
                 Result = 1
             };
         }
-
         public void EditUserTaskProgress(Guid userId, TaskType type, int value)
         {
             Tasks task = _task.FirstOrDefault(X => X.UserId == userId && X.Type == type);
@@ -71,6 +70,22 @@
         public IEnumerable<Tasks> GetUserTask(Guid userId)
         {
             return _task.Where(X => X.UserId == userId && X.Progress < 100 && X.FinishDateMi > DateTime.Now).AsNoTracking().ToList();
+        }
+
+        public IServiceResults<bool> Done(int taskId)
+        {
+            var task = _task.FirstOrDefault(X => X.TaskId == taskId);
+            if (task != null)
+            {
+                task.Progress = 100;
+            }
+            var saveResult = _uow.SaveChanges();
+            return new ServiceResults<bool>
+            {
+                IsSuccessfull = saveResult.ToBool(),
+                Message = saveResult.ToMessage(BusinessMessage.Error),
+                Result = saveResult.ToBool()
+            };
         }
     }
 }

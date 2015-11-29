@@ -52,5 +52,17 @@
     "inputFiles": [
       "Scripts/Application/SessionRequestController.js"
     ]
+  },
+  {
+    "outputFileName": "Scripts/Application/SchedulerController.js",
+    "inputFiles": [
+      "Scripts/Application/SchedulerController.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Application/TaskController.js",
+    "inputFiles": [
+      "Scripts/Application/TaskController.js"
+    ]
   }
 ]

@@ -68,7 +68,5 @@
             Session.Clear();
             return RedirectToAction(MVC.OAuth.ActionNames.SignIn, MVC.OAuth.Name);
         }
-
-      
     }
 }

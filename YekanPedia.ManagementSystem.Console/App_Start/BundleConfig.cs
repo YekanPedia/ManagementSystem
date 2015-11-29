@@ -8,7 +8,8 @@
             BundleTable.EnableOptimizations = true;
             #region Scripts
             bundles.Add(new ScriptBundleOrderer(Links.Bundles.Scripts.AdminPanelScripts, new JsMinify()).Include(
-                         "~" + Links.Scripts.Application.SchedulerController_js));
+                         "~" + Links.Scripts.Application.SchedulerController_js
+                         ));
 
             bundles.Add(new ScriptBundleOrderer(Links.Bundles.Scripts.LoginScripts, new JsMinify()).Include(
                            "~" + Links.Scripts.JQuery.jquery_1_10_2_min_js,
@@ -42,8 +43,8 @@
                           "~" + Links.Scripts.JQuery.NProgressbar.nprogress_js,
                            "~" + Links.Scripts.JQuery.Phoenix.Phoenix_core_js,
                            "~" + Links.Scripts.JQuery.Feedback.html2canvas_js,
-                           "~" + Links.Scripts.JQuery.Feedback.feedback_js
-
+                           "~" + Links.Scripts.JQuery.Feedback.feedback_js,
+                           "~" + Links.Scripts.Application.TaskController_js
                            ));
 
             bundles.Add(new ScriptBundleOrderer(Links.Bundles.Scripts.FullCalendarScripts, new JsMinify()).Include(

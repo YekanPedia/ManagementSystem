@@ -11,5 +11,6 @@
         IServiceResults<int> AddUserTask(Tasks model);
         IServiceResults<int> AddClassTask(Guid classId, string subject);
         void EditUserTaskProgress(Guid userId, TaskType type, int value);
+        IServiceResults<bool> Done(int taskId);
     }
 }

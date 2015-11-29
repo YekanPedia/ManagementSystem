@@ -1,0 +1,23 @@
+﻿@model Tasks
+@{ Layout = null;}
+
+@Html.HiddenFor(X => X.UserId, new { @Value = (User as ICurrentUserPrincipal).UserId })
+<div class="col-sm-12 m-b-20 m-t-15">
+    <div class="input-group has-feedback m-b-20">
+        <div class="fg-line">
+            <label>@LocalMessage.Class</label>
+            @Html.DropDownList("classId", (IEnumerable<SelectListItem>)ViewBag.Class, new { @class = "selectpicker bs-select-hidden" })
+        </div>
+    </div>
+</div>
+<div class="col-sm-12 m-b-20 ">
+    <div class="input-group has-feedback m-b-20">
+        <div class="fg-line">
+            @Html.TextBoxFor(X => X.Subject, new { @class = "form-control", @placeholder = Html.DisplayNameFor(X => X.Subject) })
+        </div>
+        <small class="help-block">
+            @Html.ValidationMessageFor(X => X.Subject)
+        </small>
+        <span class="zmdi form-control-feedback"></span>
+    </div>
+</div>

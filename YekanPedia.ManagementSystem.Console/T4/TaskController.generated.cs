@@ -68,6 +68,12 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         {
             return new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.AddTaskToClass);
         }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.JsonResult Done()
+        {
+            return new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.Done);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public TaskController Actions { get { return MVC.Task; } }
@@ -85,16 +91,20 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         public class ActionNamesClass
         {
             public readonly string GetAllTasks = "GetAllTasks";
+            public readonly string GetAllTasksWidget = "GetAllTasksWidget";
             public readonly string AddTaskToUser = "AddTaskToUser";
             public readonly string AddTaskToClass = "AddTaskToClass";
+            public readonly string Done = "Done";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants
         {
             public const string GetAllTasks = "GetAllTasks";
+            public const string GetAllTasksWidget = "GetAllTasksWidget";
             public const string AddTaskToUser = "AddTaskToUser";
             public const string AddTaskToClass = "AddTaskToClass";
+            public const string Done = "Done";
         }
 
 
@@ -116,6 +126,14 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             public readonly string classId = "classId";
             public readonly string message = "message";
         }
+        static readonly ActionParamsClass_Done s_params_Done = new ActionParamsClass_Done();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_Done DoneParams { get { return s_params_Done; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_Done
+        {
+            public readonly string taskId = "taskId";
+        }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ViewsClass Views { get { return s_views; } }
@@ -136,9 +154,13 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
                 public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
                 public class _ViewNamesClass
                 {
+                    public readonly string _Create = "_Create";
                     public readonly string _Task = "_Task";
+                    public readonly string _TaskWidget = "_TaskWidget";
                 }
+                public readonly string _Create = "~/Views/Task/Partial/_Create.cshtml";
                 public readonly string _Task = "~/Views/Task/Partial/_Task.cshtml";
+                public readonly string _TaskWidget = "~/Views/Task/Partial/_TaskWidget.cshtml";
             }
         }
     }
@@ -156,6 +178,17 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         {
             var callInfo = new T4MVC_System_Web_Mvc_PartialViewResult(Area, Name, ActionNames.GetAllTasks);
             GetAllTasksOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void GetAllTasksWidgetOverride(T4MVC_System_Web_Mvc_PartialViewResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.PartialViewResult GetAllTasksWidget()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_PartialViewResult(Area, Name, ActionNames.GetAllTasksWidget);
+            GetAllTasksWidgetOverride(callInfo);
             return callInfo;
         }
 
@@ -182,6 +215,18 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "classId", classId);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "message", message);
             AddTaskToClassOverride(callInfo, classId, message);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void DoneOverride(T4MVC_System_Web_Mvc_JsonResult callInfo, int taskId);
+
+        [NonAction]
+        public override System.Web.Mvc.JsonResult Done(int taskId)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.Done);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "taskId", taskId);
+            DoneOverride(callInfo, taskId);
             return callInfo;
         }
 

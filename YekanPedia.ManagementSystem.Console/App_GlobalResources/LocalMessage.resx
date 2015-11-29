@@ -366,4 +366,7 @@
   <data name="DoneWrite" xml:space="preserve">
     <value>اتمام رایت فایل درخواستی</value>
   </data>
+  <data name="Class" xml:space="preserve">
+    <value>کلاس</value>
+  </data>
 </root>

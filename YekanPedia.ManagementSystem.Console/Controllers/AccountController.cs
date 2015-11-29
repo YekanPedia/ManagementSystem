@@ -71,7 +71,7 @@
             var result = _userService.FindUser(userId).Result;
             if (result == null)
             {
-                return RedirectToAction(MVC.Error.ActionNames.Er404, MVC.Error.Name);
+                return RedirectToAction(MVC.Error.ActionNames.NotFound, MVC.Error.Name);
             }
             return View(result);
         }
@@ -115,7 +115,7 @@
             var result = _userService.FindUser(userId).Result;
             if (result == null)
             {
-                return RedirectToAction(MVC.Error.ActionNames.Er404, MVC.Error.Name);
+                return RedirectToAction(MVC.Error.ActionNames.NotFound, MVC.Error.Name);
             }
             return View(result);
         }

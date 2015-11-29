@@ -2,24 +2,23 @@
 @using YekanPedia.ManagementSystem.Domain.Entity
 <li class="dropdown hidden-xs">
     <a data-toggle="dropdown" class="tm-task" href="">
-        <i class="tmn-counts">@Model.Count()</i>
+        <i class="tmn-counts taskCount">@Model.Count()</i>
     </a>
     <div class="dropdown-menu pull-right dropdown-menu-lg">
-        <div class="listview">
+        <div class="listview m-h-600 ">
             <div class="lv-header">
                 @LocalMessage.Task
             </div>
-            <div class="lv-body">
+            <div class="lv-body c-overflow m-h-400">
                 @foreach (Tasks item in Model)
                 {
-
-                    <a href="@item.Link" class="lv-item">
+                    <a href="@(string.IsNullOrEmpty(item.Link)?"#":item.Link)" class="lv-item task_@item.TaskId">
                         <div class="lv-title m-b-5">
                             @item.Subject
                             @if (item.IsFinishable)
                             {
-                                <div class="pull-left">
-                                    <i class="zmdi zmdi-check  removeTasks"></i>
+                                <div class="pull-left taskDone" data-id="@item.TaskId" data-url="@Url.Action(MVC.Task.ActionNames.Done,MVC.Task.Name)">
+                                    <i class="zmdi zmdi-check removeTasks"></i>
                                 </div>
                             }
                         </div>

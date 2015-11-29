@@ -822,19 +822,22 @@ th {
 .listview:not(.lv-lg):not(.lv-message) .lv-item {
     padding: 20px 20px;
 }
+
 .sweet-overlay {
     z-index: 9999;
 }
-.sweet-alert{
-        z-index: 9999999;
-}
-.sweet-alert .icon.info::after {
-    margin-right: -4px;
+
+.sweet-alert {
+    z-index: 9999999;
 }
 
-.sweet-alert h2 {
-    font-size: 13px;
-}
+    .sweet-alert .icon.info::after {
+        margin-right: -4px;
+    }
+
+    .sweet-alert h2 {
+        font-size: 13px;
+    }
 
 .f-s-17 {
     font-size: 17px !important;
@@ -908,11 +911,27 @@ th {
     overflow-x: auto;
 }
 
-.friensIcon{
-        border: solid 1px #949494;
+.friensIcon {
+    border: solid 1px #949494;
     padding: 2px;
 }
+
 [class*="chat-status"] {
     top: 20px;
     right: 10px;
+}
+
+.tl-body .checkbox div {
+    display: inline-block;
+    margin-top: -3px;
+    font-size: 13px;
+    padding-top: 5px;
+}
+
+.m-h-400 {
+    max-height: 400px !important;
+}
+
+.m-h-600 {
+    max-height: 600px !important;
 }

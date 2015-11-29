@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Tasks>
+@{ Layout = null;}
+<div class="col-sm-6">
+    <div id="todo-lists">
+        <div class="tl-header">
+            <h4>@LocalMessage.Task</h4>
+        </div>
+        <div class="clearfix"></div>
+        <div class="tl-body" id="tasksList">
+            <div id="add-tl-item" class="">
+                <i class="add-new-item zmdi zmdi-plus"></i>
+                <div class="add-tl-body o-visible">
+                    @{ Html.RenderPartial(MVC.Task.Views.Partial._Create, new Tasks()); }
+                    <div class="add-tl-actions">
+                        <a href="" data-tl-action="dismiss"><i class="zmdi zmdi-close"></i></a>
+                        <a href=""
+                           data-addTaskToClass="@Url.Action(MVC.Task.ActionNames.AddTaskToClass,MVC.Task.Name)"
+                           data-addTaskToUser="@Url.Action(MVC.Task.ActionNames.AddTaskToUser,MVC.Task.Name)"
+                           id="addTask" data-tl-action="save">
+                            <i class="zmdi zmdi-check"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            @foreach (var item in Model)
+            {
+                <div class="@(item.IsFinishable ? "checkbox" :"") media m-r-20 task_@item.TaskId">
+                     <div class="media-body">
+                        <div>
+                            @if (item.IsFinishable)
+                            {
+                                <input type="checkbox" data-id="@item.TaskId" data-url="@Url.Action(MVC.Task.ActionNames.Done,MVC.Task.Name)" class="EnableCheckbox checkbox-taskDone">
+                            }
+                            <i class="input-helper"></i>
+                            <div>@item.Subject</div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

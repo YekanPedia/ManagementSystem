@@ -75,13 +75,15 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNamesClass
         {
-            public readonly string Er404 = "Er404";
+            public readonly string NotFound = "NotFound";
+            public readonly string Forbidden = "Forbidden";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants
         {
-            public const string Er404 = "Er404";
+            public const string NotFound = "NotFound";
+            public const string Forbidden = "Forbidden";
         }
 
 
@@ -95,9 +97,11 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
-                public readonly string Er404 = "Er404";
+                public readonly string Forbidden = "Forbidden";
+                public readonly string NotFound = "NotFound";
             }
-            public readonly string Er404 = "~/Views/Error/Er404.cshtml";
+            public readonly string Forbidden = "~/Views/Error/Forbidden.cshtml";
+            public readonly string NotFound = "~/Views/Error/NotFound.cshtml";
         }
     }
 
@@ -107,13 +111,24 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         public T4MVC_ErrorController() : base(Dummy.Instance) { }
 
         [NonAction]
-        partial void Er404Override(T4MVC_System_Web_Mvc_ActionResult callInfo);
+        partial void NotFoundOverride(T4MVC_System_Web_Mvc_ViewResult callInfo);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult Er404()
+        public override System.Web.Mvc.ViewResult NotFound()
         {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Er404);
-            Er404Override(callInfo);
+            var callInfo = new T4MVC_System_Web_Mvc_ViewResult(Area, Name, ActionNames.NotFound);
+            NotFoundOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void ForbiddenOverride(T4MVC_System_Web_Mvc_ViewResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ViewResult Forbidden()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ViewResult(Area, Name, ActionNames.Forbidden);
+            ForbiddenOverride(callInfo);
             return callInfo;
         }
 

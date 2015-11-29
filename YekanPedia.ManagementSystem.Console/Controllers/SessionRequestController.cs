@@ -37,6 +37,7 @@
         {
             return Json(_sessionRequestService.Remove(sessionRequestId));
         }
+
         [HttpGet]
         public virtual ViewResult Manage()
         {

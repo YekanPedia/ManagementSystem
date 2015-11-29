@@ -47,6 +47,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Elmah, Version=1.2.14706.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\elmah.corelibrary.1.2.2\lib\Elmah.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.2.0\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
       <Private>True</Private>
@@ -176,6 +180,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\Filters\ElmahHandledErrorLoggerFilter.cs" />
     <Compile Include="Controllers\SchedulerController.cs" />
     <Compile Include="Controllers\SessionRequestController.cs" />
     <Compile Include="ScheduledTasks\FileRemoverScheduler.cs" />
@@ -389,12 +394,19 @@
       <DependentUpon>OAuthController.js</DependentUpon>
     </Content>
     <Content Include="Scripts\Application\SchedulerController.js" />
+    <Content Include="Scripts\Application\SchedulerController.min.js">
+      <DependentUpon>SchedulerController.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\Application\SessionController.js" />
     <Content Include="Scripts\Application\SessionController.min.js">
       <DependentUpon>SessionController.js</DependentUpon>
     </Content>
     <Content Include="Scripts\Application\SessionRequestController.min.js">
       <DependentUpon>SessionRequestController.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Application\TaskController.js" />
+    <Content Include="Scripts\Application\TaskController.min.js">
+      <DependentUpon>TaskController.js</DependentUpon>
     </Content>
     <Content Include="Scripts\Application\UserController.js" />
     <Content Include="Scripts\Application\UserController.min.js">
@@ -446,6 +458,7 @@
       <LastGenOutput>T4MVC.cs</LastGenOutput>
     </None>
     <None Include="T4\T4MVC.tt.settings.xml" />
+    <Content Include="Views\Error\NotFound.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -481,7 +494,6 @@
     <Content Include="Views\Dashboard\Partial\Message.cshtml" />
     <Content Include="Views\Dashboard\Partial\Notification.cshtml" />
     <Content Include="Views\Dashboard\User.cshtml" />
-    <Content Include="Views\Error\Er404.cshtml" />
     <Content Include="Views\NotificationSetting\Partial\_AllNotificationSetting.cshtml" />
     <Content Include="Views\NotificationSetting\Partial\_NotificationSettingBox.cshtml" />
     <Content Include="Views\OAuth\Partial\_Login.cshtml" />
@@ -517,6 +529,10 @@
     <Content Include="Views\SessionRequest\Partial\_List.cshtml" />
     <Content Include="Views\SessionRequest\Partial\_HeaderSessionRequestGrid.cshtml" />
     <Content Include="Views\Dashboard\Partial\_SmsSize.cshtml" />
+    <Content Include="Views\Error\Forbidden.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Task\Partial\_TaskWidget.cshtml" />
+    <Content Include="Views\Task\Partial\_Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

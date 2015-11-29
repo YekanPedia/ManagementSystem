@@ -1,6 +1,7 @@
 ﻿@model  IEnumerable<User>
-@using YekanPedia.ManagementSystem.Domain.Entity
+ 
 @{
+    Layout = null;
     var ChangeStatusUrl = Url.Action(MVC.User.ActionNames.ChangeState, MVC.User.Name);
 }
 <div class="card">
