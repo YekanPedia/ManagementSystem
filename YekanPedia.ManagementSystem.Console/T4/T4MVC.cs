@@ -147,6 +147,8 @@ namespace Links
             public static readonly string AccountController_min_js = Url("AccountController.min.js");
             public static readonly string BasicInfoController_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/BasicInfoController.min.js") ? Url("BasicInfoController.min.js") : Url("BasicInfoController.js");
             public static readonly string BasicInfoController_min_js = Url("BasicInfoController.min.js");
+            public static readonly string ChartController_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ChartController.min.js") ? Url("ChartController.min.js") : Url("ChartController.js");
+            public static readonly string ChartController_min_js = Url("ChartController.min.js");
             public static readonly string ClassController_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ClassController.min.js") ? Url("ClassController.min.js") : Url("ClassController.js");
             public static readonly string ClassController_min_js = Url("ClassController.min.js");
             public static readonly string NotificationSettingController_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/NotificationSettingController.min.js") ? Url("NotificationSettingController.min.js") : Url("NotificationSettingController.js");
@@ -307,6 +309,14 @@ namespace Links
                 public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
                 public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
                 public static readonly string BootstrapSelect_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/BootstrapSelect.min.js") ? Url("BootstrapSelect.min.js") : Url("BootstrapSelect.js");
+            }
+        
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class SparkLine {
+                private const string URLPATH = "~/Scripts/JQuery/SparkLine";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                public static readonly string jquery_sparkline_min_js = Url("jquery.sparkline.min.js");
             }
         
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -537,6 +547,7 @@ namespace Links
                 {
                     public const string AccountController_js = "~/Scripts/Application/AccountController.js"; 
                     public const string BasicInfoController_js = "~/Scripts/Application/BasicInfoController.js"; 
+                    public const string ChartController_js = "~/Scripts/Application/ChartController.js"; 
                     public const string ClassController_js = "~/Scripts/Application/ClassController.js"; 
                     public const string NotificationSettingController_js = "~/Scripts/Application/NotificationSettingController.js"; 
                     public const string OAuthController_js = "~/Scripts/Application/OAuthController.js"; 
@@ -662,6 +673,13 @@ namespace Links
                     public static class Assets
                     {
                         public const string BootstrapSelect_js = "~/Scripts/JQuery/Select/BootstrapSelect.js"; 
+                    }
+                }
+                public static partial class SparkLine 
+                {
+                    public static class Assets
+                    {
+                        public const string jquery_sparkline_min_js = "~/Scripts/JQuery/SparkLine/jquery.sparkline.min.js"; 
                     }
                 }
                 public static partial class Sweet 

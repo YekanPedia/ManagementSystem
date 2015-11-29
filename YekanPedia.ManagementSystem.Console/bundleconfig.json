@@ -64,5 +64,11 @@
     "inputFiles": [
       "Scripts/Application/TaskController.js"
     ]
+  },
+  {
+    "outputFileName": "Scripts/Application/ChartController.js",
+    "inputFiles": [
+      "Scripts/Application/ChartController.js"
+    ]
   }
 ]

@@ -1,5 +1,6 @@
 ﻿
 <div class="row">
+    @{ Html.RenderAction(MVC.Dashboard.UserStatistics());}
     <div class="col-sm-6">
         <div class="card rating-list">
             <div class="listview">
@@ -10,16 +11,33 @@
                 </div>
                 <div class="lv-body">
                     <div class="p-15">
-                        @{ Html.RenderAction(MVC.Dashboard.ActionNames.DirectorySize, MVC.Dashboard.Name);}
-                        @{ Html.RenderAction(MVC.Dashboard.ActionNames.SmsSize, MVC.Dashboard.Name);}
+                        @{ Html.RenderAction(MVC.Dashboard.DirectorySize());}
+                        @{ Html.RenderAction(MVC.Dashboard.SmsSize());}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card rating-list">
+            <div class="listview">
+                <div class="lv-header">
+                    <div class="m-t-5">
+                        @LocalMessage.ExpiredClassAndUser
+                    </div>
+                </div>
+                <div class="lv-body">
+                    <div class="p-15">
+                        @*@{ Html.RenderAction(MVC.Class.ExpiredClass());}
+                        @{ Html.RenderAction(MVC.User.ExpiredUser());}*@
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    @{ Html.RenderAction(MVC.Task.ActionNames.GetAllTasksWidget, MVC.Task.Name);}
+    @{ Html.RenderAction(MVC.Task.GetAllTasksWidget());}
+
+
     <div class="col-sm-12">
-        @{ Html.RenderAction(MVC.Scheduler.ActionNames.GetList, MVC.Scheduler.Name);}
+        @{ Html.RenderAction(MVC.Scheduler.GetList());}
     </div>
 </div>
 

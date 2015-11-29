@@ -45,9 +45,9 @@
                     <li id="top-search">
                         <a class="tm-search" href=""></a>
                     </li>
-                    @{ Html.RenderAction(MVC.Dashboard.ActionNames.Messages, controllerName: MVC.Dashboard.Name);}
-                    @{ Html.RenderAction(MVC.Dashboard.ActionNames.Notification, controllerName: MVC.Dashboard.Name);}
-                    @{ Html.RenderAction(MVC.Task.ActionNames.GetAllTasks, controllerName: MVC.Task.Name);}
+                    @{ Html.RenderAction(MVC.Dashboard.Messages());}
+                    @{ Html.RenderAction(MVC.Dashboard.Notification());}
+                    @{ Html.RenderAction(MVC.Task.GetAllTasks());}
                     <li class="dropdown">
                         <a data-toggle="dropdown" class="tm-settings" href=""></a>
                         <ul class="dropdown-menu dm-icon pull-right">
@@ -117,10 +117,10 @@
                         </li>
                     </ul>
                 </div>
-                @{ Html.RenderAction(MVC.Dashboard.ActionNames.Menu, MVC.Dashboard.Name);}
+                @{ Html.RenderAction(MVC.Dashboard.Menu());}
             </div>
         </aside>
-        @{ Html.RenderAction(MVC.User.ActionNames.Friends, MVC.User.Name);}
+        @{ Html.RenderAction(MVC.User.Friends());}
         <section id="content">
             <div class="container">
                 @RenderBody()

@@ -935,3 +935,7 @@ th {
 .m-h-600 {
     max-height: 600px !important;
 }
+
+.mini-charts-item .count {
+    font-family: roboto;
+}

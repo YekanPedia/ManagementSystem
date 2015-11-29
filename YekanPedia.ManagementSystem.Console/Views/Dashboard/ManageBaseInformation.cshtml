@@ -1,6 +1,6 @@
 ﻿<div class="row">
-    @{ Html.RenderAction(MVC.ClassType.ActionNames.GetClassType, MVC.ClassType.Name);}
-    @{ Html.RenderAction(MVC.Course.ActionNames.GetCourse, MVC.Course.Name);}
+    @{ Html.RenderAction(MVC.ClassType.GetClassType());}
+    @{ Html.RenderAction(MVC.Course.GetCourse());}
 </div>
 
 @section Scripts{

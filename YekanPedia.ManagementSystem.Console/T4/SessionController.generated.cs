@@ -256,11 +256,13 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
                     public readonly string _HeaderSessionGrid = "_HeaderSessionGrid";
                     public readonly string _SessionBlock = "_SessionBlock";
                     public readonly string _SessionList = "_SessionList";
+                    public readonly string _SessionTimeLine = "_SessionTimeLine";
                 }
                 public readonly string _CreateSession = "~/Views/Session/Partial/_CreateSession.cshtml";
                 public readonly string _HeaderSessionGrid = "~/Views/Session/Partial/_HeaderSessionGrid.cshtml";
                 public readonly string _SessionBlock = "~/Views/Session/Partial/_SessionBlock.cshtml";
                 public readonly string _SessionList = "~/Views/Session/Partial/_SessionList.cshtml";
+                public readonly string _SessionTimeLine = "~/Views/Session/Partial/_SessionTimeLine.cshtml";
             }
         }
     }

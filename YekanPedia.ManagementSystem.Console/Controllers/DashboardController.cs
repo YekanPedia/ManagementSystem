@@ -36,13 +36,21 @@
         [ChildActionOnly]
         public virtual PartialViewResult DirectorySize()
         {
-            return PartialView(MVC.Dashboard.Views.Partial._DirectorySize,_fileProxyAdapter.DirectorySize());
+            return PartialView(MVC.Dashboard.Views.Partial._DirectorySize, _fileProxyAdapter.DirectorySize());
         }
         [ChildActionOnly]
         public virtual PartialViewResult SmsSize()
         {
             return PartialView(MVC.Dashboard.Views.Partial._SmsSize, 150241);
         }
+        #region User Statistics
+
+        [ChildActionOnly]
+        public virtual PartialViewResult UserStatistics()
+        {
+            return PartialView(MVC.Dashboard.Views.Partial.Chart._UserStatistics);
+        }
+        #endregion
         #endregion
         #region Public
         [ChildActionOnly]

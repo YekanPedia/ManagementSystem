@@ -205,6 +205,7 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
                 {
                     public readonly string _CreateClass = "_CreateClass";
                     public readonly string _CreateClassTime = "_CreateClassTime";
+                    public readonly string _ExpireClass = "_ExpireClass";
                     public readonly string _HeaderClassGrid = "_HeaderClassGrid";
                     public readonly string _HeaderClassTimeGrid = "_HeaderClassTimeGrid";
                     public readonly string _ListClass = "_ListClass";
@@ -213,6 +214,7 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
                 }
                 public readonly string _CreateClass = "~/Views/Class/Partial/_CreateClass.cshtml";
                 public readonly string _CreateClassTime = "~/Views/Class/Partial/_CreateClassTime.cshtml";
+                public readonly string _ExpireClass = "~/Views/Class/Partial/_ExpireClass.cshtml";
                 public readonly string _HeaderClassGrid = "~/Views/Class/Partial/_HeaderClassGrid.cshtml";
                 public readonly string _HeaderClassTimeGrid = "~/Views/Class/Partial/_HeaderClassTimeGrid.cshtml";
                 public readonly string _ListClass = "~/Views/Class/Partial/_ListClass.cshtml";

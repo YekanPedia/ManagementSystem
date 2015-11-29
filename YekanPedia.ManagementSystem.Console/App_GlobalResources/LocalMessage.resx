@@ -369,4 +369,7 @@
   <data name="Class" xml:space="preserve">
     <value>کلاس</value>
   </data>
+  <data name="ExpiredClassAndUser" xml:space="preserve">
+    <value>کلاس و دانش آموزانی که نزدیک به اتمام مجوز نزدیک هستند</value>
+  </data>
 </root>

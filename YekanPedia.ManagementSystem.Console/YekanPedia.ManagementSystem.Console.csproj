@@ -381,6 +381,10 @@
     <Content Include="Scripts\Application\BasicInfoController.min.js">
       <DependentUpon>BasicInfoController.js</DependentUpon>
     </Content>
+    <Content Include="Scripts\Application\ChartController.js" />
+    <Content Include="Scripts\Application\ChartController.min.js">
+      <DependentUpon>ChartController.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\Application\ClassController.js" />
     <Content Include="Scripts\Application\ClassController.min.js">
       <DependentUpon>ClassController.js</DependentUpon>
@@ -445,6 +449,7 @@
     <Content Include="Scripts\JQuery\PersianCalendar\PersianCalendar.js" />
     <Content Include="Scripts\JQuery\Phoenix\Phoenix.core.js" />
     <Content Include="Scripts\JQuery\Select\BootstrapSelect.js" />
+    <Content Include="Scripts\JQuery\SparkLine\jquery.sparkline.min.js" />
     <Content Include="Scripts\JQuery\Sweet\sweet-alert.min.js" />
     <Content Include="Scripts\JQuery\Type\jQuery.Type.js" />
     <Content Include="Scripts\JQuery\Validation\jquery.validate.js" />
@@ -458,6 +463,7 @@
       <LastGenOutput>T4MVC.cs</LastGenOutput>
     </None>
     <None Include="T4\T4MVC.tt.settings.xml" />
+    <Content Include="Views\Dashboard\Partial\Chart\_UserStatistics.cshtml" />
     <Content Include="Views\Error\NotFound.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -533,6 +539,8 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Task\Partial\_TaskWidget.cshtml" />
     <Content Include="Views\Task\Partial\_Create.cshtml" />
+    <Content Include="Views\Class\Partial\_ExpireClass.cshtml" />
+    <Content Include="Views\Session\Partial\_SessionTimeLine.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

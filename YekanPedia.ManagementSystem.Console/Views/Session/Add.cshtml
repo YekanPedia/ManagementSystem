@@ -25,7 +25,7 @@
         }
     </div>
 </div>
-@{ Html.RenderAction(MVC.Session.ActionNames.SessionList, MVC.Session.Name);}
+@{ Html.RenderAction(MVC.Session.SessionList());}
 
 @section Scripts{
     <script src="@Url.Content(Links.Scripts.Application.SessionController_min_js)"></script>

@@ -76,6 +76,7 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             public readonly string Admin = "Admin";
             public readonly string DirectorySize = "DirectorySize";
             public readonly string SmsSize = "SmsSize";
+            public readonly string UserStatistics = "UserStatistics";
             public readonly string Messages = "Messages";
             public readonly string Notification = "Notification";
             public readonly string Menu = "Menu";
@@ -89,6 +90,7 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             public const string Admin = "Admin";
             public const string DirectorySize = "DirectorySize";
             public const string SmsSize = "SmsSize";
+            public const string UserStatistics = "UserStatistics";
             public const string Messages = "Messages";
             public const string Notification = "Notification";
             public const string Menu = "Menu";
@@ -133,6 +135,19 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
                 public readonly string _SmsSize = "~/Views/Dashboard/Partial/_SmsSize.cshtml";
                 public readonly string Message = "~/Views/Dashboard/Partial/Message.cshtml";
                 public readonly string Notification = "~/Views/Dashboard/Partial/Notification.cshtml";
+                static readonly _ChartClass s_Chart = new _ChartClass();
+                public _ChartClass Chart { get { return s_Chart; } }
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public partial class _ChartClass
+                {
+                    static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                    public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                    public class _ViewNamesClass
+                    {
+                        public readonly string _UserStatistics = "_UserStatistics";
+                    }
+                    public readonly string _UserStatistics = "~/Views/Dashboard/Partial/Chart/_UserStatistics.cshtml";
+                }
             }
         }
     }
@@ -183,6 +198,17 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         {
             var callInfo = new T4MVC_System_Web_Mvc_PartialViewResult(Area, Name, ActionNames.SmsSize);
             SmsSizeOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void UserStatisticsOverride(T4MVC_System_Web_Mvc_PartialViewResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.PartialViewResult UserStatistics()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_PartialViewResult(Area, Name, ActionNames.UserStatistics);
+            UserStatisticsOverride(callInfo);
             return callInfo;
         }
 

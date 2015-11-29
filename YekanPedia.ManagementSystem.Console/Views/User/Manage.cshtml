@@ -3,7 +3,7 @@
 </div>
 @{ Html.RenderPartial(MVC.User.Views.Partial._SearchBox);}
 <div id="listUser">
-    @{ Html.RenderAction(MVC.User.ActionNames.Search, MVC.User.Name);}
+    @{ Html.RenderAction(MVC.User.Search());}
 </div>
 @section Scripts{
     <script src="@Url.Content(Links.Scripts.Application.UserController_min_js)" type="text/javascript"></script>

@@ -1,6 +1,6 @@
 ﻿
 <div id="profile-main">
-    @{ Html.RenderAction(MVC.NotificationSetting.ActionNames.AllNotificationSetting, MVC.NotificationSetting.Name);}
+    @{ Html.RenderAction(MVC.NotificationSetting.AllNotificationSetting());}
 </div>
 @section Scripts{
     <script src="@Url.Content(Links.Scripts.Application.NotificationSettingController_js)"></script>
