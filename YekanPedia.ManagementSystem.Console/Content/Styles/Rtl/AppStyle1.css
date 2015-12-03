@@ -939,3 +939,81 @@ th {
 .mini-charts-item .count {
     font-family: roboto;
 }
+/*#region TimeLine */
+
+.sessionTimeline .lightbox .lightbox-item:before {
+    left: -15px;
+}
+
+.p-timeline {
+    padding-left: 0;
+    padding-right: 175px;
+}
+
+.pt-line {
+    left: inherit;
+    right: 50px;
+}
+
+.notCancled:after {
+    background-color: #4CAF50;
+    border: 1px solid #4CAF50;
+}
+
+.cancled:after {
+    background-color: #E91E63;
+    border: 1px solid #E91E63;
+}
+
+.session-block {
+    padding: 10px;
+    padding-right: 15px;
+}
+
+.pt-line:before {
+    right: 96px;
+    left: -87px;
+}
+
+.pt-line:after {
+    left: inherit;
+    right: 90px;
+}
+
+.d-block {
+    right: 0;
+    top: 2px;
+    position: absolute;
+}
+/*#endregion */
+
+.clist.clist-angle > li:before {
+    content: '\f2fa';
+}
+
+.clist > li:before {
+    margin: 0 0 0 7px;
+}
+
+.classDetail {
+    margin-bottom: 50px !important;
+}
+
+.classDetailMore {
+    left: 50% !important;
+}
+
+.sw-toggled .classDetailMore {
+    left: 40% !important;
+}
+
+.btn-square {
+    border-radius: 3px;
+    height: 20px;
+    bottom: -10px !important;
+    line-height: 0 !important;
+}
+
+.timelineAction.actions > li > a.active > i {
+    color: #4285F4;
+}

@@ -3,12 +3,13 @@
     using System;
     using InfraStructure;
     using Domain.Entity;
+    using System.Collections.Generic;
 
     public interface INotificationService
     {
         IServiceResults<bool> SendNotificationToUser(Guid userId, NotificationType notificationType, string message);
         IServiceResults<bool> SendPrivateNotificationToClass(Guid classId, NotificationType notificationType, string message);
         IServiceResults<bool> SendNotificationToClass(Guid classId, NotificationType notificationType, string date);
-        IServiceResults<bool> SendNotificationToBirthDateUser(Guid userId, string message);
+        IServiceResults<bool> SendNotificationToBirthDateUser(IEnumerable<User> users);
     }
 }

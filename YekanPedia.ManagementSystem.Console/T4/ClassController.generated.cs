@@ -86,6 +86,12 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         {
             return new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.DeleteClassTime);
         }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.PartialViewResult ClassDetails()
+        {
+            return new T4MVC_System_Web_Mvc_PartialViewResult(Area, Name, ActionNames.ClassDetails);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ClassController Actions { get { return MVC.Class; } }
@@ -109,6 +115,7 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             public readonly string AddClassTime = "AddClassTime";
             public readonly string EditClassTime = "EditClassTime";
             public readonly string DeleteClassTime = "DeleteClassTime";
+            public readonly string ClassDetails = "ClassDetails";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -121,6 +128,7 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             public const string AddClassTime = "AddClassTime";
             public const string EditClassTime = "EditClassTime";
             public const string DeleteClassTime = "DeleteClassTime";
+            public const string ClassDetails = "ClassDetails";
         }
 
 
@@ -175,6 +183,14 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         {
             public readonly string classTimeId = "classTimeId";
         }
+        static readonly ActionParamsClass_ClassDetails s_params_ClassDetails = new ActionParamsClass_ClassDetails();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_ClassDetails ClassDetailsParams { get { return s_params_ClassDetails; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_ClassDetails
+        {
+            public readonly string classId = "classId";
+        }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ViewsClass Views { get { return s_views; } }
@@ -203,6 +219,7 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
                 public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
                 public class _ViewNamesClass
                 {
+                    public readonly string _ClassDetails = "_ClassDetails";
                     public readonly string _CreateClass = "_CreateClass";
                     public readonly string _CreateClassTime = "_CreateClassTime";
                     public readonly string _ExpireClass = "_ExpireClass";
@@ -212,6 +229,7 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
                     public readonly string _ListClassTime = "_ListClassTime";
                     public readonly string _NotificationModal = "_NotificationModal";
                 }
+                public readonly string _ClassDetails = "~/Views/Class/Partial/_ClassDetails.cshtml";
                 public readonly string _CreateClass = "~/Views/Class/Partial/_CreateClass.cshtml";
                 public readonly string _CreateClassTime = "~/Views/Class/Partial/_CreateClassTime.cshtml";
                 public readonly string _ExpireClass = "~/Views/Class/Partial/_ExpireClass.cshtml";
@@ -356,6 +374,18 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.DeleteClassTime);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "classTimeId", classTimeId);
             DeleteClassTimeOverride(callInfo, classTimeId);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void ClassDetailsOverride(T4MVC_System_Web_Mvc_PartialViewResult callInfo, System.Guid classId);
+
+        [NonAction]
+        public override System.Web.Mvc.PartialViewResult ClassDetails(System.Guid classId)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_PartialViewResult(Area, Name, ActionNames.ClassDetails);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "classId", classId);
+            ClassDetailsOverride(callInfo, classId);
             return callInfo;
         }
 

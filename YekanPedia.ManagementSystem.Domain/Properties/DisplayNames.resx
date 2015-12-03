@@ -123,6 +123,9 @@
   <data name="BirthDate" xml:space="preserve">
     <value>تاریخ تولد</value>
   </data>
+  <data name="BirthDateText" xml:space="preserve">
+    <value>متن تبریک تاریخ تولد</value>
+  </data>
   <data name="Capacity" xml:space="preserve">
     <value>ظرفیت</value>
   </data>

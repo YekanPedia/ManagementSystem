@@ -79,6 +79,15 @@ namespace YekanPedia.ManagementSystem.Domain.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to متن تبریک تاریخ تولد.
+        /// </summary>
+        public static string BirthDateText {
+            get {
+                return ResourceManager.GetString("BirthDateText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ظرفیت.
         /// </summary>
         public static string Capacity {

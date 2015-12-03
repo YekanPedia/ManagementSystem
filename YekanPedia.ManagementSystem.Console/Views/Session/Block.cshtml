@@ -1,7 +1,32 @@
 ﻿@model Guid
-@{
-    Html.RenderAction(MVC.Session.ActionNames.SessionBlock, MVC.Session.Name, new { classId = Model });
+@section InlineStyles{
+    <style type="text/css">
+        #content {
+            padding-top: 0 !important;
+        }
+    </style>
 }
+@section FullContainer{
+    @{Html.RenderAction(MVC.Class.ActionNames.ClassDetails, MVC.Class.Name, new { classId = Model });}
+}
+
+<div class="block-header p-b-10">
+    <ul class="actions timelineAction">
+        <li>
+            <a href="#" id="listView" class="active">
+                <i class="zmdi zmdi-view-dashboard"></i>
+            </a>
+        </li>
+        <li>
+            <a href="#" id="timelineView">
+                <i class="zmdi zmdi-view-day"></i>
+            </a>
+        </li>
+    </ul>
+
+</div>
+@{Html.RenderAction(MVC.Session.ActionNames.SessionBlock, MVC.Session.Name, new { classId = Model });}
+
 @section Scripts{
     <script src="@Url.Content(Links.Scripts.Application.SessionController_min_js)"></script>
 }

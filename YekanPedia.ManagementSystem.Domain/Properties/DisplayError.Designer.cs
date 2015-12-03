@@ -70,6 +70,15 @@ namespace YekanPedia.ManagementSystem.Domain.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to مقدار وارد شده بایستی بین {0} و {1} باشد.
+        /// </summary>
+        public static string FilesPersistance {
+            get {
+                return ResourceManager.GetString("FilesPersistance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to تاریخ اتمام بایستی از تاریخ شروع بیشتر باشد.
         /// </summary>
         public static string FinishDateMustBeHigher {

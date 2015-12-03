@@ -10,6 +10,7 @@
     using System.Linq;
     using Properties;
     using InfraStructure.Caching;
+    using InfraStructure.Date;
 
     public class UserService : IUserService
     {
@@ -344,6 +345,12 @@
                           select user).Distinct().ToList();
             _cache.Value.PutItem("GetFriends", result, null, DateTime.Now.AddHours(1));
             return result;
+        }
+
+        public IEnumerable<User> GetBirthDateUser()
+        {
+            var date = PersianDateTime.Now.ToString(PersianDateTimeFormat.Date).Substring(5, 5);
+            return _user.Where(X => X.BirthDate.Substring(5, 5) == date).ToList();
         }
     }
 }

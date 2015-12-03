@@ -43,14 +43,12 @@
                 } else {
                     swal("بروز رسانی فایل ها", "بروز رسانی فایل ها با خطا مواجه شد", "error");
                 }
-            },
-            error: function () {
+            },             error: function () {
                 swal("بروز رسانی فایل ها", "بروز رسانی فایل ها با خطا مواجه شد", "error");
             }
         });
     });     $(".sessionMaterialRequest").click(function (e) {
-        e.preventDefault();
-        $.ajax({
+        e.preventDefault();         $.ajax({
             type: "POST",             url: $(this).attr('data-url'),             data: "ClassSessionId=" + $(this).attr('data-Id'),             dataType: "json",             success: function (response) {
                  if (response.IsSuccessfull) {
                     swal("درخواست بارگذاری فایل", response.Message, "success");
@@ -61,5 +59,25 @@
                 swal("درخواست بارگذاری فایل", "درخواست با خطا مواجه شد", "error");
             }
         });
+    });     $(".classDetailMore").click(function () {
+        if ($(this).find('i').hasClass('zmdi-chevron-down')) {
+            $("#classDetailsMore").fadeIn();             $(this).find('i').removeClass('zmdi-chevron-down').addClass('zmdi-chevron-up');         } else {
+            $("#classDetailsMore").fadeOut();
+            $(this).find('i').removeClass('zmdi-chevron-up').addClass('zmdi-chevron-down');
+        }     });
+    $("#listView").click(function () {
+        $("#timelineView").removeClass('active');
+        $("#listView").addClass('active');
+        $("#sessionTimeline").fadeOut();
+        setTimeout(function () {  $("#sessionBlock").fadeIn();}, 400);
     });
+    $("#timelineView").click(function () {
+        $("#listView").removeClass('active');
+        $("#timelineView").addClass('active');
+
+        $("#sessionBlock").fadeOut();
+        setTimeout(function () { $("#sessionTimeline").fadeIn(); }, 400);
+    });
+    
+    
 });

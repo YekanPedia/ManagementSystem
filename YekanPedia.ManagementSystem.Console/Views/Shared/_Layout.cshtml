@@ -19,7 +19,7 @@
     @Styles.Render(Links.Bundles.Styles.ContentCss)
     <!-- Rtl CSS -->
     @Styles.Render(Links.Bundles.Styles.ContentRtlCss)
-
+    @RenderSection("InlineStyles", false)
 </head>
 <body class="">
     <header id="header" class="">
@@ -122,6 +122,7 @@
         </aside>
         @{ Html.RenderAction(MVC.User.Friends());}
         <section id="content">
+            @RenderSection("FullContainer", false)
             <div class="container">
                 @RenderBody()
             </div>

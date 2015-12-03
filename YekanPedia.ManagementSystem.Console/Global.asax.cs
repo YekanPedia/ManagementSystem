@@ -38,20 +38,28 @@
         }
         protected void Application_PostAuthenticateRequest(Object sender, EventArgs e)
         {
-            HttpCookie authCookie = Request.Cookies[FormsAuthentication.FormsCookieName];
-            if (authCookie != null)
+            try
             {
-                FormsAuthenticationTicket authTicket = FormsAuthentication.Decrypt(authCookie.Value);
-                JavaScriptSerializer serializer = new JavaScriptSerializer();
-                if (authTicket.UserData == "OAuth") return;
+                HttpCookie authCookie = Request.Cookies[FormsAuthentication.FormsCookieName];
+                if (authCookie != null)
+                {
+                    FormsAuthenticationTicket authTicket = FormsAuthentication.Decrypt(authCookie.Value);
+                    JavaScriptSerializer serializer = new JavaScriptSerializer();
+                    if (authTicket.UserData == "OAuth") return;
 
-                var serializeModel = serializer.Deserialize<BaseUser>(authTicket.UserData);
-                var user = new CurrentUserPrincipal(authTicket.Name);
-                user.UserId = serializeModel.UserId;
-                user.FullName = serializeModel.FullName;
-                user.Email = serializeModel.Email;
-                user.Picture = serializeModel.Picture;
-                HttpContext.Current.User = user;
+                    var serializeModel = serializer.Deserialize<BaseUser>(authTicket.UserData);
+                    var user = new CurrentUserPrincipal(authTicket.Name);
+                    user.UserId = serializeModel.UserId;
+                    user.FullName = serializeModel.FullName;
+                    user.Email = serializeModel.Email;
+                    user.Picture = serializeModel.Picture;
+                    HttpContext.Current.User = user;
+                }
+            }
+            catch (Exception)
+            {
+                FormsAuthentication.SignOut();
+                Session.Clear();
             }
         }
         protected void Application_End()

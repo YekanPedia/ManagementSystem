@@ -120,6 +120,9 @@
   <data name="Email" xml:space="preserve">
     <value>لطفا پست الکترونیک را به طور صحیح وارد نمایید</value>
   </data>
+  <data name="FilesPersistance" xml:space="preserve">
+    <value>مقدار وارد شده بایستی بین {0} و {1} باشد</value>
+  </data>
   <data name="FinishDateMustBeHigher" xml:space="preserve">
     <value>تاریخ اتمام بایستی از تاریخ شروع بیشتر باشد</value>
   </data>

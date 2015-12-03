@@ -169,5 +169,11 @@
             return Json(_classTimeService.Delete(classTimeId));
         }
         #endregion
+
+        [ChildActionOnly]
+        public virtual PartialViewResult ClassDetails(Guid classId)
+        {
+            return PartialView(MVC.Class.Views.Partial._ClassDetails, _classService.FindFullClassData(classId));
+        }
     }
 }

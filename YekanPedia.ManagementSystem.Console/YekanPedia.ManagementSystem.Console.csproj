@@ -183,6 +183,7 @@
     <Compile Include="App_Start\Filters\ElmahHandledErrorLoggerFilter.cs" />
     <Compile Include="Controllers\SchedulerController.cs" />
     <Compile Include="Controllers\SessionRequestController.cs" />
+    <Compile Include="ScheduledTasks\BirthDateScheduler.cs" />
     <Compile Include="ScheduledTasks\FileRemoverScheduler.cs" />
     <Compile Include="ScheduledTasks\RoboTeleScheduler.cs" />
     <Compile Include="ScheduledTasks\ScheduledTasksRepository.cs" />
@@ -541,6 +542,7 @@
     <Content Include="Views\Task\Partial\_Create.cshtml" />
     <Content Include="Views\Class\Partial\_ExpireClass.cshtml" />
     <Content Include="Views\Session\Partial\_SessionTimeLine.cshtml" />
+    <Content Include="Views\Class\Partial\_ClassDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

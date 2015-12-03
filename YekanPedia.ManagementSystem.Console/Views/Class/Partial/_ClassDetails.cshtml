@@ -1,0 +1,69 @@
+﻿@model  Class
+@{
+    Layout = null;
+}
+
+<div class="bgm-white m-b-25 p-25 classDetail">
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="col-sm-6">
+                <ul class="clist clist-angle p-r-0">
+                    <li>@Html.DisplayNameFor(X => X.UserId)</li>
+                </ul>
+            </div>
+            <div class="col-sm-6">@Model.User.FullName</div>
+        </div>
+        <div class="col-sm-4">
+            <div class="col-sm-6">
+                <ul class="clist clist-angle p-r-0">
+                    <li>@Html.DisplayNameFor(X => X.Course.CourseName)</li>
+                </ul>
+            </div>
+            <div class="col-sm-6">@Model.Course.CourseName</div>
+        </div>
+        <div class="col-sm-4">
+            <div class="col-sm-6">
+                <ul class="clist clist-angle p-r-0">
+                    <li>@Html.DisplayNameFor(X => X.SessionCount)</li>
+                </ul>
+            </div>
+            <div class="col-sm-6">@Model.SessionCount</div>
+        </div>
+    </div>
+    <div class="row m-t-15 m-b-25" style="display:none" id="classDetailsMore">
+        <div class="col-sm-4">
+            <div class="col-sm-6">
+                <ul class="clist clist-angle p-r-0">
+                    <li>@Html.DisplayNameFor(X => X.StartDateSh)</li>
+                </ul>
+            </div>
+            <div class="col-sm-6">@Model.StartDateSh</div>
+        </div>
+        <div class="col-sm-4">
+            <div class="col-sm-6">
+                <ul class="clist clist-angle p-r-0">
+                    <li>@Html.DisplayNameFor(X => X.FinishDateSh)</li>
+                </ul>
+            </div>
+            <div class="col-sm-6">@Model.FinishDateSh</div>
+        </div>
+        <div class="col-sm-4">
+            <div class="col-sm-6">
+                <ul class="clist clist-angle p-r-0">
+                    <li>@Html.DisplayNameFor(X => X.IsFinished)</li>
+                </ul>
+            </div>
+            <div class="col-sm-6">
+                <div class="checkbox m-t-0">
+                    <label>
+                        <input disabled type="checkbox" checked="@Model.IsFinished" class="checkbox">
+                        <i class="input-helper"></i>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="classDetailMore btn bgm-blue btn-float waves-effect waves-circle waves-float p-0 waves-effect waves-circle waves-float">
+        <i class="zmdi zmdi-chevron-down"></i>
+    </button>
+</div>
