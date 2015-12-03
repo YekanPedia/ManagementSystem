@@ -70,5 +70,11 @@
     "inputFiles": [
       "Scripts/Application/ChartController.js"
     ]
+  },
+  {
+    "outputFileName": "Scripts/Application/SettingController.js",
+    "inputFiles": [
+      "Scripts/Application/SettingController.js"
+    ]
   }
 ]

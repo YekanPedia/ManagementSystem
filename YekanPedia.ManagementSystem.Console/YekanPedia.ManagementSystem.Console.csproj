@@ -390,6 +390,7 @@
     <Content Include="Scripts\Application\ClassController.min.js">
       <DependentUpon>ClassController.js</DependentUpon>
     </Content>
+    <Content Include="Scripts\Application\SettingController.js" />
     <Content Include="Scripts\Application\NotificationSettingController.js" />
     <Content Include="Scripts\Application\NotificationSettingController.min.js">
       <DependentUpon>NotificationSettingController.js</DependentUpon>
@@ -408,6 +409,9 @@
     </Content>
     <Content Include="Scripts\Application\SessionRequestController.min.js">
       <DependentUpon>SessionRequestController.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Application\SettingController.min.js">
+      <DependentUpon>SettingController.js</DependentUpon>
     </Content>
     <Content Include="Scripts\Application\TaskController.js" />
     <Content Include="Scripts\Application\TaskController.min.js">

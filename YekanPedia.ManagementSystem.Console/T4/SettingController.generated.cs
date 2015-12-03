@@ -28,9 +28,6 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
     public partial class SettingController
     {
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public SettingController() { }
-
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         protected SettingController(Dummy d) { }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -59,6 +56,12 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             return RedirectToActionPermanent(taskResult.Result);
         }
 
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.JsonResult Edit()
+        {
+            return new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.Edit);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public SettingController Actions { get { return MVC.Setting; } }
@@ -76,15 +79,25 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         public class ActionNamesClass
         {
             public readonly string Manage = "Manage";
+            public readonly string Edit = "Edit";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants
         {
             public const string Manage = "Manage";
+            public const string Edit = "Edit";
         }
 
 
+        static readonly ActionParamsClass_Edit s_params_Edit = new ActionParamsClass_Edit();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_Edit EditParams { get { return s_params_Edit; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_Edit
+        {
+            public readonly string model = "model";
+        }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ViewsClass Views { get { return s_views; } }
@@ -114,6 +127,18 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         {
             var callInfo = new T4MVC_System_Web_Mvc_ViewResult(Area, Name, ActionNames.Manage);
             ManageOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void EditOverride(T4MVC_System_Web_Mvc_JsonResult callInfo, YekanPedia.ManagementSystem.Domain.Entity.Setting model);
+
+        [NonAction]
+        public override System.Web.Mvc.JsonResult Edit(YekanPedia.ManagementSystem.Domain.Entity.Setting model)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.Edit);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
+            EditOverride(callInfo, model);
             return callInfo;
         }
 

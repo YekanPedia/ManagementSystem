@@ -161,6 +161,8 @@ namespace Links
             public static readonly string SessionController_min_js = Url("SessionController.min.js");
             public static readonly string SessionRequestController_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/SessionRequestController.min.js") ? Url("SessionRequestController.min.js") : Url("SessionRequestController.js");
             public static readonly string SessionRequestController_min_js = Url("SessionRequestController.min.js");
+            public static readonly string SettingController_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/SettingController.min.js") ? Url("SettingController.min.js") : Url("SettingController.js");
+            public static readonly string SettingController_min_js = Url("SettingController.min.js");
             public static readonly string TaskController_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/TaskController.min.js") ? Url("TaskController.min.js") : Url("TaskController.js");
             public static readonly string TaskController_min_js = Url("TaskController.min.js");
             public static readonly string UserController_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/UserController.min.js") ? Url("UserController.min.js") : Url("UserController.js");
@@ -554,6 +556,7 @@ namespace Links
                     public const string SchedulerController_js = "~/Scripts/Application/SchedulerController.js"; 
                     public const string SessionController_js = "~/Scripts/Application/SessionController.js"; 
                     public const string SessionRequestController_js = "~/Scripts/Application/SessionRequestController.js"; 
+                    public const string SettingController_js = "~/Scripts/Application/SettingController.js"; 
                     public const string TaskController_js = "~/Scripts/Application/TaskController.js"; 
                     public const string UserController_js = "~/Scripts/Application/UserController.js"; 
                     public const string UserInClassController_js = "~/Scripts/Application/UserInClassController.js"; 

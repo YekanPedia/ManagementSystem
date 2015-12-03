@@ -10,7 +10,8 @@
         [Key]
         public int SettingId { get; set; }
 
-        [Range(1, 100, ErrorMessage = nameof(FilesPersistance), ErrorMessageResourceType = typeof(DisplayError))]
+        [Display(ResourceType = typeof(DisplayNames), Name = nameof(FilesPersistance))]
+        [Range(1, 100, ErrorMessageResourceName =  nameof(FilesPersistance), ErrorMessageResourceType = typeof(DisplayError))]
         public int FilesPersistance { get; set; }
 
         [Display(ResourceType = typeof(DisplayNames), Name = nameof(BirthDateText))]
