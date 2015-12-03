@@ -18,13 +18,16 @@
         readonly IDbSet<WebSiteNotification> _websiteNotification;
         readonly IUserService _userService;
         readonly Lazy<IClassService> _classService;
+        readonly Lazy<ISettingService> _settingService;
         readonly IMessagingGatewayAdapter _messagingGateway;
         readonly INotificationSettingService _notificationSettingService;
         public NotificationService(IUnitOfWork uow,
             IUserService userService,
             IMessagingGatewayAdapter messagingGateway,
             INotificationSettingService notificationSettingService,
-            Lazy<IClassService> classService)
+            Lazy<IClassService> classService,
+            Lazy<ISettingService> settingService
+            )
         {
             _classService = classService;
             _uow = uow;
@@ -32,7 +35,9 @@
             _userService = userService;
             _messagingGateway = messagingGateway;
             _notificationSettingService = notificationSettingService;
+            _settingService = settingService;
         }
+
         #endregion
         public IServiceResults<bool> SendNotificationToUser(Guid userId, NotificationType notificationType, string message)
         {
@@ -147,9 +152,52 @@
                 };
             }
         }
-        public IServiceResults<bool> SendNotificationToBirthDateUser(Guid userId, string message)
+        public IServiceResults<bool> SendNotificationToBirthDateUser(IEnumerable<User> users)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var notification = _notificationSettingService.GetNotificationType(NotificationType.BirthDate);
+                var sms = new List<string>();
+                var telegram = new List<int>();
+                var email = new List<string>();
+                var types = new List<NotificationKey>();
+                foreach (var item in users)
+                {
+                    sms.Add(notification.Sms ? item.Mobile : string.Empty);
+                    telegram.Add(notification.Telegram ? item.Telegram : 0);
+                    email.Add(notification.Email ? item.Email : string.Empty);
+                    types.Add(new NotificationKey
+                    {
+                        Email = notification.Email,
+                        Sms = notification.Sms,
+                        Telegram = notification.Telegram
+                    });
+                }
+                _messagingGateway.GivenMessages(new NotificationPackage
+                {
+                    Message = new List<string> { _settingService.Value.GetDefaultSetting()?.BirthDateText },
+                    Type = types,
+                    Sms = sms,
+                    Telegram = telegram,
+                    Email = email
+                });
+
+                return new ServiceResults<bool>
+                {
+                    IsSuccessfull = true,
+                    Message = string.Empty,
+                    Result = true
+                };
+            }
+            catch (Exception)
+            {
+                return new ServiceResults<bool>
+                {
+                    IsSuccessfull = false,
+                    Message = BusinessMessage.NotificationNotSend,
+                    Result = false
+                };
+            }
         }
         public IServiceResults<bool> SendPrivateNotificationToClass(Guid classId, NotificationType notificationType, string message)
         {
