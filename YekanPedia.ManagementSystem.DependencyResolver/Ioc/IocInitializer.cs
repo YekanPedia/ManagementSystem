@@ -18,12 +18,16 @@
         {
             Container = new Container(x =>
             {
+                x.For<ISettingService>().Use<SettingService>();
+                x.For<Lazy<ISettingService>>().Use(c => new Lazy<ISettingService>(c.GetInstance<SettingService>));
+
+
                 x.For<ISchedulerObserver>().Use<SchedulerObserver>().Singleton();
 
                 x.For<Lazy<ICacheProvider>>().Use(c => new Lazy<ICacheProvider>(c.GetInstance<HttpRuntimeCache>));
                 x.For<ICacheProvider>().Use<HttpRuntimeCache>();
 
-                x.For<IUnitOfWork>().Use(() => new ManagementSystemDbContext()).LifecycleIs<HttpContextLifecycle>();
+                x.For<IUnitOfWork>().Use(() => new ManagementSystemDbContext()).LifecycleIs<HybridLifecycle>();
                 x.For<IActionResults>().Use<ActionResults>();
                 x.For<IUserService>().Use<UserService>();
 
