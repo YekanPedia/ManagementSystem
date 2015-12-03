@@ -22,6 +22,8 @@
         public DbSet<UserInRole> UserInRole { get; set; }
         public DbSet<Role> Role { get; set; }
         public DbSet<ActionRole> ActionRole { get; set; }
+        public DbSet<AboutUs> AboutUs { get; set; }
+        public DbSet<Setting> Setting { get; set; }
 
         public new IDbSet<TEntity> Set<TEntity>() where TEntity : class
         {
