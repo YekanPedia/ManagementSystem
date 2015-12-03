@@ -3,6 +3,9 @@
     using System;
     using Scheduler;
     using System.Net;
+    using DependencyResolver;
+    using Service.Interfaces;
+    using Elmah;
 
     public class FileRemoverScheduler : ScheduledTask
     {
@@ -13,11 +16,22 @@
         {
             try
             {
-                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(AppSettings.FileRemoverUrl);
+                var _settingService = IocInitializer.GetInstance<ISettingService>();
+                int day = 7;
+                if (_settingService != null)
+                {
+                    var setting = _settingService.GetDefaultSetting();
+                    if (setting != null)
+                    {
+                        day = setting.FilesPersistance;
+                    }
+                }
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(AppSettings.FileRemoverUrl.Replace("{day}", day.ToString()));
                 HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             }
             catch (Exception e)
             {
+                ErrorSignal.FromCurrentContext().Raise(e);
             }
         }
         public override bool RunAt(DateTime utcNow)
