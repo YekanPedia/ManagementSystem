@@ -1,0 +1,176 @@
+﻿@model AboutUs
+
+<div class="block-header">
+    <h2>@LocalMessage.AboutUs</h2>
+</div>
+<div class="card">
+    @using (Html.BeginForm(MVC.AboutUs.ActionNames.Update, MVC.AboutUs.Name, FormMethod.Post, new { @id = "aboutUsFrm" }))
+    {
+        @Html.HiddenFor(X => X.AboutUsId)
+        <div class="card-header">
+            <h2>@LocalMessage.AboutUs<small>@LocalMessage.AboutUsDescription</small></h2>
+        </div>
+        <div class="card-body card-padding">
+            <div class="form-group p-b-30">
+                <label for="inputEmail3" class="col-sm-2 control-label">
+                    @Html.DisplayNameFor(X => X.CompanyName)
+                </label>
+                <div class="col-sm-10">
+                    <div class="fg-line">
+                        @Html.TextBoxFor(X => X.CompanyName, new { @class = "form-control input-sm" })
+                    </div>
+                    <small class="help-block">
+                        @Html.ValidationMessageFor(X => X.CompanyName)
+                    </small>
+                </div>
+            </div>
+            <div class="form-group p-b-30">
+                <label for="inputEmail3" class="col-sm-2 control-label">
+                    @Html.DisplayNameFor(X => X.Email)
+                </label>
+                <div class="col-sm-10">
+                    <div class="fg-line">
+                        @Html.TextBoxFor(X => X.Email, new { @data_type = "en", @class = "form-control input-sm" })
+                    </div>
+                    <small class="help-block">
+                        @Html.ValidationMessageFor(X => X.Email)
+                    </small>
+                </div>
+            </div>
+            <div class="form-group p-b-30">
+                <label for="inputEmail3" class="col-sm-2 control-label">
+                    @Html.DisplayNameFor(X => X.Telphone)
+                </label>
+                <div class="col-sm-10">
+                    <div class="fg-line">
+                        @Html.TextBoxFor(X => X.Telphone, new { @data_mask = "000-00000000", @data_type = "nu", @class = "form-control input-sm" })
+                    </div>
+                    <small class="help-block">
+                        @Html.ValidationMessageFor(X => X.Telphone)
+                    </small>
+                </div>
+            </div>
+            <div class="form-group p-b-30">
+                <label for="inputEmail3" class="col-sm-2 control-label">
+                    @Html.DisplayNameFor(X => X.Address)
+                </label>
+                <div class="col-sm-10">
+                    <div class="fg-line">
+                        @Html.TextBoxFor(X => X.Address, new { @class = "form-control input-sm" })
+                    </div>
+                    <small class="help-block">
+                        @Html.ValidationMessageFor(X => X.Address)
+                    </small>
+                </div>
+            </div>
+            <div class="form-group p-b-30">
+                <label for="inputEmail3" class="col-sm-2 control-label">
+                    @Html.DisplayNameFor(X => X.Facebook)
+                </label>
+                <div class="col-sm-10">
+                    <div class="fg-line">
+                        @Html.TextBoxFor(X => X.Facebook, new { @data_type = "en", @class = "form-control input-sm" })
+                    </div>
+                    <small class="help-block">
+                        @Html.ValidationMessageFor(X => X.Facebook)
+                    </small>
+                </div>
+            </div>
+            <div class="form-group p-b-30">
+                <label for="inputEmail3" class="col-sm-2 control-label">
+                    @Html.DisplayNameFor(X => X.GooglePlus)
+                </label>
+                <div class="col-sm-10">
+                    <div class="fg-line">
+                        @Html.TextBoxFor(X => X.GooglePlus, new { @data_type = "en", @class = "form-control input-sm" })
+                    </div>
+                    <small class="help-block">
+                        @Html.ValidationMessageFor(X => X.GooglePlus)
+                    </small>
+                </div>
+            </div>
+            <div class="form-group p-b-30">
+                <label for="inputEmail3" class="col-sm-2 control-label">
+                    @Html.DisplayNameFor(X => X.Twitter)
+                </label>
+                <div class="col-sm-10">
+                    <div class="fg-line">
+                        @Html.TextBoxFor(X => X.Twitter, new { @data_type = "en", @class = "form-control input-sm" })
+                    </div>
+                    <small class="help-block">
+                        @Html.ValidationMessageFor(X => X.Twitter)
+                    </small>
+                </div>
+            </div>
+            <div class="form-group p-b-30">
+                <label for="inputEmail3" class="col-sm-2 control-label">
+                    @Html.DisplayNameFor(X => X.LinkedIn)
+                </label>
+                <div class="col-sm-10">
+                    <div class="fg-line">
+                        @Html.TextBoxFor(X => X.LinkedIn, new { @data_type = "en", @class = "form-control input-sm" })
+                    </div>
+                    <small class="help-block">
+                        @Html.ValidationMessageFor(X => X.LinkedIn)
+                    </small>
+                </div>
+            </div>
+            <div class="form-group p-b-30">
+                <label for="inputEmail3" class="col-sm-2 control-label">
+                    @Html.DisplayNameFor(X => X.Telegram)
+                </label>
+                <div class="col-sm-10">
+                    <div class="fg-line">
+                        @Html.TextBoxFor(X => X.Telegram, new { @data_type = "en", @class = "form-control input-sm" })
+                    </div>
+                    <small class="help-block">
+                        @Html.ValidationMessageFor(X => X.Telegram)
+                    </small>
+                </div>
+            </div>
+            <div class="form-group p-b-30">
+                <label for="inputEmail3" class="col-sm-2 control-label">
+                    @Html.DisplayNameFor(X => X.Description)
+                </label>
+                <div class="col-sm-10">
+                    <div class="fg-line">
+                        @Html.TextAreaFor(X => X.Description, new { @class = "form-control input-sm" })
+                    </div>
+                    <small class="help-block">
+                        @Html.ValidationMessageFor(X => X.Description)
+                    </small>
+                </div>
+            </div>
+            <div class="form-group p-b-30">
+                <label for="inputEmail3" class="col-sm-2 control-label">
+                    @Html.DisplayNameFor(X => X.Latitude)
+                    @Html.HiddenFor(X => X.Latitude)
+                    @Html.HiddenFor(X => X.Longitude)
+                </label>
+                <div class="col-sm-10">
+                    <div class="fg-line">
+                        <div id="mapElement" style="width:100%;height:400px"></div>
+                    </div>
+                    <small class="help-block">
+                    </small>
+                </div>
+            </div>
+            <div class="form-group p-b-30"></div>
+            <div class="form-group m-l-20 p-t-30 text-left">
+                <button type="submit" id="saveAboutUsForm" class="btn btn-primary btn-sm waves-effect">
+                    <i class="zmdi zmdi-check"></i>
+                    @LocalMessage.Save
+                </button>
+                <a href="@Url.Action(MVC.Dashboard.ActionNames.Admin,MVC.Dashboard.Name)" class="btn btn-danger btn-sm waves-effect">
+                    <i class="zmdi zmdi-arrow-forward"></i>
+                    @LocalMessage.Cancel
+                </a>
+            </div>
+        </div>
+    }
+</div>
+
+@section Scripts{
+    <script src="@Url.Action(MVC.Geographic.ActionNames.Js,MVC.Geographic.Name, new {v="1.0.0.51205" })" type="text/javascript"></script>
+    <script src="@Url.Content(Links.Scripts.Application.AboutUsController_min_js)"></script>
+}

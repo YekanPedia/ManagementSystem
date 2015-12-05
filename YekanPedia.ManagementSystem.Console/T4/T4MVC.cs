@@ -27,6 +27,7 @@ using T4MVC;
 [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
 public static partial class MVC
 {
+    public static YekanPedia.ManagementSystem.Console.Controllers.AboutUsController AboutUs = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_AboutUsController();
     public static YekanPedia.ManagementSystem.Console.Controllers.AccountController Account = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_AccountController();
     public static YekanPedia.ManagementSystem.Console.Controllers.ClassController Class = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_ClassController();
     public static YekanPedia.ManagementSystem.Console.Controllers.ClassTypeController ClassType = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_ClassTypeController();
@@ -34,6 +35,7 @@ public static partial class MVC
     public static YekanPedia.ManagementSystem.Console.Controllers.DashboardController Dashboard = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_DashboardController();
     public static YekanPedia.ManagementSystem.Console.Controllers.ErrorController Error = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_ErrorController();
     public static YekanPedia.ManagementSystem.Console.Controllers.FeedbackController Feedback = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_FeedbackController();
+    public static YekanPedia.ManagementSystem.Console.Controllers.GeographicController Geographic = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_GeographicController();
     public static YekanPedia.ManagementSystem.Console.Controllers.NotificationController Notification = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_NotificationController();
     public static YekanPedia.ManagementSystem.Console.Controllers.NotificationSettingController NotificationSetting = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_NotificationSettingController();
     public static YekanPedia.ManagementSystem.Console.Controllers.OAuthController OAuth = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_OAuthController();
@@ -62,6 +64,21 @@ namespace T4MVC
 }
 
 [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+internal partial class T4MVC_System_Web_Mvc_ActionResult : System.Web.Mvc.ActionResult, IT4MVCActionResult
+{
+    public T4MVC_System_Web_Mvc_ActionResult(string area, string controller, string action, string protocol = null): base()
+    {
+        this.InitMVCT4Result(area, controller, action, protocol);
+    }
+     
+    public override void ExecuteResult(System.Web.Mvc.ControllerContext context) { }
+    
+    public string Controller { get; set; }
+    public string Action { get; set; }
+    public string Protocol { get; set; }
+    public RouteValueDictionary RouteValueDictionary { get; set; }
+}
+[GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
 internal partial class T4MVC_System_Web_Mvc_JsonResult : System.Web.Mvc.JsonResult, IT4MVCActionResult
 {
     public T4MVC_System_Web_Mvc_JsonResult(string area, string controller, string action, string protocol = null): base()
@@ -88,14 +105,12 @@ internal partial class T4MVC_System_Web_Mvc_PartialViewResult : System.Web.Mvc.P
     public RouteValueDictionary RouteValueDictionary { get; set; }
 }
 [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-internal partial class T4MVC_System_Web_Mvc_ActionResult : System.Web.Mvc.ActionResult, IT4MVCActionResult
+internal partial class T4MVC_System_Web_Mvc_ViewResult : System.Web.Mvc.ViewResult, IT4MVCActionResult
 {
-    public T4MVC_System_Web_Mvc_ActionResult(string area, string controller, string action, string protocol = null): base()
+    public T4MVC_System_Web_Mvc_ViewResult(string area, string controller, string action, string protocol = null): base()
     {
         this.InitMVCT4Result(area, controller, action, protocol);
     }
-     
-    public override void ExecuteResult(System.Web.Mvc.ControllerContext context) { }
     
     public string Controller { get; set; }
     public string Action { get; set; }
@@ -103,9 +118,9 @@ internal partial class T4MVC_System_Web_Mvc_ActionResult : System.Web.Mvc.Action
     public RouteValueDictionary RouteValueDictionary { get; set; }
 }
 [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-internal partial class T4MVC_System_Web_Mvc_ViewResult : System.Web.Mvc.ViewResult, IT4MVCActionResult
+internal partial class T4MVC_System_Web_Mvc_ContentResult : System.Web.Mvc.ContentResult, IT4MVCActionResult
 {
-    public T4MVC_System_Web_Mvc_ViewResult(string area, string controller, string action, string protocol = null): base()
+    public T4MVC_System_Web_Mvc_ContentResult(string area, string controller, string action, string protocol = null): base()
     {
         this.InitMVCT4Result(area, controller, action, protocol);
     }
@@ -143,6 +158,9 @@ namespace Links
             private const string URLPATH = "~/Scripts/Application";
             public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
             public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+            public static readonly string AboutUsController_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/AboutUsController.min.js") ? Url("AboutUsController.min.js") : Url("AboutUsController.js");
+            public static readonly string AboutUsController_min_js = Url("AboutUsController.min.js");
+            public static readonly string SettingController___Copy_min_js = Url("SettingController - Copy.min.js");
             public static readonly string AccountController_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/AccountController.min.js") ? Url("AccountController.min.js") : Url("AccountController.js");
             public static readonly string AccountController_min_js = Url("AccountController.min.js");
             public static readonly string BasicInfoController_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/BasicInfoController.min.js") ? Url("BasicInfoController.min.js") : Url("BasicInfoController.js");
@@ -263,6 +281,24 @@ namespace Links
                 public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
                 public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
                 public static readonly string Loadingbar_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Loadingbar.min.js") ? Url("Loadingbar.min.js") : Url("Loadingbar.js");
+            }
+        
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class Maps {
+                private const string URLPATH = "~/Scripts/JQuery/Maps";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class _1_0_0_51205 {
+                    private const string URLPATH = "~/Scripts/JQuery/Maps/1.0.0.51205";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                    public static readonly string gsa_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/gsa.min.js") ? Url("gsa.min.js") : Url("gsa.js");
+                    public static readonly string gsa_min_js = Url("gsa.min.js");
+                }
+            
+                public static readonly string google_maps_d_ts = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/google.maps.d.min.js") ? Url("google.maps.d.min.js") : Url("google.maps.d.js");
+                public static readonly string gsa_ts = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/gsa.min.js") ? Url("gsa.min.js") : Url("gsa.js");
             }
         
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -462,6 +498,14 @@ namespace Links
             }
         
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class Map {
+                private const string URLPATH = "~/Content/Images/Map";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                public static readonly string MyLocationMarkerIcon_png = Url("MyLocationMarkerIcon.png");
+            }
+        
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
             public static class Menu {
                 private const string URLPATH = "~/Content/Images/Menu";
                 public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
@@ -519,6 +563,7 @@ namespace Links
                 public static readonly string Fullcalendar_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Fullcalendar.min.css") ? Url("Fullcalendar.min.css") : Url("Fullcalendar.css");
                 public static readonly string LightGallery_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/LightGallery.min.css") ? Url("LightGallery.min.css") : Url("LightGallery.css");
                 public static readonly string LoadingBar_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/LoadingBar.min.css") ? Url("LoadingBar.min.css") : Url("LoadingBar.css");
+                public static readonly string MapStyle_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/MapStyle.min.css") ? Url("MapStyle.min.css") : Url("MapStyle.css");
                 public static readonly string MaterialDesignIconicFont_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/MaterialDesignIconicFont.min.css") ? Url("MaterialDesignIconicFont.min.css") : Url("MaterialDesignIconicFont.css");
                 public static readonly string NProgress_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/NProgress.min.css") ? Url("NProgress.min.css") : Url("NProgress.css");
                 public static readonly string PersianCalendar_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/PersianCalendar.min.css") ? Url("PersianCalendar.min.css") : Url("PersianCalendar.css");
@@ -547,6 +592,7 @@ namespace Links
             {
                 public static class Assets
                 {
+                    public const string AboutUsController_js = "~/Scripts/Application/AboutUsController.js"; 
                     public const string AccountController_js = "~/Scripts/Application/AccountController.js"; 
                     public const string BasicInfoController_js = "~/Scripts/Application/BasicInfoController.js"; 
                     public const string ChartController_js = "~/Scripts/Application/ChartController.js"; 
@@ -634,6 +680,19 @@ namespace Links
                     public static class Assets
                     {
                         public const string Loadingbar_js = "~/Scripts/JQuery/Loadingbar/Loadingbar.js"; 
+                    }
+                }
+                public static partial class Maps 
+                {
+                    public static partial class _1_0_0_51205 
+                    {
+                        public static class Assets
+                        {
+                            public const string gsa_js = "~/Scripts/JQuery/Maps/1.0.0.51205/gsa.js"; 
+                        }
+                    }
+                    public static class Assets
+                    {
                     }
                 }
                 public static partial class NiceScroll 
@@ -775,6 +834,12 @@ namespace Links
                     {
                     }
                 }
+                public static partial class Map 
+                {
+                    public static class Assets
+                    {
+                    }
+                }
                 public static partial class Menu 
                 {
                     public static class Assets
@@ -812,6 +877,7 @@ namespace Links
                         public const string Fullcalendar_css = "~/Content/Styles/Public/Fullcalendar.css";
                         public const string LightGallery_css = "~/Content/Styles/Public/LightGallery.css";
                         public const string LoadingBar_css = "~/Content/Styles/Public/LoadingBar.css";
+                        public const string MapStyle_css = "~/Content/Styles/Public/MapStyle.css";
                         public const string MaterialDesignIconicFont_css = "~/Content/Styles/Public/MaterialDesignIconicFont.css";
                         public const string NProgress_css = "~/Content/Styles/Public/NProgress.css";
                         public const string PersianCalendar_css = "~/Content/Styles/Public/PersianCalendar.css";

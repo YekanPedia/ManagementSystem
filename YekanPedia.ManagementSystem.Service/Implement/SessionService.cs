@@ -6,7 +6,7 @@
     using Domain.Entity;
     using InfraStructure;
     using System.Data.Entity;
-    using Data.Conext;
+    using Data.Context;
     using Properties;
     using System.Linq;
     using InfraStructure.Date;

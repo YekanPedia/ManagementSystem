@@ -4,7 +4,7 @@
     using System;
     using System.Collections.Generic;
     using Domain.Entity;
-    using Data.Conext;
+    using Data.Context;
     using System.Data.Entity;
     using InfraStructure;
     using System.Linq;

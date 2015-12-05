@@ -70,6 +70,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to درباره ما.
+        /// </summary>
+        internal static string AboutUs {
+            get {
+                return ResourceManager.GetString("AboutUs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to اطلاعات زیر را با دقت پر نمایید . اطلاعات زیر در تمامیه سیستم ها اعم از تلگرام ، ایمیل ، اس ام اس و غیره مورد استفاده قرار خواهد گرفت.
+        /// </summary>
+        internal static string AboutUsDescription {
+            get {
+                return ResourceManager.GetString("AboutUsDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to عملیات.
         /// </summary>
         internal static string Action {

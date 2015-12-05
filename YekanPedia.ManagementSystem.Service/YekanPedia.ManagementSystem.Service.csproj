@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extension\IntExtension.cs" />
+    <Compile Include="Implement\AboutUsService.cs" />
     <Compile Include="Implement\ClassTimeService.cs" />
     <Compile Include="Implement\ClassService.cs" />
     <Compile Include="Implement\ClassTypeService.cs" />
@@ -67,6 +68,7 @@
     <Compile Include="Implement\SettingService.cs" />
     <Compile Include="Implement\TaskService.cs" />
     <Compile Include="Implement\UserInClassService.cs" />
+    <Compile Include="Interfaces\IAboutUsService.cs" />
     <Compile Include="Interfaces\IClassTimeService.cs" />
     <Compile Include="Interfaces\IClassService.cs" />
     <Compile Include="Interfaces\IClassTypeService.cs" />

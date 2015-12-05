@@ -1,4 +1,4 @@
-﻿namespace YekanPedia.ManagementSystem.Data.Conext
+﻿namespace YekanPedia.ManagementSystem.Data.Context
 {
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;

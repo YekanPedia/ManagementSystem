@@ -181,12 +181,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\Filters\ElmahHandledErrorLoggerFilter.cs" />
+    <Compile Include="Controllers\AboutUsController.cs" />
+    <Compile Include="Controllers\GeographicController.cs" />
     <Compile Include="Controllers\SchedulerController.cs" />
     <Compile Include="Controllers\SessionRequestController.cs" />
     <Compile Include="ScheduledTasks\BirthDateScheduler.cs" />
     <Compile Include="ScheduledTasks\FileRemoverScheduler.cs" />
     <Compile Include="ScheduledTasks\RoboTeleScheduler.cs" />
     <Compile Include="ScheduledTasks\ScheduledTasksRepository.cs" />
+    <Compile Include="T4\AboutUsController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="T4\AccountController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
@@ -255,6 +260,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="T4\GeographicController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="T4\NotificationController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
@@ -341,6 +349,7 @@
     <Content Include="Content\Images\Logo\log48.png" />
     <Content Include="Content\Images\Logo\log512.png" />
     <Content Include="Content\Images\Logo\log64.png" />
+    <Content Include="Content\Images\Map\MyLocationMarkerIcon.png" />
     <Content Include="Content\Images\Menu\ellipsis%402x.png" />
     <Content Include="Content\Images\Menu\ellipsis.png" />
     <Content Include="Content\Images\Menu\menu-2%402x-rtl.png" />
@@ -368,12 +377,19 @@
     <Content Include="Content\Styles\Public\Fullcalendar.css" />
     <Content Include="Content\Styles\Public\LightGallery.css" />
     <Content Include="Content\Styles\Public\LoadingBar.css" />
+    <Content Include="Content\Styles\Public\MapStyle.css" />
+    <Content Include="Content\Styles\Public\MapStyle.min.css">
+      <DependentUpon>MapStyle.css</DependentUpon>
+    </Content>
     <Content Include="Content\Styles\Public\MaterialDesignIconicFont.css" />
     <Content Include="Content\Styles\Public\NProgress.css" />
     <Content Include="Content\Styles\Public\PersianCalendar.css" />
     <Content Include="Content\Styles\Public\Sweet.css" />
     <Content Include="Content\Styles\Rtl\AppStyle1.css" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\Application\AboutUsController.min.js">
+      <DependentUpon>AboutUsController.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\Application\AccountController.js" />
     <Content Include="Scripts\Application\AccountController.min.js">
       <DependentUpon>AccountController.js</DependentUpon>
@@ -389,6 +405,10 @@
     <Content Include="Scripts\Application\ClassController.js" />
     <Content Include="Scripts\Application\ClassController.min.js">
       <DependentUpon>ClassController.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Application\AboutUsController.js" />
+    <Content Include="Scripts\Application\SettingController - Copy.min.js">
+      <DependentUpon>AboutUsController.js</DependentUpon>
     </Content>
     <Content Include="Scripts\Application\SettingController.js" />
     <Content Include="Scripts\Application\NotificationSettingController.js" />
@@ -448,6 +468,10 @@
     <Content Include="Scripts\JQuery\jquery-1.10.2.min.js" />
     <Content Include="Scripts\JQuery\LightGallery\lightGallery.min.js" />
     <Content Include="Scripts\JQuery\Loadingbar\Loadingbar.js" />
+    <Content Include="Scripts\JQuery\Maps\1.0.0.51205\gsa.js" />
+    <Content Include="Scripts\JQuery\Maps\1.0.0.51205\gsa.min.js">
+      <DependentUpon>gsa.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\JQuery\NiceScroll\jquery.nicescroll.min.js" />
     <Content Include="Scripts\JQuery\NProgressbar\nprogress.js" />
     <Content Include="Scripts\JQuery\PasswordStrongly\PasswordStrongly.js" />
@@ -470,6 +494,7 @@
     <None Include="T4\T4MVC.tt.settings.xml" />
     <Content Include="Views\Dashboard\Partial\Chart\_UserStatistics.cshtml" />
     <Content Include="Views\Error\NotFound.cshtml" />
+    <Content Include="Views\Geographic\1.0.0.51205\default.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -547,6 +572,7 @@
     <Content Include="Views\Class\Partial\_ExpireClass.cshtml" />
     <Content Include="Views\Session\Partial\_SessionTimeLine.cshtml" />
     <Content Include="Views\Class\Partial\_ClassDetails.cshtml" />
+    <Content Include="Views\AboutUs\Update.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -617,6 +643,8 @@
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\JQuery\Feedback\feedback.ts" />
     <TypeScriptCompile Include="Scripts\JQuery\Feedback\Html2Convas.ts" />
+    <TypeScriptCompile Include="Scripts\JQuery\Maps\google.maps.d.ts" />
+    <TypeScriptCompile Include="Scripts\JQuery\Maps\gsa.ts" />
     <TypeScriptCompile Include="Scripts\JQuery\jquery.d.ts" />
   </ItemGroup>
   <ItemGroup>

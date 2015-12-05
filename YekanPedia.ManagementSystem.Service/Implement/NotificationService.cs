@@ -8,7 +8,7 @@
     using Properties;
     using ExternalService.Interfaces;
     using System.Data.Entity;
-    using Data.Conext;
+    using Data.Context;
     using ExternalService.MessagingGateway;
 
     public class NotificationService : INotificationService

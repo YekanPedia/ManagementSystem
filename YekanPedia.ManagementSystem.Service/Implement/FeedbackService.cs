@@ -4,7 +4,7 @@
     using Interfaces;
     using Domain.Entity;
     using InfraStructure;
-    using Data.Conext;
+    using Data.Context;
     using System.Data.Entity;
     using Properties;
 

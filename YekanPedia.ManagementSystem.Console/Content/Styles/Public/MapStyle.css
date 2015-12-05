@@ -1,0 +1,129 @@
+﻿/*#region base css */
+html {
+    font-size: inherit !important;
+}
+
+.show {
+    display: block !important;
+}
+
+.display-table {
+    display: table;
+}
+ 
+/*#endregion */
+/*#region remove google icon from map */
+.gm-style-cc {
+    display: none;
+}
+
+a[href^="https://maps.google.com/maps"] {
+    display: none !important;
+}
+
+a[href^="http://maps.google.com/maps"] {
+    display: none !important;
+}
+
+.gmnoprint a, .gmnoprint span {
+    display: none;
+}
+/*#endregion */
+ 
+
+ 
+ 
+ 
+/*#region MarkerContent */
+.MarkerContent {
+    direction: rtl;
+    font-size: 12px;
+    font-family: 'B Yekan',Tahoma;
+    padding-top: 10px;
+}
+
+    .MarkerContent .right ul {
+        padding: 0;
+        vertical-align: middle;
+    }
+
+        .MarkerContent .right ul li div.title {
+            font-size: 15px;
+            padding-top: 5px;
+            color: #0D7FBA !important;
+        }
+
+        .MarkerContent .right ul li div.subtitle {
+            color: #8E8E8E !important;
+            padding-top: 5px;
+        }
+
+        .MarkerContent .right ul li {
+            list-style: none;
+        }
+
+    .MarkerContent .left ul li {
+        padding: 2px;
+        list-style: none;
+        color: #423A3A;
+        padding-top: 0;
+        vertical-align: middle;
+        width: 100%;
+    }
+
+        .MarkerContent .left ul li div.icon i {
+            padding-left: 7px !important;
+            font-size: 20px;
+        }
+
+    .MarkerContent .clickable {
+        cursor: pointer;
+        border-top: 1px solid #eee;
+        background-color: #649bc4;
+        box-shadow: 0 15px 0 #4e8ab6 inset;
+        color: #fff !important;
+    }
+
+        .MarkerContent .clickable:hover {
+            color: #fff !important;
+            cursor: pointer;
+            border-top: 1px solid #eee;
+            background-color: #9ccd68;
+            box-shadow: 0 15px 0 #83b64e inset;
+        }
+
+    .MarkerContent div.text {
+        display: table-cell;
+        vertical-align: middle;
+        font-family: 'B Yekan';
+        padding-left: 5px;
+    }
+
+    .MarkerContent div.icon {
+        display: table-cell;
+        width: 25px;
+        height: 25px;
+    }
+
+    .MarkerContent .right {
+        display: table-cell;
+        width: 32% !important;
+        vertical-align: middle;
+        padding-left: 7px;
+    }
+
+    .MarkerContent .left {
+        border-right: 1px solid #98BFDF;
+        display: table-cell;
+        width: 62% !important;
+        vertical-align: middle;
+        padding-right: 10px;
+    }
+
+        .MarkerContent .left ul {
+            list-style: none;
+            padding-right: 0;
+            width: 95% !important;
+        }
+/*#endregion */
+ 

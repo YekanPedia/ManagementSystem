@@ -1,7 +1,7 @@
 namespace YekanPedia.ManagementSystem.Data.Migrations
 {
     using System.Data.Entity.Migrations;
-    using Conext;
+    using Context;
 
    public sealed class Configuration : DbMigrationsConfiguration<ManagementSystemDbContext>
    {

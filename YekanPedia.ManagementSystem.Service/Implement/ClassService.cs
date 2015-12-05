@@ -5,7 +5,7 @@
     using Domain.Entity;
     using InfraStructure;
     using System.Data.Entity;
-    using Data.Conext;
+    using Data.Context;
     using System.Collections.Generic;
     using System.Linq;
     using Properties;

@@ -76,5 +76,29 @@
     "inputFiles": [
       "Scripts/Application/SettingController.js"
     ]
+  },
+  {
+    "outputFileName": "Scripts/JQuery/Gsa/gsa.js",
+    "inputFiles": [
+      "Scripts/JQuery/Gsa/gsa.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Application/AboutUsController.js",
+    "inputFiles": [
+      "Scripts/Application/AboutUsController.js"
+    ]
+  },
+  {
+    "outputFileName": "Content/Styles/Public/MapStyle.css",
+    "inputFiles": [
+      "Content/Styles/Public/MapStyle.css"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/JQuery/Maps/1.0.0.51205/gsa.js",
+    "inputFiles": [
+      "Scripts/JQuery/Maps/1.0.0.51205/gsa.js"
+    ]
   }
 ]

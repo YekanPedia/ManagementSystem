@@ -372,4 +372,10 @@
   <data name="ExpiredClassAndUser" xml:space="preserve">
     <value>کلاس و دانش آموزانی که نزدیک به اتمام مجوز نزدیک هستند</value>
   </data>
+  <data name="AboutUs" xml:space="preserve">
+    <value>درباره ما</value>
+  </data>
+  <data name="AboutUsDescription" xml:space="preserve">
+    <value>اطلاعات زیر را با دقت پر نمایید . اطلاعات زیر در تمامیه سیستم ها اعم از تلگرام ، ایمیل ، اس ام اس و غیره مورد استفاده قرار خواهد گرفت</value>
+  </data>
 </root>

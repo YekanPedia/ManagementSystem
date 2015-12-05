@@ -1,0 +1,68 @@
+﻿(function() {
+
+ function getScript(src) {
+    document.write('<' + 'script src="' + src + '"><' + '/script>');
+  }
+ function getStyle(src) {
+    document.write('<' + 'link href="' + src + '" rel="stylesheet" />');
+  }
+  var loadScriptTime = (new Date).getTime();
+  getScript("https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=false&language=fa&libraries=places");
+  getScript("http://cms.yekanpedia.org/Scripts/Jquery/maps/1.0.0.51205/gsa.js");
+  getStyle("http://cms.yekanpedia.org/Content/Styles/Public/MapStyle.min.css");
+
+document.write(
+'<script type="text/html" id="default">'
+    +
+    '<div class="MarkerContent">'
+        +
+        '<div class="right">'+
+            '<ul>'+
+                '<li class="text-center">'+
+                    '<div class="title">'+
+                        '{{PartyType}}'+'کد'+
+                        '{{Code}}'+
+                        '</div>'+
+                    '<div class="subtitle">'+
+                        '{{FirstName}}'+
+                        '{{LastName}}'+
+                        '</div>'+
+                    '</li>'+
+                '</ul>'+
+            '</div>'+
+        '<div class="left">'+
+            '<ul>'+
+                '<li class="display-table">'+
+                    '<div class="icon">'+
+                        '<i class="mdi-communication-phone"></i>'+
+                        '</div>'+
+                    '<div class="text">'+
+                        '{{Tel}}'+
+                        '</div>'+
+                    '</li>'+
+                '<li class="display-table">'+
+                    '<div class="icon">'+
+                        '<i class="mdi-communication-business"></i>'+
+                        '</div>'+
+                    '<div class="text">'+
+                        '{{Address}}'+
+                        '</div>'+
+                    '</li>'+
+                '<li class="display-table">'+
+                    '<div class="icon">'+
+                        '<i class="mdi-maps-pin-drop"></i>'+
+                        '</div>'+
+                    '<div class="text"></div>'+
+                    '</li>'+
+                '<li class="display-table  clickable drawDirection" title="برای نمایش مسیر از موقعیت فعلی شما کلیک نمایید">'+'<div class="icon vertical-middle padding-top-2">'+
+                        '<i class="vertical-middle mdi-maps-directions color-white"></i>'+
+                        '</div>'+
+                    '<div class="text">نمایش مسیر بر روی نقشه</div>'+
+                    '</li>'+
+                '</ul>'+
+            '</div>'+
+        '</div>'+
+    '</script>');
+ 
+})();
+

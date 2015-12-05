@@ -50,9 +50,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Conext\DbContextConfiguration.cs" />
-    <Compile Include="Conext\IUnitOfWork.cs" />
-    <Compile Include="Conext\ManagementSystemDbContext.cs" />
+    <Compile Include="Context\DbContextConfiguration.cs" />
+    <Compile Include="Context\IUnitOfWork.cs" />
+    <Compile Include="Context\ManagementSystemDbContext.cs" />
     <Compile Include="Interception\PersianCharactersInterceptor.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

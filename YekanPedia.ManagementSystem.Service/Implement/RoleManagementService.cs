@@ -3,7 +3,7 @@
     using System;
     using System.Collections.Generic;
     using Interfaces;
-    using Data.Conext;
+    using Data.Context;
     using System.Data.Entity;
     using Domain.Entity;
     using System.Linq;

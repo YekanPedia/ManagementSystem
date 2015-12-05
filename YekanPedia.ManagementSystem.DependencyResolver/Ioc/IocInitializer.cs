@@ -3,7 +3,7 @@
     using StructureMap;
     using StructureMap.Web.Pipeline;
     using System;
-    using Data.Conext;
+    using Data.Context;
     using InfraStructure;
     using Service.Implement;
     using Service.Interfaces;
@@ -21,6 +21,7 @@
                 x.For<ISettingService>().Use<SettingService>();
                 x.For<Lazy<ISettingService>>().Use(c => new Lazy<ISettingService>(c.GetInstance<SettingService>));
 
+                x.For<IAboutUsService>().Use<AboutUsService>();
 
                 x.For<ISchedulerObserver>().Use<SchedulerObserver>().Singleton();
 

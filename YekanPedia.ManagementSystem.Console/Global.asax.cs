@@ -60,6 +60,8 @@
             {
                 FormsAuthentication.SignOut();
                 Session.Clear();
+                var urlHelper = new UrlHelper(HttpContext.Current.Request.RequestContext);
+                Response.Redirect(urlHelper.Action(MVC.OAuth.ActionNames.SignIn, MVC.OAuth.Name));
             }
         }
         protected void Application_End()

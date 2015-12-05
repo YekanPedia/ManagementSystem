@@ -120,6 +120,9 @@
   <data name="AboutMe" xml:space="preserve">
     <value>درباره من</value>
   </data>
+  <data name="Address" xml:space="preserve">
+    <value>آدرس</value>
+  </data>
   <data name="BirthDate" xml:space="preserve">
     <value>تاریخ تولد</value>
   </data>
@@ -153,6 +156,9 @@
   <data name="Color" xml:space="preserve">
     <value>رنگ</value>
   </data>
+  <data name="CompanyName" xml:space="preserve">
+    <value>نام موسسه</value>
+  </data>
   <data name="ContributeStartDateSh" xml:space="preserve">
     <value>تاریخ پیوستن به کلاس</value>
   </data>
@@ -183,6 +189,9 @@
   <data name="FullName" xml:space="preserve">
     <value>نام و نام خانوادگی</value>
   </data>
+  <data name="GooglePlus" xml:space="preserve">
+    <value>گوگل پلاس</value>
+  </data>
   <data name="IsActive" xml:space="preserve">
     <value>فعال</value>
   </data>
@@ -201,8 +210,17 @@
   <data name="LastLoginDate" xml:space="preserve">
     <value>زمان آخرین ورود به سیستم</value>
   </data>
+  <data name="Latitude" xml:space="preserve">
+    <value>موقعیت جغرافیایی</value>
+  </data>
   <data name="Link" xml:space="preserve">
     <value>آدرس</value>
+  </data>
+  <data name="LinkedIn" xml:space="preserve">
+    <value>لینک دین</value>
+  </data>
+  <data name="Longitude" xml:space="preserve">
+    <value>موقعیت جغرافیایی</value>
   </data>
   <data name="MessageOnAddSession" xml:space="preserve">
     <value>ارسال پیام در زمان ارسال فایل های کلاس</value>
@@ -254,6 +272,9 @@
   </data>
   <data name="Telegram" xml:space="preserve">
     <value>تلگرام</value>
+  </data>
+  <data name="Telphone" xml:space="preserve">
+    <value>تلفن </value>
   </data>
   <data name="TimeFrom" xml:space="preserve">
     <value>از ساعت</value>
