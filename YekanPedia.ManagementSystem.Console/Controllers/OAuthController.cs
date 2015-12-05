@@ -63,9 +63,9 @@
         [HttpGet, AllowAnonymous]
         public virtual RedirectToRouteResult SignOut()
         {
-            Response.Cookies.Clear();
             FormsAuthentication.SignOut();
             Session.Clear();
+            Response.Cookies.Clear();
             return RedirectToAction(MVC.OAuth.ActionNames.SignIn, MVC.OAuth.Name);
         }
     }
