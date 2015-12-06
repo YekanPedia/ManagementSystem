@@ -25,6 +25,7 @@
             var resultModel = _userService.GetUsers(model, classId).Result;
             return PartialView(MVC.User.Views.Partial._List, resultModel);
         }
+
         [HttpGet]
         public virtual ViewResult Manage()
         {
@@ -47,5 +48,7 @@
         {
             return PartialView(MVC.User.Views.Partial._Friends, _userService.GetFriends((User as ICurrentUserPrincipal).UserId));
         }
+
+      
     }
 }

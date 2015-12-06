@@ -59,7 +59,7 @@
             catch (Exception)
             {
                 FormsAuthentication.SignOut();
-                Session.Clear();
+              //  Session.Clear();
                 var urlHelper = new UrlHelper(HttpContext.Current.Request.RequestContext);
                 Response.Redirect(urlHelper.Action(MVC.OAuth.ActionNames.SignIn, MVC.OAuth.Name));
             }

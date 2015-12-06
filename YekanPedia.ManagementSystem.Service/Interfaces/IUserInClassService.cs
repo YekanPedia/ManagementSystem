@@ -12,5 +12,6 @@
         IServiceResults<bool> Edit(UserInClass model);
         UserInClass Find(int userInClasssId);
         IServiceResults<bool> Delete(int userInClassId);
+        IEnumerable<UserInClass> GetExpiredUser();
     }
 }

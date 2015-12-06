@@ -12,6 +12,7 @@
         Class FindClass(Guid classId);
         Class FindFullClassData(Guid classId);
         IEnumerable<Class> GetClass();
+        IEnumerable<Class> GetExpiredClass();
         void FinishedClass(Guid classId);
     }
 }

@@ -10,6 +10,7 @@
             bundles.Add(new ScriptBundleOrderer(Links.Bundles.Scripts.AdminPanelScripts, new JsMinify()).Include(
                          "~" + Links.Scripts.Application.SchedulerController_js,
                          "~" + Links.Scripts.JQuery.SparkLine.jquery_sparkline_min_js,
+                         "~" + Links.Scripts.JQuery.PieChart.jquery_easypiechart_min_js,
                          "~" + Links.Scripts.Application.ChartController_min_js
                          ));
 

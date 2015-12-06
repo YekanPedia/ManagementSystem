@@ -99,5 +99,19 @@
                 Result = result.ToBool()
             };
         }
+        public IEnumerable<UserInClass> GetExpiredUser()
+        {
+            return _userInClass.Include(X => X.User)
+                               .Include(X => X.Class)
+                               .Include(X => X.Class.ClassTime)
+                               .Include(X => X.Class.ClassSession)
+                                .Include(X => X.Class.Course)
+                               .Include(X => X.Class.User)
+                               .Where(X => X.IsFinished != true && X.SessionCount != X.Class.SessionCount)
+                               .AsNoTracking()
+                               .Where(X => X.IsFinished != true && (X.SessionCount - (X.Class.ClassSession.Count(C => C.IsCanceled == false && X.ContributeStartDateMi <= C.ClassSessionDateMi) * 2)) <= 4)
+                               .OrderByDescending(X => X.ContributeStartDateMi)
+                               .ToList();
+        }
     }
 }

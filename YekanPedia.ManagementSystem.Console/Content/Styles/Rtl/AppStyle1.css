@@ -4,7 +4,7 @@
     src: url('../../Fonts/BYekan/BYekan.ttf');
 }
 
- 
+
 html {
     direction: rtl !important;
 }
@@ -1018,3 +1018,19 @@ th {
 .timelineAction.actions > li > a.active > i {
     color: #4285F4;
 }
+
+/*#region Pie Chart */
+
+.expiredClass .easy-pie:not(.main-pie) .percent:after {
+    font-size: 13px;
+}
+
+.expiredClass .easy-pie:not(.main-pie) .percent {
+    font-size: 13px;
+    margin-top: 18px;
+}
+
+.expiredClass .easy-pie .percent {
+    left: -12px;
+}
+/*#endregion */

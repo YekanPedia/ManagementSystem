@@ -12,10 +12,10 @@
                     {
                         <tr id="userInClassId_@item.UserInClassId">
                             <td>@item.Class.ClassInformaion</td>
-                            <td>@item.PaymentDate</td>
+                            <td>@item.ContributeStartDateSh</td>
                             <td>@item.Price</td>
                             <td>@item.SessionCount</td>
-                            <td>@item.TransactionCode</td>
+                            <td>@(item.Class.ClassSession.Count(X => X.IsCanceled == false && item.ContributeStartDateMi <= X.ClassSessionDateMi) * 2)</td>
                             <td>
                                 <div class="checkbox">
                                     <label>

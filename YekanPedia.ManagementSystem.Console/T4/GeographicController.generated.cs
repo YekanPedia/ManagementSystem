@@ -110,10 +110,10 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             public class _ViewNamesClass
             {
             }
-            static readonly __1_0_0_51020Class s__1_0_0_51020 = new __1_0_0_51020Class();
-            public __1_0_0_51020Class _1_0_0_51020 { get { return s__1_0_0_51020; } }
+            static readonly __1_0_0_51205Class s__1_0_0_51205 = new __1_0_0_51205Class();
+            public __1_0_0_51205Class _1_0_0_51205 { get { return s__1_0_0_51205; } }
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-            public partial class __1_0_0_51020Class
+            public partial class __1_0_0_51205Class
             {
                 static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
                 public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
@@ -121,7 +121,7 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
                 {
                     public readonly string @default = "default";
                 }
-                public readonly string @default = "~/Views/Geographic/1.0.0.51020/default.html";
+                public readonly string @default = "~/Views/Geographic/1.0.0.51205/default.html";
             }
         }
     }

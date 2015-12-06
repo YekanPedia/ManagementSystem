@@ -100,6 +100,7 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             public readonly string Add = "Add";
             public readonly string Edit = "Edit";
             public readonly string Delete = "Delete";
+            public readonly string UserExpired = "UserExpired";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -109,6 +110,7 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             public const string Add = "Add";
             public const string Edit = "Edit";
             public const string Delete = "Delete";
+            public const string UserExpired = "UserExpired";
         }
 
 
@@ -173,10 +175,12 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
                     public readonly string _Create = "_Create";
                     public readonly string _HeaderUserInClassGrid = "_HeaderUserInClassGrid";
                     public readonly string _List = "_List";
+                    public readonly string _UserExpired = "_UserExpired";
                 }
                 public readonly string _Create = "~/Views/UserInClass/Partial/_Create.cshtml";
                 public readonly string _HeaderUserInClassGrid = "~/Views/UserInClass/Partial/_HeaderUserInClassGrid.cshtml";
                 public readonly string _List = "~/Views/UserInClass/Partial/_List.cshtml";
+                public readonly string _UserExpired = "~/Views/UserInClass/Partial/_UserExpired.cshtml";
             }
         }
     }
@@ -255,6 +259,17 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.Delete);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "userInClassId", userInClassId);
             DeleteOverride(callInfo, userInClassId);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void UserExpiredOverride(T4MVC_System_Web_Mvc_PartialViewResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.PartialViewResult UserExpired()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_PartialViewResult(Area, Name, ActionNames.UserExpired);
+            UserExpiredOverride(callInfo);
             return callInfo;
         }
 

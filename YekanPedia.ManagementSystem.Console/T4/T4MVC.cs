@@ -342,6 +342,14 @@ namespace Links
             }
         
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class PieChart {
+                private const string URLPATH = "~/Scripts/JQuery/PieChart";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                public static readonly string jquery_easypiechart_min_js = Url("jquery.easypiechart.min.js");
+            }
+        
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
             public static class Select {
                 private const string URLPATH = "~/Scripts/JQuery/Select";
                 public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
@@ -564,6 +572,7 @@ namespace Links
                 public static readonly string LightGallery_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/LightGallery.min.css") ? Url("LightGallery.min.css") : Url("LightGallery.css");
                 public static readonly string LoadingBar_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/LoadingBar.min.css") ? Url("LoadingBar.min.css") : Url("LoadingBar.css");
                 public static readonly string MapStyle_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/MapStyle.min.css") ? Url("MapStyle.min.css") : Url("MapStyle.css");
+                public static readonly string MapStyle_min_css = Url("MapStyle.min.css");
                 public static readonly string MaterialDesignIconicFont_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/MaterialDesignIconicFont.min.css") ? Url("MaterialDesignIconicFont.min.css") : Url("MaterialDesignIconicFont.css");
                 public static readonly string NProgress_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/NProgress.min.css") ? Url("NProgress.min.css") : Url("NProgress.css");
                 public static readonly string PersianCalendar_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/PersianCalendar.min.css") ? Url("PersianCalendar.min.css") : Url("PersianCalendar.css");
@@ -728,6 +737,13 @@ namespace Links
                     public static class Assets
                     {
                         public const string Phoenix_core_js = "~/Scripts/JQuery/Phoenix/Phoenix.core.js"; 
+                    }
+                }
+                public static partial class PieChart 
+                {
+                    public static class Assets
+                    {
+                        public const string jquery_easypiechart_min_js = "~/Scripts/JQuery/PieChart/jquery.easypiechart.min.js"; 
                     }
                 }
                 public static partial class Select 

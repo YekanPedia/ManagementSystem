@@ -1,0 +1,27 @@
+﻿@model IEnumerable<UserInClass>
+@{
+    Layout = null;
+}
+
+@foreach (var item in Model)
+{
+    var percent = (Math.Round(Convert.ToDouble(item.Class.ClassSession.Count(X => X.IsCanceled == false && item.ContributeStartDateMi <= X.ClassSessionDateMi) * 2 * 100) / item.SessionCount));
+    <a class="lv-item expiredClass" href="">
+        <div class="media">
+            <div class="pull-right">
+                <img class="lv-img-sm" src="@item.User.Picture" alt="">
+            </div>
+            <div class="pull-left">
+                <div class="easy-pie sub-pie-1 p-0" data-percent="@percent">
+                    <div class="percent">@percent</div>
+                </div>
+            </div>
+            <div class="media-body p-r-0 ">
+                <div class="lv-title">@item.User.FullName</div>
+                <small class="lv-small">@item.Class.ClassInformaion</small>
+            </div>
+        </div>
+    </a>
+}
+
+

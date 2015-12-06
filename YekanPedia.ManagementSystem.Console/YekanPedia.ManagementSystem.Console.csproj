@@ -477,6 +477,7 @@
     <Content Include="Scripts\JQuery\PasswordStrongly\PasswordStrongly.js" />
     <Content Include="Scripts\JQuery\PersianCalendar\PersianCalendar.js" />
     <Content Include="Scripts\JQuery\Phoenix\Phoenix.core.js" />
+    <Content Include="Scripts\JQuery\PieChart\jquery.easypiechart.min.js" />
     <Content Include="Scripts\JQuery\Select\BootstrapSelect.js" />
     <Content Include="Scripts\JQuery\SparkLine\jquery.sparkline.min.js" />
     <Content Include="Scripts\JQuery\Sweet\sweet-alert.min.js" />
@@ -569,10 +570,11 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Task\Partial\_TaskWidget.cshtml" />
     <Content Include="Views\Task\Partial\_Create.cshtml" />
-    <Content Include="Views\Class\Partial\_ExpireClass.cshtml" />
+    <Content Include="Views\Class\Partial\_ClassExpired.cshtml" />
     <Content Include="Views\Session\Partial\_SessionTimeLine.cshtml" />
     <Content Include="Views\Class\Partial\_ClassDetails.cshtml" />
     <Content Include="Views\AboutUs\Update.cshtml" />
+    <Content Include="Views\UserInClass\Partial\_UserExpired.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

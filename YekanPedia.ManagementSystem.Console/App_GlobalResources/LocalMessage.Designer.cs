@@ -412,11 +412,20 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to کلاس و دانش آموزانی که نزدیک به اتمام مجوز نزدیک هستند.
+        ///   Looks up a localized string similar to کلاس هایی که تا 2 هفته آینده اتمام خواهند شد.
         /// </summary>
-        internal static string ExpiredClassAndUser {
+        internal static string ExpiredClass {
             get {
-                return ResourceManager.GetString("ExpiredClassAndUser", resourceCulture);
+                return ResourceManager.GetString("ExpiredClass", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to دانش آموزانی که تا 2 هفته آینده مجوز حضور خواهند شد.
+        /// </summary>
+        internal static string ExpiredUser {
+            get {
+                return ResourceManager.GetString("ExpiredUser", resourceCulture);
             }
         }
         

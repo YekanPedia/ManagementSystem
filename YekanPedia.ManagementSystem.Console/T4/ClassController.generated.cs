@@ -116,6 +116,7 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             public readonly string EditClassTime = "EditClassTime";
             public readonly string DeleteClassTime = "DeleteClassTime";
             public readonly string ClassDetails = "ClassDetails";
+            public readonly string ClassExpired = "ClassExpired";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -129,6 +130,7 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             public const string EditClassTime = "EditClassTime";
             public const string DeleteClassTime = "DeleteClassTime";
             public const string ClassDetails = "ClassDetails";
+            public const string ClassExpired = "ClassExpired";
         }
 
 
@@ -220,9 +222,9 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
                 public class _ViewNamesClass
                 {
                     public readonly string _ClassDetails = "_ClassDetails";
+                    public readonly string _ClassExpired = "_ClassExpired";
                     public readonly string _CreateClass = "_CreateClass";
                     public readonly string _CreateClassTime = "_CreateClassTime";
-                    public readonly string _ExpireClass = "_ExpireClass";
                     public readonly string _HeaderClassGrid = "_HeaderClassGrid";
                     public readonly string _HeaderClassTimeGrid = "_HeaderClassTimeGrid";
                     public readonly string _ListClass = "_ListClass";
@@ -230,9 +232,9 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
                     public readonly string _NotificationModal = "_NotificationModal";
                 }
                 public readonly string _ClassDetails = "~/Views/Class/Partial/_ClassDetails.cshtml";
+                public readonly string _ClassExpired = "~/Views/Class/Partial/_ClassExpired.cshtml";
                 public readonly string _CreateClass = "~/Views/Class/Partial/_CreateClass.cshtml";
                 public readonly string _CreateClassTime = "~/Views/Class/Partial/_CreateClassTime.cshtml";
-                public readonly string _ExpireClass = "~/Views/Class/Partial/_ExpireClass.cshtml";
                 public readonly string _HeaderClassGrid = "~/Views/Class/Partial/_HeaderClassGrid.cshtml";
                 public readonly string _HeaderClassTimeGrid = "~/Views/Class/Partial/_HeaderClassTimeGrid.cshtml";
                 public readonly string _ListClass = "~/Views/Class/Partial/_ListClass.cshtml";
@@ -386,6 +388,17 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_PartialViewResult(Area, Name, ActionNames.ClassDetails);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "classId", classId);
             ClassDetailsOverride(callInfo, classId);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void ClassExpiredOverride(T4MVC_System_Web_Mvc_PartialViewResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.PartialViewResult ClassExpired()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_PartialViewResult(Area, Name, ActionNames.ClassExpired);
+            ClassExpiredOverride(callInfo);
             return callInfo;
         }
 

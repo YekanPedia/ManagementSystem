@@ -39,8 +39,6 @@
             ClassDropDownList();
             return View(new UserInClass { UserId = userId });
         }
-
-
         [HttpPost]
         public virtual ActionResult Add(UserInClass model)
         {
@@ -85,7 +83,12 @@
         {
             return Json(_userInClassService.Delete(userInClassId));
         }
-
         #endregion
+
+        [ChildActionOnly, OutputCache(Duration = 3600 * 5)]
+        public virtual PartialViewResult UserExpired()
+        {
+            return PartialView(MVC.UserInClass.Views.Partial._UserExpired, _userInClassService.GetExpiredUser());
+        }
     }
 }

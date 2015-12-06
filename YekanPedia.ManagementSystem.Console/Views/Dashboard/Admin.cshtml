@@ -6,6 +6,33 @@
             <div class="listview">
                 <div class="lv-header">
                     <div class="m-t-5">
+                        @LocalMessage.ExpiredClass
+                    </div>
+                </div>
+                <div class="lv-body">
+                    @{ Html.RenderAction(MVC.Class.ClassExpired());}
+                </div>
+            </div>
+        </div>
+        <div class="card rating-list">
+            <div class="listview">
+                <div class="lv-header">
+                    <div class="m-t-5">
+                        @LocalMessage.ExpiredUser
+                    </div>
+                </div>
+                <div class="lv-body">
+                    @{ Html.RenderAction(MVC.UserInClass.UserExpired());}
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-sm-6">
+        <div class="card rating-list">
+            <div class="listview">
+                <div class="lv-header">
+                    <div class="m-t-5">
                         @LocalMessage.Statistics
                     </div>
                 </div>
@@ -17,30 +44,21 @@
                 </div>
             </div>
         </div>
-        <div class="card rating-list">
-            <div class="listview">
-                <div class="lv-header">
-                    <div class="m-t-5">
-                        @LocalMessage.ExpiredClassAndUser
-                    </div>
-                </div>
-                <div class="lv-body">
-                    <div class="p-15">
-                        @*@{ Html.RenderAction(MVC.Class.ExpiredClass());}
-                        @{ Html.RenderAction(MVC.User.ExpiredUser());}*@
-                    </div>
-                </div>
-            </div>
-        </div>
+        @{ Html.RenderAction(MVC.Task.GetAllTasksWidget());}
     </div>
-    @{ Html.RenderAction(MVC.Task.GetAllTasksWidget());}
-
-
     <div class="col-sm-12">
         @{ Html.RenderAction(MVC.Scheduler.GetList());}
     </div>
 </div>
 
 @section Scripts{
+
     @Scripts.Render(Links.Bundles.Scripts.AdminPanelScripts)
+    <script>
+        $().ready(function () {
+            if ($('.sub-pie-1')[0]) {
+                easyPieChart('sub-pie-1', '#eee', '#ccc', '#2196F3', 2, 'butt', 50);
+            }
+        });
+    </script>
 }

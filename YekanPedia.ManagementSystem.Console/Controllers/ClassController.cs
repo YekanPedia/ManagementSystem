@@ -14,7 +14,11 @@
         readonly ICourseService _courseService;
         readonly IClassService _classService;
         readonly IClassTimeService _classTimeService;
-        public ClassController(IClassTimeService classTimeService, IClassService classService, IUserService userService, ICourseService courseService, IClassTypeService classTypeService)
+        public ClassController(IClassTimeService classTimeService,
+            IClassService classService,
+            IUserService userService,
+            ICourseService courseService,
+            IClassTypeService classTypeService)
         {
             _userService = userService;
             _classTypeService = classTypeService;
@@ -174,6 +178,12 @@
         public virtual PartialViewResult ClassDetails(Guid classId)
         {
             return PartialView(MVC.Class.Views.Partial._ClassDetails, _classService.FindFullClassData(classId));
+        }
+
+        [ChildActionOnly ,OutputCache(Duration = 3600 * 5)]
+        public virtual PartialViewResult ClassExpired()
+        {
+            return PartialView(MVC.Class.Views.Partial._ClassExpired, _classService.GetExpiredClass());
         }
     }
 }

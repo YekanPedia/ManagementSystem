@@ -24,5 +24,7 @@
         IEnumerable<User> GetFriends(Guid userId);
         IEnumerable<User> GetBirthDateUser();
         IServiceResults<bool> RecoveryPassword(string userName);
+
+ 
     }
 }
