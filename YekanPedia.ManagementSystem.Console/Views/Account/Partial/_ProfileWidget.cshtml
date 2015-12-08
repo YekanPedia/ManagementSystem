@@ -2,7 +2,7 @@
 @{ Layout = null;}
 <div class="card profile-view">
     <div class="pv-header">
-        <img src="@Model.Picture" class="pv-main" alt="">
+        <img src="@Model.Picture.Replace("{size}","270")" class="pv-main" alt="">
     </div>
     <div class="pv-body">
         <h2>@Model.FullName</h2>

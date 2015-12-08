@@ -7,9 +7,9 @@
 <div class="card">
     <div class="card-header">
     </div>
-    <div class="card-body x-overflow">
+    <div class="card-body ">
         <div class="table-responsive table-hover">
-            <table id="classDataGrid" class="table table-striped ">
+            <table id="classDataGrid" class="table table-striped x-overflow">
                 @{ Html.RenderPartial(MVC.User.Views.Partial._HeaderUserGrid, new User());}
                 <tbody>
                     @foreach (var item in Model)

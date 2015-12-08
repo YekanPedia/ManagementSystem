@@ -88,7 +88,7 @@
                 <div class="profile-menu toggled">
                     <a href="">
                         <div class="profile-pic">
-                            <img src="@(CurrentUser.Picture)" alt="">
+                            <img src="@(CurrentUser.Picture.Replace("{size}","48"))" alt="">
                         </div>
                         <div class="profile-info">
                             @(CurrentUser.FullName)
