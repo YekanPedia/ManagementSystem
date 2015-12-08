@@ -7,5 +7,6 @@
         List<FileInfo> GetFilesAddress(string address);
         string CreateDirectory(string address);
         long DirectorySize();
+        string UploadImage(PostedImageFile file);
     }
 }
