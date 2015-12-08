@@ -74,6 +74,139 @@ namespace YekanPedia.ManagementSystem.ExternalService.FilesProxy {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PostedFile", Namespace="http://schemas.datacontract.org/2004/07/YekanPedia.FileManagement.Proxy.Model")]
+    [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(YekanPedia.ManagementSystem.ExternalService.FilesProxy.PostedImageFile))]
+    public partial class PostedFile : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private byte[] ContentField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FileNameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte[] Content {
+            get {
+                return this.ContentField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ContentField, value) != true)) {
+                    this.ContentField = value;
+                    this.RaisePropertyChanged("Content");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FileName {
+            get {
+                return this.FileNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FileNameField, value) != true)) {
+                    this.FileNameField = value;
+                    this.RaisePropertyChanged("FileName");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PostedImageFile", Namespace="http://schemas.datacontract.org/2004/07/YekanPedia.FileManagement.Proxy.Model")]
+    [System.SerializableAttribute()]
+    public partial class PostedImageFile : YekanPedia.ManagementSystem.ExternalService.FilesProxy.PostedFile {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int HeightField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int WidthField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int XField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int YField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Height {
+            get {
+                return this.HeightField;
+            }
+            set {
+                if ((this.HeightField.Equals(value) != true)) {
+                    this.HeightField = value;
+                    this.RaisePropertyChanged("Height");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Width {
+            get {
+                return this.WidthField;
+            }
+            set {
+                if ((this.WidthField.Equals(value) != true)) {
+                    this.WidthField = value;
+                    this.RaisePropertyChanged("Width");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int X {
+            get {
+                return this.XField;
+            }
+            set {
+                if ((this.XField.Equals(value) != true)) {
+                    this.XField = value;
+                    this.RaisePropertyChanged("X");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Y {
+            get {
+                return this.YField;
+            }
+            set {
+                if ((this.YField.Equals(value) != true)) {
+                    this.YField = value;
+                    this.RaisePropertyChanged("Y");
+                }
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="FilesProxy.IFilesProxy")]
     public interface IFilesProxy {
@@ -95,6 +228,12 @@ namespace YekanPedia.ManagementSystem.ExternalService.FilesProxy {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFilesProxy/GetDirectorySize", ReplyAction="http://tempuri.org/IFilesProxy/GetDirectorySizeResponse")]
         System.Threading.Tasks.Task<long> GetDirectorySizeAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFilesProxy/UploadImage", ReplyAction="http://tempuri.org/IFilesProxy/UploadImageResponse")]
+        string UploadImage(YekanPedia.ManagementSystem.ExternalService.FilesProxy.PostedImageFile file);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFilesProxy/UploadImage", ReplyAction="http://tempuri.org/IFilesProxy/UploadImageResponse")]
+        System.Threading.Tasks.Task<string> UploadImageAsync(YekanPedia.ManagementSystem.ExternalService.FilesProxy.PostedImageFile file);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -146,6 +285,14 @@ namespace YekanPedia.ManagementSystem.ExternalService.FilesProxy {
         
         public System.Threading.Tasks.Task<long> GetDirectorySizeAsync() {
             return base.Channel.GetDirectorySizeAsync();
+        }
+        
+        public string UploadImage(YekanPedia.ManagementSystem.ExternalService.FilesProxy.PostedImageFile file) {
+            return base.Channel.UploadImage(file);
+        }
+        
+        public System.Threading.Tasks.Task<string> UploadImageAsync(YekanPedia.ManagementSystem.ExternalService.FilesProxy.PostedImageFile file) {
+            return base.Channel.UploadImageAsync(file);
         }
     }
 }

@@ -7,6 +7,13 @@
         {
             BundleTable.EnableOptimizations = true;
             #region Scripts
+
+            bundles.Add(new ScriptBundleOrderer(Links.Bundles.Scripts.AccountScripts, new JsMinify()).Include(
+                        "~" + Links.Scripts.JQuery.Croper.cropper_min_js,
+                        "~" + Links.Scripts.Application.AccountController_min_js,
+                        "~" + Links.Scripts.JQuery.FileInput.fileinput_min_js
+                        ));
+
             bundles.Add(new ScriptBundleOrderer(Links.Bundles.Scripts.AdminPanelScripts, new JsMinify()).Include(
                          "~" + Links.Scripts.Application.SchedulerController_js,
                          "~" + Links.Scripts.JQuery.SparkLine.jquery_sparkline_min_js,
@@ -39,6 +46,7 @@
                            "~" + Links.Scripts.JQuery.InputMask.input_mask_min_js,
                            "~" + Links.Scripts.JQuery.Select.BootstrapSelect_js,
                            "~" + Links.Scripts.JQuery.BootGrid.jquery_bootgrid_min_js,
+                           "~" + Links.Scripts.JQuery.LightGallery.lightGallery_min_js,
                           "~" + Links.Scripts.functions_js,
                           "~" + Links.Scripts.JQuery.Validation.jquery_validate_js,
                           "~" + Links.Scripts.JQuery.Validation.jquery_validate_unobtrusive_js,
@@ -77,7 +85,8 @@
                           "~" + Links.Content.Styles.Public.Bootgrid_css,
                           "~" + Links.Content.Styles.Public.BootstrapSelect_css,
                           "~" + Links.Content.Styles.Public.Feedback_rtl_css,
-                          "~" + Links.Content.Styles.Public.NProgress_css
+                          "~" + Links.Content.Styles.Public.NProgress_css,
+                           "~" + Links.Content.Styles.Public.cropper_css
                           ));
             #endregion
         }

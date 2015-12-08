@@ -160,6 +160,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to آواتار.
+        /// </summary>
+        internal static string Avatar {
+            get {
+                return ResourceManager.GetString("Avatar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to اطلاعات پایه.
         /// </summary>
         internal static string BasicInfo {
@@ -192,6 +201,15 @@ namespace Resources {
         internal static string Cancel {
             get {
                 return ResourceManager.GetString("Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تغییر عکس.
+        /// </summary>
+        internal static string Change {
+            get {
+                return ResourceManager.GetString("Change", resourceCulture);
             }
         }
         
@@ -660,6 +678,15 @@ namespace Resources {
         internal static string Search {
             get {
                 return ResourceManager.GetString("Search", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to انتخاب تصویر.
+        /// </summary>
+        internal static string SelectImage {
+            get {
+                return ResourceManager.GetString("SelectImage", resourceCulture);
             }
         }
         

@@ -18,6 +18,7 @@
             public static readonly string BasicInfoScripts = "~/BasicInfoScripts/js";
             public static readonly string FullCalendarScripts = "~/FullCalendarScripts/js";
             public static readonly string AdminPanelScripts = "~/Admin/js";
+            public static readonly string AccountScripts = "~/Account/js";
         }
 
         /// <summary>

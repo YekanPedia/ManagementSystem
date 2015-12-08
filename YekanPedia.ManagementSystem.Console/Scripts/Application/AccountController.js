@@ -42,4 +42,43 @@ function onSendPrivateNotificationComplete(result) {
     }
     //show Error
 }
+var $image;
+$().ready(function () {
+    bindCropper(true);
+    $("#uploadImage").click(function () {
+        var origin = $image.cropper('getCanvasData');
+        var cropped = $image.cropper('getCropBoxData');
 
+        var widthPercent = (cropped.width * 100) / origin.width;
+        var heightPercent = (cropped.height * 100) / origin.height;
+        var width = (widthPercent * origin.naturalWidth) / 100;
+        var height = (heightPercent * origin.naturalHeight) / 100;
+        var xPercent = ((cropped.left - origin.left) * 100) / origin.width;
+        var yPercent = ((cropped.top - origin.top) * 100) / origin.height;
+
+        var x = (xPercent * origin.naturalWidth) / 100;
+        var y = (yPercent * origin.naturalHeight) / 100;
+        $("#x").val(x);
+        $("#y").val(y);
+        $("#width").val(width);
+        $("#height").val(height);
+        $("#uploadFileFrm").submit();
+    });
+});
+
+function bindCropper(init) {
+    if (init != true) {
+        $("#uploadImage").fadeIn();
+    }
+
+    if ($(".cropper-image")[0]) {
+        $image = $(".cropper-image");
+        $image.cropper({
+            aspectRatio: 1 / 1,
+            movable: false,
+            zoomable: false,
+            rotatable: false,
+            scalable: false,
+        });
+    }
+}

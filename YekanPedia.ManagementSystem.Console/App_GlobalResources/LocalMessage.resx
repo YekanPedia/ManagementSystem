@@ -381,4 +381,13 @@
   <data name="ExpiredUser" xml:space="preserve">
     <value>دانش آموزانی که تا 2 هفته آینده مجوز حضور خواهند شد</value>
   </data>
+  <data name="Avatar" xml:space="preserve">
+    <value>آواتار</value>
+  </data>
+  <data name="Change" xml:space="preserve">
+    <value>تغییر عکس</value>
+  </data>
+  <data name="SelectImage" xml:space="preserve">
+    <value>انتخاب تصویر</value>
+  </data>
 </root>

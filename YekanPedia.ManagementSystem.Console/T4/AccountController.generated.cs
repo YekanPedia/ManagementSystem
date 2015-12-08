@@ -100,6 +100,12 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         }
         [NonAction]
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ActionResult UploadUserPicture()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.UploadUserPicture);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public virtual System.Web.Mvc.JsonResult EmailChecker()
         {
             return new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.EmailChecker);
@@ -133,6 +139,7 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             public readonly string EditBasicInfo = "EditBasicInfo";
             public readonly string EditCallInfo = "EditCallInfo";
             public readonly string ChangePicture = "ChangePicture";
+            public readonly string UploadUserPicture = "UploadUserPicture";
             public readonly string EmailChecker = "EmailChecker";
             public readonly string RecoveryPassword = "RecoveryPassword";
         }
@@ -147,6 +154,7 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             public const string EditBasicInfo = "EditBasicInfo";
             public const string EditCallInfo = "EditCallInfo";
             public const string ChangePicture = "ChangePicture";
+            public const string UploadUserPicture = "UploadUserPicture";
             public const string EmailChecker = "EmailChecker";
             public const string RecoveryPassword = "RecoveryPassword";
         }
@@ -209,6 +217,19 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         {
             public readonly string userId = "userId";
             public readonly string picture = "picture";
+        }
+        static readonly ActionParamsClass_UploadUserPicture s_params_UploadUserPicture = new ActionParamsClass_UploadUserPicture();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_UploadUserPicture UploadUserPictureParams { get { return s_params_UploadUserPicture; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_UploadUserPicture
+        {
+            public readonly string file = "file";
+            public readonly string userId = "userId";
+            public readonly string x = "x";
+            public readonly string y = "y";
+            public readonly string width = "width";
+            public readonly string height = "height";
         }
         static readonly ActionParamsClass_EmailChecker s_params_EmailChecker = new ActionParamsClass_EmailChecker();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -363,6 +384,23 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "userId", userId);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "picture", picture);
             ChangePictureOverride(callInfo, userId, picture);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void UploadUserPictureOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, System.Web.HttpPostedFileBase file, System.Guid userId, float x, float y, float width, float height);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult UploadUserPicture(System.Web.HttpPostedFileBase file, System.Guid userId, float x, float y, float width, float height)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.UploadUserPicture);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "file", file);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "userId", userId);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "x", x);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "y", y);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "width", width);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "height", height);
+            UploadUserPictureOverride(callInfo, file, userId, x, y, width, height);
             return callInfo;
         }
 

@@ -13,4 +13,24 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="FileInfo" nillable="true" type="tns:FileInfo" />
+  <xs:complexType name="PostedImageFile">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PostedFile">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Height" type="xs:int" />
+          <xs:element minOccurs="0" name="Width" type="xs:int" />
+          <xs:element minOccurs="0" name="X" type="xs:int" />
+          <xs:element minOccurs="0" name="Y" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PostedImageFile" nillable="true" type="tns:PostedImageFile" />
+  <xs:complexType name="PostedFile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Content" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="FileName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PostedFile" nillable="true" type="tns:PostedFile" />
 </xs:schema>

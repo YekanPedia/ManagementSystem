@@ -221,6 +221,15 @@ namespace Links
             }
         
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class Croper {
+                private const string URLPATH = "~/Scripts/JQuery/Croper";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                public static readonly string cropper_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cropper.min.js") ? Url("cropper.min.js") : Url("cropper.js");
+                public static readonly string cropper_min_js = Url("cropper.min.js");
+            }
+        
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
             public static class Feedback {
                 private const string URLPATH = "~/Scripts/JQuery/Feedback";
                 public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
@@ -244,6 +253,14 @@ namespace Links
                 
                 }
             
+            }
+        
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class FileInput {
+                private const string URLPATH = "~/Scripts/JQuery/FileInput";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                public static readonly string fileinput_min_js = Url("fileinput.min.js");
             }
         
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -566,6 +583,7 @@ namespace Links
                 public static readonly string Animate_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Animate.min.css") ? Url("Animate.min.css") : Url("Animate.css");
                 public static readonly string Bootgrid_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Bootgrid.min.css") ? Url("Bootgrid.min.css") : Url("Bootgrid.css");
                 public static readonly string BootstrapSelect_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/BootstrapSelect.min.css") ? Url("BootstrapSelect.min.css") : Url("BootstrapSelect.css");
+                public static readonly string cropper_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cropper.min.css") ? Url("cropper.min.css") : Url("cropper.css");
                 public static readonly string Feedback_rtl_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Feedback.rtl.min.css") ? Url("Feedback.rtl.min.css") : Url("Feedback.rtl.css");
                 public static readonly string Feedback_rtl_min_css = Url("Feedback.rtl.min.css");
                 public static readonly string Fullcalendar_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Fullcalendar.min.css") ? Url("Fullcalendar.min.css") : Url("Fullcalendar.css");
@@ -640,6 +658,13 @@ namespace Links
                         public const string bootstrap_js = "~/Scripts/JQuery/Bootstrap/bootstrap.js"; 
                     }
                 }
+                public static partial class Croper 
+                {
+                    public static class Assets
+                    {
+                        public const string cropper_js = "~/Scripts/JQuery/Croper/cropper.js"; 
+                    }
+                }
                 public static partial class Feedback 
                 {
                     public static partial class templates 
@@ -658,6 +683,13 @@ namespace Links
                     {
                         public const string feedback_js = "~/Scripts/JQuery/Feedback/feedback.js"; 
                         public const string html2canvas_js = "~/Scripts/JQuery/Feedback/html2canvas.js"; 
+                    }
+                }
+                public static partial class FileInput 
+                {
+                    public static class Assets
+                    {
+                        public const string fileinput_min_js = "~/Scripts/JQuery/FileInput/fileinput.min.js"; 
                     }
                 }
                 public static partial class FullCalendar 
@@ -889,6 +921,7 @@ namespace Links
                         public const string Animate_css = "~/Content/Styles/Public/Animate.css";
                         public const string Bootgrid_css = "~/Content/Styles/Public/Bootgrid.css";
                         public const string BootstrapSelect_css = "~/Content/Styles/Public/BootstrapSelect.css";
+                        public const string cropper_css = "~/Content/Styles/Public/cropper.css";
                         public const string Feedback_rtl_css = "~/Content/Styles/Public/Feedback.rtl.css";
                         public const string Fullcalendar_css = "~/Content/Styles/Public/Fullcalendar.css";
                         public const string LightGallery_css = "~/Content/Styles/Public/LightGallery.css";

@@ -56,6 +56,7 @@
 
                 x.For<IMessagingGatewayAdapter>().Use<MessagingGatewayAdapter>();
                 x.For<IFilesProxyAdapter>().Use<FilesProxyAdapter>();
+                x.For<Lazy<IFilesProxyAdapter>>().Use(c => new Lazy<IFilesProxyAdapter>(c.GetInstance<FilesProxyAdapter>));
             });
         }
         public static object GetInstance(Type pluginType)

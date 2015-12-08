@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
-  <contractRef ref="http://files.yekanpedia.org/Services/FilesProxy.svc?wsdl" docRef="http://files.yekanpedia.org/Services/FilesProxy.svc" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <contractRef ref="http://localhost:10702/Services/FilesProxy.svc?wsdl" docRef="http://localhost:10702/Services/FilesProxy.svc" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
 </discovery>

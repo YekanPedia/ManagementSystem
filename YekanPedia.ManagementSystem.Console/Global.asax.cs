@@ -58,8 +58,9 @@
             }
             catch (Exception)
             {
-                FormsAuthentication.SignOut();
-              //  Session.Clear();
+                HttpCookie oldCookie = new HttpCookie(".ASPXAUTH");
+                oldCookie.Expires = DateTime.Now.AddDays(-1);
+                Response.Cookies.Add(oldCookie);
                 var urlHelper = new UrlHelper(HttpContext.Current.Request.RequestContext);
                 Response.Redirect(urlHelper.Action(MVC.OAuth.ActionNames.SignIn, MVC.OAuth.Name));
             }

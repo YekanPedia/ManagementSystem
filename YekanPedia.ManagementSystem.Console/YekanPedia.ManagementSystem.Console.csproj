@@ -370,6 +370,7 @@
     <Content Include="Content\Styles\Public\Animate.css" />
     <Content Include="Content\Styles\Public\Bootgrid.css" />
     <Content Include="Content\Styles\Public\BootstrapSelect.css" />
+    <Content Include="Content\Styles\Public\cropper.css" />
     <Content Include="Content\Styles\Public\Feedback.rtl.css" />
     <Content Include="Content\Styles\Public\Feedback.rtl.min.css">
       <DependentUpon>Feedback.rtl.css</DependentUpon>
@@ -457,9 +458,14 @@
     <Content Include="Scripts\JQuery\Bootstrap\bootstrap.min.js">
       <DependentUpon>bootstrap.js</DependentUpon>
     </Content>
+    <Content Include="Scripts\JQuery\Croper\cropper.js" />
+    <Content Include="Scripts\JQuery\Croper\cropper.min.js">
+      <DependentUpon>cropper.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\JQuery\Feedback\feedback.js" />
     <Content Include="Scripts\JQuery\Feedback\html2canvas.js" />
     <Content Include="Scripts\JQuery\Feedback\templates\fa-Ir\template.html" />
+    <Content Include="Scripts\JQuery\FileInput\fileinput.min.js" />
     <Content Include="Scripts\JQuery\FullCalendar\fa.js" />
     <Content Include="Scripts\JQuery\FullCalendar\fullcalendar.js" />
     <Content Include="Scripts\JQuery\FullCalendar\fullcalendar.min.js" />

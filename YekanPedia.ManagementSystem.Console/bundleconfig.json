@@ -100,5 +100,11 @@
     "inputFiles": [
       "Scripts/JQuery/Maps/1.0.0.51205/gsa.js"
     ]
+  },
+  {
+    "outputFileName": "Scripts/JQuery/Croper/cropper.js",
+    "inputFiles": [
+      "Scripts/JQuery/Croper/cropper.js"
+    ]
   }
 ]
