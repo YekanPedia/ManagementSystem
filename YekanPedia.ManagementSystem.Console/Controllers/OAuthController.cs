@@ -63,9 +63,10 @@
         [HttpGet, AllowAnonymous]
         public virtual RedirectToRouteResult SignOut()
         {
-            FormsAuthentication.SignOut();
+            HttpCookie oldCookie = new HttpCookie(".ASPXAUTH");
+            oldCookie.Expires = DateTime.Now.AddDays(-1);
+            Response.Cookies.Add(oldCookie);
             Session.Clear();
-            Response.Cookies.Clear();
             return RedirectToAction(MVC.OAuth.ActionNames.SignIn, MVC.OAuth.Name);
         }
     }

@@ -5,18 +5,23 @@
     using Service.Interfaces;
     using InfraStructure;
     using System.Web.UI;
-    using Extensions.Authentication;
     using System;
-
     using Resources;
+    using System.Web;
+    using System.Linq;
+    using ExternalService.Interfaces;
+    using ExternalService.FilesProxy;
+    using System.IO;
 
     public partial class AccountController : Controller
     {
         #region Constructure
-        private readonly IUserService _userService;
-        private readonly IActionResults _actionResult;
-        public AccountController(IUserService userService, IActionResults actionResult)
+        readonly IUserService _userService;
+        readonly IActionResults _actionResult;
+        readonly Lazy<IFilesProxyAdapter> _fileProxy;
+        public AccountController(IUserService userService, IActionResults actionResult, Lazy<IFilesProxyAdapter> fileProxy)
         {
+            _fileProxy = fileProxy;
             _userService = userService;
             _actionResult = actionResult;
         }
@@ -125,6 +130,30 @@
         {
             var result = _userService.ChangePicture(userId, picture).Result;
             return Json(result);
+        }
+
+        [HttpPost]
+        public virtual ActionResult UploadUserPicture(HttpPostedFileBase file, Guid userId, float x, float y, float width, float height)
+        {
+            byte[] fileData = null;
+            using (var binaryReader = new BinaryReader(file.InputStream))
+            {
+                fileData = binaryReader.ReadBytes(file.ContentLength);
+            }
+            var imageAddress = _fileProxy.Value.UploadImage(new PostedImageFile
+            { 
+                Content = fileData,
+                FileName = $"{userId}.{file.FileName.Split('.').Last()}",
+                Height = (int)Math.Ceiling(height),
+                Width = (int)Math.Ceiling(width),
+                X = (int)Math.Ceiling(x),
+                Y = (int)Math.Ceiling(y)
+            });
+            if (!string.IsNullOrEmpty(imageAddress))
+            {
+                _userService.ChangePicture(userId, imageAddress);
+            }
+            return RedirectToAction(MVC.Account.ActionNames.ChangePicture, MVC.Account.Name, new { userId = userId });
         }
         #endregion
         #region Validation Email Cheker
