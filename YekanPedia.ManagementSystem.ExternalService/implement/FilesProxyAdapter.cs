@@ -27,5 +27,10 @@
         {
             return _fileProxyClient.GetListFiles(address);
         }
+
+        public string UploadImage(PostedImageFile file)
+        {
+            return _fileProxyClient.UploadImage(file);
+        }
     }
 }
