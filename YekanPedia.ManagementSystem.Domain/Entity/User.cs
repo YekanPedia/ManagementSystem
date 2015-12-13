@@ -138,5 +138,7 @@
         public virtual ICollection<Tasks> Tasks { get; set; }
         public virtual ICollection<SessionRequest> SessionRequest { get; set; }
        public virtual ICollection<UserInRole> UserInRole { get; set; }
+        public virtual ICollection<Work> Work { get; set; }
+        public virtual ICollection<Education> Education { get; set; }
     }
 }
