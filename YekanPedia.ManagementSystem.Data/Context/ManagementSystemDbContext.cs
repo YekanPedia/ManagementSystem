@@ -9,6 +9,9 @@
     public class ManagementSystemDbContext : DbContext, IUnitOfWork
     {
         public DbSet<User> User { get; set; }
+        public DbSet<Education> Education { get; set; }
+        public DbSet<Work> Work { get; set; }
+
         public DbSet<Tasks> Tasks { get; set; }
         public DbSet<Class> Class { get; set; }
         public DbSet<ClassType> ClassType { get; set; }
