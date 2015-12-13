@@ -89,13 +89,13 @@
         public IEnumerable<Class> GetExpiredClass()
         {
             return _class.Include(X => X.ClassTime)
-                                  .Include(X => X.User)
-                                  .Include(X => X.Course)
-                                  .Include(X => X.ClassSession)
-                                  .Where(X => X.IsFinished != true && X.SessionCount - (X.ClassSession.Count(C => C.IsCanceled == false) * 2) <= 4)
-                                  .AsNoTracking()
-                                  .OrderByDescending(X => X.StartDateMi)
-                                  .ToList();
+                                    .Include(X => X.User)
+                                    .Include(X => X.Course)
+                                    .Include(X => X.ClassSession)
+                                    .Where(X => X.IsFinished != true && X.SessionCount - (X.ClassSession.Count(C => C.IsCanceled == false) * 2) <= 4)
+                                    .AsNoTracking()
+                                    .OrderByDescending(X => X.StartDateMi)
+                                    .ToList();
         }
     }
 }

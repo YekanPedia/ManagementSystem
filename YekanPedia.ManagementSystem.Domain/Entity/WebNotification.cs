@@ -1,9 +1,9 @@
 ﻿namespace YekanPedia.ManagementSystem.Domain.Entity
 {
     using System.ComponentModel.DataAnnotations;
-    public class WebSiteNotification
+    public class WebNotification
     {
         [Key]
-        public int WebSiteNotificationId { get; set; }
+        public int WebNotificationId { get; set; }
     }
 }

@@ -43,15 +43,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entity\AboutUs.cs" />
-    <Compile Include="Entity\ActionRole.cs" />
+    <Compile Include="Entity\Role\ActionRole.cs" />
+    <Compile Include="Entity\Activity\ActivityTypeMap.cs" />
+    <Compile Include="Entity\Activity\ActivityType.cs" />
+    <Compile Include="Entity\Activity\Activity.cs" />
     <Compile Include="Entity\Feedback.cs" />
-    <Compile Include="Entity\Role.cs" />
-    <Compile Include="Entity\SessionMaterial.cs" />
-    <Compile Include="Entity\SessionRequest.cs" />
-    <Compile Include="Entity\Setting.cs" />
+    <Compile Include="Entity\Role\Role.cs" />
+    <Compile Include="Entity\Class\SessionMaterial.cs" />
+    <Compile Include="Entity\Class\SessionRequest.cs" />
+    <Compile Include="Entity\Setting\Setting.cs" />
     <Compile Include="Entity\Tasks.cs" />
-    <Compile Include="Entity\UserInRole.cs" />
-    <Compile Include="Entity\WebSiteNotification.cs" />
+    <Compile Include="Entity\Role\UserInRole.cs" />
+    <Compile Include="Entity\WebNotification.cs" />
     <Compile Include="Properties\DisplayError.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -62,14 +65,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DisplayNames.resx</DependentUpon>
     </Compile>
-    <Compile Include="Entity\ClassSession.cs" />
-    <Compile Include="Entity\Class.cs" />
-    <Compile Include="Entity\ClassTime.cs" />
-    <Compile Include="Entity\ClassType.cs" />
-    <Compile Include="Entity\NotificationSetting.cs" />
-    <Compile Include="Entity\Course.cs" />
+    <Compile Include="Entity\Class\ClassSession.cs" />
+    <Compile Include="Entity\Class\Class.cs" />
+    <Compile Include="Entity\Class\ClassTime.cs" />
+    <Compile Include="Entity\Class\ClassType.cs" />
+    <Compile Include="Entity\Setting\NotificationSetting.cs" />
+    <Compile Include="Entity\Class\Course.cs" />
     <Compile Include="Entity\User.cs" />
-    <Compile Include="Entity\UserInClass.cs" />
+    <Compile Include="Entity\Class\UserInClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
