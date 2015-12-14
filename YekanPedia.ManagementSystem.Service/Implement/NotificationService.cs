@@ -15,7 +15,7 @@
     {
         #region Constructur
         readonly IUnitOfWork _uow;
-        readonly IDbSet<WebSiteNotification> _websiteNotification;
+        readonly IDbSet<WebNotification> _webNotification;
         readonly IUserService _userService;
         readonly Lazy<IClassService> _classService;
         readonly Lazy<ISettingService> _settingService;
@@ -31,7 +31,7 @@
         {
             _classService = classService;
             _uow = uow;
-            _websiteNotification = uow.Set<WebSiteNotification>();
+            _webNotification = uow.Set<WebNotification>();
             _userService = userService;
             _messagingGateway = messagingGateway;
             _notificationSettingService = notificationSettingService;

@@ -390,4 +390,19 @@
   <data name="SelectImage" xml:space="preserve">
     <value>انتخاب تصویر</value>
   </data>
+  <data name="Education" xml:space="preserve">
+    <value>تحصیلات</value>
+  </data>
+  <data name="UptoNow" xml:space="preserve">
+    <value>تا امروز</value>
+  </data>
+  <data name="Work" xml:space="preserve">
+    <value>اطلاعات شغلی</value>
+  </data>
+  <data name="AddEducation" xml:space="preserve">
+    <value>اضافه نمودن تحصیلات</value>
+  </data>
+  <data name="AddWork" xml:space="preserve">
+    <value>اضافه نمودن شغل</value>
+  </data>
 </root>

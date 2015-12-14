@@ -178,6 +178,15 @@ namespace YekanPedia.ManagementSystem.Domain.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to نام شرکت.
+        /// </summary>
+        public static string Company {
+            get {
+                return ResourceManager.GetString("Company", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to نام موسسه.
         /// </summary>
         public static string CompanyName {
@@ -232,6 +241,24 @@ namespace YekanPedia.ManagementSystem.Domain.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to سال اتمام تحصیل.
+        /// </summary>
+        public static string EducateFinishYear {
+            get {
+                return ResourceManager.GetString("EducateFinishYear", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to سال شروع تحصیل.
+        /// </summary>
+        public static string EducateStartYear {
+            get {
+                return ResourceManager.GetString("EducateStartYear", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to پست الکترونیک.
         /// </summary>
         public static string Email {
@@ -246,6 +273,15 @@ namespace YekanPedia.ManagementSystem.Domain.Properties {
         public static string Facebook {
             get {
                 return ResourceManager.GetString("Facebook", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to رشته تحصیلی.
+        /// </summary>
+        public static string Field {
+            get {
+                return ResourceManager.GetString("Field", resourceCulture);
             }
         }
         
@@ -286,6 +322,15 @@ namespace YekanPedia.ManagementSystem.Domain.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to فارغ التحصیل.
+        /// </summary>
+        public static string Graduated {
+            get {
+                return ResourceManager.GetString("Graduated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to فعال.
         /// </summary>
         public static string IsActive {
@@ -309,6 +354,15 @@ namespace YekanPedia.ManagementSystem.Domain.Properties {
         public static string IsFinished {
             get {
                 return ResourceManager.GetString("IsFinished", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to دسترسی برای عموم.
+        /// </summary>
+        public static string IsPublic {
+            get {
+                return ResourceManager.GetString("IsPublic", resourceCulture);
             }
         }
         
@@ -457,6 +511,15 @@ namespace YekanPedia.ManagementSystem.Domain.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to موقعیت شغلی.
+        /// </summary>
+        public static string Position {
+            get {
+                return ResourceManager.GetString("Position", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to مبلغ ( ریال ).
         /// </summary>
         public static string Price {
@@ -480,6 +543,15 @@ namespace YekanPedia.ManagementSystem.Domain.Properties {
         public static string RquestDateSh {
             get {
                 return ResourceManager.GetString("RquestDateSh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to مدرسه / دانشگاه.
+        /// </summary>
+        public static string School {
+            get {
+                return ResourceManager.GetString("School", resourceCulture);
             }
         }
         
@@ -588,6 +660,33 @@ namespace YekanPedia.ManagementSystem.Domain.Properties {
         public static string UserInClassIsFinished {
             get {
                 return ResourceManager.GetString("UserInClassIsFinished", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to مشغول به کار.
+        /// </summary>
+        public static string WorkCurrently {
+            get {
+                return ResourceManager.GetString("WorkCurrently", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to سال اتمام کار.
+        /// </summary>
+        public static string WorkFinishYear {
+            get {
+                return ResourceManager.GetString("WorkFinishYear", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to سال شروع به کار.
+        /// </summary>
+        public static string WorkStartYear {
+            get {
+                return ResourceManager.GetString("WorkStartYear", resourceCulture);
             }
         }
     }

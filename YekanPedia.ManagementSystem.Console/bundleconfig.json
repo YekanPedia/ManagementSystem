@@ -106,5 +106,23 @@
     "inputFiles": [
       "Scripts/JQuery/Croper/cropper.js"
     ]
+  },
+  {
+    "outputFileName": "Scripts/Application/EducationController.js",
+    "inputFiles": [
+      "Scripts/Application/EducationController.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Application/WorkSettingController.js",
+    "inputFiles": [
+      "Scripts/Application/WorkSettingController.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Application/WorkController.js",
+    "inputFiles": [
+      "Scripts/Application/WorkController.js"
+    ]
   }
 ]

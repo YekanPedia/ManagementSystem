@@ -182,9 +182,11 @@
   <ItemGroup>
     <Compile Include="App_Start\Filters\ElmahHandledErrorLoggerFilter.cs" />
     <Compile Include="Controllers\AboutUsController.cs" />
+    <Compile Include="Controllers\EducationController.cs" />
     <Compile Include="Controllers\GeographicController.cs" />
     <Compile Include="Controllers\SchedulerController.cs" />
     <Compile Include="Controllers\SessionRequestController.cs" />
+    <Compile Include="Controllers\WorkController.cs" />
     <Compile Include="ScheduledTasks\BirthDateScheduler.cs" />
     <Compile Include="ScheduledTasks\FileRemoverScheduler.cs" />
     <Compile Include="ScheduledTasks\RoboTeleScheduler.cs" />
@@ -237,6 +239,9 @@
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="T4\DashboardController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\EducationController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="T4\ErrorController.generated.cs">
@@ -302,6 +307,9 @@
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="T4\UserInClassController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\WorkController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -408,6 +416,11 @@
       <DependentUpon>ClassController.js</DependentUpon>
     </Content>
     <Content Include="Scripts\Application\AboutUsController.js" />
+    <Content Include="Scripts\Application\EducationController.js" />
+    <Content Include="Scripts\Application\EducationController.min.js">
+      <DependentUpon>EducationController.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Application\WorkController.js" />
     <Content Include="Scripts\Application\SettingController - Copy.min.js">
       <DependentUpon>AboutUsController.js</DependentUpon>
     </Content>
@@ -446,6 +459,9 @@
     <Content Include="Scripts\Application\UserInClassController.js" />
     <Content Include="Scripts\Application\UserInClassController.min.js">
       <DependentUpon>UserInClassController.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Application\WorkController.min.js">
+      <DependentUpon>WorkController.js</DependentUpon>
     </Content>
     <Content Include="Scripts\functions.js" />
     <Content Include="Scripts\jquery.signalR-2.1.2.js" />
@@ -581,6 +597,10 @@
     <Content Include="Views\Class\Partial\_ClassDetails.cshtml" />
     <Content Include="Views\AboutUs\Update.cshtml" />
     <Content Include="Views\UserInClass\Partial\_UserExpired.cshtml" />
+    <Content Include="Views\Education\Partial\_Educations.cshtml" />
+    <Content Include="Views\Work\Partial\_Works.cshtml" />
+    <Content Include="Views\Education\Partial\_EducationCreate.cshtml" />
+    <Content Include="Views\Work\Partial\_WorkCreate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

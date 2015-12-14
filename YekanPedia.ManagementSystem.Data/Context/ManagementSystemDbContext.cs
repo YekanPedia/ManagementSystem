@@ -5,13 +5,13 @@
     using System.Data.Entity.Validation;
     using System.Diagnostics;
     using System.Data.Entity.Infrastructure;
+    using Elmah;
 
     public class ManagementSystemDbContext : DbContext, IUnitOfWork
     {
         public DbSet<User> User { get; set; }
         public DbSet<Education> Education { get; set; }
         public DbSet<Work> Work { get; set; }
-
         public DbSet<Tasks> Tasks { get; set; }
         public DbSet<Class> Class { get; set; }
         public DbSet<ClassType> ClassType { get; set; }
@@ -41,32 +41,35 @@
             }
             catch (DbEntityValidationException validationException)
             {
-                foreach (var error in validationException.EntityValidationErrors)
-                {
-                    var entry = error.Entry;
-                    foreach (var err in error.ValidationErrors)
-                    {
-                        Debug.WriteLine(err.PropertyName + " " + err.ErrorMessage);
-                    }
-                }
+                //foreach (var error in validationException.EntityValidationErrors)
+                //{
+                //    var entry = error.Entry;
+                //    foreach (var err in error.ValidationErrors)
+                //    {
+                ErrorSignal.FromCurrentContext().Raise(validationException);
+                //     }
+                // }
                 return -1;
             }
             catch (DbUpdateConcurrencyException concurrencyException)
             {
-                foreach (var entry in concurrencyException.Entries)
-                {
-                    Debug.WriteLine(entry.Entity);
-                }
+                // foreach (var entry in concurrencyException.Entries)
+                // {
+                //     Debug.WriteLine(entry.Entity);
+                // }
+
+                ErrorSignal.FromCurrentContext().Raise(concurrencyException);
                 return -1;
             }
             catch (DbUpdateException updateException)
             {
-                if (updateException.InnerException != null)
-                    Debug.WriteLine(updateException.InnerException.Message);
-                foreach (var entry in updateException.Entries)
-                {
-                    Debug.WriteLine(entry.Entity);
-                }
+                // if (updateException.InnerException != null)
+                //     Debug.WriteLine(updateException.InnerException.Message);
+                // foreach (var entry in updateException.Entries)
+                // {
+                //     Debug.WriteLine(entry.Entity);
+                // }
+                ErrorSignal.FromCurrentContext().Raise(updateException);
                 return -1;
             }
         }

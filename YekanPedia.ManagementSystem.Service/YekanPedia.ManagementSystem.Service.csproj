@@ -58,6 +58,7 @@
     <Compile Include="Implement\ClassService.cs" />
     <Compile Include="Implement\ClassTypeService.cs" />
     <Compile Include="Implement\CourseService.cs" />
+    <Compile Include="Implement\EducationService.cs" />
     <Compile Include="Implement\FeedbackService.cs" />
     <Compile Include="Implement\NotificationService.cs" />
     <Compile Include="Implement\NotificationSettingService.cs" />
@@ -68,11 +69,13 @@
     <Compile Include="Implement\SettingService.cs" />
     <Compile Include="Implement\TaskService.cs" />
     <Compile Include="Implement\UserInClassService.cs" />
+    <Compile Include="Implement\WorkService.cs" />
     <Compile Include="Interfaces\IAboutUsService.cs" />
     <Compile Include="Interfaces\IClassTimeService.cs" />
     <Compile Include="Interfaces\IClassService.cs" />
     <Compile Include="Interfaces\IClassTypeService.cs" />
     <Compile Include="Interfaces\ICourseService.cs" />
+    <Compile Include="Interfaces\IEducationService.cs" />
     <Compile Include="Interfaces\IFeedbackService.cs" />
     <Compile Include="Interfaces\INotificationService.cs" />
     <Compile Include="Interfaces\INotificationSettingService.cs" />
@@ -83,6 +86,7 @@
     <Compile Include="Interfaces\ISettingService.cs" />
     <Compile Include="Interfaces\ITaskService.cs" />
     <Compile Include="Interfaces\IUserInClassService.cs" />
+    <Compile Include="Interfaces\IWorkService.cs" />
     <Compile Include="Properties\BusinessMessage.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

@@ -18,6 +18,13 @@
         {
             Container = new Container(x =>
             {
+                x.For<IEducationService>().Use<EducationService>();
+                x.For<Lazy<IEducationService>>().Use(c => new Lazy<IEducationService>(c.GetInstance<EducationService>));
+
+                x.For<IWorkService>().Use<WorkService>();
+                x.For<Lazy<IWorkService>>().Use(c => new Lazy<IWorkService>(c.GetInstance<WorkService>));
+
+
                 x.For<ISettingService>().Use<SettingService>();
                 x.For<Lazy<ISettingService>>().Use(c => new Lazy<ISettingService>(c.GetInstance<SettingService>));
 

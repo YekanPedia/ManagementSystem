@@ -151,11 +151,29 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to اضافه نمودن تحصیلات.
+        /// </summary>
+        internal static string AddEducation {
+            get {
+                return ResourceManager.GetString("AddEducation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ثبت نام کاربر در کلاس.
         /// </summary>
         internal static string AddUserInClass {
             get {
                 return ResourceManager.GetString("AddUserInClass", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to اضافه نمودن شغل.
+        /// </summary>
+        internal static string AddWork {
+            get {
+                return ResourceManager.GetString("AddWork", resourceCulture);
             }
         }
         
@@ -390,6 +408,15 @@ namespace Resources {
         internal static string Edit {
             get {
                 return ResourceManager.GetString("Edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تحصیلات.
+        /// </summary>
+        internal static string Education {
+            get {
+                return ResourceManager.GetString("Education", resourceCulture);
             }
         }
         
@@ -844,6 +871,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to تا امروز.
+        /// </summary>
+        internal static string UptoNow {
+            get {
+                return ResourceManager.GetString("UptoNow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to مدیریت کاربران.
         /// </summary>
         internal static string UserManagement {
@@ -867,6 +903,15 @@ namespace Resources {
         internal static string ViewAll {
             get {
                 return ResourceManager.GetString("ViewAll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to اطلاعات شغلی.
+        /// </summary>
+        internal static string Work {
+            get {
+                return ResourceManager.GetString("Work", resourceCulture);
             }
         }
         

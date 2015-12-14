@@ -1,0 +1,88 @@
+﻿@model Work
+<div class="row">
+    @Html.HiddenFor(X => X.UserId, new { @Value = Model.UserId })
+    <div class="col-sm-4 m-b-20">
+        <div class="input-group has-feedback m-b-20">
+            <div class="fg-line">
+                <label>@Html.DisplayNameFor(X => X.Company)</label>
+                @Html.TextBoxFor(X => X.Company, new { @data_type = "fa", @class = "form-control" })
+            </div>
+            <small class="help-block">
+                @Html.ValidationMessageFor(X => X.Company)
+            </small>
+            <span class="zmdi form-control-feedback"></span>
+        </div>
+    </div>
+    <div class="col-sm-4 m-b-20">
+        <div class="input-group has-feedback m-b-20">
+            <div class="fg-line">
+                <label>@Html.DisplayNameFor(X => X.Position)</label>
+                @Html.TextBoxFor(X => X.Position, new { @data_type = "fa", @class = "form-control" })
+            </div>
+            <small class="help-block">
+                @Html.ValidationMessageFor(X => X.Position)
+            </small>
+            <span class="zmdi form-control-feedback"></span>
+        </div>
+    </div>
+    <div class="col-sm-4 m-b-20">
+        <div class="input-group has-feedback m-b-20">
+            <div class="fg-line">
+                <label>@Html.DisplayNameFor(X => X.Description)</label>
+                @Html.TextBoxFor(X => X.Description, new { @data_type = "fa", @class = "form-control" })
+            </div>
+            <small class="help-block">
+                @Html.ValidationMessageFor(X => X.Description)
+            </small>
+            <span class="zmdi form-control-feedback"></span>
+        </div>
+    </div>
+    <div class="col-sm-4 m-b-20">
+        <label>@Html.DisplayNameFor(X => X.WorkCurrently)</label>
+        <div class="checkbox">
+            <div class="checkbox">
+                <label>
+                    <input type="hidden" value="false" class="WorkCurrently" id="WorkCurrently" name="WorkCurrently">
+                    <input type="checkbox" class="checkbox" id="Edit_WorkCurrently" data-join="WorkCurrently">
+                    <i class="input-helper"></i>
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4 m-b-20">
+        <div class="input-group has-feedback m-b-20">
+            <div class="fg-line">
+                <label>@Html.DisplayNameFor(X => X.WorkStartYear)</label>
+                @Html.TextBoxFor(X => X.WorkStartYear, new { @data_mask = "0000", @data_type = "nu", @class = "form-control" })
+            </div>
+            <small class="help-block">
+                @Html.ValidationMessageFor(X => X.WorkStartYear)
+            </small>
+            <span class="zmdi form-control-feedback"></span>
+        </div>
+    </div>
+    <div class="col-sm-4 m-b-20">
+        <div class="input-group has-feedback m-b-20">
+            <div class="fg-line">
+                <label>@Html.DisplayNameFor(X => X.WorkFinishYear)</label>
+                @Html.TextBoxFor(X => X.WorkFinishYear, new { @data_mask = "0000", @data_type = "nu", @class = "form-control" })
+            </div>
+            <small class="help-block">
+                @Html.ValidationMessageFor(X => X.WorkFinishYear)
+            </small>
+            <span class="zmdi form-control-feedback"></span>
+        </div>
+    </div>
+    <div class="col-sm-4 m-b-20">
+        <label>@Html.DisplayNameFor(X => X.IsPublic)</label>
+        <div class="checkbox">
+            <div class="checkbox">
+                <label>
+                    <input type="hidden" value="false" class="checkbox" id="IsPublic" name="IsPublic">
+                    <input type="checkbox" class="checkbox" id="Edit_IsPublic" data-join="IsPublic">
+                    <i class="input-helper"></i>
+                </label>
+            </div>
+        </div>
+    </div>
+</div>

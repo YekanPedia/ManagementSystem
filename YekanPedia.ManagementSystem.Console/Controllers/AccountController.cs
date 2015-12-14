@@ -19,7 +19,10 @@
         readonly IUserService _userService;
         readonly IActionResults _actionResult;
         readonly Lazy<IFilesProxyAdapter> _fileProxy;
-        public AccountController(IUserService userService, IActionResults actionResult, Lazy<IFilesProxyAdapter> fileProxy)
+        public AccountController(IUserService userService,
+            IActionResults actionResult,
+            Lazy<IFilesProxyAdapter> fileProxy,
+            Lazy<IEducationService> educationService)
         {
             _fileProxy = fileProxy;
             _userService = userService;
@@ -141,7 +144,7 @@
                 fileData = binaryReader.ReadBytes(file.ContentLength);
             }
             var imageAddress = _fileProxy.Value.UploadImage(new PostedImageFile
-            { 
+            {
                 Content = fileData,
                 FileName = $"{userId}.{file.FileName.Split('.').Last()}",
                 Height = (int)Math.Ceiling(height),

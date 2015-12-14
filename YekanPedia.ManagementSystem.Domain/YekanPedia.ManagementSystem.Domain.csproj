@@ -54,6 +54,8 @@
     <Compile Include="Entity\Setting\Setting.cs" />
     <Compile Include="Entity\Tasks.cs" />
     <Compile Include="Entity\Role\UserInRole.cs" />
+    <Compile Include="Entity\UserOverview\Education.cs" />
+    <Compile Include="Entity\UserOverview\Work.cs" />
     <Compile Include="Entity\WebNotification.cs" />
     <Compile Include="Properties\DisplayError.Designer.cs">
       <AutoGen>True</AutoGen>

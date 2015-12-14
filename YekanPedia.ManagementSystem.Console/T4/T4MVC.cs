@@ -33,6 +33,7 @@ public static partial class MVC
     public static YekanPedia.ManagementSystem.Console.Controllers.ClassTypeController ClassType = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_ClassTypeController();
     public static YekanPedia.ManagementSystem.Console.Controllers.CourseController Course = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_CourseController();
     public static YekanPedia.ManagementSystem.Console.Controllers.DashboardController Dashboard = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_DashboardController();
+    public static YekanPedia.ManagementSystem.Console.Controllers.EducationController Education = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_EducationController();
     public static YekanPedia.ManagementSystem.Console.Controllers.ErrorController Error = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_ErrorController();
     public static YekanPedia.ManagementSystem.Console.Controllers.FeedbackController Feedback = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_FeedbackController();
     public static YekanPedia.ManagementSystem.Console.Controllers.GeographicController Geographic = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_GeographicController();
@@ -46,6 +47,7 @@ public static partial class MVC
     public static YekanPedia.ManagementSystem.Console.Controllers.TaskController Task = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_TaskController();
     public static YekanPedia.ManagementSystem.Console.Controllers.UserController User = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_UserController();
     public static YekanPedia.ManagementSystem.Console.Controllers.UserInClassController UserInClass = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_UserInClassController();
+    public static YekanPedia.ManagementSystem.Console.Controllers.WorkController Work = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_WorkController();
     public static T4MVC.SharedController Shared = new T4MVC.SharedController();
 }
 
@@ -169,6 +171,8 @@ namespace Links
             public static readonly string ChartController_min_js = Url("ChartController.min.js");
             public static readonly string ClassController_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ClassController.min.js") ? Url("ClassController.min.js") : Url("ClassController.js");
             public static readonly string ClassController_min_js = Url("ClassController.min.js");
+            public static readonly string EducationController_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/EducationController.min.js") ? Url("EducationController.min.js") : Url("EducationController.js");
+            public static readonly string EducationController_min_js = Url("EducationController.min.js");
             public static readonly string NotificationSettingController_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/NotificationSettingController.min.js") ? Url("NotificationSettingController.min.js") : Url("NotificationSettingController.js");
             public static readonly string NotificationSettingController_min_js = Url("NotificationSettingController.min.js");
             public static readonly string OAuthController_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/OAuthController.min.js") ? Url("OAuthController.min.js") : Url("OAuthController.js");
@@ -187,6 +191,8 @@ namespace Links
             public static readonly string UserController_min_js = Url("UserController.min.js");
             public static readonly string UserInClassController_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/UserInClassController.min.js") ? Url("UserInClassController.min.js") : Url("UserInClassController.js");
             public static readonly string UserInClassController_min_js = Url("UserInClassController.min.js");
+            public static readonly string WorkController_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/WorkController.min.js") ? Url("WorkController.min.js") : Url("WorkController.js");
+            public static readonly string WorkController_min_js = Url("WorkController.min.js");
         }
     
         public static readonly string functions_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/functions.min.js") ? Url("functions.min.js") : Url("functions.js");
@@ -624,6 +630,7 @@ namespace Links
                     public const string BasicInfoController_js = "~/Scripts/Application/BasicInfoController.js"; 
                     public const string ChartController_js = "~/Scripts/Application/ChartController.js"; 
                     public const string ClassController_js = "~/Scripts/Application/ClassController.js"; 
+                    public const string EducationController_js = "~/Scripts/Application/EducationController.js"; 
                     public const string NotificationSettingController_js = "~/Scripts/Application/NotificationSettingController.js"; 
                     public const string OAuthController_js = "~/Scripts/Application/OAuthController.js"; 
                     public const string SchedulerController_js = "~/Scripts/Application/SchedulerController.js"; 
@@ -633,6 +640,7 @@ namespace Links
                     public const string TaskController_js = "~/Scripts/Application/TaskController.js"; 
                     public const string UserController_js = "~/Scripts/Application/UserController.js"; 
                     public const string UserInClassController_js = "~/Scripts/Application/UserInClassController.js"; 
+                    public const string WorkController_js = "~/Scripts/Application/WorkController.js"; 
                 }
             }
             public static partial class JQuery 

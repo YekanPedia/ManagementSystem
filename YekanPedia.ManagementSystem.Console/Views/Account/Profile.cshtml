@@ -49,18 +49,21 @@
     </div>
     <div class="pm-body clearfix">
         <ul class="tab-nav tn-justified" data-tab-color="amber" tabindex="1" style="overflow: hidden; outline: none;">
-            <li class="active waves-effect">
+            <li class=" waves-effect">
                 <a href="#AboutUs" aria-controls="AboutUs" role="tab" data-toggle="tab">@LocalMessage.AboutMe</a>
             </li>
+            <li class="active waves-effect">
+                <a href="#education" aria-controls="TimeLine" role="tab" data-toggle="tab">@LocalMessage.Education</a>
+            </li>
             <li class="waves-effect">
-                <a href="#TimeLine" aria-controls="TimeLine" role="tab" data-toggle="tab">@LocalMessage.TimeLine</a>
+                <a href="#work" aria-controls="TimeLine" role="tab" data-toggle="tab">@LocalMessage.Work</a>
             </li>
             <li class="waves-effect">
                 <a href="#">@LocalMessage.Activities</a>
             </li>
         </ul>
         <div class="tab-content">
-            <div id="AboutUs" class="tab-pane fade in active">
+            <div id="AboutUs" class="tab-pane fade">
                 <div class="pmb-block" id="AboutMePanel">
                     <div class="pmbb-header">
                         <h2><i class="zmdi zmdi-equalizer m-l-5"></i> @LocalMessage.ShortAboutMe</h2>
@@ -84,31 +87,31 @@
                         <div class="pmbb-edit">
                             @using (Ajax.BeginForm(MVC.Account.ActionNames.EditAboutMe, MVC.Account.Name, null, new AjaxOptions()
                             {
-                                HttpMethod = "POST",
-                                OnComplete = "EditAboutMeComplete"
+                            HttpMethod = "POST",
+                            OnComplete = "EditAboutMeComplete"
 
                             }, new { @id = "aboutMeFrm" }))
                             {
-                                @Html.HiddenFor(X => X.UserId, new { @Value = Model.UserId })
-                                <div class="input-group has-feedback m-b-20">
-                                    <div class="fg-line">
-                                        @Html.TextBoxFor(X => X.AboutMe, new { @autocomplete = "off", @placeholder = @LocalMessage.ShortAboutMe, @class = "form-control" })
-                                    </div>
-                                    <small class="help-block">
-                                        @Html.ValidationMessageFor(X => X.AboutMe)
-                                    </small>
-                                    <span class="zmdi form-control-feedback"></span>
+                            @Html.HiddenFor(X => X.UserId, new { @Value = Model.UserId })
+                            <div class="input-group has-feedback m-b-20">
+                                <div class="fg-line">
+                                    @Html.TextBoxFor(X => X.AboutMe, new { @autocomplete = "off", @placeholder = @LocalMessage.ShortAboutMe, @class = "form-control" })
                                 </div>
-                                <div class="m-t-10 text-left">
-                                    <button type="submit" id="saveAboutMeForm" class="btn btn-primary btn-sm waves-effect">
-                                        <i class="zmdi zmdi-check"></i>
-                                        @LocalMessage.Save
-                                    </button>
-                                    <button data-pmb-action="reset" class="btn btn-danger btn-sm waves-effect">
-                                        <i class="zmdi zmdi-arrow-forward"></i>
-                                        @LocalMessage.Cancel
-                                    </button>
-                                </div>
+                                <small class="help-block">
+                                    @Html.ValidationMessageFor(X => X.AboutMe)
+                                </small>
+                                <span class="zmdi form-control-feedback"></span>
+                            </div>
+                            <div class="m-t-10 text-left">
+                                <button type="submit" id="saveAboutMeForm" class="btn btn-primary btn-sm waves-effect">
+                                    <i class="zmdi zmdi-check"></i>
+                                    @LocalMessage.Save
+                                </button>
+                                <button data-pmb-action="reset" class="btn btn-danger btn-sm waves-effect">
+                                    <i class="zmdi zmdi-arrow-forward"></i>
+                                    @LocalMessage.Cancel
+                                </button>
+                            </div>
                             }
                         </div>
                     </div>
@@ -247,91 +250,101 @@
                         <div class="pmbb-edit">
                             @using (Ajax.BeginForm(MVC.Account.ActionNames.EditCallInfo, MVC.Account.Name, null, new AjaxOptions()
                             {
-                                HttpMethod = "POST",
-                                OnComplete = "EditCallInfoComplete"
+                            HttpMethod = "POST",
+                            OnComplete = "EditCallInfoComplete"
                             }, new { @id = "editCallInfoFrm" }))
                             {
-                                @Html.HiddenFor(X => X.UserId, new { @Value = Model.UserId })
-                                <dl class="dl-horizontal">
-                                    <dt class="p-t-10">@Html.DisplayNameFor(X => X.Mobile)</dt>
-                                    <dd>
-                                        <div class="input-group has-feedback m-b-20">
-                                            <div class="fg-line">
-                                                @Html.TextBoxFor(X => X.Mobile, new { @autocomplete = "off", @data_type = "nu", @class = "form-control" })
-                                            </div>
-                                            <small class="help-block">
-                                                @Html.ValidationMessageFor(X => X.Mobile)
-                                            </small>
-                                            <span class="zmdi form-control-feedback"></span>
+                            @Html.HiddenFor(X => X.UserId, new { @Value = Model.UserId })
+                            <dl class="dl-horizontal">
+                                <dt class="p-t-10">@Html.DisplayNameFor(X => X.Mobile)</dt>
+                                <dd>
+                                    <div class="input-group has-feedback m-b-20">
+                                        <div class="fg-line">
+                                            @Html.TextBoxFor(X => X.Mobile, new { @autocomplete = "off", @data_type = "nu", @class = "form-control" })
                                         </div>
-                                    </dd>
-                                </dl>
-                                <dl class="dl-horizontal">
-                                    <dt class="p-t-10">@Html.DisplayNameFor(X => X.Email)</dt>
-                                    <dd>
-                                        <div class="input-group has-feedback m-b-20">
+                                        <small class="help-block">
+                                            @Html.ValidationMessageFor(X => X.Mobile)
+                                        </small>
+                                        <span class="zmdi form-control-feedback"></span>
+                                    </div>
+                                </dd>
+                            </dl>
+                            <dl class="dl-horizontal">
+                                <dt class="p-t-10">@Html.DisplayNameFor(X => X.Email)</dt>
+                                <dd>
+                                    <div class="input-group has-feedback m-b-20">
 
-                                            <div class="fg-line">
-                                                @Html.TextBoxFor(X => X.Email, new { @autocomplete = "off", @data_type = "en", @class = "form-control" })
-                                            </div>
-                                            <small class="help-block">
-                                                @Html.ValidationMessageFor(X => X.Email)
-                                            </small>
-                                            <span class="zmdi form-control-feedback"></span>
+                                        <div class="fg-line">
+                                            @Html.TextBoxFor(X => X.Email, new { @autocomplete = "off", @data_type = "en", @class = "form-control" })
                                         </div>
-                                    </dd>
-                                </dl>
-                                <dl class="dl-horizontal">
-                                    <dt class="p-t-10">@Html.DisplayNameFor(X => X.Twitter)</dt>
-                                    <dd>
-                                        <div class="input-group has-feedback m-b-20">
+                                        <small class="help-block">
+                                            @Html.ValidationMessageFor(X => X.Email)
+                                        </small>
+                                        <span class="zmdi form-control-feedback"></span>
+                                    </div>
+                                </dd>
+                            </dl>
+                            <dl class="dl-horizontal">
+                                <dt class="p-t-10">@Html.DisplayNameFor(X => X.Twitter)</dt>
+                                <dd>
+                                    <div class="input-group has-feedback m-b-20">
 
-                                            <div class="fg-line">
-                                                @Html.TextBoxFor(X => X.Twitter, new { @autocomplete = "off", @data_type = "en", @class = "form-control" })
-                                            </div>
-                                            <small class="help-block">
-                                                @Html.ValidationMessageFor(X => X.Twitter)
-                                            </small>
-                                            <span class="zmdi form-control-feedback"></span>
+                                        <div class="fg-line">
+                                            @Html.TextBoxFor(X => X.Twitter, new { @autocomplete = "off", @data_type = "en", @class = "form-control" })
                                         </div>
-                                    </dd>
-                                </dl>
-                                <dl class="dl-horizontal">
-                                    <dt class="p-t-10">@Html.DisplayNameFor(X => X.Facebook)</dt>
-                                    <dd>
-                                        <div class="input-group has-feedback m-b-20">
+                                        <small class="help-block">
+                                            @Html.ValidationMessageFor(X => X.Twitter)
+                                        </small>
+                                        <span class="zmdi form-control-feedback"></span>
+                                    </div>
+                                </dd>
+                            </dl>
+                            <dl class="dl-horizontal">
+                                <dt class="p-t-10">@Html.DisplayNameFor(X => X.Facebook)</dt>
+                                <dd>
+                                    <div class="input-group has-feedback m-b-20">
 
-                                            <div class="fg-line">
-                                                @Html.TextBoxFor(X => X.Facebook, new { @autocomplete = "off", @data_type = "en", @class = "form-control" })
-                                            </div>
-                                            <small class="help-block">
-                                                @Html.ValidationMessageFor(X => X.Facebook)
-                                            </small>
-                                            <span class="zmdi form-control-feedback"></span>
+                                        <div class="fg-line">
+                                            @Html.TextBoxFor(X => X.Facebook, new { @autocomplete = "off", @data_type = "en", @class = "form-control" })
                                         </div>
-                                    </dd>
-                                </dl>
-                                <div class="m-t-30 text-left">
-                                    <button id="saveCallInfoForm" class="btn btn-primary btn-sm waves-effect">
-                                        <i class="zmdi zmdi-check"></i>
-                                        @LocalMessage.Save
-                                    </button>
-                                    <button data-pmb-action="reset" class="btn btn-danger btn-sm waves-effect">
-                                        <i class="zmdi zmdi-arrow-forward"></i>
-                                        @LocalMessage.Cancel
-                                    </button>
-                                </div>
+                                        <small class="help-block">
+                                            @Html.ValidationMessageFor(X => X.Facebook)
+                                        </small>
+                                        <span class="zmdi form-control-feedback"></span>
+                                    </div>
+                                </dd>
+                            </dl>
+                            <div class="m-t-30 text-left">
+                                <button id="saveCallInfoForm" class="btn btn-primary btn-sm waves-effect">
+                                    <i class="zmdi zmdi-check"></i>
+                                    @LocalMessage.Save
+                                </button>
+                                <button data-pmb-action="reset" class="btn btn-danger btn-sm waves-effect">
+                                    <i class="zmdi zmdi-arrow-forward"></i>
+                                    @LocalMessage.Cancel
+                                </button>
+                            </div>
                             }
                         </div>
                     </div>
                 </div>
             </div>
-            <div id="TimeLine" class="tab-pane fade">
+            <div id="education" class="tab-pane fade in p-20 active">
 
+                @{
+                    Html.RenderAction(MVC.Education.ActionNames.GetEducations, MVC.Education.Name, new { userId = Model.UserId });
+                }
+            </div>
+            <div id="work" class="tab-pane fade p-20">
+                @{
+                    Html.RenderAction(MVC.Work.ActionNames.GetWorks, MVC.Work.Name, new { userId = Model.UserId });
+                }
             </div>
         </div>
     </div>
 </div>
 @section Scripts{
     <script src="@Url.Content(Links.Scripts.Application.AccountController_min_js)"></script>
+    <script src="@Url.Content(Links.Scripts.Application.EducationController_min_js)"></script>
+    <script src="@Url.Content(Links.Scripts.Application.WorkController_min_js)"></script>
 }

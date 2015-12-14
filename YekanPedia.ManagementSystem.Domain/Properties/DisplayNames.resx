@@ -156,6 +156,9 @@
   <data name="Color" xml:space="preserve">
     <value>رنگ</value>
   </data>
+  <data name="Company" xml:space="preserve">
+    <value>نام شرکت</value>
+  </data>
   <data name="CompanyName" xml:space="preserve">
     <value>نام موسسه</value>
   </data>
@@ -174,11 +177,20 @@
   <data name="Description" xml:space="preserve">
     <value>توضیحات</value>
   </data>
+  <data name="EducateFinishYear" xml:space="preserve">
+    <value>سال اتمام تحصیل</value>
+  </data>
+  <data name="EducateStartYear" xml:space="preserve">
+    <value>سال شروع تحصیل</value>
+  </data>
   <data name="Email" xml:space="preserve">
     <value>پست الکترونیک</value>
   </data>
   <data name="Facebook" xml:space="preserve">
     <value>فیسبوک</value>
+  </data>
+  <data name="Field" xml:space="preserve">
+    <value>رشته تحصیلی</value>
   </data>
   <data name="FilesPersistance" xml:space="preserve">
     <value>تعداد روز ماندگاری فایل ها</value>
@@ -192,6 +204,9 @@
   <data name="GooglePlus" xml:space="preserve">
     <value>گوگل پلاس</value>
   </data>
+  <data name="Graduated" xml:space="preserve">
+    <value>فارغ التحصیل</value>
+  </data>
   <data name="IsActive" xml:space="preserve">
     <value>فعال</value>
   </data>
@@ -200,6 +215,9 @@
   </data>
   <data name="IsFinished" xml:space="preserve">
     <value>اتمام کلاس</value>
+  </data>
+  <data name="IsPublic" xml:space="preserve">
+    <value>دسترسی برای عموم</value>
   </data>
   <data name="IsTeacher" xml:space="preserve">
     <value>استاد</value>
@@ -249,6 +267,9 @@
   <data name="PaymentDate" xml:space="preserve">
     <value>تاریخ پرداخت هزینه</value>
   </data>
+  <data name="Position" xml:space="preserve">
+    <value>موقعیت شغلی</value>
+  </data>
   <data name="Price" xml:space="preserve">
     <value>مبلغ ( ریال )</value>
   </data>
@@ -257,6 +278,9 @@
   </data>
   <data name="RquestDateSh" xml:space="preserve">
     <value>تاریخ درخواست</value>
+  </data>
+  <data name="School" xml:space="preserve">
+    <value>مدرسه / دانشگاه</value>
   </data>
   <data name="SessionCount" xml:space="preserve">
     <value>تعداد جلسات</value>
@@ -293,5 +317,14 @@
   </data>
   <data name="UserInClassIsFinished" xml:space="preserve">
     <value>اتمام مجوز حضور</value>
+  </data>
+  <data name="WorkCurrently" xml:space="preserve">
+    <value>مشغول به کار</value>
+  </data>
+  <data name="WorkFinishYear" xml:space="preserve">
+    <value>سال اتمام کار</value>
+  </data>
+  <data name="WorkStartYear" xml:space="preserve">
+    <value>سال شروع به کار</value>
   </data>
 </root>
