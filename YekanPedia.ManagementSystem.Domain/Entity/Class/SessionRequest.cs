@@ -31,6 +31,9 @@
         [Display(ResourceType = typeof(DisplayNames), Name = nameof(RquestDateSh))]
         [ScaffoldColumn(false)]
         public DateTime RquestDateMi { get; set; }
+
+        public bool IsDelete { get; set; }
+
         public void Rebind() => RquestDateMi = PersianDateTime.Parse(RquestDateSh).ToDateTime();
     }
 }
