@@ -53,6 +53,7 @@
                 .Include(X => X.ClassSession.Class)
                 .Include(X => X.ClassSession.Class.ClassTime)
                 .Include(X => X.ClassSession.Class.Course)
+                .Where(X => X.IsDelete == false)
                 .OrderByDescending(X => X.RquestDateMi)
                 .AsNoTracking()
                 .ToList();
@@ -62,7 +63,7 @@
             var request = Find(sessionRequestId);
             var userId = request.UserId;
             var sessionId = request.ClassSessionId;
-            _sessionRequest.Remove(request);
+            request.IsDelete = true;
             var result = _uow.SaveChanges();
             if (result.ToBool())
             {
