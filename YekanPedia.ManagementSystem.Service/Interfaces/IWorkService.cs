@@ -9,5 +9,8 @@
     {
         IEnumerable<Work> GetWorks(Guid userId);
         IServiceResults<int> Add(Work model);
+        Work Find(int workId);
+        IServiceResults<bool> Remove(int workId);
+        IServiceResults<bool> ChangePublicState(int workId);
     }
 }

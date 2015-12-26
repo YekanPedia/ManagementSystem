@@ -12,6 +12,7 @@
     using Domain.Entity;
     using Extensions.Authentication;
     using ScheduledTasks;
+    using Elmah;
 
     public class MvcApplication : HttpApplication
     {
@@ -56,11 +57,18 @@
                     HttpContext.Current.User = user;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                ErrorSignal.FromCurrentContext().Raise(ex);
+                FormsAuthentication.SignOut();
                 HttpCookie oldCookie = new HttpCookie(".ASPXAUTH");
                 oldCookie.Expires = DateTime.Now.AddDays(-1);
                 Response.Cookies.Add(oldCookie);
+
+                HttpCookie ASPNET_SessionId = new HttpCookie("ASP.NET_SessionId");
+                ASPNET_SessionId.Expires = DateTime.Now.AddDays(-1);
+                Response.Cookies.Add(ASPNET_SessionId);
+                
                 var urlHelper = new UrlHelper(HttpContext.Current.Request.RequestContext);
                 Response.Redirect(urlHelper.Action(MVC.OAuth.ActionNames.SignIn, MVC.OAuth.Name));
             }

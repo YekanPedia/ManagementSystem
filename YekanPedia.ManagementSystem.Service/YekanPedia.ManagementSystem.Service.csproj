@@ -67,6 +67,7 @@
     <Compile Include="Implement\SessionRequestService.cs" />
     <Compile Include="Implement\SessionService.cs" />
     <Compile Include="Implement\SettingService.cs" />
+    <Compile Include="Implement\StatisticsServicce.cs" />
     <Compile Include="Implement\TaskService.cs" />
     <Compile Include="Implement\UserInClassService.cs" />
     <Compile Include="Implement\WorkService.cs" />
@@ -84,6 +85,7 @@
     <Compile Include="Interfaces\ISessionRequestService.cs" />
     <Compile Include="Interfaces\ISessionService.cs" />
     <Compile Include="Interfaces\ISettingService.cs" />
+    <Compile Include="Interfaces\IStatisticsServicce.cs" />
     <Compile Include="Interfaces\ITaskService.cs" />
     <Compile Include="Interfaces\IUserInClassService.cs" />
     <Compile Include="Interfaces\IWorkService.cs" />

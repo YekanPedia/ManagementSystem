@@ -277,6 +277,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to تعداد کامنت ها.
+        /// </summary>
+        internal static string CommentCount {
+            get {
+                return ResourceManager.GetString("CommentCount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to بزودی.
         /// </summary>
         internal static string CommingSoon {
@@ -844,6 +853,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to تعداد دانش آموزان.
+        /// </summary>
+        internal static string StudentCount {
+            get {
+                return ResourceManager.GetString("StudentCount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to بروز رسانی فایل ها.
         /// </summary>
         internal static string SyncMaterial {
@@ -880,6 +898,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to تعداد کاربران.
+        /// </summary>
+        internal static string UserCount {
+            get {
+                return ResourceManager.GetString("UserCount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to مدیریت کاربران.
         /// </summary>
         internal static string UserManagement {
@@ -903,6 +930,15 @@ namespace Resources {
         internal static string ViewAll {
             get {
                 return ResourceManager.GetString("ViewAll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تعداد بازدید سایت.
+        /// </summary>
+        internal static string WebSiteVisitCount {
+            get {
+                return ResourceManager.GetString("WebSiteVisitCount", resourceCulture);
             }
         }
         

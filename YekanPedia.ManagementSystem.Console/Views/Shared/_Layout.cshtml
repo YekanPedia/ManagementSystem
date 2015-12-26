@@ -141,6 +141,8 @@
     @Scripts.Render(Links.Bundles.Scripts.CoreScripts)
     <!-- Function Libraries -->
     @RenderSection("Scripts", false)
+    @Html.RenderJavaScriptsUrl()
+    @Html.RenderJavaScripts()
     @{ Html.RenderPartial(MVC.Shared.Views._Notification);}
 </body>
 </html>

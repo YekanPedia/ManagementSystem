@@ -5,7 +5,7 @@
 
 @foreach (var item in Model)
 {
-    var percent = (Math.Round(Convert.ToDouble(item.Class.ClassSession.Count(X => X.IsCanceled == false && item.ContributeStartDateMi <= X.ClassSessionDateMi) * 2 * 100) / item.SessionCount));
+    var percent = item.SessionCount == 0 ? 0 : (Math.Round(Convert.ToDouble(item.Class.ClassSession.Count(X => X.IsCanceled == false && item.ContributeStartDateMi <= X.ClassSessionDateMi) * 2 * 100) / item.SessionCount));
     <a class="lv-item expiredClass" href="">
         <div class="media">
             <div class="pull-right">

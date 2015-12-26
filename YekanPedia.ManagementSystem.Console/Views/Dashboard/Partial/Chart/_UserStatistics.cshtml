@@ -1,4 +1,4 @@
-﻿
+﻿@model UserStatistics
 @{ Layout = null;}
 <div class="col-sm-12">
     <div class="mini-charts">
@@ -6,12 +6,12 @@
             <div class="col-sm-6 col-md-3">
                 <div class="mini-charts-item bgm-cyan">
                     <div class="clearfix">
-                        <div class="chart stats-bar">
+                        <div class="chart userCount">
                             <canvas width="83" height="45" style="display: inline-block; width: 83px; height: 45px; vertical-align: top;"></canvas>
                         </div>
                         <div class="count">
-                            <small>تعداد کاربران</small>
-                            <h2>987,459</h2>
+                            <small>@LocalMessage.UserCount</small>
+                            <h2>@Model.UserCount</h2>
                         </div>
                     </div>
                 </div>
@@ -20,10 +20,12 @@
             <div class="col-sm-6 col-md-3">
                 <div class="mini-charts-item bgm-lightgreen">
                     <div class="clearfix">
-                        <div class="chart stats-bar-2"><canvas width="83" height="45" style="display: inline-block; width: 83px; height: 45px; vertical-align: top;"></canvas></div>
+                        <div class="chart studentCount">
+                            <canvas width="85" height="45" style="display: inline-block; width: 85px; height: 45px; vertical-align: top;"></canvas>
+                        </div>
                         <div class="count">
-                            <small>تعداد دانش آموزان</small>
-                            <h2>356,785K</h2>
+                            <small>@LocalMessage.StudentCount</small>
+                            <h2>@Model.StudentCount</h2>
                         </div>
                     </div>
                 </div>
@@ -32,10 +34,12 @@
             <div class="col-sm-6 col-md-3">
                 <div class="mini-charts-item bgm-orange">
                     <div class="clearfix">
-                        <div class="chart stats-line"><canvas width="85" height="45" style="display: inline-block; width: 85px; height: 45px; vertical-align: top;"></canvas></div>
+                        <div class="chart commentCount">
+                            <canvas width="85" height="45" style="display: inline-block; width: 85px; height: 45px; vertical-align: top;"></canvas>
+                        </div>
                         <div class="count">
-                            <small>تعداد کامنت ها</small>
-                            <h2>458,778</h2>
+                            <small>@LocalMessage.CommentCount</small>
+                            <h2>@Model.CommentCount</h2>
                         </div>
                     </div>
                 </div>
@@ -44,10 +48,10 @@
             <div class="col-sm-6 col-md-3">
                 <div class="mini-charts-item bgm-bluegray">
                     <div class="clearfix">
-                        <div class="chart stats-line-2"><canvas width="85" height="45" style="display: inline-block; width: 85px; height: 45px; vertical-align: top;"></canvas></div>
+                        <div class="chart webSiteVisitCount"><canvas width="85" height="45" style="display: inline-block; width: 85px; height: 45px; vertical-align: top;"></canvas></div>
                         <div class="count">
-                            <small>تعداد بازدید سایت</small>
-                            <h2>23,856</h2>
+                            <small>@LocalMessage.WebSiteVisitCount</small>
+                            <h2>@Model.WebSiteVisitCount</h2>
                         </div>
                     </div>
                 </div>
@@ -55,3 +59,15 @@
         </div>
     </div>
 </div>
+@{
+    Html.AddJavaScript( @<text>
+        <script>
+            $(document).ready(function () {
+                sparklineBar('userCount', [@Model.UserCountList], '45px', 3, '#fff', 2);
+                sparklineBar('studentCount', [@Model.StudentCountList], '45px', 3, '#fff', 2);
+                sparklineLine('commentCount', [@Model.CommentCountList], 85, 45, '#fff', 'rgba(0,0,0,0)', 1.25, 'rgba(255,255,255,0.4)', 'rgba(255,255,255,0.4)', 'rgba(255,255,255,0.4)', 3, '#fff', 'rgba(255,255,255,0.4)');
+                sparklineLine('webSiteVisitCount', [@Model.WebSiteVisitCountList], 85, 45, '#fff', 'rgba(0,0,0,0)', 1.25, 'rgba(255,255,255,0.4)', 'rgba(255,255,255,0.4)', 'rgba(255,255,255,0.4)', 3, '#fff', 'rgba(255,255,255,0.4)');
+            });
+        </script>
+    </text>);
+}

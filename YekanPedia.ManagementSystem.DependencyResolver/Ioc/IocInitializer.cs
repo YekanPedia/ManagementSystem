@@ -18,6 +18,8 @@
         {
             Container = new Container(x =>
             {
+                x.For<IStatisticsServicce>().Use<StatisticsServicce>();
+
                 x.For<IEducationService>().Use<EducationService>();
                 x.For<Lazy<IEducationService>>().Use(c => new Lazy<IEducationService>(c.GetInstance<EducationService>));
 

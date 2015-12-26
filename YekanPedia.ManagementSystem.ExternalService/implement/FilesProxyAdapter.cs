@@ -4,6 +4,7 @@
     using System.Collections.Generic;
     using Interfaces;
     using FilesProxy;
+    using Elmah;
 
     public class FilesProxyAdapter : IFilesProxyAdapter
     {
@@ -20,7 +21,15 @@
 
         public long DirectorySize()
         {
-            return _fileProxyClient.GetDirectorySize();
+            try
+            {
+                return _fileProxyClient.GetDirectorySize();
+            }
+            catch (Exception ex)
+            {
+                ErrorSignal.FromCurrentContext().Raise(ex);
+            }
+            return 0;
         }
 
         public List<FileInfo> GetFilesAddress(string address)
@@ -30,7 +39,15 @@
 
         public string UploadImage(PostedImageFile file)
         {
-            return _fileProxyClient.UploadImage(file);
+            try
+            {
+                return _fileProxyClient.UploadImage(file);
+            }
+            catch (Exception ex)
+            {
+                ErrorSignal.FromCurrentContext().Raise(ex);
+                return string.Empty;
+            }
         }
     }
 }

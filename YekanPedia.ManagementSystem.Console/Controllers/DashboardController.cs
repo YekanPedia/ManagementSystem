@@ -4,6 +4,7 @@
     using Service.Interfaces;
     using Extensions.Authentication;
     using ExternalService.Interfaces;
+    using Domain.Poco;
 
     public partial class DashboardController : Controller
     {
@@ -11,13 +12,16 @@
         readonly IClassService _classService;
         readonly IRoleManagementService _roleManagementService;
         readonly IFilesProxyAdapter _fileProxyAdapter;
+        readonly IStatisticsServicce _statisticsService;
         public DashboardController(IClassService classService,
             IRoleManagementService roleManagementService,
-            IFilesProxyAdapter fileProxyAdapter)
+            IFilesProxyAdapter fileProxyAdapter,
+            IStatisticsServicce statisticsService)
         {
             _classService = classService;
             _roleManagementService = roleManagementService;
             _fileProxyAdapter = fileProxyAdapter;
+            _statisticsService = statisticsService;
         }
         #endregion
         [HttpGet]
@@ -45,10 +49,10 @@
         }
         #region User Statistics
 
-        [ChildActionOnly]
+        [ChildActionOnly, OutputCache(Duration = 3600 * 5)]
         public virtual PartialViewResult UserStatistics()
         {
-            return PartialView(MVC.Dashboard.Views.Partial.Chart._UserStatistics);
+            return PartialView(MVC.Dashboard.Views.Partial.Chart._UserStatistics, _statisticsService.GetUserStatistics());
         }
         #endregion
         #endregion

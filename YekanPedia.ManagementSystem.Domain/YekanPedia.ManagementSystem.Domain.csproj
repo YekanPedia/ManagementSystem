@@ -57,6 +57,7 @@
     <Compile Include="Entity\UserOverview\Education.cs" />
     <Compile Include="Entity\UserOverview\Work.cs" />
     <Compile Include="Entity\WebNotification.cs" />
+    <Compile Include="Poco\UserStatistics.cs" />
     <Compile Include="Properties\DisplayError.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

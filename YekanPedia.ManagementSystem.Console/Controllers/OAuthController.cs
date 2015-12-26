@@ -26,7 +26,7 @@
             return View();
         }
 
-        [HttpPost, ValidateAntiForgeryToken, AllowAnonymous]
+        [HttpPost,  AllowAnonymous]
         public virtual ActionResult SignIn(User model, bool rememberMe)
         {
             var login = _userServie.CheckUserExist(model.Email, model.Password);
@@ -66,6 +66,11 @@
             HttpCookie oldCookie = new HttpCookie(".ASPXAUTH");
             oldCookie.Expires = DateTime.Now.AddDays(-1);
             Response.Cookies.Add(oldCookie);
+
+            HttpCookie ASPNET_SessionId = new HttpCookie("ASP.NET_SessionId");
+            ASPNET_SessionId.Expires = DateTime.Now.AddDays(-1);
+            Response.Cookies.Add(ASPNET_SessionId);
+
             Session.Clear();
             return RedirectToAction(MVC.OAuth.ActionNames.SignIn, MVC.OAuth.Name);
         }

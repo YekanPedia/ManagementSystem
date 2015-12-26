@@ -25,5 +25,17 @@
         {
             return Json(_educationService.Add(model));
         }
+
+        [HttpPost]
+        public virtual JsonResult ChangePublicState(int educationId)
+        {
+            return Json(_educationService.ChangePublicState(educationId));
+        }
+
+        [HttpPost]
+        public virtual JsonResult Remove(int educationId)
+        {
+            return Json(_educationService.Remove(educationId));
+        }
     }
 }

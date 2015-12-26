@@ -187,6 +187,7 @@
     <Compile Include="Controllers\SchedulerController.cs" />
     <Compile Include="Controllers\SessionRequestController.cs" />
     <Compile Include="Controllers\WorkController.cs" />
+    <Compile Include="Extensions\Html\HtmlHelperExtensions.cs" />
     <Compile Include="ScheduledTasks\BirthDateScheduler.cs" />
     <Compile Include="ScheduledTasks\FileRemoverScheduler.cs" />
     <Compile Include="ScheduledTasks\RoboTeleScheduler.cs" />

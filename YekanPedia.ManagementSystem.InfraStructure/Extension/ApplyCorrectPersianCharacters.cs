@@ -53,8 +53,7 @@
         /// <returns>داده ارسالی با حروف تبدیل شده عربی به فارسی</returns>
         public static void ApplyCorrectPersianCharacters(this DbCommand command)
         {
-            command.CommandText = command.CommandText.ApplyCorrectPersianCharacters();
-
+             command.CommandText = command.CommandText.ApplyCorrectPersianCharacters();
             foreach (DbParameter parameter in command.Parameters)
             {
                 switch (parameter.DbType)
@@ -64,7 +63,7 @@
                     case DbType.String:
                     case DbType.StringFixedLength:
                     case DbType.Xml:
-                        parameter.Value = parameter.Value.ApplyCorrectPersianCharacters();
+                        parameter.Value = parameter.Value.ToString().ApplyCorrectPersianCharacters();
                         break;
                 }
             }

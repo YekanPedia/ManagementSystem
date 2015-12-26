@@ -25,5 +25,17 @@
         {
             return Json(_workService.Add(model));
         }
+
+        [HttpPost]
+        public virtual JsonResult ChangePublicState(int workId)
+        {
+            return Json(_workService.ChangePublicState(workId));
+        }
+
+        [HttpPost]
+        public virtual JsonResult Remove(int workId)
+        {
+            return Json(_workService.Remove(workId));
+        }
     }
 }

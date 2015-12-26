@@ -37,5 +37,53 @@
                 Result = model.WorkId
             };
         }
+
+        public Work Find(int workId)
+        {
+            return _work.Find(workId);
+        }
+        public IServiceResults<bool> Remove(int workId)
+        {
+            var work = Find(workId);
+            if (work != null)
+            {
+                _work.Remove(work);
+                var result = _uow.SaveChanges();
+                return new ServiceResults<bool>
+                {
+                    IsSuccessfull = result.ToBool(),
+                    Result = result.ToBool(),
+                    Message = result.ToMessage(BusinessMessage.Error)
+                };
+            }
+            return new ServiceResults<bool>
+            {
+                IsSuccessfull = false,
+                Result = false,
+                Message = BusinessMessage.Error
+            };
+        }
+
+        public IServiceResults<bool> ChangePublicState(int workId)
+        {
+            var work = Find(workId);
+            if (work != null)
+            {
+                work.IsPublic = !work.IsPublic;
+                var result = _uow.SaveChanges();
+                return new ServiceResults<bool>
+                {
+                    IsSuccessfull = result.ToBool(),
+                    Result = result.ToBool(),
+                    Message = result.ToMessage(BusinessMessage.Error)
+                };
+            }
+            return new ServiceResults<bool>
+            {
+                IsSuccessfull = false,
+                Result = false,
+                Message = BusinessMessage.Error
+            };
+        }
     }
 }

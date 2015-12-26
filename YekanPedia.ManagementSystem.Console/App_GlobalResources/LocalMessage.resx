@@ -405,4 +405,16 @@
   <data name="AddWork" xml:space="preserve">
     <value>اضافه نمودن شغل</value>
   </data>
+  <data name="CommentCount" xml:space="preserve">
+    <value>تعداد کامنت ها</value>
+  </data>
+  <data name="StudentCount" xml:space="preserve">
+    <value>تعداد دانش آموزان</value>
+  </data>
+  <data name="UserCount" xml:space="preserve">
+    <value>تعداد کاربران</value>
+  </data>
+  <data name="WebSiteVisitCount" xml:space="preserve">
+    <value>تعداد بازدید سایت</value>
+  </data>
 </root>

@@ -37,5 +37,54 @@
                 Result = model.EducationId
             };
         }
+
+        public Education Find(int educationId)
+        {
+            return _education.Find(educationId);
+        }
+
+        public IServiceResults<bool> Remove(int educationId)
+        {
+            var education = Find(educationId);
+            if (education != null)
+            {
+                _education.Remove(education);
+                var result = _uow.SaveChanges();
+                return new ServiceResults<bool>
+                {
+                    IsSuccessfull = result.ToBool(),
+                    Result = result.ToBool(),
+                    Message = result.ToMessage(BusinessMessage.Error)
+                };
+            }
+            return new ServiceResults<bool>
+            {
+                IsSuccessfull = false,
+                Result = false,
+                Message = BusinessMessage.Error
+            };
+        }
+
+        public IServiceResults<bool> ChangePublicState(int educationId)
+        {
+            var education = Find(educationId);
+            if (education != null)
+            {
+                education.IsPublic = !education.IsPublic;
+                var result = _uow.SaveChanges();
+                return new ServiceResults<bool>
+                {
+                    IsSuccessfull = result.ToBool(),
+                    Result = result.ToBool(),
+                    Message = result.ToMessage(BusinessMessage.Error)
+                };
+            }
+            return new ServiceResults<bool>
+            {
+                IsSuccessfull = false,
+                Result = false,
+                Message = BusinessMessage.Error
+            };
+        }
     }
 }

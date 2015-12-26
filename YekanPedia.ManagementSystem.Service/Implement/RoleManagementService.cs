@@ -30,7 +30,8 @@
         #endregion
         public IEnumerable<ActionRole> GetAvailableMenu(Guid userId)
         {
-            var availableMenu = _cache.GetItem("AvailableMenu");
+            var cacheKey = $"AvailableMenu_{userId.ToString().Replace("-", "_")}";
+            var availableMenu = _cache.GetItem(cacheKey);
             if (availableMenu != null)
             {
                 return (IEnumerable<ActionRole>)availableMenu;
@@ -41,7 +42,7 @@
                         where userInRole.UserId == userId && actionRole.IsVisible && role.IsActive
                         orderby actionRole.Order
                         select actionRole).ToList();
-            _cache.PutItem("AvailableMenu", menu, null, DateTime.Now.AddHours(1));
+            _cache.PutItem(cacheKey, menu, null, DateTime.Now.AddHours(1));
             return menu;
         }
         public bool IsAuthorize(Guid userId, string controller, string action)
