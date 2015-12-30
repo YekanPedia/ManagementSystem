@@ -7,7 +7,8 @@
     {
         public DbContextConfiguration()
         {
-         AddInterceptor(new PersianCharactersInterceptor());
+            AddInterceptor(new PersianCharactersInterceptor());
+            AddInterceptor(new ElmahEfInterceptor());
         }
     }
 }
