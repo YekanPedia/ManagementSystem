@@ -1,0 +1,135 @@
+
+/* 
+***** body  *****
+*/
+body {
+  background-color: #eae8e7;
+  color: #767270;
+}
+
+/* 
+***** Sidebar  *****
+*/
+.lime .sidebar {
+  color: #ffffff;
+  background-color: #5da4d9;
+  
+}
+.lime .sidebar .heading nav .button-collapse i {
+  background-color: #5da4d9;
+}
+.lime .sidebar .heading nav .side-nav h3 {
+  color: #e74c3c;
+}
+.lime .sidebar .heading nav .side-nav li a:hover {
+  color: #5da4d9;
+}
+.lime .sidebar .heading nav .side-nav li:hover {
+  background-color: transparent !important;
+}
+
+.lime .sidebar .info {
+  border-bottom: 1px solid #4783c2;
+}
+
+.lime .sidebar .skill-line .progress {
+  background-color: #4783c2;
+}
+.lime .sidebar .skill-line .determinate {
+  background-color: #ffffff;
+}
+
+/* 
+***** Sections *****
+*/
+
+.lime .section .section-wrapper {
+  background-color: #ffffff;
+}
+
+/*
+***** Work Experience  *****
+*/
+.lime .custom-content-wrapper {
+  border-bottom: 1px solid #bdbdbd;
+}
+
+.lime .custom-content-wrapper span {
+  color: #5da4d9;
+}
+
+/*
+*****  Interests  *****
+*/
+
+.lime .interests ul li .fa {
+  color: #5da4d9;
+}
+/* 
+***** Portfolio website  *****
+*/
+
+.lime .website span a {
+  color: #5da4d9;
+}
+
+/* ***** Contact  *****
+*  
+*/
+
+.lime input[type=text]:focus:not([readonly]),
+.lime input[type=password]:focus:not([readonly]),
+.lime input[type=email]:focus:not([readonly]),
+.lime input[type=url]:focus:not([readonly]),
+.lime input[type=time]:focus:not([readonly]),
+.lime input[type=date]:focus:not([readonly]),
+.lime input[type=datetime-local]:focus:not([readonly]),
+.lime input[type=tel]:focus:not([readonly]),
+.lime input[type=number]:focus:not([readonly]),
+.lime input[type=search]:focus:not([readonly]),
+.lime textarea.materialize-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid #5da4d9;
+}
+.lime input[type=text]:focus:not([readonly]) + label,
+.lime input[type=password]:focus:not([readonly]) + label,
+.lime input[type=email]:focus:not([readonly]) + label,
+.lime input[type=url]:focus:not([readonly]) + label,
+.lime input[type=time]:focus:not([readonly]) + label,
+.lime input[type=date]:focus:not([readonly]) + label,
+.lime input[type=datetime-local]:focus:not([readonly]) + label,
+.lime input[type=tel]:focus:not([readonly]) + label,
+.lime input[type=number]:focus:not([readonly]) + label,
+.lime input[type=search]:focus:not([readonly]) + label,
+.lime textarea.materialize-textarea:focus:not([readonly]) + label {
+  color: #5da4d9;
+}
+.lime .waves-me:focus {
+  background-color: #5da4d9;
+  color: #fff;
+}
+.lime .btn {
+  margin-left: 10px;
+  background-color: #5da4d9;
+}
+.lime .btn:hover,
+.lime .btn:focus {
+  background-color: #5da4d9;
+}
+
+
+.lime .btn.disabled{
+    background-color: #5da4d9;
+    color: #fff;
+    cursor: default;
+}
+
+.lime .btn.disabled:focus{
+    background-color: #5da4d9;
+    color: #fff;
+    cursor: default;
+}
+.lime .btn.disabled:hover{
+    background-color: #5da4d9;
+    color: #fff;
+    cursor: default;
+}

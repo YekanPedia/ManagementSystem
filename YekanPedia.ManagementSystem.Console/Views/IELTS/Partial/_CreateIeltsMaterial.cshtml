@@ -1,0 +1,77 @@
+﻿@model IeltsMaterial
+
+@{ Layout = null;}
+@Html.HiddenFor(X => X.UserId, new { @Value = Model.UserId })
+    <div class="row">
+        <div class="col-sm-3 m-b-20">
+            <p class="f-500 m-b-10 c-black">
+                @Html.DisplayNameFor(X => X.BookId)
+            </p>
+            @Html.DropDownListFor(X => X.BookId, (IEnumerable<SelectListItem>)ViewBag.Book, new { @class = "selectpicker bs-select-hidden" })
+        </div>
+        <div class="col-sm-3 m-b-20">
+            <p class="f-500 m-b-10 c-black">
+                @Html.DisplayNameFor(X => X.ExamTypeId)
+            </p>
+            @Html.DropDownListFor(X => X.ExamTypeId, (IEnumerable<SelectListItem>)ViewBag.ExamType, new { @class = "selectpicker bs-select-hidden" })
+        </div>
+        <div class="col-sm-3 m-b-20">
+            <div class="input-group has-feedback m-b-20">
+                <div class="fg-line">
+                    <label>@Html.DisplayNameFor(X => X.Topic)</label>
+                    @Html.TextBoxFor(X => X.Topic, new { @data_type = "en", @class = "form-control" })
+                </div>
+                <small class="help-block">
+                    @Html.ValidationMessageFor(X => X.Topic)
+                </small>
+                <span class="zmdi form-control-feedback"></span>
+            </div>
+        </div>
+        <div class="col-sm-3 m-b-20">
+            <div class="input-group has-feedback m-b-20">
+                <div class="fg-line">
+                    <label>@Html.DisplayNameFor(X => X.TestNumber)</label>
+                    @Html.TextBoxFor(X => X.TestNumber, new { @data_type = "nu", @class = "form-control" })
+                </div>
+                <small class="help-block">
+                    @Html.ValidationMessageFor(X => X.TestNumber)
+                </small>
+                <span class="zmdi form-control-feedback"></span>
+            </div>
+        </div>
+        <div class="col-sm-3 m-b-20">
+            <div class="input-group has-feedback m-b-20">
+                <div class="fg-line">
+                    <label>@Html.DisplayNameFor(X => X.Page)</label>
+                    @Html.TextBoxFor(X => X.Page, new { @data_type = "nu", @class = "form-control" })
+                </div>
+                <small class="help-block">
+                    @Html.ValidationMessageFor(X => X.Page)
+                </small>
+                <span class="zmdi form-control-feedback"></span>
+            </div>
+        </div>
+
+
+        <div class="col-sm-6 m-b-20">
+            <div class="input-group has-feedback m-b-20">
+                <div class="fg-line">
+                    <label>@Html.DisplayNameFor(X => X.File)</label>
+                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                        <span class="btn btn-primary btn-file m-r-10 waves-effect">
+                            <span class="fileinput-new">@LocalMessage.SelectFile</span>
+                            <span class="fileinput-exists">@LocalMessage.ChangeFile</span>
+                            <input type="file" name="file" id="file" accept=".doc,.docx">
+                        </span>
+                        <span class="fileinput-filename"></span>
+                        <a href="#" class="close fileinput-exists" data-dismiss="fileinput">×</a>
+                    </div>
+                </div>
+                <small class="help-block">
+                    @Html.ValidationMessageFor(X => X.File)
+                </small>
+                <span class="zmdi form-control-feedback"></span>
+            </div>
+        </div>
+
+    </div>

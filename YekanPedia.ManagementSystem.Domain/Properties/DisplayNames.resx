@@ -129,6 +129,9 @@
   <data name="BirthDateText" xml:space="preserve">
     <value>متن تبریک تاریخ تولد</value>
   </data>
+  <data name="Book" xml:space="preserve">
+    <value>کتاب</value>
+  </data>
   <data name="Capacity" xml:space="preserve">
     <value>ظرفیت</value>
   </data>
@@ -171,6 +174,9 @@
   <data name="CourseName" xml:space="preserve">
     <value>دوره</value>
   </data>
+  <data name="CvColor" xml:space="preserve">
+    <value>رنگ رزومه</value>
+  </data>
   <data name="Day" xml:space="preserve">
     <value>روز</value>
   </data>
@@ -186,11 +192,17 @@
   <data name="Email" xml:space="preserve">
     <value>پست الکترونیک</value>
   </data>
+  <data name="ExamType" xml:space="preserve">
+    <value>نوع امتحان</value>
+  </data>
   <data name="Facebook" xml:space="preserve">
     <value>فیسبوک</value>
   </data>
   <data name="Field" xml:space="preserve">
     <value>رشته تحصیلی</value>
+  </data>
+  <data name="File" xml:space="preserve">
+    <value>فایل ارسالی</value>
   </data>
   <data name="FilesPersistance" xml:space="preserve">
     <value>تعداد روز ماندگاری فایل ها</value>
@@ -213,6 +225,9 @@
   <data name="IsCanceled" xml:space="preserve">
     <value>کنسلی جلسه</value>
   </data>
+  <data name="IsComplete" xml:space="preserve">
+    <value>بررسی شده</value>
+  </data>
   <data name="IsFinished" xml:space="preserve">
     <value>اتمام کلاس</value>
   </data>
@@ -227,6 +242,9 @@
   </data>
   <data name="LastLoginDate" xml:space="preserve">
     <value>زمان آخرین ورود به سیستم</value>
+  </data>
+  <data name="LastUpdateDateSh" xml:space="preserve">
+    <value>آخرین زمان بروز رسانی</value>
   </data>
   <data name="Latitude" xml:space="preserve">
     <value>موقعیت جغرافیایی</value>
@@ -255,17 +273,32 @@
   <data name="MessageOnResetPassword" xml:space="preserve">
     <value>ارسال پیام در زمان بازیابی کلمه عبور</value>
   </data>
+  <data name="MessageOnYearEvent" xml:space="preserve">
+    <value>ارسال پیام در زمان مناسبت های سالانه</value>
+  </data>
   <data name="Mobile" xml:space="preserve">
     <value>شماره همراه</value>
   </data>
+  <data name="Month" xml:space="preserve">
+    <value>ماه</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>نام</value>
+  </data>
   <data name="NotificationType" xml:space="preserve">
     <value>نوع ارسال اعلانات</value>
+  </data>
+  <data name="Page" xml:space="preserve">
+    <value>صفحه</value>
   </data>
   <data name="Password" xml:space="preserve">
     <value>کلمه عبور</value>
   </data>
   <data name="PaymentDate" xml:space="preserve">
     <value>تاریخ پرداخت هزینه</value>
+  </data>
+  <data name="Percent" xml:space="preserve">
+    <value>درصد</value>
   </data>
   <data name="Position" xml:space="preserve">
     <value>موقعیت شغلی</value>
@@ -281,6 +314,9 @@
   </data>
   <data name="School" xml:space="preserve">
     <value>مدرسه / دانشگاه</value>
+  </data>
+  <data name="SendDateSh" xml:space="preserve">
+    <value>تاریخ ارسال فایل</value>
   </data>
   <data name="SessionCount" xml:space="preserve">
     <value>تعداد جلسات</value>
@@ -300,11 +336,20 @@
   <data name="Telphone" xml:space="preserve">
     <value>تلفن </value>
   </data>
+  <data name="TestNumber" xml:space="preserve">
+    <value>شماره تست</value>
+  </data>
+  <data name="Text" xml:space="preserve">
+    <value>متن</value>
+  </data>
   <data name="TimeFrom" xml:space="preserve">
     <value>از ساعت</value>
   </data>
   <data name="TimeTo" xml:space="preserve">
     <value>تا ساعت</value>
+  </data>
+  <data name="Topic" xml:space="preserve">
+    <value>موضوع</value>
   </data>
   <data name="TransactionCode" xml:space="preserve">
     <value>کد رهگیری بانک</value>

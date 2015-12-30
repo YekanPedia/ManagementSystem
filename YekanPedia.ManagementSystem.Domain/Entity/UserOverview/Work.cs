@@ -36,7 +36,7 @@
         public bool WorkCurrently { get; set; }
 
         [Display(ResourceType = typeof(DisplayNames), Name = nameof(WorkStartYear))]
-        public string WorkStartYear { get; set; }
+        public int WorkStartYear { get; set; }
 
         [Display(ResourceType = typeof(DisplayNames), Name = nameof(WorkFinishYear))]
         public int WorkFinishYear { get; set; }

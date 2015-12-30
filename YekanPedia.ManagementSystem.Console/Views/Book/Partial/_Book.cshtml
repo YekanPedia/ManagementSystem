@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Book>
+@{ Layout = null;}
+<div class="col-sm-6">
+    <div id="todo-lists">
+        <div class="tl-header">
+            <h4>@LocalMessage.AddBook</h4>
+            <small>@LocalMessage.AddBookDescription</small>
+        </div>
+        <div class="clearfix"></div>
+        <div class="tl-body" id="bookBody">
+            <div id="add-tl-item" class="">
+                <i class="add-new-item zmdi zmdi-plus"></i>
+                <div class="add-tl-body">
+                    <textarea placeholder="@LocalMessage.Content" id="book"></textarea>
+                    <div class="add-tl-actions">
+                        <a href="" data-tl-action="dismiss"><i class="zmdi zmdi-close"></i></a>
+                        <a href="" data-updateUrl="@Url.Action(MVC.Book.ActionNames.ChangeBookStatus,MVC.Book.Name)" data-url="@Url.Action(MVC.Book.ActionNames.AddBook,MVC.Book.Name)" id="BookSaveBtn" data-tl-action="save"><i class="zmdi zmdi-check"></i></a>
+                    </div>
+                </div>
+            </div>
+            @foreach (var item in Model)
+            {
+                <div class="checkbox media">
+                    <div class="media-body">
+                        <label>
+                            <input type="checkbox" data-url="@Url.Action(MVC.Book.ActionNames.ChangeBookStatus,MVC.Book.Name)" class="EnableCheckbox" checked="@item.IsActive" data-id="@item.BookId">
+                            <i class="input-helper"></i>
+                            <span>@item.Type</span>
+                        </label>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

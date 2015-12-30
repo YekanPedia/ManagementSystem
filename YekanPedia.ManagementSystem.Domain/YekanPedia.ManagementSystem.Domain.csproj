@@ -43,6 +43,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entity\AboutUs.cs" />
+    <Compile Include="Entity\Files\StaticFiles.cs" />
+    <Compile Include="Entity\IELTS\ExamType.cs" />
+    <Compile Include="Entity\IELTS\Book.cs" />
+    <Compile Include="Entity\IELTS\IELTSMaterial.cs" />
     <Compile Include="Entity\Role\ActionRole.cs" />
     <Compile Include="Entity\Activity\ActivityTypeMap.cs" />
     <Compile Include="Entity\Activity\ActivityType.cs" />
@@ -52,9 +56,11 @@
     <Compile Include="Entity\Class\SessionMaterial.cs" />
     <Compile Include="Entity\Class\SessionRequest.cs" />
     <Compile Include="Entity\Setting\Setting.cs" />
+    <Compile Include="Entity\Setting\YearEvents.cs" />
     <Compile Include="Entity\Tasks.cs" />
     <Compile Include="Entity\Role\UserInRole.cs" />
     <Compile Include="Entity\UserOverview\Education.cs" />
+    <Compile Include="Entity\UserOverview\Skills.cs" />
     <Compile Include="Entity\UserOverview\Work.cs" />
     <Compile Include="Entity\WebNotification.cs" />
     <Compile Include="Poco\UserStatistics.cs" />

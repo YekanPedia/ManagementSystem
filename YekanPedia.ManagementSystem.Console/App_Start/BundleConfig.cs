@@ -7,7 +7,20 @@
         {
             BundleTable.EnableOptimizations = true;
             #region Scripts
+            bundles.Add(new ScriptBundleOrderer(Links.Bundles.Scripts.CVScripts, new JsMinify()).Include(
+                       "~" + Links.Scripts.JQuery.jquery_1_10_2_min_js,
+                    "~" + Links.Scripts.JQuery.CV.materialize_min_js,
+                     "~" + Links.Scripts.JQuery.CV.masonry_pkgd_js,
+                    "~" + Links.Scripts.JQuery.CV.wow_min_js,
+                    "~" + Links.Scripts.Application.CVController_js
+                    ));
 
+            bundles.Add(new ScriptBundleOrderer(Links.Bundles.Scripts.OverviewScripts, new JsMinify()).Include(
+                      "~" + Links.Scripts.Application.AccountController_min_js,
+                      "~" + Links.Scripts.Application.EducationController_min_js,
+                      "~" + Links.Scripts.Application.WorkController_min_js,
+                      "~" + Links.Scripts.Application.SkillsController_min_js
+                      ));
             bundles.Add(new ScriptBundleOrderer(Links.Bundles.Scripts.AccountScripts, new JsMinify()).Include(
                         "~" + Links.Scripts.JQuery.Croper.cropper_min_js,
                         "~" + Links.Scripts.Application.AccountController_min_js,
@@ -68,6 +81,18 @@
                         "~" + Links.Scripts.Application.BasicInfoController_js));
             #endregion
             #region Styles
+            bundles.Add(new StyleBundleOrderer(Links.Bundles.Styles.CV, new CssMinify()).Include(
+                       "~" + Links.Content.Styles.Public.CV.green_css,
+                       "~" + Links.Content.Styles.Public.CV.lime_css,
+                       "~" + Links.Content.Styles.Public.CV.materialize_min_css,
+                       "~" + Links.Content.Styles.Public.CV.orange_css,
+                       "~" + Links.Content.Styles.Public.CV.purple_css,
+                       "~" + Links.Content.Styles.Public.CV.red_css,
+                       "~" + Links.Content.Styles.Public.CV.responsive_css,
+                       "~" + Links.Content.Styles.Public.CV.style_css,
+                       "~" + Links.Content.Styles.Public.Animate_css,
+                       "~" + Links.Content.Styles.Public.MaterialDesignIconicFont_css));
+
             bundles.Add(new StyleBundleOrderer(Links.Bundles.Styles.ContentCss, new CssMinify()).Include(
                            "~" + Links.Content.Styles.Ltr.AppStyle1_css,
                            "~" + Links.Content.Styles.Ltr.AppStyle2_css));

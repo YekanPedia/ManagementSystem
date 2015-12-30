@@ -36,7 +36,7 @@
         public bool Graduated { get; set; }
 
         [Display(ResourceType = typeof(DisplayNames), Name = nameof(EducateStartYear))]
-        public string EducateStartYear { get; set; }
+        public int EducateStartYear { get; set; }
 
         [Display(ResourceType = typeof(DisplayNames), Name = nameof(EducateFinishYear))]
         public int EducateFinishYear { get; set; }

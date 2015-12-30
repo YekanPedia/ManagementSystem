@@ -8,5 +8,8 @@
         string CreateDirectory(string address);
         long DirectorySize();
         string UploadImage(PostedImageFile file);
+        FileInfo UploadDocument(PostedFile file);
+
+        void Delete(string address);
     }
 }

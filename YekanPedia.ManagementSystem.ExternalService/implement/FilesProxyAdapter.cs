@@ -49,5 +49,23 @@
                 return string.Empty;
             }
         }
+
+        public FileInfo UploadDocument(PostedFile file)
+        {
+            try
+            {
+                return _fileProxyClient.UploadDocument(file);
+            }
+            catch (Exception ex)
+            {
+                ErrorSignal.FromCurrentContext().Raise(ex);
+                return new FileInfo();
+            }
+        }
+
+        public void Delete(string address)
+        {
+              _fileProxyClient.DeleteFile(address);
+        }
     }
 }

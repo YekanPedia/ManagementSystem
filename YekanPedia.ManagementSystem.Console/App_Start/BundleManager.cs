@@ -19,6 +19,8 @@
             public static readonly string FullCalendarScripts = "~/FullCalendarScripts/js";
             public static readonly string AdminPanelScripts = "~/Admin/js";
             public static readonly string AccountScripts = "~/Account/js";
+            public static readonly string OverviewScripts = "~/Overview/js";
+            public static readonly string CVScripts = "~/CV/js";
         }
 
         /// <summary>
@@ -33,6 +35,7 @@
             public static readonly string ContentRtlCss = "~/Content/Rtl";
             public static readonly string PublicCss = "~/Content/Public";
             public static readonly string FullCalednar = "~/Content/FullCalednar";
+            public static readonly string CV = "~/Content/CV";
         }
     }
 }

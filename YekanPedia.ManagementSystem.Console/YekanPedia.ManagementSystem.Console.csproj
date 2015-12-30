@@ -182,12 +182,20 @@
   <ItemGroup>
     <Compile Include="App_Start\Filters\ElmahHandledErrorLoggerFilter.cs" />
     <Compile Include="Controllers\AboutUsController.cs" />
+    <Compile Include="Controllers\BookController.cs" />
+    <Compile Include="Controllers\CVController.cs" />
+    <Compile Include="Controllers\DownloadController.cs" />
+    <Compile Include="Controllers\ExamTypeController.cs" />
     <Compile Include="Controllers\EducationController.cs" />
     <Compile Include="Controllers\GeographicController.cs" />
+    <Compile Include="Controllers\IELTSController.cs" />
     <Compile Include="Controllers\SchedulerController.cs" />
     <Compile Include="Controllers\SessionRequestController.cs" />
+    <Compile Include="Controllers\SkillsController.cs" />
     <Compile Include="Controllers\WorkController.cs" />
+    <Compile Include="Controllers\YearEventsController.cs" />
     <Compile Include="Extensions\Html\HtmlHelperExtensions.cs" />
+    <Compile Include="ScheduledTasks\YearEventsScheduler.cs" />
     <Compile Include="ScheduledTasks\BirthDateScheduler.cs" />
     <Compile Include="ScheduledTasks\FileRemoverScheduler.cs" />
     <Compile Include="ScheduledTasks\RoboTeleScheduler.cs" />
@@ -213,6 +221,9 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="T4\BookController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="T4\ClassController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
@@ -239,7 +250,13 @@
     <Compile Include="T4\CourseController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
+    <Compile Include="T4\CVController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="T4\DashboardController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\DownloadController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="T4\EducationController.generated.cs">
@@ -259,6 +276,9 @@
     <Compile Include="Extensions\Optimization\AsIsBundleOrderer.cs" />
     <Compile Include="Extensions\Optimization\ScriptBundleOrderer.cs" />
     <Compile Include="Extensions\Optimization\StyleBundleOrderer.cs" />
+    <Compile Include="T4\ExamTypeController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="T4\FeedbackController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
@@ -267,6 +287,9 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="T4\GeographicController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IELTSController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="T4\NotificationController.generated.cs">
@@ -296,6 +319,9 @@
     <Compile Include="T4\SharedController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
+    <Compile Include="T4\SkillsController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="T4\T4MVC.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -311,6 +337,9 @@
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="T4\WorkController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\YearEventsController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -380,6 +409,14 @@
     <Content Include="Content\Styles\Public\Bootgrid.css" />
     <Content Include="Content\Styles\Public\BootstrapSelect.css" />
     <Content Include="Content\Styles\Public\cropper.css" />
+    <Content Include="Content\Styles\Public\CV\green.css" />
+    <Content Include="Content\Styles\Public\CV\lime.css" />
+    <Content Include="Content\Styles\Public\CV\materialize.min.css" />
+    <Content Include="Content\Styles\Public\CV\orange.css" />
+    <Content Include="Content\Styles\Public\CV\purple.css" />
+    <Content Include="Content\Styles\Public\CV\red.css" />
+    <Content Include="Content\Styles\Public\CV\responsive.css" />
+    <Content Include="Content\Styles\Public\CV\style.css" />
     <Content Include="Content\Styles\Public\Feedback.rtl.css" />
     <Content Include="Content\Styles\Public\Feedback.rtl.min.css">
       <DependentUpon>Feedback.rtl.css</DependentUpon>
@@ -421,6 +458,15 @@
     <Content Include="Scripts\Application\EducationController.min.js">
       <DependentUpon>EducationController.js</DependentUpon>
     </Content>
+    <Content Include="Scripts\Application\IeltsMaterialController.min.js">
+      <DependentUpon>IeltsMaterialController.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Application\SkillsController.js" />
+    <Content Include="Scripts\Application\SkillsController.min.js">
+      <DependentUpon>SkillsController.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Application\IeltsMaterialController.js" />
+    <Content Include="Scripts\Application\YearEventsController.js" />
     <Content Include="Scripts\Application\WorkController.js" />
     <Content Include="Scripts\Application\SettingController - Copy.min.js">
       <DependentUpon>AboutUsController.js</DependentUpon>
@@ -464,6 +510,9 @@
     <Content Include="Scripts\Application\WorkController.min.js">
       <DependentUpon>WorkController.js</DependentUpon>
     </Content>
+    <Content Include="Scripts\Application\YearEventsController.min.js">
+      <DependentUpon>YearEventsController.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\functions.js" />
     <Content Include="Scripts\jquery.signalR-2.1.2.js" />
     <Content Include="Scripts\jquery.signalR-2.1.2.min.js" />
@@ -479,6 +528,10 @@
     <Content Include="Scripts\JQuery\Croper\cropper.min.js">
       <DependentUpon>cropper.js</DependentUpon>
     </Content>
+    <Content Include="Scripts\Application\CVController.js" />
+    <Content Include="Scripts\JQuery\CV\masonry.pkgd.js" />
+    <Content Include="Scripts\JQuery\CV\materialize.min.js" />
+    <Content Include="Scripts\JQuery\CV\wow.min.js" />
     <Content Include="Scripts\JQuery\Feedback\feedback.js" />
     <Content Include="Scripts\JQuery\Feedback\html2canvas.js" />
     <Content Include="Scripts\JQuery\Feedback\templates\fa-Ir\template.html" />
@@ -602,6 +655,22 @@
     <Content Include="Views\Work\Partial\_Works.cshtml" />
     <Content Include="Views\Education\Partial\_EducationCreate.cshtml" />
     <Content Include="Views\Work\Partial\_WorkCreate.cshtml" />
+    <Content Include="Views\ExamType\Partial\_ExamType.cshtml" />
+    <Content Include="Views\Book\Partial\_Book.cshtml" />
+    <Content Include="Views\Skills\Partial\_SkillCreate.cshtml" />
+    <Content Include="Views\Skills\Partial\_Skills.cshtml" />
+    <Content Include="Views\Download\Files.cshtml" />
+    <Content Include="Views\Download\Partial\_StaticFilesBlock.cshtml" />
+    <Content Include="Views\CV\User.cshtml" />
+    <Content Include="Views\YearEvents\Add.cshtml" />
+    <Content Include="Views\YearEvents\Edit.cshtml" />
+    <Content Include="Views\YearEvents\Partial\_CreateYearEvents.cshtml" />
+    <Content Include="Views\YearEvents\Partial\_HeaderYearEventsGrid.cshtml" />
+    <Content Include="Views\YearEvents\Partial\_ListYearEvents.cshtml" />
+    <Content Include="Views\IELTS\SendWrittingFile.cshtml" />
+    <Content Include="Views\IELTS\Partial\_CreateIeltsMaterial.cshtml" />
+    <Content Include="Views\IELTS\Partial\_UserFilesList.cshtml" />
+    <Content Include="Views\IELTS\Partial\_HeaderIeltsMaterialGrid.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

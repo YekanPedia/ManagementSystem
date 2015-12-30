@@ -4,7 +4,6 @@
     using Domain.Entity;
     using InfraStructure;
     using System.Collections.Generic;
-    using System.Linq.Expressions;
 
     public interface IUserService
     {
@@ -21,10 +20,10 @@
         IServiceResults<User> FindUser(string userName);
         IServiceResults<IEnumerable<User>> GetTeachers();
         IServiceResults<IEnumerable<User>> GetUsers(User predicate, Guid? classId);
+        IServiceResults<IEnumerable<User>> GetUsers();
         IEnumerable<User> GetFriends(Guid userId);
         IEnumerable<User> GetBirthDateUser();
         IServiceResults<bool> RecoveryPassword(string userName);
-
- 
+        User GetUserCV(Guid userId);
     }
 }

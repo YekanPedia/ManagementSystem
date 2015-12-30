@@ -87,5 +87,10 @@
                 IsActive = !X.cls.IsFinished
             }).ToList();
         }
+
+        public IEnumerable<Course> GetAllCoursesHasStaticFiles()
+        {
+            return _course.Where(X => X.HasStaticFiles).AsNoTracking().ToList();
+        }
     }
 }

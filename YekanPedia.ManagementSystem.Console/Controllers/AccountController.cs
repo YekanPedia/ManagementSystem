@@ -65,7 +65,7 @@
         }
         #endregion
         #region Profile
-
+      
         [ChildActionOnly]
         public virtual PartialViewResult ProfileWidget(Guid userId)
         {

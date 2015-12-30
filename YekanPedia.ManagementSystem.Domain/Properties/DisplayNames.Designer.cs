@@ -97,6 +97,15 @@ namespace YekanPedia.ManagementSystem.Domain.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to کتاب.
+        /// </summary>
+        public static string Book {
+            get {
+                return ResourceManager.GetString("Book", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ظرفیت.
         /// </summary>
         public static string Capacity {
@@ -223,6 +232,15 @@ namespace YekanPedia.ManagementSystem.Domain.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to رنگ رزومه.
+        /// </summary>
+        public static string CvColor {
+            get {
+                return ResourceManager.GetString("CvColor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to روز.
         /// </summary>
         public static string Day {
@@ -268,6 +286,15 @@ namespace YekanPedia.ManagementSystem.Domain.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to نوع امتحان.
+        /// </summary>
+        public static string ExamType {
+            get {
+                return ResourceManager.GetString("ExamType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to فیسبوک.
         /// </summary>
         public static string Facebook {
@@ -282,6 +309,15 @@ namespace YekanPedia.ManagementSystem.Domain.Properties {
         public static string Field {
             get {
                 return ResourceManager.GetString("Field", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to فایل ارسالی.
+        /// </summary>
+        public static string File {
+            get {
+                return ResourceManager.GetString("File", resourceCulture);
             }
         }
         
@@ -349,6 +385,15 @@ namespace YekanPedia.ManagementSystem.Domain.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to بررسی شده.
+        /// </summary>
+        public static string IsComplete {
+            get {
+                return ResourceManager.GetString("IsComplete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to اتمام کلاس.
         /// </summary>
         public static string IsFinished {
@@ -390,6 +435,15 @@ namespace YekanPedia.ManagementSystem.Domain.Properties {
         public static string LastLoginDate {
             get {
                 return ResourceManager.GetString("LastLoginDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to آخرین زمان بروز رسانی.
+        /// </summary>
+        public static string LastUpdateDateSh {
+            get {
+                return ResourceManager.GetString("LastUpdateDateSh", resourceCulture);
             }
         }
         
@@ -475,6 +529,15 @@ namespace YekanPedia.ManagementSystem.Domain.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ارسال پیام در زمان مناسبت های سالانه.
+        /// </summary>
+        public static string MessageOnYearEvent {
+            get {
+                return ResourceManager.GetString("MessageOnYearEvent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to شماره همراه.
         /// </summary>
         public static string Mobile {
@@ -484,11 +547,38 @@ namespace YekanPedia.ManagementSystem.Domain.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ماه.
+        /// </summary>
+        public static string Month {
+            get {
+                return ResourceManager.GetString("Month", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to نام.
+        /// </summary>
+        public static string Name {
+            get {
+                return ResourceManager.GetString("Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to نوع ارسال اعلانات.
         /// </summary>
         public static string NotificationType {
             get {
                 return ResourceManager.GetString("NotificationType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to صفحه.
+        /// </summary>
+        public static string Page {
+            get {
+                return ResourceManager.GetString("Page", resourceCulture);
             }
         }
         
@@ -507,6 +597,15 @@ namespace YekanPedia.ManagementSystem.Domain.Properties {
         public static string PaymentDate {
             get {
                 return ResourceManager.GetString("PaymentDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to درصد.
+        /// </summary>
+        public static string Percent {
+            get {
+                return ResourceManager.GetString("Percent", resourceCulture);
             }
         }
         
@@ -552,6 +651,15 @@ namespace YekanPedia.ManagementSystem.Domain.Properties {
         public static string School {
             get {
                 return ResourceManager.GetString("School", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تاریخ ارسال فایل.
+        /// </summary>
+        public static string SendDateSh {
+            get {
+                return ResourceManager.GetString("SendDateSh", resourceCulture);
             }
         }
         
@@ -610,6 +718,24 @@ namespace YekanPedia.ManagementSystem.Domain.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to شماره تست.
+        /// </summary>
+        public static string TestNumber {
+            get {
+                return ResourceManager.GetString("TestNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to متن.
+        /// </summary>
+        public static string Text {
+            get {
+                return ResourceManager.GetString("Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to از ساعت.
         /// </summary>
         public static string TimeFrom {
@@ -624,6 +750,15 @@ namespace YekanPedia.ManagementSystem.Domain.Properties {
         public static string TimeTo {
             get {
                 return ResourceManager.GetString("TimeTo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to موضوع.
+        /// </summary>
+        public static string Topic {
+            get {
+                return ResourceManager.GetString("Topic", resourceCulture);
             }
         }
         

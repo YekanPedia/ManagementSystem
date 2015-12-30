@@ -10,6 +10,7 @@
     using System.Data.Entity;
     using Data.Context;
     using ExternalService.MessagingGateway;
+    using System.Threading;
 
     public class NotificationService : INotificationService
     {
@@ -19,6 +20,7 @@
         readonly IUserService _userService;
         readonly Lazy<IClassService> _classService;
         readonly Lazy<ISettingService> _settingService;
+        readonly Lazy<IYearEventsService> _yearEventService;
         readonly IMessagingGatewayAdapter _messagingGateway;
         readonly INotificationSettingService _notificationSettingService;
         public NotificationService(IUnitOfWork uow,
@@ -26,7 +28,8 @@
             IMessagingGatewayAdapter messagingGateway,
             INotificationSettingService notificationSettingService,
             Lazy<IClassService> classService,
-            Lazy<ISettingService> settingService
+            Lazy<ISettingService> settingService,
+              Lazy<IYearEventsService> yearEventService
             )
         {
             _classService = classService;
@@ -36,6 +39,7 @@
             _messagingGateway = messagingGateway;
             _notificationSettingService = notificationSettingService;
             _settingService = settingService;
+            _yearEventService = yearEventService;
         }
 
         #endregion
@@ -234,6 +238,76 @@
                         Email = email
                     });
                 }
+                return new ServiceResults<bool>
+                {
+                    IsSuccessfull = true,
+                    Message = string.Empty,
+                    Result = true
+                };
+            }
+            catch (Exception)
+            {
+                return new ServiceResults<bool>
+                {
+                    IsSuccessfull = false,
+                    Message = BusinessMessage.NotificationNotSend,
+                    Result = false
+                };
+            }
+        }
+
+        public IServiceResults<bool> SendYearEventMessage(IEnumerable<User> users, NotificationType notificationType, string message)
+        {
+            try
+            {
+                var notification = _notificationSettingService.GetNotificationType(notificationType);
+                var sms = new List<string>();
+                var telegram = new List<int>();
+                var email = new List<string>();
+                var types = new List<NotificationKey>();
+                var count = 1;
+                foreach (var item in users)
+                {
+                    sms.Add(notification.Sms ? item.Mobile : string.Empty);
+                    telegram.Add(notification.Telegram ? item.Telegram : 0);
+                    email.Add(notification.Email ? item.Email : string.Empty);
+                    types.Add(new NotificationKey
+                    {
+                        Email = notification.Email,
+                        Sms = notification.Sms,
+                        Telegram = notification.Telegram
+                    });
+                    if (count == 100)
+                    {
+                        _messagingGateway.GivenMessages(new NotificationPackage
+                        {
+                            Message = new List<string> { message },
+                            Type = types,
+                            Sms = sms,
+                            Telegram = telegram,
+                            Email = email
+                        });
+                        sms = new List<string>();
+                        telegram = new List<int>();
+                        email = new List<string>();
+                        types = new List<NotificationKey>();
+                        count = 0;
+                        Thread.Sleep(30 * 1000);
+                    }
+                    count++;
+                }
+                if (types.Count > 0)
+                {
+                    _messagingGateway.GivenMessages(new NotificationPackage
+                    {
+                        Message = new List<string> { message },
+                        Type = types,
+                        Sms = sms,
+                        Telegram = telegram,
+                        Email = email
+                    });
+                }
+
                 return new ServiceResults<bool>
                 {
                     IsSuccessfull = true,

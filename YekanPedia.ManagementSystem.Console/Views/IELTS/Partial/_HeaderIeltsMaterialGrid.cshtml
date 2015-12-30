@@ -1,0 +1,34 @@
+﻿@model IeltsMaterial
+@{ Layout = null;}
+<thead>
+    <tr>
+        <th data-column-id="ClassId" data-visible="false">
+            @Html.DisplayNameFor(X => X.BookId)
+        </th>
+        <th data-column-id="ClassTypeId">
+            @Html.DisplayNameFor(X => X.ExamTypeId)
+        </th>
+        <th data-column-id="CourseId">
+            @Html.DisplayNameFor(X => X.Topic)
+        </th>
+        <th data-column-id="UserId">
+            @Html.DisplayNameFor(X => X.TestNumber)
+        </th>
+        <th data-column-id="ClassTime">
+            @Html.DisplayNameFor(X => X.Page)
+        </th>
+
+        <th data-column-id="FinishDateSh">
+            @Html.DisplayNameFor(X => X.SendDateSh)
+        </th>
+        <th data-column-id="IsComplete">
+            @Html.DisplayNameFor(X => X.IsComplete)
+        </th>
+        <th data-column-id="Download">
+            @LocalMessage.Download
+        </th>
+        <th data-column-id="commands" data-formatter="commands" data-sortable="false">
+            @LocalMessage.Action
+        </th>
+    </tr>
+</thead>

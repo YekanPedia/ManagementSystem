@@ -19,17 +19,32 @@
             Container = new Container(x =>
             {
                 x.For<IStatisticsServicce>().Use<StatisticsServicce>();
-
+                x.For<IStaticFilesService>().Use<StaticFilesService>();
+                #region Overview
                 x.For<IEducationService>().Use<EducationService>();
                 x.For<Lazy<IEducationService>>().Use(c => new Lazy<IEducationService>(c.GetInstance<EducationService>));
+
+                x.For<ISkillsService>().Use<SkillsService>();
+                x.For<Lazy<ISkillsService>>().Use(c => new Lazy<ISkillsService>(c.GetInstance<SkillsService>));
 
                 x.For<IWorkService>().Use<WorkService>();
                 x.For<Lazy<IWorkService>>().Use(c => new Lazy<IWorkService>(c.GetInstance<WorkService>));
 
+                #endregion
+
+                #region IELTS
+                x.For<IIeltsMaterialService>().Use<IeltsMaterialService>();
+                #endregion
+
+                #region Setting
+                x.For<IYearEventsService>().Use<YearEventsService>();
+                x.For<Lazy<IYearEventsService>>().Use(c => new Lazy<IYearEventsService>(c.GetInstance<YearEventsService>));
 
                 x.For<ISettingService>().Use<SettingService>();
                 x.For<Lazy<ISettingService>>().Use(c => new Lazy<ISettingService>(c.GetInstance<SettingService>));
 
+                #endregion
+             
                 x.For<IAboutUsService>().Use<AboutUsService>();
 
                 x.For<ISchedulerObserver>().Use<SchedulerObserver>().Singleton();
@@ -43,6 +58,9 @@
 
                 x.For<Lazy<ITaskService>>().Use(c => new Lazy<ITaskService>(c.GetInstance<TaskService>));
                 x.For<ITaskService>().Use<TaskService>();
+
+                x.For<IBookService>().Use<BookService>();
+                x.For<IExamTypeService>().Use<ExamTypeService>();
 
                 x.For<IClassTypeService>().Use<ClassTypeService>();
                 x.For<ICourseService>().Use<CourseService>();

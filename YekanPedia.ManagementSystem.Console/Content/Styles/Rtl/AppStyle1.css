@@ -344,7 +344,6 @@ html > body .top-menu > li > a.tm-chat {
 
 #profile-main .pmo-pic .pmop-message {
     margin-left: 25px;
-    bottom: 13px;
 }
 
     #profile-main .pmo-pic .pmop-message .dropdown-menu {
@@ -1096,3 +1095,41 @@ a.fileinput-exists {
 .f-family-arial {
     font-family: Arial !important;
 }
+
+.radio .input-helper:after {
+    left: inherit;
+    right: 4px;background: #4285F4;
+}
+
+.checkbox-inline, .radio-inline {
+    padding-left: 2px;
+    padding-right: 25px;
+}
+ 
+.b-t-blue{
+    border-top:solid 1px #4285F4;
+}
+ .bs-item {
+                  background: #fff;
+ 
+    text-align: center;
+    border-radius: 2px;
+            }
+
+ .fileinput .close{
+     width:20px !important;
+     right:inherit;
+     left:0;
+ }
+ .fileinput {
+    position: relative;
+    padding-right:0;
+    padding-left: 35px;
+}
+
+ .fileinput-filename {
+    margin-right: 10px;
+}
+ .f-s-22{
+     font-size:22px !important;
+ }

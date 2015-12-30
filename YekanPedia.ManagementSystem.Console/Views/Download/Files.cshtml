@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Course>
+@{
+    var first = true;
+}
+@foreach (var item in Model)
+{
+    <label class="radio radio-inline m-r-20">
+        <input type="radio" class="courseId" name="courseId" @(first ? "checked" : "") value="@item.CourseId">
+        <i class="input-helper"></i>
+        @item.CourseName
+    </label>
+    first = false;
+}
+@{first = true;}
+@foreach (var item in Model)
+{
+    <div id="staticFiles_@item.CourseId" class="p-t-30 m-t-10 b-t-blue staticFiles @(first ? "":"hide")">
+        @{
+            Html.RenderAction(MVC.Download.GetStaticFiles(item.CourseId));
+        }
+    </div>
+                first = false;
+            }
+@{
+    Html.AddJavaScript(@<text>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $(".courseId").click(function (e) {
+                    console.log($(this).val());
+                    $(this).attr('checked', 'checked');
+                    $(".staticFiles").fadeOut();
+                    $("#staticFiles_" + $(this).val()).removeClass('hide').fadeIn();
+                });
+            });
+        </script>
+    </text>);
+}

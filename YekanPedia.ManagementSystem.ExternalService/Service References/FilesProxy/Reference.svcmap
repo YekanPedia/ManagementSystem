@@ -24,11 +24,11 @@
     <MetadataSource Address="http://localhost:10702/Services/FilesProxy.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="FilesProxy.wsdl" MetadataType="Wsdl" ID="5e8bfafd-4671-4904-883a-2bdcd36dd974" SourceId="1" SourceUrl="http://localhost:10702/Services/FilesProxy.svc?wsdl" />
-    <MetadataFile FileName="FilesProxy.xsd" MetadataType="Schema" ID="686be700-aae8-4fff-81a7-ec13d84ba425" SourceId="1" SourceUrl="http://localhost:10702/Services/FilesProxy.svc?xsd=xsd1" />
-    <MetadataFile FileName="FilesProxy1.xsd" MetadataType="Schema" ID="94a58511-9e76-4df2-a2f2-f5d8cd852a5f" SourceId="1" SourceUrl="http://localhost:10702/Services/FilesProxy.svc?xsd=xsd2" />
-    <MetadataFile FileName="FilesProxy2.xsd" MetadataType="Schema" ID="dc6ecf50-2364-45cd-9412-9ea4d921d241" SourceId="1" SourceUrl="http://localhost:10702/Services/FilesProxy.svc?xsd=xsd0" />
-    <MetadataFile FileName="FilesProxy.disco" MetadataType="Disco" ID="37639241-3c23-4910-b374-b3bfb2cbbf0e" SourceId="1" SourceUrl="http://localhost:10702/Services/FilesProxy.svc?disco" />
+    <MetadataFile FileName="FilesProxy.wsdl" MetadataType="Wsdl" ID="9c47100c-79b3-4c5f-9ea6-f22e7772859c" SourceId="1" SourceUrl="http://localhost:10702/Services/FilesProxy.svc?wsdl" />
+    <MetadataFile FileName="FilesProxy.xsd" MetadataType="Schema" ID="bef2a6d2-cf70-46f4-ba9a-5572c49fa966" SourceId="1" SourceUrl="http://localhost:10702/Services/FilesProxy.svc?xsd=xsd1" />
+    <MetadataFile FileName="FilesProxy1.xsd" MetadataType="Schema" ID="a860bdde-bcaf-4094-9528-a82432e0f237" SourceId="1" SourceUrl="http://localhost:10702/Services/FilesProxy.svc?xsd=xsd2" />
+    <MetadataFile FileName="FilesProxy2.xsd" MetadataType="Schema" ID="23da3848-b786-4cea-857e-5d16eeccc020" SourceId="1" SourceUrl="http://localhost:10702/Services/FilesProxy.svc?xsd=xsd0" />
+    <MetadataFile FileName="FilesProxy.disco" MetadataType="Disco" ID="6f0f1400-b666-49de-af66-eaf867ee4286" SourceId="1" SourceUrl="http://localhost:10702/Services/FilesProxy.svc?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

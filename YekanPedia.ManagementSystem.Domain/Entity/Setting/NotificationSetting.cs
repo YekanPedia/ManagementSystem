@@ -34,6 +34,9 @@
         AddSession = 4,
 
         [LocalizeDescriptionEnum("MessageOnBirthDate", typeof(DisplayNames))]
-        BirthDate = 5
+        BirthDate = 5,
+
+        [LocalizeDescriptionEnum("MessageOnYearEvent", typeof(DisplayNames))]
+        YearEvent = 6
     }
 }

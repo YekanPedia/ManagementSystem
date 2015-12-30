@@ -124,5 +124,23 @@
     "inputFiles": [
       "Scripts/Application/ChartController.js"
     ]
+  },
+  {
+    "outputFileName": "Scripts/Application/SkillsController.js",
+    "inputFiles": [
+      "Scripts/Application/SkillsController.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Application/YearEventsController.js",
+    "inputFiles": [
+      "Scripts/Application/YearEventsController.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Application/IeltsMaterialController.js",
+    "inputFiles": [
+      "Scripts/Application/IeltsMaterialController.js"
+    ]
   }
 ]

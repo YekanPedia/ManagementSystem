@@ -31,6 +31,18 @@
   <wsdl:message name="IFilesProxy_UploadImage_OutputMessage">
     <wsdl:part name="parameters" element="tns:UploadImageResponse" />
   </wsdl:message>
+  <wsdl:message name="IFilesProxy_UploadDocument_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadDocument" />
+  </wsdl:message>
+  <wsdl:message name="IFilesProxy_UploadDocument_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFilesProxy_DeleteFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFile" />
+  </wsdl:message>
+  <wsdl:message name="IFilesProxy_DeleteFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFileResponse" />
+  </wsdl:message>
   <wsdl:portType name="IFilesProxy">
     <wsdl:operation name="GetListFiles">
       <wsdl:input wsaw:Action="http://tempuri.org/IFilesProxy/GetListFiles" message="tns:IFilesProxy_GetListFiles_InputMessage" />
@@ -47,6 +59,14 @@
     <wsdl:operation name="UploadImage">
       <wsdl:input wsaw:Action="http://tempuri.org/IFilesProxy/UploadImage" message="tns:IFilesProxy_UploadImage_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IFilesProxy/UploadImageResponse" message="tns:IFilesProxy_UploadImage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadDocument">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFilesProxy/UploadDocument" message="tns:IFilesProxy_UploadDocument_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFilesProxy/UploadDocumentResponse" message="tns:IFilesProxy_UploadDocument_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFilesProxy/DeleteFile" message="tns:IFilesProxy_DeleteFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFilesProxy/DeleteFileResponse" message="tns:IFilesProxy_DeleteFile_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IFilesProxy" type="tns:IFilesProxy">
@@ -80,6 +100,24 @@
     </wsdl:operation>
     <wsdl:operation name="UploadImage">
       <soap:operation soapAction="http://tempuri.org/IFilesProxy/UploadImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadDocument">
+      <soap:operation soapAction="http://tempuri.org/IFilesProxy/UploadDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFile">
+      <soap:operation soapAction="http://tempuri.org/IFilesProxy/DeleteFile" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

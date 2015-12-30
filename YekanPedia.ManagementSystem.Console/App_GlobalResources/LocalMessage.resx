@@ -438,4 +438,16 @@
   <data name="YearEventsManagement" xml:space="preserve">
     <value>مدیریت مناسبت ها</value>
   </data>
+  <data name="IeltsMaterialSend" xml:space="preserve">
+    <value>ارسال فایل های آیلتس</value>
+  </data>
+  <data name="ChangeFile" xml:space="preserve">
+    <value>تغییر فایل</value>
+  </data>
+  <data name="SelectFile" xml:space="preserve">
+    <value>انتخاب فایل</value>
+  </data>
+  <data name="PleaseSelectFile" xml:space="preserve">
+    <value>لطفا فایل ارسالی را انتخاب نمایید</value>
+  </data>
 </root>

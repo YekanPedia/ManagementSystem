@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Skills>
+@{
+    Layout = null;
+}
+
+<div class="pmb-block p-0" id="skillInfo">
+    <div class="pmbb-body p-l-30">
+        <div class="pmbb-view">
+                <div class="listview">
+                    <div class="lv-body" id="skillList">
+                        @foreach (var item in Model)
+                        {
+                            <a class="lv-item z-depth-1 m-b-5" id="skillFragment_@item.SkillsId" href="#">
+                                <div class="media">
+                                    <div class="pull-right">
+                                    </div>
+                                    <div class="pull-left">
+                                        <span data-Id="@item.SkillsId" class="closeskill">
+                                            <i class="zmdi zmdi-close c-red f-s-17 p-l-5"></i>
+                                        </span>
+                                        <span data-Id="@item.SkillsId" data-public="@item.IsPublic.ToString().ToLower()" class="publicskill">
+                                            <i class="zmdi @(item.IsPublic? "zmdi-globe c-green" : "zmdi-globe-lock c-gray" ) f-s-17"></i>
+                                        </span>
+                                    </div>
+                                    <div class="media-body p-r-0 ">
+                                        <div class="lv-title">@item.Topic - @item.Percent %</div>
+                                    </div>
+                                </div>
+                            </a>
+                        }
+                    </div>
+                </div>
+            <div data-pmb-action="edit" class="addnewitem waves-effect m-t-25">
+                <i class="zmdi zmdi-plus"></i>
+                @LocalMessage.AddSkill
+            </div>
+        </div>
+        <div class="pmbb-edit">
+            @using (Ajax.BeginForm(MVC.Skills.ActionNames.AddSkills, MVC.Skills.Name,
+                new AjaxOptions
+                {
+                    HttpMethod = "POST",
+                    OnComplete = "addskillComplete"
+                }, new { @id = "addskillFrm" }))
+            {
+                Html.RenderPartial(MVC.Skills.Views.Partial._SkillCreate, new Skills { UserId = ViewBag.UserId });
+                <div class="m-t-30 text-left">
+                    <button id="saveBasicInfoForm" class="btn btn-primary btn-sm waves-effect">
+                        <i class="zmdi zmdi-check"></i>
+                        @LocalMessage.Save
+                    </button>
+                    <button data-pmb-action="reset" class="btn btn-danger btn-sm waves-effect">
+                        <i class="zmdi zmdi-arrow-forward"></i>
+                        @LocalMessage.Cancel
+                    </button>
+                </div>
+            }
+        </div>
+    </div>
+</div>

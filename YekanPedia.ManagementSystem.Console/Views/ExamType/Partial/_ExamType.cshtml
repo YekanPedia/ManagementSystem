@@ -1,0 +1,35 @@
+﻿@model IEnumerable<ExamType>
+@{ Layout = null;}
+<div class="col-sm-6">
+    <div id="todo-lists">
+        <div class="tl-header">
+            <h4>@LocalMessage.AddExamType</h4>
+            <small>@LocalMessage.AddExamTypeDescription</small>
+        </div>
+        <div class="clearfix"></div>
+        <div class="tl-body" id="examTypeBody">
+            <div id="add-tl-item" class="">
+                <i class="add-new-item zmdi zmdi-plus"></i>
+                <div class="add-tl-body">
+                    <textarea placeholder="@LocalMessage.Content" id="examType"></textarea>
+                    <div class="add-tl-actions">
+                        <a href="" data-tl-action="dismiss"><i class="zmdi zmdi-close"></i></a>
+                        <a href="" data-updateUrl="@Url.Action(MVC.ExamType.ActionNames.ChangeExamTypeStatus,MVC.ExamType.Name)" data-url="@Url.Action(MVC.ExamType.ActionNames.AddExamType,MVC.ExamType.Name)" id="ExamTypeSaveBtn" data-tl-action="save"><i class="zmdi zmdi-check"></i></a>
+                    </div>
+                </div>
+            </div>
+            @foreach (var item in Model)
+            {
+                <div class="checkbox media">
+                    <div class="media-body">
+                        <label>
+                            <input type="checkbox" data-url="@Url.Action(MVC.ExamType.ActionNames.ChangeExamTypeStatus,MVC.ExamType.Name)" class="EnableCheckbox" checked="@item.IsActive" data-id="@item.ExamTypeId">
+                            <i class="input-helper"></i>
+                            <span>@item.Type</span>
+                        </label>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

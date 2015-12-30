@@ -131,14 +131,22 @@
             return progress;
         }
 
+        [Display(ResourceType = typeof(DisplayNames), Name = nameof(CvColor))]
+        [MaxLength(7, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
+        [StringLength(7, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
+        public string CvColor { get; set; }
+
         public virtual ICollection<UserInClass> UserInClass { get; set; }
 
         [Display(ResourceType = typeof(DisplayNames), Name = nameof(Class))]
         public virtual ICollection<Class> Class { get; set; }
         public virtual ICollection<Tasks> Tasks { get; set; }
         public virtual ICollection<SessionRequest> SessionRequest { get; set; }
-       public virtual ICollection<UserInRole> UserInRole { get; set; }
+        public virtual ICollection<UserInRole> UserInRole { get; set; }
+
         public virtual ICollection<Work> Work { get; set; }
         public virtual ICollection<Education> Education { get; set; }
+        public virtual ICollection<Skills> Skills { get; set; }
+
     }
 }

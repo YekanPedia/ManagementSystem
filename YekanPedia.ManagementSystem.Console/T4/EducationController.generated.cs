@@ -68,6 +68,18 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         {
             return new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.AddEducation);
         }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.JsonResult ChangePublicState()
+        {
+            return new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.ChangePublicState);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.JsonResult Remove()
+        {
+            return new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.Remove);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public EducationController Actions { get { return MVC.Education; } }
@@ -86,6 +98,8 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         {
             public readonly string GetEducations = "GetEducations";
             public readonly string AddEducation = "AddEducation";
+            public readonly string ChangePublicState = "ChangePublicState";
+            public readonly string Remove = "Remove";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -93,6 +107,8 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         {
             public const string GetEducations = "GetEducations";
             public const string AddEducation = "AddEducation";
+            public const string ChangePublicState = "ChangePublicState";
+            public const string Remove = "Remove";
         }
 
 
@@ -111,6 +127,22 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         public class ActionParamsClass_AddEducation
         {
             public readonly string model = "model";
+        }
+        static readonly ActionParamsClass_ChangePublicState s_params_ChangePublicState = new ActionParamsClass_ChangePublicState();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_ChangePublicState ChangePublicStateParams { get { return s_params_ChangePublicState; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_ChangePublicState
+        {
+            public readonly string educationId = "educationId";
+        }
+        static readonly ActionParamsClass_Remove s_params_Remove = new ActionParamsClass_Remove();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_Remove RemoveParams { get { return s_params_Remove; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_Remove
+        {
+            public readonly string educationId = "educationId";
         }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -167,6 +199,30 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.AddEducation);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
             AddEducationOverride(callInfo, model);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void ChangePublicStateOverride(T4MVC_System_Web_Mvc_JsonResult callInfo, int educationId);
+
+        [NonAction]
+        public override System.Web.Mvc.JsonResult ChangePublicState(int educationId)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.ChangePublicState);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "educationId", educationId);
+            ChangePublicStateOverride(callInfo, educationId);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void RemoveOverride(T4MVC_System_Web_Mvc_JsonResult callInfo, int educationId);
+
+        [NonAction]
+        public override System.Web.Mvc.JsonResult Remove(int educationId)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.Remove);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "educationId", educationId);
+            RemoveOverride(callInfo, educationId);
             return callInfo;
         }
 

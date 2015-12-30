@@ -11,5 +11,6 @@
         IServiceResults<bool> SendPrivateNotificationToClass(Guid classId, NotificationType notificationType, string message);
         IServiceResults<bool> SendNotificationToClass(Guid classId, NotificationType notificationType, string date);
         IServiceResults<bool> SendNotificationToBirthDateUser(IEnumerable<User> users);
+        IServiceResults<bool> SendYearEventMessage(IEnumerable<User> users,NotificationType notificationType, string message);
     }
 }

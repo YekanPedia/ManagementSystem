@@ -159,4 +159,7 @@
   <data name="RequestDone" xml:space="preserve">
     <value>فایل های کلاس به تاریخ {0} با موضوع {1} آماده  تحویل می باشد . با تشکر یکان پدیا</value>
   </data>
+  <data name="NotAuthorizeForDelete" xml:space="preserve">
+    <value>متاسفانه شما مجوز حذف این رکورد را ندارید</value>
+  </data>
 </root>

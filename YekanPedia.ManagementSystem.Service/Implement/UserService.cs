@@ -186,6 +186,7 @@
             result.Result.FullName = model.FullName;
             result.Result.Sex = model.Sex;
             result.Result.BirthDate = model.BirthDate;
+            result.Result.CvColor = model.CvColor;
             var resultSave = _uow.SaveChanges();
             _taskService.Value.EditUserTaskProgress(result.Result.UserId, TaskType.Profile, result.Result.ProgressRegisterCompleted());
             return new ServiceResults<bool>
@@ -261,7 +262,7 @@
             var model = _user.AsQueryable();
             if (predicate != null)
             {
-                model = _user.Where(X => ( predicate.FullName == string.Empty || X.FullName.Contains(predicate.FullName)) &&
+                model = _user.Where(X => (predicate.FullName == string.Empty || X.FullName.Contains(predicate.FullName)) &&
                               (predicate.Mobile == string.Empty || X.Mobile.Contains(predicate.Mobile)) && X.IsActive == predicate.IsActive)
                              .OrderByDescending(X => X.RegisterDate).AsQueryable();
             }
@@ -351,6 +352,25 @@
         {
             var date = PersianDateTime.Now.ToString(PersianDateTimeFormat.Date).Substring(5, 5);
             return _user.Where(X => X.BirthDate.Substring(5, 5) == date).ToList();
+        }
+
+        public User GetUserCV(Guid userId)
+        {
+            return _user.Include(X => X.Education)
+                .Include(X => X.Work)
+                .Include(X => X.Skills)
+                .Where(X => X.UserId == userId)
+                .FirstOrDefault();
+        }
+
+        public IServiceResults<IEnumerable<User>> GetUsers()
+        {
+            return new ServiceResults<IEnumerable<User>>
+            {
+                IsSuccessfull = true,
+                Message = string.Empty,
+                Result = _user.AsNoTracking().ToList()
+            };
         }
     }
 }

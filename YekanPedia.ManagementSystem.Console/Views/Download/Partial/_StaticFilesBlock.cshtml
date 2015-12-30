@@ -1,0 +1,55 @@
+﻿@model IEnumerable<StaticFiles>
+@{
+    var count = 1;
+}
+<div class="row" id="sessionBlock">
+    @foreach (var item in Model.Where(X => X.ParentId == null).OrderBy(X => X.StaticFilesId))
+    {
+        var Files = Model.Where(X => X.ParentId == item.StaticFilesId).ToList();
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-header p-t-30 p-b-30 p-r-20 p-l-20 ch-alt ">
+                    <h4 class="text-left f-family-arial f-s-17">@item.Name</h4>
+                    <button class="btn-square btn btn-success btn-float waves-effect waves-circle waves-float p-0">
+                        @count - @(count + 1)
+                    </button>
+                </div>
+                <div class="card-body card-padding p-b-10">
+                    <div class="pmo-contact">
+                        <ul>
+                            <li></li>
+                            <li class="ng-binding"><i class="zmdi zmdi-calendar-alt"></i> @item.LastUpdateDateSh</li>
+                            <li class="ng-binding"><i class="zmdi zmdi-download"></i>@LocalMessage.FilesCount : @Files.Count</li>
+                        </ul>
+                    </div>
+                    <div class="lv-footer">
+                        <div class="text-left row p-t-5 p-l-20">
+                            @foreach (var material in Files)
+                            {
+                                <div class="col-sm-1 pull-left">
+
+                                    <a target='_blank' href="@material.DirectLink">
+                                        <div class="file @material.Extension.Replace(".",string.Empty)"></div>
+                                    </a>
+                                </div>
+                            }
+                            @if (Files.Count == 0)
+                            {
+                                <div class="noFileUploaded">@LocalMessage.NoFileUploaded</div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        count += 2;
+    }
+    @if (Model.Count() == 0)
+    {
+        <div class="col-sm-12 text-center">
+            <div class="bs-item z-depth-1 p-15">
+                @LocalMessage.NoFileUploaded
+            </div>
+        </div> 
+    }
+</div>

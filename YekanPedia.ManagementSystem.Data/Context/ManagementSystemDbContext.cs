@@ -43,6 +43,8 @@
         #region IELTS
         public DbSet<Book> Book { get; set; }
         public DbSet<ExamType> ExamType { get; set; }
+        public DbSet<IeltsMaterial> IeltsMaterial { get; set; }
+
         #endregion
         public new IDbSet<TEntity> Set<TEntity>() where TEntity : class
         {

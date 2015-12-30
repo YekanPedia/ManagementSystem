@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="DayValueError" xml:space="preserve">
+    <value>با توجه به مقدار وارد شده برای فیلد ماه ، مقدار وارد شده برای روز معتبر نمی باشد</value>
+  </data>
   <data name="Email" xml:space="preserve">
     <value>لطفا پست الکترونیک را به طور صحیح وارد نمایید</value>
   </data>
@@ -140,6 +143,9 @@
   </data>
   <data name="PersianDate" xml:space="preserve">
     <value>لطفا تاریخ با به صورت YYYY/MM/DD  وارد نمایید</value>
+  </data>
+  <data name="Range" xml:space="preserve">
+    <value>مقدار وارد شده بایستی بین {1} و {2} باشد</value>
   </data>
   <data name="Required" xml:space="preserve">
     <value>این فیلد اجباری می باشد</value>

@@ -55,6 +55,7 @@
     <Compile Include="Caching\ICacheProvider.cs" />
     <Compile Include="Date\PersianDateTime.cs" />
     <Compile Include="Date\TimeSpanExtension.cs" />
+    <Compile Include="Exception\ElmahEfInterceptorException.cs" />
     <Compile Include="Extension\ApplyCorrectPersianCharacters.cs" />
     <Compile Include="Extension\EnumHelper.cs" />
     <Compile Include="Extension\FullTimeFormat.cs" />

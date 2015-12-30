@@ -234,6 +234,18 @@ namespace YekanPedia.ManagementSystem.ExternalService.FilesProxy {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFilesProxy/UploadImage", ReplyAction="http://tempuri.org/IFilesProxy/UploadImageResponse")]
         System.Threading.Tasks.Task<string> UploadImageAsync(YekanPedia.ManagementSystem.ExternalService.FilesProxy.PostedImageFile file);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFilesProxy/UploadDocument", ReplyAction="http://tempuri.org/IFilesProxy/UploadDocumentResponse")]
+        YekanPedia.ManagementSystem.ExternalService.FilesProxy.FileInfo UploadDocument(YekanPedia.ManagementSystem.ExternalService.FilesProxy.PostedFile file);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFilesProxy/UploadDocument", ReplyAction="http://tempuri.org/IFilesProxy/UploadDocumentResponse")]
+        System.Threading.Tasks.Task<YekanPedia.ManagementSystem.ExternalService.FilesProxy.FileInfo> UploadDocumentAsync(YekanPedia.ManagementSystem.ExternalService.FilesProxy.PostedFile file);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFilesProxy/DeleteFile", ReplyAction="http://tempuri.org/IFilesProxy/DeleteFileResponse")]
+        bool DeleteFile(string address);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFilesProxy/DeleteFile", ReplyAction="http://tempuri.org/IFilesProxy/DeleteFileResponse")]
+        System.Threading.Tasks.Task<bool> DeleteFileAsync(string address);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -293,6 +305,22 @@ namespace YekanPedia.ManagementSystem.ExternalService.FilesProxy {
         
         public System.Threading.Tasks.Task<string> UploadImageAsync(YekanPedia.ManagementSystem.ExternalService.FilesProxy.PostedImageFile file) {
             return base.Channel.UploadImageAsync(file);
+        }
+        
+        public YekanPedia.ManagementSystem.ExternalService.FilesProxy.FileInfo UploadDocument(YekanPedia.ManagementSystem.ExternalService.FilesProxy.PostedFile file) {
+            return base.Channel.UploadDocument(file);
+        }
+        
+        public System.Threading.Tasks.Task<YekanPedia.ManagementSystem.ExternalService.FilesProxy.FileInfo> UploadDocumentAsync(YekanPedia.ManagementSystem.ExternalService.FilesProxy.PostedFile file) {
+            return base.Channel.UploadDocumentAsync(file);
+        }
+        
+        public bool DeleteFile(string address) {
+            return base.Channel.DeleteFile(address);
+        }
+        
+        public System.Threading.Tasks.Task<bool> DeleteFileAsync(string address) {
+            return base.Channel.DeleteFileAsync(address);
         }
     }
 }

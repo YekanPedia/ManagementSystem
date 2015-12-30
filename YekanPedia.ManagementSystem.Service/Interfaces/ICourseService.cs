@@ -13,5 +13,6 @@
         Course FindCourse(int id);
         IServiceResults<int> AddCourse(string type);
         IEnumerable<Course> GetUserCourses(Guid userId);
+        IEnumerable<Course> GetAllCoursesHasStaticFiles();
     }
 }

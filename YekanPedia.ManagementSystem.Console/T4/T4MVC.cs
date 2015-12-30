@@ -29,14 +29,19 @@ public static partial class MVC
 {
     public static YekanPedia.ManagementSystem.Console.Controllers.AboutUsController AboutUs = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_AboutUsController();
     public static YekanPedia.ManagementSystem.Console.Controllers.AccountController Account = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_AccountController();
+    public static YekanPedia.ManagementSystem.Console.Controllers.BookController Book = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_BookController();
     public static YekanPedia.ManagementSystem.Console.Controllers.ClassController Class = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_ClassController();
     public static YekanPedia.ManagementSystem.Console.Controllers.ClassTypeController ClassType = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_ClassTypeController();
     public static YekanPedia.ManagementSystem.Console.Controllers.CourseController Course = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_CourseController();
+    public static YekanPedia.ManagementSystem.Console.Controllers.CVController CV = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_CVController();
     public static YekanPedia.ManagementSystem.Console.Controllers.DashboardController Dashboard = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_DashboardController();
+    public static YekanPedia.ManagementSystem.Console.Controllers.DownloadController Download = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_DownloadController();
     public static YekanPedia.ManagementSystem.Console.Controllers.EducationController Education = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_EducationController();
     public static YekanPedia.ManagementSystem.Console.Controllers.ErrorController Error = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_ErrorController();
+    public static YekanPedia.ManagementSystem.Console.Controllers.ExamTypeController ExamType = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_ExamTypeController();
     public static YekanPedia.ManagementSystem.Console.Controllers.FeedbackController Feedback = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_FeedbackController();
     public static YekanPedia.ManagementSystem.Console.Controllers.GeographicController Geographic = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_GeographicController();
+    public static YekanPedia.ManagementSystem.Console.Controllers.IELTSController IELTS = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_IELTSController();
     public static YekanPedia.ManagementSystem.Console.Controllers.NotificationController Notification = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_NotificationController();
     public static YekanPedia.ManagementSystem.Console.Controllers.NotificationSettingController NotificationSetting = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_NotificationSettingController();
     public static YekanPedia.ManagementSystem.Console.Controllers.OAuthController OAuth = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_OAuthController();
@@ -44,10 +49,12 @@ public static partial class MVC
     public static YekanPedia.ManagementSystem.Console.Controllers.SessionController Session = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_SessionController();
     public static YekanPedia.ManagementSystem.Console.Controllers.SessionRequestController SessionRequest = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_SessionRequestController();
     public static YekanPedia.ManagementSystem.Console.Controllers.SettingController Setting = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_SettingController();
+    public static YekanPedia.ManagementSystem.Console.Controllers.SkillsController Skills = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_SkillsController();
     public static YekanPedia.ManagementSystem.Console.Controllers.TaskController Task = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_TaskController();
     public static YekanPedia.ManagementSystem.Console.Controllers.UserController User = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_UserController();
     public static YekanPedia.ManagementSystem.Console.Controllers.UserInClassController UserInClass = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_UserInClassController();
     public static YekanPedia.ManagementSystem.Console.Controllers.WorkController Work = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_WorkController();
+    public static YekanPedia.ManagementSystem.Console.Controllers.YearEventsController YearEvents = new YekanPedia.ManagementSystem.Console.Controllers.T4MVC_YearEventsController();
     public static T4MVC.SharedController Shared = new T4MVC.SharedController();
 }
 
@@ -171,8 +178,11 @@ namespace Links
             public static readonly string ChartController_min_js = Url("ChartController.min.js");
             public static readonly string ClassController_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ClassController.min.js") ? Url("ClassController.min.js") : Url("ClassController.js");
             public static readonly string ClassController_min_js = Url("ClassController.min.js");
+            public static readonly string CVController_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/CVController.min.js") ? Url("CVController.min.js") : Url("CVController.js");
             public static readonly string EducationController_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/EducationController.min.js") ? Url("EducationController.min.js") : Url("EducationController.js");
             public static readonly string EducationController_min_js = Url("EducationController.min.js");
+            public static readonly string IeltsMaterialController_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/IeltsMaterialController.min.js") ? Url("IeltsMaterialController.min.js") : Url("IeltsMaterialController.js");
+            public static readonly string IeltsMaterialController_min_js = Url("IeltsMaterialController.min.js");
             public static readonly string NotificationSettingController_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/NotificationSettingController.min.js") ? Url("NotificationSettingController.min.js") : Url("NotificationSettingController.js");
             public static readonly string NotificationSettingController_min_js = Url("NotificationSettingController.min.js");
             public static readonly string OAuthController_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/OAuthController.min.js") ? Url("OAuthController.min.js") : Url("OAuthController.js");
@@ -185,6 +195,8 @@ namespace Links
             public static readonly string SessionRequestController_min_js = Url("SessionRequestController.min.js");
             public static readonly string SettingController_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/SettingController.min.js") ? Url("SettingController.min.js") : Url("SettingController.js");
             public static readonly string SettingController_min_js = Url("SettingController.min.js");
+            public static readonly string SkillsController_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/SkillsController.min.js") ? Url("SkillsController.min.js") : Url("SkillsController.js");
+            public static readonly string SkillsController_min_js = Url("SkillsController.min.js");
             public static readonly string TaskController_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/TaskController.min.js") ? Url("TaskController.min.js") : Url("TaskController.js");
             public static readonly string TaskController_min_js = Url("TaskController.min.js");
             public static readonly string UserController_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/UserController.min.js") ? Url("UserController.min.js") : Url("UserController.js");
@@ -193,6 +205,8 @@ namespace Links
             public static readonly string UserInClassController_min_js = Url("UserInClassController.min.js");
             public static readonly string WorkController_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/WorkController.min.js") ? Url("WorkController.min.js") : Url("WorkController.js");
             public static readonly string WorkController_min_js = Url("WorkController.min.js");
+            public static readonly string YearEventsController_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/YearEventsController.min.js") ? Url("YearEventsController.min.js") : Url("YearEventsController.js");
+            public static readonly string YearEventsController_min_js = Url("YearEventsController.min.js");
         }
     
         public static readonly string functions_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/functions.min.js") ? Url("functions.min.js") : Url("functions.js");
@@ -233,6 +247,16 @@ namespace Links
                 public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
                 public static readonly string cropper_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cropper.min.js") ? Url("cropper.min.js") : Url("cropper.js");
                 public static readonly string cropper_min_js = Url("cropper.min.js");
+            }
+        
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class CV {
+                private const string URLPATH = "~/Scripts/JQuery/CV";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                public static readonly string masonry_pkgd_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/masonry.pkgd.min.js") ? Url("masonry.pkgd.min.js") : Url("masonry.pkgd.js");
+                public static readonly string materialize_min_js = Url("materialize.min.js");
+                public static readonly string wow_min_js = Url("wow.min.js");
             }
         
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -590,6 +614,21 @@ namespace Links
                 public static readonly string Bootgrid_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Bootgrid.min.css") ? Url("Bootgrid.min.css") : Url("Bootgrid.css");
                 public static readonly string BootstrapSelect_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/BootstrapSelect.min.css") ? Url("BootstrapSelect.min.css") : Url("BootstrapSelect.css");
                 public static readonly string cropper_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cropper.min.css") ? Url("cropper.min.css") : Url("cropper.css");
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class CV {
+                    private const string URLPATH = "~/Content/Styles/Public/CV";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                    public static readonly string green_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/green.min.css") ? Url("green.min.css") : Url("green.css");
+                    public static readonly string lime_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/lime.min.css") ? Url("lime.min.css") : Url("lime.css");
+                    public static readonly string materialize_min_css = Url("materialize.min.css");
+                    public static readonly string orange_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/orange.min.css") ? Url("orange.min.css") : Url("orange.css");
+                    public static readonly string purple_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/purple.min.css") ? Url("purple.min.css") : Url("purple.css");
+                    public static readonly string red_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/red.min.css") ? Url("red.min.css") : Url("red.css");
+                    public static readonly string responsive_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/responsive.min.css") ? Url("responsive.min.css") : Url("responsive.css");
+                    public static readonly string style_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/style.min.css") ? Url("style.min.css") : Url("style.css");
+                }
+            
                 public static readonly string Feedback_rtl_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Feedback.rtl.min.css") ? Url("Feedback.rtl.min.css") : Url("Feedback.rtl.css");
                 public static readonly string Feedback_rtl_min_css = Url("Feedback.rtl.min.css");
                 public static readonly string Fullcalendar_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Fullcalendar.min.css") ? Url("Fullcalendar.min.css") : Url("Fullcalendar.css");
@@ -630,17 +669,21 @@ namespace Links
                     public const string BasicInfoController_js = "~/Scripts/Application/BasicInfoController.js"; 
                     public const string ChartController_js = "~/Scripts/Application/ChartController.js"; 
                     public const string ClassController_js = "~/Scripts/Application/ClassController.js"; 
+                    public const string CVController_js = "~/Scripts/Application/CVController.js"; 
                     public const string EducationController_js = "~/Scripts/Application/EducationController.js"; 
+                    public const string IeltsMaterialController_js = "~/Scripts/Application/IeltsMaterialController.js"; 
                     public const string NotificationSettingController_js = "~/Scripts/Application/NotificationSettingController.js"; 
                     public const string OAuthController_js = "~/Scripts/Application/OAuthController.js"; 
                     public const string SchedulerController_js = "~/Scripts/Application/SchedulerController.js"; 
                     public const string SessionController_js = "~/Scripts/Application/SessionController.js"; 
                     public const string SessionRequestController_js = "~/Scripts/Application/SessionRequestController.js"; 
                     public const string SettingController_js = "~/Scripts/Application/SettingController.js"; 
+                    public const string SkillsController_js = "~/Scripts/Application/SkillsController.js"; 
                     public const string TaskController_js = "~/Scripts/Application/TaskController.js"; 
                     public const string UserController_js = "~/Scripts/Application/UserController.js"; 
                     public const string UserInClassController_js = "~/Scripts/Application/UserInClassController.js"; 
                     public const string WorkController_js = "~/Scripts/Application/WorkController.js"; 
+                    public const string YearEventsController_js = "~/Scripts/Application/YearEventsController.js"; 
                 }
             }
             public static partial class JQuery 
@@ -671,6 +714,15 @@ namespace Links
                     public static class Assets
                     {
                         public const string cropper_js = "~/Scripts/JQuery/Croper/cropper.js"; 
+                    }
+                }
+                public static partial class CV 
+                {
+                    public static class Assets
+                    {
+                        public const string masonry_pkgd_js = "~/Scripts/JQuery/CV/masonry.pkgd.js"; 
+                        public const string materialize_min_js = "~/Scripts/JQuery/CV/materialize.min.js"; 
+                        public const string wow_min_js = "~/Scripts/JQuery/CV/wow.min.js"; 
                     }
                 }
                 public static partial class Feedback 
@@ -924,6 +976,20 @@ namespace Links
                 }
                 public static partial class Public 
                 {
+                    public static partial class CV 
+                    {
+                        public static class Assets
+                        {
+                            public const string green_css = "~/Content/Styles/Public/CV/green.css";
+                            public const string lime_css = "~/Content/Styles/Public/CV/lime.css";
+                            public const string materialize_min_css = "~/Content/Styles/Public/CV/materialize.min.css";
+                            public const string orange_css = "~/Content/Styles/Public/CV/orange.css";
+                            public const string purple_css = "~/Content/Styles/Public/CV/purple.css";
+                            public const string red_css = "~/Content/Styles/Public/CV/red.css";
+                            public const string responsive_css = "~/Content/Styles/Public/CV/responsive.css";
+                            public const string style_css = "~/Content/Styles/Public/CV/style.css";
+                        }
+                    }
                     public static class Assets
                     {
                         public const string Animate_css = "~/Content/Styles/Public/Animate.css";

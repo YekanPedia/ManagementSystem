@@ -61,6 +61,15 @@ namespace YekanPedia.ManagementSystem.Domain.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to با توجه به مقدار وارد شده برای فیلد ماه ، مقدار وارد شده برای روز معتبر نمی باشد.
+        /// </summary>
+        public static string DayValueError {
+            get {
+                return ResourceManager.GetString("DayValueError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to لطفا پست الکترونیک را به طور صحیح وارد نمایید.
         /// </summary>
         public static string Email {
@@ -129,6 +138,15 @@ namespace YekanPedia.ManagementSystem.Domain.Properties {
         public static string PersianDate {
             get {
                 return ResourceManager.GetString("PersianDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to مقدار وارد شده بایستی بین {1} و {2} باشد.
+        /// </summary>
+        public static string Range {
+            get {
+                return ResourceManager.GetString("Range", resourceCulture);
             }
         }
         

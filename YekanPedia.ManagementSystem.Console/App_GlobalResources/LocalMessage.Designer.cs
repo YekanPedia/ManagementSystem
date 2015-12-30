@@ -277,6 +277,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to تغییر فایل.
+        /// </summary>
+        internal static string ChangeFile {
+            get {
+                return ResourceManager.GetString("ChangeFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to تغییر عکس پروفایل.
         /// </summary>
         internal static string ChangePicture {
@@ -592,6 +601,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ارسال فایل های آیلتس.
+        /// </summary>
+        internal static string IeltsMaterialSend {
+            get {
+                return ResourceManager.GetString("IeltsMaterialSend", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to آخرین بازدید.
         /// </summary>
         internal static string LastLogin {
@@ -669,6 +687,15 @@ namespace Resources {
         internal static string Play {
             get {
                 return ResourceManager.GetString("Play", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to لطفا فایل ارسالی را انتخاب نمایید.
+        /// </summary>
+        internal static string PleaseSelectFile {
+            get {
+                return ResourceManager.GetString("PleaseSelectFile", resourceCulture);
             }
         }
         
@@ -759,6 +786,15 @@ namespace Resources {
         internal static string Search {
             get {
                 return ResourceManager.GetString("Search", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to انتخاب فایل.
+        /// </summary>
+        internal static string SelectFile {
+            get {
+                return ResourceManager.GetString("SelectFile", resourceCulture);
             }
         }
         

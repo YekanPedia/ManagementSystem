@@ -97,6 +97,15 @@ namespace YekanPedia.ManagementSystem.Service.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to متاسفانه شما مجوز حذف این رکورد را ندارید.
+        /// </summary>
+        internal static string NotAuthorizeForDelete {
+            get {
+                return ResourceManager.GetString("NotAuthorizeForDelete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ارسال اعلانات با خطا مواجه شد.
         /// </summary>
         internal static string NotificationNotSend {

@@ -14,6 +14,7 @@ namespace YekanPedia.ManagementSystem.Console.ScheduledTasks
             observer.AddScheduledTask(new RoboTeleScheduler());
             observer.AddScheduledTask(new FileRemoverScheduler());
             observer.AddScheduledTask(new BirthDateScheduler());
+          //  observer.AddScheduledTask(new YearEventsScheduler());
             observer.Start();
         }
         public static void Dispose()
