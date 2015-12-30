@@ -417,4 +417,25 @@
   <data name="WebSiteVisitCount" xml:space="preserve">
     <value>تعداد بازدید سایت</value>
   </data>
+  <data name="AddBook" xml:space="preserve">
+    <value> اضافه نمودن کتاب</value>
+  </data>
+  <data name="AddBookDescription" xml:space="preserve">
+    <value>در این قسمت کلیه کتاب هاب مربوط به دوره IELTS  را وارد نمایید</value>
+  </data>
+  <data name="AddExamType" xml:space="preserve">
+    <value> اضافه نمودن انواع آزمون IELTS</value>
+  </data>
+  <data name="AddExamTypeDescription" xml:space="preserve">
+    <value>در این قسمت کلیه آزمون های مربوط به دوره IELTS  را وارد نمایید</value>
+  </data>
+  <data name="AddSkill" xml:space="preserve">
+    <value>اضافه نمودن مهارت</value>
+  </data>
+  <data name="Skills" xml:space="preserve">
+    <value>مهارت ها</value>
+  </data>
+  <data name="YearEventsManagement" xml:space="preserve">
+    <value>مدیریت مناسبت ها</value>
+  </data>
 </root>

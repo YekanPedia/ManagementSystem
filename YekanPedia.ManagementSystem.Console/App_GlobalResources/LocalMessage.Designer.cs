@@ -115,6 +115,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to  اضافه نمودن کتاب.
+        /// </summary>
+        internal static string AddBook {
+            get {
+                return ResourceManager.GetString("AddBook", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to در این قسمت کلیه کتاب هاب مربوط به دوره IELTS  را وارد نمایید.
+        /// </summary>
+        internal static string AddBookDescription {
+            get {
+                return ResourceManager.GetString("AddBookDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ایجاد نوع کلاس.
         /// </summary>
         internal static string AddClassType {
@@ -156,6 +174,33 @@ namespace Resources {
         internal static string AddEducation {
             get {
                 return ResourceManager.GetString("AddEducation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  اضافه نمودن انواع آزمون IELTS.
+        /// </summary>
+        internal static string AddExamType {
+            get {
+                return ResourceManager.GetString("AddExamType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to در این قسمت کلیه آزمون های مربوط به دوره IELTS  را وارد نمایید.
+        /// </summary>
+        internal static string AddExamTypeDescription {
+            get {
+                return ResourceManager.GetString("AddExamTypeDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to اضافه نمودن مهارت.
+        /// </summary>
+        internal static string AddSkill {
+            get {
+                return ResourceManager.GetString("AddSkill", resourceCulture);
             }
         }
         
@@ -835,6 +880,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to مهارت ها.
+        /// </summary>
+        internal static string Skills {
+            get {
+                return ResourceManager.GetString("Skills", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to آمار حجمی پنل پیامک.
         /// </summary>
         internal static string SmsStatistics {
@@ -948,6 +1002,15 @@ namespace Resources {
         internal static string Work {
             get {
                 return ResourceManager.GetString("Work", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to مدیریت مناسبت ها.
+        /// </summary>
+        internal static string YearEventsManagement {
+            get {
+                return ResourceManager.GetString("YearEventsManagement", resourceCulture);
             }
         }
         
