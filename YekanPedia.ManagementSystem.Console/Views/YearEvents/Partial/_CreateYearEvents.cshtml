@@ -1,0 +1,66 @@
+﻿@model YearEvents
+@{ Layout = null;}
+<div class="row">
+    <div class="col-sm-6 m-b-20">
+        <div class="input-group has-feedback m-b-20">
+            <div class="fg-line">
+                <label>@Html.DisplayNameFor(X => X.Month)</label>
+                @Html.TextBoxFor(X => X.Month, new { @data_type = "nu", @class = "form-control" })
+            </div>
+            <small class="help-block">
+                @Html.ValidationMessageFor(X => X.Month)
+            </small>
+            <span class="zmdi form-control-feedback"></span>
+        </div>
+    </div>
+    <div class="col-sm-6 m-b-20">
+        <div class="input-group has-feedback m-b-20">
+            <div class="fg-line">
+                <label>@Html.DisplayNameFor(X => X.Day)</label>
+                @Html.TextBoxFor(X => X.Day, new { @data_type = "nu", @class = "form-control" })
+            </div>
+            <small class="help-block">
+                @Html.ValidationMessageFor(X => X.Day)
+            </small>
+            <span class="zmdi form-control-feedback"></span>
+        </div>
+    </div>
+    <div class="col-sm-6 m-b-20">
+        <div class="input-group has-feedback m-b-20">
+            <div class="fg-line">
+                <label>@Html.DisplayNameFor(X => X.Topic)</label>
+                @Html.TextBoxFor(X => X.Topic, new {  @class = "form-control" })
+            </div>
+            <small class="help-block">
+                @Html.ValidationMessageFor(X => X.Topic)
+            </small>
+            <span class="zmdi form-control-feedback"></span>
+        </div>
+    </div>
+    <div class="col-sm-6 m-b-20">
+        <div class="input-group has-feedback m-b-20">
+            <label>@Html.DisplayNameFor(X => X.Text)</label>
+            <div class="fg-line">
+                @Html.TextBoxFor(X => X.Text, new { @class = "form-control" })
+            </div>
+            <small class="help-block">
+                @Html.ValidationMessageFor(X => X.Text)
+            </small>
+            <span class="zmdi form-control-feedback"></span>
+        </div>
+    </div>
+    <div class="col-sm-6 m-b-20">
+        <div class="input-group has-feedback m-b-20">
+            <div>
+                <label>@Html.DisplayNameFor(X => X.IsActive)</label>
+                <div class="checkbox">
+                    <label>
+                        <input type="hidden" value="false" class="checkbox" id="IsActive" name="IsActive">
+                        <input type="checkbox" class="checkbox" data-join="IsActive">
+                        <i class="input-helper"></i>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

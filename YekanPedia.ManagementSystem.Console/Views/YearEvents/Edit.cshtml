@@ -1,0 +1,29 @@
+﻿@model YearEvents
+<div class="block-header">
+    <h2>@LocalMessage.YearEventsManagement</h2>
+</div>
+<div class="card">
+    <div class="card-header">
+    </div>
+    <div class="card-body card-padding">
+        @using (Html.BeginForm(MVC.YearEvents.ActionNames.Edit, MVC.YearEvents.Name, FormMethod.Post))
+        {
+            @Html.HiddenFor(X => X.YearEventsId)
+            Html.RenderPartial(MVC.YearEvents.Views.Partial._CreateYearEvents, Model);
+
+            <div class="row">
+                <div class="m-l-20  m-t-30 text-left">
+                    <button type="submit" id="saveAboutMeForm" class="btn btn-primary btn-sm waves-effect">
+                        <i class="zmdi zmdi-check"></i>
+                        @LocalMessage.Edit
+                    </button>
+                    <a href="@Url.Action(MVC.YearEvents.ActionNames.Add,MVC.YearEvents.Name)" class="btn btn-danger btn-sm waves-effect">
+                        <i class="zmdi zmdi-arrow-forward"></i>
+                        @LocalMessage.Cancel
+                    </a>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+@{ Html.RenderAction(MVC.YearEvents.YearEventsList());}

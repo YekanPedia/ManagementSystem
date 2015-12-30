@@ -1,0 +1,21 @@
+﻿@model YearEvents
+@{ Layout = null;}
+<thead>
+    <tr>
+        <th data-column-id="Month" data-visible="false">
+            @Html.DisplayNameFor(X => X.Month)
+        </th>
+        <th data-column-id="Topic">
+            @Html.DisplayNameFor(X => X.Topic)
+        </th>
+        <th data-column-id="Text">
+            @Html.DisplayNameFor(X => X.Text)
+        </th>
+        <th data-column-id="IsActive">
+            @Html.DisplayNameFor(X => X.IsActive)
+        </th>
+        <th data-column-id="commands" data-formatter="commands" data-sortable="false">
+            @LocalMessage.Action
+        </th>
+    </tr>
+</thead>

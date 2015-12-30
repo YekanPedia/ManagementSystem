@@ -1,0 +1,58 @@
+﻿@model IEnumerable<YearEvents>
+@{ Layout = null;}
+<div class="card">
+    <div class="card-header">
+    </div>
+    <div class="card-body">
+        <div class="table-responsive table-hover ClassGrid">
+            <table id="classDataGrid" class="table table-striped ">
+                @{ Html.RenderPartial(MVC.YearEvents.Views.Partial._HeaderYearEventsGrid, new YearEvents());}
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr id="yearEventsId_@item.YearEventsId">
+
+                            <td>@item.Month/@item.Day</td>
+                            <td>@item.Topic</td>
+                            <td>@item.Text</td>
+                            <td>
+                                <div class="checkbox">
+                                    <label>
+                                        <input disabled type="checkbox" checked="@item.IsActive" class="checkbox activeUserChecked">
+                                        <i class="input-helper"></i>
+                                    </label>
+                                </div>
+                            </td>
+                            <td>
+                                <ul class="actions">
+                                    <li class="dropdown action-show dropup">
+                                        <a href="" data-toggle="dropdown">
+                                            <i class="zmdi zmdi-more-vert"></i>
+                                        </a>
+                                        <ul class="dropdown-menu dm-icon">
+                                            <li>
+                                                <a href="@Url.Action(MVC.YearEvents.ActionNames.Edit, MVC.YearEvents.Name, new { yearEventsId = item.YearEventsId })">
+                                                    <i class="zmdi zmdi-edit"></i>
+                                                    @LocalMessage.Edit
+                                                </a>
+                                            </li>
+                                            <li class="divider"></li>
+                                            <li>
+                                                <a href="#" class="deleteYearEvents" data-url="@Url.Action(MVC.YearEvents.ActionNames.Delete,MVC.YearEvents.Name)" data-message="@LocalMessage.DeleteConfirm" data-id="@item.YearEventsId">
+                                                    <i class="zmdi zmdi-delete"></i>
+                                                    @LocalMessage.Delete
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+</div>
