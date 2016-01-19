@@ -1,5 +1,5 @@
 ﻿@model  IEnumerable<User>
- 
+
 @{
     Layout = null;
     var ChangeStatusUrl = Url.Action(MVC.User.ActionNames.ChangeState, MVC.User.Name);
@@ -24,6 +24,14 @@
                                 <div class="checkbox">
                                     <label>
                                         <input disabled type="checkbox" checked="@item.IsTeacher" class="checkbox">
+                                        <i class="input-helper"></i>
+                                    </label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="checkbox">
+                                    <label>
+                                        <input disabled type="checkbox" checked="@(item.Telegram!=0?true:false)" class="checkbox">
                                         <i class="input-helper"></i>
                                     </label>
                                 </div>
