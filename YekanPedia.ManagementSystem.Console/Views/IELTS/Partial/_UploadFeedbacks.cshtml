@@ -1,0 +1,313 @@
+﻿<style type="text/css">
+    #dragandrophandler .lv-small {
+        padding-bottom: 3px;
+    }
+
+    .input-name {
+        padding-right: 8px;
+    }
+
+    .remove-item {
+        position: absolute;
+        left: 10px;
+        top: 5px;
+    }
+
+        .remove-item:hover i {
+            font-size: 20px !important;
+        }
+
+
+    .img-profile {
+        border: 1px solid #828282;
+        padding: 1px;
+        width: 40px;
+        height: 40px;
+    }
+
+    html > body #dragandrophandler {
+        border: 3px dotted rgba(130, 130, 130, 0.48);
+        width: 100%;
+        color: #5D5D5D;
+        margin-bottom: 50px;
+        padding: 40px;
+        height: 250px;
+    }
+
+
+    #drag-drop {
+        text-align: center;
+        vertical-align: middle;
+        width: 100%;
+        height: 100%;
+        font-size: 200%;
+        font-family: sans-serif;
+        line-height: 100px;
+    }
+
+
+
+    .f-f-sans {
+        font-family: sans-serif;
+    }
+
+    .fileupload .warning {
+        width: 100%;
+        height: 141px;
+        background-color: rgba(255, 182, 182, 0.5);
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+    }
+
+    .fileupload .overlay {
+        width: 100%;
+        height: 160px;
+        background-color: rgba(237,236,236,0.5);
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+    }
+
+        .fileupload .overlay:after {
+            clear: both;
+            content: "";
+            -webkit-animation-fill-mode: both;
+            -moz-animation-fill-mode: both;
+            -o-animation-fill-mode: both;
+            animation-fill-mode: both;
+            height: 40px;
+            width: 40px;
+            border-radius: 100%;
+            border: 2px solid #2196f3;
+            -webkit-animation: ball-scale-ripple 1s 0s infinite cubic-bezier(0.21, 0.53, 0.56, 0.8);
+            -moz-animation: ball-scale-ripple 1s 0s infinite cubic-bezier(0.21, 0.53, 0.56, 0.8);
+            -o-animation: ball-scale-ripple 1s 0s infinite cubic-bezier(0.21, 0.53, 0.56, 0.8);
+            animation: ball-scale-ripple 1s 0s infinite cubic-bezier(0.21, 0.53, 0.56, 0.8);
+            position: absolute;
+            left: 50%;
+            margin-left: -20px;
+            top: 50%;
+            margin-top: -20px;
+            z-index: 3;
+        }
+
+    .file-selected {
+        border-color: rgba(66,133,244,0.6) !important;
+        border: 1px solid;
+    }
+</style>
+<div id="dragandrophandler" class="col-lg-12 text-right">
+    <div id="drag-drop">
+        Drag & Drop Your Files Here
+    </div>
+    <button id="sendBtn" style="left: 20px;bottom: 20px;" type="submit" class="animated hide btn btn-login btn-danger btn-float">
+        <i class="zmdi zmdi-check-all"></i>
+    </button>
+</div>
+
+<br><br>
+<div id="status"></div>
+@{
+    Html.AddJavaScript(@<text>
+        <script>
+            function createSlider(slider, span) {
+                noUiSlider.create(slider, {
+                    start: 5,
+                    connect: "lower",
+                    range: {
+                        'min': [0, 0.5],
+                        '90%': [8, 0.5],
+                        'max': 9
+                    }
+                });
+                slider.noUiSlider.on('update', function (values, handle) {
+                    $(span).html(values[0]);
+                    $(slider).attr('data-val', values[0]);
+                });
+            }
+            // library
+            var arrayFilesName = [];
+            function createBoxUPload(file, obj) {
+                $.ajax({
+                    type: "Get",
+                    url: "@Url.Action(MVC.IELTS.ActionNames.GetUserInfoByIeltsFile,MVC.IELTS.Name)",
+                    data: "ieltsMaterialId=" + file.name.split(".")[0],
+                    dataType: "json",
+                    success: function (response) {
+                        console.log(response);
+                        $(obj).append('<div id="' + file.name.split(".")[0] + '" class=" fileupload col-md-3 pull-right p-10 card m-10 bs-item z-depth-1 animated ">' +
+                                           '<div class="overlay hide"></div><div class="success hide"></div><div class="warning hide"></div>' +
+                                           '<a href="#" class="remove-item" data-fileName="' + file.name + '" ><i class="zmdi zmdi-close-circle c-red f-s-17"></i></a>' +
+                                           '<div class="media">                              ' +
+                                           '     <div class="media-body p-r-0 ">                ' +
+                                           '         <div class="lv-title text-right p-r-0"><div class="pull-right">                       ' +
+                                           '         <img class="lv-img-sm img-profile" src="' + response.User.Picture + '" alt="">      ' +
+                                           '         </div><span class="input-name">' + response.User.FullName + '</span></div>    ' +
+                                           '         <div class="lv-small text-left  p-l-0 f-f-sans">' + response.Topic.TopicCode + '<i class="zmdi zmdi-comment-alt-text m-r-5 f-s-17" /></div>' +
+                                           '         <div class="lv-small text-left  p-l-0 f-f-sans">' + response.Topic.ExamType.Type + '/' + response.Topic.Book.Type + '<i class="zmdi zmdi-book m-r-5 f-s-17" /></div>           ' +
+                                            '         <div class="lv-small text-left p-l-0 f-f-sans">Score : <span id="span-slider-' + response.IeltsMaterialId + '">5</span><i class="zmdi zmdi-functions m-r-5 f-s-17" /></div>           ' +
+                                            '         <div class="lv-small text-left p-l-0 f-f-sans p-t-10 p-b-0"><div id="input-slider-' + response.IeltsMaterialId + '" class="input-slider m-b-25  noUi-target noUi-ltr noUi-horizontal noUi-background" data-is-color="blue" data-is-start="5" data-min="0" data-max="9"></div></div>           ' +
+                                           '     </div>                                         ' +
+                                           ' </div>' +
+                                        '</div>');
+                        createSlider(document.getElementById('input-slider-' + response.IeltsMaterialId), document.getElementById('span-slider-' + response.IeltsMaterialId));
+                    },
+                    error: function () {
+                    }
+                });
+            }
+          var  thisFileSelected = function (fileId) {
+                console.log(fileId);
+                $("#" + fileId).addClass("shake file-selected");
+                setTimeout(function () {
+                    $("#" + fileId).removeClass("shake file-selected");
+                }, 2000);
+            }
+            function handleFileUpload(files, obj) {
+                var allowAdd = true;
+                for (var i = 0; i < files.length; i++) {
+                    for (var j = 0; j < arrayFilesName.length; j++) {
+                        if (arrayFilesName[j].name == files[i].name) {
+                            allowAdd = false;
+                            console.log(files[i].name);
+                            thisFileSelected(files[i].name.split(".")[0]);
+                            break;
+                        }
+                    }
+                    if (allowAdd) {
+                        arrayFilesName.push(files[i]);
+                        $("#drag-drop").hide();
+                        var box = new createBoxUPload(files[i], obj);
+                    }
+                    if (arrayFilesName.length == 1) {
+                        $("#sendBtn").removeClass('hide').addClass('bounceInUp');
+                    }
+                    // sendFileToServer(fd, status);
+                }
+            }
+            $(document).ready(function () {
+                var obj = $("#dragandrophandler");
+                obj.on('dragenter', function (e) {
+                    e.stopPropagation();
+                    e.preventDefault();
+                });
+                obj.on('dragover', function (e) {
+                    e.stopPropagation();
+                    e.preventDefault();
+                });
+                obj.on('drop', function (e) {
+                    e.preventDefault();
+                    var files = e.originalEvent.dataTransfer.files;
+                    handleFileUpload(files, obj);
+                });
+
+                $(document).on('dragenter', function (e) {
+                    e.stopPropagation();
+                    e.preventDefault();
+                });
+                $(document).on('dragover', function (e) {
+                    e.stopPropagation();
+                    e.preventDefault();
+                });
+                $(document).on('drop', function (e) {
+                    e.stopPropagation();
+                    e.preventDefault();
+                });
+
+                $(document).on('click', '.remove-item', function (e) {
+                    var removed = false;
+                    for (var j = 0; j < arrayFilesName.length; j++) {
+                        if (arrayFilesName[j].name == $(this).attr('data-fileName')) {
+                            arrayFilesName.splice(j, 1);
+                            removed = true;
+                            break;
+                        }
+                    }
+                    if (arrayFilesName.length == 0) {
+                        $("#sendBtn").removeClass('bounceInUp').addClass('bounceOutDown');
+                        setTimeout(function () { $("#sendBtn").addClass('hide').removeClass('bounceOutDown'); $("#drag-drop").show(); }, 1000);
+                    }
+                    if (removed) {
+                        var $el = $(this).parent();
+                        $(this).parent().addClass('bounceOut');
+                        setTimeout(function () {
+                            $el.remove();
+                        }, 1000);
+                    }
+                });
+
+                $("#sendBtn").click(function (event) {
+                    var $btnSend = $(this);
+                    $btnSend.attr('disabled', 'disabled');
+                    var extraData = [];
+                    event.stopPropagation();
+                    event.preventDefault();
+                    for (var i = 0; i < arrayFilesName.length; i++) {
+                        var formData = new FormData();
+                        var fileName = arrayFilesName[i].name.split(".")[0];
+                        formData.append(fileName, arrayFilesName[i]);
+                        formData.append(fileName, $("#input-slider-" + fileName).attr('data-val'));
+                        var $overlay = $("#" + fileName + " .overlay");
+                        $overlay.removeClass('hide');
+                        var uploadURL = "/IELTS/SendFeedback";
+                        var jqXHR = $.ajax({
+                            url: uploadURL,
+                            type: "POST",
+                            contentType: false,
+                            processData: false,
+                            cache: false,
+                            data: formData,
+                            success: function (data) {
+                                $overlay = $("#" + data.Result + " .overlay");
+                                var $success = $("#" + data.Result + " .success");
+                                var $warning = $("#" + data.Result + " .warning");
+                                if (data.IsSuccessfull) {
+
+                                    $overlay.addClass("hide");
+                                    $success.removeClass("hide");
+                                    setTimeout(function () {
+                                        $("#" + data.Result).addClass('bounceOut');
+                                        setTimeout(function () {
+                                            $("#" + fileName).remove();
+                                        }, 1000);
+                                    }, 1000);
+                                    for (var j = 0; j < arrayFilesName.length; j++) {
+                                        if (arrayFilesName[j].name.split('.')[0] == data.Result) {
+                                            console.log(data.Result);
+                                            arrayFilesName.splice(j, 1);
+                                            removed = true;
+                                            if (arrayFilesName.length == 0) {
+                                                setTimeout(function () {
+                                                    $("#sendBtn").removeClass('bounceInUp').addClass('bounceOutDown');
+                                                    setTimeout(function () {
+                                                        $("#drag-drop").show();
+                                                        $("#sendBtn").prop("disabled", false);
+                                                        $("#sendBtn").addClass('hide').removeClass('bounceOutDown');
+                                                    }, 1000);
+                                                }, 1000);
+                                            }
+                                            break;
+                                        }
+                                    }
+                                } else {
+                                    $overlay.addClass("hide");
+                                    $warning.removeClass("hide");
+                                    setTimeout(function () {
+                                        $warning.addClass('hide');
+                                    }, 1000);
+                                    $btnSend.prop("disabled", false);
+                                }
+                            }, error: function () {
+
+                            }
+                        });
+                    }
+                });
+            });
+        </script>
+
+    </text>);
+}

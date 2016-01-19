@@ -241,6 +241,12 @@ namespace YekanPedia.ManagementSystem.ExternalService.FilesProxy {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFilesProxy/UploadDocument", ReplyAction="http://tempuri.org/IFilesProxy/UploadDocumentResponse")]
         System.Threading.Tasks.Task<YekanPedia.ManagementSystem.ExternalService.FilesProxy.FileInfo> UploadDocumentAsync(YekanPedia.ManagementSystem.ExternalService.FilesProxy.PostedFile file);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFilesProxy/OverrideDocument", ReplyAction="http://tempuri.org/IFilesProxy/OverrideDocumentResponse")]
+        bool OverrideDocument(YekanPedia.ManagementSystem.ExternalService.FilesProxy.PostedFile file, string address);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFilesProxy/OverrideDocument", ReplyAction="http://tempuri.org/IFilesProxy/OverrideDocumentResponse")]
+        System.Threading.Tasks.Task<bool> OverrideDocumentAsync(YekanPedia.ManagementSystem.ExternalService.FilesProxy.PostedFile file, string address);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFilesProxy/DeleteFile", ReplyAction="http://tempuri.org/IFilesProxy/DeleteFileResponse")]
         bool DeleteFile(string address);
         
@@ -313,6 +319,14 @@ namespace YekanPedia.ManagementSystem.ExternalService.FilesProxy {
         
         public System.Threading.Tasks.Task<YekanPedia.ManagementSystem.ExternalService.FilesProxy.FileInfo> UploadDocumentAsync(YekanPedia.ManagementSystem.ExternalService.FilesProxy.PostedFile file) {
             return base.Channel.UploadDocumentAsync(file);
+        }
+        
+        public bool OverrideDocument(YekanPedia.ManagementSystem.ExternalService.FilesProxy.PostedFile file, string address) {
+            return base.Channel.OverrideDocument(file, address);
+        }
+        
+        public System.Threading.Tasks.Task<bool> OverrideDocumentAsync(YekanPedia.ManagementSystem.ExternalService.FilesProxy.PostedFile file, string address) {
+            return base.Channel.OverrideDocumentAsync(file, address);
         }
         
         public bool DeleteFile(string address) {

@@ -69,14 +69,14 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
-    <None Include="Service References\FilesProxy\FilesProxy.wsdl" />
-    <None Include="Service References\FilesProxy\FilesProxy.xsd">
+    <None Include="Service References\FilesProxy\FilesProxy1.wsdl" />
+    <None Include="Service References\FilesProxy\FilesProxy3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\FilesProxy\FilesProxy1.xsd">
+    <None Include="Service References\FilesProxy\FilesProxy31.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\FilesProxy\FilesProxy2.xsd">
+    <None Include="Service References\FilesProxy\FilesProxy32.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\FilesProxy\YekanPedia.ManagementSystem.ExternalService.FilesProxy.FileInfo.datasource">
@@ -128,7 +128,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\FilesProxy\FilesProxy.disco" />
+    <None Include="Service References\FilesProxy\FilesProxy1.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

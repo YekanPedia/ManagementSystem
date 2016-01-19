@@ -112,8 +112,10 @@
             }
         }
 
-        public string CanceledSessionNotification(string date) => $"کلاس {Course.CourseName} استاد {User.FullName} در تاریخ {date} کنسل می باشد . باتشکر یکان پدیا";
-        public string AddSessionNotification(string date) => $"فایل های کلاس {Course.CourseName} استاد {User.FullName} در تاریخ {date} بر روی سایت بارگذاری شد . باتشکر یکان پدیا";
+        public string CanceledSessionNotification(string date) =>
+            string.Format(DisplayNames.CanceledSessionNotification, date);
+        public string AddSessionNotification(string date) =>
+              string.Format(DisplayNames.AddSessionNotification, Course.CourseName, date);
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
             var fields = new[] { nameof(FinishDateSh) };

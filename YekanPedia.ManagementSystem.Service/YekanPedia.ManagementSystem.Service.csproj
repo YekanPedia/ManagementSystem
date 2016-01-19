@@ -61,6 +61,7 @@
     <Compile Include="Implement\ClassTypeService.cs" />
     <Compile Include="Implement\CourseService.cs" />
     <Compile Include="Implement\IELTS\IeltsMaterialService.cs" />
+    <Compile Include="Implement\IELTS\TopicService.cs" />
     <Compile Include="Implement\Overview\EducationService.cs" />
     <Compile Include="Implement\FeedbackService.cs" />
     <Compile Include="Implement\NotificationService.cs" />
@@ -84,6 +85,7 @@
     <Compile Include="Interfaces\IClassTypeService.cs" />
     <Compile Include="Interfaces\ICourseService.cs" />
     <Compile Include="Interfaces\IELTS\IIeltsMaterialService.cs" />
+    <Compile Include="Interfaces\IELTS\ITopicService.cs" />
     <Compile Include="Interfaces\IStaticFilesService.cs" />
     <Compile Include="Interfaces\Overview\IEducationService.cs" />
     <Compile Include="Interfaces\IELTS\IExamTypeService.cs" />

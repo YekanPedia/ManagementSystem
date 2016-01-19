@@ -124,7 +124,7 @@ namespace YekanPedia.ManagementSystem.Service.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to کلمه عبور جدید شما : {0}.
+        ///   Looks up a localized string similar to Congrats! You have successfully reset your password. Your new password is: {0}.
         /// </summary>
         internal static string OTP {
             get {
@@ -165,6 +165,15 @@ namespace YekanPedia.ManagementSystem.Service.Properties {
         internal static string RequestDone {
             get {
                 return ResourceManager.GetString("RequestDone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to your feedback was uploaded ,please download it from this url :  .
+        /// </summary>
+        internal static string SendFeedbackFiles {
+            get {
+                return ResourceManager.GetString("SendFeedbackFiles", resourceCulture);
             }
         }
         

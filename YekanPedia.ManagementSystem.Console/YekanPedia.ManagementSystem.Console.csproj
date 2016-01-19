@@ -422,6 +422,7 @@
       <DependentUpon>Feedback.rtl.css</DependentUpon>
     </Content>
     <Content Include="Content\Styles\Public\Fullcalendar.css" />
+    <Content Include="Content\Styles\Public\jquery.nouislider.min.css" />
     <Content Include="Content\Styles\Public\LightGallery.css" />
     <Content Include="Content\Styles\Public\LoadingBar.css" />
     <Content Include="Content\Styles\Public\MapStyle.css" />
@@ -454,6 +455,9 @@
       <DependentUpon>ClassController.js</DependentUpon>
     </Content>
     <Content Include="Scripts\Application\AboutUsController.js" />
+    <Content Include="Scripts\Application\CVController.min.js">
+      <DependentUpon>CVController.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\Application\EducationController.js" />
     <Content Include="Scripts\Application\EducationController.min.js">
       <DependentUpon>EducationController.js</DependentUpon>
@@ -558,6 +562,8 @@
     <Content Include="Scripts\JQuery\SparkLine\jquery.sparkline.min.js" />
     <Content Include="Scripts\JQuery\Sweet\sweet-alert.min.js" />
     <Content Include="Scripts\JQuery\Type\jQuery.Type.js" />
+    <Content Include="Scripts\JQuery\UiSlider\jquery.nouislider.all.min.js" />
+    <Content Include="Scripts\JQuery\UiSlider\nouislider.js" />
     <Content Include="Scripts\JQuery\Validation\jquery.validate.js" />
     <Content Include="Scripts\JQuery\Validation\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\JQuery\Validation\jquery.validation.messages.js" />
@@ -671,6 +677,9 @@
     <Content Include="Views\IELTS\Partial\_CreateIeltsMaterial.cshtml" />
     <Content Include="Views\IELTS\Partial\_UserFilesList.cshtml" />
     <Content Include="Views\IELTS\Partial\_HeaderIeltsMaterialGrid.cshtml" />
+    <Content Include="Views\IELTS\SendFeedback.cshtml" />
+    <Content Include="Views\IELTS\Partial\_UploadFeedbacks.cshtml" />
+    <Content Include="Views\IELTS\Partial\_Topic.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -741,6 +750,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\JQuery\Feedback\feedback.ts" />
     <TypeScriptCompile Include="Scripts\JQuery\Feedback\Html2Convas.ts" />
+    <TypeScriptCompile Include="Scripts\JQuery\FileUpload\fileupload.ts" />
     <TypeScriptCompile Include="Scripts\JQuery\Maps\google.maps.d.ts" />
     <TypeScriptCompile Include="Scripts\JQuery\Maps\gsa.ts" />
     <TypeScriptCompile Include="Scripts\JQuery\jquery.d.ts" />

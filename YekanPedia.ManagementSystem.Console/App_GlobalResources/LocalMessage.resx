@@ -450,4 +450,10 @@
   <data name="PleaseSelectFile" xml:space="preserve">
     <value>لطفا فایل ارسالی را انتخاب نمایید</value>
   </data>
+  <data name="String1" xml:space="preserve">
+    <value>رزومه</value>
+  </data>
+  <data name="CV" xml:space="preserve">
+    <value>رزومه</value>
+  </data>
 </root>

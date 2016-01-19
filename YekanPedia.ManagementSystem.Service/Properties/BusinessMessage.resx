@@ -136,7 +136,7 @@
     <value>درخواست مورد نظر با موفقیت ثبت شد</value>
   </data>
   <data name="OTP" xml:space="preserve">
-    <value>کلمه عبور جدید شما : {0}</value>
+    <value>Congrats! You have successfully reset your password. Your new password is: {0}</value>
   </data>
   <data name="RecordExist" xml:space="preserve">
     <value>اطلاعات ارسالی قبلا ثبت شده است</value>
@@ -161,5 +161,8 @@
   </data>
   <data name="NotAuthorizeForDelete" xml:space="preserve">
     <value>متاسفانه شما مجوز حذف این رکورد را ندارید</value>
+  </data>
+  <data name="SendFeedbackFiles" xml:space="preserve">
+    <value>your feedback was uploaded ,please download it from this url :  </value>
   </data>
 </root>

@@ -65,7 +65,12 @@
 
         public void Delete(string address)
         {
-              _fileProxyClient.DeleteFile(address);
+            _fileProxyClient.DeleteFile(address);
+        }
+
+        public bool OverrideDocument(PostedFile file, string address)
+        {
+            return _fileProxyClient.OverrideDocument(file, address);
         }
     }
 }

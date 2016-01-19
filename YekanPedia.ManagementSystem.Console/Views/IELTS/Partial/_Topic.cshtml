@@ -1,0 +1,35 @@
+﻿@model Topic
+@{
+    Layout = null;
+}
+
+<div id="" class=" fileupload col-md-3 pull-right p-10 card m-10 bs-item z-depth-1 animated ">
+    <div class=" overlay hide"></div>
+    <div class="success hide"></div>
+    <div class="warning hide"></div>
+    <a href="#" class="remove-item" data-fileName="">
+        <i class="zmdi zmdi-close-circle c-red f-s-17"></i>
+    </a>
+    <div class="media">
+
+        <div class="media-body p-r-0 ">
+
+            <div class="lv-title text-right p-r-0">
+                <div class="pull-right">
+                    <img class="lv-img-sm img-profile" src="@Model.Book.Picture" alt="">
+                </div>
+                <span class="input-name"> @Model.Book.Type </span>
+            </div>
+            <div class="lv-small text-left  p-l-0 f-f-sans">
+                <i class="zmdi zmdi-comment-alt-text m-r-5 f-s-17" />
+            </div>
+            <div class="lv-small text-left  p-l-0 f-f-sans">
+                response.Topic.ExamType.Type  /  response.Topic.Book.Type  
+                <i class="zmdi zmdi-book m-r-5 f-s-17" />
+            </div>
+            <div class="lv-small text-left p-l-0 f-f-sans">
+                Score :
+            </div>
+        </div>
+    </div>
+</div>

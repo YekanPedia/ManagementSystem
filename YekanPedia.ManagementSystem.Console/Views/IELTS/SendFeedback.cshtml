@@ -1,0 +1,34 @@
+﻿@model IEnumerable<IeltsMaterial>
+
+<div class="card">
+    <div class="pm-body clearfix">
+        <ul class="tab-nav tn-justified" data-tab-color="amber" tabindex="1" style="overflow: hidden; outline: none;">
+            <li class=" waves-effect active">
+                <a href="#dlFiles" aria-controls="dlFiles" role="tab" data-toggle="tab">
+                    @LocalMessage.Download (@Model.Count())
+                </a>
+            </li>
+            <li class=" waves-effect">
+                <a href="#sndFiles" aria-controls="sndFiles" role="tab" data-toggle="tab">
+                    @LocalMessage.IeltsMaterialSend
+                </a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div id="dlFiles" class="tab-pane fade in active  p-20 ">
+                @{
+                    Html.RenderPartial(MVC.IELTS.Views.Partial._UserFilesList, Model);
+                }
+            </div>
+            <div id="sndFiles" class="tab-pane  fade p-20 ">
+                @{
+                    Html.RenderPartial(MVC.IELTS.Views.Partial._UploadFeedbacks);
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script type="text/javascript" src="@Url.Content(Links.Scripts.Application.IeltsMaterialController_min_js)"></script>
+}

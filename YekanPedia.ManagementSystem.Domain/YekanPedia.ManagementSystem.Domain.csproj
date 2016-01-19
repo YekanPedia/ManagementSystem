@@ -47,6 +47,7 @@
     <Compile Include="Entity\IELTS\ExamType.cs" />
     <Compile Include="Entity\IELTS\Book.cs" />
     <Compile Include="Entity\IELTS\IELTSMaterial.cs" />
+    <Compile Include="Entity\IELTS\Topic.cs" />
     <Compile Include="Entity\Role\ActionRole.cs" />
     <Compile Include="Entity\Activity\ActivityTypeMap.cs" />
     <Compile Include="Entity\Activity\ActivityType.cs" />
@@ -100,7 +101,9 @@
       <Name>YekanPedia.ManagementSystem.InfraStructure</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="bundleconfig.json" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

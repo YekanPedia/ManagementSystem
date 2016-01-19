@@ -58,9 +58,21 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
 
         [NonAction]
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.JsonResult GetUserInfoByIeltsFile()
+        {
+            return new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.GetUserInfoByIeltsFile);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public virtual System.Web.Mvc.JsonResult Delete()
         {
             return new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.Delete);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.PartialViewResult GetTopic()
+        {
+            return new T4MVC_System_Web_Mvc_PartialViewResult(Area, Name, ActionNames.GetTopic);
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -78,20 +90,34 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNamesClass
         {
+            public readonly string GetUserInfoByIeltsFile = "GetUserInfoByIeltsFile";
             public readonly string SendWrittingFile = "SendWrittingFile";
             public readonly string UserFilesList = "UserFilesList";
             public readonly string Delete = "Delete";
+            public readonly string SendFeedback = "SendFeedback";
+            public readonly string GetTopic = "GetTopic";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants
         {
+            public const string GetUserInfoByIeltsFile = "GetUserInfoByIeltsFile";
             public const string SendWrittingFile = "SendWrittingFile";
             public const string UserFilesList = "UserFilesList";
             public const string Delete = "Delete";
+            public const string SendFeedback = "SendFeedback";
+            public const string GetTopic = "GetTopic";
         }
 
 
+        static readonly ActionParamsClass_GetUserInfoByIeltsFile s_params_GetUserInfoByIeltsFile = new ActionParamsClass_GetUserInfoByIeltsFile();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_GetUserInfoByIeltsFile GetUserInfoByIeltsFileParams { get { return s_params_GetUserInfoByIeltsFile; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_GetUserInfoByIeltsFile
+        {
+            public readonly string ieltsMaterialId = "ieltsMaterialId";
+        }
         static readonly ActionParamsClass_SendWrittingFile s_params_SendWrittingFile = new ActionParamsClass_SendWrittingFile();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ActionParamsClass_SendWrittingFile SendWrittingFileParams { get { return s_params_SendWrittingFile; } }
@@ -110,6 +136,22 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             public readonly string ieltsMaterialId = "ieltsMaterialId";
             public readonly string path = "path";
         }
+        static readonly ActionParamsClass_SendFeedback s_params_SendFeedback = new ActionParamsClass_SendFeedback();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_SendFeedback SendFeedbackParams { get { return s_params_SendFeedback; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_SendFeedback
+        {
+            public readonly string data = "data";
+        }
+        static readonly ActionParamsClass_GetTopic s_params_GetTopic = new ActionParamsClass_GetTopic();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_GetTopic GetTopicParams { get { return s_params_GetTopic; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_GetTopic
+        {
+            public readonly string topicId = "topicId";
+        }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ViewsClass Views { get { return s_views; } }
@@ -120,8 +162,10 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
+                public readonly string SendFeedback = "SendFeedback";
                 public readonly string SendWrittingFile = "SendWrittingFile";
             }
+            public readonly string SendFeedback = "~/Views/IELTS/SendFeedback.cshtml";
             public readonly string SendWrittingFile = "~/Views/IELTS/SendWrittingFile.cshtml";
             static readonly _PartialClass s_Partial = new _PartialClass();
             public _PartialClass Partial { get { return s_Partial; } }
@@ -134,10 +178,14 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
                 {
                     public readonly string _CreateIeltsMaterial = "_CreateIeltsMaterial";
                     public readonly string _HeaderIeltsMaterialGrid = "_HeaderIeltsMaterialGrid";
+                    public readonly string _Topic = "_Topic";
+                    public readonly string _UploadFeedbacks = "_UploadFeedbacks";
                     public readonly string _UserFilesList = "_UserFilesList";
                 }
                 public readonly string _CreateIeltsMaterial = "~/Views/IELTS/Partial/_CreateIeltsMaterial.cshtml";
                 public readonly string _HeaderIeltsMaterialGrid = "~/Views/IELTS/Partial/_HeaderIeltsMaterialGrid.cshtml";
+                public readonly string _Topic = "~/Views/IELTS/Partial/_Topic.cshtml";
+                public readonly string _UploadFeedbacks = "~/Views/IELTS/Partial/_UploadFeedbacks.cshtml";
                 public readonly string _UserFilesList = "~/Views/IELTS/Partial/_UserFilesList.cshtml";
             }
         }
@@ -147,6 +195,18 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
     public partial class T4MVC_IELTSController : YekanPedia.ManagementSystem.Console.Controllers.IELTSController
     {
         public T4MVC_IELTSController() : base(Dummy.Instance) { }
+
+        [NonAction]
+        partial void GetUserInfoByIeltsFileOverride(T4MVC_System_Web_Mvc_JsonResult callInfo, System.Guid ieltsMaterialId);
+
+        [NonAction]
+        public override System.Web.Mvc.JsonResult GetUserInfoByIeltsFile(System.Guid ieltsMaterialId)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.GetUserInfoByIeltsFile);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "ieltsMaterialId", ieltsMaterialId);
+            GetUserInfoByIeltsFileOverride(callInfo, ieltsMaterialId);
+            return callInfo;
+        }
 
         [NonAction]
         partial void SendWrittingFileOverride(T4MVC_System_Web_Mvc_ViewResult callInfo);
@@ -193,6 +253,41 @@ namespace YekanPedia.ManagementSystem.Console.Controllers
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "ieltsMaterialId", ieltsMaterialId);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "path", path);
             DeleteOverride(callInfo, ieltsMaterialId, path);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void SendFeedbackOverride(T4MVC_System_Web_Mvc_ViewResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ViewResult SendFeedback()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ViewResult(Area, Name, ActionNames.SendFeedback);
+            SendFeedbackOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void SendFeedbackOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, string data);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult SendFeedback(string data)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.SendFeedback);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "data", data);
+            SendFeedbackOverride(callInfo, data);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void GetTopicOverride(T4MVC_System_Web_Mvc_PartialViewResult callInfo, int topicId);
+
+        [NonAction]
+        public override System.Web.Mvc.PartialViewResult GetTopic(int topicId)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_PartialViewResult(Area, Name, ActionNames.GetTopic);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "topicId", topicId);
+            GetTopicOverride(callInfo, topicId);
             return callInfo;
         }
 

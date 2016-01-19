@@ -123,6 +123,9 @@
   <data name="Address" xml:space="preserve">
     <value>آدرس</value>
   </data>
+  <data name="AddSessionNotification" xml:space="preserve">
+    <value>Dear students, the files of the class “{0}” {1} have been uploaded on Yekanpedia. You can now download and enjoy your files!</value>
+  </data>
   <data name="BirthDate" xml:space="preserve">
     <value>تاریخ تولد</value>
   </data>
@@ -131,6 +134,9 @@
   </data>
   <data name="Book" xml:space="preserve">
     <value>کتاب</value>
+  </data>
+  <data name="CanceledSessionNotification" xml:space="preserve">
+    <value>Dear candidate, it is to notify you that the classes on {0} have been cancelled.</value>
   </data>
   <data name="Capacity" xml:space="preserve">
     <value>ظرفیت</value>
@@ -348,7 +354,7 @@
   <data name="TimeTo" xml:space="preserve">
     <value>تا ساعت</value>
   </data>
-  <data name="Topic" xml:space="preserve">
+  <data name="TopicId" xml:space="preserve">
     <value>موضوع</value>
   </data>
   <data name="TransactionCode" xml:space="preserve">
@@ -371,5 +377,20 @@
   </data>
   <data name="WorkStartYear" xml:space="preserve">
     <value>سال شروع به کار</value>
+  </data>
+  <data name="Score" xml:space="preserve">
+    <value>نمره</value>
+  </data>
+  <data name="SendFeedbackDateSh" xml:space="preserve">
+    <value>تاریخ جواب</value>
+  </data>
+  <data name="TaskNumber" xml:space="preserve">
+    <value>شماره تسک</value>
+  </data>
+  <data name="TopicCode" xml:space="preserve">
+    <value>کد</value>
+  </data>
+  <data name="Topic" xml:space="preserve">
+    <value>موضوع</value>
   </data>
 </root>

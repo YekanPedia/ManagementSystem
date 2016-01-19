@@ -20,6 +20,6 @@
         [Display(ResourceType = typeof(DisplayNames), Name = nameof(IsActive))]
         public bool IsActive { get; set; }
 
-        public virtual ICollection<IeltsMaterial> IeltsMaterial { get; set; }
+        public virtual ICollection<Topic> Topic { get; set; }
     }
 }

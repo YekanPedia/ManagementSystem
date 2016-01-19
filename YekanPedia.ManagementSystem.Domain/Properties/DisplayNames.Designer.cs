@@ -79,6 +79,15 @@ namespace YekanPedia.ManagementSystem.Domain.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dear students, the files of the class “{0}” {1} have been uploaded on Yekanpedia. You can now download and enjoy your files!.
+        /// </summary>
+        public static string AddSessionNotification {
+            get {
+                return ResourceManager.GetString("AddSessionNotification", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to تاریخ تولد.
         /// </summary>
         public static string BirthDate {
@@ -102,6 +111,15 @@ namespace YekanPedia.ManagementSystem.Domain.Properties {
         public static string Book {
             get {
                 return ResourceManager.GetString("Book", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dear candidate, it is to notify you that the classes on {0} have been cancelled..
+        /// </summary>
+        public static string CanceledSessionNotification {
+            get {
+                return ResourceManager.GetString("CanceledSessionNotification", resourceCulture);
             }
         }
         
@@ -655,11 +673,29 @@ namespace YekanPedia.ManagementSystem.Domain.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to نمره.
+        /// </summary>
+        public static string Score {
+            get {
+                return ResourceManager.GetString("Score", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to تاریخ ارسال فایل.
         /// </summary>
         public static string SendDateSh {
             get {
                 return ResourceManager.GetString("SendDateSh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تاریخ جواب.
+        /// </summary>
+        public static string SendFeedbackDateSh {
+            get {
+                return ResourceManager.GetString("SendFeedbackDateSh", resourceCulture);
             }
         }
         
@@ -696,6 +732,15 @@ namespace YekanPedia.ManagementSystem.Domain.Properties {
         public static string Subject {
             get {
                 return ResourceManager.GetString("Subject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to شماره تسک.
+        /// </summary>
+        public static string TaskNumber {
+            get {
+                return ResourceManager.GetString("TaskNumber", resourceCulture);
             }
         }
         
@@ -759,6 +804,24 @@ namespace YekanPedia.ManagementSystem.Domain.Properties {
         public static string Topic {
             get {
                 return ResourceManager.GetString("Topic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to کد.
+        /// </summary>
+        public static string TopicCode {
+            get {
+                return ResourceManager.GetString("TopicCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to موضوع.
+        /// </summary>
+        public static string TopicId {
+            get {
+                return ResourceManager.GetString("TopicId", resourceCulture);
             }
         }
         

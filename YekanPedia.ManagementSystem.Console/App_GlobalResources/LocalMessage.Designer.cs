@@ -394,6 +394,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to رزومه.
+        /// </summary>
+        internal static string CV {
+            get {
+                return ResourceManager.GetString("CV", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to داشبورد.
         /// </summary>
         internal static string Dashboard {
@@ -939,6 +948,15 @@ namespace Resources {
         internal static string Statistics {
             get {
                 return ResourceManager.GetString("Statistics", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to رزومه.
+        /// </summary>
+        internal static string String1 {
+            get {
+                return ResourceManager.GetString("String1", resourceCulture);
             }
         }
         

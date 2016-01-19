@@ -64,10 +64,6 @@
     <Compile Include="Logging\ElmahEfInterceptorException.cs" />
     <Compile Include="Logging\IEfExceptionsLogger.cs" />
     <Compile Include="Interception\PersianCharactersInterceptor.cs" />
-    <Compile Include="Migrations\201512301407321_ignore ielts.cs" />
-    <Compile Include="Migrations\201512301407321_ignore ielts.Designer.cs">
-      <DependentUpon>201512301407321_ignore ielts.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -84,11 +80,6 @@
       <Project>{d742b376-2be2-47ff-b70f-4f5f63a67bab}</Project>
       <Name>YekanPedia.ManagementSystem.InfraStructure</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201512301407321_ignore ielts.resx">
-      <DependentUpon>201512301407321_ignore ielts.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

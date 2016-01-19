@@ -2,6 +2,7 @@
 {
     using System.Configuration;
     public static class AppSettings {
+        public static string GcmApiKey => ConfigurationManager.AppSettings["GcmApiKey"];
         public static string GoogleClientId => ConfigurationManager.AppSettings["GoogleClientId"];
         public static string GoogleClientSecret => ConfigurationManager.AppSettings["GoogleClientSecret"];
         public static string DefaultAvatarUrl => ConfigurationManager.AppSettings["DefaultAvatarUrl"];

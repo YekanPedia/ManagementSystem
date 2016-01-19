@@ -15,39 +15,37 @@
     public partial class IELTSController : Controller
     {
         #region Constructur
-        readonly IBookService _bookService;
-        readonly IExamTypeService _examTypeService;
+
         readonly IIeltsMaterialService _ieltsMaterialService;
+        readonly ITopicService _topicService;
         readonly IFilesProxyAdapter _filesProxyAdapter;
-        public IELTSController(IIeltsMaterialService ieltsMaterialService, IBookService bookService, IExamTypeService examTypeService, IFilesProxyAdapter filesProxyAdapter)
+        public IELTSController(IIeltsMaterialService ieltsMaterialService,
+            ITopicService topicService,
+            IFilesProxyAdapter filesProxyAdapter)
         {
-            _examTypeService = examTypeService;
-            _bookService = bookService;
+            _topicService = topicService;
             _ieltsMaterialService = ieltsMaterialService;
             _filesProxyAdapter = filesProxyAdapter;
         }
-
         #endregion
 
+        [HttpGet]
+        public virtual JsonResult GetUserInfoByIeltsFile(Guid ieltsMaterialId)
+        {
+            return Json(_ieltsMaterialService.GetUserInfoByIeltsFile(ieltsMaterialId), JsonRequestBehavior.AllowGet);
+        }
         [NonAction]
         private void SetDropDownlist()
         {
             #region book
-            var book = _bookService.GetValidBook();
-            ViewBag.Book = book.Select(x => new SelectListItem()
+            var Topic = _topicService.GetAllTopic();
+            ViewBag.Topic = Topic.Select(x => new SelectListItem()
             {
-                Text = x.Type.ToString(),
-                Value = x.BookId.ToString()
+                Text = x.TopicCode.ToString(),
+                Value = x.TopicId.ToString()
             });
             #endregion
-            #region examType
-            var examType = _examTypeService.GetValidExamType();
-            ViewBag.ExamType = examType.Select(x => new SelectListItem()
-            {
-                Text = x.Type.ToString(),
-                Value = x.ExamTypeId.ToString()
-            });
-            #endregion
+
         }
 
         [HttpGet]
@@ -123,5 +121,57 @@
             return Json(result);
         }
         #endregion
+
+        #region SendFeedback
+        [HttpGet]
+        public virtual ViewResult SendFeedback()
+        {
+            return View(_ieltsMaterialService.GetNewFiles());
+        }
+
+        [HttpPost]
+        public virtual ActionResult SendFeedback(string data)
+        {
+            var Id = Guid.Parse(Request.Form.AllKeys[0]);
+            var score = float.Parse(Request.Form[0]);
+            try
+            {
+                foreach (string file in Request.Files)
+                {
+                    var fileContent = Request.Files[file];
+                    if (fileContent != null && fileContent.ContentLength > 0)
+                    {
+                        byte[] fileData = null;
+                        using (var binaryReader = new BinaryReader(fileContent.InputStream))
+                        {
+                            fileData = binaryReader.ReadBytes(fileContent.ContentLength);
+                        }
+                        return Json(_ieltsMaterialService.Complete(Id, score, fileData, fileContent.FileName.Split('.')[1]));
+                    }
+                }
+                return Json(new
+                {
+                    IsSuccessfull = false,
+                    Message = "NO Files!",
+                    Result = Id.ToString()
+                });
+            }
+            catch (Exception e)
+            {
+                return Json(new
+                {
+                    IsSuccessfull = false,
+                    Message = e.Message,
+                    Result = Id.ToString()
+                });
+            }
+        }
+        #endregion
+
+        [HttpGet]
+        public virtual PartialViewResult GetTopic(int topicId)
+        {
+            return PartialView(MVC.IELTS.Views.Partial._Topic,_topicService.Find(topicId));
+        }
     }
 }

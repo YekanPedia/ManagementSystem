@@ -21,14 +21,14 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:10702/Services/FilesProxy.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://files.yekanpedia.org/Services/FilesProxy.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="FilesProxy.wsdl" MetadataType="Wsdl" ID="9c47100c-79b3-4c5f-9ea6-f22e7772859c" SourceId="1" SourceUrl="http://localhost:10702/Services/FilesProxy.svc?wsdl" />
-    <MetadataFile FileName="FilesProxy.xsd" MetadataType="Schema" ID="bef2a6d2-cf70-46f4-ba9a-5572c49fa966" SourceId="1" SourceUrl="http://localhost:10702/Services/FilesProxy.svc?xsd=xsd1" />
-    <MetadataFile FileName="FilesProxy1.xsd" MetadataType="Schema" ID="a860bdde-bcaf-4094-9528-a82432e0f237" SourceId="1" SourceUrl="http://localhost:10702/Services/FilesProxy.svc?xsd=xsd2" />
-    <MetadataFile FileName="FilesProxy2.xsd" MetadataType="Schema" ID="23da3848-b786-4cea-857e-5d16eeccc020" SourceId="1" SourceUrl="http://localhost:10702/Services/FilesProxy.svc?xsd=xsd0" />
-    <MetadataFile FileName="FilesProxy.disco" MetadataType="Disco" ID="6f0f1400-b666-49de-af66-eaf867ee4286" SourceId="1" SourceUrl="http://localhost:10702/Services/FilesProxy.svc?disco" />
+    <MetadataFile FileName="FilesProxy3.xsd" MetadataType="Schema" ID="da0fdbef-6772-442c-a81d-18b19f5eb5ec" SourceId="1" SourceUrl="http://files.yekanpedia.org/Services/FilesProxy.svc?xsd=xsd1" />
+    <MetadataFile FileName="FilesProxy1.wsdl" MetadataType="Wsdl" ID="9fed8a4c-9533-40d0-ac85-1b67bb8d4754" SourceId="1" SourceUrl="http://files.yekanpedia.org/Services/FilesProxy.svc?wsdl" />
+    <MetadataFile FileName="FilesProxy1.disco" MetadataType="Disco" ID="4594ff95-314b-4e70-a5e3-6e17581a401c" SourceId="1" SourceUrl="http://files.yekanpedia.org/Services/FilesProxy.svc?disco" />
+    <MetadataFile FileName="FilesProxy31.xsd" MetadataType="Schema" ID="4887072a-c90f-4f74-9e44-6a1409ca9f97" SourceId="1" SourceUrl="http://files.yekanpedia.org/Services/FilesProxy.svc?xsd=xsd2" />
+    <MetadataFile FileName="FilesProxy32.xsd" MetadataType="Schema" ID="2565fcaa-8edd-42e9-b39d-7ea74fb14051" SourceId="1" SourceUrl="http://files.yekanpedia.org/Services/FilesProxy.svc?xsd=xsd0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -7,21 +7,28 @@
     using System.Data.Entity;
     using Domain.Entity;
     using System;
+    using InfraStructure.Caching;
 
     public class StatisticsServicce : IStatisticsServicce
     {
         readonly IUnitOfWork _uow;
         readonly IDbSet<User> _user;
-
-        public StatisticsServicce(IUnitOfWork uow)
+        readonly Lazy<ICacheProvider> _cache;
+        public StatisticsServicce(IUnitOfWork uow, Lazy<ICacheProvider> cache)
         {
+            _cache = cache;
             _uow = uow;
             _user = uow.Set<User>();
         }
         public UserStatistics GetUserStatistics()
         {
+            var fromCache = _cache.Value.GetItem(nameof(this.GetUserStatistics));
+            if (fromCache != null)
+            {
+                return (UserStatistics)(fromCache);
+            }
             var date = DateTime.Now.AddDays(-20);
-            var userlist = _user.Where(X => X.RegisterDate >= date).GroupBy(X => new { Year = X.RegisterDate.Year, Month =X.RegisterDate.Month, Day =X.RegisterDate.Day} )
+            var userlist = _user.Where(X => X.RegisterDate >= date).GroupBy(X => new { Year = X.RegisterDate.Year, Month = X.RegisterDate.Month, Day = X.RegisterDate.Day })
                         .Select(group => new
                         {
                             RegisterPersianDate = group.Key,
@@ -34,8 +41,7 @@
                 studentCountList += $"{item.Count},";
             }
             studentCountList += "0";
-
-            return new UserStatistics
+            var data = new UserStatistics
             {
                 CommentCount = "0",
                 CommentCountList = "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -49,6 +55,8 @@
                 WebSiteVisitCount = "0",
                 WebSiteVisitCountList = "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
             };
+            _cache.Value.PutItem(nameof(this.GetUserStatistics), data, null, DateTime.Now.AddDays(5));
+            return data;
         }
     }
 }

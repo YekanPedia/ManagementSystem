@@ -60,6 +60,7 @@
                            "~" + Links.Scripts.JQuery.Select.BootstrapSelect_js,
                            "~" + Links.Scripts.JQuery.BootGrid.jquery_bootgrid_min_js,
                            "~" + Links.Scripts.JQuery.LightGallery.lightGallery_min_js,
+                             "~" + Links.Scripts.JQuery.UiSlider.nouislider_js,
                           "~" + Links.Scripts.functions_js,
                           "~" + Links.Scripts.JQuery.Validation.jquery_validate_js,
                           "~" + Links.Scripts.JQuery.Validation.jquery_validate_unobtrusive_js,
@@ -111,7 +112,8 @@
                           "~" + Links.Content.Styles.Public.BootstrapSelect_css,
                           "~" + Links.Content.Styles.Public.Feedback_rtl_css,
                           "~" + Links.Content.Styles.Public.NProgress_css,
-                           "~" + Links.Content.Styles.Public.cropper_css
+                          "~" + Links.Content.Styles.Public.cropper_css,
+                          "~" + Links.Content.Styles.Public.jquery_nouislider_min_css
                           ));
             #endregion
         }

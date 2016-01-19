@@ -8,6 +8,10 @@
     using System.Collections.Generic;
     using Resources;
     using Extensions.Authentication;
+    using System.Net;
+    using System.Collections.Specialized;
+    using System.Text;
+    using System.IO;
 
     public partial class UserController : Controller
     {
@@ -48,7 +52,5 @@
         {
             return PartialView(MVC.User.Views.Partial._Friends, _userService.GetFriends((User as ICurrentUserPrincipal).UserId));
         }
-
-      
     }
 }

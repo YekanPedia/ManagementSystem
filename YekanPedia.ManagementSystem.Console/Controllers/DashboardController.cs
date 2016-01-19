@@ -49,7 +49,7 @@
         }
         #region User Statistics
 
-        [ChildActionOnly, OutputCache(Duration = 3600 * 5)]
+        [ChildActionOnly]
         public virtual PartialViewResult UserStatistics()
         {
             return PartialView(MVC.Dashboard.Views.Partial.Chart._UserStatistics, _statisticsService.GetUserStatistics());

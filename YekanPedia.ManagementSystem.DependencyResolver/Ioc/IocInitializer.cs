@@ -34,6 +34,7 @@
 
                 #region IELTS
                 x.For<IIeltsMaterialService>().Use<IeltsMaterialService>();
+                x.For<ITopicService>().Use<TopicService>();
                 #endregion
 
                 #region Setting

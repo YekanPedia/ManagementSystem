@@ -179,6 +179,7 @@ namespace Links
             public static readonly string ClassController_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ClassController.min.js") ? Url("ClassController.min.js") : Url("ClassController.js");
             public static readonly string ClassController_min_js = Url("ClassController.min.js");
             public static readonly string CVController_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/CVController.min.js") ? Url("CVController.min.js") : Url("CVController.js");
+            public static readonly string CVController_min_js = Url("CVController.min.js");
             public static readonly string EducationController_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/EducationController.min.js") ? Url("EducationController.min.js") : Url("EducationController.js");
             public static readonly string EducationController_min_js = Url("EducationController.min.js");
             public static readonly string IeltsMaterialController_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/IeltsMaterialController.min.js") ? Url("IeltsMaterialController.min.js") : Url("IeltsMaterialController.js");
@@ -291,6 +292,14 @@ namespace Links
                 public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
                 public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
                 public static readonly string fileinput_min_js = Url("fileinput.min.js");
+            }
+        
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class FileUpload {
+                private const string URLPATH = "~/Scripts/JQuery/FileUpload";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                public static readonly string fileupload_ts = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fileupload.min.js") ? Url("fileupload.min.js") : Url("fileupload.js");
             }
         
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -426,6 +435,15 @@ namespace Links
                 public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
                 public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
                 public static readonly string jQuery_Type_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jQuery.Type.min.js") ? Url("jQuery.Type.min.js") : Url("jQuery.Type.js");
+            }
+        
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class UiSlider {
+                private const string URLPATH = "~/Scripts/JQuery/UiSlider";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                public static readonly string jquery_nouislider_all_min_js = Url("jquery.nouislider.all.min.js");
+                public static readonly string nouislider_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nouislider.min.js") ? Url("nouislider.min.js") : Url("nouislider.js");
             }
         
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -632,6 +650,7 @@ namespace Links
                 public static readonly string Feedback_rtl_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Feedback.rtl.min.css") ? Url("Feedback.rtl.min.css") : Url("Feedback.rtl.css");
                 public static readonly string Feedback_rtl_min_css = Url("Feedback.rtl.min.css");
                 public static readonly string Fullcalendar_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Fullcalendar.min.css") ? Url("Fullcalendar.min.css") : Url("Fullcalendar.css");
+                public static readonly string jquery_nouislider_min_css = Url("jquery.nouislider.min.css");
                 public static readonly string LightGallery_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/LightGallery.min.css") ? Url("LightGallery.min.css") : Url("LightGallery.css");
                 public static readonly string LoadingBar_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/LoadingBar.min.css") ? Url("LoadingBar.min.css") : Url("LoadingBar.css");
                 public static readonly string MapStyle_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/MapStyle.min.css") ? Url("MapStyle.min.css") : Url("MapStyle.css");
@@ -752,6 +771,12 @@ namespace Links
                         public const string fileinput_min_js = "~/Scripts/JQuery/FileInput/fileinput.min.js"; 
                     }
                 }
+                public static partial class FileUpload 
+                {
+                    public static class Assets
+                    {
+                    }
+                }
                 public static partial class FullCalendar 
                 {
                     public static class Assets
@@ -864,6 +889,14 @@ namespace Links
                     public static class Assets
                     {
                         public const string jQuery_Type_js = "~/Scripts/JQuery/Type/jQuery.Type.js"; 
+                    }
+                }
+                public static partial class UiSlider 
+                {
+                    public static class Assets
+                    {
+                        public const string jquery_nouislider_all_min_js = "~/Scripts/JQuery/UiSlider/jquery.nouislider.all.min.js"; 
+                        public const string nouislider_js = "~/Scripts/JQuery/UiSlider/nouislider.js"; 
                     }
                 }
                 public static partial class Validation 
@@ -998,6 +1031,7 @@ namespace Links
                         public const string cropper_css = "~/Content/Styles/Public/cropper.css";
                         public const string Feedback_rtl_css = "~/Content/Styles/Public/Feedback.rtl.css";
                         public const string Fullcalendar_css = "~/Content/Styles/Public/Fullcalendar.css";
+                        public const string jquery_nouislider_min_css = "~/Content/Styles/Public/jquery.nouislider.min.css";
                         public const string LightGallery_css = "~/Content/Styles/Public/LightGallery.css";
                         public const string LoadingBar_css = "~/Content/Styles/Public/LoadingBar.css";
                         public const string MapStyle_css = "~/Content/Styles/Public/MapStyle.css";

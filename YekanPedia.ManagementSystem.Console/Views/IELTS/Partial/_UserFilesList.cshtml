@@ -12,11 +12,13 @@
                     @foreach (var item in Model)
                     {
                         <tr id="ieltsMaterialId_@item.IeltsMaterialId">
-                            <td>@item.Book.Type</td>
-                            <td>@item.ExamType.Type</td>
-                            <td>@item.Topic</td>
-                            <td>@item.TestNumber</td>
-                            <td>@item.Page</td>
+                            <td>@item.User.FullName</td>
+                            <td>@item.Topic.Book.Type</td>
+                            <td>@item.Topic.ExamType.Type</td>
+                            <td>@item.Topic.TopicCode</td>
+                            <td>@item.Topic.TestNumber</td>
+                            <td>@item.Topic.TaskNumber</td>
+                            <td>@item.Score</td>
                             <td>@item.SendDateSh</td>
                             <td>
                                 <div class="checkbox">
@@ -34,7 +36,7 @@
                             <td>
                                 @if (!item.IsComplete)
                                 {
-                                    <a href="#" data-path="@item.Path" data-url="@Url.Action(MVC.IELTS.ActionNames.Delete,MVC.IELTS.Name)" data-message="@LocalMessage.DeleteConfirm" data-id="@item.IeltsMaterialId" class="deleteMaterial f-s-22" ><i class="c-red zmdi zmdi-close"></i></a>
+                                    <a href="#" data-path="@item.Path" data-url="@Url.Action(MVC.IELTS.ActionNames.Delete,MVC.IELTS.Name)" data-message="@LocalMessage.DeleteConfirm" data-id="@item.IeltsMaterialId" class="deleteMaterial f-s-22"><i class="c-red zmdi zmdi-close"></i></a>
                                 }
                             </td>
                         </tr>

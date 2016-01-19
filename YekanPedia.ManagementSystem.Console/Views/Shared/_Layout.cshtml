@@ -96,10 +96,16 @@
                         </div>
                     </a>
                     <ul class="main-menu" style="display: block;">
-                        <li id="-3">
+                        <li id="-4">
                             <a href="@Url.Action(MVC.Account.ActionNames.Profile, MVC.Account.Name, new { userId = CurrentUser.UserId })">
                                 <i class="zmdi zmdi-account"></i>
                                 @LocalMessage.Profile
+                            </a>
+                        </li>
+                        <li id="-3">
+                            <a target="_blank" href="@Url.Action(MVC.CV.ActionNames.User, MVC.CV.Name, new { userId = CurrentUser.UserId })">
+                                <i class="zmdi zmdi-card"></i>
+                                @LocalMessage.CV
                             </a>
                         </li>
                         <li id="-2">

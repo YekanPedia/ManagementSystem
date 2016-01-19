@@ -142,5 +142,23 @@
     "inputFiles": [
       "Scripts/Application/IeltsMaterialController.js"
     ]
+  },
+  {
+    "outputFileName": "Scripts/Application/CVController.js",
+    "inputFiles": [
+      "Scripts/Application/CVController.js"
+    ]
+  },
+  {
+    "outputFileName": "Controllers/IELTSController.cs",
+    "inputFiles": [
+      "Controllers/IELTSController.cs"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Application/IeltsMaterialController.min.js",
+    "inputFiles": [
+      "Scripts/Application/IeltsMaterialController.min.js"
+    ]
   }
 ]

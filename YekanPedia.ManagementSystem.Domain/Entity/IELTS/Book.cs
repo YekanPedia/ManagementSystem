@@ -20,6 +20,11 @@
         [Display(ResourceType = typeof(DisplayNames), Name = nameof(IsActive))]
         public bool IsActive { get; set; }
 
-        public virtual ICollection<IeltsMaterial> IeltsMaterial { get; set; }
+        [MaxLength(150, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
+        [StringLength(150, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
+        [Column(TypeName = "varchar")]
+        public string Picture { get; set; }
+
+        public virtual ICollection<Topic> Topic { get; set; }
     }
 }

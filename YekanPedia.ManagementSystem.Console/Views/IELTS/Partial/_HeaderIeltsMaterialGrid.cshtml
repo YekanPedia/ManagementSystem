@@ -3,21 +3,26 @@
 <thead>
     <tr>
         <th data-column-id="ClassId" data-visible="false">
-            @Html.DisplayNameFor(X => X.BookId)
+            @Html.DisplayNameFor(X => X.User.FullName)
+        </th>
+        <th data-column-id="ClassId" data-visible="false">
+            @Html.DisplayNameFor(X => X.Topic.BookId)
         </th>
         <th data-column-id="ClassTypeId">
-            @Html.DisplayNameFor(X => X.ExamTypeId)
+            @Html.DisplayNameFor(X => X.Topic.ExamTypeId)
         </th>
         <th data-column-id="CourseId">
-            @Html.DisplayNameFor(X => X.Topic)
+            @Html.DisplayNameFor(X => X.Topic.TopicCode)
         </th>
         <th data-column-id="UserId">
-            @Html.DisplayNameFor(X => X.TestNumber)
+            @Html.DisplayNameFor(X => X.Topic.TestNumber)
         </th>
         <th data-column-id="ClassTime">
-            @Html.DisplayNameFor(X => X.Page)
+            @Html.DisplayNameFor(X => X.Topic.TaskNumber)
         </th>
-
+        <th data-column-id="ClassTime">
+            @Html.DisplayNameFor(X => X.Score)
+        </th>
         <th data-column-id="FinishDateSh">
             @Html.DisplayNameFor(X => X.SendDateSh)
         </th>

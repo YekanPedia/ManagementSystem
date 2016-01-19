@@ -119,6 +119,10 @@
         [Display(ResourceType = typeof(DisplayNames), Name = nameof(IsTeacher))]
         public bool IsTeacher { get; set; }
         public bool IsResetPassword { get; set; }
+
+        [MaxLength(100, ErrorMessageResourceName = nameof(DisplayError.MaxLength), ErrorMessageResourceType = typeof(DisplayError))]
+        public string GcmId { get; set; }
+
         public int ProgressRegisterCompleted()
         {
             int progress = 0;
