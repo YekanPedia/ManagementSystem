@@ -1,6 +1,4 @@
-﻿
-
-namespace YekanPedia.ManagementSystem.Console.Extensions
+﻿namespace YekanPedia.ManagementSystem.Console.Extensions
 {
     using System;
     using System.Web.Mvc;

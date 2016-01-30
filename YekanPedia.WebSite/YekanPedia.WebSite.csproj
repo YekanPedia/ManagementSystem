@@ -1,0 +1,432 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0A6739F7-1F4D-4B58-AC7D-F56764D1D404}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YekanPedia.WebSite</RootNamespace>
+    <AssemblyName>YekanPedia.WebSite</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+    <TypeScriptToolsVersion>1.6</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Elmah, Version=1.2.14706.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\elmah.corelibrary.1.2.2\lib\Elmah.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="T4MVCExtensions, Version=3.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\T4MVCExtensions.3.17.1\lib\net40\T4MVCExtensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Images\Avatar\1.png" />
+    <Content Include="Content\Images\Avatar\10.png" />
+    <Content Include="Content\Images\Avatar\11.png" />
+    <Content Include="Content\Images\Avatar\2.png" />
+    <Content Include="Content\Images\Avatar\3.png" />
+    <Content Include="Content\Images\Avatar\4.png" />
+    <Content Include="Content\Images\Avatar\5.png" />
+    <Content Include="Content\Images\Avatar\6.png" />
+    <Content Include="Content\Images\Avatar\7.png" />
+    <Content Include="Content\Images\Avatar\8.png" />
+    <Content Include="Content\Images\Avatar\9.png" />
+    <Content Include="Content\Images\Background\profile-menu.jpg" />
+    <Content Include="Content\Images\Background\profile-widget.jpg" />
+    <Content Include="Content\Images\Course\LogoTypes\Gre.png" />
+    <Content Include="Content\Images\Course\LogoTypes\IELTS.jpg" />
+    <Content Include="Content\Images\Course\LogoTypes\Movie.jpg" />
+    <Content Include="Content\Images\Course\LogoTypes\Movie.png" />
+    <Content Include="Content\Images\Course\LogoTypes\Music.png" />
+    <Content Include="Content\Images\Course\LogoTypes\PreUniLevel.jpg" />
+    <Content Include="Content\Images\Course\LogoTypes\PreUniLevel.png" />
+    <Content Include="Content\Images\Course\LogoTypes\toefl.jpg" />
+    <Content Include="Content\Images\Course\LogoTypes\TTC.png" />
+    <Content Include="Content\Images\Course\LogoTypes\UniLevel.jpg" />
+    <Content Include="Content\Images\Course\LogoTypes\UniLevel.png" />
+    <Content Include="Content\Images\FileType\archive.png" />
+    <Content Include="Content\Images\FileType\music.png" />
+    <Content Include="Content\Images\FileType\pdf.png" />
+    <Content Include="Content\Images\FileType\png.png" />
+    <Content Include="Content\Images\FileType\ppt.png" />
+    <Content Include="Content\Images\FileType\video.png" />
+    <Content Include="Content\Images\FileType\word.png" />
+    <Content Include="Content\Images\Icon\notifications.png" />
+    <Content Include="Content\Images\Logo\log100.png" />
+    <Content Include="Content\Images\Logo\log128.png" />
+    <Content Include="Content\Images\Logo\log256.png" />
+    <Content Include="Content\Images\Logo\log32.png" />
+    <Content Include="Content\Images\Logo\log48.png" />
+    <Content Include="Content\Images\Logo\log512.png" />
+    <Content Include="Content\Images\Logo\log64.png" />
+    <Content Include="Content\Images\Map\MyLocationMarkerIcon.png" />
+    <Content Include="Content\Images\Menu\ellipsis%402x.png" />
+    <Content Include="Content\Images\Menu\ellipsis.png" />
+    <Content Include="Content\Images\Menu\menu-2%402x-rtl.png" />
+    <Content Include="Content\Images\Menu\menu-2%402x.png" />
+    <Content Include="Content\Images\Menu\menu-2-rtl.png" />
+    <Content Include="Content\Images\Menu\menu-2.png" />
+    <Content Include="Content\Images\Menu\message%402x.png" />
+    <Content Include="Content\Images\Menu\message.png" />
+    <Content Include="Content\Images\Menu\notification%402x.png" />
+    <Content Include="Content\Images\Menu\notification.png" />
+    <Content Include="Content\Images\Menu\search%402x.png" />
+    <Content Include="Content\Images\Menu\search.png" />
+    <Content Include="Content\Images\Menu\task%402x.png" />
+    <Content Include="Content\Images\Menu\task.png" />
+    <Content Include="Content\Images\Other\Select.png" />
+    <Content Include="Content\Styles\Ltr\AppStyle1.css" />
+    <Content Include="Content\Styles\Ltr\AppStyle2.css" />
+    <Content Include="Content\Styles\Public\Animate.css" />
+    <Content Include="Content\Styles\Public\Bootgrid.css" />
+    <Content Include="Content\Styles\Public\BootstrapSelect.css" />
+    <Content Include="Content\Styles\Public\cropper.css" />
+    <Content Include="Content\Styles\Public\CV\green.css" />
+    <Content Include="Content\Styles\Public\CV\lime.css" />
+    <Content Include="Content\Styles\Public\CV\materialize.min.css" />
+    <Content Include="Content\Styles\Public\CV\orange.css" />
+    <Content Include="Content\Styles\Public\CV\purple.css" />
+    <Content Include="Content\Styles\Public\CV\red.css" />
+    <Content Include="Content\Styles\Public\CV\responsive.css" />
+    <Content Include="Content\Styles\Public\CV\style.css" />
+    <Content Include="Content\Styles\Public\Feedback.rtl.css" />
+    <Content Include="Content\Styles\Public\Feedback.rtl.min.css" />
+    <Content Include="Content\Styles\Public\Fullcalendar.css" />
+    <Content Include="Content\Styles\Public\jquery.nouislider.min.css" />
+    <Content Include="Content\Styles\Public\LightGallery.css" />
+    <Content Include="Content\Styles\Public\LoadingBar.css" />
+    <Content Include="Content\Styles\Public\MapStyle.css" />
+    <Content Include="Content\Styles\Public\MapStyle.min.css" />
+    <Content Include="Content\Styles\Public\MaterialDesignIconicFont.css" />
+    <Content Include="Content\Styles\Public\NProgress.css" />
+    <Content Include="Content\Styles\Public\PersianCalendar.css" />
+    <Content Include="Content\Styles\Public\Sweet.css" />
+    <Content Include="Content\Styles\Rtl\AppStyle1.css" />
+    <Content Include="Content\Styles\Rtl\style.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\functions.js" />
+    <Content Include="Scripts\jquery.signalR-2.1.2.js" />
+    <Content Include="Scripts\jquery.signalR-2.1.2.min.js" />
+    <Content Include="Scripts\jquery.signalR-2.2.0.js" />
+    <Content Include="Scripts\jquery.signalR-2.2.0.min.js" />
+    <Content Include="Scripts\JQuery\Ajax\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\JQuery\BootGrid\jquery.bootgrid.min.js" />
+    <Content Include="Scripts\JQuery\Bootstrap\bootstrap.js" />
+    <Content Include="Scripts\JQuery\Bootstrap\bootstrap.min.js" />
+    <Content Include="Scripts\JQuery\Croper\cropper.js" />
+    <Content Include="Scripts\JQuery\Croper\cropper.min.js" />
+    <Content Include="Scripts\JQuery\CV\masonry.pkgd.js" />
+    <Content Include="Scripts\JQuery\CV\materialize.min.js" />
+    <Content Include="Scripts\JQuery\CV\wow.min.js" />
+    <Content Include="Scripts\JQuery\Feedback\feedback.js" />
+    <Content Include="Scripts\JQuery\Feedback\html2canvas.js" />
+    <Content Include="Scripts\JQuery\Feedback\html2convas.js" />
+    <Content Include="Scripts\JQuery\Feedback\templates\fa-Ir\template.html" />
+    <Content Include="Scripts\JQuery\FileInput\fileinput.min.js" />
+    <Content Include="Scripts\JQuery\FileUpload\fileupload.js" />
+    <Content Include="Scripts\JQuery\FullCalendar\fa.js" />
+    <Content Include="Scripts\JQuery\FullCalendar\fullcalendar.js" />
+    <Content Include="Scripts\JQuery\FullCalendar\fullcalendar.min.js" />
+    <Content Include="Scripts\JQuery\FullCalendar\moment.min.js" />
+    <Content Include="Scripts\JQuery\InputMask\input-mask.min.js" />
+    <Content Include="Scripts\JQuery\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\JQuery\LightGallery\lightGallery.min.js" />
+    <Content Include="Scripts\JQuery\Loadingbar\Loadingbar.js" />
+    <Content Include="Scripts\JQuery\Maps\1.0.0.51205\gsa.js" />
+    <Content Include="Scripts\JQuery\Maps\1.0.0.51205\gsa.min.js" />
+    <Content Include="Scripts\JQuery\Maps\gsa.js" />
+    <Content Include="Scripts\JQuery\NiceScroll\jquery.nicescroll.min.js" />
+    <Content Include="Scripts\JQuery\NProgressbar\nprogress.js" />
+    <Content Include="Scripts\JQuery\PersianCalendar\PersianCalendar.js" />
+    <Content Include="Scripts\JQuery\Phoenix\Phoenix.core.js" />
+    <Content Include="Scripts\JQuery\PieChart\jquery.easypiechart.min.js" />
+    <Content Include="Scripts\JQuery\Select\BootstrapSelect.js" />
+    <Content Include="Scripts\JQuery\SparkLine\jquery.sparkline.min.js" />
+    <Content Include="Scripts\JQuery\Sweet\sweet-alert.min.js" />
+    <Content Include="Scripts\JQuery\Type\jQuery.Type.js" />
+    <Content Include="Scripts\JQuery\UiSlider\jquery.nouislider.all.min.js" />
+    <Content Include="Scripts\JQuery\UiSlider\nouislider.js" />
+    <Content Include="Scripts\JQuery\Validation\jquery.validate.js" />
+    <Content Include="Scripts\JQuery\Validation\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\JQuery\Validation\jquery.validation.messages.js" />
+    <Content Include="Scripts\JQuery\Wave\waves.min.js" />
+    <Content Include="T4\T4MVC.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>T4MVC.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\JQuery\Feedback\feedback.js.map" />
+    <Content Include="Scripts\JQuery\Feedback\html2convas.js.map" />
+    <Content Include="Scripts\JQuery\FileUpload\fileupload.js.map" />
+    <Content Include="Scripts\JQuery\Maps\gsa.js.map" />
+    <Content Include="Content\Fonts\BYekan\BYekan.ttf" />
+    <Content Include="Content\Fonts\MaterialDesignIconic\MaterialDesignIconicFont.ttf" />
+    <Content Include="Content\Fonts\MaterialDesignIconic\MaterialDesignIconicFont.woff" />
+    <Content Include="Content\Fonts\Roboto\Roboto-Medium-webfont.eot" />
+    <Content Include="Content\Fonts\Roboto\Roboto-Medium-webfont.ttf" />
+    <Content Include="Content\Fonts\Roboto\Roboto-Medium-webfont.woff" />
+    <Content Include="Content\Fonts\Roboto\Roboto-Regular-webfont.eot" />
+    <Content Include="Content\Fonts\Roboto\Roboto-Regular-webfont.ttf" />
+    <Content Include="Content\Fonts\Roboto\Roboto-Regular-webfont.woff" />
+    <None Include="T4\T4MVC.tt.settings.xml" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\YekanPedia.ManagementSystem.Console\App_Start\BundleConfig.cs">
+      <Link>App_Start\BundleConfig.cs</Link>
+    </Compile>
+    <Compile Include="..\YekanPedia.ManagementSystem.Console\App_Start\BundleManager.cs">
+      <Link>App_Start\BundleManager.cs</Link>
+    </Compile>
+    <Compile Include="..\YekanPedia.ManagementSystem.Console\App_Start\Filters\ElmahHandledErrorLoggerFilter.cs">
+      <Link>App_Start\Filters\ElmahHandledErrorLoggerFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\YekanPedia.ManagementSystem.Console\Extensions\Authentication\CurrentUserPrincipal.cs">
+      <Link>Extensions\Authentication\CurrentUserPrincipal.cs</Link>
+    </Compile>
+    <Compile Include="..\YekanPedia.ManagementSystem.Console\Extensions\Authentication\ICurrentUserPrincipal.cs">
+      <Link>Extensions\Authentication\ICurrentUserPrincipal.cs</Link>
+    </Compile>
+    <Compile Include="..\YekanPedia.ManagementSystem.Console\Extensions\EnumSelectList.cs">
+      <Link>Extensions\EnumSelectList.cs</Link>
+    </Compile>
+    <Compile Include="..\YekanPedia.ManagementSystem.Console\Extensions\Html\HtmlHelperExtensions.cs">
+      <Link>Extensions\Html\HtmlHelperExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\YekanPedia.ManagementSystem.Console\Extensions\Notification\AjaxPNotifyFilter.cs">
+      <Link>Extensions\Notification\AjaxPNotifyFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\YekanPedia.ManagementSystem.Console\Extensions\Notification\Notification.cs">
+      <Link>Extensions\Notification\Notification.cs</Link>
+    </Compile>
+    <Compile Include="..\YekanPedia.ManagementSystem.Console\Extensions\Notification\NotificationController.cs">
+      <Link>Extensions\Notification\NotificationController.cs</Link>
+    </Compile>
+    <Compile Include="..\YekanPedia.ManagementSystem.Console\Extensions\Notification\NotificationExtensions.cs">
+      <Link>Extensions\Notification\NotificationExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\YekanPedia.ManagementSystem.Console\Extensions\Optimization\AsIsBundleOrderer.cs">
+      <Link>Extensions\Optimization\AsIsBundleOrderer.cs</Link>
+    </Compile>
+    <Compile Include="..\YekanPedia.ManagementSystem.Console\Extensions\Optimization\ScriptBundleOrderer.cs">
+      <Link>Extensions\Optimization\ScriptBundleOrderer.cs</Link>
+    </Compile>
+    <Compile Include="..\YekanPedia.ManagementSystem.Console\Extensions\Optimization\StyleBundleOrderer.cs">
+      <Link>Extensions\Optimization\StyleBundleOrderer.cs</Link>
+    </Compile>
+    <Compile Include="App_GlobalResources\LocalMessage.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LocalMessage.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="ControllerFactory\IocControllerFactory.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="T4\HomeController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="T4\SharedController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\T4MVC.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="packages.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <None Include="Properties\PublishProfiles\Website.pubxml" />
+    <Content Include="T4\T4MVC.tt.hooks.t4" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Notification.cshtml" />
+    <Content Include="Views\Shared\Partial\_UserProfile.cshtml" />
+    <Content Include="Views\Shared\Partial\_Menu.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\YekanPedia.ManagementSystem.DependencyResolver\YekanPedia.ManagementSystem.DependencyResolver.csproj">
+      <Project>{cd5f6d8c-fec3-4411-83ab-6ea7580f9212}</Project>
+      <Name>YekanPedia.ManagementSystem.DependencyResolver</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YekanPedia.ManagementSystem.Domain\YekanPedia.ManagementSystem.Domain.csproj">
+      <Project>{8bca1500-4045-46aa-9783-90f4b0ddb1f6}</Project>
+      <Name>YekanPedia.ManagementSystem.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YekanPedia.ManagementSystem.InfraStructure\YekanPedia.ManagementSystem.InfraStructure.csproj">
+      <Project>{d742b376-2be2-47ff-b70f-4f5f63a67bab}</Project>
+      <Name>YekanPedia.ManagementSystem.InfraStructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YekanPedia.ManagementSystem.Service\YekanPedia.ManagementSystem.Service.csproj">
+      <Project>{3a35c3bf-238b-445c-a4cc-f334836b3253}</Project>
+      <Name>YekanPedia.ManagementSystem.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\LocalMessage.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>LocalMessage.Designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\JQuery\Feedback\feedback.ts" />
+    <TypeScriptCompile Include="Scripts\JQuery\Feedback\Html2Convas.ts" />
+    <TypeScriptCompile Include="Scripts\JQuery\FileUpload\fileupload.ts" />
+    <TypeScriptCompile Include="Scripts\JQuery\jquery.d.ts" />
+    <TypeScriptCompile Include="Scripts\JQuery\Maps\google.maps.d.ts" />
+    <TypeScriptCompile Include="Scripts\JQuery\Maps\gsa.ts" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>3897</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:3897/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,133 @@
+
+/* 
+***** body  *****
+*/
+body {
+  background-color: #eae8e7;
+  color: #767270;
+}
+
+/* 
+***** Sidebar  *****
+*/
+.orange .sidebar {
+  color: #ffffff;
+  background-color: #e67e22;
+}
+
+.orange .sidebar .heading nav .button-collapse i {
+  background-color: #e67e22;
+}
+.orange .sidebar .heading nav .side-nav h3 {
+  color: #e67e22;
+}
+.orange .sidebar .heading nav .side-nav li a:hover {
+  color: #e67e22;
+}
+
+
+.orange .sidebar .info {
+  border-bottom: 1px solid #b86318;
+}
+
+
+.orange .sidebar .skill-line .progress {
+  background-color: #b86318;
+}
+.orange .sidebar .skill-line .determinate {
+  background-color: #ffffff;
+}
+
+/*
+***** Sections *****
+*/
+
+.orange .section .section-wrapper {
+  background-color: #ffffff;
+}
+
+/*
+***** Work Experience  *****
+*/
+
+.orange .custom-content-wrapper {
+  border-bottom: 1px solid #bdbdbd;
+}
+
+.orange .custom-content-wrapper span {
+  color: #e67e22;
+}
+  
+/*
+*****  Interests  *****
+*/
+
+.orange .interests ul li .fa {
+  color: #e67e22;
+}
+/* 
+***** Portfolio website  *****
+*/
+.orange .website span a {
+  color: #e67e22;
+}
+
+/* ***** Contact  *****
+*  
+*/
+
+.orange input[type=text]:focus:not([readonly]),
+.orange input[type=password]:focus:not([readonly]),
+.orange input[type=email]:focus:not([readonly]),
+.orange input[type=url]:focus:not([readonly]),
+.orange input[type=time]:focus:not([readonly]),
+.orange input[type=date]:focus:not([readonly]),
+.orange input[type=datetime-local]:focus:not([readonly]),
+.orange input[type=tel]:focus:not([readonly]),
+.orange input[type=number]:focus:not([readonly]),
+.orange input[type=search]:focus:not([readonly]),
+.orange textarea.materialize-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid #e67e22;
+}
+.orange input[type=text]:focus:not([readonly]) + label,
+.orange input[type=password]:focus:not([readonly]) + label,
+.orange input[type=email]:focus:not([readonly]) + label,
+.orange input[type=url]:focus:not([readonly]) + label,
+.orange input[type=time]:focus:not([readonly]) + label,
+.orange input[type=date]:focus:not([readonly]) + label,
+.orange input[type=datetime-local]:focus:not([readonly]) + label,
+.orange input[type=tel]:focus:not([readonly]) + label,
+.orange input[type=number]:focus:not([readonly]) + label,
+.orange input[type=search]:focus:not([readonly]) + label,
+.orange textarea.materialize-textarea:focus:not([readonly]) + label {
+  color: #e67e22;
+}
+.orange .waves-me:focus {
+  background-color: #e67e22;
+  color: #fff;
+}
+.orange .btn {
+  margin-left: 10px;
+  background-color: #e67e22;
+}
+.orange .btn:hover,
+.orange .btn:focus {
+  background-color: #e67e22;
+}
+
+.orange .btn.disabled{
+    background-color: #e67e22;
+    color: #fff;
+    cursor: default;
+}
+
+.orange .btn.disabled:focus{
+    background-color: #e67e22;
+    color: #fff;
+    cursor: default;
+}
+.orange .btn.disabled:hover{
+    background-color: #e67e22;
+    color: #fff;
+    cursor: default;
+}

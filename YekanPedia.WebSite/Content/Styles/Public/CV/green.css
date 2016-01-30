@@ -1,0 +1,111 @@
+
+body {
+    background-color: #eae8e7;
+    color: #767270;
+}
+
+/* 
+***** Sidebar  *****
+*/
+.green .sidebar {
+    color: #ffffff;
+    background-color: #1abc9c;
+}
+
+    .green .sidebar .heading nav .button-collapse i {
+        background-color: #1abc9c;
+    }
+
+    .green .sidebar .heading nav .side-nav h3 {
+        color: #1abc9c;
+    }
+
+    .green .sidebar .heading nav .side-nav li a:hover {
+        color: #1abc9c;
+    }
+
+    .green .sidebar .info {
+        border-bottom: 1px solid #248673;
+    }
+
+    .green .sidebar .skill-line .progress {
+        background-color: #248673;
+    }
+
+/* style for
+***** Work Experience  *****
+*/
+
+.green .custom-content-wrapper span {
+    color: #1abc9c;
+}
+
+/* style for
+*****  Interests  *****
+*/
+.green .interests ul li .fa {
+    color: #1abc9c;
+}
+/* style for
+***** Portfolio website  *****
+*/
+
+.green .website span a {
+    color: #1abc9c;
+}
+
+.green input[type=text]:focus:not([readonly]),
+.green input[type=email]:focus:not([readonly]),
+.green input[type=tel]:focus:not([readonly]),
+.green input[type=number]:focus:not([readonly]),
+.green input[type=search]:focus:not([readonly]),
+.green textarea.materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #1abc9c;
+}
+
+    .green input[type=text]:focus:not([readonly]) + label,
+    .green input[type=password]:focus:not([readonly]) + label,
+    .green input[type=email]:focus:not([readonly]) + label,
+    .green input[type=url]:focus:not([readonly]) + label,
+    .green input[type=time]:focus:not([readonly]) + label,
+    .green input[type=date]:focus:not([readonly]) + label,
+    .green input[type=datetime-local]:focus:not([readonly]) + label,
+    .green input[type=tel]:focus:not([readonly]) + label,
+    .green input[type=number]:focus:not([readonly]) + label,
+    .green input[type=search]:focus:not([readonly]) + label,
+    .green textarea.materialize-textarea:focus:not([readonly]) + label {
+        color: #1abc9c;
+    }
+
+.green .waves-me:focus {
+    background-color: #1abc9c;
+    color: #fff;
+}
+
+.green .btn {
+    margin-left: 10px;
+    background-color: #1abc9c;
+}
+
+    .green .btn:hover,
+    .green .btn:focus {
+        background-color: #1abc9c;
+    }
+
+    .green .btn.disabled {
+        background-color: #1abc9c;
+        color: #fff;
+        cursor: default;
+    }
+
+.green .btn.disabled:focus {
+    background-color: #1abc9c;
+    color: #fff;
+    cursor: default;
+}
+
+.green .btn.disabled:hover {
+    background-color: #1abc9c;
+    color: #fff;
+    cursor: default;
+}
