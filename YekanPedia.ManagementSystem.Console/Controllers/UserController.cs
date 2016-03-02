@@ -7,7 +7,7 @@
     using System;
     using System.Collections.Generic;
     using Resources;
-    using Extensions.Authentication;
+    using InfraStructure.Extension.Authentication;
     using System.Net;
     using System.Collections.Specialized;
     using System.Text;

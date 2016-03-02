@@ -9,8 +9,7 @@
     using System.Web;
     using System.Web.Security;
     using System.Web.Script.Serialization;
-    using Domain.Entity;
-    using Extensions.Authentication;
+    using InfraStructure.Extension.Authentication;
     using ScheduledTasks;
     using Elmah;
 
@@ -29,7 +28,7 @@
             ControllerBuilder.Current.SetControllerFactory(new IocControllerFactory());
             ScheduledTasksRepository.Init();
         }
-       protected void Application_EndRequest(object sender, EventArgs e)
+        protected void Application_EndRequest(object sender, EventArgs e)
         {
             IocInitializer.HttpContextDisposeAndClearAll();
         }
@@ -38,7 +37,7 @@
         {
             HttpContext.Current.Response.AddHeader("x-frame-option", "DENY");
         }
-      
+
         protected void Application_PostAuthenticateRequest(Object sender, EventArgs e)
         {
             try
@@ -50,13 +49,9 @@
                     JavaScriptSerializer serializer = new JavaScriptSerializer();
                     if (authTicket.UserData == "OAuth") return;
 
-                    var serializeModel = serializer.Deserialize<CurrentUserPrincipal>(authTicket.UserData);
-                    var user = new CurrentUserPrincipal(authTicket.Name);
-                    user.UserId = serializeModel.UserId;
-                    user.FullName = serializeModel.FullName;
-                    user.Email = serializeModel.Email;
-                    user.Picture = serializeModel.Picture;
-                    HttpContext.Current.User = user;
+                    var currentUser = serializer.Deserialize<CurrentUserPrincipal>(authTicket.UserData);
+                    currentUser.SetIdentity(authTicket.Name);
+                    HttpContext.Current.User = currentUser;
                 }
             }
             catch (Exception ex)
@@ -70,7 +65,7 @@
                 HttpCookie ASPNET_SessionId = new HttpCookie("ASP.NET_SessionId");
                 ASPNET_SessionId.Expires = DateTime.Now.AddDays(-1);
                 Response.Cookies.Add(ASPNET_SessionId);
-                
+
                 var urlHelper = new UrlHelper(HttpContext.Current.Request.RequestContext);
                 Response.Redirect(urlHelper.Action(MVC.OAuth.ActionNames.SignIn, MVC.OAuth.Name));
             }

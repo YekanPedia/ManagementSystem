@@ -7,7 +7,7 @@
     {
         public IIdentity Identity { get; private set; }
 
-        public CurrentUserPrincipal(string username)
+        public void SetIdentity(string username)
         {
             Identity = new GenericIdentity(username);
         }

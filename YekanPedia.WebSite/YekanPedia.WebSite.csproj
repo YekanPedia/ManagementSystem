@@ -275,12 +275,6 @@
     <Compile Include="..\YekanPedia.ManagementSystem.Console\App_Start\Filters\ElmahHandledErrorLoggerFilter.cs">
       <Link>App_Start\Filters\ElmahHandledErrorLoggerFilter.cs</Link>
     </Compile>
-    <Compile Include="..\YekanPedia.ManagementSystem.Console\Extensions\Authentication\CurrentUserPrincipal.cs">
-      <Link>Extensions\Authentication\CurrentUserPrincipal.cs</Link>
-    </Compile>
-    <Compile Include="..\YekanPedia.ManagementSystem.Console\Extensions\Authentication\ICurrentUserPrincipal.cs">
-      <Link>Extensions\Authentication\ICurrentUserPrincipal.cs</Link>
-    </Compile>
     <Compile Include="..\YekanPedia.ManagementSystem.Console\Extensions\EnumSelectList.cs">
       <Link>Extensions\EnumSelectList.cs</Link>
     </Compile>

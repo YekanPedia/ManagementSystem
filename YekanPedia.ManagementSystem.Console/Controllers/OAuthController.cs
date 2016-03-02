@@ -42,14 +42,13 @@
                 return View(model);
             }
 
-            var serializeModel = new BaseUser();
-            serializeModel.FullName = login.Result.FullName;
-            serializeModel.Email = login.Result.Email;
-            serializeModel.UserId = login.Result.UserId;
-            serializeModel.Picture = login.Result.Picture;
+            _currentUser.FullName = login.Result.FullName;
+            _currentUser.Email = login.Result.Email;
+            _currentUser.UserId = login.Result.UserId;
+            _currentUser.Picture = login.Result.Picture;
 
             JavaScriptSerializer serializer = new JavaScriptSerializer();
-            string userData = serializer.Serialize(serializeModel);
+            string userData = serializer.Serialize(_currentUser);
 
             int expire = rememberMe ? 43200 : 30;
             FormsAuthenticationTicket authTicket = new FormsAuthenticationTicket(1, login.Result.Email, DateTime.Now, DateTime.Now.AddMinutes(expire), rememberMe, userData);

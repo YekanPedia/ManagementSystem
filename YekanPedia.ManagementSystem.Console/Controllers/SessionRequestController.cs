@@ -5,7 +5,7 @@
     using Service.Interfaces;
     using InfraStructure.Date;
     using System;
-    using Extensions.Authentication;
+    using InfraStructure.Extension.Authentication;
 
     public partial class SessionRequestController : Controller
     {

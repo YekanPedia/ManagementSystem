@@ -2,7 +2,7 @@
 {
     using System.Web.Mvc;
     using Service.Interfaces;
-    using Extensions.Authentication;
+    using InfraStructure.Extension.Authentication;
     using System;
     using Domain.Entity;
     using System.Collections.Generic;
