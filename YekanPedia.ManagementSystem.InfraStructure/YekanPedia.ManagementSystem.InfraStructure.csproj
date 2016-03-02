@@ -57,6 +57,8 @@
     <Compile Include="Date\TimeSpanExtension.cs" />
     <Compile Include="Exception\ElmahEfInterceptorException.cs" />
     <Compile Include="Extension\ApplyCorrectPersianCharacters.cs" />
+    <Compile Include="Extension\Authentication\CurrentUserPrincipal.cs" />
+    <Compile Include="Extension\Authentication\ICurrentUserPrincipal.cs" />
     <Compile Include="Extension\EnumHelper.cs" />
     <Compile Include="Extension\FullTimeFormat.cs" />
     <Compile Include="Extension\LocalizeDescriptionEnum.cs" />

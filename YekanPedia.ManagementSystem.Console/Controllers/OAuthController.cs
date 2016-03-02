@@ -8,13 +8,17 @@
     using System.Web;
     using System.Web.Script.Serialization;
     using System.Linq;
+    using InfraStructure.Extension.Authentication;
+
     public partial class OAuthController : Controller
     {
         #region Constructur
         readonly IUserService _userServie;
         readonly IRoleManagementService _roleManagementService;
-        public OAuthController(IUserService userService, IRoleManagementService roleManagementService)
+        readonly ICurrentUserPrincipal _currentUser;
+        public OAuthController(IUserService userService, IRoleManagementService roleManagementService, ICurrentUserPrincipal currentUser)
         {
+            _currentUser = currentUser;
             _userServie = userService;
             _roleManagementService = roleManagementService;
         }
@@ -26,7 +30,7 @@
             return View();
         }
 
-        [HttpPost,  AllowAnonymous]
+        [HttpPost, AllowAnonymous]
         public virtual ActionResult SignIn(User model, bool rememberMe)
         {
             var login = _userServie.CheckUserExist(model.Email, model.Password);

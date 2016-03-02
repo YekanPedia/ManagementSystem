@@ -1,4 +1,4 @@
-﻿namespace YekanPedia.ManagementSystem.Console.Extensions.Authentication
+﻿namespace YekanPedia.ManagementSystem.InfraStructure.Extension.Authentication
 {
     using System;
     using System.Security.Principal;

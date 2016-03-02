@@ -29,14 +29,16 @@
             ControllerBuilder.Current.SetControllerFactory(new IocControllerFactory());
             ScheduledTasksRepository.Init();
         }
+       protected void Application_EndRequest(object sender, EventArgs e)
+        {
+            IocInitializer.HttpContextDisposeAndClearAll();
+        }
+
         protected void Application_BeginRequest(object sender, EventArgs e)
         {
             HttpContext.Current.Response.AddHeader("x-frame-option", "DENY");
         }
-        protected void Application_EndRequest(object sender, EventArgs e)
-        {
-            IocInitializer.HttpContextDisposeAndClearAll();
-        }
+      
         protected void Application_PostAuthenticateRequest(Object sender, EventArgs e)
         {
             try
@@ -48,7 +50,7 @@
                     JavaScriptSerializer serializer = new JavaScriptSerializer();
                     if (authTicket.UserData == "OAuth") return;
 
-                    var serializeModel = serializer.Deserialize<BaseUser>(authTicket.UserData);
+                    var serializeModel = serializer.Deserialize<CurrentUserPrincipal>(authTicket.UserData);
                     var user = new CurrentUserPrincipal(authTicket.Name);
                     user.UserId = serializeModel.UserId;
                     user.FullName = serializeModel.FullName;

@@ -11,6 +11,8 @@
     using ExternalService.Interfaces;
     using InfraStructure.Caching;
     using YekanPedia.ManagementSystem.Scheduler;
+    using InfraStructure.Extension.Authentication;
+
     public class IocInitializer
     {
         public static IContainer Container;
@@ -45,7 +47,7 @@
                 x.For<Lazy<ISettingService>>().Use(c => new Lazy<ISettingService>(c.GetInstance<SettingService>));
 
                 #endregion
-             
+
                 x.For<IAboutUsService>().Use<AboutUsService>();
 
                 x.For<ISchedulerObserver>().Use<SchedulerObserver>().Singleton();
@@ -85,6 +87,9 @@
                 x.For<IMessagingGatewayAdapter>().Use<MessagingGatewayAdapter>();
                 x.For<IFilesProxyAdapter>().Use<FilesProxyAdapter>();
                 x.For<Lazy<IFilesProxyAdapter>>().Use(c => new Lazy<IFilesProxyAdapter>(c.GetInstance<FilesProxyAdapter>));
+
+
+                x.For<ICurrentUserPrincipal>().Use<CurrentUserPrincipal>();
             });
         }
         public static object GetInstance(Type pluginType)
